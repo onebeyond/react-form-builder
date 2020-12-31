@@ -18,7 +18,7 @@
     "json"
   ],
   "author": "Guidesmiths",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/guidesmiths/react-form-builder/issues"
   },

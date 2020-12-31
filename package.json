@@ -22,6 +22,8 @@
   "bugs": {
     "url": "https://github.com/guidesmiths/react-form-builder/issues"
   },
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/guidesmiths/react-form-builder#readme"
 }

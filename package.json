@@ -1,6 +1,6 @@
 {
   "name": "@guidesmiths/react-form-builder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React from builder using json schema",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/guidesmiths/react-form-builder/issues"
   },
+  "private": false,
   "homepage": "https://github.com/guidesmiths/react-form-builder#readme"
 }

@@ -5,13 +5,14 @@ node_js:
   - 12
   - 13
 
-script:
-  - npm run test:lint
-  - npm run test
-
 jobs:
   include:
-  - stage: npm Publish
+  - stage: test
+    script:
+      - npm run test:lint
+      - npm run test
+
+  - stage: aws Publish
     provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
@@ -20,6 +21,7 @@ jobs:
     local_dir: public
     on:
       branch: main
+
   - stage: npm Deployment
     deploy:
       edge: true

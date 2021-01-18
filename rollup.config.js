@@ -6,7 +6,7 @@ export default {
   output: {
     name: 'ReactFormBuilder',
     file: 'dist/index.js',
-    format: 'cjs',
+    format: 'umd',
     sourcemap: true
   },
   plugins: [peerDepsExternal(), babel()],

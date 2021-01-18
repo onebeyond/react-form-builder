@@ -2,11 +2,13 @@ language: node_js
 
 node_js:
   - 10
-  - 12
-  - 13
+
+branches:
+   only:
+      - main
 
 script:
-  - npm run lint
+  - npm run test:lint
   - npm run test
 
 jobs:
@@ -20,3 +22,4 @@ jobs:
       api_key: "$NPM_TOKEN"
       on:
         tags: true
+        branch: main

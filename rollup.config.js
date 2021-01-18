@@ -4,7 +4,8 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 export default {
   input: 'src/index.js',
   output: {
-    file: 'bundle.js',
+    name: 'ReactFormBuilder',
+    file: 'dist/index.js',
     format: 'cjs',
     sourcemap: true
   },

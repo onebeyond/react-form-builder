@@ -2,12 +2,8 @@ language: node_js
 
 node_js:
   - 10
-  - 11
+  - 12
   - 13
-
-branches:
-   only:
-      - main
 
 script:
   - npm run test:lint
@@ -15,12 +11,12 @@ script:
 
 jobs:
   include:
-    - stage: npm Deployment
-      deploy:
-        edge: true
-        provider: npm
-        skip_cleanup: true
-        email: "$NPM_EMAIL"
-        api_key: "$NPM_TOKEN"
-        on:
-          tags: true
+  - stage: npm Deployment
+    deploy:
+      edge: true
+      provider: npm
+      skip_cleanup: true
+      email: "$NPM_EMAIL"
+      api_key: "$NPM_TOKEN"
+      on:
+        tags: true

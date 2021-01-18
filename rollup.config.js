@@ -7,7 +7,8 @@ export default {
     name: 'ReactFormBuilder',
     file: 'dist/index.js',
     format: 'umd',
-    sourcemap: true
+    sourcemap: true,
+    globals: { react: 'React', 'theme-ui': 'theme-ui' }
   },
   plugins: [peerDepsExternal(), babel()],
   external: ['react']

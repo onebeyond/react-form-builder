@@ -13,11 +13,12 @@ script:
 
 jobs:
   include:
-  - # Build and deploy release on tags
-    if: tag IS present
-    deploy:
-      edge: true
-      provider: npm
-      skip_cleanup: true
-      email: "$NPM_EMAIL"
-      api_key: "$NPM_TOKEN"
+    - # Build and deploy release on tags
+      if: tag IS present
+      stage: npm Deployment
+      deploy:
+        edge: true
+        provider: npm
+        skip_cleanup: true
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"

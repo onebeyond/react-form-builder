@@ -24,16 +24,24 @@
     "deploy": "gh-pages -d example/build",
     "release:patch": "git tag -l | xargs git tag -d && changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
     "release:minor": "git tag -l | xargs git tag -d && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags"
+    "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "theme-ui": "^0.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
     "@rollup/plugin-babel": "^5.2.2",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/react": "^6.1.14",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
@@ -58,5 +66,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }

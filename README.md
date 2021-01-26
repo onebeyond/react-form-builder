@@ -25,6 +25,18 @@ class Example extends Component {
 }
 ```
 
+# To contribute
+
+1. `npm install`
+2. `npm start`
+3. Open another tab and do `cd example`
+4. `npm install`
+5. `npm start`
+
+See `localhost:3000`
+
+Any change on the root src library will be reflected on the usage in the example folder. 
+
 ## License
 
 MIT © [Guidesmiths](https://github.com/Guidesmiths)

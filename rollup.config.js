@@ -10,6 +10,7 @@ export default {
     sourcemap: true,
     globals: { react: 'React', 'theme-ui': 'theme-ui' }
   },
-  plugins: [peerDepsExternal(), babel()],
+  plugins: [peerDepsExternal(), babel({ babelHelpers: 'bundled' })],
+
   external: ['react']
 }

@@ -10,5 +10,5 @@ export { default as Radio } from './Fields/Radio'
 // Theme
 export { default as ExampleTheme } from './theme'
 
-// Questions
-export { default as QuestionCheckbox } from './Questions/Checkbox'
+// Builder
+export { default as FormBuilder } from './builder'

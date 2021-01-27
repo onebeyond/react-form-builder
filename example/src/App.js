@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { ExampleComponent, Button } from 'react-form-builder'
+import { ExampleComponent, Button, Input } from 'react-form-builder'
 
 const App = () => {
   return (
     <>
       <ExampleComponent text='Hello world form builder 😄' />
       <Button caption='Button example'></Button>
+      <Input></Input>
     </>
   )
 }

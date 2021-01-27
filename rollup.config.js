@@ -9,7 +9,11 @@ export default {
     file: 'dist/index.js',
     format: 'umd',
     sourcemap: true,
-    globals: { react: 'React', 'theme-ui': 'theme-ui' }
+    globals: {
+      react: 'React',
+      'theme-ui': 'theme-ui',
+      'react-markdown': 'react-markdown'
+    }
   },
   plugins: [
     nodeResolve(),

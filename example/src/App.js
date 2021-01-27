@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { Button, Input, Label, Checkbox, Select } from 'react-form-builder'
+import {
+  Button,
+  Input,
+  Label,
+  Checkbox,
+  Select,
+  Radio
+} from 'react-form-builder'
 
 const App = () => {
   return (
@@ -18,6 +25,14 @@ const App = () => {
         <option>3</option>
         <option>4</option>
       </Select>
+      <Label>
+        <Radio name='dark-mode' value='true' defaultChecked={true} />
+        Dark Mode
+      </Label>
+      <Label>
+        <Radio name='dark-mode' value='false' />
+        Light Mode
+      </Label>
     </>
   )
 }

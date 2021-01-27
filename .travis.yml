@@ -10,6 +10,14 @@ jobs:
       - npm run test:lint
       - npm run test
 
+ - stage: story-book build
+      before_script:
+        - cd ${TRAVIS_BUILD_DIR}/example
+        - npm install
+      script:
+        - npm test
+        - npm run build-storybook
+
   - stage: aws Publish
     provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
@@ -18,7 +26,7 @@ jobs:
     skip_cleanup: true
     local_dir: public
     on:
-      branch: main
+      branch: storybook-deploy#6
 
   - stage: npm Deployment
     deploy:

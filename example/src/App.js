@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Input, Label } from 'react-form-builder'
+import { Button, Input, Label, Checkbox } from 'react-form-builder'
 
 const App = () => {
   return (
@@ -8,6 +8,10 @@ const App = () => {
       <Button caption='Button example'></Button>
       <Input></Input>
       <Label>An important title field here *</Label>
+      <Label>
+        <Checkbox />
+        Select an option
+      </Label>
     </>
   )
 }

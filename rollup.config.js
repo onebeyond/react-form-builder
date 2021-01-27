@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 export default {
   input: 'src/index.js',
@@ -10,7 +11,11 @@ export default {
     sourcemap: true,
     globals: { react: 'React', 'theme-ui': 'theme-ui' }
   },
-  plugins: [peerDepsExternal(), babel({ babelHelpers: 'bundled' })],
+  plugins: [
+    nodeResolve(),
+    peerDepsExternal(),
+    babel({ babelHelpers: 'bundled' })
+  ],
 
   external: ['react']
 }

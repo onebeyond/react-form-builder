@@ -6,10 +6,23 @@ import {
   Label,
   Checkbox,
   Select,
-  Radio
+  Radio,
+  FormBuilder
 } from 'react-form-builder'
 
+import forms from './forms.json'
+
 const App = () => {
+  const onSubmitForm = (data) => {
+    alert(
+      `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+        data,
+        null,
+        2
+      )}`
+    )
+  }
+
   return (
     <>
       <Button caption='Button example'></Button>
@@ -33,6 +46,12 @@ const App = () => {
         <Radio name='dark-mode' value='false' />
         Light Mode
       </Label>
+      <Label>Example of form builder</Label>
+      <FormBuilder
+        idForm={forms.contact.id}
+        form={forms.contact}
+        onSubmit={onSubmitForm}
+      ></FormBuilder>
     </>
   )
 }

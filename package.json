@@ -30,7 +30,9 @@
     "react": "^16.0.0",
     "theme-ui": "^0.3.5",
     "react-markdown": "^5.0.3",
-    "react-hook-form": "^6.14.2"
+    "react-hook-form": "^6.14.2",
+    "react-hook-form-input": "^1.1.10",
+    "react-phone-number-input": "^3.1.10"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.10",
@@ -60,13 +62,11 @@
     "rollup": "^2.36.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "theme-ui": "^0.3.5",
-    "react-hook-form": "^6.14.2"
+    "react-hook-form": "^6.14.2",
+    "react-hook-form-input": "^1.1.10",
+    "react-phone-number-input": "^3.1.10"
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "react-hook-form-input": "^1.1.10",
-    "react-phone-number-input": "^3.1.10"
-  }
+  ]
 }

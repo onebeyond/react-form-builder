@@ -4,6 +4,7 @@ import Input from '../Input'
 import PhoneInput from 'react-phone-number-input'
 import { RHFInput } from 'react-hook-form-input'
 import { isPossiblePhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const Phone = ({
   register,

@@ -48,7 +48,6 @@ const App = () => {
         setError={setError}
         clearErrors={clearErrors}
         placeholder='Phone'
-        // value={watch('phone')}
       />
       <Label>An important title field here *</Label>
       <Label>

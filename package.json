@@ -64,5 +64,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-hook-form-input": "^1.1.10",
+    "react-phone-number-input": "^3.1.10"
+  }
 }

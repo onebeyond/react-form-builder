@@ -12,7 +12,7 @@ jobs:
 
   - stage: story-book build
     before_script:
-      - cd $TRAVIS_BUILD_DIR/example
+      - cd example
       - npm install
     script:
       - npm test

@@ -10,13 +10,13 @@ jobs:
       - npm run test:lint
       - npm run test
 
- - stage: story-book build
-      before_script:
-        - cd ${TRAVIS_BUILD_DIR}/example
-        - npm install
-      script:
-        - npm test
-        - npm run build-storybook
+  - stage: story-book build
+    before_script:
+      - cd ${TRAVIS_BUILD_DIR}/example
+      - npm install
+    script:
+      - npm test
+      - npm run build-storybook
 
   - stage: aws Publish
     deploy:

@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Input from '../Input'
-import PhoneInput from 'react-phone-number-input'
 import { RHFInput } from 'react-hook-form-input'
-import { isPossiblePhoneNumber } from 'react-phone-number-input'
+import PhoneInput, { isPossiblePhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 
 const Phone = ({
@@ -12,23 +11,23 @@ const Phone = ({
   setError,
   clearErrors,
   defaultCountry,
-  placeholder,
+  placeholder
 }) => {
   return (
     <RHFInput
       rules={{
         required: true,
         validate: {
-          isPossiblePhoneNumber,
-        },
+          isPossiblePhoneNumber
+        }
       }}
       register={register}
-      name={'phone'}
+      name='phone'
       setValue={(name, value) => {
         setValue(name, value)
         !isPossiblePhoneNumber(value)
           ? setError(name, {
-              type: 'isPossiblePhoneNumber',
+              type: 'isPossiblePhoneNumber'
             })
           : clearErrors('phone')
       }}

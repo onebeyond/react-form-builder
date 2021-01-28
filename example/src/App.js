@@ -7,12 +7,25 @@ import {
   Checkbox,
   Select,
   Radio,
+  Phone,
   FormBuilder
 } from 'react-form-builder'
 
 import forms from './forms.json'
+import { useForm } from 'react-hook-form'
 
 const App = () => {
+
+  const {
+    register,
+    setValue,
+    setError,
+    clearErrors,
+  } = useForm({
+    mode: 'onChange',
+    reValidateMode: 'onChange',
+  })
+
   const onSubmitForm = (data) => {
     alert(
       `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
@@ -27,6 +40,15 @@ const App = () => {
     <>
       <Button caption='Button example'></Button>
       <Input></Input>
+      <Phone
+        defaultCountry='GB'
+        style={{}}
+        register={register}
+        setValue={setValue}
+        setError={setError}
+        clearErrors={clearErrors}
+        placeholder='Phone'
+      />
       <Label>An important title field here *</Label>
       <Label>
         <Checkbox />

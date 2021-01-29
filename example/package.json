@@ -7,9 +7,7 @@
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
     "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
     "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public -o ../public"
+    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "dependencies": {
     "react": "file:../node_modules/react",
@@ -18,13 +16,7 @@
     "react-form-builder": "file:.."
   },
   "devDependencies": {
-    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
-    "@storybook/addon-actions": "^6.1.15",
-    "@storybook/addon-essentials": "^6.1.15",
-    "@storybook/addon-links": "^6.1.15",
-    "@storybook/node-logger": "^6.1.15",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.15"
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
   },
   "eslintConfig": {
     "extends": "react-app"

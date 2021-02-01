@@ -10,12 +10,10 @@ jobs:
       - npm run test:lint
       - npm run test
 
-  - stage: story-book build
+  - stage: aws Publish
     script:
       - npm test
       - npm run build-storybook
-
-  - stage: aws Publish
     deploy:
       provider: s3
       access_key_id: $AWS_ACCESS_KEY_ID

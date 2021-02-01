@@ -11,9 +11,6 @@ jobs:
       - npm run test
 
   - stage: story-book build
-    before_script:
-      - cd example
-      - npm install
     script:
       - npm test
       - npm run build-storybook

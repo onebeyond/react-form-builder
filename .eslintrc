@@ -8,7 +8,9 @@
     "prettier/react"
   ],
   "env": {
-    "node": true
+    "node": true,
+    "jest": true,
+    "browser": true
   },
   "parserOptions": {
     "ecmaVersion": 2020,

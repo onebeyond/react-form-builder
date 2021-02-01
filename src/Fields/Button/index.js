@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Button as ButtonUI, Spinner, jsx } from 'theme-ui'
 

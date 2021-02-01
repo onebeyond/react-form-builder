@@ -37,6 +37,8 @@ See `localhost:3000`
 
 Any change on the root src library will be reflected on the usage in the example folder. 
 
+# Example
+http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 ## License
 

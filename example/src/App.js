@@ -15,15 +15,9 @@ import forms from './forms.json'
 import { useForm } from 'react-hook-form'
 
 const App = () => {
-
-  const {
-    register,
-    setValue,
-    setError,
-    clearErrors,
-  } = useForm({
+  const { register, setValue, setError, clearErrors } = useForm({
     mode: 'onChange',
-    reValidateMode: 'onChange',
+    reValidateMode: 'onChange'
   })
 
   const onSubmitForm = (data) => {
@@ -38,8 +32,8 @@ const App = () => {
 
   return (
     <>
-      <Button caption='Button example'></Button>
-      <Input></Input>
+      <Button caption='Button example' />
+      <Input />
       <Phone
         defaultCountry='GB'
         style={{}}
@@ -61,7 +55,7 @@ const App = () => {
         <option>4</option>
       </Select>
       <Label>
-        <Radio name='dark-mode' value='true' defaultChecked={true} />
+        <Radio name='dark-mode' value='true' defaultChecked />
         Dark Mode
       </Label>
       <Label>
@@ -73,7 +67,7 @@ const App = () => {
         idForm={forms.contact.id}
         form={forms.contact}
         onSubmit={onSubmitForm}
-      ></FormBuilder>
+      />
     </>
   )
 }

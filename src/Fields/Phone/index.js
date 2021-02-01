@@ -1,4 +1,6 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
+
 import { jsx } from 'theme-ui'
 import Input from '../Input'
 import { RHFInput } from 'react-hook-form-input'

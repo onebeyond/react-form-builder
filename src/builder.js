@@ -23,7 +23,7 @@ const FormBuilder = ({
   form,
   currentPath
 }) => {
-  const { register, handleSubmit, errors, watch } = useForm()
+  const { register, handleSubmit, errors } = useForm()
 
   const QuestionsMap = (question) => {
     return {

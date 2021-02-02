@@ -17,7 +17,26 @@ const styles = {
   }
 }
 
-const QuestionSelect = ({ question, register, errors, watch }) => {
+const getOptions = (question) => {
+  return (
+    question.config &&
+    question.config.options.map((option) => {
+      return {
+        value: option.value,
+        label: option.label
+      }
+    })
+  )
+}
+
+const QuestionSelect = ({
+  question,
+  register,
+  errors,
+  watch,
+  setValue,
+  ...props
+}) => {
   return (
     <React.Fragment>
       <div
@@ -27,15 +46,16 @@ const QuestionSelect = ({ question, register, errors, watch }) => {
       >
         {question.label && <Label>{question.label}</Label>}
         <Select
+          {...props}
+          defaultValue={getOptions(question)[0]}
+          options={getOptions(question)}
+          isSearchable={false}
           key={question.name}
           name={question.name}
-          {...question.registerConfig}
-          ref={register({
-            ...question.registerConfig,
-            validate: {
-              noEmpty: (value) => value !== '*'
-            }
-          })}
+          register={register}
+          registerConfig={question.registerConfig}
+          setValue={setValue}
+          sx={styles.selectInput}
         >
           {question.config &&
             question.config.options.map((option) => {

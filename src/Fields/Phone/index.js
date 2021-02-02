@@ -13,7 +13,8 @@ const Phone = ({
   setError,
   clearErrors,
   defaultCountry,
-  placeholder
+  placeholder,
+  ...props
 }) => {
   return (
     <RHFInput
@@ -38,6 +39,7 @@ const Phone = ({
           placeholder={placeholder}
           defaultCountry={defaultCountry}
           inputComponent={Input}
+          {...props}
         />
       }
     />

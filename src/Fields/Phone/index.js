@@ -1,4 +1,6 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
+
 import { jsx } from 'theme-ui'
 import Input from '../Input'
 import { RHFInput } from 'react-hook-form-input'
@@ -11,7 +13,8 @@ const Phone = ({
   setError,
   clearErrors,
   defaultCountry,
-  placeholder
+  placeholder,
+  ...props
 }) => {
   return (
     <RHFInput
@@ -36,6 +39,7 @@ const Phone = ({
           placeholder={placeholder}
           defaultCountry={defaultCountry}
           inputComponent={Input}
+          {...props}
         />
       }
     />

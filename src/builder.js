@@ -23,7 +23,7 @@ const FormBuilder = ({
   form,
   currentPath
 }) => {
-  const { register, handleSubmit, errors, watch } = useForm()
+  const { register, handleSubmit, errors, watch, setValue } = useForm()
 
   const QuestionsMap = (question) => {
     return {
@@ -40,6 +40,7 @@ const FormBuilder = ({
           errors={errors}
           register={register}
           question={question}
+          setValue={setValue}
         />
       ),
       checkbox: (

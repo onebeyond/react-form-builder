@@ -5,7 +5,6 @@ import {
   Input,
   Label,
   Checkbox,
-  Select,
   Radio,
   Phone,
   FormBuilder
@@ -48,12 +47,6 @@ const App = () => {
         <Checkbox />
         Select an option
       </Label>
-      <Select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </Select>
       <Label>
         <Radio name='dark-mode' value='true' defaultChecked />
         Dark Mode

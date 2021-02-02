@@ -1,16 +1,31 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
+import { jsx } from 'theme-ui'
+import { RHFInput } from 'react-hook-form-input'
+import ReactSelect from 'react-select'
 
-import { Select as SelectUI, jsx } from 'theme-ui'
-
-import React from 'react'
-
-const Select = React.forwardRef(({ children, ...props }, ref) => {
-  return (
-    <SelectUI key={ref} ref={ref} {...props}>
-      {children}
-    </SelectUI>
-  )
-})
+const Select = ({
+  register,
+  setValue,
+  name,
+  defaultValue,
+  registerConfig,
+  ...props
+}) => (
+  <RHFInput
+    as={<ReactSelect {...props} />}
+    rules={{
+      ...registerConfig,
+      validate: {
+        noEmpty: (item) =>
+          registerConfig && registerConfig.required ? item.value !== '*' : true
+      }
+    }}
+    name={name}
+    defaultValue={defaultValue}
+    register={register}
+    setValue={setValue}
+  />
+)
 
 export default Select

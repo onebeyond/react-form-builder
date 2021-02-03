@@ -7,6 +7,7 @@ import {
   Checkbox,
   Radio,
   Phone,
+  Date,
   FormBuilder
 } from 'react-form-builder'
 
@@ -20,6 +21,7 @@ const App = () => {
   })
 
   const onSubmitForm = (data) => {
+    console.log('button:', data)
     alert(
       `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
         data,
@@ -41,6 +43,16 @@ const App = () => {
         setError={setError}
         clearErrors={clearErrors}
         placeholder='Phone'
+      />
+      <Date
+        register={register}
+        setValue={setValue}
+        name='Date'
+        registerConfig={{}}
+        placeholder=''
+        dateFormat="dd-MM-yyyy"
+        isMobile={false}
+        isBirthDate={false}
       />
       <Label>An important title field here *</Label>
       <Label>

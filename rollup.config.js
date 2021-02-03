@@ -16,7 +16,8 @@ export default {
       'react-markdown': 'react-markdown',
       'react-hook-form-input': 'react-hook-form-input',
       'react-phone-number-input': 'react-phone-number-input',
-      'react-hook-form': 'react-hook-form'
+      'react-hook-form': 'react-hook-form',
+      'react-datepicker': 'react-datepicker'
     }
   },
   plugins: [

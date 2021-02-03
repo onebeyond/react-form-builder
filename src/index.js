@@ -7,6 +7,7 @@ export { default as Checkbox } from './Fields/Checkbox'
 export { default as Select } from './Fields/Select'
 export { default as Radio } from './Fields/Radio'
 export { default as Phone } from './Fields/Phone'
+export { default as Date } from './Fields/Date'
 
 // Theme
 export { default as ExampleTheme } from './theme'

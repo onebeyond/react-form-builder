@@ -1,0 +1,399 @@
+{
+  "name": "Contact Form",
+  "layout": "contact",
+  "title": "Contact Form",
+  "caption": "",
+  "enabled": true,
+  "questions": [
+    {
+      "name": "first_name",
+      "type": "input",
+      "label": "",
+      "placeholder": "First name",
+      "isFullWidth": true,
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "name": "last_name",
+      "isFullWidth": true,
+      "type": "input",
+      "label": "",
+      "placeholder": "Last name",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "name": "email",
+      "type": "input",
+      "label": "",
+      "placeholder": "Email address",
+      "isFullWidth": true,
+      "errorMessages": {
+        "required": "This field is required",
+        "pattern": "The pattern does not match"
+      },
+      "registerConfig": {
+        "required": true,
+        "pattern": ""
+      }
+    },
+    {
+      "name": "age",
+      "type": "date",
+      "label": "Date of Birth",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "isFullWidth": true,
+      "name": "phone",
+      "type": "phone",
+      "label": null,
+      "placeholder": "Phone",
+      "errorMessages": {
+        "required": "This field is required",
+        "pattern": "Invalid email"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "name": "country",
+      "isFullWidth": true,
+      "type": "select",
+      "label": "",
+      "placeholder": "Country",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "options": [
+          {
+            "label": "País",
+            "value": "*"
+          },
+          {
+            "label": "Argentina",
+            "value": "Argentina"
+          },
+          {
+            "label": "Bolívia",
+            "value": "Bolivia"
+          },
+          {
+            "label": "Brasil",
+            "value": "Brazil"
+          },
+          {
+            "label": "Chile",
+            "value": "Chile"
+          },
+          {
+            "label": "Colômbia",
+            "value": "Colombia"
+          },
+          {
+            "label": "Equador",
+            "value": "Ecuador"
+          },
+          {
+            "label": "Ilhas Malvinas",
+            "value": "Falkland_Islands"
+          },
+          {
+            "label": "Guiana Francesa",
+            "value": "French_Guiana"
+          },
+          {
+            "label": "Guiana",
+            "value": "Guyana"
+          },
+          {
+            "label": "Paraguai",
+            "value": "Paraguay"
+          },
+          {
+            "label": "Peru",
+            "value": "Peru"
+          },
+          {
+            "label": "Suriname",
+            "value": "Suriname"
+          },
+          {
+            "label": "Uruguai",
+            "value": "Uruguay"
+          },
+          {
+            "label": "Venezuela",
+            "value": "Venezuela"
+          }
+        ]
+      }
+    },
+    {
+      "name": "favourite_team",
+      "isFullWidth": true,
+      "type": "select",
+      "label": "",
+      "placeholder": "Favourite team",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "options": [
+          {
+            "label": "Time que torce",
+            "value": "*"
+          },
+          {
+            "label": "Alianza Lima",
+            "value": "alianza_lima"
+          },
+          {
+            "label": "América de Cali",
+            "value": "America_de_Cali"
+          },
+          {
+            "label": "Athletico Paranaense",
+            "value": "Athletico_Paranaense"
+          },
+          {
+            "label": "Atlético Junior",
+            "value": "Atlético_Junior"
+          },
+          {
+            "label": "Atlético Tucumán",
+            "value": "Atletico_Tucuman"
+          },
+          {
+            "label": "Barcelona",
+            "value": "Barcelona"
+          },
+          {
+            "label": "Boca Juniors",
+            "value": "Boca_Juniors"
+          },
+          {
+            "label": "Bolívar",
+            "value": "Bolivar"
+          },
+          {
+            "label": "Carabobo",
+            "value": "Carabobo"
+          },
+          {
+            "label": "Caracas FC",
+            "value": "Caracas_FC"
+          },
+          {
+            "label": "Cerro Largo",
+            "value": "Cerro_Largo"
+          },
+          {
+            "label": "Cerro Porteño",
+            "value": "Cerro_Porteno"
+          },
+          {
+            "label": "Club Olimpia",
+            "value": "Club_Olimpia"
+          },
+          {
+            "label": " Colo-Colo",
+            "value": " Colo_Colo"
+          },
+          {
+            "label": "Corinthians SP",
+            "value": "Corinthians_SP"
+          },
+          {
+            "label": "Defensa y Justicia",
+            "value": "Defensa_y_Justicia"
+          },
+          {
+            "label": "Delfín SC",
+            "value": "Delfin_SC"
+          },
+          {
+            "label": "Deportes Tolima",
+            "value": "Deportes_Tolima"
+          },
+          {
+            "label": "Deportivo Binacional",
+            "value": "Deportivo_Binacional"
+          },
+          {
+            "label": "Deportivo Táchira",
+            "value": "Deportivo_Tachira"
+          },
+          {
+            "label": "Estudiantes de Mérida",
+            "value": "Estudiantes_de_Merida"
+          },
+          {
+            "label": "Flamengo RJ",
+            "value": "Flamengo_RJ"
+          },
+          {
+            "label": "Grêmio Porto Alegre",
+            "value": "Gremio_Porto_Alegre"
+          },
+          {
+            "label": "Guaraní",
+            "value": "Guarani"
+          },
+          {
+            "label": "Independiente del Valle",
+            "value": "Independiente_del_Valle"
+          },
+          {
+            "label": "Independiente Medellín",
+            "value": "Independiente_Medellin"
+          },
+          {
+            "label": "Internacional",
+            "value": "Internacional"
+          },
+          {
+            "label": "Jorge Wilstermann",
+            "value": "Jorge_Wilstermann"
+          },
+          {
+            "label": "LDU Quito",
+            "value": "LDU_Quito"
+          },
+          {
+            "label": "Libertad",
+            "value": "Libertad"
+          },
+          {
+            "label": "Macará",
+            "value": "Macará"
+          },
+          {
+            "label": "Nacional",
+            "value": "Nacional"
+          },
+          {
+            "label": "Palestino",
+            "value": "Palestino"
+          },
+          {
+            "label": "Palmeiras",
+            "value": "Palmeiras"
+          },
+          {
+            "label": "Peñarol",
+            "value": "Peñarol"
+          },
+          {
+            "label": "Progreso",
+            "value": "Progreso"
+          },
+          {
+            "label": "Racing Club",
+            "value": "Racing_Club"
+          },
+          {
+            "label": "River Plate",
+            "value": " River_Plate"
+          },
+          {
+            "label": "San José",
+            "value": "San_Jose"
+          },
+          {
+            "label": "Santos FC",
+            "value": "Santos_FC"
+          },
+          {
+            "label": "São Paulo FC",
+            "value": "Sao_Paulo_FC"
+          },
+          {
+            "label": "Sporting Cristal",
+            "value": "Sporting_Cristal"
+          },
+          {
+            "label": "The Strongest",
+            "value": "The_Strongest"
+          },
+          {
+            "label": "Tigre",
+            "value": "Tigre"
+          },
+          {
+            "label": "Universidad Católica",
+            "value": "Universidad_Catolica"
+          },
+          {
+            "label": "Universidad de Chile",
+            "value": "Universidad_de_Chile"
+          },
+          {
+            "label": "Universitario de Deportes",
+            "value": "Universitario_de_Deportes"
+          }
+        ]
+      }
+    },
+    {
+      "name": "terms_and_conditions",
+      "type": "checkbox",
+      "isFullWidth": true,
+      "label": "",
+      "errorMessages": {
+        "required": "This is mandatory"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "options": [
+          {
+            "name": "terms_and_conditions",
+            "label": "I can confirm I am 18 years or older, and have read and agree to the prize draw [Terms & Conditions](/terms 'terms & conditions') and the Betfair Privacy Notice*",
+            "url": "https://s3.amazonaws.com/ss-usa/companies/MzYwN7I0MjQzAgA/uploads/Betfair_Ts_amp_Cs.pdf",
+            "registerConfig": {
+              "required": true
+            }
+          },
+          {
+            "name": "betfair_consent",
+            "label": "By ticking the following box, I consent to Betfair to use my information above to send me information on Betafir news, offers and promotions via email. I understand I have the right to unsubscribe at any time by following the unsubscribe instructions.",
+            "registerConfig": {
+              "required": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "callForAction": [
+    {
+      "caption": "Confirm",
+      "type": "submit"
+    }
+  ],
+  "id": ""
+}

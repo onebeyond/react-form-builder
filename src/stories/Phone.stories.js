@@ -1,10 +1,10 @@
 import React from 'react'
-import PhoneInput from 'react-phone-number-input'
+import Phone from '../Fields/Phone'
 import 'react-phone-number-input/style.css'
 
 export default {
   title: 'Form/Phone',
-  component: PhoneInput,
+  component: Phone,
   argTypes: {
     onChange: {
       action: 'onChange'
@@ -12,7 +12,15 @@ export default {
   }
 }
 
-const Template = (args) => <PhoneInput {...args} />
+const Template = (args) => (
+  <Phone
+    register={() => {}}
+    setValue={() => {}}
+    setError={() => {}}
+    clearErrors={() => {}}
+    {...args}
+  />
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

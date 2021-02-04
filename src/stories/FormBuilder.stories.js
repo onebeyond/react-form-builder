@@ -1,6 +1,6 @@
 import React from 'react'
 import FormBuilder from '../builder'
-
+import contact from '../forms/forms.json'
 export default {
   title: 'Form/FormBuilder',
   component: FormBuilder
@@ -9,4 +9,8 @@ export default {
 const Template = (args) => <FormBuilder {...args} />
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  form: contact,
+  isoCode: 'GB',
+  isMobile: false
+}

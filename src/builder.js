@@ -2,11 +2,11 @@
 /** @jsxRuntime classic */
 import Button from './Fields/Button'
 import QuestionCheckbox from './Questions/Checkbox'
-
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionInput from './Questions/Input'
-
+import QuestionDate from './Questions/Date'
+import QuestionPhone from './Questions/Phone'
 import React from 'react'
 import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
@@ -19,11 +19,21 @@ const styles = {
 
 const FormBuilder = ({
   onSubmit: onSubmitForm,
-  idForm = '',
+  currentPath,
   form,
-  currentPath
+  idForm = '',
+  isMobile,
+  isoCode
 }) => {
-  const { register, handleSubmit, errors, watch, setValue } = useForm()
+  const {
+    register,
+    handleSubmit,
+    errors,
+    watch,
+    setValue,
+    setError,
+    clearErrors
+  } = useForm()
 
   const QuestionsMap = (question) => {
     return {
@@ -57,6 +67,31 @@ const FormBuilder = ({
           errors={errors}
           register={register}
           question={question}
+        />
+      ),
+      date: (
+        <QuestionDate
+          errors={errors}
+          register={register}
+          question={question}
+          watch={watch}
+          setValue={setValue}
+          dateFormat='dd-MM-yyyy'
+          isBirthDate={false}
+          isMobile={isMobile}
+        />
+      ),
+      phone: (
+        <QuestionPhone
+          errors={errors}
+          register={register}
+          question={question}
+          watch={watch}
+          setValue={setValue}
+          isMobile={isMobile}
+          setError={setError}
+          clearErrors={clearErrors}
+          isoCode={isoCode}
         />
       )
     }

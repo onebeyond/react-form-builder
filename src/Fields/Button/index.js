@@ -22,8 +22,11 @@ const Button = React.forwardRef(
     <ButtonUI
       ref={ref}
       {...props}
-      sx={{ ...defaultStyles, ...(disabled && { background: 'gray' }) }}
-      variant={variant}
+      sx={{
+        ...defaultStyles,
+        ...(disabled && { background: 'gray' }),
+        variant: `buttons.${variant}`
+      }}
     >
       {caption}
       {isLoading && <Spinner data-cy='button-loading' />}

@@ -82,7 +82,7 @@ const QuestionPhone = ({
         )}
 
         <Phone
-          defaultCountry={isoCode?.toUpperCase() || ''}
+          defaultCountry={isoCode.toUpperCase() || ''}
           style={styles[StyleTypeMap[isMobile]].input}
           register={register}
           setValue={setValue}

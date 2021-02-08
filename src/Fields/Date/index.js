@@ -5,7 +5,6 @@ import React from 'react'
 import { RHFInput } from 'react-hook-form-input'
 import ReactDatePicker from 'react-datepicker'
 import { differenceInYears, subYears } from 'date-fns'
-import 'react-datepicker/dist/react-datepicker.css'
 
 const isOver18 = (dob) => {
   return differenceInYears(new Date(), dob) > 18

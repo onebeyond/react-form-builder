@@ -14,6 +14,9 @@ import {
 import forms from './forms.json'
 import { useForm } from 'react-hook-form'
 
+import 'react-datepicker/dist/react-datepicker.css'
+import 'react-phone-number-input/style.css'
+
 const App = () => {
   const { register, setValue, setError, clearErrors } = useForm({
     mode: 'onChange',
@@ -50,7 +53,7 @@ const App = () => {
         name='Date'
         registerConfig={{}}
         placeholder=''
-        dateFormat="dd-MM-yyyy"
+        dateFormat='dd-MM-yyyy'
         isMobile={false}
         isBirthDate={false}
       />

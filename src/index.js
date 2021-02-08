@@ -10,7 +10,7 @@ export { default as Phone } from './Fields/Phone'
 export { default as Date } from './Fields/Date'
 
 // Theme
-export { default as ExampleTheme } from './theme'
+export { default as FormTheme } from './theme'
 
 // Builder
 export { default as FormBuilder } from './builder'

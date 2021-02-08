@@ -18,7 +18,7 @@ const defaultStyles = {
 }
 
 const Button = React.forwardRef(
-  ({ disabled, variant, caption, isLoading, ...props }, ref) => (
+  ({ disabled, variant = 'primary', caption, isLoading, ...props }, ref) => (
     <ButtonUI
       ref={ref}
       {...props}

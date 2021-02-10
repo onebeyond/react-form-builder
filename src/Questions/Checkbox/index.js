@@ -52,7 +52,6 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
-              {...question.registerConfig}
               ref={register({
                 ...question.registerConfig
               })}

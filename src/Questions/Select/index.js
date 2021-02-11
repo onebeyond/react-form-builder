@@ -4,6 +4,7 @@ import ErrorMessage from '../../Fields/Error'
 
 import React from 'react'
 import Select from '../../Fields/Select'
+import Label from '../../Fields/Label'
 import { jsx } from 'theme-ui'
 
 const styles = {
@@ -32,6 +33,8 @@ const QuestionSelect = ({
           ...(question.isFullWidth && styles.fullWidth)
         }}
       >
+        {question.label && <Label>{question.label}</Label>}
+
         <Select
           key={question.name}
           name={question.name}

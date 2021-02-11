@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import Button from './Fields/Button'
-import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
@@ -51,7 +50,6 @@ const FormBuilder = ({
       ),
       select: (
         <>
-          <Label>{question.label}</Label>
           <QuestionSelect
             watch={watch}
             errors={errors}

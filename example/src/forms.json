@@ -8,19 +8,6 @@
     "enabled": true,
     "questions": [
       {
-        "isFullWidth": true,
-        "name": "COUNTRY_OF_RESIDENCE",
-        "placeholder": "País",
-        "type": "country",
-        "label": null,
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        }
-      },
-      {
         "name": "first_name",
         "type": "input",
         "label": "First name",

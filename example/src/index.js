@@ -34,7 +34,22 @@ const theme = {
       multipleImageCheckboxes: {
           contact: {
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr'
+            gridTemplateColumns: '1fr 1fr',
+            label:{
+
+                div:{
+                    backgroundColor: '#fff',
+                    border: '1px solid #ccc',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    height: '28px',
+                    left: '0',
+                    width: '28px',
+                    svg:{
+                        visibility: 'hidden'
+                    }
+                }
+            }
           }
       }
   },

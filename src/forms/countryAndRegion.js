@@ -1,635 +1,5 @@
 export default [
   {
-    countryName: 'Colombia',
-    countryShortCode: 'CO',
-    regions: [
-      {
-        name: 'Amazonas',
-        shortCode: 'AMA'
-      },
-      {
-        name: 'Antioquia',
-        shortCode: 'ANT'
-      },
-      {
-        name: 'Arauca',
-        shortCode: 'ARA'
-      },
-      {
-        name: 'Archipiélago de San Andrés',
-        shortCode: 'SAP'
-      },
-      {
-        name: 'Atlántico',
-        shortCode: 'ATL'
-      },
-      {
-        name: 'Bogotá D.C.',
-        shortCode: 'DC'
-      },
-      {
-        name: 'Bolívar',
-        shortCode: 'BOL'
-      },
-      {
-        name: 'Boyacá',
-        shortCode: 'BOY'
-      },
-      {
-        name: 'Caldas',
-        shortCode: 'CAL'
-      },
-      {
-        name: 'Caquetá',
-        shortCode: 'CAQ'
-      },
-      {
-        name: 'Casanare',
-        shortCode: 'CAS'
-      },
-      {
-        name: 'Cauca',
-        shortCode: 'CAU'
-      },
-      {
-        name: 'Cesar',
-        shortCode: 'CES'
-      },
-      {
-        name: 'Chocó',
-        shortCode: 'CHO'
-      },
-      {
-        name: 'Córdoba',
-        shortCode: 'COR'
-      },
-      {
-        name: 'Cundinamarca',
-        shortCode: 'CUN'
-      },
-      {
-        name: 'Guainía',
-        shortCode: 'GUA'
-      },
-      {
-        name: 'Guaviare',
-        shortCode: 'GUV'
-      },
-      {
-        name: 'Huila',
-        shortCode: 'HUI'
-      },
-      {
-        name: 'La Guajira',
-        shortCode: 'LAG'
-      },
-      {
-        name: 'Magdalena',
-        shortCode: 'MAG'
-      },
-      {
-        name: 'Meta',
-        shortCode: 'MET'
-      },
-      {
-        name: 'Nariño',
-        shortCode: 'NAR'
-      },
-      {
-        name: 'Norte de Santander',
-        shortCode: 'NSA'
-      },
-      {
-        name: 'Putumayo',
-        shortCode: 'PUT'
-      },
-      {
-        name: 'Quindío',
-        shortCode: 'QUI'
-      },
-      {
-        name: 'Risaralda',
-        shortCode: 'RIS'
-      },
-      {
-        name: 'Santander',
-        shortCode: 'SAN'
-      },
-      {
-        name: 'Sucre',
-        shortCode: 'SUC'
-      },
-      {
-        name: 'Tolima',
-        shortCode: 'TOL'
-      },
-      {
-        name: 'Valle del Cauca',
-        shortCode: 'VAC'
-      },
-      {
-        name: 'Vaupés',
-        shortCode: 'VAU'
-      },
-      {
-        name: 'Vichada',
-        shortCode: 'VID'
-      }
-    ]
-  },
-  {
-    countryName: 'France',
-    countryShortCode: 'FR',
-    regions: [
-      {
-        name: 'Auvergne-Rhône-Alpes',
-        shortCode: 'ARA'
-      },
-      {
-        name: 'Bourgogne-Franche-Comté',
-        shortCode: 'BFC'
-      },
-      {
-        name: 'Bretagne',
-        shortCode: 'BRE'
-      },
-      {
-        name: 'Centre-Val de Loire',
-        shortCode: 'CVL'
-      },
-      {
-        name: 'Corse',
-        shortCode: 'COR'
-      },
-      {
-        name: 'Grand Est',
-        shortCode: 'GES'
-      },
-      {
-        name: 'Hauts-de-France',
-        shortCode: 'HDF'
-      },
-      {
-        name: 'Île-de-France',
-        shortCode: 'IDF'
-      },
-      {
-        name: 'Normandie',
-        shortCode: 'NOR'
-      },
-      {
-        name: 'Nouvelle-Aquitaine',
-        shortCode: 'NAQ'
-      },
-      {
-        name: 'Occitanie',
-        shortCode: 'OCC'
-      },
-      {
-        name: 'Pays de la Loire',
-        shortCode: 'PDL'
-      },
-      {
-        name: "Provence-Alpes-Cote d'Azur",
-        shortCode: 'PAC'
-      },
-      {
-        name: 'Clipperton',
-        shortCode: 'CP'
-      },
-      {
-        name: 'Guadeloupe',
-        shortCode: 'GP'
-      },
-      {
-        name: 'Guyane',
-        shortCode: 'GF'
-      },
-      {
-        name: 'Martinique',
-        shortCode: 'MQ'
-      },
-      {
-        name: 'Mayotte',
-        shortCode: 'YT'
-      },
-      {
-        name: 'Novelle-Calédonie',
-        shortCode: 'NC'
-      },
-      {
-        name: 'Polynésie',
-        shortCode: 'PF'
-      },
-      {
-        name: 'Saint-Pierre-et-Miquelon',
-        shortCode: 'PM'
-      },
-      {
-        name: 'Saint Barthélemy',
-        shortCode: 'BL'
-      },
-      {
-        name: 'Saint Martin',
-        shortCode: 'MF'
-      },
-      {
-        name: 'Réunion',
-        shortCode: 'RE'
-      },
-      {
-        name: 'Terres Australes Françaises',
-        shortCode: 'TF'
-      },
-      {
-        name: 'Wallis-et-Futuna',
-        shortCode: 'WF'
-      }
-    ]
-  },
-  {
-    countryName: 'Panama',
-    countryShortCode: 'PA',
-    regions: [
-      {
-        name: 'Bocas del Toro',
-        shortCode: '1'
-      },
-      {
-        name: 'Chiriquí',
-        shortCode: '4'
-      },
-      {
-        name: 'Coclé',
-        shortCode: '2'
-      },
-      {
-        name: 'Colón',
-        shortCode: '3'
-      },
-      {
-        name: 'Darién',
-        shortCode: '5'
-      },
-      {
-        name: 'Emberá',
-        shortCode: 'EM'
-      },
-      {
-        name: 'Herrera',
-        shortCode: '6'
-      },
-      {
-        name: 'Kuna Yala',
-        shortCode: 'KY'
-      },
-      {
-        name: 'Los Santos',
-        shortCode: '7'
-      },
-      {
-        name: 'Ngäbe-Buglé',
-        shortCode: 'NB'
-      },
-      {
-        name: 'Panamá',
-        shortCode: '8'
-      },
-      {
-        name: 'Panamá Oeste',
-        shortCode: '10'
-      },
-      {
-        name: 'Veraguas',
-        shortCode: '9'
-      }
-    ]
-  },
-  {
-    countryName: 'Peru',
-    countryShortCode: 'PE',
-    regions: [
-      {
-        name: 'Amazonas',
-        shortCode: 'AMA'
-      },
-      {
-        name: 'Ancash',
-        shortCode: 'ANC'
-      },
-      {
-        name: 'Apurimac',
-        shortCode: 'APU'
-      },
-      {
-        name: 'Arequipa',
-        shortCode: 'ARE'
-      },
-      {
-        name: 'Ayacucho',
-        shortCode: 'AYA'
-      },
-      {
-        name: 'Cajamarca',
-        shortCode: 'CAJ'
-      },
-      {
-        name: 'Callao',
-        shortCode: 'CAL'
-      },
-      {
-        name: 'Cusco',
-        shortCode: 'CUS'
-      },
-      {
-        name: 'Huancavelica',
-        shortCode: 'HUV'
-      },
-      {
-        name: 'Huanuco',
-        shortCode: 'HUC'
-      },
-      {
-        name: 'Ica',
-        shortCode: 'ICA'
-      },
-      {
-        name: 'Junin',
-        shortCode: 'JUN'
-      },
-      {
-        name: 'La Libertad',
-        shortCode: 'LAL'
-      },
-      {
-        name: 'Lambayeque',
-        shortCode: 'LAM'
-      },
-      {
-        name: 'Lima',
-        shortCode: 'LIM'
-      },
-      {
-        name: 'Loreto',
-        shortCode: 'LOR'
-      },
-      {
-        name: 'Madre de Dios',
-        shortCode: 'MDD'
-      },
-      {
-        name: 'Moquegua',
-        shortCode: 'MOQ'
-      },
-      {
-        name: 'Municipalidad Metropolitana de Lima',
-        shortCode: 'LMA'
-      },
-      {
-        name: 'Pasco',
-        shortCode: 'PAS'
-      },
-      {
-        name: 'Piura',
-        shortCode: 'PIU'
-      },
-      {
-        name: 'Puno',
-        shortCode: 'PUN'
-      },
-      {
-        name: 'San Martin',
-        shortCode: 'SAM'
-      },
-      {
-        name: 'Tacna',
-        shortCode: 'TAC'
-      },
-      {
-        name: 'Tumbes',
-        shortCode: 'TUM'
-      },
-      {
-        name: 'Ucayali',
-        shortCode: 'UCA'
-      }
-    ]
-  },
-  {
-    countryName: 'Spain',
-    countryShortCode: 'ES',
-    regions: [
-      {
-        name: 'Albacete',
-        shortCode: 'CM'
-      },
-      {
-        name: 'Alicante',
-        shortCode: 'VC'
-      },
-      {
-        name: 'Almería',
-        shortCode: 'AN'
-      },
-      {
-        name: 'Araba/Álava',
-        shortCode: 'VI'
-      },
-      {
-        name: 'Asturias',
-        shortCode: 'O'
-      },
-      {
-        name: 'Ávila',
-        shortCode: 'AV'
-      },
-      {
-        name: 'Badajoz',
-        shortCode: 'BA'
-      },
-      {
-        name: 'Barcelona',
-        shortCode: 'B'
-      },
-      {
-        name: 'Bizkaia',
-        shortCode: 'BI'
-      },
-      {
-        name: 'Burgos',
-        shortCode: 'BU'
-      },
-      {
-        name: 'Cáceres',
-        shortCode: 'CC'
-      },
-      {
-        name: 'Cádiz',
-        shortCode: 'CA'
-      },
-      {
-        name: 'Cantabria',
-        shortCode: 'S'
-      },
-      {
-        name: 'Castellón',
-        shortCode: 'CS'
-      },
-      {
-        name: 'Cueta',
-        shortCode: 'CU'
-      },
-      {
-        name: 'Ciudad Real',
-        shortCode: 'CR'
-      },
-      {
-        name: 'Córdoba',
-        shortCode: 'CO'
-      },
-      {
-        name: 'A Coruña',
-        shortCode: 'C'
-      },
-      {
-        name: 'Cuenca',
-        shortCode: 'CU'
-      },
-      {
-        name: 'Gipuzkoa',
-        shortCode: 'SS'
-      },
-      {
-        name: 'Girona',
-        shortCode: 'GI'
-      },
-      {
-        name: 'Granada',
-        shortCode: 'GR'
-      },
-      {
-        name: 'Guadalajara',
-        shortCode: 'GU'
-      },
-      {
-        name: 'Huelva',
-        shortCode: 'H'
-      },
-      {
-        name: 'Huesca',
-        shortCode: 'HU'
-      },
-      {
-        name: 'Illes Balears',
-        shortCode: 'PM'
-      },
-      {
-        name: 'Jaén',
-        shortCode: 'J'
-      },
-      {
-        name: 'León',
-        shortCode: 'LE'
-      },
-      {
-        name: 'Lleida',
-        shortCode: 'L'
-      },
-      {
-        name: 'Lugo',
-        shortCode: 'LU'
-      },
-      {
-        name: 'Madrid',
-        shortCode: 'M'
-      },
-      {
-        name: 'Málaga',
-        shortCode: 'MA'
-      },
-      {
-        name: 'Melilla',
-        shortCode: 'ML'
-      },
-      {
-        name: 'Murcia',
-        shortCode: 'MU'
-      },
-      {
-        name: 'Navarre',
-        shortCode: 'NA'
-      },
-      {
-        name: 'Ourense',
-        shortCode: 'OR'
-      },
-      {
-        name: 'Palencia',
-        shortCode: 'P'
-      },
-      {
-        name: 'Las Palmas',
-        shortCode: 'GC'
-      },
-      {
-        name: 'Pontevedra',
-        shortCode: 'PO'
-      },
-      {
-        name: 'La Rioja',
-        shortCode: 'LO'
-      },
-      {
-        name: 'Salamanca',
-        shortCode: 'SA'
-      },
-      {
-        name: 'Santa Cruz de Tenerife',
-        shortCode: 'TF'
-      },
-      {
-        name: 'Segovia',
-        shortCode: 'SG'
-      },
-      {
-        name: 'Sevilla',
-        shortCode: 'SE'
-      },
-      {
-        name: 'Soria',
-        shortCode: 'SO'
-      },
-      {
-        name: 'Tarragona',
-        shortCode: 'T'
-      },
-      {
-        name: 'Teruel',
-        shortCode: 'TE'
-      },
-      {
-        name: 'Toledo',
-        shortCode: 'TO'
-      },
-      {
-        name: 'Valencia',
-        shortCode: 'V'
-      },
-      {
-        name: 'Valladolid',
-        shortCode: 'VA'
-      },
-      {
-        name: 'Zamora',
-        shortCode: 'ZA'
-      },
-      {
-        name: 'Zaragoza',
-        shortCode: 'Z'
-      }
-    ]
-  },
-  {
     countryName: 'United Kingdom',
     countryShortCode: 'GB',
     regions: [
@@ -1500,6 +870,116 @@ export default [
       {
         name: 'York',
         shortCode: 'YOR'
+      }
+    ]
+  },
+  {
+    countryName: 'France',
+    countryShortCode: 'FR',
+    regions: [
+      {
+        name: 'Auvergne-Rhône-Alpes',
+        shortCode: 'ARA'
+      },
+      {
+        name: 'Bourgogne-Franche-Comté',
+        shortCode: 'BFC'
+      },
+      {
+        name: 'Bretagne',
+        shortCode: 'BRE'
+      },
+      {
+        name: 'Centre-Val de Loire',
+        shortCode: 'CVL'
+      },
+      {
+        name: 'Corse',
+        shortCode: 'COR'
+      },
+      {
+        name: 'Grand Est',
+        shortCode: 'GES'
+      },
+      {
+        name: 'Hauts-de-France',
+        shortCode: 'HDF'
+      },
+      {
+        name: 'Île-de-France',
+        shortCode: 'IDF'
+      },
+      {
+        name: 'Normandie',
+        shortCode: 'NOR'
+      },
+      {
+        name: 'Nouvelle-Aquitaine',
+        shortCode: 'NAQ'
+      },
+      {
+        name: 'Occitanie',
+        shortCode: 'OCC'
+      },
+      {
+        name: 'Pays de la Loire',
+        shortCode: 'PDL'
+      },
+      {
+        name: "Provence-Alpes-Cote d'Azur",
+        shortCode: 'PAC'
+      },
+      {
+        name: 'Clipperton',
+        shortCode: 'CP'
+      },
+      {
+        name: 'Guadeloupe',
+        shortCode: 'GP'
+      },
+      {
+        name: 'Guyane',
+        shortCode: 'GF'
+      },
+      {
+        name: 'Martinique',
+        shortCode: 'MQ'
+      },
+      {
+        name: 'Mayotte',
+        shortCode: 'YT'
+      },
+      {
+        name: 'Novelle-Calédonie',
+        shortCode: 'NC'
+      },
+      {
+        name: 'Polynésie',
+        shortCode: 'PF'
+      },
+      {
+        name: 'Saint-Pierre-et-Miquelon',
+        shortCode: 'PM'
+      },
+      {
+        name: 'Saint Barthélemy',
+        shortCode: 'BL'
+      },
+      {
+        name: 'Saint Martin',
+        shortCode: 'MF'
+      },
+      {
+        name: 'Réunion',
+        shortCode: 'RE'
+      },
+      {
+        name: 'Terres Australes Françaises',
+        shortCode: 'TF'
+      },
+      {
+        name: 'Wallis-et-Futuna',
+        shortCode: 'WF'
       }
     ]
   },
@@ -4784,6 +4264,144 @@ export default [
       {
         name: 'West Island',
         shortCode: 'WI'
+      }
+    ]
+  },
+  {
+    countryName: 'Colombia',
+    countryShortCode: 'CO',
+    regions: [
+      {
+        name: 'Amazonas',
+        shortCode: 'AMA'
+      },
+      {
+        name: 'Antioquia',
+        shortCode: 'ANT'
+      },
+      {
+        name: 'Arauca',
+        shortCode: 'ARA'
+      },
+      {
+        name: 'Archipiélago de San Andrés',
+        shortCode: 'SAP'
+      },
+      {
+        name: 'Atlántico',
+        shortCode: 'ATL'
+      },
+      {
+        name: 'Bogotá D.C.',
+        shortCode: 'DC'
+      },
+      {
+        name: 'Bolívar',
+        shortCode: 'BOL'
+      },
+      {
+        name: 'Boyacá',
+        shortCode: 'BOY'
+      },
+      {
+        name: 'Caldas',
+        shortCode: 'CAL'
+      },
+      {
+        name: 'Caquetá',
+        shortCode: 'CAQ'
+      },
+      {
+        name: 'Casanare',
+        shortCode: 'CAS'
+      },
+      {
+        name: 'Cauca',
+        shortCode: 'CAU'
+      },
+      {
+        name: 'Cesar',
+        shortCode: 'CES'
+      },
+      {
+        name: 'Chocó',
+        shortCode: 'CHO'
+      },
+      {
+        name: 'Córdoba',
+        shortCode: 'COR'
+      },
+      {
+        name: 'Cundinamarca',
+        shortCode: 'CUN'
+      },
+      {
+        name: 'Guainía',
+        shortCode: 'GUA'
+      },
+      {
+        name: 'Guaviare',
+        shortCode: 'GUV'
+      },
+      {
+        name: 'Huila',
+        shortCode: 'HUI'
+      },
+      {
+        name: 'La Guajira',
+        shortCode: 'LAG'
+      },
+      {
+        name: 'Magdalena',
+        shortCode: 'MAG'
+      },
+      {
+        name: 'Meta',
+        shortCode: 'MET'
+      },
+      {
+        name: 'Nariño',
+        shortCode: 'NAR'
+      },
+      {
+        name: 'Norte de Santander',
+        shortCode: 'NSA'
+      },
+      {
+        name: 'Putumayo',
+        shortCode: 'PUT'
+      },
+      {
+        name: 'Quindío',
+        shortCode: 'QUI'
+      },
+      {
+        name: 'Risaralda',
+        shortCode: 'RIS'
+      },
+      {
+        name: 'Santander',
+        shortCode: 'SAN'
+      },
+      {
+        name: 'Sucre',
+        shortCode: 'SUC'
+      },
+      {
+        name: 'Tolima',
+        shortCode: 'TOL'
+      },
+      {
+        name: 'Valle del Cauca',
+        shortCode: 'VAC'
+      },
+      {
+        name: 'Vaupés',
+        shortCode: 'VAU'
+      },
+      {
+        name: 'Vichada',
+        shortCode: 'VID'
       }
     ]
   },
@@ -12732,6 +12350,64 @@ export default [
     ]
   },
   {
+    countryName: 'Panama',
+    countryShortCode: 'PA',
+    regions: [
+      {
+        name: 'Bocas del Toro',
+        shortCode: '1'
+      },
+      {
+        name: 'Chiriquí',
+        shortCode: '4'
+      },
+      {
+        name: 'Coclé',
+        shortCode: '2'
+      },
+      {
+        name: 'Colón',
+        shortCode: '3'
+      },
+      {
+        name: 'Darién',
+        shortCode: '5'
+      },
+      {
+        name: 'Emberá',
+        shortCode: 'EM'
+      },
+      {
+        name: 'Herrera',
+        shortCode: '6'
+      },
+      {
+        name: 'Kuna Yala',
+        shortCode: 'KY'
+      },
+      {
+        name: 'Los Santos',
+        shortCode: '7'
+      },
+      {
+        name: 'Ngäbe-Buglé',
+        shortCode: 'NB'
+      },
+      {
+        name: 'Panamá',
+        shortCode: '8'
+      },
+      {
+        name: 'Panamá Oeste',
+        shortCode: '10'
+      },
+      {
+        name: 'Veraguas',
+        shortCode: '9'
+      }
+    ]
+  },
+  {
     countryName: 'Papua New Guinea',
     countryShortCode: 'PG',
     regions: [
@@ -12896,6 +12572,116 @@ export default [
       {
         name: 'San Pedro',
         shortCode: '2'
+      }
+    ]
+  },
+  {
+    countryName: 'Peru',
+    countryShortCode: 'PE',
+    regions: [
+      {
+        name: 'Amazonas',
+        shortCode: 'AMA'
+      },
+      {
+        name: 'Ancash',
+        shortCode: 'ANC'
+      },
+      {
+        name: 'Apurimac',
+        shortCode: 'APU'
+      },
+      {
+        name: 'Arequipa',
+        shortCode: 'ARE'
+      },
+      {
+        name: 'Ayacucho',
+        shortCode: 'AYA'
+      },
+      {
+        name: 'Cajamarca',
+        shortCode: 'CAJ'
+      },
+      {
+        name: 'Callao',
+        shortCode: 'CAL'
+      },
+      {
+        name: 'Cusco',
+        shortCode: 'CUS'
+      },
+      {
+        name: 'Huancavelica',
+        shortCode: 'HUV'
+      },
+      {
+        name: 'Huanuco',
+        shortCode: 'HUC'
+      },
+      {
+        name: 'Ica',
+        shortCode: 'ICA'
+      },
+      {
+        name: 'Junin',
+        shortCode: 'JUN'
+      },
+      {
+        name: 'La Libertad',
+        shortCode: 'LAL'
+      },
+      {
+        name: 'Lambayeque',
+        shortCode: 'LAM'
+      },
+      {
+        name: 'Lima',
+        shortCode: 'LIM'
+      },
+      {
+        name: 'Loreto',
+        shortCode: 'LOR'
+      },
+      {
+        name: 'Madre de Dios',
+        shortCode: 'MDD'
+      },
+      {
+        name: 'Moquegua',
+        shortCode: 'MOQ'
+      },
+      {
+        name: 'Municipalidad Metropolitana de Lima',
+        shortCode: 'LMA'
+      },
+      {
+        name: 'Pasco',
+        shortCode: 'PAS'
+      },
+      {
+        name: 'Piura',
+        shortCode: 'PIU'
+      },
+      {
+        name: 'Puno',
+        shortCode: 'PUN'
+      },
+      {
+        name: 'San Martin',
+        shortCode: 'SAM'
+      },
+      {
+        name: 'Tacna',
+        shortCode: 'TAC'
+      },
+      {
+        name: 'Tumbes',
+        shortCode: 'TUM'
+      },
+      {
+        name: 'Ucayali',
+        shortCode: 'UCA'
       }
     ]
   },
@@ -15958,6 +15744,220 @@ export default [
       {
         name: 'Western Equatoria',
         shortCode: 'EW'
+      }
+    ]
+  },
+  {
+    countryName: 'Spain',
+    countryShortCode: 'ES',
+    regions: [
+      {
+        name: 'Albacete',
+        shortCode: 'CM'
+      },
+      {
+        name: 'Alicante',
+        shortCode: 'VC'
+      },
+      {
+        name: 'Almería',
+        shortCode: 'AN'
+      },
+      {
+        name: 'Araba/Álava',
+        shortCode: 'VI'
+      },
+      {
+        name: 'Asturias',
+        shortCode: 'O'
+      },
+      {
+        name: 'Ávila',
+        shortCode: 'AV'
+      },
+      {
+        name: 'Badajoz',
+        shortCode: 'BA'
+      },
+      {
+        name: 'Barcelona',
+        shortCode: 'B'
+      },
+      {
+        name: 'Bizkaia',
+        shortCode: 'BI'
+      },
+      {
+        name: 'Burgos',
+        shortCode: 'BU'
+      },
+      {
+        name: 'Cáceres',
+        shortCode: 'CC'
+      },
+      {
+        name: 'Cádiz',
+        shortCode: 'CA'
+      },
+      {
+        name: 'Cantabria',
+        shortCode: 'S'
+      },
+      {
+        name: 'Castellón',
+        shortCode: 'CS'
+      },
+      {
+        name: 'Cueta',
+        shortCode: 'CU'
+      },
+      {
+        name: 'Ciudad Real',
+        shortCode: 'CR'
+      },
+      {
+        name: 'Córdoba',
+        shortCode: 'CO'
+      },
+      {
+        name: 'A Coruña',
+        shortCode: 'C'
+      },
+      {
+        name: 'Cuenca',
+        shortCode: 'CU'
+      },
+      {
+        name: 'Gipuzkoa',
+        shortCode: 'SS'
+      },
+      {
+        name: 'Girona',
+        shortCode: 'GI'
+      },
+      {
+        name: 'Granada',
+        shortCode: 'GR'
+      },
+      {
+        name: 'Guadalajara',
+        shortCode: 'GU'
+      },
+      {
+        name: 'Huelva',
+        shortCode: 'H'
+      },
+      {
+        name: 'Huesca',
+        shortCode: 'HU'
+      },
+      {
+        name: 'Illes Balears',
+        shortCode: 'PM'
+      },
+      {
+        name: 'Jaén',
+        shortCode: 'J'
+      },
+      {
+        name: 'León',
+        shortCode: 'LE'
+      },
+      {
+        name: 'Lleida',
+        shortCode: 'L'
+      },
+      {
+        name: 'Lugo',
+        shortCode: 'LU'
+      },
+      {
+        name: 'Madrid',
+        shortCode: 'M'
+      },
+      {
+        name: 'Málaga',
+        shortCode: 'MA'
+      },
+      {
+        name: 'Melilla',
+        shortCode: 'ML'
+      },
+      {
+        name: 'Murcia',
+        shortCode: 'MU'
+      },
+      {
+        name: 'Navarre',
+        shortCode: 'NA'
+      },
+      {
+        name: 'Ourense',
+        shortCode: 'OR'
+      },
+      {
+        name: 'Palencia',
+        shortCode: 'P'
+      },
+      {
+        name: 'Las Palmas',
+        shortCode: 'GC'
+      },
+      {
+        name: 'Pontevedra',
+        shortCode: 'PO'
+      },
+      {
+        name: 'La Rioja',
+        shortCode: 'LO'
+      },
+      {
+        name: 'Salamanca',
+        shortCode: 'SA'
+      },
+      {
+        name: 'Santa Cruz de Tenerife',
+        shortCode: 'TF'
+      },
+      {
+        name: 'Segovia',
+        shortCode: 'SG'
+      },
+      {
+        name: 'Sevilla',
+        shortCode: 'SE'
+      },
+      {
+        name: 'Soria',
+        shortCode: 'SO'
+      },
+      {
+        name: 'Tarragona',
+        shortCode: 'T'
+      },
+      {
+        name: 'Teruel',
+        shortCode: 'TE'
+      },
+      {
+        name: 'Toledo',
+        shortCode: 'TO'
+      },
+      {
+        name: 'Valencia',
+        shortCode: 'V'
+      },
+      {
+        name: 'Valladolid',
+        shortCode: 'VA'
+      },
+      {
+        name: 'Zamora',
+        shortCode: 'ZA'
+      },
+      {
+        name: 'Zaragoza',
+        shortCode: 'Z'
       }
     ]
   },

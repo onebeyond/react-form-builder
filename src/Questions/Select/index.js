@@ -37,6 +37,53 @@ const QuestionSelect = ({
   setValue,
   ...props
 }) => {
+  const DependentQuestion = (dependentQuestion, i) => {
+    return (
+      <div
+        sx={{
+          ...(question.isFullWidth && styles.fullWidth)
+        }}
+        key={i}
+      >
+        {dependentQuestion.condition === watch(question.name) && (
+          <Select
+            key={dependentQuestion.question.name}
+            name={dependentQuestion.question.name}
+            ref={register({
+              ...question.registerConfig,
+              validate: {
+                noEmpty: (value) => value !== '*'
+              }
+            })}
+          >
+            {dependentQuestion.question.config &&
+              dependentQuestion.question.config.options.map((option) => {
+                return (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    sx={styles.selectOption}
+                  >
+                    {option.label}
+                  </option>
+                )
+              })}
+          </Select>
+        )}
+        {errors[dependentQuestion.question.name] &&
+          (errors[dependentQuestion.question.name].type === 'required' ||
+            errors[dependentQuestion.question.name].type === 'noEmpty') && (
+            <ErrorMessage
+              message={
+                dependentQuestion.question.errorMessages &&
+                dependentQuestion.question.errorMessages.required
+              }
+            />
+          )}
+      </div>
+    )
+  }
+
   return (
     <React.Fragment>
       <div
@@ -81,53 +128,7 @@ const QuestionSelect = ({
           )}
       </div>
       {question.dependentQuestions &&
-        question.dependentQuestions.map((dependentQuestion, i) => {
-          return (
-            <div
-              sx={{
-                ...(question.isFullWidth && styles.fullWidth)
-              }}
-              key={i}
-            >
-              {dependentQuestion.condition === watch(question.name) && (
-                <Select
-                  key={dependentQuestion.question.name}
-                  name={dependentQuestion.question.name}
-                  ref={register({
-                    ...question.registerConfig,
-                    validate: {
-                      noEmpty: (value) => value !== '*'
-                    }
-                  })}
-                >
-                  {dependentQuestion.question.config &&
-                    dependentQuestion.question.config.options.map((option) => {
-                      return (
-                        <option
-                          key={option.value}
-                          value={option.value}
-                          sx={styles.selectOption}
-                        >
-                          {option.label}
-                        </option>
-                      )
-                    })}
-                </Select>
-              )}
-              {errors[dependentQuestion.question.name] &&
-                (errors[dependentQuestion.question.name].type === 'required' ||
-                  errors[dependentQuestion.question.name].type ===
-                    'noEmpty') && (
-                  <ErrorMessage
-                    message={
-                      dependentQuestion.question.errorMessages &&
-                      dependentQuestion.question.errorMessages.required
-                    }
-                  />
-                )}
-            </div>
-          )
-        })}
+        question.dependentQuestions.map(DependentQuestion)}
     </React.Fragment>
   )
 }

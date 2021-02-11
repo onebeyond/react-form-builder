@@ -9,6 +9,19 @@
     "enabled": true,
     "questions": [
       {
+          "isFullWidth": true,
+          "name": "COUNTRY_OF_RESIDENCE",
+          "placeholder": "País",
+          "type": "country",
+          "label": null,
+          "errorMessages": {
+            "required": "This field is required"
+          },
+          "registerConfig": {
+              "required": true
+            }
+      },
+      {
         "name": "first_name",
         "type": "input",
         "label": "First name",
@@ -111,7 +124,8 @@
       {
         "name": "country_of_residence",
         "type": "country",
-        "label": "Country of residence",
+        "label": "Country",
+        "placeholder": "Please select an option ^^",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -121,7 +135,6 @@
       },
       {
         "name": "select_the_2021_sevens_tournament_of_your_choice",
-        "isFullWidth": true,
         "type": "select",
         "label": "Select the 2021 Sevens tournament of your choice",
         "errorMessages": {
@@ -217,26 +230,106 @@
         },
         "registerConfig": {
           "required": true
+        }
+      },
+      {
+        "name": "what_other_sports_are_you_interested_in",
+        "type": "multiple_checkboxes",
+        "label": "What other sports are you interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "You must choose at least two options"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 2
         },
         "config": {
           "options": [
             {
-              "name": "terms_and_conditions",
-              "label": "I confirm I am the age wof majority or older in my province/territory of residence and have read and agree to the contest [terms & conditions](/terms 'terms & conditions') and HSBC's Privacy Policy*",
-              "registerConfig": {
-                "required": true
-              }
-            },
-            {
-              "name": "hsbc_offers",
-              "label": "I consent to receive exclusive rugby content and promotional offers from HSBC and CSM Sport & Entertainment on behalf of HSBC via email. I understand that I can unsubscribe at any time.",
+              "name": "tennis",
+              "label": "Tennis",
               "registerConfig": {
                 "required": false
               }
             },
             {
-              "name": "world_rugby_offers",
-              "label": "Separately to this contest, I would like to receive information and special offers from World Rugby relating to rugby and rugby tournaments by email.",
+              "name": "golf",
+              "label": "Golf",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "cycling",
+              "label": "Cycling",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "badminton",
+              "label": "Badminton",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "other",
+              "label": "Other",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "name": "what_other_sports_are_you_interested_in",
+        "type": "multiple_images_checkboxes",
+        "label": "What other sports are you interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "You must choose at least two options"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 2
+        },
+        "config": {
+          "options": [
+            {
+              "name": "tennis",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "golf",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "cycling",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "badminton",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "other",
+              "src": "https://via.placeholder.com/150x75",
               "registerConfig": {
                 "required": false
               }

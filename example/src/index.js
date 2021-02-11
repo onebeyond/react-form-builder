@@ -12,6 +12,34 @@ const theme = {
     customButton: {
       color: 'green'
     }
+  },
+  select: {
+    backgroundColor: 'red',
+    option: {
+      color: 'purple',
+      fontSize: '30px'
+    },
+    control: {
+        backgroundColor: 'gray',
+        borderRadius: '20px'
+    }
+  },
+  forms: {
+      container: {
+        contact: {
+            display: 'grid',
+            backgroundColor: 'green'
+        }
+      },
+      multipleImageCheckboxes: {
+          contact: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr'
+          }
+      }
+  },
+  label: {
+    color: 'brown'
   }
 }
 

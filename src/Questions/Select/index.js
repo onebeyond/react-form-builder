@@ -55,7 +55,6 @@ const QuestionSelect = ({
           register={register}
           registerConfig={question.registerConfig}
           setValue={setValue}
-          sx={styles.selectInput}
         >
           {question.config &&
             question.config.options.map((option) => {

@@ -124,7 +124,8 @@
       {
         "name": "country_of_residence",
         "type": "country",
-        "label": "Country of residence",
+        "label": "Country",
+        "placeholder": "Please select an option ^^",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -134,7 +135,6 @@
       },
       {
         "name": "select_the_2021_sevens_tournament_of_your_choice",
-        "isFullWidth": true,
         "type": "select",
         "label": "Select the 2021 Sevens tournament of your choice",
         "errorMessages": {

@@ -75,7 +75,7 @@
       "name": "country",
       "isFullWidth": true,
       "type": "select",
-      "label": "",
+      "label": "Selecciona una opción",
       "placeholder": "Country",
       "errorMessages": {
         "required": "This field is required"

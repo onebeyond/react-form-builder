@@ -37,11 +37,17 @@ const QuestionMultipleCheckboxes = ({
       }}
     >
       {question.label && <Label>{question.label}</Label>}
-      <div sx={{ variant: 'forms.checkbox.' + form.layout }}>
+      <div sx={{ variant: 'forms.multipleCheckboxes.' + form.layout }}>
         {question.config &&
           question.config.options.map((option) => {
             return (
-              <div sx={styles.centerStyle} key={option.name}>
+              <div
+                sx={{
+                  variant:
+                    'forms.multipleCheckboxes.checksContainer' + form.layout
+                }}
+                key={option.name}
+              >
                 <Label sx={styles.centerStyle}>
                   <Checkbox
                     sx={styles.checkboxMinWidth}

@@ -32,6 +32,7 @@ const FormBuilder = ({
   const {
     register,
     handleSubmit,
+    getValues,
     errors,
     watch,
     setValue,
@@ -118,6 +119,7 @@ const FormBuilder = ({
           errors={errors}
           register={register}
           question={question}
+          getValues={getValues}
           form={form}
         />
       ),
@@ -126,6 +128,7 @@ const FormBuilder = ({
           errors={errors}
           register={register}
           question={question}
+          getValues={getValues}
           form={form}
         />
       )

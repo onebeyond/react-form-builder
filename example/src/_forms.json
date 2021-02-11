@@ -1,16 +1,54 @@
 {
+  "campaign": "sevens",
+  "subcampaign": "uae-sevens",
   "contact": {
-    "name": "Survey Form",
-    "title": "Survey Form",
-    "layout": "survey",
-    "caption": "Survey",
-    "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
+    "name": "Contact Form",
+    "layout": "contact",
+    "title": "Contact Form",
+    "caption": "**WIN an all-expenses paid trip to a 2021 HSBC World Rugby Sevens Series tournament of your choice, courtesy of HSBC.**\n\n**Prize includes:**\nTwo VIP tickets to any tournament of your choice\nTwo return flights to the tournament\nAccommodation and more!\n\nTo be entered for a chance to win, please provide your details to HSBC by filling out the below form.",
     "enabled": true,
     "questions": [
       {
+        "name": "first_name",
+        "type": "input",
+        "label": "First name",
+        "placeholder": "First Name",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "last_name",
+        "type": "input",
+        "label": "Last name",
+        "placeholder": "Last Name",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "email",
+        "type": "input",
+        "label": "Email",
+        "placeholder": "Email",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true,
+          "pattern": "/^(([^<>()[]\\\\.,;:s@\\\"]+(.[^<>()[]\\\\.,;:s@\\\"]+)*)|(\\\".+\\\"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/"
+        }
+      },
+      {
         "name": "age",
         "type": "select",
-        "label": "How old are you? [Single choice]",
+        "label": "Age",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -24,40 +62,184 @@
               "value": "*"
             },
             {
-              "label": "<18",
-              "value": "under_18"
+              "label": "18-25",
+              "value": "18_25"
             },
             {
-              "label": "18-24",
-              "value": "18-24"
+              "label": "26-30",
+              "value": "26_30"
             },
             {
-              "label": "25-29",
-              "value": "25-29"
+              "label": "31-35",
+              "value": "31_35"
             },
             {
-              "label": "30-34",
-              "value": "30-34"
+              "label": "36-40",
+              "value": "36_40"
             },
             {
-              "label": "35-39",
-              "value": "35-39"
+              "label": "41-45",
+              "value": "41_45"
             },
             {
-              "label": "40-44",
-              "value": "40-44"
+              "label": "46-55",
+              "value": "46_55"
             },
             {
-              "label": "45-49",
-              "value": "45-49"
+              "label": "56-60",
+              "value": "56_60"
             },
             {
-              "label": "50-59",
-              "value": "50-59"
+              "label": "61+",
+              "value": "61plus"
+            }
+          ]
+        }
+      },
+      {
+        "name": "postal_code",
+        "type": "input",
+        "label": "Postal code",
+        "placeholder": "Postal Code",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "country_of_residence",
+        "type": "country",
+        "label": "Country of residence",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "select_the_2021_sevens_tournament_of_your_choice",
+        "isFullWidth": true,
+        "type": "select",
+        "label": "Select the 2021 Sevens tournament of your choice",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
             },
             {
-              "label": "60+",
-              "value": "above_60"
+              "label": "Dubai",
+              "value": "Dubai"
+            },
+            {
+              "label": "Cape Town",
+              "value": "Cape_Town"
+            },
+            {
+              "label": "Hamilton",
+              "value": "Hamilton"
+            },
+            {
+              "label": "Sydney",
+              "value": "Sydney"
+            },
+            {
+              "label": "Los Angeles",
+              "value": "Los_Angeles"
+            },
+            {
+              "label": "Vancouver",
+              "value": "Vancouver"
+            },
+            {
+              "label": "Hong Kong",
+              "value": "Hong_Kong"
+            },
+            {
+              "label": "Singapore",
+              "value": "Singapore"
+            },
+            {
+              "label": "London",
+              "value": "London"
+            },
+            {
+              "label": "Paris",
+              "value": "Paris"
+            }
+          ]
+        }
+      },
+      {
+        "name": "are_you_an_hsbc_current_account_customer",
+        "type": "select",
+        "isFullWidth": true,
+        "label": "Are you an HSBC current account customer?",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
+            },
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        }
+      },
+      {
+        "name": "terms_and_conditions",
+        "type": "checkbox",
+        "isFullWidth": true,
+        "label": "Terms and Conditions",
+        "errorMessages": {
+          "required": "This is mandatory"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "name": "terms_and_conditions",
+              "label": "I confirm I am the age wof majority or older in my province/territory of residence and have read and agree to the contest [terms & conditions](/terms 'terms & conditions') and HSBC's Privacy Policy*",
+              "registerConfig": {
+                "required": true
+              }
+            },
+            {
+              "name": "hsbc_offers",
+              "label": "I consent to receive exclusive rugby content and promotional offers from HSBC and CSM Sport & Entertainment on behalf of HSBC via email. I understand that I can unsubscribe at any time.",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "world_rugby_offers",
+              "label": "Separately to this contest, I would like to receive information and special offers from World Rugby relating to rugby and rugby tournaments by email.",
+              "registerConfig": {
+                "required": false
+              }
             }
           ]
         }
@@ -1245,430 +1427,81 @@
         }
       }
     ],
-    "refrigeratorQuestions": [
+    "callForAction": [
       {
-        "name": "age",
+        "caption": "Enter",
+        "type": "submit"
+      }
+    ],
+    "id": "1z0vX5R7HdHNrd5FMmeLjb"
+  },
+  "survey": {
+    "name": "Survey Form",
+    "title": "Survey Form",
+    "layout": "survey",
+    "caption": "But wait, there's more...\n\nComplete our survey below and you'll receive TEN extra entries into the promotion!",
+    "enabled": true,
+    "questions": [
+      {
+        "name": "were_you_aware_of_the_hsbc_sevens_partnership_before_entering_the_competition",
         "type": "select",
-        "label": "How old are you?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "Under 18",
-              "value": "under_18"
-            },
-            {
-              "label": "18-24",
-              "value": "18-24"
-            },
-            {
-              "label": "25-29",
-              "value": "25-29"
-            },
-            {
-              "label": "30-34",
-              "value": "30-34"
-            },
-            {
-              "label": "35-44",
-              "value": "35-44"
-            },
-            {
-              "label": "45-54",
-              "value": "45-54"
-            },
-            {
-              "label": "55-64",
-              "value": "55-64"
-            },
-            {
-              "label": "65+",
-              "value": "above_65"
+        "label": "Were you aware of the HSBC Sevens partnership before entering the competition?",
+        "dependentQuestions": [
+          {
+            "condition": "yes",
+            "question": {
+              "name": "age",
+              "type": "select",
+              "label": "Age",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "18-25",
+                    "value": "18_25"
+                  },
+                  {
+                    "label": "26-30",
+                    "value": "26_30"
+                  },
+                  {
+                    "label": "31-35",
+                    "value": "31_35"
+                  },
+                  {
+                    "label": "36-40",
+                    "value": "36_40"
+                  },
+                  {
+                    "label": "41-45",
+                    "value": "41_45"
+                  },
+                  {
+                    "label": "46-55",
+                    "value": "46_55"
+                  },
+                  {
+                    "label": "56-60",
+                    "value": "56_60"
+                  },
+                  {
+                    "label": "61+",
+                    "value": "61plus"
+                  }
+                ]
+              }
             }
-          ]
-        }
-      },
-      {
-        "name": "gender",
-        "type": "select",
-        "label": "What is your gender?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "Female",
-              "value": "female"
-            },
-            {
-              "label": "Male",
-              "value": "male"
-            },
-            {
-              "label": "Prefer not to say",
-              "value": "prefer_not_to_say"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_buy",
-        "type": "select",
-        "label": "When did you purchuase your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "January to March 2021",
-              "value": "january_to_march_2021"
-            },
-            {
-              "label": "January to December 2020",
-              "value": "january_to_december_2020"
-            },
-            {
-              "label": "July to December 2019",
-              "value": "july_to_december_2019"
-            },
-            {
-              "label": "Before July 2019",
-              "value": "before_jul_2019"
-            },
-            {
-              "label": "I don´t have a refrigerator",
-              "value": "no_refrigerator"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_brand",
-        "type": "multiple_checkboxes",
-        "label": "What brand of refrigerator do you have? [MC, up to 10]",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 1,
-          "maximumLen": 10
-        },
-        "config": {
-          "options": [
-            {
-              "label": "LG",
-              "value": "lg"
-            },
-            {
-              "label": "Samsung",
-              "value": "samsung"
-            },
-            {
-              "label": "Electrolux",
-              "value": "electrolux"
-            },
-            {
-              "label": "Whirlpool",
-              "value": "whirlpool"
-            },
-            {
-              "label": "Panasonic",
-              "value": "panasonic"
-            },
-            {
-              "label": "Beko",
-              "value": "beko"
-            },
-            {
-              "label": "Hisense",
-              "value": "hisense"
-            },
-            {
-              "label": "Fisher & Paykel",
-              "value": "fisherPaykel"
-            },
-            {
-              "label": "Haier",
-              "value": "haier"
-            },
-            {
-              "label": "Other, please specify",
-              "value": "other"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_type",
-        "type": "select",
-        "label": "What type is your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "French door",
-              "value": "french_door"
-            },
-            {
-              "label": "Side-by-side",
-              "value": "side-by-side"
-            },
-            {
-              "label": "Cross door",
-              "value": "cross_door"
-            },
-            {
-              "label": "Bottom mount (Bottom freezer)",
-              "value": "bottom_mount"
-            },
-            {
-              "label": "Top mount (Top freezer)",
-              "value": "top_mount"
-            },
-            {
-              "label": "Single door",
-              "value": "single_door"
-            },
-            {
-              "label": "Upright freezer",
-              "value": "upright_freezer"
-            },
-            {
-              "label": "None of the above",
-              "value": "none_of_the_above"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_capacity",
-        "type": "select",
-        "label": "What´s the capacity of your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "0-100L",
-              "value": "0-100l"
-            },
-            {
-              "label": "101-200L",
-              "value": "101-200l"
-            },
-            {
-              "label": "201-300L",
-              "value": "201-300l"
-            },
-            {
-              "label": "301-400L",
-              "value": "301-400l"
-            },
-            {
-              "label": "401-500L",
-              "value": "401-500l"
-            },
-            {
-              "label": "501-600L",
-              "value": "501-600l"
-            },
-            {
-              "label": "601-700L",
-              "value": "601-700l"
-            },
-            {
-              "label": ">701L",
-              "value": "above_701l"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_cost",
-        "type": "select",
-        "label": "How much is your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "<$499",
-              "value": "under_499"
-            },
-            {
-              "label": "$500-$799",
-              "value": "500-799"
-            },
-            {
-              "label": "$800-$1099",
-              "value": "800-1099"
-            },
-            {
-              "label": "$1100-$1499",
-              "value": "1100-1499"
-            },
-            {
-              "label": ">$1500",
-              "value": "above_1500"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_features",
-        "type": "multiple_checkboxes",
-        "label": "What features did you look for when buying your refrigerator? [MC, up to 10]",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 1,
-          "maximumLen": 10
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Product appearance",
-              "value": "product_appearance"
-            },
-            {
-              "label": "Product net/gross capacity",
-              "value": "product_net_capacity"
-            },
-            {
-              "label": "Ice & water dispenser",
-              "value": "ice_water_dispenser"
-            },
-            {
-              "label": "Water dispenser",
-              "value": "water_dispenser"
-            },
-            {
-              "label": "Ice maker",
-              "value": "ice_maker"
-            },
-            {
-              "label": "Convertible temperature zone",
-              "value": "convertible_temperature_zone"
-            },
-            {
-              "label": "Super cool/Super freeze",
-              "value": "super_cool"
-            },
-            {
-              "label": "Easy-to-use design",
-              "value": "easy_to_use_design"
-            },
-            {
-              "label": "Inverter compressor",
-              "value": "inverter_compressor"
-            },
-            {
-              "label": "Energy level",
-              "value": "energy_level"
-            },
-            {
-              "label": "Others",
-              "value": "others"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_recommendation",
-        "type": "select",
-        "label": "How likely do you recommend your refrigerator to family\u00a0&friends?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "Not at all likely",
-              "value": "not_at_all_likely"
-            },
-            {
-              "label": "Not so likely",
-              "value": "not_so_likely"
-            },
-            {
-              "label": "Somewhat likely",
-              "value": "somewhat_likely"
-            },
-            {
-              "label": "Very likely",
-              "value": "very_likely"
-            },
-            {
-              "label": "Extremely likely",
-              "value": "extremely_likely"
-            }
-          ]
-        }
-      },
-      {
-        "name": "hisense_knowing",
-        "type": "select",
-        "label": "Before today were you aware that Hisense sells refrigerators and Hisense\u00a0is\u00a0a\u00a0major\u00a0sponsor\u00a0of\u00a0the\u00a0PSG?",
+          }
+        ],
         "errorMessages": {
           "required": "This field is required"
         },
@@ -1691,11 +1524,209 @@
             }
           ]
         }
+      },
+      {
+        "name": "how_do_you_feel_about_HSBC_as_a_result_of_this_partnership",
+        "type": "select",
+        "label": "How do you feel about HSBC as a result of this partnership?",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
+            },
+            {
+              "label": "Much more appealing",
+              "value": "much_more_appealing"
+            },
+            {
+              "label": "Appealing",
+              "value": "appealing"
+            },
+            {
+              "label": "Doesn't change",
+              "value": "doesnt_change"
+            },
+            {
+              "label": "Less appealing",
+              "value": "less_applealing"
+            }
+          ]
+        }
+      },
+      {
+        "name": "what_other_sports_are_you_interested_in",
+        "type": "multiple_checkboxes",
+        "label": "What other sports are you interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "You must choose at least two options"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 2
+        },
+        "config": {
+          "options": [
+            {
+              "name": "tennis",
+              "label": "Tennis",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "golf",
+              "label": "Golf",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "cycling",
+              "label": "Cycling",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "badminton",
+              "label": "Badminton",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "other",
+              "label": "Other",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "outside_of_sport_what_other_hsbc_events_would_you_most_be_interested_in",
+        "type": "multiple_checkboxes",
+        "label": "Outside of sport, what other HSBC events would you most be interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "name": "leadership_and_training_events",
+              "label": "Leadership and training events"
+            },
+            {
+              "name": "sustainability_and_philanthropic_events",
+              "label": "Sustainability and philanthropic events",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "immersive_food_experiences",
+              "label": "Immersive food experiences",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "not_interested",
+              "label": "Not interested",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "innovation_and_tech_seminars",
+              "label": "Innovation and tech seminars",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "arts_music_and_cultural_events",
+              "label": "Arts, music and cultural events",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "health_and_wellbeing_events",
+              "label": "Health and wellbeing events",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "what_hsbc_products_would_you_be_interested_in_knowing_more_about",
+        "type": "multiple_checkboxes",
+        "label": "What HSBC products would you be interested in knowing more about?",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "name": "credit_cards",
+              "label": "Credit Cards",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "personal_banking",
+              "label": "Personal Banking",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "not_interested",
+              "label": "Not interested",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "savings_and_current_accounts",
+              "label": "Savings and Current Accounts",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "business_banking",
+              "label": "Business Banking",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
       }
     ],
     "callForAction": [
       {
-        "caption": "Submit",
+        "caption": "Enter",
         "type": "submit"
       }
     ],

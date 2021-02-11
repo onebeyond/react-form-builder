@@ -1,6 +1,7 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import Button from './Fields/Button'
+import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
@@ -45,13 +46,18 @@ const FormBuilder = ({
         />
       ),
       select: (
-        <QuestionSelect
-          watch={watch}
-          errors={errors}
-          register={register}
-          question={question}
-          setValue={setValue}
-        />
+        <>
+          <Label>{question.label}</Label>
+          <QuestionSelect
+            watch={watch}
+            errors={errors}
+            register={register}
+            question={question}
+            setValue={setValue}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(ConditionalQuestion(question))}
+        </>
       ),
       checkbox: (
         <QuestionCheckbox
@@ -93,6 +99,38 @@ const FormBuilder = ({
           clearErrors={clearErrors}
           isoCode={isoCode}
         />
+      )
+    }
+  }
+
+  function ConditionalQuestion(question) {
+    return (dependentQuestion, i) => {
+      const nestedQuestion = dependentQuestion && dependentQuestion.question
+
+      const getConditions = () =>
+        dependentQuestion.conditions || dependentQuestion.condition
+
+      return (
+        getConditions().includes(watch(question.name)) && (
+          <React.Fragment key={i}>
+            <div
+              sx={{
+                ...(dependentQuestion.question.isFullWidth && styles.fullWidth)
+              }}
+            >
+              {
+                QuestionsMap(dependentQuestion.question)[
+                  dependentQuestion.question.type
+                ]
+              }
+            </div>
+            {nestedQuestion.dependentQuestions
+              ? nestedQuestion.dependentQuestions.map(
+                  ConditionalQuestion(nestedQuestion)
+                )
+              : null}
+          </React.Fragment>
+        )
       )
     }
   }

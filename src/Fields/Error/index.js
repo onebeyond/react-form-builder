@@ -13,7 +13,7 @@ const defaultStyles = {
 
 const ErrorMessage = React.forwardRef(({ message, ...props }, ref) => {
   return (
-    <p ref={ref} sx={defaultStyles} {...props}>
+    <p className='error-message' ref={ref} sx={defaultStyles} {...props}>
       {message}
     </p>
   )

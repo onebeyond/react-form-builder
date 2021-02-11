@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import ErrorMessage from '../../Fields/Error'
-import Label from '../../Fields/Label'
+
 import React from 'react'
 import Select from '../../Fields/Select'
 import { jsx } from 'theme-ui'
@@ -15,18 +15,6 @@ const styles = {
     background: 'bg',
     color: 'black'
   }
-}
-
-const getOptions = (question) => {
-  return (
-    question.config &&
-    question.config.options.map((option) => {
-      return {
-        value: option.value,
-        label: option.label
-      }
-    })
-  )
 }
 
 const QuestionSelect = ({

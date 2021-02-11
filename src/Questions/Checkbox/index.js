@@ -22,9 +22,6 @@ const styles = {
     width: ['90%', '95%', '95%'],
     p: {
       margin: 0
-    },
-    a: {
-      color: '#31b112'
     }
   }
 }
@@ -52,7 +49,6 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
-              {...question.registerConfig}
               ref={register({
                 ...question.registerConfig
               })}

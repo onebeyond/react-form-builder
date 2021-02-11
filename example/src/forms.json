@@ -8,9 +8,23 @@
     "enabled": true,
     "questions": [
       {
-        "name": "age",
-        "type": "select",
-        "label": "How old are you? [Single choice]",
+        "isFullWidth": true,
+        "name": "COUNTRY_OF_RESIDENCE",
+        "placeholder": "País",
+        "type": "country",
+        "label": null,
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "first_name",
+        "type": "input",
+        "label": "First name",
+        "placeholder": "First Name",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -1329,9 +1343,10 @@
         }
       },
       {
-        "name": "refrigerator_buy",
-        "type": "select",
-        "label": "When did you purchuase your refrigerator?",
+        "name": "country_of_residence",
+        "type": "country",
+        "label": "Country",
+        "placeholder": "Please select an option ^^",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -1368,9 +1383,9 @@
         }
       },
       {
-        "name": "refrigerator_brand",
-        "type": "multiple_checkboxes",
-        "label": "What brand of refrigerator do you have? [MC, up to 10]",
+        "name": "select_the_2021_sevens_tournament_of_your_choice",
+        "type": "select",
+        "label": "Select the 2021 Sevens tournament of your choice",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -1445,32 +1460,125 @@
               "value": "french_door"
             },
             {
-              "label": "Side-by-side",
-              "value": "side-by-side"
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        }
+      },
+      {
+        "name": "terms_and_conditions",
+        "type": "checkbox",
+        "isFullWidth": true,
+        "label": "Terms and Conditions",
+        "errorMessages": {
+          "required": "This is mandatory"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "what_other_sports_are_you_interested_in",
+        "type": "multiple_checkboxes",
+        "label": "What other sports are you interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "You must choose at least two options"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 2
+        },
+        "config": {
+          "options": [
+            {
+              "name": "tennis",
+              "label": "Tennis",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Cross door",
-              "value": "cross_door"
+              "name": "golf",
+              "label": "Golf",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Bottom mount (Bottom freezer)",
-              "value": "bottom_mount"
+              "name": "cycling",
+              "label": "Cycling",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Top mount (Top freezer)",
-              "value": "top_mount"
+              "name": "badminton",
+              "label": "Badminton",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Single door",
-              "value": "single_door"
+              "name": "other",
+              "label": "Other",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "name": "what_other_sports_are_you_interested_in",
+        "type": "multiple_images_checkboxes",
+        "label": "What other sports are you interested in? (You can select multiple)",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "You must choose at least two options"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 2
+        },
+        "config": {
+          "options": [
+            {
+              "name": "tennis",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Upright freezer",
-              "value": "upright_freezer"
+              "name": "golf",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "None of the above",
-              "value": "none_of_the_above"
+              "name": "cycling",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "badminton",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "other",
+              "src": "https://via.placeholder.com/150x75",
+              "registerConfig": {
+                "required": false
+              }
             }
           ]
         }

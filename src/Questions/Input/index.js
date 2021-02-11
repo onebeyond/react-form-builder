@@ -27,7 +27,6 @@ const QuestionInput = ({ question, register, errors }) => {
         type={question.type}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        {...question.registerConfig}
         ref={register({
           ...question.registerConfig,
           pattern: new RegExp(question.registerConfig.pattern)

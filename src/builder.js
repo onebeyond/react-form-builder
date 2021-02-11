@@ -5,12 +5,15 @@ import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
+import QuestionCountry from './Questions/Country'
 import QuestionInput from './Questions/Input'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
 import React from 'react'
 import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
+import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
+import QuestionMultipleImageCheckboxes from './Questions/MultipleImageCheckboxes'
 
 const styles = {
   fitContent: {
@@ -59,6 +62,16 @@ const FormBuilder = ({
             question.dependentQuestions.map(ConditionalQuestion(question))}
         </>
       ),
+      country: (
+        <QuestionCountry
+          watch={watch}
+          errors={errors}
+          register={register}
+          question={question}
+          setValue={setValue}
+          isMobile={isMobile}
+        />
+      ),
       checkbox: (
         <QuestionCheckbox
           errors={errors}
@@ -98,6 +111,22 @@ const FormBuilder = ({
           setError={setError}
           clearErrors={clearErrors}
           isoCode={isoCode}
+        />
+      ),
+      multiple_checkboxes: (
+        <QuestionMultipleCheckboxes
+          errors={errors}
+          register={register}
+          question={question}
+          form={form}
+        />
+      ),
+      multiple_images_checkboxes: (
+        <QuestionMultipleImageCheckboxes
+          errors={errors}
+          register={register}
+          question={question}
+          form={form}
         />
       )
     }

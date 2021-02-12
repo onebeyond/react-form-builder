@@ -6,7 +6,8 @@ node_js:
 jobs:
   include:
   - stage: Publish
-    if: branch = main
+    if: branch = main AND tag IS present
+
     script:
       - npm test
       - npm run build-storybook

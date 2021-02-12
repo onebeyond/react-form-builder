@@ -3,6 +3,10 @@ language: node_js
 node_js:
    - "10"
 
+stages:
+  - name: Publish
+    if: branch = master and tag IS present
+
 jobs:
   include:
   - stage: Publish

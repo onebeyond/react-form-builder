@@ -1,3 +1,36 @@
+#### 1.0.24 (2021-02-12)
+
+##### Chores
+
+* **master:**
+  *  travis only running at main (dbc4a93f)
+  *  CI/CD node version to 10 (37450548)
+  *  CI/CD Test stage (efaf7116)
+  *  CI/CD Publish stage (8f00cb1b)
+  *  CI/CD docs (aefa3faf)
+  *  public web added (fccde234)
+  *  travis script with conditional deployment at stage (c75b2769)
+  *  travis script with conditional deployment (d729e0ea)
+  *  travis config with version tags (ee200327)
+  *  changelog lib added (42a099eb)
+  *  release script (3f2b0d68)
+  *  adding travis config file (cb4ef886)
+  *  initial commit (aa59600e)
+* **main:**
+  *  travis env var (49a7a645)
+  *  travis env var (86bb2b64)
+  *  linting (05c11286)
+
+##### Bug Fixes
+
+* **main:**  travis yaml format (20ecbffe)
+
+##### Other Changes
+
+* **master:**  travis only running at main" (f81d1a64)
+* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+
 #### 1.0.23 (2021-02-12)
 
 ##### Chores

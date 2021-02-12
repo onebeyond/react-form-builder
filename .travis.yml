@@ -6,11 +6,13 @@ node_js:
 jobs:
   include:
   - stage: test
+    if: branch = main
     script:
       - npm run test:lint
       - npm run test
 
   - stage: aws Publish
+    if: branch = main
     script:
       - npm test
       - npm run build-storybook
@@ -25,6 +27,7 @@ jobs:
         branch: main
 
   - stage: npm Deployment
+    if: branch = main
     deploy:
       edge: true
       provider: npm

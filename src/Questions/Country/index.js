@@ -1,7 +1,7 @@
 import CountryAndRegionsData from '../../forms/countryAndRegion'
 // import { StyleTypeMap } from '../../utils/styleTypeMap'
 import ErrorMessage from '../../Fields/Error'
-import Select from '../../Fields/Select/indexV2'
+import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
 
 /** @jsx jsx */

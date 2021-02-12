@@ -18,6 +18,10 @@ import QuestionMarkdown from './Questions/Markdown'
 const styles = {
   fitContent: {
     width: 'fit-content'
+  },
+  fullWidth: {
+    gridColumnStart: '1',
+    gridColumnEnd: '3'
   }
 }
 

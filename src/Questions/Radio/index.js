@@ -29,7 +29,7 @@ const QuestionRadio = ({ question, register, errors }) => {
             ...question.registerConfig
           })}
         />
-        {question.label}
+        <p sx={{ variant: 'forms.radio.text' }}>{question.label}</p>
       </Label>
 
       {errors[question.name] && errors[question.name].type === 'required' && (

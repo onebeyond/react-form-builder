@@ -5,7 +5,7 @@ node_js:
 
 stages:
   - name: Publish
-    if: branch = master and tag IS present
+    if: tag IS present
 
 jobs:
   include:

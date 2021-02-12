@@ -13,6 +13,7 @@ import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
 import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
 import QuestionMultipleImageCheckboxes from './Questions/MultipleImageCheckboxes'
+import QuestionMarkdown from './Questions/Markdown'
 
 const styles = {
   fitContent: {
@@ -128,6 +129,13 @@ const FormBuilder = ({
           question={question}
           getValues={getValues}
           form={form}
+        />
+      ),
+      markdown: (
+        <QuestionMarkdown
+          question={question}
+          form={form}
+          currentPath={currentPath}
         />
       )
     }

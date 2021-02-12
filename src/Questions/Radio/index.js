@@ -6,9 +6,20 @@ import Radio from '../../Fields/Radio'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
+const styles = {
+  fullWidth: {
+    gridColumnStart: '1',
+    gridColumnEnd: '3'
+  }
+}
+
 const QuestionRadio = ({ question, register, errors }) => {
   return (
-    <div>
+    <div
+      sx={{
+        ...(question.isFullWidth && styles.fullWidth)
+      }}
+    >
       <Label key={question.name}>
         <Radio
           name={question.name}

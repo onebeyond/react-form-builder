@@ -6,7 +6,7 @@ node_js:
 jobs:
   include:
   - stage: Publish
-    if: branch = main AND tag IS present
+    if: branch = /v[0-9]+\.[0-9]+\.[0-9]+/
 
     script:
       - npm test

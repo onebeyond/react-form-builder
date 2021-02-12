@@ -40,26 +40,17 @@ const Select = ({
     valueContainer: {}
   }
 
+  const customStyles = {}
+
   Object.keys(selectStyles).map((property) => {
     if (theme.select && theme.select[property]) {
       selectStyles[property] = theme.select[property]
+      customStyles[property] = (provided, state) => ({
+        ...provided,
+        ...theme.select[property]
+      })
     }
   })
-
-  const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      ...selectStyles.option
-    }),
-    input: (provided, state) => ({
-      ...provided,
-      ...selectStyles.input
-    }),
-    control: (provided, state) => ({
-      ...provided,
-      ...selectStyles.control
-    })
-  }
 
   return (
     <RHFInput

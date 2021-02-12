@@ -6,7 +6,7 @@ node_js:
 jobs:
   include:
   - stage: Publish
-    if: branch = master
+    if: branch = main
     script:
       - npm test
       - npm run build-storybook

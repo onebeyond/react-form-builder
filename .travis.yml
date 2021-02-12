@@ -6,8 +6,6 @@ node_js:
 jobs:
   include:
   - stage: Publish
-    if: branch = /v[0-9]+\.[0-9]+\.[0-9]+/
-
     script:
       - npm test
       - npm run build-storybook

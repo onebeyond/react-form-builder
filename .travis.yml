@@ -5,34 +5,26 @@ node_js:
 
 jobs:
   include:
-  - stage: test
-    if: branch = main
-    script:
-      - npm run test:lint
-      - npm run test
-
-  - stage: aws Publish
-    if: branch = main
+  - stage: Publish
     script:
       - npm test
       - npm run build-storybook
     deploy:
-      provider: s3
-      access_key_id: $AWS_ACCESS_KEY_ID
-      secret_access_key: $AWS_SECRET_ACCESS_KEY
-      bucket: $AWS_S3_BUCKET_NAME
-      skip_cleanup: true
-      local_dir: public
-      on:
-        branch: main
+      - provider: s3
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        bucket: $AWS_S3_BUCKET_NAME
+        skip_cleanup: true
+        local_dir: public
+        edge: true
+        on:
+          tags: true
+          branch: main
 
-  - stage: npm Deployment
-    if: branch = main
-    deploy:
-      edge: true
-      provider: npm
-      skip_cleanup: true
-      email: "$NPM_EMAIL"
-      api_key: "$NPM_TOKEN"
-      on:
-        tags: true
+      - provider: npm
+        skip_cleanup: true
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        on:
+          tags: true
+          branch: main

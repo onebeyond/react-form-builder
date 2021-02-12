@@ -140,8 +140,15 @@ const FormBuilder = ({
       const getConditions = () =>
         dependentQuestion.conditions || dependentQuestion.condition
 
+      const conditionValue = watch(question.name)
+
+      const getFormattedValue = () =>
+        conditionValue && conditionValue.value
+          ? conditionValue.value
+          : conditionValue
+
       return (
-        getConditions().includes(watch(question.name)) && (
+        getConditions().includes(getFormattedValue()) && (
           <React.Fragment key={i}>
             <div
               sx={{

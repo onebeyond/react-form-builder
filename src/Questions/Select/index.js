@@ -18,6 +18,18 @@ const styles = {
   }
 }
 
+const getOptions = (question) => {
+  return (
+    question.config &&
+    question.config.options.map((option) => {
+      return {
+        value: option.value,
+        label: option.label
+      }
+    })
+  )
+}
+
 const QuestionSelect = ({
   question,
   register,
@@ -34,16 +46,16 @@ const QuestionSelect = ({
         }}
       >
         {question.label && <Label>{question.label}</Label>}
-
         <Select
+          {...props}
+          defaultValue={getOptions(question)[0]}
+          options={getOptions(question)}
+          isSearchable={false}
           key={question.name}
           name={question.name}
-          ref={register({
-            ...question.registerConfig,
-            validate: {
-              noEmpty: (value) => value !== '*'
-            }
-          })}
+          register={register}
+          registerConfig={question.registerConfig}
+          setValue={setValue}
         >
           {question.config &&
             question.config.options.map((option) => {

@@ -18,7 +18,7 @@ const QuestionInput = ({ question, register, errors }) => {
     <div
       sx={{
         ...(question.isFullWidth && styles.fullWidth),
-        varian: 'forms.inputContainer'
+        variant: 'forms.inputContainer'
       }}
     >
       {question.label && <Label>{question.label}</Label>}

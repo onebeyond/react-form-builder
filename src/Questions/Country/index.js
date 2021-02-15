@@ -45,7 +45,7 @@ const QuestionCountry = ({
   )
 
   return (
-    <div>
+    <div sx={{ variant: 'forms.countryContainer' }}>
       {question.label && <Label>{question.label}</Label>}
       <Select
         key={question.name}

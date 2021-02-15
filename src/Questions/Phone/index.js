@@ -72,7 +72,8 @@ const QuestionPhone = ({
     <React.Fragment>
       <div
         sx={{
-          ...(question.isFullWidth && styles.fullWidth)
+          ...(question.isFullWidth && styles.fullWidth),
+          variant: 'forms.phoneContainer'
         }}
       >
         {question.label && (

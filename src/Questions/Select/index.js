@@ -42,7 +42,8 @@ const QuestionSelect = ({
     <React.Fragment>
       <div
         sx={{
-          ...(question.isFullWidth && styles.fullWidth)
+          ...(question.isFullWidth && styles.fullWidth),
+          variant: 'forms.selectContainer'
         }}
       >
         {question.label && <Label>{question.label}</Label>}

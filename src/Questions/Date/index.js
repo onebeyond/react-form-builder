@@ -33,7 +33,8 @@ const QuestionDate = ({
       <div
         sx={{
           ...(question.isFullWidth && styles.fullWidth),
-          ...(!isMobile && styles.halfWidth)
+          ...(!isMobile && styles.halfWidth),
+          variant: 'forms.dateContainer'
         }}
       >
         {question.label && <Label>{question.label}</Label>}

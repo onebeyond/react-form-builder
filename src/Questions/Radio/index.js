@@ -18,7 +18,7 @@ const QuestionRadio = ({ question, register, errors }) => {
     <div
       sx={{
         ...(question.isFullWidth && styles.fullWidth),
-        variant: 'forms.radio'
+        variant: 'forms.radioContainer'
       }}
     >
       <Label key={question.name}>

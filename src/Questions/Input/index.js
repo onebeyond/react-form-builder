@@ -16,10 +16,16 @@ const styles = {
 const QuestionInput = ({ question, register, errors }) => {
   return (
     <div
-      sx={{
-        ...(question.isFullWidth && styles.fullWidth),
-        variant: 'forms.inputContainer'
-      }}
+      sx={
+        question.isFullWidth
+          ? {
+              ...(question.isFullWidth && styles.fullWidth),
+              variant: 'forms.inputContainerFullWith'
+            }
+          : {
+              variant: 'forms.inputContainer'
+            }
+      }
     >
       {question.label && <Label>{question.label}</Label>}
       <Input

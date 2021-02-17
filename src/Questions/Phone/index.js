@@ -71,10 +71,16 @@ const QuestionPhone = ({
   return (
     <React.Fragment>
       <div
-        sx={{
-          ...(question.isFullWidth && styles.fullWidth),
-          variant: 'forms.phoneContainer'
-        }}
+        sx={
+          question.isFullWidth
+            ? {
+                ...(question.isFullWidth && styles.fullWidth),
+                variant: 'forms.phoneContainerFullWith'
+              }
+            : {
+                variant: 'forms.phoneContainer'
+              }
+        }
       >
         {question.label && (
           <Label sx={styles[StyleTypeMap[isMobile]].label}>

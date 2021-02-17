@@ -8,6 +8,23 @@ import Label from '../../Fields/Label'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
+const styles = {
+  fullWidth: {
+    gridColumnStart: '1',
+    gridColumnEnd: '3'
+  }
+}
+
+const priorizeCountriesOrder = (countries, order) => {
+  const filteredElements = countries.filter((item) =>
+    order.includes(item.countryShortCode)
+  )
+  const origin = countries.filter(
+    (item) => !order.includes(item.countryShortCode)
+  )
+  return [...filteredElements, ...origin]
+}
+
 const QuestionCountry = ({
   question,
   register,
@@ -17,6 +34,13 @@ const QuestionCountry = ({
   ...props
 }) => {
   const getCountriesOptions = (label, countries) => {
+    let filteredCountries = countries
+    if (question.priorizeOrder) {
+      filteredCountries = priorizeCountriesOrder(
+        countries,
+        question.customOrder
+      )
+    }
     return [].concat(
       [
         {
@@ -24,7 +48,7 @@ const QuestionCountry = ({
           label: label
         }
       ],
-      countries.map((country) => ({
+      filteredCountries.map((country) => ({
         value: country.countryName,
         label: country.countryName
       }))
@@ -45,7 +69,18 @@ const QuestionCountry = ({
   )
 
   return (
-    <div sx={{ variant: 'forms.countryContainer' }}>
+    <div
+      sx={
+        question.isFullWidth
+          ? {
+              ...(question.isFullWidth && styles.fullWidth),
+              variant: 'forms.countryContainerFullWith'
+            }
+          : {
+              variant: 'forms.countryContainer'
+            }
+      }
+    >
       {question.label && <Label>{question.label}</Label>}
       <Select
         key={question.name}

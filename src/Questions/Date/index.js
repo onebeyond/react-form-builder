@@ -31,11 +31,17 @@ const QuestionDate = ({
   return (
     <React.Fragment>
       <div
-        sx={{
-          ...(question.isFullWidth && styles.fullWidth),
-          ...(!isMobile && styles.halfWidth),
-          variant: 'forms.dateContainer'
-        }}
+        sx={
+          question.isFullWidth
+            ? {
+                ...(question.isFullWidth && styles.fullWidth),
+                ...(!isMobile && styles.halfWidth),
+                variant: 'forms.dateContainerFullWith'
+              }
+            : {
+                variant: 'forms.dateContainer'
+              }
+        }
       >
         {question.label && <Label>{question.label}</Label>}
         <Date

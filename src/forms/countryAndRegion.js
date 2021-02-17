@@ -1,989 +1,5 @@
 export default [
   {
-    countryName: 'United Kingdom',
-    countryShortCode: 'GB',
-    regions: [
-      {
-        name: 'Aberdeen City',
-        shortCode: 'ABE'
-      },
-      {
-        name: 'Aberdeenshire',
-        shortCode: 'ABD'
-      },
-      {
-        name: 'Angus',
-        shortCode: 'ANS'
-      },
-      {
-        name: 'Antrim and Newtownabbey',
-        shortCode: 'ANN'
-      },
-      {
-        name: 'Ards and North Down',
-        shortCode: 'AND'
-      },
-      {
-        name: 'Argyll and Bute',
-        shortCode: 'AGB'
-      },
-      {
-        name: 'Armagh, Banbridge and Craigavon',
-        shortCode: 'ABC'
-      },
-      {
-        name: 'Barking and Dagenham',
-        shortCode: 'BDG'
-      },
-      {
-        name: 'Barnet',
-        shortCode: 'BNE'
-      },
-      {
-        name: 'Barnsley',
-        shortCode: 'BNS'
-      },
-      {
-        name: 'Bath and North East Somerset',
-        shortCode: 'BAS'
-      },
-      {
-        name: 'Bedford',
-        shortCode: 'BDF'
-      },
-      {
-        name: 'Belfast',
-        shortCode: 'BFS'
-      },
-      {
-        name: 'Bexley',
-        shortCode: 'BEX'
-      },
-      {
-        name: 'Birmingham',
-        shortCode: 'BIR'
-      },
-      {
-        name: 'Blackburn with Darwen',
-        shortCode: 'BBD'
-      },
-      {
-        name: 'Blackpool',
-        shortCode: 'BPL'
-      },
-      {
-        name: 'Blaenau Gwent',
-        shortCode: 'BGW'
-      },
-      {
-        name: 'Bolton',
-        shortCode: 'BOL'
-      },
-      {
-        name: 'Bournemouth',
-        shortCode: 'BMH'
-      },
-      {
-        name: 'Bracknell Forest',
-        shortCode: 'BRC'
-      },
-      {
-        name: 'Bradford',
-        shortCode: 'BRD'
-      },
-      {
-        name: 'Brent',
-        shortCode: 'BEN'
-      },
-      {
-        name: 'Bridgend',
-        shortCode: 'BGE'
-      },
-      {
-        name: 'Brighton and Hove',
-        shortCode: 'BNH'
-      },
-      {
-        name: 'Bristol, City of',
-        shortCode: 'BST'
-      },
-      {
-        name: 'Bromley',
-        shortCode: 'BRY'
-      },
-      {
-        name: 'Buckinghamshire',
-        shortCode: 'BKM'
-      },
-      {
-        name: 'Bury',
-        shortCode: 'BUR'
-      },
-      {
-        name: 'Caerphilly',
-        shortCode: 'CAY'
-      },
-      {
-        name: 'Calderdale',
-        shortCode: 'CLD'
-      },
-      {
-        name: 'Cambridgeshire',
-        shortCode: 'CAM'
-      },
-      {
-        name: 'Camden',
-        shortCode: 'CMD'
-      },
-      {
-        name: 'Cardiff',
-        shortCode: 'CRF'
-      },
-      {
-        name: 'Carmarthenshire',
-        shortCode: 'CMN'
-      },
-      {
-        name: 'Causeway Coast and Glens',
-        shortCode: 'CCG'
-      },
-      {
-        name: 'Central Bedfordshire',
-        shortCode: 'CBF'
-      },
-      {
-        name: 'Ceredigion',
-        shortCode: 'CGN'
-      },
-      {
-        name: 'Cheshire East',
-        shortCode: 'CHE'
-      },
-      {
-        name: 'Cheshire West and Chester',
-        shortCode: 'CHW'
-      },
-      {
-        name: 'Clackmannanshire',
-        shortCode: 'CLK'
-      },
-      {
-        name: 'Conwy',
-        shortCode: 'CWY'
-      },
-      {
-        name: 'Cornwall',
-        shortCode: 'CON'
-      },
-      {
-        name: 'Coventry',
-        shortCode: 'COV'
-      },
-      {
-        name: 'Croydon',
-        shortCode: 'CRY'
-      },
-      {
-        name: 'Cumbria',
-        shortCode: 'CMA'
-      },
-      {
-        name: 'Darlington',
-        shortCode: 'DAL'
-      },
-      {
-        name: 'Denbighshire',
-        shortCode: 'DEN'
-      },
-      {
-        name: 'Derby',
-        shortCode: 'DER'
-      },
-      {
-        name: 'Derbyshire',
-        shortCode: 'DBY'
-      },
-      {
-        name: 'Derry and Strabane',
-        shortCode: 'DRS'
-      },
-      {
-        name: 'Devon',
-        shortCode: 'DEV'
-      },
-      {
-        name: 'Doncaster',
-        shortCode: 'DNC'
-      },
-      {
-        name: 'Dorset',
-        shortCode: 'DOR'
-      },
-      {
-        name: 'Dudley',
-        shortCode: 'DUD'
-      },
-      {
-        name: 'Dumfries and Galloway',
-        shortCode: 'DGY'
-      },
-      {
-        name: 'Dundee City',
-        shortCode: 'DND'
-      },
-      {
-        name: 'Durham County',
-        shortCode: 'DUR'
-      },
-      {
-        name: 'Ealing',
-        shortCode: 'EAL'
-      },
-      {
-        name: 'East Ayrshire',
-        shortCode: 'EAY'
-      },
-      {
-        name: 'East Dunbartonshire',
-        shortCode: 'EDU'
-      },
-      {
-        name: 'East Lothian',
-        shortCode: 'ELN'
-      },
-      {
-        name: 'East Renfrewshire',
-        shortCode: 'ERW'
-      },
-      {
-        name: 'East Riding of Yorkshire',
-        shortCode: 'ERY'
-      },
-      {
-        name: 'East Sussex',
-        shortCode: 'ESX'
-      },
-      {
-        name: 'Edinburgh, City of',
-        shortCode: 'EDH'
-      },
-      {
-        name: 'Eilean Siar',
-        shortCode: 'ELS'
-      },
-      {
-        name: 'Enfield',
-        shortCode: 'ENF'
-      },
-      {
-        name: 'Essex',
-        shortCode: 'ESS'
-      },
-      {
-        name: 'Falkirk',
-        shortCode: 'FAL'
-      },
-      {
-        name: 'Fermanagh and Omagh',
-        shortCode: 'FMO'
-      },
-      {
-        name: 'Fife',
-        shortCode: 'FIF'
-      },
-      {
-        name: 'Flintshire',
-        shortCode: 'FLN'
-      },
-      {
-        name: 'Gateshead',
-        shortCode: 'GAT'
-      },
-      {
-        name: 'Glasgow City',
-        shortCode: 'GLG'
-      },
-      {
-        name: 'Gloucestershire',
-        shortCode: 'GLS'
-      },
-      {
-        name: 'Greenwich',
-        shortCode: 'GRE'
-      },
-      {
-        name: 'Gwynedd',
-        shortCode: 'GWN'
-      },
-      {
-        name: 'Hackney',
-        shortCode: 'HCK'
-      },
-      {
-        name: 'Halton',
-        shortCode: 'HAL'
-      },
-      {
-        name: 'Hammersmith and Fulham',
-        shortCode: 'HMF'
-      },
-      {
-        name: 'Hampshire',
-        shortCode: 'HAM'
-      },
-      {
-        name: 'Haringey',
-        shortCode: 'HRY'
-      },
-      {
-        name: 'Harrow',
-        shortCode: 'HRW'
-      },
-      {
-        name: 'Hartlepool',
-        shortCode: 'HPL'
-      },
-      {
-        name: 'Havering',
-        shortCode: 'HAV'
-      },
-      {
-        name: 'Herefordshire',
-        shortCode: 'HEF'
-      },
-      {
-        name: 'Hertfordshire',
-        shortCode: 'HRT'
-      },
-      {
-        name: 'Highland',
-        shortCode: 'HLD'
-      },
-      {
-        name: 'Hillingdon',
-        shortCode: 'HIL'
-      },
-      {
-        name: 'Hounslow',
-        shortCode: 'HNS'
-      },
-      {
-        name: 'Inverclyde',
-        shortCode: 'IVC'
-      },
-      {
-        name: 'Isle of Anglesey',
-        shortCode: 'AGY'
-      },
-      {
-        name: 'Isle of Wight',
-        shortCode: 'IOW'
-      },
-      {
-        name: 'Isles of Scilly',
-        shortCode: 'IOS'
-      },
-      {
-        name: 'Islington',
-        shortCode: 'ISL'
-      },
-      {
-        name: 'Kensington and Chelsea',
-        shortCode: 'KEC'
-      },
-      {
-        name: 'Kent',
-        shortCode: 'KEN'
-      },
-      {
-        name: 'Kingston upon Hull',
-        shortCode: 'KHL'
-      },
-      {
-        name: 'Kingston upon Thames',
-        shortCode: 'KTT'
-      },
-      {
-        name: 'Kirklees',
-        shortCode: 'KIR'
-      },
-      {
-        name: 'Knowsley',
-        shortCode: 'KWL'
-      },
-      {
-        name: 'Lambeth',
-        shortCode: 'LBH'
-      },
-      {
-        name: 'Lancashire',
-        shortCode: 'LAN'
-      },
-      {
-        name: 'Leeds',
-        shortCode: 'LDS'
-      },
-      {
-        name: 'Leicester',
-        shortCode: 'LCE'
-      },
-      {
-        name: 'Leicestershire',
-        shortCode: 'LEC'
-      },
-      {
-        name: 'Lewisham',
-        shortCode: 'LEW'
-      },
-      {
-        name: 'Lincolnshire',
-        shortCode: 'LIN'
-      },
-      {
-        name: 'Lisburn and Castlereagh',
-        shortCode: 'LBC'
-      },
-      {
-        name: 'Liverpool',
-        shortCode: 'LIV'
-      },
-      {
-        name: 'London, City of',
-        shortCode: 'LND'
-      },
-      {
-        name: 'Luton',
-        shortCode: 'LUT'
-      },
-      {
-        name: 'Manchester',
-        shortCode: 'MAN'
-      },
-      {
-        name: 'Medway',
-        shortCode: 'MDW'
-      },
-      {
-        name: 'Merthyr Tydfil',
-        shortCode: 'MTY'
-      },
-      {
-        name: 'Merton',
-        shortCode: 'MRT'
-      },
-      {
-        name: 'Mid and East Antrim',
-        shortCode: 'MEA'
-      },
-      {
-        name: 'Mid Ulster',
-        shortCode: 'MUL'
-      },
-      {
-        name: 'Middlesbrough',
-        shortCode: 'MDB'
-      },
-      {
-        name: 'Midlothian',
-        shortCode: 'MLN'
-      },
-      {
-        name: 'Milton Keynes',
-        shortCode: 'MIK'
-      },
-      {
-        name: 'Monmouthshire',
-        shortCode: 'MON'
-      },
-      {
-        name: 'Moray',
-        shortCode: 'MRY'
-      },
-      {
-        name: 'Neath Port Talbot',
-        shortCode: 'NTL'
-      },
-      {
-        name: 'Newcastle upon Tyne',
-        shortCode: 'NET'
-      },
-      {
-        name: 'Newham',
-        shortCode: 'NWM'
-      },
-      {
-        name: 'Newport',
-        shortCode: 'NWP'
-      },
-      {
-        name: 'Newry, Mourne and Down',
-        shortCode: 'NMD'
-      },
-      {
-        name: 'Norfolk',
-        shortCode: 'NFK'
-      },
-      {
-        name: 'North Ayrshire',
-        shortCode: 'NAY'
-      },
-      {
-        name: 'North East Lincolnshire',
-        shortCode: 'NEL'
-      },
-      {
-        name: 'North Lanarkshire',
-        shortCode: 'NLK'
-      },
-      {
-        name: 'North Lincolnshire',
-        shortCode: 'NLN'
-      },
-      {
-        name: 'North Somerset',
-        shortCode: 'NSM'
-      },
-      {
-        name: 'North Tyneside',
-        shortCode: 'NTY'
-      },
-      {
-        name: 'North Yorkshire',
-        shortCode: 'NYK'
-      },
-      {
-        name: 'Northamptonshire',
-        shortCode: 'NTH'
-      },
-      {
-        name: 'Northumberland',
-        shortCode: 'NBL'
-      },
-      {
-        name: 'Nottingham',
-        shortCode: 'NGM'
-      },
-      {
-        name: 'Nottinghamshire',
-        shortCode: 'NTT'
-      },
-      {
-        name: 'Oldham',
-        shortCode: 'OLD'
-      },
-      {
-        name: 'Orkney Islands',
-        shortCode: 'ORK'
-      },
-      {
-        name: 'Oxfordshire',
-        shortCode: 'OXF'
-      },
-      {
-        name: 'Pembrokeshire',
-        shortCode: 'PEM'
-      },
-      {
-        name: 'Perth and Kinross',
-        shortCode: 'PKN'
-      },
-      {
-        name: 'Peterborough',
-        shortCode: 'PTE'
-      },
-      {
-        name: 'Plymouth',
-        shortCode: 'PLY'
-      },
-      {
-        name: 'Poole',
-        shortCode: 'POL'
-      },
-      {
-        name: 'Portsmouth',
-        shortCode: 'POR'
-      },
-      {
-        name: 'Powys',
-        shortCode: 'POW'
-      },
-      {
-        name: 'Reading',
-        shortCode: 'RDG'
-      },
-      {
-        name: 'Redbridge',
-        shortCode: 'RDB'
-      },
-      {
-        name: 'Redcar and Cleveland',
-        shortCode: 'RCC'
-      },
-      {
-        name: 'Renfrewshire',
-        shortCode: 'RFW'
-      },
-      {
-        name: 'Rhondda, Cynon, Taff',
-        shortCode: 'RCT'
-      },
-      {
-        name: 'Richmond upon Thames',
-        shortCode: 'RIC'
-      },
-      {
-        name: 'Rochdale',
-        shortCode: 'RCH'
-      },
-      {
-        name: 'Rotherham',
-        shortCode: 'ROT'
-      },
-      {
-        name: 'Rutland',
-        shortCode: 'RUT'
-      },
-      {
-        name: 'St. Helens',
-        shortCode: 'SHN'
-      },
-      {
-        name: 'Salford',
-        shortCode: 'SLF'
-      },
-      {
-        name: 'Sandwell',
-        shortCode: 'SAW'
-      },
-      {
-        name: 'Scottish Borders, The',
-        shortCode: 'SCB'
-      },
-      {
-        name: 'Sefton',
-        shortCode: 'SFT'
-      },
-      {
-        name: 'Sheffield',
-        shortCode: 'SHF'
-      },
-      {
-        name: 'Shetland Islands',
-        shortCode: 'ZET'
-      },
-      {
-        name: 'Shropshire',
-        shortCode: 'SHR'
-      },
-      {
-        name: 'Slough',
-        shortCode: 'SLG'
-      },
-      {
-        name: 'Solihull',
-        shortCode: 'SOL'
-      },
-      {
-        name: 'Somerset',
-        shortCode: 'SOM'
-      },
-      {
-        name: 'South Ayrshire',
-        shortCode: 'SAY'
-      },
-      {
-        name: 'South Gloucestershire',
-        shortCode: 'SGC'
-      },
-      {
-        name: 'South Lanarkshire',
-        shortCode: 'SLK'
-      },
-      {
-        name: 'South Tyneside',
-        shortCode: 'STY'
-      },
-      {
-        name: 'Southampton',
-        shortCode: 'STH'
-      },
-      {
-        name: 'Southend-on-Sea',
-        shortCode: 'SOS'
-      },
-      {
-        name: 'Southwark',
-        shortCode: 'SWK'
-      },
-      {
-        name: 'Staffordshire',
-        shortCode: 'STS'
-      },
-      {
-        name: 'Stirling',
-        shortCode: 'STG'
-      },
-      {
-        name: 'Stockport',
-        shortCode: 'SKP'
-      },
-      {
-        name: 'Stockton-on-Tees',
-        shortCode: 'STT'
-      },
-      {
-        name: 'Stoke-on-Trent',
-        shortCode: 'STE'
-      },
-      {
-        name: 'Suffolk',
-        shortCode: 'SFK'
-      },
-      {
-        name: 'Sunderland',
-        shortCode: 'SND'
-      },
-      {
-        name: 'Surrey',
-        shortCode: 'SRY'
-      },
-      {
-        name: 'Sutton',
-        shortCode: 'STN'
-      },
-      {
-        name: 'Swansea',
-        shortCode: 'SWA'
-      },
-      {
-        name: 'Swindon',
-        shortCode: 'SWD'
-      },
-      {
-        name: 'Tameside',
-        shortCode: 'TAM'
-      },
-      {
-        name: 'Telford and Wrekin',
-        shortCode: 'TFW'
-      },
-      {
-        name: 'Thurrock',
-        shortCode: 'THR'
-      },
-      {
-        name: 'Torbay',
-        shortCode: 'TOB'
-      },
-      {
-        name: 'Torfaen',
-        shortCode: 'TOF'
-      },
-      {
-        name: 'Tower Hamlets',
-        shortCode: 'TWH'
-      },
-      {
-        name: 'Trafford',
-        shortCode: 'TRF'
-      },
-      {
-        name: 'Vale of Glamorgan, The',
-        shortCode: 'VGL'
-      },
-      {
-        name: 'Wakefield',
-        shortCode: 'WKF'
-      },
-      {
-        name: 'Walsall',
-        shortCode: 'WLL'
-      },
-      {
-        name: 'Waltham Forest',
-        shortCode: 'WFT'
-      },
-      {
-        name: 'Wandsworth',
-        shortCode: 'WND'
-      },
-      {
-        name: 'Warrington',
-        shortCode: 'WRT'
-      },
-      {
-        name: 'Warwickshire',
-        shortCode: 'WAR'
-      },
-      {
-        name: 'West Berkshire',
-        shortCode: 'WBK'
-      },
-      {
-        name: 'West Dunbartonshire',
-        shortCode: 'WDU'
-      },
-      {
-        name: 'West Lothian',
-        shortCode: 'WLN'
-      },
-      {
-        name: 'West Sussex',
-        shortCode: 'WSX'
-      },
-      {
-        name: 'Westminster',
-        shortCode: 'WSM'
-      },
-      {
-        name: 'Wigan',
-        shortCode: 'WGN'
-      },
-      {
-        name: 'Wiltshire',
-        shortCode: 'WIL'
-      },
-      {
-        name: 'Windsor and Maidenhead',
-        shortCode: 'WNM'
-      },
-      {
-        name: 'Wirral',
-        shortCode: 'WRL'
-      },
-      {
-        name: 'Wokingham',
-        shortCode: 'WOK'
-      },
-      {
-        name: 'Wolverhampton',
-        shortCode: 'WLV'
-      },
-      {
-        name: 'Worcestershire',
-        shortCode: 'WOR'
-      },
-      {
-        name: 'Wrexham',
-        shortCode: 'WRX'
-      },
-      {
-        name: 'York',
-        shortCode: 'YOR'
-      }
-    ]
-  },
-  {
-    countryName: 'France',
-    countryShortCode: 'FR',
-    regions: [
-      {
-        name: 'Auvergne-Rhône-Alpes',
-        shortCode: 'ARA'
-      },
-      {
-        name: 'Bourgogne-Franche-Comté',
-        shortCode: 'BFC'
-      },
-      {
-        name: 'Bretagne',
-        shortCode: 'BRE'
-      },
-      {
-        name: 'Centre-Val de Loire',
-        shortCode: 'CVL'
-      },
-      {
-        name: 'Corse',
-        shortCode: 'COR'
-      },
-      {
-        name: 'Grand Est',
-        shortCode: 'GES'
-      },
-      {
-        name: 'Hauts-de-France',
-        shortCode: 'HDF'
-      },
-      {
-        name: 'Île-de-France',
-        shortCode: 'IDF'
-      },
-      {
-        name: 'Normandie',
-        shortCode: 'NOR'
-      },
-      {
-        name: 'Nouvelle-Aquitaine',
-        shortCode: 'NAQ'
-      },
-      {
-        name: 'Occitanie',
-        shortCode: 'OCC'
-      },
-      {
-        name: 'Pays de la Loire',
-        shortCode: 'PDL'
-      },
-      {
-        name: "Provence-Alpes-Cote d'Azur",
-        shortCode: 'PAC'
-      },
-      {
-        name: 'Clipperton',
-        shortCode: 'CP'
-      },
-      {
-        name: 'Guadeloupe',
-        shortCode: 'GP'
-      },
-      {
-        name: 'Guyane',
-        shortCode: 'GF'
-      },
-      {
-        name: 'Martinique',
-        shortCode: 'MQ'
-      },
-      {
-        name: 'Mayotte',
-        shortCode: 'YT'
-      },
-      {
-        name: 'Novelle-Calédonie',
-        shortCode: 'NC'
-      },
-      {
-        name: 'Polynésie',
-        shortCode: 'PF'
-      },
-      {
-        name: 'Saint-Pierre-et-Miquelon',
-        shortCode: 'PM'
-      },
-      {
-        name: 'Saint Barthélemy',
-        shortCode: 'BL'
-      },
-      {
-        name: 'Saint Martin',
-        shortCode: 'MF'
-      },
-      {
-        name: 'Réunion',
-        shortCode: 'RE'
-      },
-      {
-        name: 'Terres Australes Françaises',
-        shortCode: 'TF'
-      },
-      {
-        name: 'Wallis-et-Futuna',
-        shortCode: 'WF'
-      }
-    ]
-  },
-  {
     countryName: 'Afghanistan',
     countryShortCode: 'AF',
     regions: [
@@ -5780,6 +4796,116 @@ export default [
       {
         name: 'Varsinais-Suomi',
         shortCode: 'FI-19'
+      }
+    ]
+  },
+  {
+    countryName: 'France',
+    countryShortCode: 'FR',
+    regions: [
+      {
+        name: 'Auvergne-Rhône-Alpes',
+        shortCode: 'ARA'
+      },
+      {
+        name: 'Bourgogne-Franche-Comté',
+        shortCode: 'BFC'
+      },
+      {
+        name: 'Bretagne',
+        shortCode: 'BRE'
+      },
+      {
+        name: 'Centre-Val de Loire',
+        shortCode: 'CVL'
+      },
+      {
+        name: 'Corse',
+        shortCode: 'COR'
+      },
+      {
+        name: 'Grand Est',
+        shortCode: 'GES'
+      },
+      {
+        name: 'Hauts-de-France',
+        shortCode: 'HDF'
+      },
+      {
+        name: 'Île-de-France',
+        shortCode: 'IDF'
+      },
+      {
+        name: 'Normandie',
+        shortCode: 'NOR'
+      },
+      {
+        name: 'Nouvelle-Aquitaine',
+        shortCode: 'NAQ'
+      },
+      {
+        name: 'Occitanie',
+        shortCode: 'OCC'
+      },
+      {
+        name: 'Pays de la Loire',
+        shortCode: 'PDL'
+      },
+      {
+        name: "Provence-Alpes-Cote d'Azur",
+        shortCode: 'PAC'
+      },
+      {
+        name: 'Clipperton',
+        shortCode: 'CP'
+      },
+      {
+        name: 'Guadeloupe',
+        shortCode: 'GP'
+      },
+      {
+        name: 'Guyane',
+        shortCode: 'GF'
+      },
+      {
+        name: 'Martinique',
+        shortCode: 'MQ'
+      },
+      {
+        name: 'Mayotte',
+        shortCode: 'YT'
+      },
+      {
+        name: 'Novelle-Calédonie',
+        shortCode: 'NC'
+      },
+      {
+        name: 'Polynésie',
+        shortCode: 'PF'
+      },
+      {
+        name: 'Saint-Pierre-et-Miquelon',
+        shortCode: 'PM'
+      },
+      {
+        name: 'Saint Barthélemy',
+        shortCode: 'BL'
+      },
+      {
+        name: 'Saint Martin',
+        shortCode: 'MF'
+      },
+      {
+        name: 'Réunion',
+        shortCode: 'RE'
+      },
+      {
+        name: 'Terres Australes Françaises',
+        shortCode: 'TF'
+      },
+      {
+        name: 'Wallis-et-Futuna',
+        shortCode: 'WF'
       }
     ]
   },
@@ -18110,6 +17236,880 @@ export default [
       {
         name: 'Umm Al Quwain',
         shortCode: 'UQ'
+      }
+    ]
+  },
+  {
+    countryName: 'United Kingdom',
+    countryShortCode: 'GB',
+    regions: [
+      {
+        name: 'Aberdeen City',
+        shortCode: 'ABE'
+      },
+      {
+        name: 'Aberdeenshire',
+        shortCode: 'ABD'
+      },
+      {
+        name: 'Angus',
+        shortCode: 'ANS'
+      },
+      {
+        name: 'Antrim and Newtownabbey',
+        shortCode: 'ANN'
+      },
+      {
+        name: 'Ards and North Down',
+        shortCode: 'AND'
+      },
+      {
+        name: 'Argyll and Bute',
+        shortCode: 'AGB'
+      },
+      {
+        name: 'Armagh, Banbridge and Craigavon',
+        shortCode: 'ABC'
+      },
+      {
+        name: 'Barking and Dagenham',
+        shortCode: 'BDG'
+      },
+      {
+        name: 'Barnet',
+        shortCode: 'BNE'
+      },
+      {
+        name: 'Barnsley',
+        shortCode: 'BNS'
+      },
+      {
+        name: 'Bath and North East Somerset',
+        shortCode: 'BAS'
+      },
+      {
+        name: 'Bedford',
+        shortCode: 'BDF'
+      },
+      {
+        name: 'Belfast',
+        shortCode: 'BFS'
+      },
+      {
+        name: 'Bexley',
+        shortCode: 'BEX'
+      },
+      {
+        name: 'Birmingham',
+        shortCode: 'BIR'
+      },
+      {
+        name: 'Blackburn with Darwen',
+        shortCode: 'BBD'
+      },
+      {
+        name: 'Blackpool',
+        shortCode: 'BPL'
+      },
+      {
+        name: 'Blaenau Gwent',
+        shortCode: 'BGW'
+      },
+      {
+        name: 'Bolton',
+        shortCode: 'BOL'
+      },
+      {
+        name: 'Bournemouth',
+        shortCode: 'BMH'
+      },
+      {
+        name: 'Bracknell Forest',
+        shortCode: 'BRC'
+      },
+      {
+        name: 'Bradford',
+        shortCode: 'BRD'
+      },
+      {
+        name: 'Brent',
+        shortCode: 'BEN'
+      },
+      {
+        name: 'Bridgend',
+        shortCode: 'BGE'
+      },
+      {
+        name: 'Brighton and Hove',
+        shortCode: 'BNH'
+      },
+      {
+        name: 'Bristol, City of',
+        shortCode: 'BST'
+      },
+      {
+        name: 'Bromley',
+        shortCode: 'BRY'
+      },
+      {
+        name: 'Buckinghamshire',
+        shortCode: 'BKM'
+      },
+      {
+        name: 'Bury',
+        shortCode: 'BUR'
+      },
+      {
+        name: 'Caerphilly',
+        shortCode: 'CAY'
+      },
+      {
+        name: 'Calderdale',
+        shortCode: 'CLD'
+      },
+      {
+        name: 'Cambridgeshire',
+        shortCode: 'CAM'
+      },
+      {
+        name: 'Camden',
+        shortCode: 'CMD'
+      },
+      {
+        name: 'Cardiff',
+        shortCode: 'CRF'
+      },
+      {
+        name: 'Carmarthenshire',
+        shortCode: 'CMN'
+      },
+      {
+        name: 'Causeway Coast and Glens',
+        shortCode: 'CCG'
+      },
+      {
+        name: 'Central Bedfordshire',
+        shortCode: 'CBF'
+      },
+      {
+        name: 'Ceredigion',
+        shortCode: 'CGN'
+      },
+      {
+        name: 'Cheshire East',
+        shortCode: 'CHE'
+      },
+      {
+        name: 'Cheshire West and Chester',
+        shortCode: 'CHW'
+      },
+      {
+        name: 'Clackmannanshire',
+        shortCode: 'CLK'
+      },
+      {
+        name: 'Conwy',
+        shortCode: 'CWY'
+      },
+      {
+        name: 'Cornwall',
+        shortCode: 'CON'
+      },
+      {
+        name: 'Coventry',
+        shortCode: 'COV'
+      },
+      {
+        name: 'Croydon',
+        shortCode: 'CRY'
+      },
+      {
+        name: 'Cumbria',
+        shortCode: 'CMA'
+      },
+      {
+        name: 'Darlington',
+        shortCode: 'DAL'
+      },
+      {
+        name: 'Denbighshire',
+        shortCode: 'DEN'
+      },
+      {
+        name: 'Derby',
+        shortCode: 'DER'
+      },
+      {
+        name: 'Derbyshire',
+        shortCode: 'DBY'
+      },
+      {
+        name: 'Derry and Strabane',
+        shortCode: 'DRS'
+      },
+      {
+        name: 'Devon',
+        shortCode: 'DEV'
+      },
+      {
+        name: 'Doncaster',
+        shortCode: 'DNC'
+      },
+      {
+        name: 'Dorset',
+        shortCode: 'DOR'
+      },
+      {
+        name: 'Dudley',
+        shortCode: 'DUD'
+      },
+      {
+        name: 'Dumfries and Galloway',
+        shortCode: 'DGY'
+      },
+      {
+        name: 'Dundee City',
+        shortCode: 'DND'
+      },
+      {
+        name: 'Durham County',
+        shortCode: 'DUR'
+      },
+      {
+        name: 'Ealing',
+        shortCode: 'EAL'
+      },
+      {
+        name: 'East Ayrshire',
+        shortCode: 'EAY'
+      },
+      {
+        name: 'East Dunbartonshire',
+        shortCode: 'EDU'
+      },
+      {
+        name: 'East Lothian',
+        shortCode: 'ELN'
+      },
+      {
+        name: 'East Renfrewshire',
+        shortCode: 'ERW'
+      },
+      {
+        name: 'East Riding of Yorkshire',
+        shortCode: 'ERY'
+      },
+      {
+        name: 'East Sussex',
+        shortCode: 'ESX'
+      },
+      {
+        name: 'Edinburgh, City of',
+        shortCode: 'EDH'
+      },
+      {
+        name: 'Eilean Siar',
+        shortCode: 'ELS'
+      },
+      {
+        name: 'Enfield',
+        shortCode: 'ENF'
+      },
+      {
+        name: 'Essex',
+        shortCode: 'ESS'
+      },
+      {
+        name: 'Falkirk',
+        shortCode: 'FAL'
+      },
+      {
+        name: 'Fermanagh and Omagh',
+        shortCode: 'FMO'
+      },
+      {
+        name: 'Fife',
+        shortCode: 'FIF'
+      },
+      {
+        name: 'Flintshire',
+        shortCode: 'FLN'
+      },
+      {
+        name: 'Gateshead',
+        shortCode: 'GAT'
+      },
+      {
+        name: 'Glasgow City',
+        shortCode: 'GLG'
+      },
+      {
+        name: 'Gloucestershire',
+        shortCode: 'GLS'
+      },
+      {
+        name: 'Greenwich',
+        shortCode: 'GRE'
+      },
+      {
+        name: 'Gwynedd',
+        shortCode: 'GWN'
+      },
+      {
+        name: 'Hackney',
+        shortCode: 'HCK'
+      },
+      {
+        name: 'Halton',
+        shortCode: 'HAL'
+      },
+      {
+        name: 'Hammersmith and Fulham',
+        shortCode: 'HMF'
+      },
+      {
+        name: 'Hampshire',
+        shortCode: 'HAM'
+      },
+      {
+        name: 'Haringey',
+        shortCode: 'HRY'
+      },
+      {
+        name: 'Harrow',
+        shortCode: 'HRW'
+      },
+      {
+        name: 'Hartlepool',
+        shortCode: 'HPL'
+      },
+      {
+        name: 'Havering',
+        shortCode: 'HAV'
+      },
+      {
+        name: 'Herefordshire',
+        shortCode: 'HEF'
+      },
+      {
+        name: 'Hertfordshire',
+        shortCode: 'HRT'
+      },
+      {
+        name: 'Highland',
+        shortCode: 'HLD'
+      },
+      {
+        name: 'Hillingdon',
+        shortCode: 'HIL'
+      },
+      {
+        name: 'Hounslow',
+        shortCode: 'HNS'
+      },
+      {
+        name: 'Inverclyde',
+        shortCode: 'IVC'
+      },
+      {
+        name: 'Isle of Anglesey',
+        shortCode: 'AGY'
+      },
+      {
+        name: 'Isle of Wight',
+        shortCode: 'IOW'
+      },
+      {
+        name: 'Isles of Scilly',
+        shortCode: 'IOS'
+      },
+      {
+        name: 'Islington',
+        shortCode: 'ISL'
+      },
+      {
+        name: 'Kensington and Chelsea',
+        shortCode: 'KEC'
+      },
+      {
+        name: 'Kent',
+        shortCode: 'KEN'
+      },
+      {
+        name: 'Kingston upon Hull',
+        shortCode: 'KHL'
+      },
+      {
+        name: 'Kingston upon Thames',
+        shortCode: 'KTT'
+      },
+      {
+        name: 'Kirklees',
+        shortCode: 'KIR'
+      },
+      {
+        name: 'Knowsley',
+        shortCode: 'KWL'
+      },
+      {
+        name: 'Lambeth',
+        shortCode: 'LBH'
+      },
+      {
+        name: 'Lancashire',
+        shortCode: 'LAN'
+      },
+      {
+        name: 'Leeds',
+        shortCode: 'LDS'
+      },
+      {
+        name: 'Leicester',
+        shortCode: 'LCE'
+      },
+      {
+        name: 'Leicestershire',
+        shortCode: 'LEC'
+      },
+      {
+        name: 'Lewisham',
+        shortCode: 'LEW'
+      },
+      {
+        name: 'Lincolnshire',
+        shortCode: 'LIN'
+      },
+      {
+        name: 'Lisburn and Castlereagh',
+        shortCode: 'LBC'
+      },
+      {
+        name: 'Liverpool',
+        shortCode: 'LIV'
+      },
+      {
+        name: 'London, City of',
+        shortCode: 'LND'
+      },
+      {
+        name: 'Luton',
+        shortCode: 'LUT'
+      },
+      {
+        name: 'Manchester',
+        shortCode: 'MAN'
+      },
+      {
+        name: 'Medway',
+        shortCode: 'MDW'
+      },
+      {
+        name: 'Merthyr Tydfil',
+        shortCode: 'MTY'
+      },
+      {
+        name: 'Merton',
+        shortCode: 'MRT'
+      },
+      {
+        name: 'Mid and East Antrim',
+        shortCode: 'MEA'
+      },
+      {
+        name: 'Mid Ulster',
+        shortCode: 'MUL'
+      },
+      {
+        name: 'Middlesbrough',
+        shortCode: 'MDB'
+      },
+      {
+        name: 'Midlothian',
+        shortCode: 'MLN'
+      },
+      {
+        name: 'Milton Keynes',
+        shortCode: 'MIK'
+      },
+      {
+        name: 'Monmouthshire',
+        shortCode: 'MON'
+      },
+      {
+        name: 'Moray',
+        shortCode: 'MRY'
+      },
+      {
+        name: 'Neath Port Talbot',
+        shortCode: 'NTL'
+      },
+      {
+        name: 'Newcastle upon Tyne',
+        shortCode: 'NET'
+      },
+      {
+        name: 'Newham',
+        shortCode: 'NWM'
+      },
+      {
+        name: 'Newport',
+        shortCode: 'NWP'
+      },
+      {
+        name: 'Newry, Mourne and Down',
+        shortCode: 'NMD'
+      },
+      {
+        name: 'Norfolk',
+        shortCode: 'NFK'
+      },
+      {
+        name: 'North Ayrshire',
+        shortCode: 'NAY'
+      },
+      {
+        name: 'North East Lincolnshire',
+        shortCode: 'NEL'
+      },
+      {
+        name: 'North Lanarkshire',
+        shortCode: 'NLK'
+      },
+      {
+        name: 'North Lincolnshire',
+        shortCode: 'NLN'
+      },
+      {
+        name: 'North Somerset',
+        shortCode: 'NSM'
+      },
+      {
+        name: 'North Tyneside',
+        shortCode: 'NTY'
+      },
+      {
+        name: 'North Yorkshire',
+        shortCode: 'NYK'
+      },
+      {
+        name: 'Northamptonshire',
+        shortCode: 'NTH'
+      },
+      {
+        name: 'Northumberland',
+        shortCode: 'NBL'
+      },
+      {
+        name: 'Nottingham',
+        shortCode: 'NGM'
+      },
+      {
+        name: 'Nottinghamshire',
+        shortCode: 'NTT'
+      },
+      {
+        name: 'Oldham',
+        shortCode: 'OLD'
+      },
+      {
+        name: 'Orkney Islands',
+        shortCode: 'ORK'
+      },
+      {
+        name: 'Oxfordshire',
+        shortCode: 'OXF'
+      },
+      {
+        name: 'Pembrokeshire',
+        shortCode: 'PEM'
+      },
+      {
+        name: 'Perth and Kinross',
+        shortCode: 'PKN'
+      },
+      {
+        name: 'Peterborough',
+        shortCode: 'PTE'
+      },
+      {
+        name: 'Plymouth',
+        shortCode: 'PLY'
+      },
+      {
+        name: 'Poole',
+        shortCode: 'POL'
+      },
+      {
+        name: 'Portsmouth',
+        shortCode: 'POR'
+      },
+      {
+        name: 'Powys',
+        shortCode: 'POW'
+      },
+      {
+        name: 'Reading',
+        shortCode: 'RDG'
+      },
+      {
+        name: 'Redbridge',
+        shortCode: 'RDB'
+      },
+      {
+        name: 'Redcar and Cleveland',
+        shortCode: 'RCC'
+      },
+      {
+        name: 'Renfrewshire',
+        shortCode: 'RFW'
+      },
+      {
+        name: 'Rhondda, Cynon, Taff',
+        shortCode: 'RCT'
+      },
+      {
+        name: 'Richmond upon Thames',
+        shortCode: 'RIC'
+      },
+      {
+        name: 'Rochdale',
+        shortCode: 'RCH'
+      },
+      {
+        name: 'Rotherham',
+        shortCode: 'ROT'
+      },
+      {
+        name: 'Rutland',
+        shortCode: 'RUT'
+      },
+      {
+        name: 'St. Helens',
+        shortCode: 'SHN'
+      },
+      {
+        name: 'Salford',
+        shortCode: 'SLF'
+      },
+      {
+        name: 'Sandwell',
+        shortCode: 'SAW'
+      },
+      {
+        name: 'Scottish Borders, The',
+        shortCode: 'SCB'
+      },
+      {
+        name: 'Sefton',
+        shortCode: 'SFT'
+      },
+      {
+        name: 'Sheffield',
+        shortCode: 'SHF'
+      },
+      {
+        name: 'Shetland Islands',
+        shortCode: 'ZET'
+      },
+      {
+        name: 'Shropshire',
+        shortCode: 'SHR'
+      },
+      {
+        name: 'Slough',
+        shortCode: 'SLG'
+      },
+      {
+        name: 'Solihull',
+        shortCode: 'SOL'
+      },
+      {
+        name: 'Somerset',
+        shortCode: 'SOM'
+      },
+      {
+        name: 'South Ayrshire',
+        shortCode: 'SAY'
+      },
+      {
+        name: 'South Gloucestershire',
+        shortCode: 'SGC'
+      },
+      {
+        name: 'South Lanarkshire',
+        shortCode: 'SLK'
+      },
+      {
+        name: 'South Tyneside',
+        shortCode: 'STY'
+      },
+      {
+        name: 'Southampton',
+        shortCode: 'STH'
+      },
+      {
+        name: 'Southend-on-Sea',
+        shortCode: 'SOS'
+      },
+      {
+        name: 'Southwark',
+        shortCode: 'SWK'
+      },
+      {
+        name: 'Staffordshire',
+        shortCode: 'STS'
+      },
+      {
+        name: 'Stirling',
+        shortCode: 'STG'
+      },
+      {
+        name: 'Stockport',
+        shortCode: 'SKP'
+      },
+      {
+        name: 'Stockton-on-Tees',
+        shortCode: 'STT'
+      },
+      {
+        name: 'Stoke-on-Trent',
+        shortCode: 'STE'
+      },
+      {
+        name: 'Suffolk',
+        shortCode: 'SFK'
+      },
+      {
+        name: 'Sunderland',
+        shortCode: 'SND'
+      },
+      {
+        name: 'Surrey',
+        shortCode: 'SRY'
+      },
+      {
+        name: 'Sutton',
+        shortCode: 'STN'
+      },
+      {
+        name: 'Swansea',
+        shortCode: 'SWA'
+      },
+      {
+        name: 'Swindon',
+        shortCode: 'SWD'
+      },
+      {
+        name: 'Tameside',
+        shortCode: 'TAM'
+      },
+      {
+        name: 'Telford and Wrekin',
+        shortCode: 'TFW'
+      },
+      {
+        name: 'Thurrock',
+        shortCode: 'THR'
+      },
+      {
+        name: 'Torbay',
+        shortCode: 'TOB'
+      },
+      {
+        name: 'Torfaen',
+        shortCode: 'TOF'
+      },
+      {
+        name: 'Tower Hamlets',
+        shortCode: 'TWH'
+      },
+      {
+        name: 'Trafford',
+        shortCode: 'TRF'
+      },
+      {
+        name: 'Vale of Glamorgan, The',
+        shortCode: 'VGL'
+      },
+      {
+        name: 'Wakefield',
+        shortCode: 'WKF'
+      },
+      {
+        name: 'Walsall',
+        shortCode: 'WLL'
+      },
+      {
+        name: 'Waltham Forest',
+        shortCode: 'WFT'
+      },
+      {
+        name: 'Wandsworth',
+        shortCode: 'WND'
+      },
+      {
+        name: 'Warrington',
+        shortCode: 'WRT'
+      },
+      {
+        name: 'Warwickshire',
+        shortCode: 'WAR'
+      },
+      {
+        name: 'West Berkshire',
+        shortCode: 'WBK'
+      },
+      {
+        name: 'West Dunbartonshire',
+        shortCode: 'WDU'
+      },
+      {
+        name: 'West Lothian',
+        shortCode: 'WLN'
+      },
+      {
+        name: 'West Sussex',
+        shortCode: 'WSX'
+      },
+      {
+        name: 'Westminster',
+        shortCode: 'WSM'
+      },
+      {
+        name: 'Wigan',
+        shortCode: 'WGN'
+      },
+      {
+        name: 'Wiltshire',
+        shortCode: 'WIL'
+      },
+      {
+        name: 'Windsor and Maidenhead',
+        shortCode: 'WNM'
+      },
+      {
+        name: 'Wirral',
+        shortCode: 'WRL'
+      },
+      {
+        name: 'Wokingham',
+        shortCode: 'WOK'
+      },
+      {
+        name: 'Wolverhampton',
+        shortCode: 'WLV'
+      },
+      {
+        name: 'Worcestershire',
+        shortCode: 'WOR'
+      },
+      {
+        name: 'Wrexham',
+        shortCode: 'WRX'
+      },
+      {
+        name: 'York',
+        shortCode: 'YOR'
       }
     ]
   },

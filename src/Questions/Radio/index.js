@@ -16,10 +16,16 @@ const styles = {
 const QuestionRadio = ({ question, register, errors }) => {
   return (
     <div
-      sx={{
-        ...(question.isFullWidth && styles.fullWidth),
-        variant: 'forms.radioContainer'
-      }}
+      sx={
+        question.isFullWidth
+          ? {
+              ...(question.isFullWidth && styles.fullWidth),
+              variant: 'forms.radioContainerFullWith'
+            }
+          : {
+              variant: 'forms.radioContainer'
+            }
+      }
     >
       <Label key={question.name}>
         <Radio

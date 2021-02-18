@@ -35,7 +35,7 @@ const QuestionCountry = ({
 }) => {
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries
-    if (question.priorizeOrder) {
+    if (question.customOrder) {
       filteredCountries = priorizeCountriesOrder(
         countries,
         question.customOrder

@@ -74,7 +74,7 @@ const QuestionCountry = ({
         question.isFullWidth
           ? {
               ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.countryContainerFullWith'
+              variant: 'forms.countryContainerFullWidth'
             }
           : {
               variant: 'forms.countryContainer'

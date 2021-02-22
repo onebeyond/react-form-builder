@@ -36,7 +36,7 @@ const QuestionDate = ({
             ? {
                 ...(question.isFullWidth && styles.fullWidth),
                 ...(!isMobile && styles.halfWidth),
-                variant: 'forms.dateContainerFullWith'
+                variant: 'forms.dateContainerFullWidth'
               }
             : {
                 variant: 'forms.dateContainer'

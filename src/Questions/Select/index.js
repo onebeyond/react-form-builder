@@ -45,7 +45,7 @@ const QuestionSelect = ({
           question.isFullWidth
             ? {
                 ...(question.isFullWidth && styles.fullWidth),
-                variant: 'forms.selectContainerFullWith'
+                variant: 'forms.selectContainerFullWidth'
               }
             : {
                 variant: 'forms.selectContainer'

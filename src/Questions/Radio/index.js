@@ -20,7 +20,7 @@ const QuestionRadio = ({ question, register, errors }) => {
         question.isFullWidth
           ? {
               ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.radioContainerFullWith'
+              variant: 'forms.radioContainerFullWidth'
             }
           : {
               variant: 'forms.radioContainer'

@@ -20,7 +20,7 @@ const QuestionInput = ({ question, register, errors }) => {
         question.isFullWidth
           ? {
               ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.inputContainerFullWith'
+              variant: 'forms.inputContainerFullWidth'
             }
           : {
               variant: 'forms.inputContainer'

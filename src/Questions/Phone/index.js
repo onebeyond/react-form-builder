@@ -75,7 +75,7 @@ const QuestionPhone = ({
           question.isFullWidth
             ? {
                 ...(question.isFullWidth && styles.fullWidth),
-                variant: 'forms.phoneContainerFullWith'
+                variant: 'forms.phoneContainerFullWidth'
               }
             : {
                 variant: 'forms.phoneContainer'

@@ -1,5 +1,4 @@
 import CountryAndRegionsData from '../../forms/countryAndRegion'
-// import { StyleTypeMap } from '../../utils/styleTypeMap'
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
@@ -16,13 +15,27 @@ const styles = {
 }
 
 const priorizeCountriesOrder = (countries, order) => {
-  const filteredElements = countries.filter((item) =>
-    order.includes(item.countryShortCode)
-  )
+  const filteredElements = countries.filter((item) => {
+    return order.find(
+      (element) => element.countryShortCode === item.countryShortCode
+    )
+  })
+
+  const orderedElements = order.map((customElement) => {
+    const country = filteredElements.find(
+      (element) => element.countryShortCode === customElement.countryShortCode
+    )
+    if (customElement.countryName) {
+      country.countryName = customElement.countryName
+    }
+    return country
+  })
+
   const origin = countries.filter(
     (item) => !order.includes(item.countryShortCode)
   )
-  return [...filteredElements, ...origin]
+
+  return [...orderedElements, ...origin]
 }
 
 const QuestionCountry = ({

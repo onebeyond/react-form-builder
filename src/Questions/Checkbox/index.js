@@ -58,7 +58,10 @@ const QuestionCheckbox = ({
               source={question.label}
               renderers={{
                 link: ({ href, children }) => (
-                  <Link href={`${currentPath}${href}`} target='_blank'>
+                  <Link
+                    href={`${currentPath}${href}`}
+                    target={question.target || '_blank'}
+                  >
                     {children}
                   </Link>
                 )

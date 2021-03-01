@@ -18,17 +18,20 @@ const styles = {
 }
 
 const QuestionDate = ({
+  component,
+  useForm,
   question,
-  register,
-  errors,
-  watch,
-  setValue,
   dateFormat,
   isBirthDate,
   isMobile,
   ...props
 }) => {
-  return (
+  const { errors, register, setValue } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <React.Fragment>
       <div
         sx={

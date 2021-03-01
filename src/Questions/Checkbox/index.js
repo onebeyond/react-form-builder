@@ -27,13 +27,18 @@ const styles = {
 }
 
 const QuestionCheckbox = ({
-  question,
-  errors,
-  form,
+  component,
   currentPath,
-  register
+  form,
+  question,
+  useForm
 }) => {
-  return (
+  const { errors, register } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={{
         ...(question.isFullWidth && styles.fullWidth)

@@ -57,18 +57,19 @@ const styles = {
 }
 
 const QuestionPhone = ({
-  question,
-  register,
-  errors,
-  watch,
-  setValue,
+  component,
   isMobile,
-  setError,
-  clearErrors,
   isoCode,
+  question,
+  useForm,
   ...props
 }) => {
-  return (
+  const { clearErrors, errors, register, setError, setValue } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <React.Fragment>
       <div
         sx={

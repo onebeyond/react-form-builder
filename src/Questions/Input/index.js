@@ -13,8 +13,13 @@ const styles = {
   }
 }
 
-const QuestionInput = ({ question, register, errors }) => {
-  return (
+const QuestionInput = ({ question, useForm, component }) => {
+  const { register, errors } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={
         question.isFullWidth

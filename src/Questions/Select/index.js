@@ -30,15 +30,13 @@ const getOptions = (question) => {
   )
 }
 
-const QuestionSelect = ({
-  question,
-  register,
-  errors,
-  watch,
-  setValue,
-  ...props
-}) => {
-  return (
+const QuestionSelect = ({ question, useForm, component, ...props }) => {
+  const { register, errors, watch, setValue } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <React.Fragment>
       <div
         sx={

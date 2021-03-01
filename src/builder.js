@@ -35,24 +35,11 @@ const FormBuilder = ({
   isoCode,
   ...props
 }) => {
-  const {
-    register,
-    handleSubmit,
-    getValues,
-    errors,
-    watch,
-    setValue,
-    setError,
-    clearErrors
-  } = useForm()
+  const useFormObj = useForm()
 
   const QuestionsMap = (question) => {
-    const CustomComponent = ({ component }) => component(question)
-
     return {
-      box: props.customBox ? (
-        <CustomComponent component={props.customBox} />
-      ) : (
+      box: (
         <div sx={{ variant: 'forms.boxContainer' }}>
           {question.label && <Label>{question.label}</Label>}
           {question &&
@@ -67,120 +54,90 @@ const FormBuilder = ({
             })}
         </div>
       ),
-      input: props.customInput ? (
-        <CustomComponent component={props.customInput} />
-      ) : (
+      input: (
         <QuestionInput
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
+          component={props.customInput}
         />
       ),
-      select: props.customSelect ? (
-        <CustomComponent component={props.customSelect} />
-      ) : (
+      select: (
         <>
           <QuestionSelect
-            watch={watch}
-            errors={errors}
-            register={register}
+            useForm={useFormObj}
             question={question}
-            setValue={setValue}
+            component={props.customSelect}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(ConditionalQuestion(question))}
         </>
       ),
-      country: props.customCountry ? (
-        <CustomComponent component={props.customCountry} />
-      ) : (
+      country: (
         <QuestionCountry
-          watch={watch}
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
-          setValue={setValue}
           isMobile={isMobile}
+          component={props.customCountry}
         />
       ),
-      checkbox: props.customCheckbox ? (
-        <CustomComponent component={props.customCheckbox} />
-      ) : (
+      checkbox: (
         <QuestionCheckbox
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
           form={form}
           currentPath={currentPath}
+          component={props.customCheckbox}
         />
       ),
-      radio: props.customRadio ? (
-        <CustomComponent component={props.customRadio} />
-      ) : (
+      radio: (
         <QuestionRadio
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
+          component={props.customRadio}
         />
       ),
-      date: props.customDate ? (
-        <CustomComponent component={props.customDate} />
-      ) : (
+      date: (
         <QuestionDate
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
-          watch={watch}
-          setValue={setValue}
           dateFormat='dd-MM-yyyy'
-          isBirthDate={false}
+          isBirthDate={question.isBirthDate || false}
           isMobile={isMobile}
+          component={props.customDate}
         />
       ),
-      phone: props.customPhone ? (
-        <CustomComponent component={props.customPhone} />
-      ) : (
+      phone: (
         <QuestionPhone
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
-          watch={watch}
-          setValue={setValue}
           isMobile={isMobile}
-          setError={setError}
-          clearErrors={clearErrors}
           isoCode={isoCode}
+          component={props.customPhone}
         />
       ),
-      multiple_checkboxes: props.customMultipleCheckboxes ? (
-        <CustomComponent component={props.customMultipleCheckboxes} />
-      ) : (
+      multiple_checkboxes: (
         <QuestionMultipleCheckboxes
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
-          getValues={getValues}
           form={form}
+          component={props.customMultipleCheckboxes}
         />
       ),
-      multiple_images_checkboxes: props.customMultipleImageCheckboxes ? (
-        <CustomComponent component={props.customMultipleImageCheckboxes} />
-      ) : (
+      multiple_images_checkboxes: (
         <QuestionMultipleImageCheckboxes
-          errors={errors}
-          register={register}
+          useForm={useFormObj}
           question={question}
-          getValues={getValues}
           form={form}
+          component={props.customMultipleImageCheckboxes}
         />
       ),
-      markdown: props.customMarkdown ? (
-        <CustomComponent component={props.customMarkdown} />
-      ) : (
+      markdown: (
         <QuestionMarkdown
+          useForm={useFormObj}
           question={question}
           form={form}
           currentPath={currentPath}
+          component={props.customMarkdown}
         />
       )
     }
@@ -193,7 +150,7 @@ const FormBuilder = ({
       const getConditions = () =>
         dependentQuestion.conditions || dependentQuestion.condition
 
-      const conditionValue = watch(question.name)
+      const conditionValue = useFormObj.watch(question.name)
 
       const getFormattedValue = () =>
         conditionValue && conditionValue.value
@@ -230,7 +187,7 @@ const FormBuilder = ({
   }
 
   return (
-    <form id={idForm} onSubmit={handleSubmit(onSubmit)}>
+    <form id={idForm} onSubmit={useFormObj.handleSubmit(onSubmit)}>
       <div sx={{ variant: 'forms.container.' + (form && form.layout) }}>
         {form &&
           Array.isArray(form.questions) &&

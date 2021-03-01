@@ -23,14 +23,13 @@ const styles = {
   }
 }
 
-const QuestionMultipleCheckboxes = ({
-  question,
-  errors,
-  form,
-  register,
-  getValues
-}) => {
-  return (
+const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
+  const { getValues, errors, register } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={{
         ...(question.isFullWidth && styles.fullWidth)

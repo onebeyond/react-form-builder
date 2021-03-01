@@ -39,13 +39,15 @@ const priorizeCountriesOrder = (countries, order) => {
 }
 
 const QuestionCountry = ({
-  question,
-  register,
-  errors,
+  component,
   isMobile = false,
-  setValue,
+  question,
+  useForm,
   ...props
 }) => {
+  const { errors, register, setValue } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries
     if (question.customOrder) {
@@ -81,7 +83,9 @@ const QuestionCountry = ({
     CountryAndRegionsData
   )
 
-  return (
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={
         question.isFullWidth

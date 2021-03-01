@@ -13,8 +13,13 @@ const styles = {
   }
 }
 
-const QuestionRadio = ({ question, register, errors }) => {
-  return (
+const QuestionRadio = ({ component, question, useForm }) => {
+  const { register, errors } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={
         question.isFullWidth

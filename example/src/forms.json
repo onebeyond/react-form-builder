@@ -8,6 +8,15 @@
     "enabled": true,
     "questions": [
       {
+        "name": "taylor_over_18",
+        "type": "checkbox",
+        "label": "Smart home function(TV links with IoT [devices](www.google.es) and sensors so you can turn on the lights, [privacy]() check fridge, run the robot etc. )",
+        "isFullWidth": true,
+        "errorMessages": {
+          "required": "This field is required"
+        }
+      },
+      {
         "type": "box",
         "label": "Box",
         "children": [

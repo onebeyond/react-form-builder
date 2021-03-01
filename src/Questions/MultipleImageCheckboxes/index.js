@@ -18,13 +18,17 @@ const styles = {
 }
 
 const QuestionMultipleImageCheckboxes = ({
-  question,
-  errors,
+  component,
   form,
-  register,
-  getValues
+  question,
+  useForm
 }) => {
-  return (
+  const { errors, getValues, register } = useForm
+  const CustomComponent = ({ component }) => component(question, useForm)
+
+  return component ? (
+    <CustomComponent component={component} />
+  ) : (
     <div
       sx={{
         ...(question.isFullWidth && styles.fullWidth)

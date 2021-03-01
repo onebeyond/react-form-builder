@@ -1,4 +1,7 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx, Link } from 'theme-ui'
+import ReactMarkdown from 'react-markdown'
 
 import {
   Button,
@@ -8,6 +11,7 @@ import {
   Radio,
   Phone,
   Date,
+  ErrorMessage,
   FormBuilder
 } from 'react-form-builder'
 
@@ -22,6 +26,72 @@ const App = () => {
     mode: 'onChange',
     reValidateMode: 'onChange'
   })
+
+  const styles = {
+    fullWidth: {
+      gridColumnStart: '1',
+      gridColumnEnd: '3'
+    },
+    selectOption: {
+      background: 'bg',
+      color: 'black'
+    },
+    markDown: {
+      fontFamily: 'regular',
+      width: ['90%', '95%', '95%'],
+      p: {
+        margin: 0
+      }
+    }
+  }
+
+  const CustomCheckbox = (question, useForm) => {
+   console.log({question, useForm})
+
+   return <div
+   sx={{ ...(question.isFullWidth && styles.fullWidth)}}>
+   <div
+     sx={{
+     }}
+   >
+     <div sx={styles.centerStyle} key={question.name}>
+       <Label sx={styles.centerStyle}>
+         <Checkbox
+           sx={styles.checkboxMinWidth}
+           name={question.name}
+           ref={register({
+             ...question.registerConfig
+           })}
+         />
+         <ReactMarkdown
+           sx={styles.markDown}
+           source={question.label}
+           renderers={{
+             link: ({ href, children }) => {
+              return <Link
+                 href={children[0].props.children.includes('privacy') ? 'http://privacy': 'http://default'}
+                 target={question.target || '_blank'}
+               >
+                 {children} esto es el children: {children[0]}
+               </Link>
+             }
+
+             
+           }}
+         />
+       </Label>
+       {useForm.errors[question.name] &&
+         useForm.errors[question.name].type === 'required' && (
+           <ErrorMessage
+             message={
+               question.errorMessages && question.errorMessages.required
+             }
+           />
+         )}
+     </div>
+   </div>
+ </div>
+  }
 
   const onSubmitForm = (data) => {
     alert(
@@ -74,6 +144,7 @@ const App = () => {
         idForm={forms.contact.id}
         form={forms.contact}
         onSubmit={onSubmitForm}
+        customCheckbox={CustomCheckbox}
       />
     </>
   )

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import Button from './Fields/Button'
+import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
@@ -31,7 +32,8 @@ const FormBuilder = ({
   form,
   idForm = '',
   isMobile,
-  isoCode
+  isoCode,
+  ...props
 }) => {
   const {
     register,
@@ -45,15 +47,38 @@ const FormBuilder = ({
   } = useForm()
 
   const QuestionsMap = (question) => {
+    const CustomComponent = ({ component }) => component(question)
+
     return {
-      input: (
+      box: props.customBox ? (
+        <CustomComponent component={props.customBox} />
+      ) : (
+        <div sx={{ variant: 'forms.boxContainer' }}>
+          {question.label && <Label>{question.label}</Label>}
+          {question &&
+            Array.isArray(question.children) &&
+            question.children.map((question, i) => {
+              return (
+                <React.Fragment key={i}>
+                  {QuestionsMap(question)[question.type] ||
+                    QuestionsMap(question).default}
+                </React.Fragment>
+              )
+            })}
+        </div>
+      ),
+      input: props.customInput ? (
+        <CustomComponent component={props.customInput} />
+      ) : (
         <QuestionInput
           errors={errors}
           register={register}
           question={question}
         />
       ),
-      select: (
+      select: props.customSelect ? (
+        <CustomComponent component={props.customSelect} />
+      ) : (
         <>
           <QuestionSelect
             watch={watch}
@@ -66,7 +91,9 @@ const FormBuilder = ({
             question.dependentQuestions.map(ConditionalQuestion(question))}
         </>
       ),
-      country: (
+      country: props.customCountry ? (
+        <CustomComponent component={props.customCountry} />
+      ) : (
         <QuestionCountry
           watch={watch}
           errors={errors}
@@ -76,7 +103,9 @@ const FormBuilder = ({
           isMobile={isMobile}
         />
       ),
-      checkbox: (
+      checkbox: props.customCheckbox ? (
+        <CustomComponent component={props.customCheckbox} />
+      ) : (
         <QuestionCheckbox
           errors={errors}
           register={register}
@@ -85,14 +114,18 @@ const FormBuilder = ({
           currentPath={currentPath}
         />
       ),
-      radio: (
+      radio: props.customRadio ? (
+        <CustomComponent component={props.customRadio} />
+      ) : (
         <QuestionRadio
           errors={errors}
           register={register}
           question={question}
         />
       ),
-      date: (
+      date: props.customDate ? (
+        <CustomComponent component={props.customDate} />
+      ) : (
         <QuestionDate
           errors={errors}
           register={register}
@@ -104,7 +137,9 @@ const FormBuilder = ({
           isMobile={isMobile}
         />
       ),
-      phone: (
+      phone: props.customPhone ? (
+        <CustomComponent component={props.customPhone} />
+      ) : (
         <QuestionPhone
           errors={errors}
           register={register}
@@ -117,7 +152,9 @@ const FormBuilder = ({
           isoCode={isoCode}
         />
       ),
-      multiple_checkboxes: (
+      multiple_checkboxes: props.customMultipleCheckboxes ? (
+        <CustomComponent component={props.customMultipleCheckboxes} />
+      ) : (
         <QuestionMultipleCheckboxes
           errors={errors}
           register={register}
@@ -126,7 +163,9 @@ const FormBuilder = ({
           form={form}
         />
       ),
-      multiple_images_checkboxes: (
+      multiple_images_checkboxes: props.customMultipleImageCheckboxes ? (
+        <CustomComponent component={props.customMultipleImageCheckboxes} />
+      ) : (
         <QuestionMultipleImageCheckboxes
           errors={errors}
           register={register}
@@ -135,7 +174,9 @@ const FormBuilder = ({
           form={form}
         />
       ),
-      markdown: (
+      markdown: props.customMarkdown ? (
+        <CustomComponent component={props.customMarkdown} />
+      ) : (
         <QuestionMarkdown
           question={question}
           form={form}

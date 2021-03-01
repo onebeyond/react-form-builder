@@ -8,6 +8,29 @@
     "enabled": true,
     "questions": [
       {
+        "type": "box",
+        "label": "Box",
+        "children": [
+          {
+            "name": "taylor_over_18",
+            "type": "checkbox",
+            "isFullWidth": true,
+            "errorMessages": {
+              "required": "This field is required"
+            }
+          },
+          {
+            "name": "taylor_over_18",
+            "type": "label",
+            "label": "este es el label",
+            "isFullWidth": true,
+            "errorMessages": {
+              "required": "This field is required"
+            }
+          }
+        ]
+      },
+      {
         "name": "$Country",
         "placeholder": "Please make a selection",
         "customOrder": [{"countryShortCode": "IT", "countryName": "Italia"}, {"countryShortCode": "DE"},{"countryShortCode": "ES", "countryName": "Español"}],

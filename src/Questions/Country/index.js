@@ -64,7 +64,7 @@ const QuestionCountry = ({
         }
       ],
       filteredCountries.map((country) => ({
-        value: country.countryName,
+        value: country.countryShortCode,
         label: country.countryName
       }))
     )

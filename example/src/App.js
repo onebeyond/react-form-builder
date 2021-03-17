@@ -46,7 +46,6 @@ const App = () => {
   }
 
   const CustomCheckbox = (question, useForm) => {
-   console.log({question, useForm})
 
    return <div
    sx={{ ...(question.isFullWidth && styles.fullWidth)}}>
@@ -105,7 +104,7 @@ const App = () => {
 
   return (
     <>
-      <Button caption='Button example' />
+      {/* <Button caption='Button example' />
       <Input />
       <Phone
         defaultCountry='GB'
@@ -138,7 +137,7 @@ const App = () => {
       <Label>
         <Radio name='dark-mode' value='false' />
         Light Mode
-      </Label>
+      </Label> */}
       <Label>Example of form builder</Label>
       <FormBuilder
         idForm={forms.contact.id}

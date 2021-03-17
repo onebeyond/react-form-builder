@@ -28,7 +28,6 @@ const QuestionDate = ({
 }) => {
   const { errors, register, setValue } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
-
   return component ? (
     <CustomComponent component={component} />
   ) : (
@@ -58,6 +57,7 @@ const QuestionDate = ({
           isMobile={isMobile}
           dateFormat={dateFormat}
           isBirthDate={isBirthDate}
+          minAge={question.minAge}
           {...props}
         />
         {errors[question.name] && errors[question.name].type === 'required' && (

@@ -15,6 +15,7 @@ const DatePicker = ({
   isMobile,
   dateFormat,
   isBirthDate,
+  minAge,
   ...props
 }) => {
   const [date, setDate] = React.useState()
@@ -27,11 +28,11 @@ const DatePicker = ({
   }, [isMobile, pickerRef])
 
   const isOver18 = (date) => {
-    return differenceInYears(new Date(), date) >= 18
+    return differenceInYears(new Date(), date) >= (minAge || 18)
   }
 
   const getInitialDate = () => {
-    return subYears(new Date(), 18)
+    return subYears(new Date(), minAge || 18)
   }
 
   return (

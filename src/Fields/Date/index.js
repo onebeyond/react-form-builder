@@ -6,14 +6,6 @@ import { RHFInput } from 'react-hook-form-input'
 import ReactDatePicker from 'react-datepicker'
 import { differenceInYears, subYears } from 'date-fns'
 
-const isOver18 = (dob) => {
-  return differenceInYears(new Date(), dob) > 18
-}
-
-const getInitialDate = () => {
-  return subYears(new Date(), 18)
-}
-
 const DatePicker = ({
   register,
   setValue,
@@ -34,6 +26,14 @@ const DatePicker = ({
     }
   }, [isMobile, pickerRef])
 
+  const isOver18 = (date) => {
+    return differenceInYears(new Date(), date) >= 18
+  }
+
+  const getInitialDate = () => {
+    return subYears(new Date(), 18)
+  }
+
   return (
     <RHFInput
       as={
@@ -45,7 +45,7 @@ const DatePicker = ({
           dateFormat={dateFormat || 'dd/MM/yyyy'}
           showYearDropdown
           dropdownMode={isMobile ? 'select' : 'scroll'}
-          openToDate={date || isBirthDate ? getInitialDate() : new Date()}
+          openToDate={isBirthDate ? getInitialDate() : date || new Date()}
           disabledKeyboardNavigation
           {...props}
         />
@@ -53,7 +53,7 @@ const DatePicker = ({
       rules={{
         ...registerConfig,
         validate: {
-          u18: isBirthDate ? isOver18 : ''
+          u18: isBirthDate ? isOver18 : () => true
         }
       }}
       name={name}

@@ -9,6 +9,9 @@ export { default as Radio } from './Fields/Radio'
 export { default as Phone } from './Fields/Phone'
 export { default as Date } from './Fields/Date'
 export { default as Markdown } from './Fields/Markdown'
+export { default as ErrorMessage } from './Fields/Error'
+export { RHFInput } from 'react-hook-form-input'
+export { Controller } from 'react-hook-form'
 
 // Theme
 export { default as FormTheme } from './theme'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 /** @jsx jsx */
 import { jsx, Link } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
@@ -22,11 +22,6 @@ import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-number-input/style.css'
 
 const App = () => {
-  const { register, setValue, setError, clearErrors } = useForm({
-    mode: 'onChange',
-    reValidateMode: 'onChange'
-  })
-
   const styles = {
     fullWidth: {
       gridColumnStart: '1',
@@ -45,6 +40,10 @@ const App = () => {
     }
   }
 
+  const [privacyAllow, setPrivacyAllow] = useState(false)
+  const [privacy, setPrivacy] = useState(false)
+
+  
   const CustomCheckbox = (question, useForm) => {
 
    return <div
@@ -58,9 +57,17 @@ const App = () => {
          <Checkbox
            sx={styles.checkboxMinWidth}
            name={question.name}
-           ref={register({
-             ...question.registerConfig
-           })}
+            onClick={(e) => {
+              if(question.name === 'privacyAllow'){
+                setPrivacyAllow(e.currentTarget.checked)
+              }
+              if(question.name === 'privacy'){
+                setPrivacy(e.currentTarget.checked)
+              }
+              useForm.setValue(question.name, e.currentTarget.checked)
+            }}
+           checked={ question.name === 'privacyAllow' ? privacyAllow : privacy}
+           ref={useForm.register(question.name, question.registerConfig)}
          />
          <ReactMarkdown
            sx={styles.markDown}
@@ -79,11 +86,11 @@ const App = () => {
            }}
          />
        </Label>
-       {useForm.errors[question.name] &&
-         useForm.errors[question.name].type === 'required' && (
+       {useForm?.errors[question.name] &&
+         useForm?.errors[question.name]?.type === 'required' && (
            <ErrorMessage
              message={
-               question.errorMessages && question.errorMessages.required
+               question?.errorMessages && question?.errorMessages?.required
              }
            />
          )}
@@ -91,6 +98,8 @@ const App = () => {
    </div>
  </div>
   }
+
+
 
   const onSubmitForm = (data) => {
     alert(

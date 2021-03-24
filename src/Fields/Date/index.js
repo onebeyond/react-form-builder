@@ -16,11 +16,11 @@ const DatePicker = ({
   dateFormat,
   isBirthDate,
   minAge,
-  openToDate,
+  openToDate = '',
   ...props
 }) => {
   const [date, setDate] = React.useState()
-
+  console.log(new Date())
   const pickerRef = React.useRef(null)
   React.useEffect(() => {
     if (isMobile && pickerRef.current !== null) {
@@ -36,6 +36,8 @@ const DatePicker = ({
     return subYears(new Date(), minAge || 18)
   }
 
+  const [day, month, year] = openToDate.split('-')
+
   return (
     <RHFInput
       as={
@@ -48,8 +50,8 @@ const DatePicker = ({
           showYearDropdown
           dropdownMode={isMobile ? 'select' : 'scroll'}
           openToDate={
-            openToDate
-              ? new Date(openToDate)
+            openToDate.split('-').length === 3
+              ? new Date(year, month - 1, day)
               : isBirthDate
               ? getInitialDate()
               : date || new Date()

@@ -58,6 +58,7 @@ const QuestionDate = ({
           dateFormat={dateFormat}
           isBirthDate={isBirthDate}
           minAge={question.minAge}
+          openToDate={question.openToDate}
           {...props}
         />
         {errors[question.name] && errors[question.name].type === 'required' && (

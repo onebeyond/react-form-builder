@@ -16,6 +16,7 @@ const DatePicker = ({
   dateFormat,
   isBirthDate,
   minAge,
+  openToDate,
   ...props
 }) => {
   const [date, setDate] = React.useState()
@@ -46,7 +47,13 @@ const DatePicker = ({
           dateFormat={dateFormat || 'dd/MM/yyyy'}
           showYearDropdown
           dropdownMode={isMobile ? 'select' : 'scroll'}
-          openToDate={isBirthDate ? getInitialDate() : date || new Date()}
+          openToDate={
+            openToDate
+              ? new Date(openToDate)
+              : isBirthDate
+              ? getInitialDate()
+              : date || new Date()
+          }
           disabledKeyboardNavigation
           {...props}
         />

@@ -42,6 +42,21 @@
         "registerConfig": {
           "required": true
         }
+      },
+      {
+        "name": "dob",
+        "type": "date",
+        "label": "Date of birth",
+        "placeholder": "dd-mm-yyyy",
+        "isBirthDate": true,
+        "openToDate": "1-1-2000",
+        "errorMessages": {
+          "required": "This field is required",
+          "u18": "You must be 18 years old or above"
+        },
+        "registerConfig": {
+          "required": true
+        }
       }
     ],
     "refrigeratorQuestions": [

@@ -8,6 +8,18 @@
     "enabled": true,
     "questions": [
       {
+        "name": "phone",
+        "type": "phone",
+        "label": "phone",
+        "placeholder": "phone",
+        "registerConfig": {
+          "required": true
+        },
+        "errorMessages": {
+          "required": "This field is required"
+        }
+      },
+      {
         "name": "privacyAllow",
         "type": "checkbox",
         "label": "This is the label of checkbox [privacy]()",
@@ -22,7 +34,7 @@
       {
         "name": "privacy",
         "type": "checkbox",
-        "label": "This is the label of checkbox [privacy]()",
+        "label": "This is another checkbox [privacy]()",
         "isFullWidth": true,
         "registerConfig": {
           "required": true
@@ -49,6 +61,7 @@
         "label": "Date of birth",
         "placeholder": "dd-mm-yyyy",
         "isBirthDate": true,
+        "minAge": 1,
         "openToDate": "1-1-2000",
         "errorMessages": {
           "required": "This field is required",

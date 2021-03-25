@@ -6,50 +6,7 @@ import React from 'react'
 import Phone from '../../Fields/Phone'
 import { jsx } from 'theme-ui'
 
-const StyleTypeMap = {
-  true: 'mobile',
-  false: 'desktop'
-}
-
 const styles = {
-  desktop: {
-    input: {
-      bg: 'background',
-      padding: '15 16px',
-      height: '44px',
-      fontSize: '16px',
-      mb: '8px',
-      border: 'solid 1px #ccc',
-      borderRadius: '22px'
-    },
-    label: {
-      color: 'text',
-      alignItems: 'center',
-      textAlign: 'center',
-      fontSize: '16px',
-      mt: '10px',
-      justifyContent: 'center'
-    }
-  },
-  mobile: {
-    input: {
-      bg: 'background',
-      padding: '15 16px',
-      height: '44px',
-      fontSize: '16px',
-      mb: '8px',
-      border: 'solid 1px #ccc',
-      borderRadius: '22px'
-    },
-    label: {
-      color: 'text',
-      alignItems: 'center',
-      textAlign: 'center',
-      fontSize: '16px',
-      mt: '10px',
-      justifyContent: 'center'
-    }
-  },
   fullWidth: {
     gridColumnStart: '1',
     gridColumnEnd: '3'
@@ -83,15 +40,10 @@ const QuestionPhone = ({
               }
         }
       >
-        {question.label && (
-          <Label sx={styles[StyleTypeMap[isMobile]].label}>
-            {question.label}
-          </Label>
-        )}
+        {question.label && <Label>{question.label}</Label>}
 
         <Phone
-          defaultCountry={isoCode.toUpperCase() || ''}
-          style={styles[StyleTypeMap[isMobile]].input}
+          defaultCountry={isoCode?.toUpperCase() || ''}
           register={register}
           setValue={setValue}
           setError={setError}

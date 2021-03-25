@@ -27,7 +27,7 @@ const Phone = ({
       name='phone'
       setValue={(name, value) => {
         setValue(name, value)
-        !isPossiblePhoneNumber(value)
+        !isPossiblePhoneNumber(value || '')
           ? setError(name, {
               type: 'isPossiblePhoneNumber'
             })

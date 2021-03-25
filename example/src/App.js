@@ -152,6 +152,7 @@ const App = () => {
         idForm={forms.contact.id}
         form={forms.contact}
         onSubmit={onSubmitForm}
+        isoCode="ES"
         customCheckbox={CustomCheckbox}
       />
     </>

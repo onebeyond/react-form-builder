@@ -74,6 +74,18 @@
     ],
     "questions": [
       {
+        "name": "phone",
+        "type": "phone",
+        "label": "phone",
+        "placeholder": "phone",
+        "registerConfig": {
+          "required": true
+        },
+        "errorMessages": {
+          "required": "This field is required"
+        }
+      },
+      {
         "label": "Multip",
         "type": "multiple_checkboxes",
         "qId": "81b20f0d-6f31-4ab6-b0a5-eca42cbd965b",

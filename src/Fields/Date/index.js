@@ -20,7 +20,6 @@ const DatePicker = ({
   ...props
 }) => {
   const [date, setDate] = React.useState()
-  console.log(new Date())
   const pickerRef = React.useRef(null)
   React.useEffect(() => {
     if (isMobile && pickerRef.current !== null) {

@@ -43,7 +43,7 @@ const QuestionPhone = ({
         {question.label && <Label>{question.label}</Label>}
 
         <Phone
-          defaultCountry={isoCode?.toUpperCase() || ''}
+          defaultCountry={isoCode ? isoCode.toUpperCase() : ''}
           register={register}
           setValue={setValue}
           setError={setError}

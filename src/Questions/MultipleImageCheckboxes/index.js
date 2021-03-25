@@ -51,14 +51,22 @@ const QuestionMultipleImageCheckboxes = ({
                   <Checkbox
                     sx={styles.checkboxMinWidth}
                     name={question.name}
-                    value={option.name}
+                    value={option.value}
                     ref={register({
                       ...question.registerConfig,
                       validate: {
-                        minimumLen: () =>
-                          getValues()[question.name] &&
-                          getValues()[question.name].length >=
-                            question.registerConfig.minimumLen
+                        minimumLen: question?.registerConfig?.minimumLen
+                          ? () =>
+                              getValues()[question.name] &&
+                              getValues()[question.name].length >=
+                                question.registerConfig.minimumLen
+                          : () => true,
+                        maximumLen: question?.registerConfig?.maximumLen
+                          ? () =>
+                              getValues()[question.name] &&
+                              getValues()[question.name].length <=
+                                question.registerConfig.minimumLen
+                          : () => true
                       }
                     })}
                   />
@@ -82,6 +90,16 @@ const QuestionMultipleImageCheckboxes = ({
             }}
             message={
               question.errorMessages && question.errorMessages.minimumLen
+            }
+          />
+        )}
+        {errors[question.name] && errors[question.name].type === 'maximumLen' && (
+          <ErrorMessage
+            sx={{
+              gridColumn: 1
+            }}
+            message={
+              question.errorMessages && question.errorMessages.maximumLen
             }
           />
         )}

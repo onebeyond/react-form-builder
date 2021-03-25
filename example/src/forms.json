@@ -6,7 +6,7 @@
     "caption": "Survey",
     "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
     "enabled": true,
-    "questions": [
+    "copyQuestions": [
       {
         "name": "phone",
         "type": "phone",
@@ -69,6 +69,41 @@
         },
         "registerConfig": {
           "required": true
+        }
+      }
+    ],
+    "questions": [
+      {
+        "label": "Multip",
+        "type": "multiple_checkboxes",
+        "qId": "81b20f0d-6f31-4ab6-b0a5-eca42cbd965b",
+        "errorMessages": {
+          "required": "This field is required",
+          "maximumLen": "Maximum choises exceded",
+          "minimumLen": "Minimum choises required"
+        },
+        "registerConfig": {
+          "required": true,
+          "maximumLen": "2",
+          "minimumLen": "2"
+        },
+        "placeholder": "Multip",
+        "name": "multip",
+        "config": {
+          "options": [
+            {
+              "label": "one",
+              "value": "one"
+            },
+            {
+              "label": "two",
+              "value": "two"
+            },
+            {
+              "label": "three",
+              "value": "three"
+            }
+          ]
         }
       }
     ],

@@ -31,13 +31,18 @@ const QuestionCheckbox = ({
   currentPath,
   form,
   question,
-  useForm
+  useForm,
+  onLinkOpen
 }) => {
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const MarkDownLink = ({ href, children }) => (
-    <Link href={`${href}`} target={question.target || '_blank'}>
+    <Link
+      href={`${href}`}
+      onClick={() => onLinkOpen(question.name)}
+      target='_blank'
+    >
       {children}
     </Link>
   )

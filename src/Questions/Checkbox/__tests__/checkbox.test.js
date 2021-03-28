@@ -64,7 +64,7 @@ it('shows an error message', () => {
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
 
-it('handles markdown link', () => {
+it('handles default markdown link', () => {
   const { getByRole } = render(
     <QuestionCheckbox
       question={question}
@@ -77,4 +77,27 @@ it('handles markdown link', () => {
 
   const markDownLink = getByRole('link')
   expect(markDownLink.href).toBe('https://www.google.es/')
+  expect(markDownLink.target).toBe('_blank')
+})
+
+it('handles custom markdown link callback', () => {
+  const onLinkOpen = jest.fn()
+  const { getByRole } = render(
+    <QuestionCheckbox
+      question={{
+        ...question,
+        label:
+          'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](#) of this promotion.'
+      }}
+      onLinkOpen={onLinkOpen}
+      useForm={{
+        errors: {},
+        register: () => {}
+      }}
+    />
+  )
+  const markDownLink = getByRole('link')
+  expect(markDownLink.href).toContain('#')
+  fireEvent.click(markDownLink)
+  expect(onLinkOpen).toBeCalledWith(question.name)
 })

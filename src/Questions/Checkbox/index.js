@@ -57,6 +57,7 @@ const QuestionCheckbox = ({
               ref={register({
                 ...question.registerConfig
               })}
+              data-testid='question-checkbox'
             />
             <ReactMarkdown
               sx={styles.markDown}

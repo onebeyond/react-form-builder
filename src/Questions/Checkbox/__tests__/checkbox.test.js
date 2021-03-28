@@ -64,7 +64,7 @@ it('shows an error message', () => {
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
 
-it('handles link', () => {
+it('handles markdown link', () => {
   const { getByRole } = render(
     <QuestionCheckbox
       question={question}

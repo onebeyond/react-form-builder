@@ -9,7 +9,7 @@ const question = {
   type: 'checkbox',
   isFullWidth: true,
   label:
-    'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](TC) of this promotion.',
+    'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](https://www.google.es) of this promotion.',
   errorMessages: {
     required: 'This field is required'
   },
@@ -62,4 +62,19 @@ it('shows an error message', () => {
   )
 
   expect(getByText(question.errorMessages.required)).toBeTruthy()
+})
+
+it('handles link', () => {
+  const { getByRole } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{
+        errors: {},
+        register: () => {}
+      }}
+    />
+  )
+
+  const markDownLink = getByRole('link')
+  expect(markDownLink.href).toBe('https://www.google.es/')
 })

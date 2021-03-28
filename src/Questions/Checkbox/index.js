@@ -36,6 +36,12 @@ const QuestionCheckbox = ({
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
+  const MarkDownLink = ({ href, children }) => (
+    <Link href={`${href}`} target={question.target || '_blank'}>
+      {children}
+    </Link>
+  )
+
   return component ? (
     <CustomComponent component={component} />
   ) : (
@@ -63,14 +69,7 @@ const QuestionCheckbox = ({
               sx={styles.markDown}
               source={question.label}
               renderers={{
-                link: ({ href, children }) => (
-                  <Link
-                    href={`${currentPath}${href}`}
-                    target={question.target || '_blank'}
-                  >
-                    {children}
-                  </Link>
-                )
+                link: MarkDownLink
               }}
             />
           </Label>

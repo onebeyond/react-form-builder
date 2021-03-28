@@ -45,3 +45,21 @@ it('renders markdown', () => {
 
   expect(getByText('I am over the age of 18,', { exact: false })).toBeTruthy()
 })
+
+it('shows an error message', () => {
+  const { getByText } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{
+        errors: {
+          [question.name]: {
+            type: 'required'
+          }
+        },
+        register: () => {}
+      }}
+    />
+  )
+
+  expect(getByText(question.errorMessages.required)).toBeTruthy()
+})

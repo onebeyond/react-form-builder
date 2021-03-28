@@ -28,8 +28,7 @@ const styles = {
 
 const QuestionCheckbox = ({
   component,
-  currentPath,
-  form,
+  variant,
   question,
   useForm,
   onLinkOpen
@@ -57,7 +56,7 @@ const QuestionCheckbox = ({
     >
       <div
         sx={{
-          variant: 'forms.checkbox.' + (form && form.layout)
+          variant: 'forms.checkbox.' + variant
         }}
       >
         <div sx={styles.centerStyle} key={question.name}>

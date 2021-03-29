@@ -28,13 +28,23 @@ const styles = {
 
 const QuestionCheckbox = ({
   component,
-  currentPath,
-  form,
+  variant,
   question,
-  useForm
+  useForm,
+  onLinkOpen
 }) => {
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
+
+  const MarkDownLink = ({ href, children }) => (
+    <Link
+      href={`${href}`}
+      onClick={() => onLinkOpen(question.name)}
+      target='_blank'
+    >
+      {children}
+    </Link>
+  )
 
   return component ? (
     <CustomComponent component={component} />
@@ -46,7 +56,7 @@ const QuestionCheckbox = ({
     >
       <div
         sx={{
-          variant: 'forms.checkbox.' + (form && form.layout)
+          variant: 'forms.checkbox.' + variant
         }}
       >
         <div sx={styles.centerStyle} key={question.name}>
@@ -57,19 +67,13 @@ const QuestionCheckbox = ({
               ref={register({
                 ...question.registerConfig
               })}
+              data-testid='question-checkbox'
             />
             <ReactMarkdown
               sx={styles.markDown}
               source={question.label}
               renderers={{
-                link: ({ href, children }) => (
-                  <Link
-                    href={`${currentPath}${href}`}
-                    target={question.target || '_blank'}
-                  >
-                    {children}
-                  </Link>
-                )
+                link: MarkDownLink
               }}
             />
           </Label>

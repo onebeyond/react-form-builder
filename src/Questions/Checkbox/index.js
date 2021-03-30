@@ -64,6 +64,7 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
+              defaultChecked={question?.defaultChecked}
               ref={register({
                 ...question.registerConfig
               })}

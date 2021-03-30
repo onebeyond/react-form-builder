@@ -8,6 +8,7 @@ const question = {
   name: 'terms_and_conditions',
   type: 'checkbox',
   isFullWidth: true,
+  defaultChecked: true,
   label:
     'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](https://www.google.es) of this promotion.',
   errorMessages: {
@@ -18,7 +19,7 @@ const question = {
   }
 }
 
-it('can checked/unchecked', () => {
+it('can checked/unchecked and default checked', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
@@ -28,11 +29,11 @@ it('can checked/unchecked', () => {
 
   const checkbox = getByTestId('question-checkbox')
 
-  expect(checkbox.checked).toEqual(false)
+  expect(checkbox.checked).toEqual(true)
 
   fireEvent.click(checkbox)
 
-  expect(checkbox.checked).toEqual(true)
+  expect(checkbox.checked).toEqual(false)
 })
 
 it('renders markdown', () => {

@@ -4,7 +4,7 @@ import { Button as ButtonUI, Spinner, jsx } from 'theme-ui'
 
 import React from 'react'
 
-const defaultStyles = {
+const defaultStyles =  {
   border: 'transparent',
   color: 'primaryText',
   fontSize: 2,

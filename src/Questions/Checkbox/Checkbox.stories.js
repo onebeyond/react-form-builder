@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from '../Checkbox'
+import Checkbox from '.'
 
 export default {
   title: 'Question/Checkbox',
@@ -78,7 +78,7 @@ const question = {
   name: 'terms_and_conditions',
   isFullWidth: false,
   label:
-    'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](TC) of this promotion.',
+    'I am over the age of 18, a United Kingdom resident and I have read and understood the Terms and Conditions of this promotion.',
   defaultChecked: false,
   errorMessages: {
     required: 'This field is required'
@@ -88,19 +88,47 @@ const question = {
   }
 }
 const Template = (args) => (
-  <Checkbox question={question} useForm={{ errors: {}, register: () => {} }} />
+  <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
 )
 
-export const Primary = Template.bind({})
+const Error = (args) => (
+  <Checkbox
+    question={args}
+    useForm={{
+      errors: {
+        [question.name]: {
+          type: 'required'
+        }
+      },
+      register: () => {}
+    }}
+  />
+)
 
-Primary.args = {
+const Link = (args) => (
+  <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
+)
+
+export const defaultCheckbox = Template.bind({})
+
+export const errorCheckbox = Error.bind({})
+
+export const checkboxWithLink = Link.bind({})
+
+defaultCheckbox.args = question
+
+errorCheckbox.args = question
+
+checkboxWithLink.args = {
   name: 'terms_and_conditions',
+  isFullWidth: false,
   label:
-    'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](TC) of this promotion.',
+    '[Text with a link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)',
+  defaultChecked: false,
   errorMessages: {
     required: 'This field is required'
   },
   registerConfig: {
-    required: true
+    required: false
   }
 }

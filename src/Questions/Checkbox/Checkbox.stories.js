@@ -1,5 +1,6 @@
 import React from 'react'
 import Checkbox from '.'
+import Label from '../../Fields/Label'
 
 export default {
   title: 'Question/Checkbox',
@@ -37,6 +38,13 @@ export default {
         defaultValue: { summary: false }
       }
     },
+    component: {
+      description: 'Customization of the checkbox',
+      table: {
+        type: { summary: 'func component' }, // TODO
+        defaultValue: { summary: '() => {}' }
+      }
+    },
     errorMessages: {
       description: '',
       table: {
@@ -66,9 +74,6 @@ export default {
         type: { summary: 'boolean' },
         category: 'registerConfig',
         defaultValue: { summary: false }
-      },
-      control: {
-        type: 'boolean'
       }
     }
   }
@@ -87,6 +92,29 @@ const question = {
     required: false
   }
 }
+
+const customQuestion = { ...question }
+customQuestion.label = ''
+
+const customElement = () => {
+  return (
+    <div>
+      <Label sx={{ alignItems: 'center' }}>
+        <Checkbox
+          question={customQuestion}
+          useForm={{ errors: {}, register: () => {} }}
+        />
+        <p>Customized checkbox with an image:</p>
+        <img
+          style={{ height: '40px', marginLeft: '10px' }}
+          src='https://images.ctfassets.net/5gv1edeicqfs/48EM0LU3Z6gWkQCcCaeoq2/704ea273b5d50d09ff450a5ceaa74631/guidesmiths-logo.png' // TODO
+          alt='Logo GS'
+        />
+      </Label>
+    </div>
+  )
+}
+
 const Template = (args) => (
   <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
 )
@@ -105,15 +133,25 @@ const Error = (args) => (
   />
 )
 
-const Link = (args) => (
+const Linked = (args) => (
   <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
+)
+
+const Customized = (args) => (
+  <Checkbox
+    question={args}
+    useForm={{ errors: {}, register: () => {} }}
+    component={customElement}
+  />
 )
 
 export const defaultCheckbox = Template.bind({})
 
 export const errorCheckbox = Error.bind({})
 
-export const checkboxWithLink = Link.bind({})
+export const checkboxWithLink = Linked.bind({})
+
+export const customCheck = Customized.bind({})
 
 const errorQuestion = { ...question }
 const linkQuestion = { ...question }
@@ -125,3 +163,4 @@ linkQuestion.label =
 defaultCheckbox.args = question
 errorCheckbox.args = errorQuestion
 checkboxWithLink.args = linkQuestion
+customCheck.args = customQuestion

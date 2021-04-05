@@ -115,20 +115,13 @@ export const errorCheckbox = Error.bind({})
 
 export const checkboxWithLink = Link.bind({})
 
+const errorQuestion = { ...question }
+const linkQuestion = { ...question }
+
+errorQuestion.registerConfig.required = true
+linkQuestion.label =
+  '[Text with a link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)'
+
 defaultCheckbox.args = question
-
-errorCheckbox.args = question
-
-checkboxWithLink.args = {
-  name: 'terms_and_conditions',
-  isFullWidth: false,
-  label:
-    '[Text with a link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)',
-  defaultChecked: false,
-  errorMessages: {
-    required: 'This field is required'
-  },
-  registerConfig: {
-    required: false
-  }
-}
+errorCheckbox.args = errorQuestion
+checkboxWithLink.args = linkQuestion

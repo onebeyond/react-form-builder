@@ -19,7 +19,7 @@ const question = {
   }
 }
 
-it('can checked/unchecked and default checked', () => {
+test('can checked/unchecked', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
@@ -36,7 +36,33 @@ it('can checked/unchecked and default checked', () => {
   expect(checkbox.checked).toEqual(false)
 })
 
-it('renders markdown', () => {
+test('default checked true', () => {
+  const { getByTestId } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{ errors: {}, register: () => {} }}
+    />
+  )
+  const checkbox = getByTestId('question-checkbox')
+
+  expect(checkbox.checked).toEqual(true)
+})
+
+test('default checked false', () => {
+  question.defaultChecked = false
+
+  const { getByTestId } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{ errors: {}, register: () => {} }}
+    />
+  )
+  const checkbox = getByTestId('question-checkbox')
+
+  expect(checkbox.checked).toEqual(false)
+})
+
+test('renders markdown', () => {
   const { getByText } = render(
     <QuestionCheckbox
       question={question}
@@ -47,7 +73,7 @@ it('renders markdown', () => {
   expect(getByText('I am over the age of 18,', { exact: false })).toBeTruthy()
 })
 
-it('shows an error message', () => {
+test('shows an error message', () => {
   const { getByText } = render(
     <QuestionCheckbox
       question={question}
@@ -65,7 +91,7 @@ it('shows an error message', () => {
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
 
-it('handles default markdown link', () => {
+test('handles default markdown link', () => {
   const { getByRole } = render(
     <QuestionCheckbox
       question={question}
@@ -81,7 +107,7 @@ it('handles default markdown link', () => {
   expect(markDownLink.target).toBe('_blank')
 })
 
-it('handles custom markdown link callback', () => {
+test('handles custom markdown link callback', () => {
   const onLinkOpen = jest.fn()
   const { getByRole } = render(
     <QuestionCheckbox

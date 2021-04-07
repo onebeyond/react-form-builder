@@ -8,6 +8,7 @@ const question = {
   name: 'terms_and_conditions',
   type: 'checkbox',
   isFullWidth: true,
+  defaultChecked: true,
   label:
     'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](https://www.google.es) of this promotion.',
   errorMessages: {
@@ -18,7 +19,7 @@ const question = {
   }
 }
 
-it('can checked/unchecked', () => {
+test('can checked/unchecked', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
@@ -28,14 +29,40 @@ it('can checked/unchecked', () => {
 
   const checkbox = getByTestId('question-checkbox')
 
-  expect(checkbox.checked).toEqual(false)
+  expect(checkbox.checked).toEqual(true)
 
   fireEvent.click(checkbox)
+
+  expect(checkbox.checked).toEqual(false)
+})
+
+test('default checked true', () => {
+  const { getByTestId } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{ errors: {}, register: () => {} }}
+    />
+  )
+  const checkbox = getByTestId('question-checkbox')
 
   expect(checkbox.checked).toEqual(true)
 })
 
-it('renders markdown', () => {
+test('default checked false', () => {
+  question.defaultChecked = false
+
+  const { getByTestId } = render(
+    <QuestionCheckbox
+      question={question}
+      useForm={{ errors: {}, register: () => {} }}
+    />
+  )
+  const checkbox = getByTestId('question-checkbox')
+
+  expect(checkbox.checked).toEqual(false)
+})
+
+test('renders markdown', () => {
   const { getByText } = render(
     <QuestionCheckbox
       question={question}
@@ -46,7 +73,7 @@ it('renders markdown', () => {
   expect(getByText('I am over the age of 18,', { exact: false })).toBeTruthy()
 })
 
-it('shows an error message', () => {
+test('shows an error message', () => {
   const { getByText } = render(
     <QuestionCheckbox
       question={question}
@@ -64,7 +91,7 @@ it('shows an error message', () => {
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
 
-it('handles default markdown link', () => {
+test('handles default markdown link', () => {
   const { getByRole } = render(
     <QuestionCheckbox
       question={question}
@@ -80,7 +107,7 @@ it('handles default markdown link', () => {
   expect(markDownLink.target).toBe('_blank')
 })
 
-it('handles custom markdown link callback', () => {
+test('handles custom markdown link callback', () => {
   const onLinkOpen = jest.fn()
   const { getByRole } = render(
     <QuestionCheckbox

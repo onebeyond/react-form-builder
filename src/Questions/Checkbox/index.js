@@ -39,8 +39,8 @@ const QuestionCheckbox = ({
   const MarkDownLink = ({ href, children }) => (
     <Link
       href={`${href}`}
+      target={href === '#' ? '_self' : '_blank'}
       onClick={() => onLinkOpen(question.name)}
-      target='_blank'
     >
       {children}
     </Link>
@@ -64,6 +64,7 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
+              defaultChecked={question?.defaultChecked}
               ref={register({
                 ...question.registerConfig
               })}

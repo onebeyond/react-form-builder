@@ -33,7 +33,6 @@ const QuestionCheckbox = ({
   useForm,
   onLinkOpen
 }) => {
-  console.log('QuestionCheckbox --> ' + onLinkOpen)
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 

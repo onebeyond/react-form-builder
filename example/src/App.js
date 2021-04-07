@@ -46,10 +46,8 @@ const App = () => {
   const [show, setShow] = useState(false)
   function onLinkOpen() {
     setShow(true)
-    console.log('Dentrooooooo')
   }
   const CustomCheckbox = (question, useForm) => {
-    //console.log(onLinkOpen)
     return (
       <div sx={{ ...(question.isFullWidth && styles.fullWidth) }}>
         <Modal
@@ -105,7 +103,6 @@ const App = () => {
   const ModalCheckbox = () => {
     const [show, setShow] = useState(false)
     function onLinkOpen() {
-      console.log('dentro')
       setShow(true)
     }
     return (

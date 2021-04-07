@@ -11,6 +11,7 @@ const styles = {
     gridColumnStart: '1',
     gridColumnEnd: '3'
   },
+
   halfWidth: {
     gridColumnStart: '0',
     gridColumnEnd: '0'

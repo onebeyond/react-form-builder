@@ -6,7 +6,7 @@
     "caption": "Survey",
     "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
     "enabled": true,
-    "copyQuestions": [
+    "questions": [
       {
         "name": "phone",
         "type": "phone",
@@ -22,7 +22,7 @@
       {
         "name": "privacyAllow",
         "type": "checkbox",
-        "label": "This is the label of checkbox [privacy]()",
+        "label": "This is the label of checkbox [privacy](https://www.google.com)",
         "isFullWidth": true,
         "registerConfig": {
           "required": true
@@ -34,7 +34,7 @@
       {
         "name": "privacy",
         "type": "checkbox",
-        "label": "This is another checkbox [privacy]()",
+        "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
         "isFullWidth": true,
         "registerConfig": {
           "required": true
@@ -72,7 +72,7 @@
         }
       }
     ],
-    "questions": [
+    "question": [
       {
         "name": "phone",
         "type": "phone",

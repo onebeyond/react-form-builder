@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 /** @jsx jsx */
 import { jsx, Link } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
@@ -11,6 +11,7 @@ import {
   Radio,
   Phone,
   Date,
+  Modal,
   ErrorMessage,
   FormBuilder
 } from 'react-form-builder'
@@ -42,64 +43,81 @@ const App = () => {
 
   const [privacyAllow, setPrivacyAllow] = useState(false)
   const [privacy, setPrivacy] = useState(false)
-
-  
+  const [show, setShow] = useState(false)
+  function onLinkOpen() {
+    setShow(true)
+    console.log('Dentrooooooo')
+  }
   const CustomCheckbox = (question, useForm) => {
+    //console.log(onLinkOpen)
+    return (
+      <div sx={{ ...(question.isFullWidth && styles.fullWidth) }}>
+        <Modal
+          title={question.name}
+          onClose={() => setShow(false)}
+          show={show}
+          modalText='this a  modal example *markdown* **text** '
+        />
 
-   return <div
-   sx={{ ...(question.isFullWidth && styles.fullWidth)}}>
-   <div
-     sx={{
-     }}
-   >
-     <div sx={styles.centerStyle} key={question.name}>
-       <Label sx={styles.centerStyle}>
-         <Checkbox
-           sx={styles.checkboxMinWidth}
-           name={question.name}
-            onClick={(e) => {
-              if(question.name === 'privacyAllow'){
-                setPrivacyAllow(e.currentTarget.checked)
-              }
-              if(question.name === 'privacy'){
-                setPrivacy(e.currentTarget.checked)
-              }
-              useForm.setValue(question.name, e.currentTarget.checked)
-            }}
-           checked={ question.name === 'privacyAllow' ? privacyAllow : privacy}
-           ref={useForm.register(question.name, question.registerConfig)}
-         />
-         <ReactMarkdown
-           sx={styles.markDown}
-           source={question.label}
-           renderers={{
-             link: ({ href, children }) => {
-              return <Link
-                 href={children[0].props.children.includes('privacy') ? 'http://privacy': 'http://default'}
-                 target={question.target || '_blank'}
-               >
-                 {children} esto es el children: {children[0]}
-               </Link>
-             }
-
-             
-           }}
-         />
-       </Label>
-       {useForm?.errors[question.name] &&
-         useForm?.errors[question.name]?.type === 'required' && (
-           <ErrorMessage
-             message={
-               question?.errorMessages && question?.errorMessages?.required
-             }
-           />
-         )}
-     </div>
-   </div>
- </div>
+        <div sx={{}}>
+          <div sx={styles.centerStyle} key={question.name}>
+            <Label sx={styles.centerStyle}>
+              <Checkbox
+                sx={styles.checkboxMinWidth}
+                name={question.name}
+                test='test'
+                ref={useForm.register(question.name, question.registerConfig)}
+              />
+              <ReactMarkdown
+                sx={styles.markDown}
+                source={question.label}
+                renderers={{
+                  link: ({ href, children }) => {
+                    return (
+                      <Link
+                        href={
+                          children[0].props.children.includes('privacy')
+                            ? '#'
+                            : '#'
+                        }
+                      >
+                        {children} esto es el children: {children[0]}
+                      </Link>
+                    )
+                  }
+                }}
+              />
+            </Label>
+            {useForm?.errors[question.name] &&
+              useForm?.errors[question.name]?.type === 'required' && (
+                <ErrorMessage
+                  message={
+                    question?.errorMessages && question?.errorMessages?.required
+                  }
+                />
+              )}
+          </div>
+        </div>
+      </div>
+    )
   }
 
-
+  const ModalCheckbox = () => {
+    const [show, setShow] = useState(false)
+    function onLinkOpen() {
+      console.log('dentro')
+      setShow(true)
+    }
+    return (
+      <React.Fragment>
+        <Checkbox
+          question={forms.question}
+          onLinkOpen={onLinkOpen}
+          useForm={{ errors: {}, register: () => {} }}
+        />
+      </React.Fragment>
+    )
+  }
 
   const onSubmitForm = (data) => {
     alert(
@@ -148,13 +166,20 @@ const App = () => {
         Light Mode
       </Label> */}
       <Label>Example of form builder</Label>
+      <Modal
+        title='test'
+        onClose={() => setShow(false)}
+        show={show}
+        modalText='this a  modal example *markdown* **text** '
+      />
       <FormBuilder
         idForm={forms.contact.id}
         form={forms.contact}
         onSubmit={onSubmitForm}
-        isoCode="ES"
-        customCheckbox={CustomCheckbox}
+        isoCode='ES'
+        onLinkOpen={onLinkOpen}
       />
+      <ModalCheckbox />
     </>
   )
 }

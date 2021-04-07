@@ -1,2225 +1,2226 @@
 #### 1.0.57 (2021-04-07)
 
+### testing
+
 ##### Chores
 
-*  delete date logs (c6f0c45b)
-*  adapt es6 to es5 to prevent errors with loader (5889d28c)
-*  delete ? into phone component (696fccb2)
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- delete date logs (c6f0c45b)
+- adapt es6 to es5 to prevent errors with loader (5889d28c)
+- delete ? into phone component (696fccb2)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  custom component with a modal, now we can open links in a modal or in another tab. (99faab93)
-*  custom component for check ==> custom checkbox storybook (0b885954)
-*  storybook related with the checkbox component (b3a383d3)
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- custom component with a modal, now we can open links in a modal or in another tab. (99faab93)
+- custom component for check ==> custom checkbox storybook (0b885954)
+- storybook related with the checkbox component (b3a383d3)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  reducing redundancy repeating question all the time just making the necessary modifications (6b51f4db)
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- reducing redundancy repeating question all the time just making the necessary modifications (6b51f4db)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  redirection in the href, export modal and included onLinkClick for the customizeCheckbox  in formbuilder (12452de6)
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- redirection in the href, export modal and included onLinkClick for the customizeCheckbox in formbuilder (12452de6)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.57 (2021-04-07)
 
 ##### Chores
 
-*  delete date logs (c6f0c45b)
-*  adapt es6 to es5 to prevent errors with loader (5889d28c)
-*  delete ? into phone component (696fccb2)
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- delete date logs (c6f0c45b)
+- adapt es6 to es5 to prevent errors with loader (5889d28c)
+- delete ? into phone component (696fccb2)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  custom component with a modal, now we can open links in a modal or in another tab. (99faab93)
-*  custom component for check ==> custom checkbox storybook (0b885954)
-*  storybook related with the checkbox component (b3a383d3)
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- custom component with a modal, now we can open links in a modal or in another tab. (99faab93)
+- custom component for check ==> custom checkbox storybook (0b885954)
+- storybook related with the checkbox component (b3a383d3)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  reducing redundancy repeating question all the time just making the necessary modifications (6b51f4db)
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- reducing redundancy repeating question all the time just making the necessary modifications (6b51f4db)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.56 (2021-03-25)
 
 ##### Chores
 
-*  delete date logs (c6f0c45b)
-*  adapt es6 to es5 to prevent errors with loader (5889d28c)
-*  delete ? into phone component (696fccb2)
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- delete date logs (c6f0c45b)
+- adapt es6 to es5 to prevent errors with loader (5889d28c)
+- delete ? into phone component (696fccb2)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.55 (2021-03-25)
 
 ##### Chores
 
-*  adapt es6 to es5 to prevent errors with loader (5889d28c)
-*  delete ? into phone component (696fccb2)
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- adapt es6 to es5 to prevent errors with loader (5889d28c)
+- delete ? into phone component (696fccb2)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.54 (2021-03-25)
 
 ##### Chores
 
-*  delete ? into phone component (696fccb2)
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- delete ? into phone component (696fccb2)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.53 (2021-03-25)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
-*  fix empty phone error (81b87e1e)
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+- fix empty phone error (81b87e1e)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.52 (2021-03-24)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  fix date component in firefox and safari (7eada8da)
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- fix date component in firefox and safari (7eada8da)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.51 (2021-03-24)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add openToDate in date field (e1df7d97)
-*  add openToDate in date field (dbba3b64)
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add openToDate in date field (e1df7d97)
+- add openToDate in date field (dbba3b64)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.50 (2021-03-23)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  export error message to implement into custom component (ddf001d0)
-*  add custom component compatibility (7d0907d7)
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- export error message to implement into custom component (ddf001d0)
+- add custom component compatibility (7d0907d7)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.49 (2021-03-17)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add minAge to date component (4848362b)
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add minAge to date component (4848362b)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-*  validation birthday date (979a6463)
-* **main:**  travis yaml format (20ecbffe)
+- validation birthday date (979a6463)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.48 (2021-03-03)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  change value of the country from countryName to countryShortCode (96caaf7f)
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- change value of the country from countryName to countryShortCode (96caaf7f)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.47 (2021-03-01)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.46 (2021-03-01)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.45 (2021-02-25)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add target option into Checkbox ReactMarckdown links (37e9bb5f)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.44 (2021-02-24)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-*  add custom order and custom countryNames into country-component (60091bb0)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
+- add custom order and custom countryNames into country-component (60091bb0)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
 
 #### 1.0.43 (2021-02-22)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.42 (2021-02-22)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.41 (2021-02-19)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### New Features
 
-*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+- add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.40 (2021-02-18)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.39 (2021-02-17)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.38 (2021-02-15)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.37 (2021-02-15)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.36 (2021-02-15)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.35 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.34 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.33 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.32 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (3ce29c13)
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (3ce29c13)
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.31 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (c8e3626a)
-  *  update CI/CD pipeline (954408e3)
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (c8e3626a)
+  - update CI/CD pipeline (954408e3)
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.30 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (75b8495f)
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (75b8495f)
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.29 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (84b8ce4b)
-  *  update CI/CD pipeline (72c18216)
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (84b8ce4b)
+  - update CI/CD pipeline (72c18216)
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.28 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (91d2c37e)
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (91d2c37e)
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.27 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  update CI/CD pipeline (21eda029)
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - update CI/CD pipeline (21eda029)
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.26 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.25 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**
-  *  travis only running at main"" (86f7f661)
-  *  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:**
+  - travis only running at main"" (86f7f661)
+  - travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.24 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* **master:**  travis only running at main" (f81d1a64)
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- **master:** travis only running at main" (f81d1a64)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.23 (2021-02-12)
 
 ##### Chores
 
-* **master:**
-  *  travis only running at main (dbc4a93f)
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
+- **master:**
+  - travis only running at main (dbc4a93f)
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.22 (2021-02-12)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.21 (2021-02-12)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.20 (2021-02-11)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.19 (2021-02-11)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.18 (2021-02-11)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.17 (2021-02-11)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.16 (2021-02-11)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.15 (2021-02-08)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.14 (2021-02-08)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.13 (2021-02-08)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.12 (2021-02-08)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.11 (2021-02-05)
 
 ##### Chores
 
-* **main:**
-  *  travis env var (49a7a645)
-  *  travis env var (86bb2b64)
-  *  linting (05c11286)
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **main:**
+  - travis env var (49a7a645)
+  - travis env var (86bb2b64)
+  - linting (05c11286)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 ##### Bug Fixes
 
-* **main:**  travis yaml format (20ecbffe)
+- **main:** travis yaml format (20ecbffe)
 
 ##### Other Changes
 
-* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
-* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+- add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+- add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
 
 #### 1.0.10 (2021-01-27)
 
 ##### Chores
 
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.9 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  CI/CD node version to 10 (37450548)
-  *  CI/CD Test stage (efaf7116)
-  *  CI/CD Publish stage (8f00cb1b)
-  *  CI/CD docs (aefa3faf)
-  *  public web added (fccde234)
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - CI/CD node version to 10 (37450548)
+  - CI/CD Test stage (efaf7116)
+  - CI/CD Publish stage (8f00cb1b)
+  - CI/CD docs (aefa3faf)
+  - public web added (fccde234)
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.8 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.7 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.6 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.5 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.5 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.4 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment at stage (c75b2769)
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment at stage (c75b2769)
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.3 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.2 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  travis script with conditional deployment (d729e0ea)
-  *  travis config with version tags (ee200327)
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - travis script with conditional deployment (d729e0ea)
+  - travis config with version tags (ee200327)
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.1 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  changelog lib added (42a099eb)
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
+- **master:**
+  - changelog lib added (42a099eb)
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)
 
 #### 1.0.1 (2021-01-18)
 
 ##### Chores
 
-* **master:**
-  *  release script (3f2b0d68)
-  *  adding travis config file (cb4ef886)
-  *  initial commit (aa59600e)
-
+- **master:**
+  - release script (3f2b0d68)
+  - adding travis config file (cb4ef886)
+  - initial commit (aa59600e)

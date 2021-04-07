@@ -39,8 +39,8 @@ const QuestionCheckbox = ({
   const MarkDownLink = ({ href, children }) => (
     <Link
       href={`${href}`}
+      target={href === '#' ? '_self' : '_blank'}
       onClick={() => onLinkOpen(question.name)}
-      target='_blank'
     >
       {children}
     </Link>

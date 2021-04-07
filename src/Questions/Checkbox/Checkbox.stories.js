@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Checkbox from '.'
 import Label from '../../Fields/Label'
+
+import Modal from '../../Fields/MyModal'
 
 export default {
   title: 'Question/Checkbox',
@@ -41,7 +43,7 @@ export default {
     component: {
       description: 'Customization of the checkbox',
       table: {
-        type: { summary: 'func component' }, // TODO
+        type: { summary: 'func component' },
         defaultValue: { summary: '() => {}' }
       }
     },
@@ -94,7 +96,15 @@ const question = {
 }
 
 const customQuestion = { ...question }
+const modalQuestion = { ...question }
+const errorQuestion = { ...question }
+const linkQuestion = { ...question }
+
 customQuestion.label = ''
+modalQuestion.label = 'click the [link](#) to see a modal '
+errorQuestion.registerConfig.required = true
+linkQuestion.label =
+  'Text with a [link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)'
 
 const customElement = () => {
   return (
@@ -102,12 +112,13 @@ const customElement = () => {
       <Label sx={{ alignItems: 'center' }}>
         <Checkbox
           question={customQuestion}
+          name={customQuestion.name}
           useForm={{ errors: {}, register: () => {} }}
         />
         <p>Customized checkbox with an image:</p>
         <img
           style={{ height: '40px', marginLeft: '10px' }}
-          src='https://images.ctfassets.net/5gv1edeicqfs/48EM0LU3Z6gWkQCcCaeoq2/704ea273b5d50d09ff450a5ceaa74631/guidesmiths-logo.png' // TODO
+          src='https://images.ctfassets.net/5gv1edeicqfs/48EM0LU3Z6gWkQCcCaeoq2/704ea273b5d50d09ff450a5ceaa74631/guidesmiths-logo.png'
           alt='Logo GS'
         />
       </Label>
@@ -137,6 +148,28 @@ const Linked = (args) => (
   <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
 )
 
+const ModalCheckbox = (args) => {
+  const [show, setShow] = useState(false)
+  function onLinkOpen() {
+    setShow(true)
+  }
+  return (
+    <React.Fragment>
+      <Modal
+        title={args.name}
+        onClose={() => setShow(false)}
+        show={show}
+        modalText='this a  modal example *markdown* **text** '
+      />
+      <Checkbox
+        question={args}
+        onLinkOpen={onLinkOpen}
+        useForm={{ errors: {}, register: () => {} }}
+      />
+    </React.Fragment>
+  )
+}
+
 const Customized = (args) => (
   <Checkbox
     question={args}
@@ -153,14 +186,11 @@ export const checkboxWithLink = Linked.bind({})
 
 export const customCheck = Customized.bind({})
 
-const errorQuestion = { ...question }
-const linkQuestion = { ...question }
-
-errorQuestion.registerConfig.required = true
-linkQuestion.label =
-  '[Text with a link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)'
+export const modalTest = ModalCheckbox.bind({})
 
 defaultCheckbox.args = question
 errorCheckbox.args = errorQuestion
 checkboxWithLink.args = linkQuestion
 customCheck.args = customQuestion
+
+modalTest.args = modalQuestion

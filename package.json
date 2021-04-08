@@ -26,7 +26,7 @@
     "release:minor": "git tag -l | xargs git tag -d && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -s public -o ./storybooks"
+    "build-storybook": "build-storybook  -o ./public"
   },
   "peerDependencies": {
     "react": "^16.0.0",

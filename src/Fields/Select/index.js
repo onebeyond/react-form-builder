@@ -43,7 +43,7 @@ const Select = ({
   const customStyles = {}
 
   Object.keys(selectStyles).map((property) => {
-    if (theme.select && theme.select[property]) {
+    if (theme?.select && theme.select[property]) {
       selectStyles[property] = theme.select[property]
       customStyles[property] = (provided, state) => {
         if (state.isDisabled) {

@@ -87,6 +87,7 @@ const QuestionCountry = ({
     <CustomComponent component={component} />
   ) : (
     <div
+      data-testid='question-country'
       sx={
         question.isFullWidth
           ? {

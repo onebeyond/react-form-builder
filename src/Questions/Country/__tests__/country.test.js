@@ -1,5 +1,11 @@
 import React from 'react'
-import { cleanup, getByText, screen, render } from '@testing-library/react'
+import {
+  cleanup,
+  getByText,
+  screen,
+  render,
+  fireEvent
+} from '@testing-library/react'
 import QuestionCountry from '../'
 import selectEvent from 'react-select-event'
 
@@ -13,6 +19,11 @@ const question = {
   type: 'country',
   label: 'This is the label of the country select',
   placeholder: 'Please select an option ^^',
+  customOrder: [
+    {
+      countryShortCode: 'GB'
+    }
+  ],
   errorMessages: {
     required: 'This field is required'
   }
@@ -28,9 +39,11 @@ const setup = () => {
 
   const countryComponent = renderComponent.getByTestId('question-country')
   const roleComponent = renderComponent.getByRole('textbox')
-  const labelComponent = renderComponent.getByText('Please select an option ^^')
+  const placeholderComponent = renderComponent.getByText(
+    'Please select an option ^^'
+  )
 
-  return { countryComponent, roleComponent, labelComponent }
+  return { countryComponent, roleComponent, placeholderComponent }
 }
 
 test('check the placeholder text', () => {
@@ -44,10 +57,19 @@ test('Country label', () => {
 })
 
 test('change value of select', async () => {
-  const { labelComponent } = setup()
-  await selectEvent.select(labelComponent, ['China'])
+  const { placeholderComponent } = setup()
+  await selectEvent.select(placeholderComponent, ['China'])
 
   expect(screen.getByText('China'))
+})
+
+test('check the custom order of the countries', async () => {
+  const { placeholderComponent } = setup()
+  await selectEvent.openMenu(placeholderComponent)
+  fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
+  fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
+
+  expect(screen.getByText('United Kingdom'))
 })
 
 test('show an error message', () => {

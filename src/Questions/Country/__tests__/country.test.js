@@ -38,12 +38,11 @@ const setup = () => {
   )
 
   const countryComponent = renderComponent.getByTestId('question-country')
-  const roleComponent = renderComponent.getByRole('textbox')
   const placeholderComponent = renderComponent.getByText(
     'Please select an option ^^'
   )
 
-  return { countryComponent, roleComponent, placeholderComponent }
+  return { countryComponent, placeholderComponent }
 }
 
 test('check the placeholder text', () => {

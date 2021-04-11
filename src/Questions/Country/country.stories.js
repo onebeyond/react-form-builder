@@ -1,0 +1,195 @@
+import React from 'react'
+import Country from './'
+
+export default {
+  title: 'Question/Country',
+  component: Country,
+  argTypes: {
+    name: {
+      type: { name: 'string', required: true },
+      description: 'Name of the country component',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    isFullWidth: {
+      type: { name: 'boolean' },
+      description:
+        'Define if the field takes all the available width in the grid or not',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false }
+      }
+    },
+    isMobile: {
+      type: { name: 'boolean' },
+      description:
+        'Define that the select should not take the default mobile styles of the SO',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false }
+      }
+    },
+    label: {
+      type: { name: 'string' },
+      description:
+        'Text shown with the select. This text can be written in markdown style',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    placeholder: {
+      type: { name: 'string' },
+      description: 'The text that will be shown as placeholder in the select',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: false }
+      }
+    },
+    customOrder: {
+      type: { name: 'object' },
+      description:
+        'An object or array of objects with the acronym(s) of the countries that you want to be shown the first in the country list',
+      table: {
+        type: { summary: 'json' }
+      }
+    },
+    customList: {
+      type: { name: 'object' },
+      description:
+        'An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.',
+      table: {
+        type: {
+          summary: 'json'
+        },
+        category: 'customList'
+      }
+    },
+    countryName: {
+      type: { name: 'string' },
+      description: 'The name of the country',
+      table: {
+        type: { summary: 'string' },
+        category: 'customList'
+      }
+    },
+    countryShortCode: {
+      type: { name: 'string' },
+      description: 'The code/shortcut for the country',
+      table: {
+        type: { summary: 'string' },
+        category: 'customList'
+      }
+    },
+    component: {
+      description: 'Customization of the country select',
+      table: {
+        type: { summary: 'func component' },
+        defaultValue: { summary: '() => {}' }
+      }
+    },
+    errorMessages: {
+      description: '',
+      table: {
+        type: { summary: 'json' },
+        category: 'errorMessages'
+      }
+    },
+    requiredError: {
+      name: 'required',
+      description:
+        'error message to display on submit if the checkbox is not checked',
+      table: {
+        type: { summary: 'string' },
+        category: 'errorMessages'
+      }
+    },
+    registerConfig: {
+      description: '',
+      table: {
+        type: { summary: 'json' },
+        category: 'registerConfig'
+      }
+    },
+    required: {
+      description: 'Define if the checkbox is required or not',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'registerConfig',
+        defaultValue: { summary: false }
+      }
+    }
+  }
+}
+
+const question = {
+  name: 'country_of_residence',
+  label: 'This is the label of the country select',
+  placeholder: 'Please select an option ^^',
+  errorMessages: {
+    required: 'This field is required'
+  },
+  registerConfig: {
+    required: false
+  }
+}
+
+const customListCountries = [
+  { countryName: 'MyOwnCountry1', countryShortCode: 'MC1' },
+  { countryName: 'MyOwnCountry2', countryShortCode: 'MC2' },
+  { countryName: 'MyOwnCountry3', countryShortCode: 'MC3' },
+  { countryName: 'MyOwnCountry4', countryShortCode: 'MC4' }
+]
+
+const customListCountryQst = { ...question }
+customListCountryQst.customOrder = [
+  {
+    countryShortCode: 'GB'
+  }
+]
+
+const Template = (args) => (
+  <Country
+    question={args}
+    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+  />
+)
+
+const errorTemplate = (args) => (
+  <Country
+    question={args}
+    useForm={{
+      errors: {
+        [question.name]: {
+          type: 'required'
+        }
+      },
+      register: () => {},
+      setValue: () => {}
+    }}
+  />
+)
+
+const customOrderTemplate = (args) => (
+  <Country
+    question={args}
+    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+  />
+)
+
+const customListCountriesTemplate = (args) => (
+  <Country
+    question={args}
+    customList={customListCountries}
+    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+  />
+)
+export const defaultCountry = Template.bind({})
+export const errorCountry = errorTemplate.bind({})
+export const customOrderCountries = customOrderTemplate.bind({})
+export const customListCountry = customListCountriesTemplate.bind({})
+
+defaultCountry.args = question
+errorCountry.args = question
+customOrderCountries.args = customListCountryQst
+customListCountry.args = question

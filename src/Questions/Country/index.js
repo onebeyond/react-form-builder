@@ -40,9 +40,10 @@ const priorizeCountriesOrder = (countries, order) => {
 
 const QuestionCountry = ({
   component,
-  isMobile = false,
+  isMobile = false, // TODO quitar esto ????? sera false by default no ?, definir type en la docu?
   question,
   useForm,
+  customList,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
@@ -80,7 +81,7 @@ const QuestionCountry = ({
 
   const options = getCountriesOptions(
     question.placeholder,
-    CountryAndRegionsData
+    customList || CountryAndRegionsData
   )
 
   return component ? (
@@ -112,7 +113,10 @@ const QuestionCountry = ({
         {...props}
       >
         {renderCountryOptions(
-          getCountriesOptions(question.placeholder, CountryAndRegionsData)
+          getCountriesOptions(
+            question.placeholder,
+            customList || CountryAndRegionsData
+          )
         )}
       </Select>
       {errors[question.name] &&

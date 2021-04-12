@@ -1,5 +1,8 @@
 # react-form-builder
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 > React form builder using json schema
 
 [![NPM](https://img.shields.io/npm/v/react-form-builder.svg)](https://www.npmjs.com/package/react-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)

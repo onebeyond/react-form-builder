@@ -85,7 +85,6 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           form={form}
-          currentPath={currentPath}
           component={props.customCheckbox}
           onLinkOpen={props.onLinkOpen}
         />

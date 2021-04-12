@@ -34,7 +34,7 @@
       {
         "name": "privacy",
         "type": "checkbox",
-        "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
+        "label": "This is another checkbox [privacy](#test) This is not privacy [notPrivacy](#test2) este es un [link](https://www.google.com) va a una página",
         "isFullWidth": true,
         "registerConfig": {
           "required": true
@@ -72,7 +72,11 @@
         }
       }
     ],
-    "question": [
+    "textToShow": {
+      "test": "esto es el texto1",
+      "test2": "tututututut"
+    },
+    "questionq": [
       {
         "name": "phone",
         "type": "phone",
@@ -119,7 +123,7 @@
         }
       }
     ],
-    "refrigeratorQuestions": [
+    "questions1": [
       {
         "name": "age",
         "type": "select",
@@ -206,6 +210,11 @@
         "name": "country_of_residence",
         "type": "country",
         "label": "Country",
+        "customOrder": [
+          {
+            "countryShortCode": "GB"
+          }
+        ],
         "placeholder": "Please select an option ^^",
         "errorMessages": {
           "required": "This field is required"

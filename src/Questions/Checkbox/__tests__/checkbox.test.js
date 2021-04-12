@@ -114,7 +114,7 @@ test('handles custom markdown link callback', () => {
       question={{
         ...question,
         label:
-          'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](#) of this promotion.'
+          'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](#T&C) of this promotion.'
       }}
       onLinkOpen={onLinkOpen}
       useForm={{
@@ -126,5 +126,5 @@ test('handles custom markdown link callback', () => {
   const markDownLink = getByRole('link')
   expect(markDownLink.href).toContain('#')
   fireEvent.click(markDownLink)
-  expect(onLinkOpen).toBeCalledWith(question.name)
+  expect(onLinkOpen).toBeCalledWith('T&C')
 })

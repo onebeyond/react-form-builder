@@ -37,11 +37,11 @@ const QuestionCheckbox = ({
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const MarkDownLink = ({ href, children }) =>
-    href === '#' ? (
+    href.startsWith('#') ? (
       <Link
         href={`${href}`}
         target='_self'
-        onClick={() => onLinkOpen(question.name)}
+        onClick={() => onLinkOpen(href.toString().substr(1))}
       >
         {children}
       </Link>
@@ -50,7 +50,6 @@ const QuestionCheckbox = ({
         {children}
       </Link>
     )
-
   return component ? (
     <CustomComponent component={component} />
   ) : (

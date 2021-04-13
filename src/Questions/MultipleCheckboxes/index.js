@@ -43,7 +43,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
               <div
                 sx={{
                   variant:
-                    'forms.multipleCheckboxes.checksContainer' + form.layout
+                    'forms.multipleCheckboxes.checksContainer.' + form.layout
                 }}
                 key={option.name}
               >

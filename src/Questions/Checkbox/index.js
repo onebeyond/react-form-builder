@@ -29,6 +29,7 @@ const styles = {
 const QuestionCheckbox = ({
   component,
   variant,
+  form,
   question,
   useForm,
   onLinkOpen
@@ -61,7 +62,7 @@ const QuestionCheckbox = ({
     >
       <div
         sx={{
-          variant: 'forms.checkbox.' + variant
+          variant: 'forms.checkbox.' + (form && form.layout)
         }}
       >
         <div sx={styles.centerStyle} key={question.name}>
@@ -69,7 +70,7 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
-              defaultChecked={question?.defaultChecked}
+              defaultChecked={question.defaultChecked}
               ref={register({
                 ...question.registerConfig
               })}

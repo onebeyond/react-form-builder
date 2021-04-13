@@ -29,6 +29,7 @@ const styles = {
 const QuestionCheckbox = ({
   component,
   variant,
+  form,
   question,
   useForm,
   onLinkOpen
@@ -36,20 +37,18 @@ const QuestionCheckbox = ({
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
-  const MarkDownLink = ({ href, children }) =>
-    href === '#' ? (
+  const MarkDownLink = ({ href, children }) => {
+    const modalName = href.startsWith('#') && href.toString().substr(1)
+    return (
       <Link
         href={`${href}`}
-        target='_self'
-        onClick={() => onLinkOpen(question.name)}
+        target={modalName ? '_self' : '_blank'}
+        {...(modalName ? { onClick: () => onLinkOpen(modalName) } : {})}
       >
         {children}
       </Link>
-    ) : (
-      <Link href={`${href}`} target='_blank'>
-        {children}
-      </Link>
     )
+  }
 
   return component ? (
     <CustomComponent component={component} />
@@ -61,7 +60,7 @@ const QuestionCheckbox = ({
     >
       <div
         sx={{
-          variant: 'forms.checkbox.' + variant
+          variant: 'forms.checkbox.' + (form && form.layout)
         }}
       >
         <div sx={styles.centerStyle} key={question.name}>
@@ -69,7 +68,7 @@ const QuestionCheckbox = ({
             <Checkbox
               sx={styles.checkboxMinWidth}
               name={question.name}
-              defaultChecked={question?.defaultChecked}
+              defaultChecked={question.defaultChecked}
               ref={register({
                 ...question.registerConfig
               })}

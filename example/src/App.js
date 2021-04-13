@@ -42,9 +42,11 @@ const App = () => {
   }
 
   const [privacyAllow, setPrivacyAllow] = useState(false)
-  const [privacy, setPrivacy] = useState(false)
+  const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
-  function onLinkOpen() {
+
+  function onLinkOpen(name) {
+    setModalText(forms.contact.textToShow[name])
     setShow(true)
   }
   const CustomCheckbox = (question, useForm) => {
@@ -102,14 +104,11 @@ const App = () => {
 
   const ModalCheckbox = () => {
     const [show, setShow] = useState(false)
-    function onLinkOpen() {
-      setShow(true)
-    }
+
     return (
       <React.Fragment>
         <Checkbox
           question={forms.question}
-          onLinkOpen={onLinkOpen}
           useForm={{ errors: {}, register: () => {} }}
         />
       </React.Fragment>
@@ -167,7 +166,7 @@ const App = () => {
         title='test'
         onClose={() => setShow(false)}
         show={show}
-        modalText='this a  modal example *markdown* **text** '
+        modalText={modalText}
       />
       <FormBuilder
         idForm={forms.contact.id}

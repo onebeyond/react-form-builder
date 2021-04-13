@@ -37,20 +37,18 @@ const QuestionCheckbox = ({
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
-  const MarkDownLink = ({ href, children }) =>
-    href === '#' ? (
+  const MarkDownLink = ({ href, children }) => {
+    const modalName = href.startsWith('#') && href.toString().substr(1)
+    return (
       <Link
         href={`${href}`}
-        target='_self'
-        onClick={() => onLinkOpen(question.name)}
+        target={modalName ? '_self' : '_blank'}
+        {...(modalName ? { onClick: () => onLinkOpen(modalName) } : {})}
       >
         {children}
       </Link>
-    ) : (
-      <Link href={`${href}`} target='_blank'>
-        {children}
-      </Link>
     )
+  }
 
   return component ? (
     <CustomComponent component={component} />

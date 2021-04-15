@@ -46,15 +46,15 @@ export default {
         defaultValue: { summary: false }
       }
     },
-    customOrder: {
-      type: { name: 'object' },
+    priorityOptions: {
+      type: { name: 'Array' },
       description:
-        'An object or array of objects with the acronym(s) of the countries that you want to be shown the first in the country list',
+        'An  array of Strings with the name(s) of the countries that you want to be shown the first in the country list',
       table: {
         type: { summary: 'json' }
       }
     },
-    customList: {
+    countryAndRegionsData: {
       type: { name: 'object' },
       description:
         'An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.',
@@ -62,7 +62,8 @@ export default {
         type: {
           summary: 'json'
         },
-        category: 'customList'
+        defaultValue: { summary: '[]' },
+        category: 'countryAndRegionsData'
       }
     },
     countryName: {
@@ -70,7 +71,7 @@ export default {
       description: 'The name of the country',
       table: {
         type: { summary: 'string' },
-        category: 'customList'
+        category: 'countryAndRegionsData'
       }
     },
     countryShortCode: {
@@ -78,7 +79,7 @@ export default {
       description: 'The code/shortcut for the country',
       table: {
         type: { summary: 'string' },
-        category: 'customList'
+        category: 'countryAndRegionsData'
       }
     },
     component: {
@@ -142,11 +143,7 @@ const customListCountries = [
 ]
 
 const customListCountryQst = { ...question }
-customListCountryQst.customOrder = [
-  {
-    countryShortCode: 'GB'
-  }
-]
+customListCountryQst.priorityOptions = ['Spain', 'United Kingdom']
 
 const Template = (args) => (
   <Country
@@ -180,7 +177,7 @@ const customOrderTemplate = (args) => (
 const customListCountriesTemplate = (args) => (
   <Country
     question={args}
-    customList={customListCountries}
+    countryAndRegionsData={customListCountries}
     useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
   />
 )

@@ -17,33 +17,33 @@ const styles = {
 const priorizeCountriesOrder = (countries, order) => {
   const filteredElements = countries.filter((item) => {
     return order.find(
-      (element) => element.countryShortCode === item.countryShortCode
+      (element) =>
+        element.toString().toLowerCase() === item.countryName.toLowerCase()
     )
   })
 
-  const orderedElements = order.map((customElement) => {
-    const country = filteredElements.find(
-      (element) => element.countryShortCode === customElement.countryShortCode
-    )
-    if (customElement.countryName) {
-      country.countryName = customElement.countryName
-    }
-    return country
-  })
+  // const orderedElements = order.map((customElement) => {
+  //   const country = filteredElements.find(
+  //     (element) => element.countryShortCode === customElement.countryShortCode
+  //   )
+  //   if (customElement.countryName) {
+  //     country.countryName = customElement.countryName
+  //   }
+  //   return country
+  // })
 
   const origin = countries.filter(
     (item) => !order.includes(item.countryShortCode)
   )
 
-  return [...orderedElements, ...origin]
+  return [...filteredElements, ...origin]
 }
 
 const QuestionCountry = ({
   component,
-  isMobile = false, // TODO quitar esto ????? sera false by default no ?, definir type en la docu?
   question,
   useForm,
-  customList,
+  countryAndRegionsData = CountryAndRegionsData,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
@@ -51,10 +51,10 @@ const QuestionCountry = ({
 
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries
-    if (question.customOrder) {
+    if (question.priorityOptions) {
       filteredCountries = priorizeCountriesOrder(
         countries,
-        question.customOrder
+        question.priorityOptions
       )
     }
     return [].concat(
@@ -81,7 +81,7 @@ const QuestionCountry = ({
 
   const options = getCountriesOptions(
     question.placeholder,
-    customList || CountryAndRegionsData
+    countryAndRegionsData
   )
 
   return component ? (
@@ -100,7 +100,9 @@ const QuestionCountry = ({
             }
       }
     >
-      {question.label && <Label>{question.label}</Label>}
+      {question.label && (
+        <Label data-testid='country-label'>{question.label}</Label>
+      )}
       <Select
         key={question.name}
         name={question.name}
@@ -113,10 +115,7 @@ const QuestionCountry = ({
         {...props}
       >
         {renderCountryOptions(
-          getCountriesOptions(
-            question.placeholder,
-            customList || CountryAndRegionsData
-          )
+          getCountriesOptions(question.placeholder, countryAndRegionsData)
         )}
       </Select>
       {errors[question.name] &&

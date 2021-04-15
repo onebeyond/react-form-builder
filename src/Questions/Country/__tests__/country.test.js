@@ -19,20 +19,24 @@ const question = {
   type: 'country',
   label: 'This is the label of the country select',
   placeholder: 'Please select an option ^^',
-  customOrder: [
-    {
-      countryShortCode: 'GB'
-    }
-  ],
+  priorityOptions: ['United Kingdom'],
   errorMessages: {
     required: 'This field is required'
   }
 }
 
-const setup = () => {
+const customListCountries = [
+  { countryName: 'MyOwnCountry1', countryShortCode: 'MC1' },
+  { countryName: 'MyOwnCountry2', countryShortCode: 'MC2' },
+  { countryName: 'MyOwnCountry3', countryShortCode: 'MC3' },
+  { countryName: 'MyOwnCountry4', countryShortCode: 'MC4' }
+]
+
+const setup = (customListCountries) => {
   const renderComponent = render(
     <QuestionCountry
       question={question}
+      countryAndRegionsData={customListCountries}
       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
     />
   )
@@ -45,6 +49,11 @@ const setup = () => {
   return { countryComponent, placeholderComponent }
 }
 
+const selectCountriesByOrder = async (placeholderComponent) => {
+  await selectEvent.openMenu(placeholderComponent)
+  fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
+  fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
+}
 test('check the placeholder text', () => {
   const { countryComponent } = setup()
   getByText(countryComponent, 'Please select an option ^^')
@@ -62,13 +71,38 @@ test('change value of select', async () => {
   expect(screen.getByText('China'))
 })
 
-test('check the custom order of the countries', async () => {
+test('check the custom country sent is the first', async () => {
   const { placeholderComponent } = setup()
   await selectEvent.openMenu(placeholderComponent)
   fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
   fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
 
   expect(screen.getByText('United Kingdom'))
+})
+
+test('check the countries are ordered as they are sent', async () => {
+  const { placeholderComponent } = setup(customListCountries)
+  for (let i = 0; i < customListCountries.length; i++) {
+    await selectCountriesByOrder(placeholderComponent)
+    expect(screen.getByText('MyOwnCountry' + (i + 1)))
+  }
+})
+
+test('label tag is not displayed when label value is null', () => {
+  const questionNoLabel = { ...question }
+  delete questionNoLabel.label
+  render(
+    <QuestionCountry
+      question={questionNoLabel}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+
+  expect(!screen.queryByTestId('country-label'))
 })
 
 test('show an error message', () => {

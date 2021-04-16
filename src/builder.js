@@ -76,6 +76,7 @@ const FormBuilder = ({
         <QuestionCountry
           useForm={useFormObj}
           question={question}
+          countryAndRegionsData={props.countryAndRegionsData}
           isMobile={isMobile}
           component={props.customCountry}
         />

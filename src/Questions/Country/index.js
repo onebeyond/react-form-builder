@@ -17,20 +17,11 @@ const styles = {
 const priorizeCountriesOrder = (countries, order) => {
   const filteredElements = countries.filter((country) => {
     return order.find(
-      (element) =>
-        element.toString().toLowerCase() === country.countryName.toLowerCase()
+      (isoCountryCode) =>
+        isoCountryCode.toString().toLowerCase() ===
+        country.countryName.toLowerCase()
     )
   })
-
-  // const orderedElements = order.map((customElement) => {
-  //   const country = filteredElements.find(
-  //     (element) => element.countryShortCode === customElement.countryShortCode
-  //   )
-  //   if (customElement.countryName) {
-  //     country.countryName = customElement.countryName
-  //   }
-  //   return country
-  // })
 
   const origin = countries.filter(
     (item) => !order.includes(item.countryShortCode)

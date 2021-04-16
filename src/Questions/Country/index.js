@@ -15,10 +15,10 @@ const styles = {
 }
 
 const priorizeCountriesOrder = (countries, order) => {
-  const filteredElements = countries.filter((item) => {
+  const filteredElements = countries.filter((country) => {
     return order.find(
       (element) =>
-        element.toString().toLowerCase() === item.countryName.toLowerCase()
+        element.toString().toLowerCase() === country.countryName.toLowerCase()
     )
   })
 

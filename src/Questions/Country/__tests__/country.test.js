@@ -19,7 +19,7 @@ const question = {
   type: 'country',
   label: 'This is the label of the country select',
   placeholder: 'Please select an option ^^',
-  priorityOptions: ['United Kingdom'],
+  priorityOptions: ['GB', 'ES'],
   errorMessages: {
     required: 'This field is required'
   }
@@ -103,6 +103,28 @@ test('label tag is not displayed when label value is null', () => {
   )
 
   expect(!screen.queryByTestId('country-label'))
+})
+
+test('check the countries are in the language asked', async () => {
+  const language = 'es'
+  const renderComponent = render(
+    <QuestionCountry
+      language={language}
+      question={question}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+    />
+  )
+  const placeholderComponent = renderComponent.getByText(
+    'Please select an option ^^'
+  )
+
+  await selectEvent.select(placeholderComponent, ['España'])
+
+  expect(screen.getByText('España'))
+
+  await selectEvent.select(placeholderComponent, ['Austria'])
+
+  expect(screen.getByText('Austria'))
 })
 
 test('show an error message', () => {

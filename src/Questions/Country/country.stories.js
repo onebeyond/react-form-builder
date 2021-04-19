@@ -21,15 +21,6 @@ export default {
         defaultValue: { summary: false }
       }
     },
-    isMobile: {
-      type: { name: 'boolean' },
-      description:
-        'Define that the select should not take the default mobile styles of the SO',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false }
-      }
-    },
     label: {
       type: { name: 'string' },
       description:
@@ -51,7 +42,16 @@ export default {
       description:
         'An  array of Strings with the name(s) of the countries that you want to be shown the first in the country list',
       table: {
-        type: { summary: 'json' }
+        type: { summary: 'Array' }
+      }
+    },
+    language: {
+      type: { name: 'string' },
+      description:
+        'An string with the language shortcode in which you want to display the country names opt: es,en,fr,de',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'en' }
       }
     },
     countryAndRegionsData: {
@@ -143,7 +143,7 @@ const customListCountries = [
 ]
 
 const customListCountryQst = { ...question }
-customListCountryQst.priorityOptions = ['Spain', 'United Kingdom']
+customListCountryQst.priorityOptions = ['GB', 'ES']
 
 const Template = (args) => (
   <Country
@@ -181,12 +181,22 @@ const customListCountriesTemplate = (args) => (
     useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
   />
 )
+
+const idiomChangedTemplate = (args) => (
+  <Country
+    question={args}
+    language='es'
+    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+  />
+)
 export const defaultCountry = Template.bind({})
 export const errorCountry = errorTemplate.bind({})
 export const customOrderCountries = customOrderTemplate.bind({})
 export const customListCountry = customListCountriesTemplate.bind({})
+export const idiomEsCountry = idiomChangedTemplate.bind({})
 
 defaultCountry.args = question
 errorCountry.args = question
 customOrderCountries.args = customListCountryQst
 customListCountry.args = question
+idiomEsCountry.args = question

@@ -1,4 +1,4 @@
-import CountryAndRegionsData from '../../forms/countryAndRegion'
+import CountryAndRegionsData from './data/countryAndRegion'
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
@@ -15,19 +15,24 @@ const styles = {
 }
 
 const priorizeCountriesOrder = (countries, order) => {
-  const filteredElements = countries.filter((country) => {
-    return order.find(
-      (isoCountryCode) =>
+  const countryOrder = []
+
+  order.filter((isoCountryCode) => {
+    return countries.find((country) => {
+      if (
         isoCountryCode.toString().toLowerCase() ===
-        country.countryName.toLowerCase()
-    )
+        country.countryShortCode.toLowerCase()
+      ) {
+        countryOrder.push(country)
+      }
+    })
   })
 
   const origin = countries.filter(
     (item) => !order.includes(item.countryShortCode)
   )
 
-  return [...filteredElements, ...origin]
+  return [...countryOrder, ...origin]
 }
 
 const QuestionCountry = ({
@@ -35,10 +40,15 @@ const QuestionCountry = ({
   question,
   useForm,
   countryAndRegionsData = CountryAndRegionsData,
+  language,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
+
+  if (language) {
+    countryAndRegionsData = require(`./data/${language}.json`)
+  }
 
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries

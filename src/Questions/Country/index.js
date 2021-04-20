@@ -41,6 +41,12 @@ const priorizeCountriesOrder = (countries, order) => {
   return [...countryOrder, ...origin]
 }
 
+const countriesMapData = {
+  es: SpanishCountryData,
+  fr: FrenchCountryData,
+  de: DeuschCountryData
+}
+
 const QuestionCountry = ({
   component,
   question,
@@ -52,12 +58,6 @@ const QuestionCountry = ({
   const { errors, register, setValue } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
-
-  const countriesMapData = {
-    es: SpanishCountryData,
-    fr: FrenchCountryData,
-    de: DeuschCountryData
-  }
 
   language &&
     countriesMapData[language] &&

@@ -21,19 +21,22 @@ const priorizeCountriesOrder = (countries, order) => {
   const countryOrder = []
 
   order.filter((isoCountryCode) => {
-    return countries.find((country) => {
-      if (
-        isoCountryCode.toString().toLowerCase() ===
-        country.countryShortCode.toLowerCase()
-      ) {
-        countryOrder.push(country)
-      }
-    })
+    return (
+      countries &&
+      countries.find((country) => {
+        if (
+          isoCountryCode.toString().toLowerCase() ===
+          country.countryShortCode.toLowerCase()
+        ) {
+          countryOrder.push(country)
+        }
+      })
+    )
   })
 
-  const origin = countries.filter(
-    (item) => !order.includes(item.countryShortCode)
-  )
+  const origin =
+    countries &&
+    countries.filter((item) => !order.includes(item.countryShortCode))
 
   return [...countryOrder, ...origin]
 }

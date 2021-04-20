@@ -44,11 +44,14 @@ const QuestionCountry = ({
   ...props
 }) => {
   const { errors, register, setValue } = useForm
+
   const CustomComponent = ({ component }) => component(question, useForm)
 
-  if (language) {
-    countryAndRegionsData = require(`./data/${language}.json`)
+  const countriesMapData = {
+    es: require(`./data/es.json`)
   }
+
+  language && (countryAndRegionsData = countriesMapData[language])
 
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries

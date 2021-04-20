@@ -54,6 +54,7 @@ const selectCountriesByOrder = async (placeholderComponent) => {
   fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
   fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
 }
+
 test('check the placeholder text', () => {
   const { countryComponent } = setup()
   getByText(countryComponent, 'Please select an option ^^')
@@ -105,26 +106,25 @@ test('label tag is not displayed when label value is null', () => {
   expect(!screen.queryByTestId('country-label'))
 })
 
-test('check the countries are in the language asked', async () => {
-  const language = 'es'
-  const renderComponent = render(
+test('renders a country list in spanish', async () => {
+  const data = {
+    language: 'es',
+    select: 'España'
+  }
+
+  const { getByText } = render(
     <QuestionCountry
-      language={language}
+      language={data.language}
       question={question}
       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
     />
   )
-  const placeholderComponent = renderComponent.getByText(
-    'Please select an option ^^'
-  )
 
-  await selectEvent.select(placeholderComponent, ['España'])
+  await selectEvent.select(getByText('Please select an option ^^'), [
+    data.select
+  ])
 
-  expect(screen.getByText('España'))
-
-  await selectEvent.select(placeholderComponent, ['Austria'])
-
-  expect(screen.getByText('Austria'))
+  expect(screen.getByText(data.select))
 })
 
 test('show an error message', () => {

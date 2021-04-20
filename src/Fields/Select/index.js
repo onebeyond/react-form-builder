@@ -74,7 +74,7 @@ const Select = ({
 
   return (
     <RHFInput
-      as={<ReactSelect styles={customStyles} {...props} />}
+      as={<ReactSelect testID='test-id' styles={customStyles} {...props} />}
       rules={{
         ...registerConfig,
         validate: {

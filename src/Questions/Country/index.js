@@ -51,7 +51,7 @@ const QuestionCountry = ({
   component,
   question,
   useForm,
-  countryAndRegionsData = CountryAndRegionsData,
+  countryAndRegionsData,
   language,
   ...props
 }) => {
@@ -59,9 +59,10 @@ const QuestionCountry = ({
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
-  language &&
-    countriesMapData[language] &&
-    (countryAndRegionsData = countriesMapData[language])
+  const countryAndRegions =
+    language && countriesMapData[language]
+      ? countriesMapData[language]
+      : countryAndRegionsData || CountryAndRegionsData
 
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries
@@ -93,10 +94,7 @@ const QuestionCountry = ({
     ))
   }
 
-  const options = getCountriesOptions(
-    question.placeholder,
-    countryAndRegionsData
-  )
+  const options = getCountriesOptions(question.placeholder, countryAndRegions)
 
   return component ? (
     <CustomComponent component={component} />
@@ -129,7 +127,7 @@ const QuestionCountry = ({
         {...props}
       >
         {renderCountryOptions(
-          getCountriesOptions(question.placeholder, countryAndRegionsData)
+          getCountriesOptions(question.placeholder, countryAndRegions)
         )}
       </Select>
       {errors[question.name] &&

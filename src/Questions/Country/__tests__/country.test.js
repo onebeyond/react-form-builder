@@ -122,7 +122,7 @@ test('handle country priority order', async () => {
   await selectEvent.openMenu(select)
   fireEvent.keyDown(select, { key: 'ArrowDown' })
   fireEvent.keyDown(select, { key: 'Enter', code: 13 })
-  expect(screen.getByText('Spain'))
+  expect(screen.getByText('United Kingdom'))
 })
 
 test('check the countries are ordered as they are sent', async () => {

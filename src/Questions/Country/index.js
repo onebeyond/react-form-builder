@@ -49,7 +49,8 @@ const QuestionCountry = ({
 
   const countriesMapData = {
     es: require(`./data/es.json`),
-    fr: require(`./data/fr.json`)
+    fr: require(`./data/fr.json`),
+    de: require(`./data/de.json`)
   }
 
   language &&

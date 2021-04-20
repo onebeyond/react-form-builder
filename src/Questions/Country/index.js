@@ -24,9 +24,10 @@ const sorter = (a, b, arr) => {
   if (arr.includes(b.countryShortCode.toUpperCase())) {
     return 1
   }
-  return a.countryShortCode.toUpperCase() - b.countryShortCode.toUpperCase()
+  return a.countryName.toUpperCase() - b.countryName.toUpperCase()
 }
-const prioritySort = (arr1, arr2) => arr1.sort((a, b) => sorter(a, b, arr2))
+const prioritySort = (arr1, arr2) =>
+  [...arr1].sort((a, b) => sorter(a, b, arr2))
 
 const countriesMapData = {
   es: SpanishCountryData,
@@ -52,10 +53,11 @@ const QuestionCountry = ({
       : countryAndRegionsData || CountryAndRegionsData
 
   const getCountriesOptions = (label, countries) => {
-    let filteredCountries = countries
-    if (question.priorityOptions) {
-      filteredCountries = prioritySort(countries, question.priorityOptions)
-    }
+    const filteredCountries = prioritySort(
+      countries,
+      question.priorityOptions || []
+    )
+
     return [].concat(
       [
         {

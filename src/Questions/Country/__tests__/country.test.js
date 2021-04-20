@@ -72,6 +72,32 @@ test('change value of select', async () => {
   expect(screen.getByText('China'))
 })
 
+test('sort country list by default', async () => {
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    errorMessages: {
+      required: 'This field is required'
+    }
+  }
+
+  const { getByText } = render(
+    <QuestionCountry
+      question={question}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+    />
+  )
+
+  const select = getByText('Please select an option ^^')
+
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'ArrowDown' })
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+  expect(screen.getByText('Afghanistan'))
+})
+
 test('handle country priority order', async () => {
   const question = {
     name: 'country_of_residence',

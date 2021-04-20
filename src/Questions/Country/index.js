@@ -48,7 +48,8 @@ const QuestionCountry = ({
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const countriesMapData = {
-    es: require(`./data/es.json`)
+    es: require(`./data/es.json`),
+    fr: require(`./data/fr.json`)
   }
 
   language &&

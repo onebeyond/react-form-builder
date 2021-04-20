@@ -127,6 +127,48 @@ test('renders a country list in spanish', async () => {
   expect(screen.getByText(data.select))
 })
 
+test('renders a country list in french', async () => {
+  const data = {
+    language: 'fr',
+    select: 'Andorre'
+  }
+
+  const { getByText } = render(
+    <QuestionCountry
+      language={data.language}
+      question={question}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+    />
+  )
+
+  await selectEvent.select(getByText('Please select an option ^^'), [
+    data.select
+  ])
+
+  expect(screen.getByText(data.select))
+})
+
+test('renders a country list in french', async () => {
+  const data = {
+    language: 'fr',
+    select: 'Andorre'
+  }
+
+  const { getByText } = render(
+    <QuestionCountry
+      language={data.language}
+      question={question}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+    />
+  )
+
+  await selectEvent.select(getByText('Please select an option ^^'), [
+    data.select
+  ])
+
+  expect(screen.getByText(data.select))
+})
+
 test('renders a fallback country list when the language is not supported', async () => {
   const data = {
     language: 'hk',

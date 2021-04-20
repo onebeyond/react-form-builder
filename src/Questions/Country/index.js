@@ -1,4 +1,5 @@
 import CountryAndRegionsData from './data/countryAndRegion'
+import DeuschCountryData from './data/de'
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
@@ -46,11 +47,10 @@ const QuestionCountry = ({
   const { errors, register, setValue } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
-
   const countriesMapData = {
     es: require(`./data/es.json`),
     fr: require(`./data/fr.json`),
-    de: require(`./data/de.json`)
+    de: DeuschCountryData
   }
 
   language &&

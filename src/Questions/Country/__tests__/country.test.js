@@ -72,13 +72,31 @@ test('change value of select', async () => {
   expect(screen.getByText('China'))
 })
 
-test('check the custom country sent is the first', async () => {
-  const { placeholderComponent } = setup()
-  await selectEvent.openMenu(placeholderComponent)
-  fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
-  fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
+test('handle country priority order', async () => {
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES', 'GB'],
+    errorMessages: {
+      required: 'This field is required'
+    }
+  }
 
-  expect(screen.getByText('United Kingdom'))
+  const { getByText } = render(
+    <QuestionCountry
+      question={question}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+    />
+  )
+
+  const select = getByText('Please select an option ^^')
+
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'ArrowDown' })
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+  expect(screen.getByText('Spain'))
 })
 
 test('check the countries are ordered as they are sent', async () => {

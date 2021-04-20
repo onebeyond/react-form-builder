@@ -1,4 +1,7 @@
-import CountryAndRegionsData from '../../forms/countryAndRegion'
+import CountryAndRegionsData from './data/countryAndRegion'
+import DeuschCountryData from './data/de'
+import SpanishCountryData from './data/es'
+import FrenchCountryData from './data/fr'
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
@@ -14,40 +17,47 @@ const styles = {
   }
 }
 
-const priorizeCountriesOrder = (countries, order) => {
-  const filteredElements = countries.filter((country) => {
-    return order.find(
-      (isoCountryCode) =>
-        isoCountryCode.toString().toLowerCase() ===
-        country.countryName.toLowerCase()
-    )
-  })
+const sorter = (a, b, arr) => {
+  if (arr.includes(a.countryShortCode.toUpperCase())) {
+    return -1
+  }
+  if (arr.includes(b.countryShortCode.toUpperCase())) {
+    return 1
+  }
+  return a.countryName.toUpperCase() - b.countryName.toUpperCase()
+}
+const prioritySort = (arr1, arr2) =>
+  [...arr1].sort((a, b) => sorter(a, b, arr2))
 
-  const origin = countries.filter(
-    (item) => !order.includes(item.countryShortCode)
-  )
-
-  return [...filteredElements, ...origin]
+const countriesMapData = {
+  es: SpanishCountryData,
+  fr: FrenchCountryData,
+  de: DeuschCountryData
 }
 
 const QuestionCountry = ({
   component,
   question,
   useForm,
-  countryAndRegionsData = CountryAndRegionsData,
+  countryAndRegionsData,
+  language,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
+
   const CustomComponent = ({ component }) => component(question, useForm)
 
+  const countryAndRegions =
+    language && countriesMapData[language]
+      ? countriesMapData[language]
+      : countryAndRegionsData || CountryAndRegionsData
+
   const getCountriesOptions = (label, countries) => {
-    let filteredCountries = countries
-    if (question.priorityOptions) {
-      filteredCountries = priorizeCountriesOrder(
-        countries,
-        question.priorityOptions
-      )
-    }
+    const filteredCountries = prioritySort(
+      countries,
+      question.priorityOptions || []
+    )
+
     return [].concat(
       [
         {
@@ -70,10 +80,7 @@ const QuestionCountry = ({
     ))
   }
 
-  const options = getCountriesOptions(
-    question.placeholder,
-    countryAndRegionsData
-  )
+  const options = getCountriesOptions(question.placeholder, countryAndRegions)
 
   return component ? (
     <CustomComponent component={component} />
@@ -106,7 +113,7 @@ const QuestionCountry = ({
         {...props}
       >
         {renderCountryOptions(
-          getCountriesOptions(question.placeholder, countryAndRegionsData)
+          getCountriesOptions(question.placeholder, countryAndRegions)
         )}
       </Select>
       {errors[question.name] &&

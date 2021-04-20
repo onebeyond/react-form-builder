@@ -77,8 +77,8 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           countryAndRegionsData={props.countryAndRegionsData}
-          isMobile={isMobile}
           component={props.customCountry}
+          language={props.language}
         />
       ),
       checkbox: (

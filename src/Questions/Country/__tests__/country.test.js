@@ -104,7 +104,7 @@ test('handle country priority order', async () => {
     type: 'country',
     label: 'This is the label of the country select',
     placeholder: 'Please select an option ^^',
-    priorityOptions: ['ES', 'GB'],
+    priorityOptions: ['GB', 'ES'],
     errorMessages: {
       required: 'This field is required'
     }

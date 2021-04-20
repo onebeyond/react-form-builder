@@ -51,7 +51,9 @@ const QuestionCountry = ({
     es: require(`./data/es.json`)
   }
 
-  language && (countryAndRegionsData = countriesMapData[language])
+  language &&
+    countriesMapData[language] &&
+    (countryAndRegionsData = countriesMapData[language])
 
   const getCountriesOptions = (label, countries) => {
     let filteredCountries = countries

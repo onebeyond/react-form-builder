@@ -17,17 +17,26 @@ const styles = {
   }
 }
 
-const sorter = (a, b, arr) => {
-  if (arr.includes(a.countryShortCode.toUpperCase())) {
-    return -1
-  }
-  if (arr.includes(b.countryShortCode.toUpperCase())) {
-    return 1
-  }
-  return a.countryName.toUpperCase() - b.countryName.toUpperCase()
+const prioritySort = (countries, order) => {
+  const countryOrder = []
+
+  order.filter((isoCountryCode) => {
+    return countries.find((country) => {
+      if (
+        isoCountryCode.toString().toLowerCase() ===
+        country.countryShortCode.toLowerCase()
+      ) {
+        countryOrder.push(country)
+      }
+    })
+  })
+
+  const origin = countries.filter(
+    (item) => !order.includes(item.countryShortCode)
+  )
+
+  return [...countryOrder, ...origin]
 }
-const prioritySort = (arr1, arr2) =>
-  [...arr1].sort((a, b) => sorter(a, b, arr2))
 
 const countriesMapData = {
   es: SpanishCountryData,

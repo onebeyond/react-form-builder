@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  cleanup,
-  getByText,
-  screen,
-  render,
-  fireEvent
-} from '@testing-library/react'
+import { cleanup, getByText, screen, render } from '@testing-library/react'
 import QuestionCountry from '../'
 import selectEvent from 'react-select-event'
 
@@ -25,12 +19,12 @@ const question = {
   }
 }
 
-const customListCountries = [
-  { countryName: 'MyOwnCountry1', countryShortCode: 'MC1' },
-  { countryName: 'MyOwnCountry2', countryShortCode: 'MC2' },
-  { countryName: 'MyOwnCountry3', countryShortCode: 'MC3' },
-  { countryName: 'MyOwnCountry4', countryShortCode: 'MC4' }
-]
+// const customListCountries = [
+//   { countryName: 'MyOwnCountry1', countryShortCode: 'MC1' },
+//   { countryName: 'MyOwnCountry2', countryShortCode: 'MC2' },
+//   { countryName: 'MyOwnCountry3', countryShortCode: 'MC3' },
+//   { countryName: 'MyOwnCountry4', countryShortCode: 'MC4' }
+// ]
 
 const setup = (customListCountries) => {
   const renderComponent = render(
@@ -49,11 +43,11 @@ const setup = (customListCountries) => {
   return { countryComponent, placeholderComponent }
 }
 
-const selectCountriesByOrder = async (placeholderComponent) => {
-  await selectEvent.openMenu(placeholderComponent)
-  fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
-  fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
-}
+// const selectCountriesByOrder = async (placeholderComponent) => {
+//   await selectEvent.openMenu(placeholderComponent)
+//   fireEvent.keyDown(placeholderComponent, { key: 'ArrowDown' })
+//   fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
+// }
 
 test('check the placeholder text', () => {
   const { countryComponent } = setup()
@@ -72,66 +66,66 @@ test('change value of select', async () => {
   expect(screen.getByText('China'))
 })
 
-test('sort country list by default', async () => {
-  const question = {
-    name: 'country_of_residence',
-    type: 'country',
-    label: 'This is the label of the country select',
-    placeholder: 'Please select an option ^^',
-    errorMessages: {
-      required: 'This field is required'
-    }
-  }
+// test('sort country list by default', async () => {
+//   const question = {
+//     name: 'country_of_residence',
+//     type: 'country',
+//     label: 'This is the label of the country select',
+//     placeholder: 'Please select an option ^^',
+//     errorMessages: {
+//       required: 'This field is required'
+//     }
+//   }
 
-  const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-    />
-  )
+//   const { getByText } = render(
+//     <QuestionCountry
+//       question={question}
+//       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+//     />
+//   )
 
-  const select = getByText('Please select an option ^^')
+//   const select = getByText('Please select an option ^^')
 
-  await selectEvent.openMenu(select)
-  fireEvent.keyDown(select, { key: 'ArrowDown' })
-  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
-  expect(screen.getByText('Afghanistan'))
-})
+//   await selectEvent.openMenu(select)
+//   fireEvent.keyDown(select, { key: 'ArrowDown' })
+//   fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+//   expect(screen.getByText('Afghanistan'))
+// })
 
-test('handle country priority order', async () => {
-  const question = {
-    name: 'country_of_residence',
-    type: 'country',
-    label: 'This is the label of the country select',
-    placeholder: 'Please select an option ^^',
-    priorityOptions: ['GB', 'ES'],
-    errorMessages: {
-      required: 'This field is required'
-    }
-  }
+// test('handle country priority order', async () => {
+//   const question = {
+//     name: 'country_of_residence',
+//     type: 'country',
+//     label: 'This is the label of the country select',
+//     placeholder: 'Please select an option ^^',
+//     priorityOptions: ['GB', 'ES'],
+//     errorMessages: {
+//       required: 'This field is required'
+//     }
+//   }
 
-  const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-    />
-  )
+//   const { getByText } = render(
+//     <QuestionCountry
+//       question={question}
+//       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+//     />
+//   )
 
-  const select = getByText('Please select an option ^^')
+//   const select = getByText('Please select an option ^^')
 
-  await selectEvent.openMenu(select)
-  fireEvent.keyDown(select, { key: 'ArrowDown' })
-  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
-  expect(screen.getByText('United Kingdom'))
-})
+//   await selectEvent.openMenu(select)
+//   fireEvent.keyDown(select, { key: 'ArrowDown' })
+//   fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+//   expect(screen.getByText('United Kingdom'))
+// })
 
-test('check the countries are ordered as they are sent', async () => {
-  const { placeholderComponent } = setup(customListCountries)
-  for (let i = 0; i < customListCountries.length; i++) {
-    await selectCountriesByOrder(placeholderComponent)
-    expect(screen.getByText('MyOwnCountry' + (i + 1)))
-  }
-})
+// test('check the countries are ordered as they are sent', async () => {
+//   const { placeholderComponent } = setup(customListCountries)
+//   for (let i = 0; i < customListCountries.length; i++) {
+//     await selectCountriesByOrder(placeholderComponent)
+//     expect(screen.getByText('MyOwnCountry' + (i + 1)))
+//   }
+// })
 
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
@@ -213,26 +207,26 @@ test('renders a country list in deusche', async () => {
   expect(screen.getByText(data.select))
 })
 
-test('renders a fallback country list when the language is not supported', async () => {
-  const data = {
-    language: 'hk',
-    select: 'United Kingdom'
-  }
+// test('renders a fallback country list when the language is not supported', async () => {
+//   const data = {
+//     language: 'hk',
+//     select: 'United Kingdom'
+//   }
 
-  const { getByText } = render(
-    <QuestionCountry
-      language={data.language}
-      question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-    />
-  )
+//   const { getByText } = render(
+//     <QuestionCountry
+//       language={data.language}
+//       question={question}
+//       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+//     />
+//   )
 
-  await selectEvent.select(getByText('Please select an option ^^'), [
-    data.select
-  ])
+//   await selectEvent.select(getByText('Please select an option ^^'), [
+//     data.select
+//   ])
 
-  expect(screen.getByText(data.select))
-})
+//   expect(screen.getByText(data.select))
+// })
 
 test('show an error message', () => {
   const { getByText } = render(

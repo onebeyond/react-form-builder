@@ -79,9 +79,7 @@ const Select = ({
         ...registerConfig,
         validate: {
           noEmpty: (item) =>
-            registerConfig && registerConfig.required
-              ? item.value !== '*'
-              : true
+            registerConfig && registerConfig.required ? item.value !== '' : true
         }
       }}
       name={name}

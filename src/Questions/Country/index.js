@@ -68,12 +68,6 @@ const QuestionCountry = ({
     )
 
     return [].concat(
-      [
-        {
-          value: '*',
-          label: label
-        }
-      ],
       filteredCountries.map((country) => ({
         value: country.countryShortCode,
         label: country.countryName
@@ -118,7 +112,7 @@ const QuestionCountry = ({
         register={register}
         registerConfig={question.registerConfig}
         setValue={setValue}
-        defaultValue={options[0]}
+        placeholder={question.placeholder}
         {...props}
       >
         {renderCountryOptions(

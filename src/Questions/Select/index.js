@@ -33,7 +33,7 @@ const getOptions = (question) => {
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
   const { register, errors, setValue } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
-
+  console.log(question.placeholder)
   return component ? (
     <CustomComponent component={component} />
   ) : (
@@ -53,9 +53,9 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
         {question.label && <Label>{question.label}</Label>}
         <Select
           {...props}
-          defaultValue={getOptions(question)[0]}
           options={getOptions(question)}
           isSearchable={false}
+          placeholder={question.placeholder}
           key={question.name}
           name={question.name}
           register={register}

@@ -8,10 +8,52 @@
     "enabled": true,
     "questions": [
       {
+        "name": "$Country",
+        "placeholder": "Country",
+        "priorityOptions": ["GB"],
+        "type": "country",
+        "label": "",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "label": "What is your gender?",
+        "placeholder": "Please make a selection",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Female",
+              "value": "female"
+            },
+            {
+              "label": "Male",
+              "value": "male"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "prefer_not_to_say"
+            }
+          ]
+        }
+      },
+
+      {
         "name": "phone",
         "type": "phone",
-        "label": "phone",
-        "placeholder": "phone",
+        "label": "",
+        "placeholder": "Phone",
         "registerConfig": {
           "required": true
         },

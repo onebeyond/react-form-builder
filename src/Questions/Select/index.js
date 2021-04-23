@@ -33,7 +33,7 @@ const getOptions = (question) => {
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
   const { register, errors, setValue } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
-  console.log(question.placeholder)
+
   return component ? (
     <CustomComponent component={component} />
   ) : (

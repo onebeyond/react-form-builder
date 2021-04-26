@@ -31,7 +31,8 @@ const Phone = ({
                 : clearErrors(name)
             }
             shouldSetError()
-            return phone !== '' ? isPossiblePhoneNumber(phone) : null
+
+            return phone ? isPossiblePhoneNumber(phone) : null
           }
         }
       }}

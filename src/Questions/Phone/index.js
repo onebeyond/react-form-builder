@@ -22,6 +22,7 @@ const QuestionPhone = ({
   ...props
 }) => {
   const { clearErrors, errors, register, setError, setValue } = useForm
+
   const CustomComponent = ({ component }) => component(question, useForm)
 
   return component ? (
@@ -49,6 +50,8 @@ const QuestionPhone = ({
           setError={setError}
           clearErrors={clearErrors}
           placeholder={question.placeholder}
+          registerConfig={question.registerConfig}
+          name={question.name}
           {...props}
         />
 
@@ -58,7 +61,7 @@ const QuestionPhone = ({
           />
         )}
         {errors[question.name] &&
-          errors[question.name].type === 'isPossiblePhoneNumber' && (
+          errors[question.name].type === 'isValidPhoneNumber' && (
             <ErrorMessage message='Not a valid phone number' />
           )}
         {errors[question.name] && errors[question.name].type === 'pattern' && (

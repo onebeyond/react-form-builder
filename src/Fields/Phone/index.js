@@ -13,26 +13,32 @@ const Phone = ({
   clearErrors,
   defaultCountry,
   placeholder,
+  registerConfig,
+  name,
   ...props
 }) => {
   return (
     <RHFInput
       rules={{
-        required: true,
+        ...registerConfig,
         validate: {
-          isPossiblePhoneNumber
+          isValidPhoneNumber: (phone) => {
+            const shouldSetError = () => {
+              return registerConfig.required && !isPossiblePhoneNumber(phone)
+                ? setError(name, {
+                    type: 'isValidPhoneNumber'
+                  })
+                : clearErrors(name)
+            }
+            shouldSetError()
+            return isPossiblePhoneNumber(phone)
+          }
         }
       }}
       register={register}
-      name='phone'
-      setValue={(name, value) => {
-        setValue(name, value)
-        !isPossiblePhoneNumber(value || '')
-          ? setError(name, {
-              type: 'isPossiblePhoneNumber'
-            })
-          : clearErrors('phone')
-      }}
+      name={name}
+      defaultValue=''
+      setValue={setValue}
       as={
         <PhoneInput
           placeholder={placeholder}

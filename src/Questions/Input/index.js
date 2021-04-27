@@ -1,7 +1,8 @@
 import ErrorMessage from '../../Fields/Error'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
-
+import Logo from './icons/question-circle.svg'
+import ReactTooltip from 'react-tooltip'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
@@ -32,7 +33,22 @@ const QuestionInput = ({ question, useForm, component }) => {
             }
       }
     >
-      {question.label && <Label>{question.label}</Label>}
+      <div sx={{ display: 'flex' }}>
+        {question.label && <Label>{question.label}</Label>}
+        {question.icon && (
+          <div data-event='click focus' data-tip='custom show'>
+            <Logo
+              className='App-logo'
+              aria-label='logo'
+              sx={{ width: '23px', height: '17px' }}
+              fill={question.icon.fill}
+            />
+            <ReactTooltip globalEventOff='click' effect='solid'>
+              <p>{question.icon.tooltipText}</p>
+            </ReactTooltip>
+          </div>
+        )}
+      </div>
       <Input
         key={question.name}
         name={question.name}

@@ -43,9 +43,11 @@ const QuestionInput = ({ question, useForm, component }) => {
               sx={{ width: '23px', height: '17px' }}
               fill={question.icon.fill}
             />
-            <ReactTooltip globalEventOff='click' effect='solid'>
-              <p>{question.icon.tooltipText}</p>
-            </ReactTooltip>
+            {question.icon.tooltipText && (
+              <ReactTooltip globalEventOff='click' effect='solid'>
+                <p>{question.icon.tooltipText}</p>
+              </ReactTooltip>
+            )}
           </div>
         )}
       </div>

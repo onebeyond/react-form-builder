@@ -1,8 +1,9 @@
 import ErrorMessage from '../../Fields/Error'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
-import Logo from './icons/question-circle.svg'
-import ReactTooltip from 'react-tooltip'
+import Logo from '../../Common/Icon/Logo'
+import FBtooltip from '../../Common/Icon/FBtooltip'
+
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
@@ -11,6 +12,9 @@ const styles = {
   fullWidth: {
     gridColumnStart: '1',
     gridColumnEnd: '3'
+  },
+  boxIconStyle: {
+    display: 'flex'
   }
 }
 
@@ -33,21 +37,13 @@ const QuestionInput = ({ question, useForm, component }) => {
             }
       }
     >
-      <div sx={{ display: 'flex' }}>
+      <div sx={styles.boxIconStyle}>
         {question.label && <Label>{question.label}</Label>}
+
         {question.icon && (
-          <div data-event='click focus' data-tip='custom show'>
-            <Logo
-              className='App-logo'
-              aria-label='logo'
-              sx={{ width: '23px', height: '17px' }}
-              fill={question.icon.fill}
-            />
-            {question.icon.tooltipText && (
-              <ReactTooltip globalEventOff='click' effect='solid'>
-                <p>{question.icon.tooltipText}</p>
-              </ReactTooltip>
-            )}
+          <div>
+            <Logo icon={question.icon} sx={{ variant: 'forms.icon' }} />
+            {question.tooltip.text && <FBtooltip tooltip={question.tooltip} />}
           </div>
         )}
       </div>

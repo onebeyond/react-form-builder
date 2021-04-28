@@ -23,29 +23,30 @@ const QuestionMarkdown = ({
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={{
-        ...(question.isFullWidth && styles.fullWidth)
-      }}
+      key={question.name}
+      sx={
+        (styles.centerStyle,
+        question.isFullWidth
+          ? {
+              ...(question.isFullWidth && styles.fullWidth),
+              variant: 'forms.markdownContainerFullWidth'
+            }
+          : {
+              variant: 'forms.markdownContainer.' + (form && form.layout)
+            })
+      }
     >
-      <div
-        sx={{
-          variant: 'forms.markdown.container' + (form && form.layout)
+      <ReactMarkdown
+        sx={{ variant: 'forms.markdown.' + (form && form.layout) }}
+        source={question.label}
+        renderers={{
+          link: ({ href, children }) => (
+            <Link href={`${currentPath}${href}`} target='_blank'>
+              {children}
+            </Link>
+          )
         }}
-      >
-        <div sx={styles.centerStyle} key={question.name}>
-          <ReactMarkdown
-            sx={{ variant: 'forms.markdown' + (form && form.layout) }}
-            source={question.label}
-            renderers={{
-              link: ({ href, children }) => (
-                <Link href={`${currentPath}${href}`} target='_blank'>
-                  {children}
-                </Link>
-              )
-            }}
-          />
-        </div>
-      </div>
+      />
     </div>
   )
 }

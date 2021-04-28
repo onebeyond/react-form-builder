@@ -1,5 +1,5 @@
 import QuestionIcon from '../Icon/Icons/question-circle.svg'
-import DefaultIcon from '../Icon/Icons/earlybirds.svg'
+import DefaultIcon from '../Icon/Icons/early-birds.svg'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
@@ -11,11 +11,11 @@ const styles = {
   }
 }
 const renderIcon = (iconProperties) => {
-  console.log(iconProperties)
   switch (iconProperties.name) {
     case 'question-circle':
       return (
         <QuestionIcon
+          data-testid='iconId'
           sx={styles.iconStyle}
           aria-label='logos'
           {...iconProperties}
@@ -24,6 +24,7 @@ const renderIcon = (iconProperties) => {
     default:
       return (
         <DefaultIcon
+          data-testid='defaultIconId'
           sx={styles.iconStyle}
           aria-label='logos'
           {...iconProperties}

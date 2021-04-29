@@ -10,15 +10,15 @@ const styles = {
     height: '17px'
   }
 }
-const renderIcon = (iconProperties) => {
-  switch (iconProperties.name) {
+const Icon = ({ name, properties }) => {
+  switch (name) {
     case 'question-circle':
       return (
         <QuestionIcon
           data-testid='iconId'
           sx={styles.iconStyle}
           aria-label='logos'
-          {...iconProperties}
+          {...properties}
         />
       )
     default:
@@ -27,16 +27,18 @@ const renderIcon = (iconProperties) => {
           data-testid='defaultIconId'
           sx={styles.iconStyle}
           aria-label='logos'
-          {...iconProperties}
+          {...properties}
         />
       )
   }
 }
 
 const Logo = (props) => {
+  const { name, ...iconProperties } = props.icon
+
   return (
     <div data-event='click focus' data-tip='custom show'>
-      {renderIcon(props.icon)}
+      <Icon name={name} properties={iconProperties} />
     </div>
   )
 }

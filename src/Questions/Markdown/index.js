@@ -3,13 +3,6 @@
 import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
-
 const QuestionMarkdown = ({
   component,
   currentPath,
@@ -23,29 +16,24 @@ const QuestionMarkdown = ({
     <CustomComponent component={component} />
   ) : (
     <div
+      key={question.name}
       sx={{
-        ...(question.isFullWidth && styles.fullWidth)
+        variant: question.id
+          ? 'forms.markdownContainer.' + (form && form.layout) + question.id
+          : 'forms.markdownContainer.' + (form && form.layout)
       }}
     >
-      <div
-        sx={{
-          variant: 'forms.markdown.container' + (form && form.layout)
+      <ReactMarkdown
+        sx={{ variant: 'forms.markdown.' + (form && form.layout) }}
+        source={question.label}
+        renderers={{
+          link: ({ href, children }) => (
+            <Link href={`${currentPath}${href}`} target='_blank'>
+              {children}
+            </Link>
+          )
         }}
-      >
-        <div sx={styles.centerStyle} key={question.name}>
-          <ReactMarkdown
-            sx={{ variant: 'forms.markdown' + (form && form.layout) }}
-            source={question.label}
-            renderers={{
-              link: ({ href, children }) => (
-                <Link href={`${currentPath}${href}`} target='_blank'>
-                  {children}
-                </Link>
-              )
-            }}
-          />
-        </div>
-      </div>
+      />
     </div>
   )
 }

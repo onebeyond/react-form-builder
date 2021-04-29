@@ -9,10 +9,6 @@ import Label from '../../Fields/Label'
 import ReactMarkdown from 'react-markdown'
 
 const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
   selectOption: {
     background: 'bg',
     color: 'black'
@@ -55,42 +51,35 @@ const QuestionCheckbox = ({
   ) : (
     <div
       sx={{
-        ...(question.isFullWidth && styles.fullWidth)
+        variant: question.id
+          ? 'forms.checkboxContainer.' + (form && form.layout) + question.id
+          : 'forms.checkboxContainer.' + (form && form.layout)
       }}
     >
-      <div
-        sx={{
-          variant: 'forms.checkbox.' + (form && form.layout)
-        }}
-      >
-        <div sx={styles.centerStyle} key={question.name}>
-          <Label sx={styles.centerStyle}>
-            <Checkbox
-              sx={styles.checkboxMinWidth}
-              name={question.name}
-              defaultChecked={question.defaultChecked}
-              ref={register({
-                ...question.registerConfig
-              })}
-              data-testid='question-checkbox'
-            />
-            <ReactMarkdown
-              sx={styles.markDown}
-              source={question.label}
-              renderers={{
-                link: MarkDownLink
-              }}
-            />
-          </Label>
-          {errors[question.name] &&
-            errors[question.name].type === 'required' && (
-              <ErrorMessage
-                message={
-                  question.errorMessages && question.errorMessages.required
-                }
-              />
-            )}
-        </div>
+      <div sx={styles.centerStyle} key={question.name}>
+        <Label sx={styles.centerStyle}>
+          <Checkbox
+            sx={styles.checkboxMinWidth}
+            name={question.name}
+            defaultChecked={question.defaultChecked}
+            ref={register({
+              ...question.registerConfig
+            })}
+            data-testid='question-checkbox'
+          />
+          <ReactMarkdown
+            sx={styles.markDown}
+            source={question.label}
+            renderers={{
+              link: MarkDownLink
+            }}
+          />
+        </Label>
+        {errors[question.name] && errors[question.name].type === 'required' && (
+          <ErrorMessage
+            message={question.errorMessages && question.errorMessages.required}
+          />
+        )}
       </div>
     </div>
   )

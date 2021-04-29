@@ -6,18 +6,6 @@ import React from 'react'
 import Date from '../../Fields/Date'
 import { jsx } from 'theme-ui'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
-
-  halfWidth: {
-    gridColumnStart: '0',
-    gridColumnEnd: '0'
-  }
-}
-
 const QuestionDate = ({
   component,
   useForm,
@@ -34,17 +22,11 @@ const QuestionDate = ({
   ) : (
     <React.Fragment>
       <div
-        sx={
-          question.isFullWidth
-            ? {
-                ...(question.isFullWidth && styles.fullWidth),
-                ...(!isMobile && styles.halfWidth),
-                variant: 'forms.dateContainerFullWidth'
-              }
-            : {
-                variant: 'forms.dateContainer'
-              }
-        }
+        sx={{
+          variant: question.id
+            ? 'forms.dateContainer.' + question.id
+            : 'forms.dateContainer'
+        }}
       >
         {question.label && <Label>{question.label}</Label>}
         <Date

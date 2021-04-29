@@ -9,10 +9,6 @@ import FBtooltip from '../../Common/Icon/FBtooltip'
 import { jsx } from 'theme-ui'
 
 const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
   boxIconStyle: {
     display: 'flex'
   }
@@ -26,16 +22,11 @@ const QuestionInput = ({ question, useForm, component }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={
-        question.isFullWidth
-          ? {
-              ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.inputContainerFullWidth'
-            }
-          : {
-              variant: 'forms.inputContainer'
-            }
-      }
+      sx={{
+        variant: question.id
+          ? 'forms.inputContainer.' + question.id
+          : 'forms.inputContainer'
+      }}
     >
       <div sx={styles.boxIconStyle}>
         {question.label && <Label>{question.label}</Label>}
@@ -48,6 +39,7 @@ const QuestionInput = ({ question, useForm, component }) => {
         )}
       </div>
       <Input
+        data-testid='question-input'
         key={question.name}
         name={question.name}
         type={question.type}

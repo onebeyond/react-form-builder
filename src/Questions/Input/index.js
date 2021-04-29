@@ -1,15 +1,16 @@
 import ErrorMessage from '../../Fields/Error'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
+import Logo from '../../Common/Icon/Logo'
+import FBtooltip from '../../Common/Icon/FBtooltip'
 
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
 const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
+  boxIconStyle: {
+    display: 'flex'
   }
 }
 
@@ -21,19 +22,24 @@ const QuestionInput = ({ question, useForm, component }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={
-        question.isFullWidth
-          ? {
-              ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.inputContainerFullWidth'
-            }
-          : {
-              variant: 'forms.inputContainer'
-            }
-      }
+      sx={{
+        variant: question.id
+          ? 'forms.inputContainer.' + question.id
+          : 'forms.inputContainer'
+      }}
     >
-      {question.label && <Label>{question.label}</Label>}
+      <div sx={styles.boxIconStyle}>
+        {question.label && <Label>{question.label}</Label>}
+
+        {question.icon && (
+          <div>
+            <Logo icon={question.icon} sx={{ variant: 'forms.icon' }} />
+            {question.tooltip && <FBtooltip tooltip={question.tooltip} />}
+          </div>
+        )}
+      </div>
       <Input
+        data-testid='question-input'
         key={question.name}
         name={question.name}
         type={question.type}

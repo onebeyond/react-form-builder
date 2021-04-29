@@ -6,13 +6,6 @@ import ReactMarkdown from 'react-markdown'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
-
 const QuestionRadio = ({ component, question, useForm }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
@@ -40,16 +33,11 @@ const QuestionRadio = ({ component, question, useForm }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={
-        question.isFullWidth
-          ? {
-              ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.radioContainerFullWidth'
-            }
-          : {
-              variant: 'forms.radioContainer'
-            }
-      }
+      sx={{
+        variant: question.id
+          ? 'forms.radioContainer.' + question.id
+          : 'forms.radioContainer'
+      }}
     >
       <ReactMarkdown
         sx={{ variant: 'forms.radio.markdown' }}

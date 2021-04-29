@@ -6,13 +6,6 @@ import React from 'react'
 import Phone from '../../Fields/Phone'
 import { jsx } from 'theme-ui'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
-
 const QuestionPhone = ({
   component,
   isMobile,
@@ -30,16 +23,11 @@ const QuestionPhone = ({
   ) : (
     <React.Fragment>
       <div
-        sx={
-          question.isFullWidth
-            ? {
-                ...(question.isFullWidth && styles.fullWidth),
-                variant: 'forms.phoneContainerFullWidth'
-              }
-            : {
-                variant: 'forms.phoneContainer'
-              }
-        }
+        sx={{
+          variant: question.id
+            ? 'forms.phoneContainer.' + question.id
+            : 'forms.phoneContainer'
+        }}
       >
         {question.label && <Label>{question.label}</Label>}
 

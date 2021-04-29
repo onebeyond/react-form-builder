@@ -39,16 +39,11 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
   ) : (
     <React.Fragment>
       <div
-        sx={
-          question.isFullWidth
-            ? {
-                ...(question.isFullWidth && styles.fullWidth),
-                variant: 'forms.selectContainerFullWidth'
-              }
-            : {
-                variant: 'forms.selectContainer'
-              }
-        }
+        sx={{
+          variant: question.id
+            ? 'forms.selectContainer.' + question.id
+            : 'forms.selectContainer'
+        }}
       >
         {question.label && <Label>{question.label}</Label>}
         <Select

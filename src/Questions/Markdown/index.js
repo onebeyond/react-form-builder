@@ -3,13 +3,6 @@
 import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
-
 const QuestionMarkdown = ({
   component,
   currentPath,
@@ -24,17 +17,11 @@ const QuestionMarkdown = ({
   ) : (
     <div
       key={question.name}
-      sx={
-        (styles.centerStyle,
-        question.isFullWidth
-          ? {
-              ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.markdownContainerFullWidth'
-            }
-          : {
-              variant: 'forms.markdownContainer.' + (form && form.layout)
-            })
-      }
+      sx={{
+        variant: question.id
+          ? 'forms.markdownContainer.' + (form && form.layout) + question.id
+          : 'forms.markdownContainer.' + (form && form.layout)
+      }}
     >
       <ReactMarkdown
         sx={{ variant: 'forms.markdown.' + (form && form.layout) }}

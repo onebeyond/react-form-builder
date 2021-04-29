@@ -10,13 +10,6 @@ import Label from '../../Fields/Label'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
-
 const prioritySort = (countries, order) => {
   const countryOrder = []
 
@@ -90,16 +83,11 @@ const QuestionCountry = ({
   ) : (
     <div
       data-testid='question-country'
-      sx={
-        question.isFullWidth
-          ? {
-              ...(question.isFullWidth && styles.fullWidth),
-              variant: 'forms.countryContainerFullWidth'
-            }
-          : {
-              variant: 'forms.countryContainer'
-            }
-      }
+      sx={{
+        variant: question.id
+          ? 'forms.countryContainer.' + question.id
+          : 'forms.countryContainer'
+      }}
     >
       {question.label && (
         <Label data-testid='country-label'>{question.label}</Label>

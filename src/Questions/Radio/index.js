@@ -24,7 +24,6 @@ const QuestionRadio = ({ component, question, useForm }) => {
           <Radio
             name={question.name}
             value={option.value}
-            {...question.registerConfig}
             ref={register({
               ...question.registerConfig
             })}

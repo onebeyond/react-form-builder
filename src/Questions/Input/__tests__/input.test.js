@@ -88,18 +88,6 @@ test('icon tooltip is displayed', async () => {
   await expect(screen.getByText('tooltip text example'))
 })
 
-// test('icon tooltip has custom styles', async () => {
-//   const { getByTestId } = render(
-//     <QuestionInput
-//       question={question}
-//       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-//     />
-//   )
-
-//   fireEvent.click(getByTestId('iconId'))
-//   await expect(screen.getByTestId('tooltipId')).toHaveStyle('background: green')
-// })
-
 test('icon tooltip is not displayed when there is no text', async () => {
   const question = {
     name: 'inputName',

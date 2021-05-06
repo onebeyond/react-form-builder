@@ -185,7 +185,6 @@ const FormBuilder = ({
 
   const formatData = (data) => {
     Object.keys(data).map((key) => {
-      console.log(data[key])
       if (data[key] instanceof Date) {
         data[key] = data[key].toISOString()
       }

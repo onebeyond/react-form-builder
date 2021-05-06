@@ -33,8 +33,7 @@ export default {
       type: { name: 'string' },
       description: 'The text that will be shown as placeholder in the select',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: false }
+        type: { summary: 'string' }
       }
     },
     priorityOptions: {
@@ -99,7 +98,7 @@ export default {
     requiredError: {
       name: 'required',
       description:
-        'error message to display on submit if the checkbox is not checked',
+        'error message to display on submit if the country  is not selected',
       table: {
         type: { summary: 'string' },
         category: 'errorMessages'
@@ -113,7 +112,7 @@ export default {
       }
     },
     required: {
-      description: 'Define if the checkbox is required or not',
+      description: 'Define if the country select is required or not',
       table: {
         type: { summary: 'boolean' },
         category: 'registerConfig',

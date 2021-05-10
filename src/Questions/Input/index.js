@@ -34,7 +34,7 @@ const QuestionInput = ({ question, useForm, component }) => {
         {question.icon && (
           <div>
             <Icon icon={question.icon} sx={{ variant: 'forms.icon' }} />
-            {question.tooltip && <FBtooltip tooltip={question.tooltip} />}
+            {question.tooltip.text && <FBtooltip tooltip={question.tooltip} />}
           </div>
         )}
       </div>

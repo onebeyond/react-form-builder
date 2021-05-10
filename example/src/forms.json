@@ -8,6 +8,29 @@
     "enabled": true,
     "questions": [
       {
+        "name": "inputName",
+        "type": "input",
+        "label": "input label",
+        "placeholder": "input placeholder",
+        "icon": {
+          "name": "question",
+          "fill": "red"
+        },
+        "tooltip": {
+          "text": "tooltip text example",
+          "config": {
+            "backgroundColor": "green"
+          }
+        },
+        "errorMessages": {
+          "required": "This field is required",
+          "pattern": "This is not the right pattern"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
         "name": "$Country",
         "placeholder": "Country",
         "priorityOptions": ["GB"],

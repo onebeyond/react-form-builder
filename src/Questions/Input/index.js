@@ -1,7 +1,7 @@
 import ErrorMessage from '../../Fields/Error'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
-import Logo from '../../Common/Icon/Logo'
+import Icon from '../../Common/Icon/Icon'
 import FBtooltip from '../../Common/Icon/FBtooltip'
 
 /** @jsx jsx */
@@ -33,7 +33,7 @@ const QuestionInput = ({ question, useForm, component }) => {
 
         {question.icon && (
           <div>
-            <Logo icon={question.icon} sx={{ variant: 'forms.icon' }} />
+            <Icon icon={question.icon} sx={{ variant: 'forms.icon' }} />
             {question.tooltip && <FBtooltip tooltip={question.tooltip} />}
           </div>
         )}

@@ -1,3 +1,112 @@
+#### 1.0.75 (2021-05-10)
+
+##### Chores
+
+*  delete date logs (c6f0c45b)
+*  adapt es6 to es5 to prevent errors with loader (5889d28c)
+*  delete ? into phone component (696fccb2)
+* **master:**
+  *  update CI/CD pipeline (3ce29c13)
+  *  update CI/CD pipeline (c8e3626a)
+  *  update CI/CD pipeline (954408e3)
+  *  update CI/CD pipeline (75b8495f)
+  *  update CI/CD pipeline (84b8ce4b)
+  *  update CI/CD pipeline (72c18216)
+  *  update CI/CD pipeline (91d2c37e)
+  *  update CI/CD pipeline (21eda029)
+  *  travis only running at main (dbc4a93f)
+  *  CI/CD node version to 10 (37450548)
+  *  CI/CD Test stage (efaf7116)
+  *  CI/CD Publish stage (8f00cb1b)
+  *  CI/CD docs (aefa3faf)
+  *  public web added (fccde234)
+  *  travis script with conditional deployment at stage (c75b2769)
+  *  travis script with conditional deployment (d729e0ea)
+  *  travis config with version tags (ee200327)
+  *  changelog lib added (42a099eb)
+  *  release script (3f2b0d68)
+  *  adding travis config file (cb4ef886)
+  *  initial commit (aa59600e)
+* **main:**
+  *  travis env var (49a7a645)
+  *  travis env var (86bb2b64)
+  *  linting (05c11286)
+
+##### New Features
+
+*  changing how styles are managed (3ffc3da4)
+*  svg component displayed with inputs and tooltip (9a711a66)
+*  svg now can be loaded with the library (fcf92aa2)
+*  placeholder option in select & country Questions (ce9969a8)
+*  adding license-checker postinstall (9748f18f)
+*  countryQuestions storybook (6565c1b3)
+*  now countryQuestion accepts custom list of countries (8c320e17)
+*  new modal possibility, now we can open different links and show different text in the same modal (200b4469)
+*  custom component with a modal, now we can open links in a modal or in another tab. (99faab93)
+*  custom component for check ==> custom checkbox storybook (0b885954)
+*  storybook related with the checkbox component (b3a383d3)
+*  add openToDate in date field (e1df7d97)
+*  add openToDate in date field (dbba3b64)
+*  export error message to implement into custom component (ddf001d0)
+*  add custom component compatibility (7d0907d7)
+*  add minAge to date component (4848362b)
+*  change value of the country from countryName to countryShortCode (96caaf7f)
+*  add target option into Checkbox ReactMarckdown links (37e9bb5f)
+*  add select status (isSelected,isDisabled, isFocused) styles (e067bd10)
+
+##### Bug Fixes
+
+*  tests (ef6bb026)
+*  style access (2c01fa5c)
+*  removing web error default (348dc411)
+*  name of svg need a format name to avoid errors in tags (888406c9)
+*   displaying error just if it is neccesary (4b734d51)
+*  adapt test were needed due to new logic (e664cca3)
+*  phone input not alway required and name now can be choosen (019226c3)
+*  phone input is not always required anymore (105740d9)
+*  old test now everything is ordered... (bab900db)
+*  add countryAndRegionsData to FB (d694fa81)
+*  problem rendering select when theme value was null (f2fd2590)
+*  Quick fix test that was forgotten (d01d6fe3)
+*  the bugs related with the 1.0.58 version and old bugs from other versions (ae609e37)
+*  travis build fixing (3a2a7123)
+*  travis error ? && removing consoles.log (a95ee0f2)
+*  reducing redundancy repeating question all the time just making the necessary modifications (6b51f4db)
+*  fix return multipleCheckboxes and multipleImageCheckboxes values, validations (a7ab4a8b)
+*  fix empty phone error (81b87e1e)
+*  fix date component in firefox and safari (7eada8da)
+*  validation birthday date (979a6463)
+* **main:**  travis yaml format (20ecbffe)
+
+##### Other Changes
+
+*  logic behind radiobuttons (5c90b1f0)
+*  undefined value on delete (e8e790bc)
+*  countries are displayed in the language asked & added countries json (2cd475f3)
+*  redirection in the href, export modal and included onLinkClick for the customizeCheckbox  in formbuilder (12452de6)
+*  add custom order and custom countryNames into country-component (60091bb0)
+* add-date-and-form-types-into-form-builder#19 add date and phone types into form builder (84b8fed3)
+* add-calendar-component add Date component, add isBirthDay property and create story (4f1e5626)
+* **master:**
+  *  travis only running at main"" (86f7f661)
+  *  travis only running at main" (f81d1a64)
+
+##### Refactors
+
+*  logo reducing loading charge (361fcd0a)
+*  logistic more precise (f243dd92)
+*  moving icons to new folder and default icon (75f5af63)
+*  Logo and tooltip externalisation in components (6f88a7a3)
+*  optimisation of priorityOrder and new language feature displaying countries (c845d30b)
+*  removing C&R now it will be in /country/data with the other json (98fbed31)
+*  removing "isMobile" from documentation and adding language (88f56f3b)
+
+##### Tests
+
+*   QuestionInput Test (23d2de28)
+*  initial test for QuestionInput (21411c7b)
+*  countryQuestion testing (73237ecd)
+
 #### 1.0.74 (2021-04-29)
 
 ##### Chores

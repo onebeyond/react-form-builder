@@ -27,7 +27,7 @@
     "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook  -o ./public",
-    "postinstall": "npx @guidesmiths/license-checker --failOn AGPL --outputFileName License-report.md --errorReportFileName License-error.md"
+    "postinstall": "npx @guidesmiths/license-checker --failOn AGPL --errorReportFileName License-error.md"
   },
   "peerDependencies": {
     "react": "^16.0.0",
@@ -50,7 +50,6 @@
     "@storybook/addon-links": "^6.1.15",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.15",
-    "@svgr/rollup": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
     "babel-eslint": "^10.0.3",

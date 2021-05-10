@@ -129,10 +129,52 @@ const questionIcon = {
     name: 'question-circle',
     fill: 'red'
   },
+  errorMessages: {
+    required: 'This field is required',
+    pattern: 'This is not the right pattern'
+  },
+  registerConfig: {
+    required: true
+  }
+}
+
+const questionTooltip = {
+  name: 'inputName',
+  type: 'input',
+  label: 'input label',
+  placeholder: 'input placeholder',
+  icon: {
+    name: 'question-circle',
+    fill: 'red'
+  },
+  tooltip: {
+    text: 'tooltip text example',
+    config: {}
+  },
+  errorMessages: {
+    required: 'This field is required',
+    pattern: 'This is not the right pattern'
+  },
+  registerConfig: {
+    required: true
+  }
+}
+
+const questionCustomTooltip = {
+  name: 'inputName',
+  type: 'input',
+  label: 'input label',
+  placeholder: 'input placeholder',
+  icon: {
+    name: 'question-circle',
+    fill: 'red'
+  },
   tooltip: {
     text: 'tooltip text example',
     config: {
-      backgroundColor: 'green'
+      type: 'success',
+      effect: 'float',
+      place: 'left'
     }
   },
   errorMessages: {
@@ -200,12 +242,38 @@ const iconTemplate = (args) => (
   />
 )
 
+const tooltipTemplate = (args) => (
+  <Input
+    question={args}
+    useForm={{
+      errors: {},
+      register: () => {},
+      setValue: () => {}
+    }}
+  />
+)
+
+const customTooltipTemplate = (args) => (
+  <Input
+    question={args}
+    useForm={{
+      errors: {},
+      register: () => {},
+      setValue: () => {}
+    }}
+  />
+)
+
 export const defaultInput = Template.bind()
 export const inputError = errorTemplate.bind()
 export const inputPatternError = patternTemplate.bind()
 export const inputIcon = iconTemplate.bind()
+export const inputTooltip = tooltipTemplate.bind()
+export const customTolltip = customTooltipTemplate.bind()
 
 defaultInput.args = question
 inputError.args = question
 inputPatternError.args = patternQuestion
 inputIcon.args = questionIcon
+inputTooltip.args = questionTooltip
+customTolltip.args = questionCustomTooltip

@@ -45,7 +45,7 @@ const DatePicker = ({
           portalId='root-portal'
           withPortal={isMobile}
           placeholderText={placeholder}
-          dateFormat='dd/MM/yyyy'
+          dateFormat={dateFormat || 'dd/MM/yyyy'}
           showYearDropdown
           dropdownMode={isMobile ? 'select' : 'scroll'}
           openToDate={

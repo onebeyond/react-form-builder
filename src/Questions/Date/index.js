@@ -10,7 +10,6 @@ const QuestionDate = ({
   component,
   useForm,
   question,
-  dateFormat,
   isBirthDate,
   isMobile,
   ...props
@@ -38,7 +37,7 @@ const QuestionDate = ({
           registerConfig={question.registerConfig}
           setValue={setValue}
           isMobile={isMobile}
-          dateFormat={dateFormat}
+          dateFormat={question.dateFormat}
           isBirthDate={isBirthDate}
           minAge={question.minAge}
           openToDate={question.openToDate}

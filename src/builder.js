@@ -101,7 +101,6 @@ const FormBuilder = ({
         <QuestionDate
           useForm={useFormObj}
           question={question}
-          dateFormat='dd-MM-yyyy'
           isBirthDate={question.isBirthDate || false}
           isMobile={isMobile}
           component={props.customDate}

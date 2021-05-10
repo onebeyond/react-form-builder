@@ -59,6 +59,9 @@ test('icon default is displayed', () => {
       name: 'defaultIcon',
       fill: 'red'
     },
+    tooltip: {
+      text: 'tooltip text example'
+    },
     errorMessages: {
       required: 'This field is required'
     },
@@ -66,14 +69,14 @@ test('icon default is displayed', () => {
       required: true
     }
   }
-  const { getByTestId } = render(
+  const { getByText } = render(
     <QuestionInput
       question={question}
       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
     />
   )
 
-  expect(getByTestId('defaultIconId'))
+  expect(getByText('Icon Not found'))
 })
 
 test('icon tooltip is displayed', async () => {
@@ -87,18 +90,6 @@ test('icon tooltip is displayed', async () => {
   fireEvent.click(getByTestId('iconId'))
   await expect(screen.getByText('tooltip text example'))
 })
-
-// test('icon tooltip has custom styles', async () => {
-//   const { getByTestId } = render(
-//     <QuestionInput
-//       question={question}
-//       useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-//     />
-//   )
-
-//   fireEvent.click(getByTestId('iconId'))
-//   await expect(screen.getByTestId('tooltipId')).toHaveStyle('background: green')
-// })
 
 test('icon tooltip is not displayed when there is no text', async () => {
   const question = {

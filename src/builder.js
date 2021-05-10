@@ -189,7 +189,13 @@ const FormBuilder = ({
 
   return (
     <form id={idForm} onSubmit={useFormObj.handleSubmit(onSubmit)}>
-      <div sx={{ variant: 'forms.container.' + (form && form.layout) }}>
+      <div
+        sx={{
+          variant: form.layout
+            ? 'forms.container.' + (form && form.layout)
+            : 'forms.container'
+        }}
+      >
         {form &&
           Array.isArray(form.questions) &&
           form.questions.map((question, i) => {

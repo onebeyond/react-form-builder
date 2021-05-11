@@ -186,8 +186,12 @@ const questionCustomTooltip = {
   }
 }
 
-const patternQuestion = { ...question }
-patternQuestion.registerConfig.pattern =
+const questionPattern = { ...question }
+const questionIconError = JSON.parse(JSON.stringify(questionIcon))
+
+questionIconError.icon.name = 'non-icon'
+
+questionPattern.registerConfig.pattern =
   '(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])'
 
 const Template = (args) => (
@@ -210,6 +214,17 @@ const errorTemplate = (args) => (
           type: 'required'
         }
       },
+      register: () => {},
+      setValue: () => {}
+    }}
+  />
+)
+
+const errorNoIconTemplate = (args) => (
+  <Input
+    question={args}
+    useForm={{
+      errors: {},
       register: () => {},
       setValue: () => {}
     }}
@@ -270,10 +285,12 @@ export const inputPatternError = patternTemplate.bind()
 export const inputIcon = iconTemplate.bind()
 export const inputTooltip = tooltipTemplate.bind()
 export const customTolltip = customTooltipTemplate.bind()
+export const errorIcon = errorNoIconTemplate.bind()
 
 defaultInput.args = question
 inputError.args = question
-inputPatternError.args = patternQuestion
+inputPatternError.args = questionPattern
 inputIcon.args = questionIcon
 inputTooltip.args = questionTooltip
 customTolltip.args = questionCustomTooltip
+errorIcon.args = questionIconError

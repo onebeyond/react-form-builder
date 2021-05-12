@@ -32,11 +32,19 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   ) : (
     <div
       sx={{
-        ...(question.isFullWidth && styles.fullWidth)
+        variant: question.id
+          ? 'forms.multipleCheckboxesContainer.' + form.layout + question.id
+          : 'forms.multipleCheckboxesContainer.' + form.layout
       }}
     >
       {question.label && <Label>{question.label}</Label>}
-      <div sx={{ variant: 'forms.multipleCheckboxes.' + form.layout }}>
+      <div
+        sx={{
+          variant: question.checkboxId
+            ? 'forms.multipleCheckboxes.' + form.layout + question.checkboxId
+            : 'forms.multipleCheckboxes.' + form.layout
+        }}
+      >
         {question.config &&
           question.config.options.map((option) => {
             return (

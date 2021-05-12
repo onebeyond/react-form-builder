@@ -8,21 +8,6 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from 'react-markdown'
 
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
-  selectOption: {
-    background: 'bg',
-    color: 'black'
-  },
-  markDown: {
-    fontFamily: 'regular',
-    width: ['90%', '95%', '95%']
-  }
-}
-
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   const { getValues, errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
@@ -55,9 +40,8 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                 }}
                 key={option.name}
               >
-                <Label sx={styles.centerStyle}>
+                <Label sx={{ alignItems: 'center' }}>
                   <Checkbox
-                    sx={styles.checkboxMinWidth}
                     name={question.name}
                     value={option.value}
                     ref={register({
@@ -78,18 +62,21 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       }
                     })}
                   />
-                  <ReactMarkdown
-                    sx={styles.markDown}
-                    source={option.label}
-                    renderers={{
-                      // eslint-disable-next-line react/display-name
-                      link: ({ href, children }) => (
-                        <Link href={href} target='_blank'>
-                          {children}
-                        </Link>
-                      )
-                    }}
-                  />
+                  {option.src ? (
+                    <img src={option.src} />
+                  ) : (
+                    <ReactMarkdown
+                      source={option.label}
+                      renderers={{
+                        // eslint-disable-next-line react/display-name
+                        link: ({ href, children }) => (
+                          <Link href={href} target='_blank'>
+                            {children}
+                          </Link>
+                        )
+                      }}
+                    />
+                  )}
                 </Label>
               </div>
             )

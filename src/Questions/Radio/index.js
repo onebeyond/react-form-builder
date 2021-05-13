@@ -6,6 +6,11 @@ import ReactMarkdown from 'react-markdown'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
+const styles = {
+  alignRadio: {
+    alignItems: 'center'
+  }
+}
 const QuestionRadio = ({ component, question, useForm }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
@@ -13,7 +18,7 @@ const QuestionRadio = ({ component, question, useForm }) => {
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
       return (
-        <Label key={option.label}>
+        <Label sx={styles.alignRadio} key={option.label}>
           <Radio
             name={question.name}
             value={option.value}

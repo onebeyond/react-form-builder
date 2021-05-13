@@ -3,9 +3,9 @@
 import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
-
+let MarkDownLink = ''
 const Markdown = React.forwardRef(({ ...props }, ref) => {
-  const MarkDownLink = ({ href, children }) => {
+  MarkDownLink = ({ href, children }) => {
     const modalName = href.startsWith('#') && href.toString().substr(1)
     return (
       <Link

@@ -19,7 +19,10 @@ const QuestionMarkdown = ({
       key={question.name}
       sx={{
         variant: question.id
-          ? 'forms.markdownContainer.' + (form && form.layout) + question.id
+          ? 'forms.markdownContainer.' +
+            (form && form.layout) +
+            '.' +
+            question.id
           : 'forms.markdownContainer.' + (form && form.layout)
       }}
     >

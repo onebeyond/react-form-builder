@@ -52,7 +52,10 @@ const QuestionCheckbox = ({
     <div
       sx={{
         variant: question.id
-          ? 'forms.checkboxContainer.' + (form && form.layout) + question.id
+          ? 'forms.checkboxContainer.' +
+            (form && form.layout) +
+            '.' +
+            question.id
           : 'forms.checkboxContainer.' + (form && form.layout)
       }}
     >

@@ -19,7 +19,7 @@ const DatePicker = ({
   openToDate = '',
   ...props
 }) => {
-  const [date, setDate] = React.useState()
+  const [date, setDate] = React.useState(new Date())
   const pickerRef = React.useRef(null)
   React.useEffect(() => {
     if (isMobile && pickerRef.current !== null) {
@@ -33,6 +33,17 @@ const DatePicker = ({
 
   const getInitialDate = () => {
     return subYears(new Date(), minAge || 18)
+  }
+
+  const convertLocalToUTCDate = (date) => {
+    if (!date) {
+      return date
+    }
+    date = new Date(date)
+    date = new Date(
+      Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+    )
+    return date
   }
 
   const [day, month, year] = openToDate.split('-')
@@ -67,8 +78,10 @@ const DatePicker = ({
       }}
       name={name}
       register={register}
-      setValue={setValue}
-      selected={date}
+      setValue={(name, value) => {
+        setValue(name, convertLocalToUTCDate(value))
+      }}
+      selected={new Date(date)}
       onChange={setDate}
     />
   )

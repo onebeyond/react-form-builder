@@ -35,7 +35,7 @@ const FormBuilder = ({
   isoCode,
   ...props
 }) => {
-  const useFormObj = useForm()
+  const useFormObj = useForm({ defaultValues: { formatDate: '' } })
 
   const QuestionsMap = (question) => {
     return {
@@ -183,8 +183,17 @@ const FormBuilder = ({
     }
   }
 
+  const formatData = (data) => {
+    Object.keys(data).map((key) => {
+      if (data[key] instanceof Date) {
+        data[key] = data[key].toISOString()
+      }
+    })
+    return data
+  }
+
   const onSubmit = (data) => {
-    onSubmitForm(data)
+    onSubmitForm(formatData(data))
   }
 
   return (

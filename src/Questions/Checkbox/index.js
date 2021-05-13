@@ -1,12 +1,12 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
-import { Link, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 import Checkbox from '../../Fields/Checkbox'
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from '../../Fields/Markdown'
 
 const styles = {
   selectOption: {
@@ -32,19 +32,6 @@ const QuestionCheckbox = ({
 }) => {
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
-
-  const MarkDownLink = ({ href, children }) => {
-    const modalName = href.startsWith('#') && href.toString().substr(1)
-    return (
-      <Link
-        href={`${href}`}
-        target={modalName ? '_self' : '_blank'}
-        {...(modalName ? { onClick: () => onLinkOpen(modalName) } : {})}
-      >
-        {children}
-      </Link>
-    )
-  }
 
   return component ? (
     <CustomComponent component={component} />
@@ -73,9 +60,7 @@ const QuestionCheckbox = ({
           <ReactMarkdown
             sx={styles.markDown}
             source={question.label}
-            renderers={{
-              link: MarkDownLink
-            }}
+            onLinkOpen={onLinkOpen}
           />
         </Label>
         {errors[question.name] && errors[question.name].type === 'required' && (

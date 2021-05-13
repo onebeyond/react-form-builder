@@ -1,11 +1,32 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
-import { jsx } from 'theme-ui'
+import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 
 const Markdown = React.forwardRef(({ ...props }, ref) => {
-  return <ReactMarkdown ref={ref} {...props} />
+  const MarkDownLink = ({ href, children }) => {
+    const modalName = href.startsWith('#') && href.toString().substr(1)
+    return (
+      <Link
+        href={`${href}`}
+        target={modalName ? '_self' : '_blank'}
+        {...(modalName ? { onClick: () => props.onLinkOpen(modalName) } : {})}
+      >
+        {children}
+      </Link>
+    )
+  }
+
+  return (
+    <ReactMarkdown
+      ref={ref}
+      {...props}
+      renderers={{
+        link: MarkDownLink
+      }}
+    />
+  )
 })
 
 export default Markdown

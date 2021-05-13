@@ -138,6 +138,7 @@ const FormBuilder = ({
           form={form}
           currentPath={currentPath}
           component={props.customMarkdown}
+          onLinkOpen={props.onLinkOpen}
         />
       )
     }

@@ -1,14 +1,15 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
-import { Link, jsx } from 'theme-ui'
-import ReactMarkdown from 'react-markdown'
+import { jsx } from 'theme-ui'
+import ReactMarkdown from '../../Fields/Markdown'
 
 const QuestionMarkdown = ({
   component,
   currentPath,
   form,
   question,
-  useForm
+  useForm,
+  onLinkOpen
 }) => {
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -29,13 +30,7 @@ const QuestionMarkdown = ({
       <ReactMarkdown
         sx={{ variant: 'forms.markdown.' + (form && form.layout) }}
         source={question.label}
-        renderers={{
-          link: ({ href, children }) => (
-            <Link href={`${currentPath}${href}`} target='_blank'>
-              {children}
-            </Link>
-          )
-        }}
+        onLinkOpen={onLinkOpen}
       />
     </div>
   )

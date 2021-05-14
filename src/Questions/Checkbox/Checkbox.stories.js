@@ -41,7 +41,8 @@ export default {
       }
     },
     component: {
-      description: 'Customization of the checkbox',
+      description:
+        'Custom component that will replace  the default checkbox component',
       table: {
         type: { summary: 'func component' },
         defaultValue: { summary: '() => {}' }
@@ -101,7 +102,7 @@ const errorQuestion = { ...question }
 const linkQuestion = { ...question }
 
 customQuestion.label = ''
-modalQuestion.label = 'click the [link](#) to see a modal '
+modalQuestion.label = 'click the [link](#privacy) to see a modal '
 errorQuestion.registerConfig.required = true
 linkQuestion.label =
   'Text with a [link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)'
@@ -159,7 +160,7 @@ const ModalCheckbox = (args) => {
         title={args.name}
         onClose={() => setShow(false)}
         show={show}
-        modalText='this a  modal example *markdown* **text** '
+        modalText='this a  modal example privacy *markdown* **text** '
       />
       <Checkbox
         question={args}

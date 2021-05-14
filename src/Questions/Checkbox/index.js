@@ -14,7 +14,6 @@ const styles = {
     color: 'black'
   },
   markDown: {
-    fontFamily: 'regular',
     width: ['90%', '95%', '95%'],
     p: {
       margin: 0

@@ -7,7 +7,6 @@ const defaultStyles = {
   color: '#a8000b',
   m: 0,
   mt: '0.25rem',
-  fontFamily: 'regular',
   fontSize: '14px'
 }
 

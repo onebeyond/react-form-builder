@@ -38,11 +38,8 @@ const QuestionCheckbox = ({
     <div
       sx={{
         variant: question.id
-          ? 'forms.checkboxContainer.' +
-            (form && form.layout) +
-            '.' +
-            question.id
-          : 'forms.checkboxContainer.' + (form && form.layout)
+          ? 'forms.checkboxContainer.' + question.id
+          : 'forms.checkboxContainer'
       }}
     >
       <div sx={styles.centerStyle} key={question.name}>

@@ -20,15 +20,12 @@ const QuestionMarkdown = ({
       key={question.name}
       sx={{
         variant: question.id
-          ? 'forms.markdownContainer.' +
-            (form && form.layout) +
-            '.' +
-            question.id
-          : 'forms.markdownContainer.' + (form && form.layout)
+          ? 'forms.markdownContainer.' + question.id
+          : 'forms.markdownContainer'
       }}
     >
       <ReactMarkdown
-        sx={{ variant: 'forms.markdown.' + (form && form.layout) }}
+        sx={{ variant: 'forms.markdown' }}
         source={question.label}
         onLinkOpen={onLinkOpen}
       />

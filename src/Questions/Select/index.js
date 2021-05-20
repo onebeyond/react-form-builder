@@ -31,7 +31,7 @@ const getOptions = (question) => {
 }
 
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
-  const { register, errors, setValue } = useForm
+  const { register, errors, setValue, unregister } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   return component ? (
@@ -56,6 +56,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           register={register}
           registerConfig={question.registerConfig}
           setValue={setValue}
+          unregister={unregister}
         >
           {question.config &&
             question.config.options.map((option) => {

@@ -10,6 +10,7 @@ const Select = ({
   register,
   setValue,
   name,
+  unregister,
   defaultValue,
   registerConfig,
   ...props
@@ -71,6 +72,12 @@ const Select = ({
       }
     }
   })
+
+  React.useEffect(() => {
+    return () => {
+      unregister(name)
+    }
+  }, [])
 
   return (
     <RHFInput

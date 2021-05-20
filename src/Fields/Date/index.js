@@ -3,8 +3,12 @@ import { jsx } from 'theme-ui'
 
 import React from 'react'
 import { RHFInput } from 'react-hook-form-input'
-import ReactDatePicker from 'react-datepicker'
+import ReactDatePicker, { registerLocale } from 'react-datepicker'
 import { differenceInYears, subYears } from 'date-fns'
+import de from 'date-fns/locale/de'
+import fr from 'date-fns/locale/fr'
+import es from 'date-fns/locale/es'
+import en from 'date-fns/locale//en-GB'
 
 const DatePicker = ({
   register,
@@ -13,14 +17,21 @@ const DatePicker = ({
   registerConfig,
   placeholder,
   isMobile,
+  language,
   dateFormat,
-  isBirthDate,
-  minAge,
+  minAge = 0,
   openToDate = '',
   ...props
 }) => {
   const [date, setDate] = React.useState(new Date())
   const pickerRef = React.useRef(null)
+  const mapLanguagues = { de, fr, es, en }
+  const datepickerLanguage =
+    language && mapLanguagues[language.toLowerCase()]
+      ? mapLanguagues[language.toLowerCase()]
+      : mapLanguagues.en
+
+  registerLocale(datepickerLanguage.code, datepickerLanguage)
   React.useEffect(() => {
     if (isMobile && pickerRef.current !== null) {
       pickerRef.current.input.readOnly = true
@@ -28,11 +39,11 @@ const DatePicker = ({
   }, [isMobile, pickerRef])
 
   const isOver18 = (date) => {
-    return differenceInYears(new Date(), date) >= (minAge || 18)
+    return differenceInYears(new Date(), date) >= minAge
   }
 
   const getInitialDate = () => {
-    return subYears(new Date(), minAge || 18)
+    return subYears(new Date(), minAge)
   }
 
   const convertLocalToUTCDate = (date) => {
@@ -46,26 +57,19 @@ const DatePicker = ({
     return date
   }
 
-  const [day, month, year] = openToDate.split('-')
-
   return (
     <RHFInput
       as={
         <ReactDatePicker
           ref={pickerRef}
           portalId='root-portal'
+          locale={datepickerLanguage.code}
           withPortal={isMobile}
           placeholderText={placeholder}
           dateFormat={dateFormat || 'dd/MM/yyyy'}
           showYearDropdown
           dropdownMode={isMobile ? 'select' : 'scroll'}
-          openToDate={
-            openToDate.split('-').length === 3
-              ? new Date(year, month - 1, day)
-              : isBirthDate
-              ? getInitialDate()
-              : date || new Date()
-          }
+          openToDate={openToDate ? new Date(openToDate) : getInitialDate()}
           disabledKeyboardNavigation
           {...props}
         />
@@ -73,7 +77,7 @@ const DatePicker = ({
       rules={{
         ...registerConfig,
         validate: {
-          u18: isBirthDate ? isOver18 : () => true
+          underAge: minAge ? isOver18 : () => true
         }
       }}
       name={name}

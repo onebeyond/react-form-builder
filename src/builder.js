@@ -103,7 +103,7 @@ const FormBuilder = ({
         <QuestionDate
           useForm={useFormObj}
           question={question}
-          isBirthDate={question.isBirthDate || false}
+          language={props.language}
           isMobile={isMobile}
           component={props.customDate}
         />

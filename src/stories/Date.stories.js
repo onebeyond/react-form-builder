@@ -28,6 +28,5 @@ export const Primary = Template.bind({})
 Primary.args = {
   placeholder: '',
   dateFormat: 'dd-MM-yyyy',
-  isMobile: false,
-  isBirthDate: false
+  isMobile: false
 }

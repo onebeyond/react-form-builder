@@ -69,7 +69,9 @@ const FormBuilder = ({
             component={props.customSelect}
           />
           {question.dependentQuestions &&
-            question.dependentQuestions.map(ConditionalQuestion(question))}
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
         </>
       ),
       country: (
@@ -144,42 +146,43 @@ const FormBuilder = ({
     }
   }
 
-  function ConditionalQuestion(question) {
+  function ConditionalQuestion(question, name) {
     return (dependentQuestion, i) => {
       const nestedQuestion = dependentQuestion && dependentQuestion.question
 
       const getConditions = () =>
         dependentQuestion.conditions || dependentQuestion.condition
 
-      const conditionValue = useFormObj.watch(question.name)
-
+      const conditionValue = useFormObj.watch(name)
       const getFormattedValue = () =>
         conditionValue && conditionValue.value
           ? conditionValue.value
           : conditionValue
 
-      return (
-        getConditions().includes(getFormattedValue()) && (
-          <React.Fragment key={i}>
-            <div
-              sx={{
-                ...(dependentQuestion.question.isFullWidth && styles.fullWidth)
-              }}
-            >
-              {
-                QuestionsMap(dependentQuestion.question)[
-                  dependentQuestion.question.type
-                ]
-              }
-            </div>
-            {nestedQuestion.dependentQuestions
-              ? nestedQuestion.dependentQuestions.map(
-                  ConditionalQuestion(nestedQuestion)
+      return getConditions().includes(getFormattedValue()) ? (
+        <React.Fragment key={i}>
+          <div
+            sx={{
+              ...(dependentQuestion.question.isFullWidth && styles.fullWidth)
+            }}
+          >
+            {
+              QuestionsMap(dependentQuestion.question)[
+                dependentQuestion.question.type
+              ]
+            }
+          </div>
+
+          {nestedQuestion.dependentQuestions
+            ? nestedQuestion.dependentQuestions.map(
+                ConditionalQuestion(
+                  nestedQuestion.question,
+                  dependentQuestion.name
                 )
-              : null}
-          </React.Fragment>
-        )
-      )
+              )
+            : null}
+        </React.Fragment>
+      ) : null
     }
   }
 

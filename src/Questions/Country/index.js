@@ -45,7 +45,7 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue } = useForm
+  const { errors, register, setValue, unregister } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -101,6 +101,7 @@ const QuestionCountry = ({
         registerConfig={question.registerConfig}
         setValue={setValue}
         placeholder={question.placeholder}
+        unregister={unregister}
         {...props}
       >
         {renderCountryOptions(

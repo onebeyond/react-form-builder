@@ -10,8 +10,8 @@ const QuestionDate = ({
   component,
   useForm,
   question,
-  isBirthDate,
   isMobile,
+  language,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
@@ -32,13 +32,13 @@ const QuestionDate = ({
           sx={{ width: '100%', variant: 'forms.input' }}
           placeholder={question.placeholder}
           key={question.name}
+          language={language}
           name={question.name}
           register={register}
           registerConfig={question.registerConfig}
           setValue={setValue}
           isMobile={isMobile}
           dateFormat={question.dateFormat}
-          isBirthDate={isBirthDate}
           minAge={question.minAge}
           openToDate={question.openToDate}
           selected={question.openToDate}
@@ -49,9 +49,9 @@ const QuestionDate = ({
             message={question.errorMessages && question.errorMessages.required}
           />
         )}
-        {errors[question.name] && errors[question.name].type === 'u18' && (
+        {errors[question.name] && errors[question.name].type === 'underAge' && (
           <ErrorMessage
-            message={question.errorMessages && question.errorMessages.u18}
+            message={question.errorMessages && question.errorMessages.underAge}
           />
         )}
       </div>

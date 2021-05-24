@@ -4,7 +4,7 @@
 import { jsx } from 'theme-ui'
 import Input from '../Input'
 import { RHFInput } from 'react-hook-form-input'
-import PhoneInput, { isPossiblePhoneNumber } from 'react-phone-number-input'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 
 const Phone = ({
   register,
@@ -24,7 +24,7 @@ const Phone = ({
         validate: {
           isValidPhoneNumber: (phone) => {
             const shouldSetError = () => {
-              return registerConfig.required && !isPossiblePhoneNumber(phone)
+              return registerConfig.required && !isValidPhoneNumber(phone)
                 ? setError(name, {
                     type: 'isValidPhoneNumber'
                   })
@@ -32,7 +32,7 @@ const Phone = ({
             }
             shouldSetError()
 
-            return phone ? isPossiblePhoneNumber(phone) : null
+            return phone ? isValidPhoneNumber(phone) : null
           }
         }
       }}

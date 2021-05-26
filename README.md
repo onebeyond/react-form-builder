@@ -27,7 +27,7 @@ class Example extends Component {
   }
 }
 ```
-
+# Formbuilder Options 
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|---	|:---:	|	
 |   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
@@ -37,7 +37,7 @@ class Example extends Component {
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
 |  onLinkOpen       |  function to be executed when there is a custom link. Ej: [privacy] (#privacy)"  |  function     | - 
 
-# Questions
+# Questions Options
 ### Checkbox
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|---	|:---:	|	

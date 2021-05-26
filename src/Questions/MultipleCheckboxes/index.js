@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown'
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   const { getValues, errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
+  const { minimumLen = 0, maximumLen } = question.registerConfig
 
   return component ? (
     <CustomComponent component={component} />
@@ -46,17 +47,15 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                     ref={register({
                       ...question.registerConfig,
                       validate: {
-                        minimumLen: question.registerConfig.minimumLen
+                        minimumLen: minimumLen
                           ? () =>
                               getValues()[question.name] &&
-                              getValues()[question.name].length >=
-                                question.registerConfig.minimumLen
+                              getValues()[question.name].length >= minimumLen
                           : () => true,
-                        maximumLen: question.registerConfig.maximumLen
+                        maximumLen: maximumLen
                           ? () =>
                               getValues()[question.name] &&
-                              getValues()[question.name].length <=
-                                question.registerConfig.minimumLen
+                              getValues()[question.name].length <= maximumLen
                           : () => true
                       }
                     })}

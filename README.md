@@ -37,14 +37,6 @@ class Example extends Component {
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
 |  onLinkOpen       |  function to be executed when there is a custom link. Ej: [privacy] (#privacy)"  |  function     | - 
 
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
-|   form*	|  The json with the questions to create 	|  json  	|   -	|   	
-|   onSubmit*    |   Action to be realized "onSubmit" form    |    function       |   -    |  
-|   language	| Shortcut with the language  to render components in multiple languages (country,date) <br /> <br /> Available laguages: es,de,fr,en  	| string   	|   en	|   
-|  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  onLinkOpen       |  function to be executed when there is a custom link. Ej: [privacy] (#privacy)"  |  function     | - 
 
 # Questions Options
 ### Checkbox

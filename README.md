@@ -28,6 +28,29 @@ class Example extends Component {
 }
 ```
 
+| Option  	| Description  	| Type |   Default	|   	
+|---	|---	|---	|:---:	|	
+|   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
+|   form*	|  The json with the questions to create 	|  json  	|   -	|   	
+|   onSubmit*    |   Action to be realized "onSubmit" form    |    function       |   -    |  
+|   language	| Shortcut with the language  to render components in multiple languages (country,date) <br /> Available laguages: es,de,fr,en  	| string   	|   en	|   
+|  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
+|  onLinkOpen       |  function to be executed when there is a custom link. Ej: [privacy] (#privacy)"  |  function     | - 
+
+# Questions
+### Checkbox
+| Option  	| Description  	| Type |   Default	|   	
+|---	|---	|---	|:---:	|	
+|   name*	|  Checkbox name  	|  string 	|  - 	|   	
+|   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|   	
+|   defaultChecked    |   Checked component by default    |    boolean       |   false   | 
+|   **errorMessages**	|    	| json   	|   	|   
+|  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
+|  **registerConfig**       |    |  json     | 
+| required  | Define if the checkbox is required  |  boolean  | false
+
+
+
 # To contribute
 
 1. `npm install`

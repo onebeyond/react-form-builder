@@ -27,81 +27,201 @@ class Example extends Component {
   }
 }
 ```
-# Formbuilder Options 
+
+# Live Playground
+
+For examples of react-form-builder in action go to:
+
+http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
+
+
+# Formbuilder options
 | Option  	| Description  	| Type |   Default	|   	
-|---	|---	|---	|:---:	|	
+|---	|---	|:---:	|:---:	|	
 |   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
 |   form*	|  The json with the questions to create 	|  json  	|   -	|   	
 |   onSubmit*    |   Action to be realized "onSubmit" form    |    function       |   -    |  
-|   language	| Shortcut with the language  to render components in multiple languages (country,date) <br /> Available laguages: es,de,fr,en  	| string   	|   en	|   
+|   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|   
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  onLinkOpen       |  function to be executed when there is a custom link. Ej: [privacy] (#privacy)"  |  function     | - 
+|  CountryAndRegionsData    |  Json with the acronym(s) and the names of the countries that you want to display in the `countrySelect`    |   json    | -
+|  onLinkOpen       |  function to be executed when there is a custom link  |  function     | - 
 
+##### CountryAndRegionsData example:
+```yaml
+[
+  { "countryName": "MyOwnCountry1", "countryShortCode": "MC1" },
+  { "countryName": "MyOwnCountry2", "countryShortCode": "MC2" },
+  { "countryName": "MyOwnCountry3", "countryShortCode": "MC3" },
+  { "countryName": "MyOwnCountry4", "countryShortCode": "MC4" }
+]
+```
 
-# Questions Options
+# Questions
+
 ### Checkbox
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Checkbox name  	|  string 	|  - 	|   
-|   type*   | must be **checkbox**| string | - |
+|   type*   | Must be `checkbox`| string | - |
 |   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|   	
-|   defaultChecked    |   Checked component by default    |    boolean       |   false   | 
+|   defaultChecked    |   Checked component by default    |    boolean       |   false   |
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
+#### Checkbox example
+```yaml
+{
+  "name": "terms_and_conditions",
+  "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink]('shorturl.at/dFT25')",
+  "defaultChecked": false,
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
 
+```
 ### Country
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Country component name  	|  string 	|  - 	|   
-|   type*   | must be **country** | string | - |
+|   type*   | Must be `country` | string | - |
 |   label	|  Text shown over the coutnry list|  string  	|   ''	|   	
 |   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
-|   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   ''   | 
-|  **CountryAndRegionsData**    |       |       |
-|  CountryAndRegionsData    |  An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select     |   Array    | -
-| countryName  | Name of the country  | string  | ''
-| countryShortCode  | shortcode of the country  | string  | ''
+|   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' | 
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the country select is required  |  boolean  | false
 
+#### Country example:
+```yaml
+{
+  "name": "country_of_residence",
+  "type": "country",
+  "label": "This is the label of the country select",
+  "placeholder": "Please select an option ^^",
+  "priorityOptions": ["GB", "ES"],
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+```
+
 ### Date
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Date name component  	|  string 	|  - 	|   
-|   type*   | must be **date**| string | - |
-|   label	|  Text shown over the input 	|  string  	|   ''	|   	
-|   placeholder    |   Texto to be displayed as placeholder in the input    |    string       |   ''   | 
-|   minAge    |   Minimun age that user should have    |    int       |   ''   | 
+|   type*   | Must be `date`| string | - |
+|   label	|  Text shown over the  date input 	|  string  	|   ''	|   	
+|   placeholder    |   Text to be displayed as placeholder in the date input     |    string       |   ''   | 
+|   minAge    |   Minimun age that user should have to make the submit    |    int       |   ''   | 
 |   dateFormat    |   Format to be applied in the date input    |    string       |   dd/MM/yyyy   | 
-|   openToDate    |   Date in which the calendar will be opened. If this attribute is empty and we have a minAge attribute, the calendar will be opened -- minAge years ago since today to improve the flow. If we dont use this attribute the calendar will be opened in todays date   |    string       |   dd/MM/yyyy   | 
+|   openToDate    |   Date in which the calendar will be opened. If this attribute is empty and we have a `minAge` attribute, the calendar will be opened -- `minAge` years ago since today to improve make it easier for the user. If we dont use this attribute the calendar will be opened in todays date   |    string       |   dd/MM/yyyy   | 
 |   **errorMessages**	|    	| json   	|   	|   
-|  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
-|  underAge      |   Error message to display on submit if it is chosen a date lower that represents a user younger than the minAge attribute |  string     | ''
+|  required      |   Error message to display on submit if the date hasn't be selected and  is required |  string     | ''
+|  underAge      |   Error message to display on submit if it is chosen a date  that represents a user younger than the minAge attribute |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
+
+#### Date examples
+Basic date example
+```yaml
+{
+  "name": "dob",
+  "type": "date",
+  "label": "Date of birth",
+  "placeholder": "dd/mm/yyyy",
+  "openToDate": "1-1-2000",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+```
+Minage date example
+```yaml
+{
+  "name": "dob",
+  "type": "date",
+  "label": "Date of birth",
+  "placeholder": "dd/mm/yyyy",
+  "minAge": 18,
+  "errorMessages": {
+    "required": "This field is required",
+    "underAge": "You must be 18 years old or above"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+
+```
+
 
 ### Input
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Input name  	|  string 	|  - 	|   
-|   type*   | must be **input**| string | - |
-|   label	|  Text shown with the input. |  string  	|   ''	|   	
+|   type*   | Must be `input`| string | - |
+|   label	|  Text shown with the input |  string  	|   ''	|   	
 |   placeholder    |   Placeholder text to be displayed   |    string       |   ''   | 
 | **icon**  |   |  json  |   |
 | name  | Name of the icon that we want to be displayed Opt: ['question-circle'] | string  |    -
 |  fill  | Icon color  | string  | black
 | **tooltip**  |   |  json  |   |
-|  text |  Text to be displayed on icon hover |   |
+|  text |  Text to be displayed on icon hover | string  | ''
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
-| pattern  | Define if the pattern is required or not  |  boolean  | false
+| pattern  | Error message to display if there is an error pattern in the input text  |  boolean  | false
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
 | pattern  | Define the pattern to check the input  |  string  | -
+
+#### Input examples
+Basic input example
+```yaml
+{
+  "name": "email",
+  "type": "input",
+  "label": "",
+  "placeholder": "Email Address*",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+
+```
+Input with pattern control example
+```yaml
+{
+  "name": "email",
+  "type": "input",
+  "label": "",
+  "placeholder": "Email Address*",
+  "errorMessages": {
+    "required": "This field is required",
+    "pattern": "Invalid email"
+  },
+  "registerConfig": {
+    "required": true,
+    "pattern": "/^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/"
+  }
+}
+
+```
+
 
 ### Markdown
 | Option  	| Description  	| Type |   Default	|   	
@@ -109,6 +229,18 @@ class Example extends Component {
 |   name*	|  markdown component name  	|  string 	|  - 	|   
 |   type*   | must be **markdown**| string | - |
 |   label	|  Text to be displayed, it will be formatted with markdown style	|  string  	|   ''	|   
+
+#### Markdown examples
+Markdown example
+
+```yaml
+{
+    name: "Markdown component",
+    type: "markdown",
+    label: "El texto a **mostar** en el markdown [exmaple]()"
+}
+
+```
 
 ### MultipleCheckbox
 | Option  	| Description  	| Type |   Default	|   	
@@ -130,34 +262,177 @@ class Example extends Component {
 | maximumLen | Maximum number of options that user can select  | int  | -
 | required  | Define if the multiplecheckbox is required  |  boolean  | false
 
+#### Multiplecheckbox examples
+Basic multiplecheckbox
+```yaml
+{
+  "name": "multiplecheckbox_name",
+  "type": "multiple_checkboxes",
+  "placeholder": "Please select all that apply",
+  "label": "What option do you prefer?",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+
+  "config": {
+    "options": [
+      {
+        "value": "option1",
+        "label": "LabelOption1"
+      },
+      {
+        "value": "option2",
+        "label": "LabelOption2"
+      },
+      {
+        "value": "option3",
+        "label": "LabelOption3"
+      }
+    ]
+  }
+}
+```
+Multiplecheckbox with images and labels
+
+```yaml
+{
+  "name": "multiplecheckbox_name",
+  "type": "multiple_checkboxes",
+  "placeholder": "Please select all that apply",
+  "label": "What option do you prefer?",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+
+  "config": {
+    "options": [
+      {
+        "value": "option1",
+        "src": "/src/assets/image1"
+      },
+      {
+        "value": "option2",
+        "label": "LabelOption2"
+      },
+      {
+        "value": "option3",
+        "src": "/src/assets/image3"
+      }
+    ]
+  }
+}
+
+```
+
+Multiplecheckbox with minimumLen
+```yaml
+{
+  "name": "multiplecheckbox_name",
+  "type": "multiple_checkboxes",
+  "placeholder": "Please select all that apply",
+  "label": "What option do you prefer?",
+  "errorMessages": {
+    "required": "This field is required",
+    "minimumLen": "You must choose at least two options"
+  },
+  "registerConfig": {
+    "minimumLen": 2,
+    "required": false
+  },
+  "config": {
+    "options": [
+      {
+        "value": "option1",
+        "label": "LabelOption1"
+      },
+      {
+        "value": "option2",
+        "label": "LabelOption2"
+      },
+      {
+        "value": "option3",
+        "label": "LabelOption3"
+      }
+    ]
+  }
+}
+```
+
 ### Phone
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Phone component name  	|  string 	|  - 	|  
-|   type*   | must be **phone** | string | - |
+|   type*   | must be `phone` | string | - |
 |   label	|  Text to show over the input 	|  string  	|   ''	|   	
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if the phone input is not filled and is required |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the phone input is required  |  boolean  | false
 
-
+Basic phone
+```yaml
+{
+  "name": "phone",
+  "type": "phone",
+  "label": "",
+  "registerConfig": {
+    "required": false
+  },
+  "placeholder": "Phone (not compulsory)",
+  "errorMessages": {
+    "required": "This field is required"
+  }
+}
+```
 ### RadioButton
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  RadioButton name  	|  string 	|  - 	|  
-|   type*   | must be **radio**| string | - |
+|   type*   | must be `radio`| string | - |
 |   label	|  Text to show like the question text. This text can be written in markdown 	|  string  	|   ''	|   	
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the radioButton is required  |  boolean  | false
 
+#### RadioButton example
+Basic radiobutton
+```yaml
+{
+  "name": "radio_name",
+  "label": "este es el texto de la pregunta",
+  "type": "radio",
+  "options": [
+    {
+      "value": true,
+      "label": "YES"
+    },
+    {
+      "value": false,
+      "label": "NOP"
+    }
+  ],
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+
+```
+
 ### Select
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Checkbox name  	|  string 	|  - 	|   
-|   type*   | must be **select**| string | - |
+|   type*   | must be `select`| string | - |
 |   label	|  Text shown over the select question 	|  string  	|   ''	|   	
 |   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|   
 | **config**  |   | json  |   |
@@ -170,6 +445,41 @@ class Example extends Component {
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the select is required  |  boolean  | false
 
+#### Select examples
+
+Select basic example
+
+```yaml
+{
+  "name": "Género",
+  "type": "select",
+  "placeholder": "Please choose an option",
+  "label": "What is your favorite color?",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+  "config": {
+    "options": [
+      {
+        "value": "red",
+        "label": "Red"
+      },
+      {
+        "value": "black",
+        "label": "Black"
+      },
+      {
+        "value": "prefer_not_say",
+        "label": "prefer not to say"
+      }
+    ]
+  }
+}
+
+```
 
 # To contribute
 
@@ -183,9 +493,6 @@ See `localhost:3000`
 
 Any change on the root src library will be reflected on the usage in the example folder.
 
-# Example
-
-http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 ## Contributors ✨
 

@@ -45,8 +45,9 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
             : 'forms.selectContainer'
         }}
       >
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && <Label id={question.name}>{question.label}</Label>}
         <Select
+          aria-labelledby={question.name}
           {...props}
           options={getOptions(question)}
           isSearchable={false}

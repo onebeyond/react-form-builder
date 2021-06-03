@@ -8,7 +8,7 @@ import { differenceInYears, subYears } from 'date-fns'
 import de from 'date-fns/locale/de'
 import fr from 'date-fns/locale/fr'
 import es from 'date-fns/locale/es'
-import en from 'date-fns/locale//en-GB'
+import en from 'date-fns/locale/en-GB'
 
 const DatePicker = ({
   register,

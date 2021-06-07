@@ -2,12 +2,15 @@ import babel from '@rollup/plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import uglify from 'rollup-plugin-uglify'
+
+const minifyExtension = (pathToFile) => pathToFile.replace(/\.js$/, '.min.js')
 
 export default {
   input: 'src/index.js',
   output: {
     name: 'ReactFormBuilder',
-    file: 'dist/index.js',
+    file: minifyExtension('dist/rfb.bundle.js'),
     format: 'umd',
     sourcemap: true,
     globals: {
@@ -20,11 +23,13 @@ export default {
       'react-datepicker': 'react-datepicker'
     }
   },
+
   plugins: [
     nodeResolve(),
     peerDepsExternal(),
-    babel({ babelHelpers: 'bundled' }),
-    commonjs()
+    babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
+    commonjs(),
+    uglify.uglify()
   ],
 
   external: ['react']

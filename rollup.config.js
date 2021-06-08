@@ -4,13 +4,11 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import uglify from 'rollup-plugin-uglify'
 
-const minifyExtension = (pathToFile) => pathToFile.replace(/\.js$/, '.min.js')
-
 export default {
   input: 'src/index.js',
   output: {
     name: 'ReactFormBuilder',
-    file: minifyExtension('dist/index.js'),
+    file: 'dist/index.js',
     format: 'umd',
     sourcemap: true,
     globals: {

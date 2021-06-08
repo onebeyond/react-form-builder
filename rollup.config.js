@@ -10,7 +10,7 @@ export default {
   input: 'src/index.js',
   output: {
     name: 'ReactFormBuilder',
-    file: minifyExtension('dist/rfb.bundle.js'),
+    file: minifyExtension('dist/index.js'),
     format: 'umd',
     sourcemap: true,
     globals: {

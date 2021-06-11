@@ -225,6 +225,7 @@ const FormBuilder = ({
               <Button
                 sx={styles.fitContent}
                 key={cfa.caption}
+                id={cfa.id}
                 caption={cfa.caption}
                 type={cfa.type}
                 {...cfa}

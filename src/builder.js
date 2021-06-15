@@ -30,7 +30,7 @@ const FormBuilder = ({
   onSubmit: onSubmitForm,
   currentPath,
   form,
-  idForm = '',
+  idForm = ' ',
   isMobile,
   isoCode,
   ...props

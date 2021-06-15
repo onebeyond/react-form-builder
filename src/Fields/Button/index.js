@@ -18,14 +18,14 @@ const defaultStyles = {
 }
 
 const Button = React.forwardRef(
-  ({ disabled, variant = 'primary', caption, isLoading, ...props }, ref) => (
+  ({ disabled, caption, isLoading, id, ...props }, ref) => (
     <ButtonUI
       ref={ref}
       {...props}
       sx={{
         ...defaultStyles,
         ...(disabled && { background: 'gray' }),
-        variant: `buttons.${variant}`
+        variant: id ? `buttons.${id}` : 'buttons.primary'
       }}
     >
       {caption}

@@ -24,7 +24,9 @@ const Phone = ({
         validate: {
           isValidPhoneNumber: (phone) => {
             const shouldSetError = () => {
-              return registerConfig.required && !isValidPhoneNumber(phone)
+              return registerConfig &&
+                registerConfig.required &&
+                !isValidPhoneNumber(phone)
                 ? setError(name, {
                     type: 'isValidPhoneNumber'
                   })

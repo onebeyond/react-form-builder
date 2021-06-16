@@ -45,7 +45,9 @@ const QuestionInput = ({ question, useForm, component }) => {
       <Input
         id={question.name}
         aria-describedby={'error_message_' + question.name}
-        aria-required={question.registerConfig.required}
+        aria-required={
+          question.registerConfig && question.registerConfig.required
+        }
         data-testid='question-input'
         key={question.name}
         name={question.name}

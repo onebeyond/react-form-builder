@@ -27,7 +27,9 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
       )}
       <div
         id={question.name}
-        aria-required={question.registerConfig.required}
+        aria-required={
+          question.registerConfig && question.registerConfig.required
+        }
         sx={{
           variant: question.checkboxId
             ? 'forms.multipleCheckboxes' + question.checkboxId

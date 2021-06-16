@@ -22,7 +22,9 @@ const QuestionRadio = ({ component, question, useForm }) => {
           <Radio
             id={option.name}
             aria-describedby={'error_message_' + question.name}
-            aria-required={question.registerConfig.required}
+            aria-required={
+              question.registerConfig && question.registerConfig.required
+            }
             name={question.name}
             value={option.value}
             ref={register({

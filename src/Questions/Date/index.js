@@ -33,7 +33,9 @@ const QuestionDate = ({
         <Date
           id={question.name}
           aria-describedby={'error_message_' + question.name}
-          aria-required={question.registerConfig.required}
+          aria-required={
+            question.registerConfig && question.registerConfig.required
+          }
           sx={{ width: '100%', variant: 'forms.input' }}
           placeholder={question.placeholder}
           key={question.name}

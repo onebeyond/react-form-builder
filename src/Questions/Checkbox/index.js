@@ -45,7 +45,9 @@ const QuestionCheckbox = ({
       <div sx={styles.centerStyle} key={question.name}>
         <Label htmlFor={question.name} sx={styles.centerStyle}>
           <Checkbox
-            aria-required={question.registerConfig.required}
+            aria-required={
+              question.registerConfig && question.registerConfig.required
+            }
             id={question.name}
             sx={styles.checkboxMinWidth}
             name={question.name}

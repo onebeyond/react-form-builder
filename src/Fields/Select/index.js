@@ -84,7 +84,7 @@ const Select = ({
       as={
         <ReactSelect
           id={name}
-          aria-required={registerConfig.required}
+          aria-required={registerConfig && registerConfig.required}
           aria-describedby={'error_message_' + name}
           styles={customStyles}
           {...props}

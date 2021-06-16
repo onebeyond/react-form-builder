@@ -36,7 +36,9 @@ const QuestionPhone = ({
         <Phone
           id={question.name}
           aria-describedby={'error_message_' + question.name}
-          aria-required={question.registerConfig.required}
+          aria-required={
+            question.registerConfig && question.registerConfig.required
+          }
           defaultCountry={isoCode ? isoCode.toUpperCase() : ''}
           register={register}
           setValue={setValue}

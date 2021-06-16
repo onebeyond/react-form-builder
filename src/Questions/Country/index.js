@@ -97,7 +97,9 @@ const QuestionCountry = ({
       <Select
         id={question.name}
         aria-describedby={'error_message_' + question.name}
-        aria-required={question.registerConfig.required}
+        aria-required={
+          question.registerConfig && question.registerConfig.required
+        }
         key={question.name}
         name={question.name}
         options={options}

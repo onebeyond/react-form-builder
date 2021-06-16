@@ -33,7 +33,6 @@ const getOptions = (question) => {
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
   const { register, errors, setValue, unregister } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
-
   return component ? (
     <CustomComponent component={component} />
   ) : (
@@ -45,7 +44,9 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
             : 'forms.selectContainer'
         }}
       >
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && (
+          <Label htmlFor={question.name}>{question.label}</Label>
+        )}
         <Select
           {...props}
           options={getOptions(question)}
@@ -75,6 +76,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           (errors[question.name].type === 'required' ||
             errors[question.name].type === 'noEmpty') && (
             <ErrorMessage
+              name={question.name}
               message={
                 question.errorMessages && question.errorMessages.required
               }

@@ -81,7 +81,15 @@ const Select = ({
 
   return (
     <RHFInput
-      as={<ReactSelect styles={customStyles} {...props} />}
+      as={
+        <ReactSelect
+          id={name}
+          aria-required={registerConfig.required}
+          aria-describedby={'error_message_' + name}
+          styles={customStyles}
+          {...props}
+        />
+      }
       rules={{
         ...registerConfig,
         validate: {

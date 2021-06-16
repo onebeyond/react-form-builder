@@ -27,8 +27,13 @@ const QuestionDate = ({
             : 'forms.dateContainer'
         }}
       >
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && (
+          <Label htmlFor={question.name}>{question.label}</Label>
+        )}
         <Date
+          id={question.name}
+          aria-describedby={'error_message_' + question.name}
+          aria-required={question.registerConfig.required}
           sx={{ width: '100%', variant: 'forms.input' }}
           placeholder={question.placeholder}
           key={question.name}
@@ -46,11 +51,13 @@ const QuestionDate = ({
         />
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}
         {errors[question.name] && errors[question.name].type === 'underAge' && (
           <ErrorMessage
+            name={question.name}
             message={question.errorMessages && question.errorMessages.underAge}
           />
         )}

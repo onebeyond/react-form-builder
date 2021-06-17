@@ -44,9 +44,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
             : 'forms.selectContainer'
         }}
       >
-        {question.label && (
-          <Label htmlFor={question.name}>{question.label}</Label>
-        )}
+        {question.label && <Label>{question.label}</Label>}
         <Select
           {...props}
           options={getOptions(question)}
@@ -76,7 +74,6 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           (errors[question.name].type === 'required' ||
             errors[question.name].type === 'noEmpty') && (
             <ErrorMessage
-              name={question.name}
               message={
                 question.errorMessages && question.errorMessages.required
               }

@@ -90,16 +90,9 @@ const QuestionCountry = ({
       }}
     >
       {question.label && (
-        <Label htmlFor={question.name} data-testid='country-label'>
-          {question.label}
-        </Label>
+        <Label data-testid='country-label'>{question.label}</Label>
       )}
       <Select
-        id={question.name}
-        aria-describedby={'error_message_' + question.name}
-        aria-required={
-          question.registerConfig && question.registerConfig.required
-        }
         key={question.name}
         name={question.name}
         options={options}
@@ -119,7 +112,6 @@ const QuestionCountry = ({
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (
           <ErrorMessage
-            name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}

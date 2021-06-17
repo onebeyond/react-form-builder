@@ -22,17 +22,6 @@ const styles = {
   fullWidth: {
     gridColumnStart: '1',
     gridColumnEnd: '3'
-  },
-  visuallyhidden: {
-    border: '0',
-    color: 'red',
-    clip: 'rect(0 0 0 0)',
-    height: '1px',
-    margin: '-1px',
-    overflow: 'hidden',
-    padding: '0',
-    position: 'absolute',
-    width: '1px'
   }
 }
 
@@ -46,7 +35,6 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
-  const { errors } = useFormObj
 
   const QuestionsMap = (question) => {
     return {
@@ -108,6 +96,7 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           component={props.customRadio}
+          onLinkOpen={props.onLinkOpen}
         />
       ),
       date: (
@@ -223,30 +212,16 @@ const FormBuilder = ({
           })}
         {form &&
           form.callForAction &&
-          form.callForAction.map((cfa, key) => {
+          form.callForAction.map((cfa) => {
             return (
-              <div key={key}>
-                {form.accesibilityError && (
-                  <div
-                    sx={{
-                      ...styles.visuallyhidden,
-                      variant: 'text.accesibilityError',
-                      display:
-                        Object.keys(errors).length !== 0 ? 'flex' : 'none'
-                    }}
-                    aria-live='assertive'
-                  >
-                    {form.accesibilityError}
-                  </div>
-                )}
-                <Button
-                  sx={styles.fitContent}
-                  key={cfa.caption}
-                  caption={cfa.caption}
-                  type={cfa.type}
-                  {...cfa}
-                />
-              </div>
+              <Button
+                sx={styles.fitContent}
+                key={cfa.caption}
+                id={cfa.id}
+                caption={cfa.caption}
+                type={cfa.type}
+                {...cfa}
+              />
             )
           })}
       </div>

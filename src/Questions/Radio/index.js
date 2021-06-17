@@ -1,7 +1,7 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Radio from '../../Fields/Radio'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from '../../Fields/Markdown'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
@@ -11,20 +11,15 @@ const styles = {
     alignItems: 'center'
   }
 }
-const QuestionRadio = ({ component, question, useForm }) => {
+const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
       return (
-        <Label htmlFor={option.name} sx={styles.label} key={option.label}>
+        <Label sx={styles.label} key={option.label}>
           <Radio
-            id={option.name}
-            aria-describedby={'error_message_' + question.name}
-            aria-required={
-              question.registerConfig && question.registerConfig.required
-            }
             name={question.name}
             value={option.value}
             ref={register({
@@ -52,12 +47,12 @@ const QuestionRadio = ({ component, question, useForm }) => {
       <ReactMarkdown
         sx={{ variant: 'forms.radio.markdown' }}
         source={question.label}
+        onLinkOpen={onLinkOpen}
       />
       {radioButtonGenerator(question)}
 
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
-          name={question.name}
           message={question.errorMessages && question.errorMessages.required}
         />
       )}

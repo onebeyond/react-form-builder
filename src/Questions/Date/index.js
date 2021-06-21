@@ -27,7 +27,9 @@ const QuestionDate = ({
             : 'forms.dateContainer'
         }}
       >
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && (
+          <Label htmlFor={question.name}>{question.label}</Label>
+        )}
         <Date
           id={question.name}
           aria-describedby={'error_message_' + question.name}

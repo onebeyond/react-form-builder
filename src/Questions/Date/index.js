@@ -29,6 +29,8 @@ const QuestionDate = ({
       >
         {question.label && <Label>{question.label}</Label>}
         <Date
+          id={question.name}
+          aria-describedby={'error_message_' + question.name}
           sx={{ width: '100%', variant: 'forms.input' }}
           placeholder={question.placeholder}
           key={question.name}
@@ -51,6 +53,7 @@ const QuestionDate = ({
         )}
         {errors[question.name] && errors[question.name].type === 'underAge' && (
           <ErrorMessage
+            name={question.name}
             message={question.errorMessages && question.errorMessages.underAge}
           />
         )}

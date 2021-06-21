@@ -175,7 +175,6 @@ const App = () => {
         isoCode='ES'
         onLinkOpen={onLinkOpen}
       />
-      <ModalCheckbox />
     </>
   )
 }

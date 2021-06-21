@@ -43,9 +43,10 @@ const QuestionCheckbox = ({
       }}
     >
       <div sx={styles.centerStyle} key={question.name}>
-        <Label sx={styles.centerStyle}>
+        <Label htmlFor={question.name} sx={styles.centerStyle}>
           <Checkbox
             sx={styles.checkboxMinWidth}
+            id={question.name}
             name={question.name}
             defaultChecked={question.defaultChecked}
             ref={register({

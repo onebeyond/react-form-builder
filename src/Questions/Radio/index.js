@@ -18,8 +18,10 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
       return (
-        <Label sx={styles.label} key={option.label}>
+        <Label htmlFor={option.label} sx={styles.label} key={option.label}>
           <Radio
+            id={option.label}
+            aria-describedby={'error_message_' + question.name}
             name={question.name}
             value={option.value}
             ref={register({
@@ -53,6 +55,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
 
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
+          name={question.name}
           message={question.errorMessages && question.errorMessages.required}
         />
       )}

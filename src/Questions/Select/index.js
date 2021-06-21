@@ -44,8 +44,12 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
             : 'forms.selectContainer'
         }}
       >
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && (
+          <Label htmlFor={question.name}>{question.label}</Label>
+        )}
         <Select
+          id={question.name}
+          aria-describedby={'error_message_' + question.name}
           {...props}
           options={getOptions(question)}
           isSearchable={false}
@@ -74,6 +78,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           (errors[question.name].type === 'required' ||
             errors[question.name].type === 'noEmpty') && (
             <ErrorMessage
+              name={question.name}
               message={
                 question.errorMessages && question.errorMessages.required
               }

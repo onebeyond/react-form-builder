@@ -22,7 +22,9 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           : 'forms.multipleCheckboxesContainer'
       }}
     >
-      {question.label && <Label>{question.label}</Label>}
+      {question.label && (
+        <Label htmlFor={question.name}>{question.label}</Label>
+      )}
       <div
         sx={{
           variant: question.checkboxId
@@ -39,8 +41,10 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                 }}
                 key={option.name}
               >
-                <Label sx={{ alignItems: 'center' }}>
+                <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
                   <Checkbox
+                    id={option.name}
+                    aria-describedby={'error_message_' + question.name}
                     name={question.name}
                     value={option.value}
                     ref={register({
@@ -82,6 +86,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           })}
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            name={question.name}
             sx={{
               gridColumn: 1
             }}
@@ -90,6 +95,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
         )}
         {errors[question.name] && errors[question.name].type === 'minimumLen' && (
           <ErrorMessage
+            name={question.name}
             sx={{
               gridColumn: 1
             }}
@@ -100,6 +106,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
         )}
         {errors[question.name] && errors[question.name].type === 'maximumLen' && (
           <ErrorMessage
+            name={question.name}
             sx={{
               gridColumn: 1
             }}

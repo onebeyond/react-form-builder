@@ -35,6 +35,7 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+  const { errors } = useFormObj
 
   const QuestionsMap = (question) => {
     return {
@@ -212,16 +213,30 @@ const FormBuilder = ({
           })}
         {form &&
           form.callForAction &&
-          form.callForAction.map((cfa) => {
+          form.callForAction.map((cfa, key) => {
             return (
-              <Button
-                sx={styles.fitContent}
-                key={cfa.caption}
-                id={cfa.id}
-                caption={cfa.caption}
-                type={cfa.type}
-                {...cfa}
-              />
+              <div sx={{ variant: 'forms.submitContainer' }} key={key}>
+                {form.accessibilityError && (
+                  <div
+                    sx={{
+                      variant: 'text.accessibilityError',
+                      display:
+                        Object.keys(errors).length !== 0 ? 'flex' : 'none'
+                    }}
+                    aria-live='assertive'
+                  >
+                    {form.accessibilityError}
+                  </div>
+                )}
+                <Button
+                  sx={styles.fitContent}
+                  key={cfa.caption}
+                  id={cfa.id}
+                  caption={cfa.caption}
+                  type={cfa.type}
+                  {...cfa}
+                />
+              </div>
             )
           })}
       </div>

@@ -90,9 +90,12 @@ const QuestionCountry = ({
       }}
     >
       {question.label && (
-        <Label data-testid='country-label'>{question.label}</Label>
+        <Label htmlFor={question.name} data-testid='country-label'>
+          {question.label}
+        </Label>
       )}
       <Select
+        id={question.name}
         key={question.name}
         name={question.name}
         options={options}

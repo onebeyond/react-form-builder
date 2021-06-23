@@ -82,7 +82,12 @@ const Select = ({
   return (
     <RHFInput
       as={
-        <ReactSelect aria-labelledby={name} styles={customStyles} {...props} />
+        <ReactSelect
+          menuPortalTarget={document.querySelector('body')}
+          aria-labelledby={name}
+          styles={customStyles}
+          {...props}
+        />
       }
       rules={{
         ...registerConfig,

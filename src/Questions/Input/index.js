@@ -58,11 +58,13 @@ const QuestionInput = ({ question, useForm, component }) => {
       />
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
+          name={question.name}
           message={question.errorMessages && question.errorMessages.required}
         />
       )}
       {errors[question.name] && errors[question.name].type === 'pattern' && (
         <ErrorMessage
+          name={question.name}
           message={question.errorMessages && question.errorMessages.pattern}
         />
       )}

@@ -23,7 +23,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
       }}
     >
       {question.label && (
-        <Label htmlFor={question.name}>{question.label}</Label>
+        <legend htmlFor={question.name}>{question.label}</legend>
       )}
       <div
         sx={{
@@ -41,46 +41,48 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                 }}
                 key={option.name}
               >
-                <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
-                  <Checkbox
-                    id={option.name}
-                    aria-describedby={'error_message_' + question.name}
-                    name={question.name}
-                    value={option.value}
-                    ref={register({
-                      ...question.registerConfig,
-                      validate: {
-                        minimumLen: question.registerConfig.minimumLen
-                          ? () =>
-                              getValues()[question.name] &&
-                              getValues()[question.name].length >=
-                                question.registerConfig.minimumLen
-                          : () => true,
-                        maximumLen: question.registerConfig.maximumLen
-                          ? () =>
-                              getValues()[question.name] &&
-                              getValues()[question.name].length <=
-                                question.registerConfig.maximumLen
-                          : () => true
-                      }
-                    })}
-                  />
-                  {option.src ? (
-                    <img src={option.src} />
-                  ) : (
-                    <ReactMarkdown
-                      source={option.label}
-                      renderers={{
-                        // eslint-disable-next-line react/display-name
-                        link: ({ href, children }) => (
-                          <Link href={href} target='_blank'>
-                            {children}
-                          </Link>
-                        )
-                      }}
+                <fieldset sx={{ border: '0' }}>
+                  <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
+                    <Checkbox
+                      id={option.name}
+                      aria-describedby={'error_message_' + question.name}
+                      name={question.name}
+                      value={option.value}
+                      ref={register({
+                        ...question.registerConfig,
+                        validate: {
+                          minimumLen: question.registerConfig.minimumLen
+                            ? () =>
+                                getValues()[question.name] &&
+                                getValues()[question.name].length >=
+                                  question.registerConfig.minimumLen
+                            : () => true,
+                          maximumLen: question.registerConfig.maximumLen
+                            ? () =>
+                                getValues()[question.name] &&
+                                getValues()[question.name].length <=
+                                  question.registerConfig.maximumLen
+                            : () => true
+                        }
+                      })}
                     />
-                  )}
-                </Label>
+                    {option.src ? (
+                      <img src={option.src} />
+                    ) : (
+                      <ReactMarkdown
+                        source={option.label}
+                        renderers={{
+                          // eslint-disable-next-line react/display-name
+                          link: ({ href, children }) => (
+                            <Link href={href} target='_blank'>
+                              {children}
+                            </Link>
+                          )
+                        }}
+                      />
+                    )}
+                  </Label>
+                </fieldset>
               </div>
             )
           })}

@@ -10,6 +10,7 @@ const Select = ({
   register,
   setValue,
   name,
+  onChange = undefined,
   unregister,
   defaultValue,
   registerConfig,
@@ -81,6 +82,7 @@ const Select = ({
 
   return (
     <RHFInput
+      onChange={onChange}
       as={
         <ReactSelect
           menuPortalTarget={document.querySelector('body')}

@@ -218,6 +218,7 @@ const FormBuilder = ({
               <div sx={{ variant: 'forms.submitContainer' }} key={key}>
                 {form.accessibilityError && (
                   <div
+                    className='visuallyhidden'
                     sx={{
                       variant: 'text.accessibilityError',
                       display:

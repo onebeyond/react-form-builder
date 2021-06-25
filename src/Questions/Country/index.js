@@ -115,7 +115,7 @@ const QuestionCountry = ({
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (
           <ErrorMessage
-          name={question.name}
+            name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}

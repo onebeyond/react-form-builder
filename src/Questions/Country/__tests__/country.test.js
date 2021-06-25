@@ -41,7 +41,8 @@ const setup = (customListCountries) => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -82,7 +83,8 @@ test('change value of select', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -111,7 +113,8 @@ test('sort country list by default', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -142,7 +145,8 @@ test('handle country priority order', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -173,7 +177,8 @@ test('label tag is not displayed when label value is null', () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -205,7 +210,8 @@ test('renders a country list in spanish', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -242,7 +248,8 @@ test('renders a country list in french', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -278,7 +285,8 @@ test('renders a country list in deusche', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -314,7 +322,8 @@ test('renders a fallback country list when the language is not supported', async
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -338,7 +347,8 @@ test('show an error message', () => {
         },
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )

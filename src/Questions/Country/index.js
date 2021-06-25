@@ -45,7 +45,7 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue, unregister } = useForm
+  const { errors, register, setValue, unregister, trigger } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -95,6 +95,9 @@ const QuestionCountry = ({
         </Label>
       )}
       <Select
+        onChange={() => {
+          trigger(question.name)
+        }}
         id={question.name}
         key={question.name}
         name={question.name}

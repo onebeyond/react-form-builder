@@ -14,6 +14,7 @@ const Select = ({
   unregister,
   defaultValue,
   registerConfig,
+  label,
   ...props
 }) => {
   const { theme } = useThemeUI()
@@ -86,7 +87,7 @@ const Select = ({
       as={
         <ReactSelect
           menuPortalTarget={document.querySelector('body')}
-          aria-labelledby={name}
+          aria-label={label}
           styles={customStyles}
           {...props}
         />

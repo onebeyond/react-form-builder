@@ -43,8 +43,10 @@ const QuestionCheckbox = ({
       }}
     >
       <div sx={styles.centerStyle} key={question.name}>
-        <Label sx={styles.centerStyle}>
+        <Label htmlFor={question.name} sx={styles.centerStyle}>
           <Checkbox
+            id={question.name}
+            aria-describedby={'error_message_' + question.name}
             sx={styles.checkboxMinWidth}
             name={question.name}
             defaultChecked={question.defaultChecked}
@@ -61,6 +63,7 @@ const QuestionCheckbox = ({
         </Label>
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}

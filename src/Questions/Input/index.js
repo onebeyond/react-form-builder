@@ -29,7 +29,9 @@ const QuestionInput = ({ question, useForm, component }) => {
       }}
     >
       <div sx={styles.boxIconStyle}>
-        {question.label && <Label>{question.label}</Label>}
+        {question.label && (
+          <Label htmlFor={question.name}>{question.label}</Label>
+        )}
 
         {question.icon && (
           <div>
@@ -41,6 +43,8 @@ const QuestionInput = ({ question, useForm, component }) => {
         )}
       </div>
       <Input
+        id={question.name}
+        aria-describedby={'error_message_' + question.name}
         data-testid='question-input'
         key={question.name}
         name={question.name}
@@ -54,11 +58,13 @@ const QuestionInput = ({ question, useForm, component }) => {
       />
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
+          name={question.name}
           message={question.errorMessages && question.errorMessages.required}
         />
       )}
       {errors[question.name] && errors[question.name].type === 'pattern' && (
         <ErrorMessage
+          name={question.name}
           message={question.errorMessages && question.errorMessages.pattern}
         />
       )}

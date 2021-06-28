@@ -41,7 +41,8 @@ const setup = (customListCountries) => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -65,10 +66,33 @@ test('Country label', () => {
 })
 
 test('change value of select', async () => {
-  const { placeholderComponent } = setup()
-  await selectEvent.select(placeholderComponent, ['China'])
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    }
+  }
+  const { getByText } = render(
+    <QuestionCountry
+      question={question}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn(),
+        unregister: jest.fn(),
+        trigger: jest.fn()
+      }}
+    />
+  )
+  const select = getByText('Please select an option ^^')
 
-  expect(screen.getByText('China'))
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
+  expect(screen.getByText('Spain'))
 })
 
 test('sort country list by default', async () => {
@@ -89,7 +113,8 @@ test('sort country list by default', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -120,7 +145,8 @@ test('handle country priority order', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -151,7 +177,8 @@ test('label tag is not displayed when label value is null', () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
@@ -164,6 +191,16 @@ test('renders a country list in spanish', async () => {
     language: 'es',
     select: 'España'
   }
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    }
+  }
 
   const { getByText } = render(
     <QuestionCountry
@@ -173,22 +210,34 @@ test('renders a country list in spanish', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
 
-  await selectEvent.select(getByText('Please select an option ^^'), [
-    data.select
-  ])
+  const select = getByText('Please select an option ^^')
 
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
   expect(screen.getByText(data.select))
 })
 
 test('renders a country list in french', async () => {
   const data = {
     language: 'fr',
-    select: 'Andorre'
+    select: 'Espagne'
+  }
+
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    }
   }
 
   const { getByText } = render(
@@ -199,22 +248,33 @@ test('renders a country list in french', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
 
-  await selectEvent.select(getByText('Please select an option ^^'), [
-    data.select
-  ])
+  const select = getByText('Please select an option ^^')
 
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
   expect(screen.getByText(data.select))
 })
 
 test('renders a country list in deusche', async () => {
   const data = {
     language: 'de',
-    select: 'Antigua und Barbuda'
+    select: 'Spanien'
+  }
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    }
   }
 
   const { getByText } = render(
@@ -225,22 +285,33 @@ test('renders a country list in deusche', async () => {
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
 
-  await selectEvent.select(getByText('Please select an option ^^'), [
-    data.select
-  ])
+  const select = getByText('Please select an option ^^')
 
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
   expect(screen.getByText(data.select))
 })
 
 test('renders a fallback country list when the language is not supported', async () => {
   const data = {
-    language: 'hk',
-    select: 'United Kingdom'
+    language: 'qwerty',
+    select: 'Spain'
+  }
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    }
   }
 
   const { getByText } = render(
@@ -251,15 +322,16 @@ test('renders a fallback country list when the language is not supported', async
         errors: {},
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )
 
-  await selectEvent.select(getByText('Please select an option ^^'), [
-    data.select
-  ])
+  const select = getByText('Please select an option ^^')
 
+  await selectEvent.openMenu(select)
+  fireEvent.keyDown(select, { key: 'Enter', code: 13 })
   expect(screen.getByText(data.select))
 })
 
@@ -275,7 +347,8 @@ test('show an error message', () => {
         },
         register: () => {},
         setValue: jest.fn(),
-        unregister: jest.fn()
+        unregister: jest.fn(),
+        trigger: jest.fn()
       }}
     />
   )

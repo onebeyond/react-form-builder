@@ -45,7 +45,7 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue, unregister } = useForm
+  const { errors, register, setValue, unregister, trigger } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -90,9 +90,15 @@ const QuestionCountry = ({
       }}
     >
       {question.label && (
-        <Label data-testid='country-label'>{question.label}</Label>
+        <Label htmlFor={question.name} data-testid='country-label'>
+          {question.label}
+        </Label>
       )}
       <Select
+        onChange={() => {
+          trigger(question.name)
+        }}
+        id={question.name}
         key={question.name}
         name={question.name}
         options={options}
@@ -112,6 +118,7 @@ const QuestionCountry = ({
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (
           <ErrorMessage
+            name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}

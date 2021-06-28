@@ -56,6 +56,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           registerConfig={question.registerConfig}
           setValue={setValue}
           unregister={unregister}
+          label={question.label}
         >
           {question.config &&
             question.config.options.map((option) => {

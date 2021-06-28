@@ -108,6 +108,7 @@ const QuestionCountry = ({
         setValue={setValue}
         placeholder={question.placeholder}
         unregister={unregister}
+        label={question.label}
         {...props}
       >
         {renderCountryOptions(

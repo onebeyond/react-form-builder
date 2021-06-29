@@ -28,6 +28,7 @@ const QuestionMarkdown = ({
         sx={{ variant: 'forms.markdown' }}
         source={question.label}
         onLinkOpen={onLinkOpen}
+        modalLabel={question.modalLabel}
       />
     </div>
   )

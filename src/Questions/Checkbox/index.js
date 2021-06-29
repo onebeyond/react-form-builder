@@ -59,6 +59,7 @@ const QuestionCheckbox = ({
             sx={styles.markDown}
             source={question.label}
             onLinkOpen={onLinkOpen}
+            modalLabel={question.modalLabel}
           />
         </Label>
         {errors[question.name] && errors[question.name].type === 'required' && (

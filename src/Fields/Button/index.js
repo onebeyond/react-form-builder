@@ -17,6 +17,11 @@ const defaultStyles = {
   width: '100%'
 }
 
+const spinnerStyles = {
+  width: '24px',
+  height: '24px'
+}
+
 const Button = React.forwardRef(
   ({ disabled, caption, isLoading, id, ...props }, ref) => (
     <ButtonUI
@@ -28,8 +33,11 @@ const Button = React.forwardRef(
         variant: id ? `buttons.${id}` : 'buttons.primary'
       }}
     >
-      {caption}
-      {isLoading && <Spinner data-cy='button-loading' />}
+      {isLoading ? (
+        <Spinner sx={{ ...spinnerStyles }} data-cy='button-loading' />
+      ) : (
+        caption
+      )}
     </ButtonUI>
   )
 )

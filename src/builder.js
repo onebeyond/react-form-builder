@@ -28,6 +28,7 @@ const styles = {
 const FormBuilder = ({
   onSubmit: onSubmitForm,
   currentPath,
+  isLoading,
   form,
   idForm = '',
   isMobile,
@@ -232,6 +233,7 @@ const FormBuilder = ({
                 <Button
                   sx={styles.fitContent}
                   key={cfa.caption}
+                  isLoading={isLoading}
                   id={cfa.id}
                   caption={cfa.caption}
                   type={cfa.type}

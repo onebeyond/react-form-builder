@@ -46,26 +46,19 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
           : 'forms.radioContainer'
       }}
     >
-      <fieldset sx={{ border: '0' }}>
-        {question.accessibility ? (
-          <legend htmlFor={question.name}>{question.label}</legend>
-        ) : (
-          <ReactMarkdown
-            sx={{ variant: 'forms.radio.markdown' }}
-            source={question.label}
-            onLinkOpen={onLinkOpen}
-          />
-        )}
+      <ReactMarkdown
+        sx={{ variant: 'forms.radio.markdown' }}
+        source={question.label}
+        onLinkOpen={onLinkOpen}
+      />
+      {radioButtonGenerator(question)}
 
-        {radioButtonGenerator(question)}
-
-        {errors[question.name] && errors[question.name].type === 'required' && (
-          <ErrorMessage
-            name={question.name}
-            message={question.errorMessages && question.errorMessages.required}
-          />
-        )}
-      </fieldset>
+      {errors[question.name] && errors[question.name].type === 'required' && (
+        <ErrorMessage
+          name={question.name}
+          message={question.errorMessages && question.errorMessages.required}
+        />
+      )}
     </div>
   )
 }

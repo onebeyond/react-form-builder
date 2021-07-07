@@ -76,7 +76,25 @@ test('phone can be filled', () => {
   expect(phoneComponent.value).toBe('555666777')
 })
 
-test('patern error is displayed', () => {
+test('phone ES country is displayed', () => {
+  const { getByLabelText } = render(
+    <QuestionPhone
+      question={question}
+      isoCode='ES'
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const countryComponent = getByLabelText('Phone number country')
+  expect(countryComponent.value).toBe('ES')
+  fireEvent.change(countryComponent, { target: { value: 'FR' } })
+  expect(countryComponent.value).toBe('FR')
+})
+
+test('pattern error is displayed', () => {
   render(
     <QuestionPhone
       question={question}

@@ -72,25 +72,8 @@ test('phone can be filled', () => {
   )
   const phoneComponent = getByTestId('question-phone')
   expect(phoneComponent.value).toBe('')
-  fireEvent.change(phoneComponent, { target: { value: 'phone testing' } })
-  expect(phoneComponent.value).toBe('phone testing')
-})
-
-test('default value is displayed', () => {
-  const { getByTestId } = render(
-    <QuestionPhone
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
-  )
-  const phoneComponent = getByTestId('question-phone')
-  expect(phoneComponent.value).toBe('')
-  fireEvent.change(phoneComponent, { target: { value: 'phone testing' } })
-  expect(phoneComponent.value).toBe('phone testing')
+  fireEvent.change(phoneComponent, { target: { value: 555666777 } })
+  expect(phoneComponent.value).toBe('555666777')
 })
 
 test('patern error is displayed', () => {

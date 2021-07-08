@@ -166,7 +166,7 @@ This application makes use of the following open source packages:
 | @emotion/utils | 0.11.3 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/serialize |
 | @emotion/utils | 1.0.0 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/utils |
 | @emotion/weak-memoize | 0.2.5 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/weak-memoize |
-| @guidesmiths/react-form-builder | 1.0.103 | MIT | https://github.com/guidesmiths/react-form-builder |
+| @guidesmiths/react-form-builder | 1.0.106 | MIT | https://github.com/guidesmiths/react-form-builder |
 | @hapi/address | 2.1.4 | BSD-3-Clause | https://github.com/hapijs/address |
 | @hapi/bourne | 1.3.2 | BSD-3-Clause | https://github.com/hapijs/bourne |
 | @hapi/hoek | 8.5.1 | BSD-3-Clause | https://github.com/hapijs/hoek |

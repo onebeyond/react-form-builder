@@ -15,7 +15,7 @@
     "start": "rollup -c -w",
     "build": "rollup -c",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
+    "test": "npx @guidesmiths/license-checker --failOn AGPL --outputFileName License-report --errorReportFileName License-error | run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom  --passWithNoTests",
@@ -26,17 +26,10 @@
     "release:minor": "git tag -l | xargs git tag -d && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook  -o ./public",
-    "postinstall": "npx @guidesmiths/license-checker --failOn AGPL --errorReportFileName License-error.md"
+    "build-storybook": "build-storybook  -o ./public"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "theme-ui": "^0.3.5",
-    "react-markdown": "^5.0.3",
-    "react-hook-form": "^6.14.2",
-    "react-hook-form-input": "^1.1.10",
-    "react-phone-number-input": "^3.1.10",
-    "react-datepicker": "^3.4.1"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -80,14 +73,14 @@
     "rollup": "^2.36.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-uglify": "^6.0.4",
-    "theme-ui": "^0.3.5"
+    "theme-ui": "^0.3.5",
+    "@rollup/plugin-json": "^4.1.0",
+    "rollup-plugin-replace": "^2.2.0"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@guidesmiths/license-checker": "^1.0.5",
-    "date-fns-tz": "^1.1.4",
     "react-scripts": "^3.4.1",
     "react-select": "^4.0.2",
     "react-tooltip": "^4.2.18"

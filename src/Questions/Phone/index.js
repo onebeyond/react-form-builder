@@ -5,6 +5,7 @@ import Label from '../../Fields/Label'
 import React from 'react'
 import Phone from '../../Fields/Phone'
 import { jsx } from 'theme-ui'
+import 'react-phone-number-input/style.css'
 
 const QuestionPhone = ({
   component,

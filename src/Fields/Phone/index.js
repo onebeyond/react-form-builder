@@ -5,6 +5,7 @@ import { jsx } from 'theme-ui'
 import Input from '../Input'
 import { RHFInput } from 'react-hook-form-input'
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const Phone = ({
   register,

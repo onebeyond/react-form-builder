@@ -5,7 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import uglify from 'rollup-plugin-uglify'
 import json from '@rollup/plugin-json'
 import replace from 'rollup-plugin-replace'
-import css from 'rollup-plugin-import-css'
+import postcss from 'rollup-plugin-postcss'
 
 export default {
   input: 'src/index.js',
@@ -33,7 +33,9 @@ export default {
     babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
     commonjs(),
     json(),
-    css(),
+    postcss({
+      extensions: ['.css']
+    }),
     replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
     uglify.uglify()
   ],

@@ -5,7 +5,6 @@ import Label from '../../Fields/Label'
 import React from 'react'
 import Date from '../../Fields/Date'
 import { jsx } from 'theme-ui'
-import 'react-datepicker/dist/react-datepicker.css'
 
 const QuestionDate = ({
   component,

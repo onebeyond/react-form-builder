@@ -38,18 +38,11 @@ const question = {
   }
 }
 
-const customRender = (options) =>
+const customRender = () =>
   render(
     <QuestionMultipleCheckboxes
       question={question}
-      useForm={{
-        errors: {},
-        register: jest.fn(),
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn(),
-        ...options
-      }}
+      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
     />
   )
 
@@ -58,7 +51,7 @@ test('check if component is rendered', () => {
 })
 
 test('check if label exists', () => {
-  customRender().getByLabelText(question.label)
+  customRender().getByText(question.label)
 })
 
 test('can first option be checked/unchecked', () => {

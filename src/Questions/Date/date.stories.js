@@ -1,6 +1,5 @@
 import React from 'react'
 import Date from './'
-import 'react-datepicker/dist/react-datepicker.css'
 
 export default {
   title: 'Question/Date',

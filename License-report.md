@@ -166,8 +166,7 @@ This application makes use of the following open source packages:
 | @emotion/utils | 0.11.3 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/serialize |
 | @emotion/utils | 1.0.0 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/utils |
 | @emotion/weak-memoize | 0.2.5 | MIT | https://github.com/emotion-js/emotion/tree/master/packages/weak-memoize |
-| @guidesmiths/license-checker | 1.0.6 | ISC | https://github.com/guidesmiths/license-checker |
-| @guidesmiths/react-form-builder | 1.0.98 | MIT | https://github.com/guidesmiths/react-form-builder |
+| @guidesmiths/react-form-builder | 1.0.106 | MIT | https://github.com/guidesmiths/react-form-builder |
 | @hapi/address | 2.1.4 | BSD-3-Clause | https://github.com/hapijs/address |
 | @hapi/bourne | 1.3.2 | BSD-3-Clause | https://github.com/hapijs/bourne |
 | @hapi/hoek | 8.5.1 | BSD-3-Clause | https://github.com/hapijs/hoek |
@@ -203,6 +202,7 @@ This application makes use of the following open source packages:
 | @reach/router | 1.3.4 | MIT | https://github.com/reach/router |
 | @rollup/plugin-babel | 5.3.0 | MIT | https://github.com/rollup/plugins |
 | @rollup/plugin-commonjs | 17.1.0 | MIT | https://github.com/rollup/plugins |
+| @rollup/plugin-json | 4.1.0 | MIT | https://github.com/rollup/plugins |
 | @rollup/plugin-node-resolve | 11.2.1 | MIT | https://github.com/rollup/plugins |
 | @rollup/pluginutils | 3.1.0 | MIT | https://github.com/rollup/plugins |
 | @sheerun/mutationobserver-shim | 0.3.3 | MIT | github.com/megawac/MutationObserver.js |
@@ -355,7 +355,6 @@ This application makes use of the following open source packages:
 | @xtuc/ieee754 | 1.2.0 | BSD-3-Clause | https://github.com/feross/ieee754 |
 | @xtuc/long | 4.2.2 | Apache-2.0 | https://github.com/dcodeIO/long.js |
 | abab | 2.0.5 | BSD-3-Clause | https://github.com/jsdom/abab |
-| abbrev | 1.1.1 | ISC | https://github.com/isaacs/abbrev-js |
 | accepts | 1.3.7 | MIT | https://github.com/jshttp/accepts |
 | acorn-globals | 4.3.4 | MIT | https://github.com/ForbesLindesay/acorn-globals |
 | acorn-jsx | 5.3.1 | MIT | https://github.com/acornjs/acorn-jsx |
@@ -398,7 +397,6 @@ This application makes use of the following open source packages:
 | arr-flatten | 1.1.0 | MIT | https://github.com/jonschlinkert/arr-flatten |
 | arr-union | 3.1.0 | MIT | https://github.com/jonschlinkert/arr-union |
 | array-equal | 1.0.0 | MIT | https://github.com/component/array-equal |
-| array-find-index | 1.0.2 | MIT | https://github.com/sindresorhus/array-find-index |
 | array-flatten | 1.1.1 | MIT | https://github.com/blakeembrey/array-flatten |
 | array-flatten | 2.1.2 | MIT | https://github.com/blakeembrey/array-flatten |
 | array-includes | 3.1.3 | MIT | https://github.com/es-shims/array-includes |
@@ -648,12 +646,10 @@ This application makes use of the following open source packages:
 | damerau-levenshtein | 1.0.7 | BSD-2-Clause | https://github.com/tad-lispy/node-damerau-levenshtein |
 | dashdash | 1.14.1 | MIT | https://github.com/trentm/node-dashdash |
 | data-urls | 1.1.0 | MIT | https://github.com/jsdom/data-urls |
-| date-fns-tz | 1.1.4 | MIT | https://github.com/marnusw/date-fns-tz |
 | date-fns | 2.21.3 | MIT | https://github.com/date-fns/date-fns |
 | debug | 2.6.9 | MIT | https://github.com/visionmedia/debug |
 | debug | 3.2.7 | MIT | https://github.com/visionmedia/debug |
 | debug | 4.3.1 | MIT | https://github.com/visionmedia/debug |
-| debuglog | 1.0.1 | MIT | https://github.com/sam-github/node-debuglog |
 | decamelize | 1.2.0 | MIT | https://github.com/sindresorhus/decamelize |
 | decode-uri-component | 0.2.0 | MIT | https://github.com/SamVerschueren/decode-uri-component |
 | dedent | 0.7.0 | MIT | https://github.com/dmnd/dedent |
@@ -678,7 +674,6 @@ This application makes use of the following open source packages:
 | detect-node | 2.1.0 | MIT | https://github.com/iliakan/detect-node |
 | detect-port-alt | 1.1.6 | MIT | https://github.com/node-modules/detect-port |
 | detect-port | 1.3.0 | MIT | https://github.com/node-modules/detect-port |
-| dezalgo | 1.0.3 | ISC | https://github.com/npm/dezalgo |
 | diff-sequences | 24.9.0 | MIT | https://github.com/facebook/jest |
 | diff-sequences | 26.6.2 | MIT | https://github.com/facebook/jest |
 | diffie-hellman | 5.0.3 | MIT | https://github.com/crypto-browserify/diffie-hellman |
@@ -783,6 +778,7 @@ This application makes use of the following open source packages:
 | estraverse | 4.3.0 | BSD-2-Clause | https://github.com/estools/estraverse |
 | estraverse | 5.2.0 | BSD-2-Clause | https://github.com/estools/estraverse |
 | estree-to-babel | 3.2.1 | MIT | https://github.com/coderaiser/estree-to-babel |
+| estree-walker | 0.6.1 | MIT | https://github.com/Rich-Harris/estree-walker |
 | estree-walker | 1.0.1 | MIT | https://github.com/Rich-Harris/estree-walker |
 | estree-walker | 2.0.2 | MIT | https://github.com/Rich-Harris/estree-walker |
 | esutils | 2.0.3 | BSD-2-Clause | https://github.com/estools/esutils |
@@ -1173,7 +1169,6 @@ This application makes use of the following open source packages:
 | levenary | 1.1.1 | MIT | https://github.com/tanhauhau/levenary |
 | levn | 0.3.0 | MIT | https://github.com/gkz/levn |
 | libphonenumber-js | 1.9.17 | MIT | git+https://gitlab.com/catamphetamine/libphonenumber-js |
-| license-checker | 25.0.1 | BSD-3-Clause | https://github.com/davglass/license-checker |
 | lines-and-columns | 1.1.6 | MIT | https://github.com/eventualbuddha/lines-and-columns |
 | load-json-file | 2.0.0 | MIT | https://github.com/sindresorhus/load-json-file |
 | load-json-file | 4.0.0 | MIT | https://github.com/sindresorhus/load-json-file |
@@ -1289,14 +1284,12 @@ This application makes use of the following open source packages:
 | node-modules-regexp | 1.0.0 | MIT | https://github.com/jamestalmage/node-modules-regexp |
 | node-notifier | 5.4.5 | MIT | https://github.com/mikaelbr/node-notifier |
 | node-releases | 1.1.72 | MIT | https://github.com/chicoxyzzy/node-releases |
-| nopt | 4.0.3 | ISC | https://github.com/npm/nopt |
 | normalize-package-data | 2.5.0 | BSD-2-Clause | https://github.com/npm/normalize-package-data |
 | normalize-path | 2.1.1 | MIT | https://github.com/jonschlinkert/normalize-path |
 | normalize-path | 3.0.0 | MIT | https://github.com/jonschlinkert/normalize-path |
 | normalize-range | 0.1.2 | MIT | https://github.com/jamestalmage/normalize-range |
 | normalize-url | 1.9.1 | MIT | https://github.com/sindresorhus/normalize-url |
 | normalize-url | 3.3.0 | MIT | https://github.com/sindresorhus/normalize-url |
-| npm-normalize-package-bin | 1.0.1 | ISC | https://github.com/npm/npm-normalize-package-bin |
 | npm-run-all | 4.1.5 | MIT | https://github.com/mysticatea/npm-run-all |
 | npm-run-path | 2.0.2 | MIT | https://github.com/sindresorhus/npm-run-path |
 | npmlog | 4.1.2 | ISC | https://github.com/npm/npmlog |
@@ -1330,9 +1323,7 @@ This application makes use of the following open source packages:
 | optionator | 0.8.3 | MIT | https://github.com/gkz/optionator |
 | original | 1.0.2 | MIT | https://github.com/unshiftio/original |
 | os-browserify | 0.3.0 | MIT | https://github.com/CoderPuppy/os-browserify |
-| os-homedir | 1.0.2 | MIT | https://github.com/sindresorhus/os-homedir |
 | os-tmpdir | 1.0.2 | MIT | https://github.com/sindresorhus/os-tmpdir |
-| osenv | 0.1.5 | ISC | https://github.com/npm/osenv |
 | overlayscrollbars | 1.13.1 | MIT | https://github.com/KingSora/OverlayScrollbars |
 | p-all | 2.1.0 | MIT | https://github.com/sindresorhus/p-all |
 | p-each-series | 1.0.0 | MIT | https://github.com/sindresorhus/p-each-series |
@@ -1565,11 +1556,9 @@ This application makes use of the following open source packages:
 | react-sizeme | 3.0.1 | MIT | https://github.com/ctrlplusb/react-sizeme |
 | react-syntax-highlighter | 13.5.3 | MIT | https://github.com/react-syntax-highlighter/react-syntax-highlighter |
 | react-textarea-autosize | 8.3.2 | MIT | https://github.com/Andarist/react-textarea-autosize |
-| react-tooltip | 4.2.19 | MIT | https://github.com/wwayne/react-tooltip |
-| react-transition-group | 4.4.1 | BSD-3-Clause | https://github.com/reactjs/react-transition-group |
+| react-tooltip | 4.2.21 | MIT | https://github.com/wwayne/react-tooltip |
+| react-transition-group | 4.4.2 | BSD-3-Clause | https://github.com/reactjs/react-transition-group |
 | react | 16.14.0 | MIT | https://github.com/facebook/react |
-| read-installed | 4.0.3 | ISC | https://github.com/isaacs/read-installed |
-| read-package-json | 2.1.2 | ISC | https://github.com/npm/read-package-json |
 | read-pkg-up | 2.0.0 | MIT | https://github.com/sindresorhus/read-pkg-up |
 | read-pkg-up | 4.0.0 | MIT | https://github.com/sindresorhus/read-pkg-up |
 | read-pkg-up | 7.0.1 | MIT | https://github.com/sindresorhus/read-pkg-up |
@@ -1578,7 +1567,6 @@ This application makes use of the following open source packages:
 | read-pkg | 5.2.0 | MIT | https://github.com/sindresorhus/read-pkg |
 | readable-stream | 2.3.7 | MIT | https://github.com/nodejs/readable-stream |
 | readable-stream | 3.6.0 | MIT | https://github.com/nodejs/readable-stream |
-| readdir-scoped-modules | 1.1.0 | ISC | https://github.com/npm/readdir-scoped-modules |
 | readdirp | 2.2.1 | MIT | https://github.com/paulmillr/readdirp |
 | readdirp | 3.5.0 | MIT | https://github.com/paulmillr/readdirp |
 | realpath-native | 1.1.0 | MIT | https://github.com/SimenB/realpath-native |
@@ -1638,7 +1626,9 @@ This application makes use of the following open source packages:
 | rimraf | 3.0.2 | ISC | https://github.com/isaacs/rimraf |
 | ripemd160 | 2.0.2 | MIT | https://github.com/crypto-browserify/ripemd160 |
 | rollup-plugin-peer-deps-external | 2.2.4 | MIT | https://github.com/pmowrer/rollup-plugin-peer-deps-external |
+| rollup-plugin-replace | 2.2.0 | MIT | https://github.com/rollup/rollup-plugin-replace |
 | rollup-plugin-uglify | 6.0.4 | MIT | https://github.com/TrySound/rollup-plugin-uglify |
+| rollup-pluginutils | 2.8.2 | MIT | https://github.com/rollup/rollup-pluginutils |
 | rollup | 2.48.0 | MIT | https://github.com/rollup/rollup |
 | rsvp | 4.8.5 | MIT | https://github.com/tildeio/rsvp.js |
 | run-async | 2.4.1 | MIT | https://github.com/SBoudrias/run-async |
@@ -1696,7 +1686,6 @@ This application makes use of the following open source packages:
 | slash | 2.0.0 | MIT | https://github.com/sindresorhus/slash |
 | slash | 3.0.0 | MIT | https://github.com/sindresorhus/slash |
 | slice-ansi | 2.1.0 | MIT | https://github.com/chalk/slice-ansi |
-| slide | 1.1.6 | ISC | https://github.com/isaacs/slide-flow-control |
 | snapdragon-node | 2.1.1 | MIT | https://github.com/jonschlinkert/snapdragon-node |
 | snapdragon-util | 3.0.1 | MIT | https://github.com/jonschlinkert/snapdragon-util |
 | snapdragon | 0.8.2 | MIT | https://github.com/jonschlinkert/snapdragon |
@@ -1713,13 +1702,10 @@ This application makes use of the following open source packages:
 | source-map | 0.7.3 | BSD-3-Clause | https://github.com/mozilla/source-map |
 | sourcemap-codec | 1.4.8 | MIT | https://github.com/Rich-Harris/sourcemap-codec |
 | space-separated-tokens | 1.1.5 | MIT | https://github.com/wooorm/space-separated-tokens |
-| spdx-compare | 1.0.0 | MIT | https://github.com/kemitchell/spdx-compare.js |
 | spdx-correct | 3.1.1 | Apache-2.0 | https://github.com/jslicense/spdx-correct.js |
 | spdx-exceptions | 2.3.0 | CC-BY-3.0 | https://github.com/kemitchell/spdx-exceptions.json |
 | spdx-expression-parse | 3.0.1 | MIT | https://github.com/jslicense/spdx-expression-parse.js |
 | spdx-license-ids | 3.0.8 | CC0-1.0 | https://github.com/jslicense/spdx-license-ids |
-| spdx-ranges | 2.1.1 | (MIT AND CC-BY-3.0) | https://github.com/kemitchell/spdx-ranges.js |
-| spdx-satisfies | 4.0.1 | MIT | https://github.com/kemitchell/spdx-satisfies.js |
 | spdy-transport | 3.0.0 | MIT | https://github.com/spdy-http2/spdy-transport |
 | spdy | 4.0.2 | MIT | https://github.com/indutny/node-spdy |
 | split-string | 3.1.0 | MIT | https://github.com/jonschlinkert/split-string |
@@ -1813,7 +1799,6 @@ This application makes use of the following open source packages:
 | toidentifier | 1.0.0 | MIT | https://github.com/component/toidentifier |
 | tough-cookie | 2.5.0 | BSD-3-Clause | https://github.com/salesforce/tough-cookie |
 | tr46 | 1.0.1 | MIT | https://github.com/Sebmaster/tr46.js |
-| treeify | 1.1.0 | MIT | https://github.com/notatestuser/treeify |
 | trim-repeated | 1.0.0 | MIT | https://github.com/sindresorhus/trim-repeated |
 | trim-trailing-lines | 1.1.4 | MIT | https://github.com/wooorm/trim-trailing-lines |
 | trim | 0.0.1 | MIT* |  |
@@ -1878,7 +1863,6 @@ This application makes use of the following open source packages:
 | use-latest | 1.2.0 | MIT | https://github.com/Andarist/use-latest |
 | use | 3.1.1 | MIT | https://github.com/jonschlinkert/use |
 | util-deprecate | 1.0.2 | MIT | https://github.com/TooTallNate/util-deprecate |
-| util-extend | 1.0.3 | MIT | https://github.com/isaacs/util-extend |
 | util.promisify | 1.0.0 | MIT | https://github.com/ljharb/util.promisify |
 | util.promisify | 1.0.1 | MIT | https://github.com/ljharb/util.promisify |
 | util | 0.10.3 | MIT | https://github.com/defunctzombie/node-util |

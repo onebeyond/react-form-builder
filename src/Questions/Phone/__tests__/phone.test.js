@@ -16,7 +16,6 @@ const question = {
     required: true
   }
 }
-screen.debug()
 
 test('label is displayed', () => {
   const { getByText } = render(

@@ -41,7 +41,10 @@ const FormBuilder = ({
   const QuestionsMap = (question) => {
     return {
       box: (
-        <div sx={{ variant: 'forms.boxContainer' }}>
+        <div
+          sx={{ variant: 'forms.boxContainer' }}
+          data-testid='question-builder'
+        >
           {question.label && <Label>{question.label}</Label>}
           {question &&
             Array.isArray(question.children) &&

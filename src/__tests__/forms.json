@@ -1,0 +1,127 @@
+{
+  "contact": {
+    "name": "Survey Form",
+    "title": "Survey Form",
+    "layout": "survey",
+    "caption": "Survey",
+    "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
+    "enabled": true,
+    "questions": [
+      {
+        "name": "inputName",
+        "type": "input",
+        "label": "input label",
+        "placeholder": "input placeholder",
+        "icon": {
+          "name": "question",
+          "fill": "red"
+        },
+        "tooltip": {
+          "text": "tooltip text example",
+          "config": {
+            "backgroundColor": "green"
+          }
+        },
+        "errorMessages": {
+          "required": "This field is required",
+          "pattern": "This is not the right pattern"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "$Country",
+        "placeholder": "Country",
+        "priorityOptions": [
+          "ES"
+        ],
+        "type": "country",
+        "label": "",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "label": "What is your gender?",
+        "placeholder": "Please make a selection",
+        "registerConfig": {
+          "required": false
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Female",
+              "value": "female"
+            },
+            {
+              "label": "Male",
+              "value": "male"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "prefer_not_to_say"
+            }
+          ]
+        }
+      },
+      {
+        "name": "phone",
+        "type": "phone",
+        "label": "",
+        "placeholder": "Phone",
+        "registerConfig": {
+          "required": false
+        }
+      },
+      {
+        "name": "privacyAllow",
+        "type": "checkbox",
+        "label": "This is the label of checkbox [privacy](#privacy) and this another label for [T&C](#T&C)",
+        "isFullWidth": true,
+        "registerConfig": {
+          "required": true
+        },
+        "errorMessages": {
+          "required": "This field is required"
+        }
+      },
+      {
+        "name": "privacy",
+        "type": "checkbox",
+        "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
+        "isFullWidth": true,
+        "registerConfig": {
+          "required": false
+        }
+      },
+      {
+        "name": "dob",
+        "type": "date",
+        "label": "Date of birth",
+        "placeholder": "dd-mm-yyyy",
+        "isBirthDate": true,
+        "openToDate": "1-1-2000",
+        "registerConfig": {
+          "required": false
+        }
+      }
+    ],
+    "textToShow": {
+      "privacy": "Texto sobre la privacidad",
+      "T&C": "Los términos y condiciones"
+    },
+    "callForAction": [
+      {
+        "caption": "Submit",
+        "type": "submit"
+      }
+    ],
+    "id": "4HHq4GwrEE2bDL9YJUbUyi"
+  }
+}

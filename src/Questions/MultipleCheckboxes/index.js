@@ -44,6 +44,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                 >
                   <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
                     <Checkbox
+                      data-testid='question-singleCheckbox'
                       id={option.name}
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}

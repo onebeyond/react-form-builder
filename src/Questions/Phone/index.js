@@ -33,6 +33,7 @@ const QuestionPhone = ({
 
         <Phone
           id={question.name}
+          data-testid='question-phone'
           aria-describedby={'error_message_' + question.name}
           defaultCountry={isoCode ? isoCode.toUpperCase() : ''}
           register={register}

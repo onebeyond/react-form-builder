@@ -19,8 +19,6 @@ beforeEach(() => {
       form={forms.contact}
       isoCode='ES'
       onSubmit={mockHandler}
-      //   onLinkOpen={onLinkOpen}
-      //   isLoading={isLoading}
     />
   )
 })

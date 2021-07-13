@@ -86,6 +86,7 @@ const Select = ({
       onChange={onChange}
       as={
         <ReactSelect
+          data-testid='question-select'
           menuPortalTarget={document.querySelector('body')}
           aria-label={label}
           styles={customStyles}

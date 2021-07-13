@@ -27,10 +27,79 @@
           "pattern": "This is not the right pattern"
         },
         "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "$Country",
+        "placeholder": "Country",
+        "priorityOptions": [
+          "ES"
+        ],
+        "type": "country",
+        "label": "",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "label": "What is your gender?",
+        "placeholder": "Please make a selection",
+        "registerConfig": {
+          "required": false
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Female",
+              "value": "female"
+            },
+            {
+              "label": "Male",
+              "value": "male"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "prefer_not_to_say"
+            }
+          ]
+        }
+      },
+      {
+        "name": "phone",
+        "type": "phone",
+        "label": "",
+        "placeholder": "Phone",
+        "registerConfig": {
+          "required": false
+        }
+      },
+      {
+        "name": "privacyAllow",
+        "type": "checkbox",
+        "label": "This is the label of checkbox [privacy](#privacy) and this another label for [T&C](#T&C)",
+        "isFullWidth": true,
+        "registerConfig": {
+          "required": true
+        },
+        "errorMessages": {
+          "required": "This field is required"
+        }
+      },
+      {
+        "name": "privacy",
+        "type": "checkbox",
+        "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
+        "isFullWidth": true,
+        "registerConfig": {
           "required": false
         }
       }
-      
     ],
     "textToShow": {
       "privacy": "Texto sobre la privacidad",

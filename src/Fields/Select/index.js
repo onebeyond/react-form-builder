@@ -86,7 +86,7 @@ const Select = ({
       onChange={onChange}
       as={
         <ReactSelect
-          menuPortalTarget={document.querySelector('body')}
+          menuPortalTarget={document && document.querySelector('body')}
           aria-label={label}
           styles={customStyles}
           {...props}

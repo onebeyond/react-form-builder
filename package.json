@@ -29,7 +29,7 @@
     "build-storybook": "build-storybook  -o ./public"
   },
   "peerDependencies": {
-    "react": "^17.0.1"
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -65,8 +65,8 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.5",
     "prettier": "^2.0.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-select-event": "^5.3.0",
     "rollup": "^2.36.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -86,6 +86,6 @@
     "react-scripts": "^3.4.1",
     "react-select": "^4.0.2",
     "react-tooltip": "^4.2.18",
-    "theme-ui": "^0.3.5"
+    "theme-ui": "^0.10.0"
   }
 }

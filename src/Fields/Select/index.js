@@ -84,14 +84,7 @@ const Select = ({
   return (
     <RHFInput
       onChange={onChange}
-      as={
-        <ReactSelect
-          menuPortalTarget={document.querySelector('body')}
-          aria-label={label}
-          styles={customStyles}
-          {...props}
-        />
-      }
+      as={<ReactSelect aria-label={label} styles={customStyles} {...props} />}
       rules={{
         ...registerConfig,
         validate: {

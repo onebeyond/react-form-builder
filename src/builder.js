@@ -9,6 +9,7 @@ import QuestionCountry from './Questions/Country'
 import QuestionInput from './Questions/Input'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
+import QuestionStatic from './Questions/Static'
 import React from 'react'
 import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
@@ -95,6 +96,9 @@ const FormBuilder = ({
           component={props.customCheckbox}
           onLinkOpen={props.onLinkOpen}
         />
+      ),
+      static: (
+        <QuestionStatic useForm={useFormObj} question={question} form={form} />
       ),
       radio: (
         <QuestionRadio

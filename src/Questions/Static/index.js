@@ -14,7 +14,7 @@ const QuestionStatic = ({ question, useForm }) => {
         <Checkbox
           id={question.name}
           name={question.name}
-          defaultChecked={question.defaultChecked}
+          defaultChecked
           ref={register({
             ...question.registerConfig
           })}

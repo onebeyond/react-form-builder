@@ -40,7 +40,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                   sx={{
                     variant: 'forms.multipleCheckboxes.checksContainer'
                   }}
-                  key={option.name}
+                  key={option.value}
                 >
                   <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
                     <Checkbox

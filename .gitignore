@@ -23,3 +23,6 @@ yarn-error.log*
 
 # vscode
 .vscode
+
+#licenses
+license-report.md

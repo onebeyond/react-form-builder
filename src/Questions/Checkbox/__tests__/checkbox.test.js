@@ -23,7 +23,7 @@ test('can checked/unchecked', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{ formState: { errors: {} }, register: () => {} }}
     />
   )
 
@@ -40,7 +40,7 @@ test('default checked true', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{ formState: { errors: {} }, register: () => {} }}
     />
   )
   const checkbox = getByTestId('question-checkbox')
@@ -54,7 +54,7 @@ test('default checked false', () => {
   const { getByTestId } = render(
     <QuestionCheckbox
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{ formState: { errors: {} }, register: () => {} }}
     />
   )
   const checkbox = getByTestId('question-checkbox')
@@ -66,7 +66,7 @@ test('renders markdown', () => {
   const { getByText } = render(
     <QuestionCheckbox
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{ formState: { errors: {} }, register: () => {} }}
     />
   )
 
@@ -78,9 +78,11 @@ test('shows an error message', () => {
     <QuestionCheckbox
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {}
@@ -96,7 +98,7 @@ test('handles default markdown link', () => {
     <QuestionCheckbox
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -118,7 +120,7 @@ test('handles custom markdown link callback', () => {
       }}
       onLinkOpen={onLinkOpen}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
         register: () => {}
       }}
     />

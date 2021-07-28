@@ -31,7 +31,11 @@ test('label is displayed', () => {
   const { getByText } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -42,7 +46,11 @@ test('icon is displayed', () => {
   const { getByTestId } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -72,7 +80,11 @@ test('icon default is displayed', () => {
   const { getByText } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -83,7 +95,11 @@ test('icon tooltip is displayed', async () => {
   const { getByTestId } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -113,7 +129,11 @@ test('icon tooltip is not displayed when there is no text', async () => {
   const { getByTestId } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -137,7 +157,11 @@ test('icon is not displayed', () => {
   render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -148,7 +172,11 @@ test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
     <QuestionInput
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -160,9 +188,11 @@ test('error is displayed', () => {
     <QuestionInput
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},
@@ -179,12 +209,13 @@ test('input can be filled', () => {
     <QuestionInput
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
     />
   )
+
   const inputComponent = getByTestId('question-input')
   expect(inputComponent.value).toBe('')
   fireEvent.change(inputComponent, { target: { value: 'input testing' } })
@@ -196,7 +227,7 @@ test('default value is displayed', () => {
     <QuestionInput
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -213,9 +244,11 @@ test('patern error is displayed', () => {
     <QuestionInput
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'pattern'
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'pattern'
+            }
           }
         },
         register: () => {},

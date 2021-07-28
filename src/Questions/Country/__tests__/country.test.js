@@ -1,18 +1,18 @@
 import React from 'react'
-import {
-  cleanup,
-  getByText,
-  screen,
-  render,
-  fireEvent
-} from '@testing-library/react'
+import { getByText, screen, render, fireEvent } from '@testing-library/react'
 import QuestionCountry from '../'
 import selectEvent from 'react-select-event'
+import { renderHook } from '@testing-library/react-hooks'
+import { useForm } from 'react-hook-form'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
 
-afterEach(cleanup)
+let control
+beforeEach(async () => {
+  const { result } = renderHook(() => useForm())
+  control = result.current.control
+})
 
 const question = {
   name: 'country_of_residence',
@@ -38,11 +38,12 @@ const setup = (customListCountries) => {
       question={question}
       countryAndRegionsData={customListCountries}
       useForm={{
-        errors: {},
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
-        trigger: jest.fn()
+        trigger: jest.fn(),
+        formState: { errors: {} },
+        control: control
       }}
     />
   )
@@ -76,11 +77,13 @@ test('change value of select', async () => {
       required: 'This field is required'
     }
   }
+
   const { getByText } = render(
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -110,7 +113,8 @@ test('sort country list by default', async () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -142,7 +146,8 @@ test('handle country priority order', async () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -170,11 +175,13 @@ test('check all the countries are rendered', async () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
+
   render(
     <QuestionCountry
       question={questionNoLabel}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -191,6 +198,7 @@ test('renders a country list in spanish', async () => {
     language: 'es',
     select: 'España'
   }
+
   const question = {
     name: 'country_of_residence',
     type: 'country',
@@ -207,7 +215,8 @@ test('renders a country list in spanish', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -245,7 +254,8 @@ test('renders a country list in french', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -266,6 +276,7 @@ test('renders a country list in deusche', async () => {
     language: 'de',
     select: 'Spanien'
   }
+
   const question = {
     name: 'country_of_residence',
     type: 'country',
@@ -282,7 +293,8 @@ test('renders a country list in deusche', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -319,7 +331,8 @@ test('renders a fallback country list when the language is not supported', async
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        formState: { errors: {} },
+        control: control,
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -340,11 +353,15 @@ test('show an error message', () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
+        control: control,
+
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),

@@ -42,7 +42,11 @@ const customRender = () =>
   render(
     <QuestionMultipleCheckboxes
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -77,11 +81,14 @@ test('shows an error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
+
         register: () => {}
       }}
     />

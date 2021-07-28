@@ -1,7 +1,15 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { renderHook } from '@testing-library/react-hooks'
 import QuestionPhone from '..'
+import { useForm } from 'react-hook-form'
+
+let control
+beforeEach(async () => {
+  const { result } = renderHook(() => useForm())
+  control = result.current.control
+})
 
 const question = {
   name: 'phoneName',
@@ -21,7 +29,12 @@ test('label is displayed', () => {
   const { getByText } = render(
     <QuestionPhone
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        control: control,
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -32,7 +45,12 @@ test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
     <QuestionPhone
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        control: control,
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -44,9 +62,12 @@ test('error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: control,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},
@@ -63,7 +84,8 @@ test('phone can be filled', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -81,7 +103,8 @@ test('phone ES country is displayed', () => {
       question={question}
       isoCode='ES'
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -98,9 +121,12 @@ test('pattern error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'pattern'
+        control: control,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'pattern'
+            }
           }
         },
         register: () => {},

@@ -1,6 +1,8 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import QuestionDate from '../'
+import { renderHook } from '@testing-library/react-hooks'
+import { useForm } from 'react-hook-form'
 
 const question = {
   name: 'dob',
@@ -16,6 +18,12 @@ const question = {
     required: true
   }
 }
+
+let control
+beforeEach(async () => {
+  const { result } = renderHook(() => useForm())
+  control = result.current.control
+})
 
 Object.defineProperty(window, 'getComputedStyle', {
   value: () => ({
@@ -54,7 +62,11 @@ test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
     <QuestionDate
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: control,
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
 
@@ -66,9 +78,12 @@ test('required error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: control,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {}
@@ -84,9 +99,12 @@ test('under-age error error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'underAge'
+        control: control,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'underAge'
+            }
           }
         },
         register: () => {}
@@ -102,7 +120,8 @@ test('calendar is opened in the right date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -132,7 +151,8 @@ test('calendar is opened minAge years ago', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -168,7 +188,8 @@ test('calendar is opened in new Date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -204,7 +225,8 @@ test('dateformat is applied', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -222,7 +244,8 @@ test('default dateformat is applied', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -241,7 +264,8 @@ test('calendar is in spanish', () => {
       question={question}
       language='es'
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -259,7 +283,8 @@ test('calendar is in french', () => {
       question={question}
       language='fr'
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -277,7 +302,8 @@ test('calendar is in french', () => {
       question={question}
       language='de'
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />
@@ -295,7 +321,8 @@ test('calendar sending no-valid language', () => {
       question={question}
       language='qwerty'
       useForm={{
-        errors: {},
+        control: control,
+        formState: { errors: {} },
         register: () => {}
       }}
     />

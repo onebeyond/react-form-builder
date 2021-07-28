@@ -27,15 +27,13 @@
           "pattern": "This is not the right pattern"
         },
         "registerConfig": {
-          "required": true
+          "required": false
         }
       },
       {
         "name": "$Country",
         "placeholder": "Country",
-        "priorityOptions": [
-          "ES"
-        ],
+        "priorityOptions": ["ES"],
         "type": "country",
         "label": "",
         "errorMessages": {

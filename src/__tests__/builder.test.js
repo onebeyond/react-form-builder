@@ -36,7 +36,11 @@ test('check if questions are rendered', () => {
 
 test('check if it calls submit eventhandler once only when required fields are filled in', async () => {
   const button = component.getByText('Submit')
-  fireEvent.click(button)
+
+  await act(async () => {
+    fireEvent.click(button)
+  })
+
   expect(mockHandler).toHaveBeenCalledTimes(0)
 
   const inputComponent = component.getAllByTestId('question-input')

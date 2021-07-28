@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 
 import React from 'react'
-import { RHFInput } from 'react-hook-form-input'
+import { Controller } from 'react-hook-form'
 import ReactDatePicker, { registerLocale } from 'react-datepicker'
 import { differenceInYears, subYears } from 'date-fns'
 import de from 'date-fns/locale/de'
@@ -17,13 +17,13 @@ const DatePicker = ({
   registerConfig,
   placeholder,
   isMobile,
+  control,
   language,
   dateFormat,
   minAge = 0,
   openToDate = '',
   ...props
 }) => {
-  const [date, setDate] = React.useState(new Date())
   const pickerRef = React.useRef(null)
   const mapLanguagues = { de, fr, es, en }
   const datepickerLanguage =
@@ -46,20 +46,10 @@ const DatePicker = ({
     return subYears(new Date(), minAge)
   }
 
-  const convertLocalToUTCDate = (date) => {
-    if (!date) {
-      return date
-    }
-    date = new Date(date)
-    date = new Date(
-      Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
-    )
-    return date
-  }
-
   return (
-    <RHFInput
-      as={
+    <Controller
+      control={control}
+      render={({ field: { onChange, value, ref } }) => (
         <ReactDatePicker
           ref={pickerRef}
           portalId='root-portal'
@@ -72,8 +62,10 @@ const DatePicker = ({
           openToDate={openToDate ? new Date(openToDate) : getInitialDate()}
           disabledKeyboardNavigation
           {...props}
+          onChange={onChange}
+          selected={value}
         />
-      }
+      )}
       rules={{
         ...registerConfig,
         validate: {
@@ -82,11 +74,6 @@ const DatePicker = ({
       }}
       name={name}
       register={register}
-      setValue={(name, value) => {
-        setValue(name, convertLocalToUTCDate(value))
-      }}
-      selected={new Date(date)}
-      onChange={setDate}
     />
   )
 }

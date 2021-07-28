@@ -14,7 +14,12 @@ const QuestionDate = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue } = useForm
+  const {
+    formState: { errors },
+    register,
+    setValue,
+    control
+  } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
   return component ? (
     <CustomComponent component={component} />
@@ -39,6 +44,7 @@ const QuestionDate = ({
           language={language}
           name={question.name}
           register={register}
+          control={control}
           registerConfig={question.registerConfig}
           setValue={setValue}
           isMobile={isMobile}

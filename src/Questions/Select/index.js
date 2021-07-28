@@ -31,7 +31,15 @@ const getOptions = (question) => {
 }
 
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
-  const { register, errors, setValue, unregister, trigger } = useForm
+  const {
+    register,
+    control,
+    formState: { errors },
+    setValue,
+    unregister,
+    trigger
+  } = useForm
+
   const CustomComponent = ({ component }) => component(question, useForm)
   return component ? (
     <CustomComponent component={component} />
@@ -64,6 +72,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           setValue={setValue}
           unregister={unregister}
           label={question.label}
+          control={control}
         >
           {question.config &&
             question.config.options.map((option) => {

@@ -1,13 +1,13 @@
 /** @jsxRuntime classic */
 
 import React from 'react'
-
+import { Controller } from 'react-hook-form'
 import { useThemeUI } from 'theme-ui'
-import { RHFInput } from 'react-hook-form-input'
 import ReactSelect from 'react-select'
 
 const Select = ({
   register,
+  control,
   setValue,
   name,
   onChange = undefined,
@@ -82,9 +82,18 @@ const Select = ({
   }, [])
 
   return (
-    <RHFInput
+    <Controller
+      control={control}
       onChange={onChange}
-      as={<ReactSelect aria-label={label} styles={customStyles} {...props} />}
+      render={({ field: { onChange, value } }) => (
+        <ReactSelect
+          aria-label={label}
+          onChange={onChange}
+          styles={customStyles}
+          value={value}
+          {...props}
+        />
+      )}
       rules={{
         ...registerConfig,
         validate: {

@@ -14,7 +14,14 @@ const QuestionPhone = ({
   useForm,
   ...props
 }) => {
-  const { clearErrors, errors, register, setError, setValue } = useForm
+  const {
+    clearErrors,
+    formState: { errors },
+    register,
+    control,
+    setError,
+    setValue
+  } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -35,6 +42,7 @@ const QuestionPhone = ({
           id={question.name}
           data-testid='question-phone'
           aria-describedby={'error_message_' + question.name}
+          control={control}
           defaultCountry={isoCode ? isoCode.toUpperCase() : ''}
           register={register}
           setValue={setValue}

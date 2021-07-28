@@ -45,7 +45,14 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue, unregister, trigger } = useForm
+  const {
+    formState: { errors },
+    control,
+    register,
+    setValue,
+    unregister,
+    trigger
+  } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -99,6 +106,7 @@ const QuestionCountry = ({
           trigger(question.name)
         }}
         id={question.name}
+        control={control}
         key={question.name}
         name={question.name}
         options={options}

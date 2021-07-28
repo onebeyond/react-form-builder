@@ -9,7 +9,11 @@ import Label from '../../Fields/Label'
 import ReactMarkdown from 'react-markdown'
 
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
-  const { getValues, errors, register } = useForm
+  const {
+    getValues,
+    formState: { errors },
+    register
+  } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   return component ? (
@@ -49,7 +53,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}
                       value={option.value}
-                      ref={register({
+                      {...register(question.name, {
                         ...question.registerConfig,
                         validate: {
                           minimumLen: question.registerConfig.minimumLen

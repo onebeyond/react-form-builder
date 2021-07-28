@@ -15,7 +15,7 @@ const QuestionStatic = ({ question, useForm }) => {
           id={question.name}
           name={question.name}
           defaultChecked
-          ref={register({
+          {...register(question.name, {
             ...question.registerConfig
           })}
         />

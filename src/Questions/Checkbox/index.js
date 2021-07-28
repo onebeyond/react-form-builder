@@ -29,7 +29,10 @@ const QuestionCheckbox = ({
   useForm,
   onLinkOpen
 }) => {
-  const { errors, register } = useForm
+  const {
+    formState: { errors },
+    register
+  } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   return component ? (
@@ -50,7 +53,7 @@ const QuestionCheckbox = ({
             sx={styles.checkboxMinWidth}
             name={question.name}
             defaultChecked={question.defaultChecked}
-            ref={register({
+            {...register(question.name, {
               ...question.registerConfig
             })}
             data-testid='question-checkbox'

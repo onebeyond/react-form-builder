@@ -12,7 +12,10 @@ const styles = {
   }
 }
 const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
-  const { register, errors } = useForm
+  const {
+    register,
+    formState: { errors }
+  } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const radioButtonGenerator = (question) => {
@@ -21,10 +24,9 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
         <Label htmlFor={option.label} sx={styles.label} key={option.label}>
           <Radio
             id={option.label}
-            aria-describedby={'error_message_' + question.name}
             name={question.name}
             value={option.value}
-            ref={register({
+            {...register(question.name, {
               ...question.registerConfig
             })}
           />

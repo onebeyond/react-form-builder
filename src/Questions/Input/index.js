@@ -15,7 +15,10 @@ const styles = {
 }
 
 const QuestionInput = ({ question, useForm, component }) => {
-  const { register, errors } = useForm
+  const {
+    register,
+    formState: { errors }
+  } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
   return component ? (
@@ -51,7 +54,7 @@ const QuestionInput = ({ question, useForm, component }) => {
         type={question.type}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        ref={register({
+        {...register(question.name, {
           ...question.registerConfig,
           pattern: new RegExp(question.registerConfig.pattern)
         })}

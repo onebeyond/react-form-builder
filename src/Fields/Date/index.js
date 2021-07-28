@@ -8,7 +8,6 @@ import { differenceInYears, subYears } from 'date-fns'
 import de from 'date-fns/locale/de'
 import fr from 'date-fns/locale/fr'
 import es from 'date-fns/locale/es'
-import en from 'date-fns/locale/en-GB'
 
 const DatePicker = ({
   register,
@@ -25,13 +24,13 @@ const DatePicker = ({
 }) => {
   const [date, setDate] = React.useState(new Date())
   const pickerRef = React.useRef(null)
-  const mapLanguagues = { de, fr, es, en }
-  const datepickerLanguage =
-    language && mapLanguagues[language.toLowerCase()]
-      ? mapLanguagues[language.toLowerCase()]
-      : mapLanguagues.en
+  const mapLanguagues = { de, fr, es }
+  let datepickerLanguage = 'en'
+  if (language && mapLanguagues[language.toLowerCase()]) {
+    datepickerLanguage = mapLanguagues[language.toLowerCase()]
+    registerLocale(datepickerLanguage.code, datepickerLanguage)
+  }
 
-  registerLocale(datepickerLanguage.code, datepickerLanguage)
   React.useEffect(() => {
     if (isMobile && pickerRef.current !== null) {
       pickerRef.current.input.readOnly = true

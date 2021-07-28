@@ -46,6 +46,7 @@
     "@storybook/react": "^6.1.15",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
+    "@testing-library/react-hooks": "^7.0.1",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "date-fns": "^2.16.1",
@@ -79,8 +80,7 @@
   ],
   "dependencies": {
     "react-datepicker": "^3.4.1",
-    "react-hook-form": "^6.14.2",
-    "react-hook-form-input": "^1.1.10",
+    "react-hook-form": "^7.2.1",
     "react-markdown": "^5.0.3",
     "react-phone-number-input": "^3.1.10",
     "react-scripts": "^3.4.1",

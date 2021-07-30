@@ -5,10 +5,8 @@ import forms from './forms.json'
 import FormBuilder from '../builder'
 import { act } from 'react-dom/test-utils'
 import selectEvent from 'react-select-event'
-
-import { renderHook } from '@testing-library/react-hooks'
-
 import MutationObserver from '@sheerun/mutationobserver-shim'
+
 window.MutationObserver = MutationObserver
 
 let component = null

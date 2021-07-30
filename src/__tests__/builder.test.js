@@ -1,9 +1,11 @@
 import React from 'react'
 import { cleanup, render, fireEvent, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import forms from './forms.json'
 import FormBuilder from '../builder'
 import { act } from 'react-dom/test-utils'
 import selectEvent from 'react-select-event'
+
 import { renderHook } from '@testing-library/react-hooks'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
@@ -11,21 +13,24 @@ window.MutationObserver = MutationObserver
 
 let component = null
 let mockHandler = null
-const isLoading = false
-
-function useLoading(isLoading) {
-  isLoading = true
-  return { isLoading }
-}
+// const isLoading = false
+let loaderc = false
+// function useLoading(isLoading) {
+//   isLoading = true
+//   return { isLoading }
+// }
 
 beforeEach(() => {
-  mockHandler = jest.fn(() => renderHook(() => useLoading(isLoading)))
+  mockHandler = jest.fn().mockImplementation(() => {
+    loaderc = true
+  })
+  // mockHandler = jest.fn(() => renderHook(() => useLoading(isLoading)))
   component = render(
     <FormBuilder
       idForm={forms.contact.id}
       form={forms.contact}
       isoCode='ES'
-      isLoading={isLoading}
+      isLoading={false}
       onSubmit={mockHandler}
     />
   )
@@ -38,13 +43,13 @@ test('check if questions are rendered', () => {
 })
 
 test("check if it won't call submit eventhandler if required fields are not filled in", async () => {
-  const button = component.getByText('Submit')
+  const button = component.getByText('Submit Form')
   fireEvent.click(button)
   expect(mockHandler).toHaveBeenCalledTimes(0)
 })
 
 test('check if it calls submit eventhandler once only when required fields are filled in', async () => {
-  const button = component.getByText('Submit')
+  const button = component.getByText('Submit Form')
 
   const inputComponent = component.getAllByTestId('question-input')
   fireEvent.change(inputComponent[0], { target: { value: 'name testing' } })
@@ -65,8 +70,9 @@ test('check if it calls submit eventhandler once only when required fields are f
   expect(mockHandler).toHaveBeenCalledTimes(1)
 })
 
-test('check if submit event can only be called once and spinner is then visible', async () => {
-  const button = component.getByText('Submit')
+test('check if spinner is visible after submitting form', async () => {
+  const { rerender } = component
+  const button = component.getByText('Submit Form')
 
   const inputComponent = component.getAllByTestId('question-input')
   fireEvent.change(inputComponent[0], { target: { value: 'name testing' } })
@@ -85,6 +91,14 @@ test('check if submit event can only be called once and spinner is then visible'
     fireEvent.click(button)
   })
   expect(mockHandler).toHaveBeenCalledTimes(1)
-
-  expect(screen.getByText('Submit')).toBeNull()
+  rerender(
+    <FormBuilder
+      idForm={forms.contact.id}
+      form={forms.contact}
+      isoCode='ES'
+      isLoading={loaderc}
+      onSubmit={mockHandler}
+    />
+  )
+  expect(screen.queryByText('Submit Form')).not.toBeInTheDocument()
 })

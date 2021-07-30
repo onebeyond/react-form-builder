@@ -118,7 +118,7 @@
     },
     "callForAction": [
       {
-        "caption": "Submit",
+        "caption": "Submit Form",
         "type": "submit"
       }
     ],

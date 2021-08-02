@@ -26,10 +26,10 @@ const question = {
 }
 
 const customListCountries = [
-  { countryName: 'MyOwnCountry1', countryShortCode: 'MC1' },
-  { countryName: 'MyOwnCountry2', countryShortCode: 'MC2' },
-  { countryName: 'MyOwnCountry3', countryShortCode: 'MC3' },
-  { countryName: 'MyOwnCountry4', countryShortCode: 'MC4' }
+  { CN: 'MyOwnCountry1', CS: 'MC1' },
+  { CN: 'MyOwnCountry2', CS: 'MC2' },
+  { CN: 'MyOwnCountry3', CS: 'MC3' },
+  { CN: 'MyOwnCountry4', CS: 'MC4' }
 ]
 
 const setup = (customListCountries) => {

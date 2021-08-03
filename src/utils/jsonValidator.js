@@ -13,26 +13,38 @@ const schema = Joi.object({
       Joi.object({
         name: Joi.string().required(),
         type: Joi.string().required(),
-        label: Joi.string().required(),
-        placeholder: Joi.string().required(),
-        icon: Joi.object().required().keys({
+        label: Joi.string().required().allow(''),
+        isFullWidth: Joi.boolean(),
+        isBirthDate: Joi.boolean(),
+        openToDate: Joi.string(),
+        minAge: Joi.number(),
+        placeholder: Joi.string().allow(''),
+        priorityOptions: Joi.array(),
+        icon: Joi.object().keys({
           name: Joi.string(),
           fill: Joi.string()
         }),
-        tooltip: Joi.object()
-          .required()
-          .keys({
-            text: Joi.string(),
-            config: Joi.string().keys({
-              backgroundColor: Joi.string()
-            })
-          }),
-        errorMessages: Joi.object().required().keys({
-          required: Joi.string(),
-          pattern: Joi.string()
+        tooltip: Joi.object().keys({
+          text: Joi.string(),
+          config: Joi.object().keys({
+            backgroundColor: Joi.string()
+          })
         }),
-        registerConfig: Joi.object().required().keys({
+        errorMessages: Joi.object().keys({
+          required: Joi.string(),
+          pattern: Joi.string(),
+          u18: Joi.string()
+        }),
+        registerConfig: Joi.object().keys({
           required: Joi.boolean()
+        }),
+        config: Joi.object().keys({
+          options: Joi.array().items(
+            Joi.object({
+              label: Joi.string(),
+              value: Joi.string()
+            })
+          )
         })
       })
     ),

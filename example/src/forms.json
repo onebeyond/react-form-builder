@@ -33,7 +33,9 @@
       {
         "name": "$Country",
         "placeholder": "Country",
-        "priorityOptions": ["GB"],
+        "priorityOptions": [
+          "GB"
+        ],
         "type": "country",
         "label": "",
         "errorMessages": {
@@ -69,9 +71,13 @@
               "value": "prefer_not_to_say"
             }
           ]
-        }
+        },
+        "dependentQuestions": [
+          {
+            "condition": "yes"
+          }
+        ]
       },
-
       {
         "name": "phone",
         "type": "phone",
@@ -88,7 +94,6 @@
         "name": "privacyAllow",
         "type": "checkbox",
         "label": "This is the label of checkbox [privacy](#privacy) and this another label for [T&C](#T&C)",
-        "isFullWidth": true,
         "registerConfig": {
           "required": true
         },
@@ -100,7 +105,6 @@
         "name": "privacy",
         "type": "checkbox",
         "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
-        "isFullWidth": true,
         "registerConfig": {
           "required": true
         },
@@ -137,7 +141,6 @@
         }
       }
     ],
-
     "question": [
       {
         "name": "phone",
@@ -395,7 +398,6 @@
       {
         "name": "terms_and_conditions",
         "type": "checkbox",
-        "isFullWidth": true,
         "label": "Terms and Conditions",
         "errorMessages": {
           "required": "This is mandatory"
@@ -456,7 +458,6 @@
           ]
         }
       },
-
       {
         "name": "what_other_sports_are_you_interested_in",
         "type": "multiple_images_checkboxes",

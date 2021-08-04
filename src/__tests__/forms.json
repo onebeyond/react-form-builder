@@ -83,7 +83,6 @@
         "name": "privacyAllow",
         "type": "checkbox",
         "label": "This is the label of checkbox [privacy](#privacy) and this another label for [T&C](#T&C)",
-        "isFullWidth": true,
         "registerConfig": {
           "required": true
         },
@@ -95,7 +94,6 @@
         "name": "privacy",
         "type": "checkbox",
         "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
-        "isFullWidth": true,
         "registerConfig": {
           "required": false
         }

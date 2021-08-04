@@ -78,7 +78,6 @@
     "dist"
   ],
   "dependencies": {
-    "@testing-library/react-hooks": "^7.0.1",
     "react-datepicker": "^3.4.1",
     "react-hook-form": "^6.14.2",
     "react-hook-form-input": "^1.1.10",

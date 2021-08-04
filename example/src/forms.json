@@ -74,7 +74,62 @@
         },
         "dependentQuestions": [
           {
-            "condition": "yes"
+            "condition": "yes",
+            "question": {
+              "name": "tv_smart_brand",
+              "type": "select",
+              "label": "What brand is your smart TV? [Single choice]",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "SAMSUNG",
+                    "value": "samsung"
+                  },
+                  {
+                    "label": "LG",
+                    "value": "lg"
+                  },
+                  {
+                    "label": "SONY",
+                    "value": "sony"
+                  },
+                  {
+                    "label": "Hisense",
+                    "value": "hisense"
+                  },
+                  {
+                    "label": "PHILIPS",
+                    "value": "philips"
+                  },
+                  {
+                    "label": "TCL/THOMSON",
+                    "value": "tcl_thomson"
+                  },
+                  {
+                    "label": "BHG",
+                    "value": "bhg"
+                  },
+                  {
+                    "label": "PANASONIC",
+                    "value": "panasonic"
+                  },
+                  {
+                    "label": "None of above",
+                    "value": "none_of_above"
+                  }
+                ]
+              }
+            }
           }
         ]
       },

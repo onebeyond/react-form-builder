@@ -15,7 +15,7 @@ import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
 import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
 import QuestionMarkdown from './Questions/Markdown'
-import schema from './utils/jsonValidator/jsonValidator'
+import validate from './utils/jsonValidator/jsonValidator'
 
 const styles = {
   fitContent: {
@@ -40,7 +40,7 @@ const FormBuilder = ({
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
   const { errors } = useFormObj
 
-  console.log(schema.validate(form))
+  console.log(validate(form))
   // throw exception y return null
   const QuestionsMap = (question) => {
     return {

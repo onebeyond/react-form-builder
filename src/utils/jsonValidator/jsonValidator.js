@@ -17,4 +17,12 @@ const schema = Joi.object({
   id: Joi.string().required()
 })
 
-export default schema
+const validate = (json) => {
+  const result = schema.validate(json)
+  if (result.error) {
+    throw new Error(`Validation errors: ${result.error}`)
+  }
+  return result.value
+}
+
+export default validate

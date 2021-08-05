@@ -2,10 +2,6 @@ import baseQuestionSchema from './baseQuestionSchema.js'
 const Joi = require('joi')
 
 const inputSchema = baseQuestionSchema.append({
-  dependentQuestions: Joi.array().items({
-    condition: Joi.string(),
-    question: baseQuestionSchema
-  }),
   icon: Joi.object().keys({
     name: Joi.string(),
     fill: Joi.string()
@@ -19,10 +15,6 @@ const inputSchema = baseQuestionSchema.append({
 })
 
 const checkBoxSchema = baseQuestionSchema.append({
-  dependentQuestions: Joi.array().items({
-    condition: Joi.string(),
-    question: baseQuestionSchema
-  }),
   defaultChecked: Joi.boolean(),
   config: Joi.object().keys({
     options: Joi.array()
@@ -30,10 +22,6 @@ const checkBoxSchema = baseQuestionSchema.append({
 })
 
 const multipleCheckboxesSchema = baseQuestionSchema.append({
-  dependentQuestions: Joi.array().items({
-    condition: Joi.string(),
-    question: baseQuestionSchema
-  }),
   config: Joi.object().keys({
     options: Joi.array().items({
       label: Joi.string(),
@@ -44,10 +32,6 @@ const multipleCheckboxesSchema = baseQuestionSchema.append({
 })
 
 const selectSchema = baseQuestionSchema.append({
-  dependentQuestions: Joi.array().items({
-    condition: Joi.string(),
-    question: baseQuestionSchema
-  }),
   config: Joi.object().keys({
     options: Joi.array().items({
       label: Joi.string(),

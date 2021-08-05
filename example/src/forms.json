@@ -74,7 +74,7 @@
         },
         "dependentQuestions": [
           {
-            "condition": "yes",
+            
             "question": {
               "name": "tv_smart_brand",
               "type": "select",

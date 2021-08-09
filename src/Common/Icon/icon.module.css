@@ -36,12 +36,3 @@
   height: 12px;
   overflow: hidden;
 }
-
-.tooltip .top i::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}

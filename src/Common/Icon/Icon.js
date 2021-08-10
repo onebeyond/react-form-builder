@@ -29,7 +29,7 @@ const Icon = ({ icon, tooltip, ...props }) => {
           sx={{
             '::after': {
               ...styles.tooltipArrow,
-              backgroundColor: config.backgroundColor || 'black'
+              backgroundColor: (config && config.backgroundColor) || 'black'
             }
           }}
         />

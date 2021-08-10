@@ -24,7 +24,6 @@ export default {
       'react-hook-form': 'react-hook-form',
       'react-datepicker': 'react-datepicker',
       'react-select': 'react-select',
-      'react-tooltip': 'react-tooltip',
       'react-scripts': 'react-scripts',
       'react-dom': 'ReactDOM'
     }
@@ -53,7 +52,6 @@ export default {
     'react-datepicker',
     'react-scripts',
     'react-select',
-    'react-tooltip',
     'react-dom'
   ]
 }

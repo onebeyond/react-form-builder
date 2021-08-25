@@ -25,7 +25,9 @@ const QuestionPhone = ({
     <React.Fragment>
       <div
         sx={
-          question.id ? theme.phoneContainer[question.id] : theme.phoneContainer
+          question.id
+            ? theme?.phoneContainer[question.id]
+            : theme?.phoneContainer
         }
       >
         {question.label && <Label>{question.label}</Label>}
@@ -47,7 +49,7 @@ const QuestionPhone = ({
 
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
-            theme={theme.errorMessage}
+            theme={theme?.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
@@ -55,14 +57,14 @@ const QuestionPhone = ({
         {errors[question.name] &&
           errors[question.name].type === 'isValidPhoneNumber' && (
             <ErrorMessage
-              theme={theme.errorMessage}
+              theme={theme?.errorMessage}
               name={question.name}
               message='Not a valid phone number'
             />
           )}
         {errors[question.name] && errors[question.name].type === 'pattern' && (
           <ErrorMessage
-            theme={theme.errorMessage}
+            theme={theme?.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.pattern}
           />

@@ -218,8 +218,8 @@ const FormBuilder = ({
       <div
         sx={
           form && form.layout
-            ? forms.container[form && form.layout]
-            : forms.container
+            ? forms && forms.container[form && form.layout]
+            : forms && forms.container
         }
       >
         {form &&
@@ -236,7 +236,7 @@ const FormBuilder = ({
           form.callForAction &&
           form.callForAction.map((cfa, key) => {
             return (
-              <div sx={forms.submitContainer} key={key}>
+              <div sx={forms && forms.submitContainer} key={key}>
                 {form.accessibilityError && (
                   <div
                     className='visuallyhidden'
@@ -251,6 +251,7 @@ const FormBuilder = ({
                   </div>
                 )}
                 <Button
+                  theme={forms?.buttons}
                   sx={styles.fitContent}
                   key={cfa.caption}
                   isLoading={isLoading}

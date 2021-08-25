@@ -28,7 +28,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen, theme }) => {
               ...question.registerConfig
             })}
           />
-          <p sx={theme.radio.text}>{option.label}</p>
+          <p sx={theme?.radio.text}>{option.label}</p>
         </Label>
       )
     })
@@ -41,7 +41,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen, theme }) => {
   ) : (
     <div
       sx={
-        question.id ? theme.radioContainer[question.id] : theme.radioContainer
+        question.id ? theme?.radioContainer[question.id] : theme?.radioContainer
       }
     >
       <fieldset sx={{ border: '0', margin: '0', padding: '0' }}>
@@ -49,7 +49,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen, theme }) => {
           <legend htmlFor={question.name}>{question.label}</legend>
         ) : (
           <ReactMarkdown
-            sx={theme.radio.markdown}
+            sx={theme?.radio.markdown}
             source={question.label}
             onLinkOpen={onLinkOpen}
           />
@@ -59,7 +59,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen, theme }) => {
 
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
-            theme={theme.errorMessage}
+            theme={theme?.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

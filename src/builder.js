@@ -251,7 +251,7 @@ const FormBuilder = ({
                   </div>
                 )}
                 <Button
-                  theme={forms?.buttons}
+                  theme={forms && forms.buttons}
                   sx={styles.fitContent}
                   key={cfa.caption}
                   isLoading={isLoading}

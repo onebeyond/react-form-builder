@@ -21,12 +21,12 @@ const QuestionMarkdown = ({
       key={question.name}
       sx={
         question.id
-          ? theme?.markdownContainer[question.id]
-          : theme?.markdownContainer
+          ? theme && theme.markdownContainer[question.id]
+          : theme && theme.markdownContainer
       }
     >
       <ReactMarkdown
-        sx={theme?.markdown}
+        sx={theme && theme.markdown}
         source={question.label}
         onLinkOpen={onLinkOpen}
         modalLabel={question.modalLabel}

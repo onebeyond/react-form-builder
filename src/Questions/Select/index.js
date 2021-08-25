@@ -40,8 +40,8 @@ const QuestionSelect = ({ question, useForm, component, theme, ...props }) => {
       <div
         sx={
           question.id
-            ? theme?.selectContainer[question.id]
-            : theme?.selectContainer
+            ? theme && theme.selectContainer[question.id]
+            : theme && theme.selectContainer
         }
       >
         {question.label && (
@@ -64,7 +64,7 @@ const QuestionSelect = ({ question, useForm, component, theme, ...props }) => {
           setValue={setValue}
           unregister={unregister}
           label={question.label}
-          theme={theme?.select}
+          theme={theme && theme.select}
         >
           {question.config &&
             question.config.options.map((option) => {
@@ -83,7 +83,7 @@ const QuestionSelect = ({ question, useForm, component, theme, ...props }) => {
           (errors[question.name].type === 'required' ||
             errors[question.name].type === 'noEmpty') && (
             <ErrorMessage
-              theme={theme?.errorMessage}
+              theme={theme && theme.errorMessage}
               name={question.name}
               message={
                 question.errorMessages && question.errorMessages.required

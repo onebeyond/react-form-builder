@@ -26,8 +26,8 @@ const QuestionPhone = ({
       <div
         sx={
           question.id
-            ? theme?.phoneContainer[question.id]
-            : theme?.phoneContainer
+            ? theme && theme.phoneContainer[question.id]
+            : theme && theme.phoneContainer
         }
       >
         {question.label && <Label>{question.label}</Label>}
@@ -49,7 +49,7 @@ const QuestionPhone = ({
 
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
-            theme={theme?.errorMessage}
+            theme={theme && theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
@@ -57,14 +57,14 @@ const QuestionPhone = ({
         {errors[question.name] &&
           errors[question.name].type === 'isValidPhoneNumber' && (
             <ErrorMessage
-              theme={theme?.errorMessage}
+              theme={theme && theme.errorMessage}
               name={question.name}
               message='Not a valid phone number'
             />
           )}
         {errors[question.name] && errors[question.name].type === 'pattern' && (
           <ErrorMessage
-            theme={theme?.errorMessage}
+            theme={theme && theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.pattern}
           />

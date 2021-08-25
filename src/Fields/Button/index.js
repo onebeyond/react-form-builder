@@ -18,7 +18,7 @@ const Button = React.forwardRef(
         ({
           ...(disabled && { background: 'gray' })
         },
-        id ? theme[id] : theme?.default)
+        id ? theme[id] : theme && theme.default)
       }
     >
       {isLoading ? (

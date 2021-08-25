@@ -24,8 +24,8 @@ const QuestionMultipleCheckboxes = ({
     <div
       sx={
         question.id
-          ? theme?.multipleCheckboxesContainer[question.id]
-          : theme?.multipleCheckboxesContainer
+          ? theme && theme.multipleCheckboxesContainer[question.id]
+          : theme && theme.multipleCheckboxesContainer
       }
     >
       <fieldset sx={{ border: '0' }}>
@@ -35,15 +35,15 @@ const QuestionMultipleCheckboxes = ({
         <div
           sx={
             question.checkboxId
-              ? theme?.multipleCheckboxes[question.checkboxId]
-              : theme?.multipleCheckboxes
+              ? theme && theme.multipleCheckboxes[question.checkboxId]
+              : theme && theme.multipleCheckboxes
           }
         >
           {question.config &&
             question.config.options.map((option) => {
               return (
                 <div
-                  sx={theme?.multipleCheckboxes.checksContainer}
+                  sx={theme && theme.multipleCheckboxes.checksContainer}
                   key={option.value}
                 >
                   <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
@@ -92,7 +92,7 @@ const QuestionMultipleCheckboxes = ({
             })}
           {errors[question.name] && errors[question.name].type === 'required' && (
             <ErrorMessage
-              theme={theme?.errorMessage}
+              theme={theme && theme.errorMessage}
               name={question.name}
               sx={{
                 gridColumn: 1
@@ -105,7 +105,7 @@ const QuestionMultipleCheckboxes = ({
           {errors[question.name] &&
             errors[question.name].type === 'minimumLen' && (
               <ErrorMessage
-                theme={theme?.errorMessage}
+                theme={theme && theme.errorMessage}
                 name={question.name}
                 sx={{
                   gridColumn: 1
@@ -118,7 +118,7 @@ const QuestionMultipleCheckboxes = ({
           {errors[question.name] &&
             errors[question.name].type === 'maximumLen' && (
               <ErrorMessage
-                theme={theme?.errorMessage}
+                theme={theme && theme.errorMessage}
                 name={question.name}
                 sx={{
                   gridColumn: 1

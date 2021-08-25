@@ -23,11 +23,10 @@ const styles = {
 
 const QuestionCheckbox = ({
   component,
-  variant,
-  form,
   question,
   useForm,
-  onLinkOpen
+  onLinkOpen,
+  theme
 }) => {
   const { errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
@@ -36,11 +35,11 @@ const QuestionCheckbox = ({
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={{
-        variant: question.id
-          ? 'forms.checkboxContainer.' + question.id
-          : 'forms.checkboxContainer'
-      }}
+      sx={
+        question.id
+          ? theme.checkboxContainer[question.id]
+          : theme.checkboxContainer
+      }
     >
       <div sx={styles.centerStyle} key={question.name}>
         <Label htmlFor={question.name} sx={styles.centerStyle}>
@@ -64,6 +63,7 @@ const QuestionCheckbox = ({
         </Label>
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

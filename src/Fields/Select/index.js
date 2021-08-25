@@ -14,10 +14,12 @@ const Select = ({
   unregister,
   defaultValue,
   registerConfig,
+  theme = {},
   label,
   ...props
 }) => {
-  const { theme } = useThemeUI()
+  // const { theme: themeUI } = useThemeUI()
+
   const selectStyles = {
     option: {},
     clearIndicator: {},
@@ -46,30 +48,30 @@ const Select = ({
   const customStyles = {}
 
   Object.keys(selectStyles).map((property) => {
-    if (theme && theme.select && theme.select[property]) {
-      selectStyles[property] = theme.select[property]
+    if (theme && theme[property]) {
+      selectStyles[property] = theme[property]
       customStyles[property] = (provided, state) => {
         if (state.isDisabled) {
           return {
             ...provided,
-            ...theme.select[property].isDisabled
+            ...theme[property].isDisabled
           }
         }
         if (state.isSelected) {
           return {
             ...provided,
-            ...theme.select[property].isSelected
+            ...theme[property].isSelected
           }
         }
         if (state.isFocused) {
           return {
             ...provided,
-            ...theme.select[property].isFocused
+            ...theme[property].isFocused
           }
         }
         return {
           ...provided,
-          ...theme.select[property]
+          ...theme[property]
         }
       }
     }

@@ -13,7 +13,7 @@ const styles = {
   }
 }
 
-const QuestionInput = ({ question, useForm, component }) => {
+const QuestionInput = ({ question, useForm, component, theme }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -21,11 +21,9 @@ const QuestionInput = ({ question, useForm, component }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={{
-        variant: question.id
-          ? 'forms.inputContainer.' + question.id
-          : 'forms.inputContainer'
-      }}
+      sx={
+        question.id ? theme.inputContainer[question.id] : theme.inputContainer
+      }
     >
       <div sx={styles.boxIconStyle}>
         {question.label && (
@@ -37,7 +35,7 @@ const QuestionInput = ({ question, useForm, component }) => {
             <Icon
               icon={question.icon}
               tooltip={question.tooltip}
-              sx={{ variant: 'forms.icon' }}
+              sx={theme.icon}
             />
           </div>
         )}
@@ -58,12 +56,14 @@ const QuestionInput = ({ question, useForm, component }) => {
       />
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
+          theme={theme.errorMessage}
           name={question.name}
           message={question.errorMessages && question.errorMessages.required}
         />
       )}
       {errors[question.name] && errors[question.name].type === 'pattern' && (
         <ErrorMessage
+          theme={theme.errorMessage}
           name={question.name}
           message={question.errorMessages && question.errorMessages.pattern}
         />

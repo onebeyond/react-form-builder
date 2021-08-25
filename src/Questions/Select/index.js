@@ -30,7 +30,7 @@ const getOptions = (question) => {
   )
 }
 
-const QuestionSelect = ({ question, useForm, component, ...props }) => {
+const QuestionSelect = ({ question, useForm, component, theme, ...props }) => {
   const { register, errors, setValue, unregister, trigger } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
   return component ? (
@@ -38,11 +38,11 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
   ) : (
     <React.Fragment>
       <div
-        sx={{
-          variant: question.id
-            ? 'forms.selectContainer.' + question.id
-            : 'forms.selectContainer'
-        }}
+        sx={
+          question.id
+            ? theme.selectContainer[question.id]
+            : theme.selectContainer
+        }
       >
         {question.label && (
           <Label htmlFor={question.name}>{question.label}</Label>
@@ -64,6 +64,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           setValue={setValue}
           unregister={unregister}
           label={question.label}
+          theme={theme.select}
         >
           {question.config &&
             question.config.options.map((option) => {
@@ -82,6 +83,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           (errors[question.name].type === 'required' ||
             errors[question.name].type === 'noEmpty') && (
             <ErrorMessage
+              theme={theme.errorMessage}
               name={question.name}
               message={
                 question.errorMessages && question.errorMessages.required

@@ -34,16 +34,20 @@ const FormBuilder = ({
   idForm = '',
   isMobile,
   isoCode,
+  theme = {},
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
   const { errors } = useFormObj
+  const { forms, text } = theme
 
   const QuestionsMap = (question) => {
     return {
       box: (
         <div
-          sx={{ variant: 'forms.boxContainer' }}
+          sx={{
+            variant: 'forms.boxContainer'
+          }}
           data-testid='question-builder'
         >
           {question.label && <Label>{question.label}</Label>}
@@ -64,6 +68,7 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           component={props.customInput}
+          theme={forms}
         />
       ),
       select: (
@@ -72,6 +77,7 @@ const FormBuilder = ({
             useForm={useFormObj}
             question={question}
             component={props.customSelect}
+            theme={forms}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
@@ -86,6 +92,7 @@ const FormBuilder = ({
           countryAndRegionsData={props.countryAndRegionsData}
           component={props.customCountry}
           language={props.language}
+          theme={forms}
         />
       ),
       checkbox: (
@@ -95,6 +102,7 @@ const FormBuilder = ({
           form={form}
           component={props.customCheckbox}
           onLinkOpen={props.onLinkOpen}
+          theme={forms}
         />
       ),
       static: (
@@ -106,6 +114,7 @@ const FormBuilder = ({
           question={question}
           component={props.customRadio}
           onLinkOpen={props.onLinkOpen}
+          theme={forms}
         />
       ),
       date: (
@@ -115,6 +124,7 @@ const FormBuilder = ({
           language={props.language}
           isMobile={isMobile}
           component={props.customDate}
+          theme={forms}
         />
       ),
       phone: (
@@ -124,6 +134,7 @@ const FormBuilder = ({
           isMobile={isMobile}
           isoCode={isoCode}
           component={props.customPhone}
+          theme={forms}
         />
       ),
       multiple_checkboxes: (
@@ -132,6 +143,7 @@ const FormBuilder = ({
           question={question}
           form={form}
           component={props.customMultipleCheckboxes}
+          theme={forms}
         />
       ),
       markdown: (
@@ -142,6 +154,7 @@ const FormBuilder = ({
           currentPath={currentPath}
           component={props.customMarkdown}
           onLinkOpen={props.onLinkOpen}
+          theme={forms}
         />
       )
     }
@@ -203,12 +216,11 @@ const FormBuilder = ({
   return (
     <form id={idForm} onSubmit={useFormObj.handleSubmit(onSubmit)}>
       <div
-        sx={{
-          variant:
-            form && form.layout
-              ? 'forms.container.' + (form && form.layout)
-              : 'forms.container'
-        }}
+        sx={
+          form && form.layout
+            ? forms.container[form && form.layout]
+            : forms.container
+        }
       >
         {form &&
           Array.isArray(form.questions) &&
@@ -224,12 +236,12 @@ const FormBuilder = ({
           form.callForAction &&
           form.callForAction.map((cfa, key) => {
             return (
-              <div sx={{ variant: 'forms.submitContainer' }} key={key}>
+              <div sx={forms.submitContainer} key={key}>
                 {form.accessibilityError && (
                   <div
                     className='visuallyhidden'
                     sx={{
-                      variant: 'text.accessibilityError',
+                      ...text.accessibilityError,
                       display:
                         Object.keys(errors).length !== 0 ? 'flex' : 'none'
                     }}

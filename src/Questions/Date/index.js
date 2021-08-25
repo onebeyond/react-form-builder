@@ -12,6 +12,7 @@ const QuestionDate = ({
   question,
   isMobile,
   language,
+  theme,
   ...props
 }) => {
   const { errors, register, setValue } = useForm
@@ -21,11 +22,9 @@ const QuestionDate = ({
   ) : (
     <React.Fragment>
       <div
-        sx={{
-          variant: question.id
-            ? 'forms.dateContainer.' + question.id
-            : 'forms.dateContainer'
-        }}
+        sx={
+          question.id ? theme.dateContainer[question.id] : theme.dateContainer
+        }
       >
         {question.label && (
           <Label htmlFor={question.name}>{question.label}</Label>
@@ -33,7 +32,7 @@ const QuestionDate = ({
         <Date
           id={question.name}
           aria-describedby={'error_message_' + question.name}
-          sx={{ width: '100%', variant: 'forms.input' }}
+          sx={(theme.input, { width: '100%' })}
           placeholder={question.placeholder}
           key={question.name}
           language={language}
@@ -50,11 +49,13 @@ const QuestionDate = ({
         />
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             message={question.errorMessages && question.errorMessages.required}
           />
         )}
         {errors[question.name] && errors[question.name].type === 'underAge' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.underAge}
           />

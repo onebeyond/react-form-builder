@@ -10,18 +10,20 @@ const defaultStyles = {
   fontSize: '14px'
 }
 
-const ErrorMessage = React.forwardRef(({ message, name, ...props }, ref) => {
-  return (
-    <p
-      id={'error_message_' + name}
-      className='error-message'
-      ref={ref}
-      sx={defaultStyles}
-      {...props}
-    >
-      {message}
-    </p>
-  )
-})
+const ErrorMessage = React.forwardRef(
+  ({ message, name, theme, ...props }, ref) => {
+    return (
+      <p
+        id={'error_message_' + name}
+        className='error-message'
+        ref={ref}
+        sx={theme || defaultStyles}
+        {...props}
+      >
+        {message}
+      </p>
+    )
+  }
+)
 
 export default ErrorMessage

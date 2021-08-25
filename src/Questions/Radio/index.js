@@ -11,7 +11,7 @@ const styles = {
     alignItems: 'center'
   }
 }
-const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
+const QuestionRadio = ({ component, question, useForm, onLinkOpen, theme }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -28,7 +28,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
               ...question.registerConfig
             })}
           />
-          <p sx={{ variant: 'forms.radio.text' }}>{option.label}</p>
+          <p sx={theme.radio.text}>{option.label}</p>
         </Label>
       )
     })
@@ -40,18 +40,16 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={{
-        variant: question.id
-          ? 'forms.radioContainer.' + question.id
-          : 'forms.radioContainer'
-      }}
+      sx={
+        question.id ? theme.radioContainer[question.id] : theme.radioContainer
+      }
     >
       <fieldset sx={{ border: '0', margin: '0', padding: '0' }}>
         {question.accessibility ? (
           <legend htmlFor={question.name}>{question.label}</legend>
         ) : (
           <ReactMarkdown
-            sx={{ variant: 'forms.radio.markdown' }}
+            sx={theme.radio.markdown}
             source={question.label}
             onLinkOpen={onLinkOpen}
           />
@@ -61,6 +59,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
 
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

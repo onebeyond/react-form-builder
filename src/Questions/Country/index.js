@@ -83,8 +83,8 @@ const QuestionCountry = ({
       data-testid='question-country'
       sx={
         question.id
-          ? theme.countryContainer[question.id]
-          : theme.countryContainer
+          ? theme?.countryContainer[question.id]
+          : theme?.countryContainer
       }
     >
       {question.label && (
@@ -107,7 +107,7 @@ const QuestionCountry = ({
         placeholder={question.placeholder}
         unregister={unregister}
         label={question.label}
-        theme={theme.select}
+        theme={theme?.select}
         {...props}
       >
         {renderCountryOptions(
@@ -118,7 +118,7 @@ const QuestionCountry = ({
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (
           <ErrorMessage
-            theme={theme.errorMessage}
+            theme={theme?.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

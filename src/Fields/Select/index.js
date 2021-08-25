@@ -2,7 +2,6 @@
 
 import React from 'react'
 
-import { useThemeUI } from 'theme-ui'
 import { RHFInput } from 'react-hook-form-input'
 import ReactSelect from 'react-select'
 

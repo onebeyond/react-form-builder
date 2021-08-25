@@ -37,8 +37,8 @@ const QuestionCheckbox = ({
     <div
       sx={
         question.id
-          ? theme.checkboxContainer[question.id]
-          : theme.checkboxContainer
+          ? theme?.checkboxContainer[question.id]
+          : theme?.checkboxContainer
       }
     >
       <div sx={styles.centerStyle} key={question.name}>
@@ -63,7 +63,7 @@ const QuestionCheckbox = ({
         </Label>
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
-            theme={theme.errorMessage}
+            theme={theme?.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

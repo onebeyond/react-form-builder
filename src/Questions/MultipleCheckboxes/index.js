@@ -8,7 +8,13 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from 'react-markdown'
 
-const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
+const QuestionMultipleCheckboxes = ({
+  component,
+  form,
+  question,
+  useForm,
+  theme
+}) => {
   const { getValues, errors, register } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -16,30 +22,28 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
     <CustomComponent component={component} />
   ) : (
     <div
-      sx={{
-        variant: question.id
-          ? 'forms.multipleCheckboxesContainer.' + question.id
-          : 'forms.multipleCheckboxesContainer'
-      }}
+      sx={
+        question.id
+          ? theme.multipleCheckboxesContainer[question.id]
+          : theme.multipleCheckboxesContainer
+      }
     >
       <fieldset sx={{ border: '0' }}>
         {question.label && (
           <legend htmlFor={question.name}>{question.label}</legend>
         )}
         <div
-          sx={{
-            variant: question.checkboxId
-              ? 'forms.multipleCheckboxes' + question.checkboxId
-              : 'forms.multipleCheckboxes'
-          }}
+          sx={
+            question.checkboxId
+              ? theme.multipleCheckboxes[question.checkboxId]
+              : theme.multipleCheckboxes
+          }
         >
           {question.config &&
             question.config.options.map((option) => {
               return (
                 <div
-                  sx={{
-                    variant: 'forms.multipleCheckboxes.checksContainer'
-                  }}
+                  sx={theme.multipleCheckboxes.checksContainer}
                   key={option.value}
                 >
                   <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
@@ -88,6 +92,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
             })}
           {errors[question.name] && errors[question.name].type === 'required' && (
             <ErrorMessage
+              theme={theme.errorMessage}
               name={question.name}
               sx={{
                 gridColumn: 1
@@ -100,6 +105,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           {errors[question.name] &&
             errors[question.name].type === 'minimumLen' && (
               <ErrorMessage
+                theme={theme.errorMessage}
                 name={question.name}
                 sx={{
                   gridColumn: 1
@@ -112,6 +118,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           {errors[question.name] &&
             errors[question.name].type === 'maximumLen' && (
               <ErrorMessage
+                theme={theme.errorMessage}
                 name={question.name}
                 sx={{
                   gridColumn: 1

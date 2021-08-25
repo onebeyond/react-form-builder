@@ -12,6 +12,7 @@ const QuestionPhone = ({
   isoCode,
   question,
   useForm,
+  theme,
   ...props
 }) => {
   const { clearErrors, errors, register, setError, setValue } = useForm
@@ -23,11 +24,9 @@ const QuestionPhone = ({
   ) : (
     <React.Fragment>
       <div
-        sx={{
-          variant: question.id
-            ? 'forms.phoneContainer.' + question.id
-            : 'forms.phoneContainer'
-        }}
+        sx={
+          question.id ? theme.phoneContainer[question.id] : theme.phoneContainer
+        }
       >
         {question.label && <Label>{question.label}</Label>}
 
@@ -48,6 +47,7 @@ const QuestionPhone = ({
 
         {errors[question.name] && errors[question.name].type === 'required' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />
@@ -55,12 +55,14 @@ const QuestionPhone = ({
         {errors[question.name] &&
           errors[question.name].type === 'isValidPhoneNumber' && (
             <ErrorMessage
+              theme={theme.errorMessage}
               name={question.name}
               message='Not a valid phone number'
             />
           )}
         {errors[question.name] && errors[question.name].type === 'pattern' && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.pattern}
           />

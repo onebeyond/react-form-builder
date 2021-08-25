@@ -40,6 +40,7 @@ const QuestionCountry = ({
   useForm,
   countryAndRegionsData,
   language,
+  theme,
   ...props
 }) => {
   const { errors, register, setValue, unregister, trigger } = useForm
@@ -80,11 +81,11 @@ const QuestionCountry = ({
   ) : (
     <div
       data-testid='question-country'
-      sx={{
-        variant: question.id
-          ? 'forms.countryContainer.' + question.id
-          : 'forms.countryContainer'
-      }}
+      sx={
+        question.id
+          ? theme.countryContainer[question.id]
+          : theme.countryContainer
+      }
     >
       {question.label && (
         <Label htmlFor={question.name} data-testid='country-label'>
@@ -106,6 +107,7 @@ const QuestionCountry = ({
         placeholder={question.placeholder}
         unregister={unregister}
         label={question.label}
+        theme={theme.select}
         {...props}
       >
         {renderCountryOptions(
@@ -116,6 +118,7 @@ const QuestionCountry = ({
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (
           <ErrorMessage
+            theme={theme.errorMessage}
             name={question.name}
             message={question.errorMessages && question.errorMessages.required}
           />

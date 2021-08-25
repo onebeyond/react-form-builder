@@ -9,7 +9,8 @@ const QuestionMarkdown = ({
   form,
   question,
   useForm,
-  onLinkOpen
+  onLinkOpen,
+  theme
 }) => {
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -18,14 +19,14 @@ const QuestionMarkdown = ({
   ) : (
     <div
       key={question.name}
-      sx={{
-        variant: question.id
-          ? 'forms.markdownContainer.' + question.id
-          : 'forms.markdownContainer'
-      }}
+      sx={
+        question.id
+          ? theme.markdownContainer[question.id]
+          : theme.markdownContainer
+      }
     >
       <ReactMarkdown
-        sx={{ variant: 'forms.markdown' }}
+        sx={theme.markdown}
         source={question.label}
         onLinkOpen={onLinkOpen}
         modalLabel={question.modalLabel}

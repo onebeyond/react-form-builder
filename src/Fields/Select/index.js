@@ -46,30 +46,36 @@ const Select = ({
   const customStyles = {}
 
   Object.keys(selectStyles).map((property) => {
-    if (theme && theme.select && theme.select[property]) {
-      selectStyles[property] = theme.select[property]
+    if (
+      theme &&
+      theme.forms &&
+      theme.forms.select &&
+      theme.forms.select[property]
+    ) {
+      selectStyles[property] =
+        theme && theme.forms && theme.forms.select[property]
       customStyles[property] = (provided, state) => {
         if (state.isDisabled) {
           return {
             ...provided,
-            ...theme.select[property].isDisabled
+            ...theme.forms.select[property].isDisabled
           }
         }
         if (state.isSelected) {
           return {
             ...provided,
-            ...theme.select[property].isSelected
+            ...theme.forms.select[property].isSelected
           }
         }
         if (state.isFocused) {
           return {
             ...provided,
-            ...theme.select[property].isFocused
+            ...theme.forms.select[property].isFocused
           }
         }
         return {
           ...provided,
-          ...theme.select[property]
+          ...theme.forms.select[property]
         }
       }
     }

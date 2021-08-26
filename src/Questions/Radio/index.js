@@ -46,9 +46,11 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
           : 'forms.radioContainer'
       }}
     >
-      <fieldset sx={{ border: '0', margin: '0', padding: '0' }}>
+      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
         {question.accessibility ? (
-          <legend htmlFor={question.name}>{question.label}</legend>
+          <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
+            {question.label}
+          </legend>
         ) : (
           <ReactMarkdown
             sx={{ variant: 'forms.radio.markdown' }}

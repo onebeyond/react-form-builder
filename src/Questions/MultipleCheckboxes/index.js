@@ -22,9 +22,11 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           : 'forms.multipleCheckboxesContainer'
       }}
     >
-      <fieldset sx={{ border: '0' }}>
+      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
         {question.label && (
-          <legend htmlFor={question.name}>{question.label}</legend>
+          <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
+            {question.label}
+          </legend>
         )}
         <div
           sx={{

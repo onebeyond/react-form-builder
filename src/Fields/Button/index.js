@@ -30,7 +30,7 @@ const Button = React.forwardRef(
       sx={{
         ...defaultStyles,
         ...(disabled && { background: 'gray' }),
-        variant: id ? `buttons.${id}` : 'buttons.primary'
+        variant: id ? `forms.buttons.${id}` : 'forms.buttons.default'
       }}
     >
       {isLoading ? (

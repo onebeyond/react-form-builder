@@ -44,7 +44,13 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                   }}
                   key={option.value}
                 >
-                  <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
+                  <Label
+                    htmlFor={option.name}
+                    sx={{
+                      variant: 'forms.multipleCheckboxes.label',
+                      alignItems: 'center'
+                    }}
+                  >
                     <Checkbox
                       data-testid='question-singleCheckbox'
                       id={option.name}
@@ -73,6 +79,10 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       <img src={option.src} />
                     ) : (
                       <ReactMarkdown
+                        sx={{
+                          // variant: 'forms.multipleCheckboxes.label',
+                          p: { m: '0px' }
+                        }}
                         source={option.label}
                         renderers={{
                           // eslint-disable-next-line react/display-name

@@ -8,19 +8,6 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from '../../Fields/Markdown'
 
-const styles = {
-  selectOption: {
-    background: 'bg',
-    color: 'black'
-  },
-  markDown: {
-    width: ['90%', '95%', '95%'],
-    p: {
-      margin: 0
-    }
-  }
-}
-
 const QuestionCheckbox = ({
   component,
   variant,
@@ -42,12 +29,16 @@ const QuestionCheckbox = ({
           : 'forms.checkboxContainer'
       }}
     >
-      <div sx={styles.centerStyle} key={question.name}>
-        <Label htmlFor={question.name} sx={styles.centerStyle}>
+      <div key={question.name}>
+        <Label
+          htmlFor={question.name}
+          sx={{
+            variant: 'forms.checkbox.label'
+          }}
+        >
           <Checkbox
             id={question.name}
             aria-describedby={'error_message_' + question.name}
-            sx={styles.checkboxMinWidth}
             name={question.name}
             defaultChecked={question.defaultChecked}
             ref={register({
@@ -56,7 +47,10 @@ const QuestionCheckbox = ({
             data-testid='question-checkbox'
           />
           <ReactMarkdown
-            sx={styles.markDown}
+            sx={{
+              alignSelf: 'center',
+              p: { m: '0px' }
+            }}
             source={question.label}
             onLinkOpen={onLinkOpen}
             modalLabel={question.modalLabel}

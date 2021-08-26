@@ -5,7 +5,7 @@ import QuestionRadio from '../'
 
 const question = {
   name: 'alpinef1_seasonlaunch_2021_opt_in_alpineracing',
-  label: '**question text to display**',
+  label: 'question text to display',
   type: 'radio',
   options: [
     {

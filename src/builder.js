@@ -201,56 +201,55 @@ const FormBuilder = ({
   }
 
   return (
-    <form id={idForm} onSubmit={useFormObj.handleSubmit(onSubmit)}>
-      <div
-        sx={{
-          variant:
-            form && form.layout
-              ? 'forms.container.' + (form && form.layout)
-              : 'forms.container'
-        }}
-      >
-        {form &&
-          Array.isArray(form.questions) &&
-          form.questions.map((question, i) => {
-            return (
-              <React.Fragment key={i}>
-                {QuestionsMap(question)[question.type] ||
-                  QuestionsMap(question).default}
-              </React.Fragment>
-            )
-          })}
-        {form &&
-          form.callForAction &&
-          form.callForAction.map((cfa, key) => {
-            return (
-              <div sx={{ variant: 'forms.submitContainer' }} key={key}>
-                {form.accessibilityError && (
-                  <div
-                    className='visuallyhidden'
-                    sx={{
-                      variant: 'text.accessibilityError',
-                      display:
-                        Object.keys(errors).length !== 0 ? 'flex' : 'none'
-                    }}
-                    aria-live='assertive'
-                  >
-                    {form.accessibilityError}
-                  </div>
-                )}
-                <Button
-                  sx={styles.fitContent}
-                  key={cfa.caption}
-                  isLoading={isLoading}
-                  id={cfa.id}
-                  caption={cfa.caption}
-                  type={cfa.type}
-                  {...cfa}
-                />
-              </div>
-            )
-          })}
-      </div>
+    <form
+      id={idForm}
+      sx={{
+        variant:
+          form && form.layout
+            ? 'forms.container.' + (form && form.layout)
+            : 'forms.container'
+      }}
+      onSubmit={useFormObj.handleSubmit(onSubmit)}
+    >
+      {form &&
+        Array.isArray(form.questions) &&
+        form.questions.map((question, i) => {
+          return (
+            <React.Fragment key={i}>
+              {QuestionsMap(question)[question.type] ||
+                QuestionsMap(question).default}
+            </React.Fragment>
+          )
+        })}
+      {form &&
+        form.callForAction &&
+        form.callForAction.map((cfa, key) => {
+          return (
+            <div sx={{ variant: 'forms.submitContainer' }} key={key}>
+              {form.accessibilityError && (
+                <div
+                  className='visuallyhidden'
+                  sx={{
+                    variant: 'text.accessibilityError',
+                    display: Object.keys(errors).length !== 0 ? 'flex' : 'none'
+                  }}
+                  aria-live='assertive'
+                >
+                  {form.accessibilityError}
+                </div>
+              )}
+              <Button
+                sx={styles.fitContent}
+                key={cfa.caption}
+                isLoading={isLoading}
+                id={cfa.id}
+                caption={cfa.caption}
+                type={cfa.type}
+                {...cfa}
+              />
+            </div>
+          )
+        })}
     </form>
   )
 }

@@ -16,14 +16,14 @@ const prioritySort = (countries, order) => {
   order.filter((isoCountryCode) => {
     return countries.find((country) => {
       if (
-        isoCountryCode.toString().toLowerCase() === country[1].toLowerCase()
+        isoCountryCode.toString().toLowerCase() === country.cs.toLowerCase()
       ) {
         countryOrder.push(country)
       }
     })
   })
 
-  const origin = countries.filter((item) => !order.includes(item[1]))
+  const origin = countries.filter((item) => !order.includes(item.cs))
 
   return [...countryOrder, ...origin]
 }
@@ -59,8 +59,8 @@ const QuestionCountry = ({
 
     return [].concat(
       filteredCountries.map((country) => ({
-        value: country[1],
-        label: country[0]
+        value: country.cs,
+        label: country.cn
       }))
     )
   }

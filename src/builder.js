@@ -80,13 +80,19 @@ const FormBuilder = ({
         </>
       ),
       country: (
-        <QuestionCountry
-          useForm={useFormObj}
-          question={question}
-          countryAndRegionsData={props.countryAndRegionsData}
-          component={props.customCountry}
-          language={props.language}
-        />
+        <>
+          <QuestionCountry
+            useForm={useFormObj}
+            question={question}
+            countryAndRegionsData={props.countryAndRegionsData}
+            component={props.customCountry}
+            language={props.language}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
       ),
       checkbox: (
         <QuestionCheckbox

@@ -14,12 +14,12 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
     const radio = question.options.map((option) => {
       return (
         <Label
-          htmlFor={option.label}
+          htmlFor={option.label + question.name}
           sx={{ variant: 'forms.radio.label', alignItems: 'center' }}
-          key={option.label}
+          key={option.label + question.name}
         >
           <Radio
-            id={option.label}
+            id={option.label + question.name}
             aria-describedby={'error_message_' + question.name}
             name={question.name}
             value={option.value}

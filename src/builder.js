@@ -41,8 +41,7 @@ const FormBuilder = ({
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
   const { errors } = useFormObj
 
-  const isJSONvalidated = (validateJSON && validate(form)) || true
-
+  validateJSON && validate(form)
   // throw exception y return null
   const QuestionsMap = (question) => {
     return {
@@ -211,7 +210,7 @@ const FormBuilder = ({
     onSubmitForm(formatData(data))
   }
 
-  return isJSONvalidated ? (
+  return (
     <form
       id={idForm}
       sx={{
@@ -262,8 +261,6 @@ const FormBuilder = ({
           )
         })}
     </form>
-  ) : (
-    <h1>Please check your JSON</h1>
   )
 }
 

@@ -30,6 +30,7 @@ beforeEach(() => {
       isoCode='ES'
       isLoading={false}
       onSubmit={mockHandler}
+      // validateJSON
     />
   )
 })

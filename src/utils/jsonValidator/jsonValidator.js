@@ -9,9 +9,7 @@ const schema = Joi.object({
   caption: Joi.string().min(3).required(),
   enabled: Joi.boolean().required(),
   subCaption: Joi.string().min(3),
-  questions: questionsSchema,
-  question: Joi.array(),
-  refrigeratorQuestions: questionsSchema,
+  questions: questionsSchema.required(),
   textToShow: Joi.object(),
   callForAction: Joi.array().required(),
   id: Joi.string().required()
@@ -20,10 +18,8 @@ const schema = Joi.object({
 const validate = (json) => {
   const result = schema.validate(json)
   if (result.error) {
-    console.log(Joi.compile(json))
-    throw new Error(`Validation errors: ${result.error}`)
+    console.log('JSON validation returned an error: ', result.error.details)
   }
-  return result.value
 }
 
 export default validate

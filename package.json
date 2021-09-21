@@ -72,8 +72,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-uglify": "^6.0.4",
-    "react-scripts": "^3.4.1"
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "files": [
     "dist"
@@ -85,6 +84,7 @@
     "react-markdown": "^5.0.3",
     "react-phone-number-input": "^3.1.10",
     "react-select": "^4.0.2",
-    "theme-ui": "^0.10.0"
+    "theme-ui": "^0.10.0",
+    "react-scripts": "^3.4.1"
   }
 }

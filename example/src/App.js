@@ -181,6 +181,7 @@ const App = () => {
         isoCode='ES'
         onLinkOpen={onLinkOpen}
         isLoading={isLoading}
+        validateJSON
       />
     </>
   )

@@ -8,9 +8,8 @@ const inputSchema = baseQuestionSchema.append({
   }),
   tooltip: Joi.object().keys({
     text: Joi.string(),
-    config: Joi.object().keys({
-      backgroundColor: Joi.string()
-    })
+    config: Joi.object(),
+    textStyle: Joi.object()
   })
 })
 

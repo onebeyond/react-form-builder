@@ -8,6 +8,9 @@ const question = Joi.object().keys({
   placeholder: Joi.string().allow(''),
   errorMessages: Joi.object(),
   registerConfig: Joi.object(),
-  dependentQuestions: Joi.array().items(Joi.link('...'))
+  dependentQuestions: Joi.array().items({
+    conditions: Joi.array(),
+    question: Joi.object()
+  })
 })
 export default question

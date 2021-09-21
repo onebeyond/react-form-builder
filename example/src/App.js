@@ -44,7 +44,7 @@ const App = () => {
   const [privacyAllow, setPrivacyAllow] = useState(false)
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
-  const[isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(false)
 
   function onLinkOpen(name) {
     setModalText(forms.contact.textToShow[name])
@@ -117,13 +117,14 @@ const App = () => {
   }
 
   const onSubmitForm = (data) => {
-    !isLoading && alert(
-      `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
-        data,
-        null,
-        2
-      )}`
-    )
+    !isLoading &&
+      alert(
+        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+          data,
+          null,
+          2
+        )}`
+      )
     setLoading(true)
     setTimeout(() => {
       setLoading(false)

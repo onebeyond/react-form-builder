@@ -16,7 +16,7 @@ const ErrorMessage = React.forwardRef(({ message, name, ...props }, ref) => {
       id={'error_message_' + name}
       className='error-message'
       ref={ref}
-      sx={defaultStyles}
+      sx={{ ...defaultStyles, variant: 'forms.errorMessage' }}
       {...props}
     >
       {message}

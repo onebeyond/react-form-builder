@@ -16,14 +16,14 @@ const prioritySort = (countries, order) => {
   order.filter((isoCountryCode) => {
     return countries.find((country) => {
       if (
-        isoCountryCode.toString().toLowerCase() === country[1].toLowerCase()
+        isoCountryCode.toString().toLowerCase() === country.cs.toLowerCase()
       ) {
         countryOrder.push(country)
       }
     })
   })
 
-  const origin = countries.filter((item) => !order.includes(item[1]))
+  const origin = countries.filter((item) => !order.includes(item.cs))
 
   return [...countryOrder, ...origin]
 }
@@ -42,7 +42,7 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue, unregister, trigger } = useForm
+  const { errors, register, setValue, unregister, trigger, watch } = useForm
 
   const CustomComponent = ({ component }) => component(question, useForm)
 
@@ -59,10 +59,25 @@ const QuestionCountry = ({
 
     return [].concat(
       filteredCountries.map((country) => ({
-        value: country[1],
-        label: country[0]
+        value: country.cs,
+        label: country.cn
       }))
     )
+  }
+
+  const getRegionOptions = (country) => {
+    const list =
+      countryAndRegionsData.find((item) => item.cn === country) &&
+      countryAndRegionsData
+        .find((item) => item.cn === country)
+        .regions.map((option) => {
+          return {
+            value: option.cn,
+            label: option.cn
+          }
+        })
+
+    return list
   }
 
   const renderCountryOptions = (items) => {
@@ -72,8 +87,9 @@ const QuestionCountry = ({
       </option>
     ))
   }
-
-  const options = getCountriesOptions(question.placeholder, countryAndRegions)
+  const options = question.region
+    ? getRegionOptions(watch('Country').label)
+    : getCountriesOptions(question.placeholder, countryAndRegions)
 
   return component ? (
     <CustomComponent component={component} />

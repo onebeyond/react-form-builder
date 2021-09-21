@@ -22,9 +22,11 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           : 'forms.multipleCheckboxesContainer'
       }}
     >
-      <fieldset sx={{ border: '0' }}>
+      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
         {question.label && (
-          <legend htmlFor={question.name}>{question.label}</legend>
+          <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
+            {question.label}
+          </legend>
         )}
         <div
           sx={{
@@ -42,7 +44,13 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                   }}
                   key={option.value}
                 >
-                  <Label htmlFor={option.name} sx={{ alignItems: 'center' }}>
+                  <Label
+                    htmlFor={option.name}
+                    sx={{
+                      variant: 'forms.multipleCheckboxes.label',
+                      alignItems: 'center'
+                    }}
+                  >
                     <Checkbox
                       data-testid='question-singleCheckbox'
                       id={option.name}
@@ -71,6 +79,10 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       <img src={option.src} />
                     ) : (
                       <ReactMarkdown
+                        sx={{
+                          // variant: 'forms.multipleCheckboxes.label',
+                          p: { m: '0px' }
+                        }}
                         source={option.label}
                         renderers={{
                           // eslint-disable-next-line react/display-name

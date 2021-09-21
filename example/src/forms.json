@@ -13,13 +13,17 @@
         "label": "input label",
         "placeholder": "input placeholder",
         "icon": {
-          "name": "question",
+          "name": "question-circle",
           "fill": "red"
         },
         "tooltip": {
           "text": "tooltip text example",
           "config": {
-            "backgroundColor": "green"
+            "backgroundColor": "green",
+            "textAlign": "center"
+          },
+          "textStyle": {
+            "color": "pink"
           }
         },
         "errorMessages": {

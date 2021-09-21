@@ -35,12 +35,14 @@ const FormBuilder = ({
   idForm = '',
   isMobile,
   isoCode,
+  validateJSON,
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
   const { errors } = useFormObj
 
-  console.log(validate(form))
+  const isJSONvalidated = (validateJSON && validate(form)) || true
+
   // throw exception y return null
   const QuestionsMap = (question) => {
     return {
@@ -83,13 +85,19 @@ const FormBuilder = ({
         </>
       ),
       country: (
-        <QuestionCountry
-          useForm={useFormObj}
-          question={question}
-          countryAndRegionsData={props.countryAndRegionsData}
-          component={props.customCountry}
-          language={props.language}
-        />
+        <>
+          <QuestionCountry
+            useForm={useFormObj}
+            question={question}
+            countryAndRegionsData={props.countryAndRegionsData}
+            component={props.customCountry}
+            language={props.language}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
       ),
       checkbox: (
         <QuestionCheckbox
@@ -203,58 +211,59 @@ const FormBuilder = ({
     onSubmitForm(formatData(data))
   }
 
-  return (
-    <form id={idForm} onSubmit={useFormObj.handleSubmit(onSubmit)}>
-      <div
-        sx={{
-          variant:
-            form && form.layout
-              ? 'forms.container.' + (form && form.layout)
-              : 'forms.container'
-        }}
-      >
-        {form &&
-          Array.isArray(form.questions) &&
-          form.questions.map((question, i) => {
-            return (
-              <React.Fragment key={i}>
-                {QuestionsMap(question)[question.type] ||
-                  QuestionsMap(question).default}
-              </React.Fragment>
-            )
-          })}
-        {form &&
-          form.callForAction &&
-          form.callForAction.map((cfa, key) => {
-            return (
-              <div sx={{ variant: 'forms.submitContainer' }} key={key}>
-                {form.accessibilityError && (
-                  <div
-                    className='visuallyhidden'
-                    sx={{
-                      variant: 'text.accessibilityError',
-                      display:
-                        Object.keys(errors).length !== 0 ? 'flex' : 'none'
-                    }}
-                    aria-live='assertive'
-                  >
-                    {form.accessibilityError}
-                  </div>
-                )}
-                <Button
-                  sx={styles.fitContent}
-                  key={cfa.caption}
-                  isLoading={isLoading}
-                  id={cfa.id}
-                  caption={cfa.caption}
-                  type={cfa.type}
-                  {...cfa}
-                />
-              </div>
-            )
-          })}
-      </div>
+  return isJSONvalidated ? (
+    <form
+      id={idForm}
+      sx={{
+        variant:
+          form && form.layout
+            ? 'forms.container.' + (form && form.layout)
+            : 'forms.container'
+      }}
+      onSubmit={useFormObj.handleSubmit(onSubmit)}
+    >
+      {form &&
+        Array.isArray(form.questions) &&
+        form.questions.map((question, i) => {
+          return (
+            <React.Fragment key={i}>
+              {QuestionsMap(question)[question.type] ||
+                QuestionsMap(question).default}
+            </React.Fragment>
+          )
+        })}
+      {form &&
+        form.callForAction &&
+        form.callForAction.map((cfa, key) => {
+          return (
+            <div sx={{ variant: 'forms.submitContainer' }} key={key}>
+              {form.accessibilityError && (
+                <div
+                  className='visuallyhidden'
+                  sx={{
+                    variant: 'text.accessibilityError',
+                    display: Object.keys(errors).length !== 0 ? 'flex' : 'none'
+                  }}
+                  aria-live='assertive'
+                >
+                  {form.accessibilityError}
+                </div>
+              )}
+              <Button
+                sx={styles.fitContent}
+                key={cfa.caption}
+                isLoading={isLoading}
+                id={cfa.id}
+                caption={cfa.caption}
+                type={cfa.type}
+                {...cfa}
+              />
+            </div>
+          )
+        })}
     </form>
+  ) : (
+    <h1>Please check your JSON</h1>
   )
 }
 

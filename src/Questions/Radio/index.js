@@ -1,16 +1,11 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Radio from '../../Fields/Radio'
-import ReactMarkdown from '../../Fields/Markdown'
+// import ReactMarkdown from '../../Fields/Markdown'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const styles = {
-  label: {
-    alignItems: 'center'
-  }
-}
 const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
   const { register, errors } = useForm
   const CustomComponent = ({ component }) => component(question, useForm)
@@ -18,9 +13,13 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
       return (
-        <Label htmlFor={option.label} sx={styles.label} key={option.label}>
+        <Label
+          htmlFor={option.label + question.name}
+          sx={{ variant: 'forms.radio.label', alignItems: 'center' }}
+          key={option.label + question.name}
+        >
           <Radio
-            id={option.label}
+            id={option.label + question.name}
             aria-describedby={'error_message_' + question.name}
             name={question.name}
             value={option.value}
@@ -28,7 +27,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
               ...question.registerConfig
             })}
           />
-          <p sx={{ variant: 'forms.radio.text' }}>{option.label}</p>
+          <p sx={{ m: '0' }}>{option.label}</p>
         </Label>
       )
     })
@@ -46,15 +45,15 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
           : 'forms.radioContainer'
       }}
     >
-      <fieldset sx={{ border: '0', margin: '0', padding: '0' }}>
+      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
         {question.accessibility ? (
-          <legend htmlFor={question.name}>{question.label}</legend>
+          <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
+            {question.label}
+          </legend>
         ) : (
-          <ReactMarkdown
-            sx={{ variant: 'forms.radio.markdown' }}
-            source={question.label}
-            onLinkOpen={onLinkOpen}
-          />
+          <Label htmlFor={question.label} key={question.label}>
+            {question.label}
+          </Label>
         )}
 
         <div>{radioButtonGenerator(question)}</div>

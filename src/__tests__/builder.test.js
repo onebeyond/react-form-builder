@@ -22,7 +22,6 @@ beforeEach(() => {
   mockHandler = jest.fn().mockImplementation(() => {
     loaderc = true
   })
-  // mockHandler = jest.fn(() => renderHook(() => useLoading(isLoading)))
   component = render(
     <FormBuilder
       idForm={forms.contact.id}
@@ -30,7 +29,7 @@ beforeEach(() => {
       isoCode='ES'
       isLoading={false}
       onSubmit={mockHandler}
-      // validateJSON
+      validateJSON
     />
   )
 })
@@ -40,6 +39,10 @@ test('check if questions are rendered', () => {
   const allInputs = component.getAllByTestId('question-input')
   expect(allInputs.length).toBe(1)
 })
+
+// test('check if wrong JSON returns an error are rendered', () => {
+//   getByText(container, 'JSON validation returned an error')
+// })
 
 test("check if it won't call submit eventhandler if required fields are not filled in", async () => {
   const button = component.getByText('Submit Form')

@@ -28,7 +28,8 @@
         },
         "registerConfig": {
           "required": true
-        }
+        },
+        "extraConfig": "test wrong input"
       },
       {
         "name": "$Country",

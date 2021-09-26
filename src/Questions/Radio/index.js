@@ -6,9 +6,8 @@ import Radio from '../../Fields/Radio'
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
+const QuestionRadio = ({ question, useForm }) => {
   const { register, errors } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
 
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
@@ -35,9 +34,7 @@ const QuestionRadio = ({ component, question, useForm, onLinkOpen }) => {
     return radio
   }
 
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <div
       sx={{
         variant: question.id

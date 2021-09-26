@@ -89,3 +89,37 @@ test('shows an error message', () => {
 
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
+test('shows a max option error message', () => {
+  const { getByText } = render(
+    <QuestionMultipleCheckboxes
+      question={question}
+      useForm={{
+        errors: {
+          [question.name]: {
+            type: 'maximumLen'
+          }
+        },
+        register: () => {}
+      }}
+    />
+  )
+
+  expect(getByText(question.errorMessages.maximumLen)).toBeTruthy()
+})
+test('shows a minimun option error message', () => {
+  const { getByText } = render(
+    <QuestionMultipleCheckboxes
+      question={question}
+      useForm={{
+        errors: {
+          [question.name]: {
+            type: 'minimumLen'
+          }
+        },
+        register: () => {}
+      }}
+    />
+  )
+
+  expect(getByText(question.errorMessages.minimumLen)).toBeTruthy()
+})

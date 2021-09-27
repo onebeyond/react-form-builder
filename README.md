@@ -17,13 +17,27 @@ npm install --save @guidesmiths/react-form-builder
 
 ```jsx
 import React, { Component } from 'react'
+import { FormBuilder } from '@guidesmiths/react-form-builder
+import form from '../../forms/question/get.json'
 
-import MyComponent from 'react-form-builder'
-import 'react-form-builder/dist/index.css'
+const onSubmitForm = (data) => {
+    !isLoading &&
+      alert(
+        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+          data,
+          null,
+          2
+        )}`
+      )
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+   return <FormBuilder form={form} onSubmit={onSubmitForm} />
   }
 }
 ```
@@ -36,29 +50,33 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 
 # Formbuilder options
+
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
 |   form*	|  The json with the questions to create 	|  json  	|   -	|   	
-|   onSubmit*    |   Action to be realized "onSubmit" form    |    function       |   -    |  
+|   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |  
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|   
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  CountryAndRegionsData    |  Json with the acronym(s) and the names of the countries that you want to display in the `countrySelect`    |   json    | -
+|  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | - 
+
+
 
 ##### CountryAndRegionsData example:
 ```yaml
 [
-  { "countryName": "MyOwnCountry1", "countryShortCode": "MC1" },
-  { "countryName": "MyOwnCountry2", "countryShortCode": "MC2" },
-  { "countryName": "MyOwnCountry3", "countryShortCode": "MC3" },
-  { "countryName": "MyOwnCountry4", "countryShortCode": "MC4" }
+  { "cn": "MyOwnCountry1", "cs": "MC1" },
+  { "cn": "MyOwnCountry2", "cs": "MC2" },
+  { "cn": "MyOwnCountry3", "cs": "MC3" },
+  { "cn": "MyOwnCountry4", "cs": "MC4" }
 ]
 ```
 
 # Questions
 
-### Checkbox
+## Checkbox
+
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Checkbox name  	|  string 	|  - 	|   
@@ -69,24 +87,28 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
+
+Reminder: A custom link it will be indicated by the start of a '#' in the markdown label. This link will execute the action that you had sent in the onLinkOpen param in the ReactFormBuilder component.
+
 #### Checkbox example
+
 ```yaml
-{
-  "name": "terms_and_conditions",
-  "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink]('shorturl.at/dFT25')",
-  "defaultChecked": false,
-  "errorMessages": {
-    "required": "This field is required"
-  },
-  "registerConfig": {
-    "required": true
-  }
-}
+    {
+          "name": "terms_and_conditions",
+          "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink](https://www.dcsl.com/careers/)",
+          "type": "checkbox",
+          "defaultChecked": false,
+          "errorMessages": {
+            "required": "This field is required"
+          },
+          "registerConfig": {
+            "required": true
+          }
+        }
 
 ```
 
 https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-95c3-bcdce20cd858.mp4
-
 
 
 
@@ -102,6 +124,8 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the country select is required  |  boolean  | false
+
+Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list. 
 
 #### Country example:
 ```yaml
@@ -119,6 +143,11 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
   }
 }
 ```
+
+
+https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-b813-06596d9b7096.mov
+
+
 
 ### Date
 | Option  	| Description  	| Type |   Default	|   	
@@ -144,9 +173,9 @@ Basic date example
   "type": "date",
   "label": "Date of birth",
   "placeholder": "dd/mm/yyyy",
-  "openToDate": "1-1-2000",
+  "openToDate": "1/1/2000",
   "errorMessages": {
-    "required": "This field is required"
+    "required": "This field is required",
   },
   "registerConfig": {
     "required": true
@@ -171,6 +200,9 @@ Minage date example
 }
 
 ```
+
+https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-a64f-6ab0c99d72fd.mp4
+
 
 
 ### Input

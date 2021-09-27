@@ -84,6 +84,12 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 }
 
 ```
+
+https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-95c3-bcdce20cd858.mp4
+
+
+
+
 ### Country
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	

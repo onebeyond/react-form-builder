@@ -609,10 +609,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 title="Documentation">📖</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" 
 title="Test">⚠️</a> </td>
 
-<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" 
+<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" 
 title="Test">⚠️</a> </td>
 
-<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a><a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td> 
+<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td> 
 
 
   </tr>

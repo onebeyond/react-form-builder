@@ -6,21 +6,10 @@ import React from 'react'
 import Phone from '../../Fields/Phone'
 import { jsx } from 'theme-ui'
 
-const QuestionPhone = ({
-  component,
-  isMobile,
-  isoCode,
-  question,
-  useForm,
-  ...props
-}) => {
+const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
   const { clearErrors, errors, register, setError, setValue } = useForm
 
-  const CustomComponent = ({ component }) => component(question, useForm)
-
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <React.Fragment>
       <div
         sx={{

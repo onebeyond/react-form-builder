@@ -63,20 +63,10 @@ const FormBuilder = ({
             })}
         </div>
       ),
-      input: (
-        <QuestionInput
-          useForm={useFormObj}
-          question={question}
-          component={props.customInput}
-        />
-      ),
+      input: <QuestionInput useForm={useFormObj} question={question} />,
       select: (
         <>
-          <QuestionSelect
-            useForm={useFormObj}
-            question={question}
-            component={props.customSelect}
-          />
+          <QuestionSelect useForm={useFormObj} question={question} />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
               ConditionalQuestion(question.dependentQuestions, question.name)
@@ -89,7 +79,6 @@ const FormBuilder = ({
             useForm={useFormObj}
             question={question}
             countryAndRegionsData={props.countryAndRegionsData}
-            component={props.customCountry}
             language={props.language}
           />
           {question.dependentQuestions &&
@@ -103,7 +92,6 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           form={form}
-          component={props.customCheckbox}
           onLinkOpen={props.onLinkOpen}
         />
       ),
@@ -114,7 +102,6 @@ const FormBuilder = ({
         <QuestionRadio
           useForm={useFormObj}
           question={question}
-          component={props.customRadio}
           onLinkOpen={props.onLinkOpen}
         />
       ),
@@ -124,7 +111,6 @@ const FormBuilder = ({
           question={question}
           language={props.language}
           isMobile={isMobile}
-          component={props.customDate}
         />
       ),
       phone: (
@@ -133,7 +119,6 @@ const FormBuilder = ({
           question={question}
           isMobile={isMobile}
           isoCode={isoCode}
-          component={props.customPhone}
         />
       ),
       multiple_checkboxes: (
@@ -141,7 +126,6 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           form={form}
-          component={props.customMultipleCheckboxes}
         />
       ),
       markdown: (
@@ -150,7 +134,6 @@ const FormBuilder = ({
           question={question}
           form={form}
           currentPath={currentPath}
-          component={props.customMarkdown}
           onLinkOpen={props.onLinkOpen}
         />
       )

@@ -3,19 +3,8 @@
 import { jsx } from 'theme-ui'
 import ReactMarkdown from '../../Fields/Markdown'
 
-const QuestionMarkdown = ({
-  component,
-  currentPath,
-  form,
-  question,
-  useForm,
-  onLinkOpen
-}) => {
-  const CustomComponent = ({ component }) => component(question, useForm)
-
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+const QuestionMarkdown = ({ question, onLinkOpen }) => {
+  return (
     <div
       key={question.name}
       sx={{

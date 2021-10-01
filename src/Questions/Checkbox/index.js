@@ -8,20 +8,10 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from '../../Fields/Markdown'
 
-const QuestionCheckbox = ({
-  component,
-  variant,
-  form,
-  question,
-  useForm,
-  onLinkOpen
-}) => {
+const QuestionCheckbox = ({ question, useForm, onLinkOpen }) => {
   const { errors, register } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
 
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <div
       sx={{
         variant: question.id

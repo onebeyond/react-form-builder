@@ -15,10 +15,8 @@ const QuestionDate = ({
   ...props
 }) => {
   const { errors, register, setValue } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+
+  return (
     <React.Fragment>
       <div
         sx={{

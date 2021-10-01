@@ -32,10 +32,8 @@ const getOptions = (question) => {
 
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
   const { register, errors, setValue, unregister, trigger } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+
+  return (
     <React.Fragment>
       <div
         sx={{

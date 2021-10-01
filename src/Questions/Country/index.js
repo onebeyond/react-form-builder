@@ -44,8 +44,6 @@ const QuestionCountry = ({
 }) => {
   const { errors, register, setValue, unregister, trigger, watch } = useForm
 
-  const CustomComponent = ({ component }) => component(question, useForm)
-
   const countryAndRegions =
     language && countriesMapData[language]
       ? countriesMapData[language]
@@ -91,9 +89,7 @@ const QuestionCountry = ({
     ? getRegionOptions(watch('Country').label)
     : getCountriesOptions(question.placeholder, countryAndRegions)
 
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <div
       data-testid='question-country'
       sx={{

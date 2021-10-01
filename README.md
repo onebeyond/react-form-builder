@@ -17,13 +17,27 @@ npm install --save @guidesmiths/react-form-builder
 
 ```jsx
 import React, { Component } from 'react'
+import { FormBuilder } from '@guidesmiths/react-form-builder
+import form from '../../forms/question/get.json'
 
-import MyComponent from 'react-form-builder'
-import 'react-form-builder/dist/index.css'
+const onSubmitForm = (data) => {
+    !isLoading &&
+      alert(
+        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+          data,
+          null,
+          2
+        )}`
+      )
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+   return <FormBuilder form={form} onSubmit={onSubmitForm} />
   }
 }
 ```
@@ -36,29 +50,33 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 
 # Formbuilder options
+
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
 |   form*	|  The json with the questions to create 	|  json  	|   -	|   	
-|   onSubmit*    |   Action to be realized "onSubmit" form    |    function       |   -    |  
+|   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |  
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|   
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  CountryAndRegionsData    |  Json with the acronym(s) and the names of the countries that you want to display in the `countrySelect`    |   json    | -
+|  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | - 
+
+
 
 ##### CountryAndRegionsData example:
 ```yaml
 [
-  { "countryName": "MyOwnCountry1", "countryShortCode": "MC1" },
-  { "countryName": "MyOwnCountry2", "countryShortCode": "MC2" },
-  { "countryName": "MyOwnCountry3", "countryShortCode": "MC3" },
-  { "countryName": "MyOwnCountry4", "countryShortCode": "MC4" }
+  { "cn": "MyOwnCountry1", "cs": "MC1" },
+  { "cn": "MyOwnCountry2", "cs": "MC2" },
+  { "cn": "MyOwnCountry3", "cs": "MC3" },
+  { "cn": "MyOwnCountry4", "cs": "MC4" }
 ]
 ```
 
 # Questions
 
-### Checkbox
+## Checkbox
+
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Checkbox name  	|  string 	|  - 	|   
@@ -69,19 +87,24 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
+
+Reminder: A custom link it will be indicated by the start of a '#' in the markdown label. This link will execute the action that you had sent in the onLinkOpen param in the ReactFormBuilder component.
+
 #### Checkbox example
+
 ```yaml
-{
-  "name": "terms_and_conditions",
-  "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink]('shorturl.at/dFT25')",
-  "defaultChecked": false,
-  "errorMessages": {
-    "required": "This field is required"
-  },
-  "registerConfig": {
-    "required": true
-  }
-}
+    {
+          "name": "terms_and_conditions",
+          "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink](https://www.dcsl.com/careers/)",
+          "type": "checkbox",
+          "defaultChecked": false,
+          "errorMessages": {
+            "required": "This field is required"
+          },
+          "registerConfig": {
+            "required": true
+          }
+        }
 
 ```
 
@@ -89,8 +112,7 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 
 
 
-
-### Country
+## Country
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Country component name  	|  string 	|  - 	|   
@@ -103,7 +125,9 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the country select is required  |  boolean  | false
 
-#### Country example:
+Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list. 
+
+### Country example:
 ```yaml
 {
   "name": "country_of_residence",
@@ -120,7 +144,12 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 }
 ```
 
-### Date
+
+https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-b813-06596d9b7096.mov
+
+
+
+## Date
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Date name component  	|  string 	|  - 	|   
@@ -136,7 +165,7 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
 
-#### Date examples
+### Date examples
 Basic date example
 ```yaml
 {
@@ -144,9 +173,9 @@ Basic date example
   "type": "date",
   "label": "Date of birth",
   "placeholder": "dd/mm/yyyy",
-  "openToDate": "1-1-2000",
+  "openToDate": "1/1/2000",
   "errorMessages": {
-    "required": "This field is required"
+    "required": "This field is required",
   },
   "registerConfig": {
     "required": true
@@ -172,8 +201,11 @@ Minage date example
 
 ```
 
+https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-a64f-6ab0c99d72fd.mp4
 
-### Input
+
+
+## Input
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
 |   name*	|  Input name  	|  string 	|  - 	|   
@@ -185,14 +217,15 @@ Minage date example
 |  fill  | Icon color  | string  | black
 | **tooltip**  |   |  json  |   |
 |  text |  Text to be displayed on icon hover | string  | ''
+| **config**  | inside this json we could define any typical theme UI property to style the tooltip  |  json  |   |
 |   **errorMessages**	|    	| json   	|   	|   
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 | pattern  | Error message to display if there is an error pattern in the input text  |  boolean  | false
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the checkbox is required  |  boolean  | false
-| pattern  | Define the pattern to check the input  |  string  | -
+| pattern  | Define the pattern to check the input  |  string  | ""
 
-#### Input examples
+### Input examples
 Basic input example
 ```yaml
 {
@@ -227,6 +260,34 @@ Input with pattern control example
 }
 
 ```
+Input with styled icon
+```yaml
+{
+  name: 'inputName',
+  type: 'input',
+  label: 'input label',
+  placeholder: 'input placeholder',
+  icon: {
+    name: 'question-circle',
+    fill: 'red'
+  },
+  tooltip: {
+    text: 'tooltip text example',
+    config: {
+      backgroundColor: 'green'
+    }
+  },
+  errorMessages: {
+    required: 'This field is required',
+    pattern: 'This is not the right pattern'
+  },
+  registerConfig: {
+    required: true
+  }
+}
+```
+
+https://user-images.githubusercontent.com/79102959/134945983-c0c38274-05c7-42b7-8ad3-c80b33db6611.mov
 
 
 ### Markdown
@@ -247,6 +308,8 @@ Markdown example
 }
 
 ```
+![Markdown](https://user-images.githubusercontent.com/79102959/134945571-e04941d1-7972-4271-8139-4be1815ed644.png)
+
 
 ### MultipleCheckbox
 | Option  	| Description  	| Type |   Default	|   	
@@ -370,6 +433,12 @@ Multiplecheckbox with minimumLen
 }
 ```
 
+
+https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-8978-b269be0ffce9.mov
+
+
+
+
 ### Phone
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
@@ -381,21 +450,30 @@ Multiplecheckbox with minimumLen
 |  **registerConfig**       |    |  json     | 
 | required  | Define if the phone input is required  |  boolean  | false
 
+Reminder: The isoCode prop that can be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
+
 Basic phone
+
 ```yaml
 {
   "name": "phone",
   "type": "phone",
   "label": "",
   "registerConfig": {
-    "required": false
+    "required": true
   },
-  "placeholder": "Phone (not compulsory)",
+  "placeholder": "Phone",
   "errorMessages": {
     "required": "This field is required"
   }
 }
 ```
+
+
+https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-adc0-e2bef5f9d16f.mov
+
+
+
 ### RadioButton
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
@@ -434,6 +512,12 @@ Basic radiobutton
 
 ```
 
+
+
+https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-b95b-c3737ade9130.mov
+
+
+
 ### Select
 | Option  	| Description  	| Type |   Default	|   	
 |---	|---	|:---:	|:---:	|	
@@ -457,7 +541,7 @@ Select basic example
 
 ```yaml
 {
-  "name": "Género",
+  "name": "color",
   "type": "select",
   "placeholder": "Please choose an option",
   "label": "What is your favorite color?",
@@ -486,6 +570,10 @@ Select basic example
 }
 
 ```
+
+
+https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
+
 
 # To contribute
 
@@ -520,6 +608,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <td align="center"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/79102959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adrián Rodríguez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" 
 title="Documentation">📖</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" 
 title="Test">⚠️</a> </td>
+
+<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" 
+title="Test">⚠️</a> </td>
+
+<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td> 
+
+
   </tr>
 </table>
 

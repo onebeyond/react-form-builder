@@ -15,11 +15,8 @@ const styles = {
 
 const QuestionInput = ({ question, useForm, component }) => {
   const { register, errors } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
 
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <div
       sx={{
         variant: question.id

@@ -10,11 +10,7 @@ import ReactMarkdown from 'react-markdown'
 
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   const { getValues, errors, register } = useForm
-  const CustomComponent = ({ component }) => component(question, useForm)
-
-  return component ? (
-    <CustomComponent component={component} />
-  ) : (
+  return (
     <div
       sx={{
         variant: question.id
@@ -80,7 +76,6 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                     ) : (
                       <ReactMarkdown
                         sx={{
-                          // variant: 'forms.multipleCheckboxes.label',
                           p: { m: '0px' }
                         }}
                         source={option.label}
@@ -98,41 +93,18 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                 </div>
               )
             })}
-          {errors[question.name] && errors[question.name].type === 'required' && (
+          {errors[question.name] && errors[question.name].type && (
             <ErrorMessage
               name={question.name}
               sx={{
                 gridColumn: 1
               }}
               message={
-                question.errorMessages && question.errorMessages.required
+                question.errorMessages &&
+                question.errorMessages[errors[question.name].type]
               }
             />
           )}
-          {errors[question.name] &&
-            errors[question.name].type === 'minimumLen' && (
-              <ErrorMessage
-                name={question.name}
-                sx={{
-                  gridColumn: 1
-                }}
-                message={
-                  question.errorMessages && question.errorMessages.minimumLen
-                }
-              />
-            )}
-          {errors[question.name] &&
-            errors[question.name].type === 'maximumLen' && (
-              <ErrorMessage
-                name={question.name}
-                sx={{
-                  gridColumn: 1
-                }}
-                message={
-                  question.errorMessages && question.errorMessages.maximumLen
-                }
-              />
-            )}
         </div>
       </fieldset>
     </div>

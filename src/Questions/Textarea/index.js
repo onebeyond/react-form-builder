@@ -16,7 +16,6 @@ const styles = {
 const QuestionTextarea = ({ question, useForm }) => {
   const { register, errors } = useForm
   const defaultRows = 5
-  console.log('HOLA QUE TAL')
 
   return (
     <div

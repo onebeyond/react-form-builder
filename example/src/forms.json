@@ -9,7 +9,7 @@
     "questions": [
       {
         "name": "inputName",
-        "type": "input",
+        "type": "textarea",
         "label": "input label",
         "placeholder": "input placeholder",
         "icon": {

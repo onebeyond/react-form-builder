@@ -7,6 +7,7 @@ import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
 import QuestionInput from './Questions/Input'
+import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
 import QuestionStatic from './Questions/Static'
@@ -60,6 +61,7 @@ const FormBuilder = ({
         </div>
       ),
       input: <QuestionInput useForm={useFormObj} question={question} />,
+      textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
       select: (
         <>
           <QuestionSelect useForm={useFormObj} question={question} />

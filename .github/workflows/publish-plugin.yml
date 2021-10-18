@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g npm-run-all
-          npm ci --only=production
+          npm install
       # publish to npm
       - name: Publish package
         run: npm publish --ignore-scripts --access public

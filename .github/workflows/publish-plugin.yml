@@ -20,9 +20,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # install node_modules
       - name: Install dependencies
-        run: |
-          npm install -g npm-run-all
-          npm install
+        run: npm install
       # publish to npm
       - name: Publish package
         run: npm publish --ignore-scripts --access public

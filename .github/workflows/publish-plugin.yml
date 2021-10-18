@@ -1,0 +1,20 @@
+name: Publish plugin
+on:
+  release:
+    types: [published]
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build on Node.js using 14.17.6
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+      - name: Run npm install ci
+        run: npm ci --only=production
+      - name: Publish package
+        run: npm publish --ignore-scripts --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GUIDESMITHS }}

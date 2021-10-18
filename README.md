@@ -1,6 +1,5 @@
 # react-form-builder
 
-
 > React form builder using json schema
 
 [![NPM](https://img.shields.io/npm/v/react-form-builder.svg)](https://www.npmjs.com/package/@guidesmiths/react-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -51,15 +50,15 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 # Formbuilder options
 
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   idForm*	|  Id for the form  	|  string 	|  '' 	|   	
-|   form*	|  The json with the questions to create 	|  json  	|   -	|   	
-|   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |  
-|   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   idForm*	|  Id for the form  	|  string 	|  '' 	|
+|   form*	|  The json with the questions to create 	|  json  	|   -	|
+|   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
+|   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
-|  onLinkOpen       |  function to be executed when there is a custom link  |  function     | - 
+|  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
 
 
 
@@ -77,15 +76,15 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 ## Checkbox
 
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Checkbox name  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Checkbox name  	|  string 	|  - 	|
 |   type*   | Must be `checkbox`| string | - |
-|   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|   	
+|   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|
 |   defaultChecked    |   Checked component by default    |    boolean       |   false   |
-|   **errorMessages**	|    	| json   	|   	|   
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the checkbox is required  |  boolean  | false
 
 Reminder: A custom link it will be indicated by the start of a '#' in the markdown label. This link will execute the action that you had sent in the onLinkOpen param in the ReactFormBuilder component.
@@ -113,19 +112,19 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 
 
 ## Country
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Country component name  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Country component name  	|  string 	|  - 	|
 |   type*   | Must be `country` | string | - |
-|   label	|  Text shown over the coutnry list|  string  	|   ''	|   	
+|   label	|  Text shown over the coutnry list|  string  	|   ''	|
 |   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
-|   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' | 
-|   **errorMessages**	|    	| json   	|   	|   
+|   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the country select is required  |  boolean  | false
 
-Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list. 
+Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
 
 ### Country example:
 ```yaml
@@ -150,19 +149,19 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 
 
 ## Date
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Date name component  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Date name component  	|  string 	|  - 	|
 |   type*   | Must be `date`| string | - |
-|   label	|  Text shown over the  date input 	|  string  	|   ''	|   	
-|   placeholder    |   Text to be displayed as placeholder in the date input     |    string       |   ''   | 
-|   minAge    |   Minimun age that user should have to make the submit    |    int       |   ''   | 
-|   dateFormat    |   Format to be applied in the date input    |    string       |   dd/MM/yyyy   | 
-|   openToDate    |   Date in which the calendar will be opened. If this attribute is empty and we have a `minAge` attribute, the calendar will be opened -- `minAge` years ago since today to improve make it easier for the user. If we dont use this attribute the calendar will be opened in todays date   |    string       |   dd/MM/yyyy   | 
-|   **errorMessages**	|    	| json   	|   	|   
+|   label	|  Text shown over the  date input 	|  string  	|   ''	|
+|   placeholder    |   Text to be displayed as placeholder in the date input     |    string       |   ''   |
+|   minAge    |   Minimun age that user should have to make the submit    |    int       |   ''   |
+|   dateFormat    |   Format to be applied in the date input    |    string       |   dd/MM/yyyy   |
+|   openToDate    |   Date in which the calendar will be opened. If this attribute is empty and we have a `minAge` attribute, the calendar will be opened -- `minAge` years ago since today to improve make it easier for the user. If we dont use this attribute the calendar will be opened in todays date   |    string       |   dd/MM/yyyy   |
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the date hasn't be selected and  is required |  string     | ''
 |  underAge      |   Error message to display on submit if it is chosen a date  that represents a user younger than the minAge attribute |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the checkbox is required  |  boolean  | false
 
 ### Date examples
@@ -206,22 +205,22 @@ https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-
 
 
 ## Input
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Input name  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Input name  	|  string 	|  - 	|
 |   type*   | Must be `input`| string | - |
-|   label	|  Text shown with the input |  string  	|   ''	|   	
-|   placeholder    |   Placeholder text to be displayed   |    string       |   ''   | 
+|   label	|  Text shown with the input |  string  	|   ''	|
+|   placeholder    |   Placeholder text to be displayed   |    string       |   ''   |
 | **icon**  |   |  json  |   |
 | name  | Name of the icon that we want to be displayed Opt: ['question-circle'] | string  |    -
 |  fill  | Icon color  | string  | black
 | **tooltip**  |   |  json  |   |
 |  text |  Text to be displayed on icon hover | string  | ''
 | **config**  | inside this json we could define any typical theme UI property to style the tooltip  |  json  |   |
-|   **errorMessages**	|    	| json   	|   	|   
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 | pattern  | Error message to display if there is an error pattern in the input text  |  boolean  | false
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the checkbox is required  |  boolean  | false
 | pattern  | Define the pattern to check the input  |  string  | ""
 
@@ -291,11 +290,11 @@ https://user-images.githubusercontent.com/79102959/134945983-c0c38274-05c7-42b7-
 
 
 ### Markdown
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  markdown component name  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  markdown component name  	|  string 	|  - 	|
 |   type*   | must be **markdown**| string | - |
-|   label	|  Text to be displayed, it will be formatted with markdown style	|  string  	|   ''	|   
+|   label	|  Text to be displayed, it will be formatted with markdown style	|  string  	|   ''	|
 
 #### Markdown examples
 Markdown example
@@ -312,21 +311,21 @@ Markdown example
 
 
 ### MultipleCheckbox
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	| MultipleCheckBox name  |  string 	|  - 	|  
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	| MultipleCheckBox name  |  string 	|  - 	|
 |   type*   | must be **multiple_checkboxes** | string | - |
-|   label	|  Text to show like the question text |  string  	|   ''	| 
+|   label	|  Text to show like the question text |  string  	|   ''	|
 | **config**  |   | json  |   |
 |  **options** |  |  json |     |
 | options | It contains all the options to be rendered in the multicheckbox component |  Object Array | -
 |  label or src |  The label displayed with the option (can use markdown format) or the src of the image to be rendered |  string  |  ''  |
 |  value |  The value of the option |  string  |  ''  |
-|   **errorMessages**	|    	| json   	|   	|   
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the multiplecheckbox is not checked and is required |  string     | ''
 | minimumLen  | Text to be displayed in case not minimunLen items has been selected  |  string  | ''  |
 | maximumLen  | Text to be displayed in case that more than maximumLen items has been selected  |  string  | ''  |
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | minimumLen | Minimum number of options that user must select  | int  | 0
 | maximumLen | Maximum number of options that user can select  | int  | -
 | required  | Define if the multiplecheckbox is required  |  boolean  | false
@@ -440,14 +439,14 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 
 
 ### Phone
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Phone component name  	|  string 	|  - 	|  
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Phone component name  	|  string 	|  - 	|
 |   type*   | must be `phone` | string | - |
-|   label	|  Text to show over the input 	|  string  	|   ''	|   	
-|   **errorMessages**	|    	| json   	|   	|   
+|   label	|  Text to show over the input 	|  string  	|   ''	|
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the phone input is not filled and is required |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the phone input is required  |  boolean  | false
 
 Reminder: The isoCode prop that can be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
@@ -475,14 +474,14 @@ https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-
 
 
 ### RadioButton
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  RadioButton name  	|  string 	|  - 	|  
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  RadioButton name  	|  string 	|  - 	|
 |   type*   | must be `radio`| string | - |
-|   label	|  Text to show like the question text. This text can be written in markdown 	|  string  	|   ''	|   	
-|   **errorMessages**	|    	| json   	|   	|   
+|   label	|  Text to show like the question text. This text can be written in markdown 	|  string  	|   ''	|
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the radioButton is required  |  boolean  | false
 
 #### RadioButton example
@@ -519,20 +518,20 @@ https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-
 
 
 ### Select
-| Option  	| Description  	| Type |   Default	|   	
-|---	|---	|:---:	|:---:	|	
-|   name*	|  Checkbox name  	|  string 	|  - 	|   
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Checkbox name  	|  string 	|  - 	|
 |   type*   | must be `select`| string | - |
-|   label	|  Text shown over the select question 	|  string  	|   ''	|   	
-|   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|   
+|   label	|  Text shown over the select question 	|  string  	|   ''	|
+|   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|
 | **config**  |   | json  |   |
 |  **options** |  |  json |     |
 | options | It contains all the options to be rendered in the select component |  Object Array | -
 |  label |  The label displayed in select option |  string  |  ''  |
 |  value |  The value of the select option |  string  |  ''  |
-|   **errorMessages**	|    	| json   	|   	|   
+|   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no selection and it is required |  string     | ''
-|  **registerConfig**       |    |  json     | 
+|  **registerConfig**       |    |  json     |
 | required  | Define if the select is required  |  boolean  | false
 
 #### Select examples
@@ -598,21 +597,21 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
  <td align="center"><a href="https://github.com/pablo-albaladejo"><img src="https://avatars.githubusercontent.com/u/7994467?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pablo Albaladejo</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=pablo-albaladejo" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=pablo-albaladejo"title="Mentoring">🧑‍🏫</a>
-    
+
 <td align="center"><a href="https://github.com/ismaelocaramelo"><img src="https://avatars.githubusercontent.com/u/21059277?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismael Bakkali</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ismaelocaramelo" title="Code">💻</a>
-<a href="https://github.com/guidesmiths/react-form-builder/issues?q=-reviewed-by%3Aismaelocaramelo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/ismaelocaramelo" title="Bug">🐛 </a></td>  
+<a href="https://github.com/guidesmiths/react-form-builder/issues?q=-reviewed-by%3Aismaelocaramelo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/ismaelocaramelo" title="Bug">🐛 </a></td>
 </td>
-    
-<td align="center"><a href="https://github.com/FranciscoValdesoiro"><img src="https://avatars.githubusercontent.com/u/45309269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francisco Valdesoiro</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="storyBooks">📓</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/FranciscoValdesoiro" title="Bug">🐛 </a></td> 
 
-<td align="center"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/79102959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adrián Rodríguez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" 
-title="Documentation">📖</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" 
+<td align="center"><a href="https://github.com/FranciscoValdesoiro"><img src="https://avatars.githubusercontent.com/u/45309269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francisco Valdesoiro</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="storyBooks">📓</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/FranciscoValdesoiro" title="Bug">🐛 </a></td>
+
+<td align="center"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/79102959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adrián Rodríguez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc"
+title="Documentation">📖</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc"
 title="Test">⚠️</a> </td>
 
-<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" 
+<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev"
 title="Test">⚠️</a> </td>
 
-<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td> 
+<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td>
 
 
   </tr>

@@ -2,7 +2,7 @@
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-import Checkbox from '../../Fields/Checkbox'
+import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
 
 const QuestionStatic = ({ question, useForm }) => {
@@ -11,10 +11,10 @@ const QuestionStatic = ({ question, useForm }) => {
   return (
     <div key={question.name} sx={{ display: 'none' }}>
       <Label htmlFor={question.name}>
-        <Checkbox
+        <Input
           id={question.name}
           name={question.name}
-          defaultChecked
+          defaultValue={question.defaultValue || true}
           ref={register({
             ...question.registerConfig
           })}

@@ -28,3 +28,4 @@ yarn-error.log*
 license-report.md
 
 .idea
+.eslintcache

@@ -1,5 +1,3 @@
-# [JIRA ID]
-
 ### Type:
 
 - [ ] CI/CD: helm, docker & CI/CD adjustments.

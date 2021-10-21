@@ -2,1244 +2,1246 @@ export default [
   {
     cn: 'Afghanistan',
     cs: 'af',
-    value: 'Afghanistan'
+    value: 'afghanistan'
   },
   {
     cn: 'Afrique du Sud',
     cs: 'za',
-    value: 'South Africa'
+    value: 'south africa'
   },
   {
     cn: 'Îles Åland',
     cs: 'ax',
-    value: 'Åland Islands'
+    value: 'åland islands'
   },
   {
     cn: 'Albanie',
     cs: 'al',
-    value: 'Albania'
+    value: 'albania'
   },
   {
     cn: 'Algérie',
     cs: 'dz',
-    value: 'Algeria'
+    value: 'algeria'
   },
   {
     cn: 'Allemagne',
     cs: 'de',
-    value: 'Germany'
+    value: 'germany'
   },
   {
     cn: 'Andorre',
     cs: 'ad',
-    value: 'Andorra'
+    value: 'andorra'
   },
   {
     cn: 'Angola',
     cs: 'ao',
-    value: 'Angola'
+    value: 'angola'
   },
   {
     cn: 'Anguilla',
     cs: 'ai',
-    value: 'Anguilla'
+    value: 'anguilla'
   },
   {
     cn: 'Antarctique',
     cs: 'aq',
-    value: 'Antarctica'
+    value: 'antarctica'
   },
   {
     cn: 'Antigua-et-Barbuda',
     cs: 'ag',
-    value: 'Antigua and Barbuda'
+    value: 'antigua and barbuda'
   },
   {
     cn: 'Arabie saoudite',
     cs: 'sa',
-    value: 'Saudi Arabia'
+    value: 'saudi arabia'
   },
   {
     cn: 'Argentine',
     cs: 'ar',
-    value: 'Argentina'
+    value: 'argentina'
   },
   {
     cn: 'Arménie',
     cs: 'am',
-    value: 'Armenia'
+    value: 'armenia'
   },
   {
     cn: 'Aruba',
     cs: 'aw',
-    value: 'Aruba'
+    value: 'aruba'
   },
   {
     cn: 'Australie',
     cs: 'au',
-    value: 'Australia'
+    value: 'australia'
   },
   {
     cn: 'Autriche',
     cs: 'at',
-    value: 'Austria'
+    value: 'austria'
   },
   {
     cn: 'Azerbaïdjan',
     cs: 'az',
-    value: 'Azerbaijan'
+    value: 'azerbaijan'
   },
   {
     cn: 'Bahamas',
     cs: 'bs',
-    value: 'Bahamas'
+    value: 'bahamas'
   },
   {
     cn: 'Bahreïn',
     cs: 'bh',
-    value: 'Bahrain'
+    value: 'bahrain'
   },
   {
     cn: 'Bangladesh',
     cs: 'bd',
-    value: 'Bangladesh'
+    value: 'bangladesh'
   },
   {
     cn: 'Barbade',
     cs: 'bb',
-    value: 'Barbados'
+    value: 'barbados'
   },
   {
     cn: 'Biélorussie',
     cs: 'by',
-    value: 'Belarus'
+    value: 'belarus'
   },
   {
     cn: 'Belgique',
     cs: 'be',
-    value: 'Belgium'
+    value: 'belgium'
   },
   {
     cn: 'Belize',
     cs: 'bz',
-    value: 'Belize'
+    value: 'belize'
   },
   {
     cn: 'Bénin',
     cs: 'bj',
-    value: 'Benin'
+    value: 'benin'
   },
   {
     cn: 'Bermudes',
     cs: 'bm',
-    value: 'Bermuda'
+    value: 'bermuda'
   },
   {
     cn: 'Bhoutan',
     cs: 'bt',
-    value: 'Bhutan'
+    value: 'bhutan'
   },
   {
     cn: 'Bolivie',
     cs: 'bo',
-    value: 'Bolivia'
+    value: 'bolivia'
   },
   {
     cn: 'Pays-Bas caribéens',
     cs: 'bq',
-    value: 'Bonaire, Sint Eustatius and Saba'
+    value: 'bonaire, sint eustatius and saba'
   },
   {
     cn: 'Bosnie-Herzégovine',
     cs: 'ba',
-    value: 'Bosnia and Herzegovina'
+    value: 'bosnia and herzegovina'
   },
   {
     cn: 'Botswana',
     cs: 'bw',
-    value: 'Botswana'
+    value: 'botswana'
   },
   {
     cn: 'Île Bouvet',
     cs: 'bv',
-    value: 'Bouvet Island'
+    value: 'bouvet island'
   },
   {
     cn: 'Brésil',
     cs: 'br',
-    value: 'Brazil'
+    value: 'brazil'
   },
   {
     cn: 'Brunei',
     cs: 'bn',
-    value: 'Brunei Darussalam'
+    value: 'brunei darussalam'
   },
   {
     cn: 'Bulgarie',
     cs: 'bg',
-    value: 'Bulgaria'
+    value: 'bulgaria'
   },
   {
     cn: 'Burkina Faso',
     cs: 'bf',
-    value: 'Burkina Faso'
+    value: 'burkina faso'
   },
   {
     cn: 'Burundi',
     cs: 'bi',
-    value: 'Burundi'
+    value: 'burundi'
   },
   {
     cn: 'Îles Caïmans',
     cs: 'ky',
-    value: 'Cayman Islands'
+    value: 'cayman islands'
   },
   {
     cn: 'Cambodge',
     cs: 'kh',
-    value: 'Cambodia'
+    value: 'cambodia'
   },
   {
     cn: 'Cameroun',
     cs: 'cm',
-    value: 'Cameroon'
+    value: 'cameroon'
   },
   {
     cn: 'Canada',
     cs: 'ca',
-    value: 'Canada'
+    value: 'canada'
   },
   {
     cn: 'Cap-Vert',
     cs: 'cv',
-    value: 'Cape Verde'
+    value: 'cape verde'
   },
   {
     cn: 'République centrafricaine',
     cs: 'cf',
-    value: 'Central African Republic'
+    value: 'central african republic'
   },
   {
     cn: 'Chili',
     cs: 'cl',
-    value: 'Chile'
+    value: 'chile'
   },
   {
     cn: 'Chine',
     cs: 'cn',
-    value: 'China'
+    value: 'china'
   },
   {
     cn: 'Île Christmas',
     cs: 'cx',
-    value: 'Christmas Island'
+    value: 'christmas island'
   },
   {
     cn: 'Chypre (pays)',
     cs: 'cy',
-    value: 'Cyprus'
+    value: 'cyprus'
   },
   {
     cn: 'Îles Cocos',
     cs: 'cc',
-    value: 'Cocos (Keeling) Islands'
+    value: 'cocos (keeling) islands'
   },
   {
     cn: 'Colombie',
     cs: 'co',
-    value: 'Colombia'
+    value: 'colombia'
   },
   {
     cn: 'Comores (pays)',
     cs: 'km',
-    value: 'Comoros'
+    value: 'comoros'
   },
   {
     cn: 'République du Congo',
     cs: 'cg',
-    value: 'Congo'
+    value: 'congo'
   },
   {
     cn: 'République démocratique du Congo',
-    cs: 'cd'
+    cs: 'cd',
+    value: 'congo'
   },
   {
     cn: 'Îles Cook',
     cs: 'ck',
-    value: 'Cook Islands'
+    value: 'cook islands'
   },
   {
     cn: 'Corée du Sud',
     cs: 'kr',
-    value: 'Korea, Republic of'
+    value: 'korea, republic of'
   },
   {
     cn: 'Corée du Nord',
     cs: 'kp',
-    value: "Korea, Democratic People's Republic of"
+    value: "korea, democratic people's republic of"
   },
   {
     cn: 'Costa Rica',
     cs: 'cr',
-    value: 'Costa Rica'
+    value: 'costa rica'
   },
   {
     cn: "Côte d'Ivoire",
     cs: 'ci',
-    value: "Côte d'Ivoire"
+    value: "côte d'ivoire"
   },
   {
     cn: 'Croatie',
     cs: 'hr',
-    value: 'Croatia'
+    value: 'croatia'
   },
   {
     cn: 'Cuba',
     cs: 'cu',
-    value: 'Cuba'
+    value: 'cuba'
   },
   {
     cn: 'Curaçao',
     cs: 'cw',
-    value: 'Curaçao'
+    value: 'curaçao'
   },
   {
     cn: 'Danemark',
     cs: 'dk',
-    value: 'Denmark'
+    value: 'denmark'
   },
   {
     cn: 'Djibouti',
     cs: 'dj',
-    value: 'Djibouti'
+    value: 'djibouti'
   },
   {
     cn: 'République dominicaine',
     cs: 'do',
-    value: 'Dominican Republic'
+    value: 'dominican republic'
   },
   {
     cn: 'Dominique',
     cs: 'dm',
-    value: 'Dominica'
+    value: 'dominica'
   },
   {
     cn: 'Égypte',
     cs: 'eg',
-    value: 'Egypt'
+    value: 'egypt'
   },
   {
     cn: 'Salvador',
     cs: 'sv',
-    value: 'El Salvador'
+    value: 'el salvador'
   },
   {
     cn: 'Émirats arabes unis',
     cs: 'ae',
-    value: 'United Arab Emirates'
+    value: 'united arab emirates'
   },
   {
     cn: 'Équateur (pays)',
     cs: 'ec',
-    value: 'Ecuador'
+    value: 'ecuador'
   },
   {
     cn: 'Érythrée',
     cs: 'er',
-    value: 'Eritrea'
+    value: 'eritrea'
   },
   {
     cn: 'Espagne',
     cs: 'es',
-    value: 'Spain'
+    value: 'spain'
   },
   {
     cn: 'Estonie',
     cs: 'ee',
-    value: 'Estonia'
+    value: 'estonia'
   },
   {
     cn: 'États-Unis',
     cs: 'us',
-    value: 'United States'
+    value: 'united states'
   },
   {
     cn: 'Éthiopie',
     cs: 'et',
-    value: 'Ethiopia'
+    value: 'ethiopia'
   },
   {
     cn: 'Malouines',
     cs: 'fk',
-    value: 'Falkland Islands (Malvinas)'
+    value: 'falkland islands (malvinas)'
   },
   {
     cn: 'Îles Féroé',
     cs: 'fo',
-    value: 'Faroe Islands'
+    value: 'faroe islands'
   },
   {
     cn: 'Fidji',
     cs: 'fj',
-    value: 'Fiji'
+    value: 'fiji'
   },
   {
     cn: 'Finlande',
     cs: 'fi',
-    value: 'Finland'
+    value: 'finland'
   },
   {
     cn: 'France',
     cs: 'fr',
-    value: 'France'
+    value: 'france'
   },
   {
     cn: 'Gabon',
     cs: 'ga',
-    value: 'Gabon'
+    value: 'gabon'
   },
   {
     cn: 'Gambie',
     cs: 'gm',
-    value: 'Gambia'
+    value: 'gambia'
   },
   {
     cn: 'Géorgie (pays)',
     cs: 'ge',
-    value: 'Georgia'
+    value: 'georgia'
   },
   {
     cn: 'Géorgie du Sud-et-les îles Sandwich du Sud',
     cs: 'gs',
-    value: 'South Georgia and the South Sandwich Islands'
+    value: 'south georgia and the south sandwich islands'
   },
   {
     cn: 'Ghana',
     cs: 'gh',
-    value: 'Ghana'
+    value: 'ghana'
   },
   {
     cn: 'Gibraltar',
     cs: 'gi',
-    value: 'Gibraltar'
+    value: 'gibraltar'
   },
   {
     cn: 'Grèce',
     cs: 'gr',
-    value: 'Greece'
+    value: 'greece'
   },
   {
     cn: 'Grenade (pays)',
     cs: 'gd',
-    value: 'Grenada'
+    value: 'grenada'
   },
   {
     cn: 'Groenland',
     cs: 'gl',
-    value: 'Greenland'
+    value: 'greenland'
   },
   {
     cn: 'Guadeloupe',
     cs: 'gp',
-    value: 'Guadeloupe'
+    value: 'guadeloupe'
   },
   {
     cn: 'Guam',
     cs: 'gu',
-    value: 'Guam'
+    value: 'guam'
   },
   {
     cn: 'Guatemala',
     cs: 'gt',
-    value: 'Guatemala'
+    value: 'guatemala'
   },
   {
     cn: 'Guernesey',
     cs: 'gg',
-    value: 'Guernsey'
+    value: 'guernsey'
   },
   {
     cn: 'Guinée',
     cs: 'gn',
-    value: 'Guinea'
+    value: 'guinea'
   },
   {
     cn: 'Guinée-Bissau',
     cs: 'gw',
-    value: 'Guinea-Bissau'
+    value: 'guinea-bissau'
   },
   {
     cn: 'Guinée équatoriale',
     cs: 'gq',
-    value: 'Equatorial Guinea'
+    value: 'equatorial guinea'
   },
   {
     cn: 'Guyana',
     cs: 'gy',
-    value: 'Guyana'
+    value: 'guyana'
   },
   {
     cn: 'Guyane',
     cs: 'gf',
-    value: 'French Guiana'
+    value: 'french guiana'
   },
   {
     cn: 'Haïti',
     cs: 'ht',
-    value: 'Haiti'
+    value: 'haiti'
   },
   {
     cn: 'Îles Heard-et-MacDonald',
     cs: 'hm',
-    value: 'Heard Island and Mcdonald Islands'
+    value: 'heard island and mcdonald islands'
   },
   {
     cn: 'Honduras',
     cs: 'hn',
-    value: 'Honduras'
+    value: 'honduras'
   },
   {
     cn: 'Hong Kong',
     cs: 'hk',
-    value: 'Hong Kong'
+    value: 'hong kong'
   },
   {
     cn: 'Hongrie',
     cs: 'hu',
-    value: 'Hungary'
+    value: 'hungary'
   },
   {
     cn: 'Île de Man',
     cs: 'im',
-    value: 'Isle of Man'
+    value: 'isle of man'
   },
   {
     cn: 'Îles mineures éloignées des États-Unis',
     cs: 'um',
-    value: 'United States Minor Outlying Islands'
+    value: 'united states minor outlying islands'
   },
   {
     cn: 'Îles Vierges britanniques',
     cs: 'vg',
-    value: 'Virgin Islands, British'
+    value: 'virgin islands, british'
   },
   {
     cn: 'Îles Vierges des États-Unis',
     cs: 'vi',
-    value: 'Virgin Islands, U.S.'
+    value: 'virgin islands, u.s.'
   },
   {
     cn: 'Inde',
     cs: 'in',
-    value: 'India'
+    value: 'india'
   },
   {
     cn: 'Indonésie',
     cs: 'id',
-    value: 'Indonesia'
+    value: 'indonesia'
   },
   {
     cn: 'Iran',
     cs: 'ir',
-    value: 'Iran, Islamic Republic Of'
+    value: 'iran, islamic republic of'
   },
   {
     cn: 'Irak',
     cs: 'iq',
-    value: 'Iraq'
+    value: 'iraq'
   },
   {
     cn: 'Irlande (pays)',
     cs: 'ie',
-    value: 'Ireland'
+    value: 'ireland'
   },
   {
     cn: 'Islande',
     cs: 'is',
-    value: 'Iceland'
+    value: 'iceland'
   },
   {
     cn: 'Israël',
     cs: 'il',
-    value: 'Israel'
+    value: 'israel'
   },
   {
     cn: 'Italie',
     cs: 'it',
-    value: 'Italy'
+    value: 'italy'
   },
   {
     cn: 'Jamaïque',
     cs: 'jm',
-    value: 'Jamaica'
+    value: 'jamaica'
   },
   {
     cn: 'Japon',
     cs: 'jp',
-    value: 'Japan'
+    value: 'japan'
   },
   {
     cn: 'Jersey',
     cs: 'je',
-    value: 'Jersey'
+    value: 'jersey'
   },
   {
     cn: 'Jordanie',
     cs: 'jo',
-    value: 'Jordan'
+    value: 'jordan'
   },
   {
     cn: 'Kazakhstan',
     cs: 'kz',
-    value: 'Kazakhstan'
+    value: 'kazakhstan'
   },
   {
     cn: 'Kenya',
     cs: 'ke',
-    value: 'Kenya'
+    value: 'kenya'
   },
   {
     cn: 'Kirghizistan',
     cs: 'kg',
-    value: 'Kyrgyzstan'
+    value: 'kyrgyzstan'
   },
   {
     cn: 'Kiribati',
     cs: 'ki',
-    value: 'Kiribati'
+    value: 'kiribati'
   },
   {
     cn: 'Koweït',
     cs: 'kw',
-    value: 'Kuwait'
+    value: 'kuwait'
   },
   {
     cn: 'Laos',
     cs: 'la',
-    value: 'Laos'
+    value: 'laos'
   },
   {
     cn: 'Lesotho',
     cs: 'ls',
-    value: 'Lesotho'
+    value: 'lesotho'
   },
   {
     cn: 'Lettonie',
     cs: 'lv',
-    value: 'Latvia'
+    value: 'latvia'
   },
   {
     cn: 'Liban',
     cs: 'lb',
-    value: 'Lebanon'
+    value: 'lebanon'
   },
   {
     cn: 'Liberia',
     cs: 'lr',
-    value: 'Liberia'
+    value: 'liberia'
   },
   {
     cn: 'Libye',
     cs: 'ly',
-    value: 'Libyan Arab Jamahiriya'
+    value: 'libyan arab jamahiriya'
   },
   {
     cn: 'Liechtenstein',
     cs: 'li',
-    value: 'Liechtenstein'
+    value: 'liechtenstein'
   },
   {
     cn: 'Lituanie',
     cs: 'lt',
-    value: 'Lithuania'
+    value: 'lithuania'
   },
   {
     cn: 'Luxembourg (pays)',
     cs: 'lu',
-    value: 'Luxembourg'
+    value: 'luxembourg'
   },
   {
     cn: 'Macao',
     cs: 'mo',
-    value: 'Macao'
+    value: 'macao'
   },
   {
     cn: 'Macédoine du Nord',
     cs: 'mk',
-    value: 'North Macedonia'
+    value: 'north macedonia'
   },
   {
     cn: 'Madagascar',
     cs: 'mg',
-    value: 'Madagascar'
+    value: 'madagascar'
   },
   {
     cn: 'Malaisie',
     cs: 'my',
-    value: 'Malaysia'
+    value: 'malaysia'
   },
   {
     cn: 'Malawi',
     cs: 'mw',
-    value: 'Malawi'
+    value: 'malawi'
   },
   {
     cn: 'Maldives',
     cs: 'mv',
-    value: 'Maldives'
+    value: 'maldives'
   },
   {
     cn: 'Mali',
     cs: 'ml',
-    value: 'Mali'
+    value: 'mali'
   },
   {
     cn: 'Malte',
     cs: 'mt',
-    value: 'Malta'
+    value: 'malta'
   },
   {
     cn: 'Îles Mariannes du Nord',
     cs: 'mp',
-    value: 'Northern Mariana Islands'
+    value: 'northern mariana islands'
   },
   {
     cn: 'Maroc',
     cs: 'ma',
-    value: 'Morocco'
+    value: 'morocco'
   },
   {
     cn: 'Îles Marshall (pays)',
     cs: 'mh',
-    value: 'Marshall Islands'
+    value: 'marshall islands'
   },
   {
     cn: 'Martinique',
     cs: 'mq',
-    value: 'Martinique'
+    value: 'martinique'
   },
   {
     cn: 'Maurice (pays)',
     cs: 'mu',
-    value: 'Mauritius'
+    value: 'mauritius'
   },
   {
     cn: 'Mauritanie',
     cs: 'mr',
-    value: 'Mauritania'
+    value: 'mauritania'
   },
   {
     cn: 'Mayotte',
     cs: 'yt',
-    value: 'Mayotte'
+    value: 'mayotte'
   },
   {
     cn: 'Mexique',
     cs: 'mx',
-    value: 'Mexico'
+    value: 'mexico'
   },
   {
     cn: 'États fédérés de Micronésie (pays)',
     cs: 'fm',
-    value: 'Micronesia, Federated States of'
+    value: 'micronesia, federated states of'
   },
   {
     cn: 'Moldavie',
     cs: 'md',
-    value: 'Moldova, Republic of'
+    value: 'moldova, republic of'
   },
   {
     cn: 'Monaco',
     cs: 'mc',
-    value: 'Monaco'
+    value: 'monaco'
   },
   {
     cn: 'Mongolie',
     cs: 'mn',
-    value: 'Mongolia'
+    value: 'mongolia'
   },
   {
     cn: 'Monténégro',
     cs: 'me',
-    value: 'Montenegro'
+    value: 'montenegro'
   },
   {
     cn: 'Montserrat',
     cs: 'ms',
-    value: 'Montserrat'
+    value: 'montserrat'
   },
   {
     cn: 'Mozambique',
     cs: 'mz',
-    value: 'Mozambique'
+    value: 'mozambique'
   },
   {
     cn: 'Birmanie',
     cs: 'mm',
-    value: 'Myanmar'
+    value: 'myanmar'
   },
   {
     cn: 'Namibie',
     cs: 'na',
-    value: 'Namibia'
+    value: 'namibia'
   },
   {
     cn: 'Nauru',
     cs: 'nr',
-    value: 'Nauru'
+    value: 'nauru'
   },
   {
     cn: 'Népal',
     cs: 'np',
-    value: 'Nepal'
+    value: 'nepal'
   },
   {
     cn: 'Nicaragua',
     cs: 'ni',
-    value: 'Nicaragua'
+    value: 'nicaragua'
   },
   {
     cn: 'Niger',
     cs: 'ne',
-    value: 'Niger'
+    value: 'niger'
   },
   {
     cn: 'Nigeria',
     cs: 'ng',
-    value: 'Nigeria'
+    value: 'nigeria'
   },
   {
     cn: 'Niue',
     cs: 'nu',
-    value: 'Niue'
+    value: 'niue'
   },
   {
     cn: 'Île Norfolk',
     cs: 'nf',
-    value: 'Norfolk Island'
+    value: 'norfolk island'
   },
   {
     cn: 'Norvège',
     cs: 'no',
-    value: 'Norway'
+    value: 'norway'
   },
   {
     cn: 'Nouvelle-Calédonie',
     cs: 'nc',
-    value: 'New Caledonia'
+    value: 'new caledonia'
   },
   {
     cn: 'Nouvelle-Zélande',
     cs: 'nz',
-    value: 'New Zealand'
+    value: 'new zealand'
   },
   {
     cn: "Territoire britannique de l'océan Indien",
     cs: 'io',
-    value: 'British Indian Ocean Territory'
+    value: 'british indian ocean territory'
   },
   {
     cn: 'Oman',
     cs: 'om',
-    value: 'Oman'
+    value: 'oman'
   },
   {
     cn: 'Ouganda',
     cs: 'ug',
-    value: 'Uganda'
+    value: 'uganda'
   },
   {
     cn: 'Ouzbékistan',
     cs: 'uz',
-    value: 'Uzbekistan'
+    value: 'uzbekistan'
   },
   {
     cn: 'Pakistan',
     cs: 'pk',
-    value: 'Pakistan'
+    value: 'pakistan'
   },
   {
     cn: 'Palaos',
     cs: 'pw',
-    value: 'Palau'
+    value: 'palau'
   },
   {
     cn: 'Palestine',
     cs: 'ps',
-    value: 'Palestinian Territory, Occupied'
+    value: 'palestinian territory, occupied'
   },
   {
     cn: 'Panama',
     cs: 'pa',
-    value: 'Panama'
+    value: 'panama'
   },
   {
     cn: 'Papouasie-Nouvelle-Guinée',
     cs: 'pg',
-    value: 'Papua New Guinea'
+    value: 'papua new guinea'
   },
   {
     cn: 'Paraguay',
     cs: 'py',
-    value: 'Paraguay'
+    value: 'paraguay'
   },
   {
     cn: 'Pays-Bas',
     cs: 'nl',
-    value: 'Netherlands'
+    value: 'netherlands'
   },
   {
     cn: 'Pérou',
     cs: 'pe',
-    value: 'Peru'
+    value: 'peru'
   },
   {
     cn: 'Philippines',
     cs: 'ph',
-    value: 'Philippines'
+    value: 'philippines'
   },
   {
     cn: 'Îles Pitcairn',
     cs: 'pn',
-    value: 'Pitcairn'
+    value: 'pitcairn'
   },
   {
     cn: 'Pologne',
     cs: 'pl',
-    value: 'Poland'
+    value: 'poland'
   },
   {
     cn: 'Polynésie française',
     cs: 'pf',
-    value: 'French Polynesia'
+    value: 'french polynesia'
   },
   {
     cn: 'Porto Rico',
     cs: 'pr',
-    value: 'Puerto Rico'
+    value: 'puerto rico'
   },
   {
     cn: 'Portugal',
     cs: 'pt',
-    value: 'Portugal'
+    value: 'portugal'
   },
   {
     cn: 'Qatar',
     cs: 'qa',
-    value: 'Qatar'
+    value: 'qatar'
   },
   {
     cn: 'La Réunion',
     cs: 're',
-    value: 'Reunion'
+    value: 'reunion'
   },
   {
     cn: 'Roumanie',
     cs: 'ro',
-    value: 'Romania'
+    value: 'romania'
   },
   {
     cn: 'Royaume-Uni',
     cs: 'gb',
-    value: 'United Kingdom'
+    value: 'united kingdom'
   },
   {
     cn: 'Russie',
     cs: 'ru',
-    value: 'Russian Federation'
+    value: 'russian federation'
   },
   {
     cn: 'Rwanda',
     cs: 'rw',
-    value: 'Rwanda'
+    value: 'rwanda'
   },
   {
     cn: 'République arabe sahraouie démocratique',
     cs: 'eh',
-    value: 'Western Sahara'
+    value: 'western sahara'
   },
   {
     cn: 'Saint-Barthélemy',
     cs: 'bl',
-    value: 'Saint Barthélemy'
+    value: 'saint barthélemy'
   },
   {
     cn: 'Saint-Christophe-et-Niévès',
     cs: 'kn',
-    value: 'Saint Kitts and Nevis'
+    value: 'saint kitts and nevis'
   },
   {
     cn: 'Saint-Marin',
     cs: 'sm',
-    value: 'San Marino'
+    value: 'san marino'
   },
   {
     cn: 'Saint-Martin',
     cs: 'mf',
-    value: 'Saint Martin'
+    value: 'saint martin'
   },
   {
     cn: 'Saint-Martin',
     cs: 'mf',
-    value: 'Sint Maarten (Dutch part)'
+    value: 'sint maarten (dutch part)'
   },
   {
     cn: 'Saint-Pierre-et-Miquelon',
     cs: 'pm',
-    value: 'Saint Pierre and Miquelon'
+    value: 'saint pierre and miquelon'
   },
   {
     cn: 'Saint-Siège (État de la Cité du Vatican)',
     cs: 'va',
-    value: 'Holy See (Vatican City State)'
+    value: 'holy see (vatican city state)'
   },
   {
     cn: 'Saint-Vincent-et-les-Grenadines',
     cs: 'vc',
-    value: 'Saint Vincent and the Grenadines'
+    value: 'saint vincent and the grenadines'
   },
   {
     cn: 'Sainte-Hélène, Ascension et Tristan da Cunha',
     cs: 'sh',
-    value: 'Saint Helena, Ascension and Tristan de Cunha'
+    value: 'saint helena, ascension and tristan de cunha'
   },
   {
     cn: 'Sainte-Lucie',
     cs: 'lc',
-    value: 'Saint Lucia'
+    value: 'saint lucia'
   },
   {
     cn: 'Salomon',
     cs: 'sb',
-    value: 'Solomon Islands'
+    value: 'solomon islands'
   },
   {
     cn: 'Samoa',
     cs: 'ws',
-    value: 'Samoa'
+    value: 'samoa'
   },
   {
     cn: 'Samoa américaines',
     cs: 'as',
-    value: 'American Samoa'
+    value: 'american samoa'
   },
   {
     cn: 'Sao Tomé-et-Principe',
     cs: 'st',
-    value: 'Sao Tome and Principe'
+    value: 'sao tome and principe'
   },
   {
     cn: 'Sénégal',
     cs: 'sn',
-    value: 'Senegal'
+    value: 'senegal'
   },
   {
     cn: 'Serbie',
-    cs: 'rs'
+    cs: 'rs',
+    value: 'serbia'
   },
   {
     cn: 'Seychelles',
     cs: 'sc',
-    value: 'Seychelles'
+    value: 'seychelles'
   },
   {
     cn: 'Sierra Leone',
     cs: 'sl',
-    value: 'Sierra Leone'
+    value: 'sierra leone'
   },
   {
     cn: 'Singapour',
     cs: 'sg',
-    value: 'Singapore'
+    value: 'singapore'
   },
   {
     cn: 'Slovaquie',
     cs: 'sk',
-    value: 'Slovakia'
+    value: 'slovakia'
   },
   {
     cn: 'Slovénie',
     cs: 'si',
-    value: 'Slovenia'
+    value: 'slovenia'
   },
   {
     cn: 'Somalie',
     cs: 'so',
-    value: 'Somalia'
+    value: 'somalia'
   },
   {
     cn: 'Soudan',
     cs: 'sd',
-    value: 'Sudan'
+    value: 'sudan'
   },
   {
     cn: 'Soudan du Sud',
     cs: 'ss',
-    value: 'South Sudan'
+    value: 'south sudan'
   },
   {
     cn: 'Sri Lanka',
     cs: 'lk',
-    value: 'Sri Lanka'
+    value: 'sri lanka'
   },
   {
     cn: 'Suède',
     cs: 'se',
-    value: 'Sweden'
+    value: 'sweden'
   },
   {
     cn: 'Suisse',
     cs: 'ch',
-    value: 'Switzerland'
+    value: 'switzerland'
   },
   {
     cn: 'Suricn',
     cs: 'sr',
-    value: 'Suricn'
+    value: 'suricn'
   },
   {
     cn: 'Svalbard et ile Jan Mayen',
     cs: 'sj',
-    value: 'Svalbard and Jan Mayen'
+    value: 'svalbard and jan mayen'
   },
   {
     cn: 'Eswatini',
     cs: 'sz',
-    value: 'Swaziland'
+    value: 'swaziland'
   },
   {
     cn: 'Syrie',
     cs: 'sy',
-    value: 'Syrian Arab Republic'
+    value: 'syrian arab republic'
   },
   {
     cn: 'Tadjikistan',
     cs: 'tj',
-    value: 'Tajikistan'
+    value: 'tajikistan'
   },
   {
     cn: 'Taïwan / (République de Chine (Taïwan))',
     cs: 'tw',
-    value: 'Taiwan, Province of China'
+    value: 'taiwan, province of china'
   },
   {
     cn: 'Tanzanie',
     cs: 'tz',
-    value: 'Tanzania, United Republic of'
+    value: 'tanzania, united republic of'
   },
   {
     cn: 'Tchad',
     cs: 'td',
-    value: 'Chad'
+    value: 'chad'
   },
   {
     cn: 'Tchéquie',
     cs: 'cz',
-    value: 'Czech Republic'
+    value: 'czech republic'
   },
   {
     cn: 'Terres australes et antarctiques françaises',
     cs: 'tf',
-    value: 'French Southern Territories'
+    value: 'french southern territories'
   },
   {
     cn: 'Thaïlande',
     cs: 'th',
-    value: 'Thailand'
+    value: 'thailand'
   },
   {
     cn: 'Timor oriental',
     cs: 'tl',
-    value: 'Timor-Leste'
+    value: 'timor-leste'
   },
   {
     cn: 'Togo',
     cs: 'tg',
-    value: 'Togo'
+    value: 'togo'
   },
   {
     cn: 'Tokelau',
     cs: 'tk',
-    value: 'Tokelau'
+    value: 'tokelau'
   },
   {
     cn: 'Tonga',
     cs: 'to',
-    value: 'Tonga'
+    value: 'tonga'
   },
   {
     cn: 'Trinité-et-Tobago',
     cs: 'tt',
-    value: 'Trinidad and Tobago'
+    value: 'trinidad and tobago'
   },
   {
     cn: 'Tunisie',
     cs: 'tn',
-    value: 'Tunisia'
+    value: 'tunisia'
   },
   {
     cn: 'Turkménistan',
     cs: 'tm',
-    value: 'Turkmenistan'
+    value: 'turkmenistan'
   },
   {
     cn: 'Îles Turques-et-Caïques',
     cs: 'tc',
-    value: 'Turks and Caicos Islands'
+    value: 'turks and caicos islands'
   },
   {
     cn: 'Turquie',
     cs: 'tr',
-    value: 'Turkey'
+    value: 'turkey'
   },
   {
     cn: 'Tuvalu',
     cs: 'tv',
-    value: 'Tuvalu'
+    value: 'tuvalu'
   },
   {
     cn: 'Ukraine',
     cs: 'ua',
-    value: 'Ukraine'
+    value: 'ukraine'
   },
   {
     cn: 'Uruguay',
     cs: 'uy',
-    value: 'Uruguay'
+    value: 'uruguay'
   },
   {
     cn: 'Vanuatu',
     cs: 'vu',
-    value: 'Vanuatu'
+    value: 'vanuatu'
   },
   {
     cn: 'Venezuela',
     cs: 've',
-    value: 'Venezuela'
+    value: 'venezuela'
   },
   {
     cn: 'Viêt Nam',
     cs: 'vn',
-    value: 'Vietnam'
+    value: 'vietnam'
   },
   {
     cn: 'Wallis-et-Futuna',
     cs: 'wf',
-    value: 'Wallis and Futuna'
+    value: 'wallis and futuna'
   },
   {
     cn: 'Yémen',
     cs: 'ye',
-    value: 'Yemen'
+    value: 'yemen'
   },
   {
     cn: 'Zambie',
     cs: 'zm',
-    value: 'Zambia'
+    value: 'zambia'
   },
   {
     cn: 'Zimbabwe',
     cs: 'zw',
-    value: 'Zimbabwe'
+    value: 'zimbabwe'
   }
 ]

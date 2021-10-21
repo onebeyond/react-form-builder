@@ -28,4 +28,8 @@ yarn-error.log*
 license-report.md
 
 .idea
+<<<<<<< Updated upstream
 .eslintcache
+=======
+.eslintcache
+>>>>>>> Stashed changes

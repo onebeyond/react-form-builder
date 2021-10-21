@@ -119,6 +119,7 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |   label	|  Text shown over the coutnry list|  string  	|   ''	|
 |   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
 |   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
+|   returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     |

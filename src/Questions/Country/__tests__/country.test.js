@@ -354,3 +354,32 @@ test('show an error message', () => {
   )
   expect(getByText(question.errorMessages.required)).toBeTruthy()
 })
+
+test('Option values are country names (instead of country codes) if "returnCountryCode" is true', async () => {
+  const question = {
+    name: 'country_of_residence',
+    type: 'country',
+    label: 'This is the label of the country select',
+    placeholder: 'Please select an option ^^',
+    priorityOptions: ['ES'],
+    errorMessages: {
+      required: 'This field is required'
+    },
+    returnCountryCode: true
+  }
+  const { getByText } = render(
+    <QuestionCountry
+      question={question}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn(),
+        unregister: jest.fn(),
+        trigger: jest.fn()
+      }}
+    />
+  )
+  const select = getByText('Please select an option ^^')
+  await selectEvent.select(select, 'Spain')
+  expect(screen.getByText('Spain'))
+})

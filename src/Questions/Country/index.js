@@ -57,7 +57,7 @@ const QuestionCountry = ({
 
     return [].concat(
       filteredCountries.map((country) => ({
-        value: country.cs,
+        value: (question.returnCountryName && country.value) || country.cs,
         label: country.cn
       }))
     )

@@ -32,8 +32,8 @@
   - [TextArea](#textarea)
     - [TextArea Example](#textarea-example)
 - [Contribution guide](#contribution-guide)
-  - [Contributors ✨](#contributors-)
-  - [License](#license)
+- [Contributors ✨](#contributors-)
+- [License](#license)
 
 # Installation
 

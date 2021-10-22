@@ -29,6 +29,8 @@
     - [RadioButton example](#radiobutton-example)
   - [Select](#select)
     - [Select Example](#select-example)
+  - [TextArea](#textarea)
+    - [TextArea Example](#textarea-example)
 - [Contribution guide](#contribution-guide)
   - [Contributors ✨](#contributors-)
   - [License](#license)
@@ -602,6 +604,40 @@ Select basic example
 ```
 
 https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
+
+
+## TextArea
+
+| Option       | Description                                                 | Type   | Default |
+|--------------|-------------------------------------------------------------|--------|---------|
+| name*        | textarea name                                               | string |   NA    |
+| type*        | must be `textarea`                                          | string |   NA    |
+| label        | textarea label                                              | string |   NA    |
+| placeholder  | textarea placeholder                                        | string |   NA    |
+| defaultValue | textarea default value                                      | string |   NA    |
+| pattern      | Text area value can be validated using a regular expression | regexp |   NA    |
+| maxLength    | max number of characters allowed                            | number |   NA    |
+| rows         | max numbers of lines                                        | number |   NA    |
+
+### TextArea example
+
+
+```json
+
+{
+  "name": "Textarea name",
+  "type": "textarea",
+  "label": "Textarea label",
+  "placeholder": "Placeholder",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+
+```
 
 
 # Contribution guide

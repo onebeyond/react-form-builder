@@ -653,7 +653,7 @@ See `localhost:3000`
 Any change on the root src library will be reflected on the usage in the example folder.
 
 
-## Contributors ✨
+# Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -688,6 +688,6 @@ title="Test">⚠️</a> </td>
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-## License
+# License
 
 MIT © [Guidesmiths](https://github.com/Guidesmiths)

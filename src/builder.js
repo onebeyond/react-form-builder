@@ -201,6 +201,7 @@ const FormBuilder = ({
             : 'forms.container'
       }}
       onSubmit={useFormObj.handleSubmit(onSubmit)}
+      {...props}
     >
       {form &&
         Array.isArray(form.questions) &&

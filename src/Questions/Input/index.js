@@ -53,16 +53,13 @@ const QuestionInput = ({ question, useForm, component }) => {
           pattern: new RegExp(question.registerConfig.pattern)
         })}
       />
-      {errors[question.name] && errors[question.name].type === 'required' && (
+      {errors[question.name] && errors[question.name].type && (
         <ErrorMessage
           name={question.name}
-          message={question.errorMessages && question.errorMessages.required}
-        />
-      )}
-      {errors[question.name] && errors[question.name].type === 'pattern' && (
-        <ErrorMessage
-          name={question.name}
-          message={question.errorMessages && question.errorMessages.pattern}
+          message={
+            question.errorMessages &&
+            question.errorMessages[errors[question.name].type]
+          }
         />
       )}
     </div>

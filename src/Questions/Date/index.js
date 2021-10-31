@@ -46,15 +46,12 @@ const QuestionDate = ({
           selected={question.openToDate}
           {...props}
         />
-        {errors[question.name] && errors[question.name].type === 'required' && (
+        {errors[question.name] && errors[question.name].type && (
           <ErrorMessage
-            message={question.errorMessages && question.errorMessages.required}
-          />
-        )}
-        {errors[question.name] && errors[question.name].type === 'underAge' && (
-          <ErrorMessage
-            name={question.name}
-            message={question.errorMessages && question.errorMessages.underAge}
+            message={
+              question.errorMessages &&
+              question.errorMessages[errors[question.name].type]
+            }
           />
         )}
       </div>

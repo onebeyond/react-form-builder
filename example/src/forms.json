@@ -129,12 +129,11 @@
         "type": "date",
         "label": "Date of birth",
         "placeholder": "dd-mm-yyyy",
-        "isBirthDate": true,
         "minAge": 1,
         "openToDate": "1-1-2000",
         "errorMessages": {
           "required": "This field is required",
-          "u18": "You must be 18 years old or above"
+          "underAge": "You must be 1 year old or above"
         },
         "registerConfig": {
           "required": true

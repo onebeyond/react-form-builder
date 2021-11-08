@@ -75,7 +75,6 @@
           ]
         }
       },
-
       {
         "name": "phone",
         "type": "phone",
@@ -139,9 +138,54 @@
         "registerConfig": {
           "required": true
         }
+      },
+      {
+        "label": "Multip",
+        "type": "multiple_checkboxes",
+        "qId": "81b20f0d-6f31-4ab6-b0a5-eca42cbd965b",
+        "optionsColumns": 2,
+        "errorMessages": {
+          "required": "This field is required",
+          "maximumLen": "Maximum choises exceded",
+          "minimumLen": "Minimum choises required"
+        },
+        "registerConfig": {
+          "required": true,
+          "maximumLen": "2",
+          "minimumLen": "2"
+        },
+        "placeholder": "Multip",
+        "name": "multip",
+        "config": {
+          "options": [
+            {
+              "label": "Ismael Bakkali",
+              "value": "one"
+            },
+            {
+              "label": "Sergio Camara",
+              "value": "two"
+            },
+            {
+              "label": "Ivan Esteban",
+              "value": "three"
+            },
+            {
+              "label": "Alfonso Domenech",
+              "value": "four"
+            },
+            {
+              "label": "Sofia Sanchez",
+              "value": "fifth"
+            },
+            {
+              "label": "Adrian Rodriguez",
+              "value": "fifth"
+            }
+          ]
+        }
       }
     ],
-
     "question": [
       {
         "name": "phone",

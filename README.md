@@ -16,7 +16,7 @@ npm install --save @guidesmiths/react-form-builder
 
 ```jsx
 import React, { Component } from 'react'
-import { FormBuilder } from '@guidesmiths/react-form-builder
+import { FormBuilder } from '@guidesmiths/react-form-builder'
 import form from '../../forms/question/get.json'
 
 const onSubmitForm = (data) => {
@@ -329,10 +329,14 @@ Markdown example
 |  **registerConfig**       |    |  json     |
 | minimumLen | Minimum number of options that user must select  | int  | 0
 | maximumLen | Maximum number of options that user can select  | int  | -
-| required  | Define if the multiplecheckbox is required  |  boolean  | false
+| required  | Define whether answering the multiplecheckbox question is required or not  |  boolean  | false
+| questionsColumns  | Define in how many columns the checkboxes are going to be distributed  |  number  | 1
+
 
 #### Multiplecheckbox examples
+
 Basic multiplecheckbox
+
 ```yaml
 {
   "name": "multiplecheckbox_name",
@@ -400,6 +404,7 @@ Multiplecheckbox with images and labels
 ```
 
 Multiplecheckbox with minimumLen
+
 ```yaml
 {
   "name": "multiplecheckbox_name",
@@ -440,6 +445,8 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 
 
 ### Phone
+
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Phone component name  	|  string 	|  - 	|

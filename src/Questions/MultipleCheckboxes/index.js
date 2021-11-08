@@ -10,6 +10,8 @@ import ReactMarkdown from 'react-markdown'
 
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   const { getValues, errors, register } = useForm
+  const { optionsColumns = 1 } = question
+
   return (
     <div
       sx={{
@@ -26,8 +28,10 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
         )}
         <div
           sx={{
+            display: ['grid', 'grid'],
+            gridTemplateColumns: ' 1fr'.repeat(optionsColumns).trim(),
             variant: question.checkboxId
-              ? 'forms.multipleCheckboxes' + question.checkboxId
+              ? `forms.multipleCheckboxes.${question.checkboxId}`
               : 'forms.multipleCheckboxes'
           }}
         >

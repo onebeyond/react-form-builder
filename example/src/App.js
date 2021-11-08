@@ -24,6 +24,11 @@ import 'react-phone-number-input/style.css'
 
 const App = () => {
   const styles = {
+    forms: {
+      multipleCheckboxes: {
+        border: 'red 1px solid'
+      },
+    },
     fullWidth: {
       gridColumnStart: '1',
       gridColumnEnd: '3'

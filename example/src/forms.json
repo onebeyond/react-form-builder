@@ -159,28 +159,16 @@
         "config": {
           "options": [
             {
-              "label": "Ismael Bakkali",
+              "label": "one",
               "value": "one"
             },
             {
-              "label": "Sergio Camara",
+              "label": "two",
               "value": "two"
             },
             {
-              "label": "Ivan Esteban",
+              "label": "three",
               "value": "three"
-            },
-            {
-              "label": "Alfonso Domenech",
-              "value": "four"
-            },
-            {
-              "label": "Sofia Sanchez",
-              "value": "fifth"
-            },
-            {
-              "label": "Adrian Rodriguez",
-              "value": "fifth"
             }
           ]
         }

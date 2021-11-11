@@ -153,17 +153,11 @@ const FormBuilder = ({
 
       return getConditions().includes(getFormattedValue()) ? (
         <React.Fragment key={i}>
-          <div
-            sx={{
-              ...(dependentQuestion.question.isFullWidth && styles.fullWidth)
-            }}
-          >
-            {
-              QuestionsMap(dependentQuestion.question)[
-                dependentQuestion.question.type
-              ]
-            }
-          </div>
+          {
+            QuestionsMap(dependentQuestion.question)[
+              dependentQuestion.question.type
+            ]
+          }
 
           {nestedQuestion.dependentQuestions
             ? nestedQuestion.dependentQuestions.map(

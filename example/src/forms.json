@@ -1,117 +1,13 @@
 {
+  "campaign": "sevens",
+  "subcampaign": "uae-sevens",
   "contact": {
-    "name": "Survey Form",
-    "title": "Survey Form",
-    "layout": "survey",
-    "caption": "Survey",
-    "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
+    "name": "Contact Form",
+    "layout": "contact",
+    "title": "Contact Form",
+    "caption": "**WIN an all-expenses paid trip to a 2021 HSBC World Rugby Sevens Series tournament of your choice, courtesy of HSBC.**\n\n**Prize includes:**\nTwo VIP tickets to any tournament of your choice\nTwo return flights to the tournament\nAccommodation and more!\n\nTo be entered for a chance to win, please provide your details to HSBC by filling out the below form.",
     "enabled": true,
     "questions": [
-      {
-        "name": "inputName",
-        "type": "textarea",
-        "label": "input label",
-        "placeholder": "input placeholder",
-        "icon": {
-          "name": "question-circle",
-          "fill": "red"
-        },
-        "tooltip": {
-          "text": "tooltip text example",
-          "config": {
-            "backgroundColor": "green",
-            "textAlign": "center"
-          },
-          "textStyle": {
-            "color": "pink"
-          }
-        },
-        "errorMessages": {
-          "required": "This field is required",
-          "pattern": "This is not the right pattern"
-        },
-        "registerConfig": {
-          "required": true
-        }
-      },
-      {
-        "name": "$Country",
-        "placeholder": "Country",
-        "priorityOptions": ["GB"],
-        "type": "country",
-        "label": "",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        }
-      },
-      {
-        "name": "gender",
-        "type": "select",
-        "label": "What is your gender?",
-        "placeholder": "Please make a selection",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Female",
-              "value": "female"
-            },
-            {
-              "label": "Male",
-              "value": "male"
-            },
-            {
-              "label": "Prefer not to say",
-              "value": "prefer_not_to_say"
-            }
-          ]
-        }
-      },
-
-      {
-        "name": "phone",
-        "type": "phone",
-        "label": "",
-        "placeholder": "Phone",
-        "registerConfig": {
-          "required": true
-        },
-        "errorMessages": {
-          "required": "This field is required"
-        }
-      },
-      {
-        "name": "privacyAllow",
-        "type": "checkbox",
-        "label": "This is the label of checkbox [privacy](#privacy) and this another label for [T&C](#T&C)",
-        "isFullWidth": true,
-        "registerConfig": {
-          "required": true
-        },
-        "errorMessages": {
-          "required": "This field is required"
-        }
-      },
-      {
-        "name": "privacy",
-        "type": "checkbox",
-        "label": "This is another checkbox [privacy](#) este es un [link](https://www.google.com) va a una página",
-        "isFullWidth": true,
-        "registerConfig": {
-          "required": true
-        },
-        "errorMessages": {
-          "required": "This field is required"
-        }
-      },
       {
         "name": "first_name",
         "type": "input",
@@ -125,75 +21,34 @@
         }
       },
       {
-        "name": "dob",
-        "type": "date",
-        "label": "Date of birth",
-        "placeholder": "dd-mm-yyyy",
-        "isBirthDate": true,
-        "minAge": 1,
-        "openToDate": "1-1-2000",
-        "errorMessages": {
-          "required": "This field is required",
-          "u18": "You must be 18 years old or above"
-        },
-        "registerConfig": {
-          "required": true
-        }
-      }
-    ],
-
-    "question": [
-      {
-        "name": "phone",
-        "type": "phone",
-        "label": "phone",
-        "placeholder": "phone",
-        "registerConfig": {
-          "required": true
-        },
+        "name": "last_name",
+        "type": "input",
+        "label": "Last name",
+        "placeholder": "Last Name",
         "errorMessages": {
           "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
         }
       },
       {
-        "label": "Multip",
-        "type": "multiple_checkboxes",
-        "qId": "81b20f0d-6f31-4ab6-b0a5-eca42cbd965b",
+        "name": "email",
+        "type": "input",
+        "label": "Email",
+        "placeholder": "Email",
         "errorMessages": {
-          "required": "This field is required",
-          "maximumLen": "Maximum choises exceded",
-          "minimumLen": "Minimum choises required"
+          "required": "This field is required"
         },
         "registerConfig": {
           "required": true,
-          "maximumLen": "2",
-          "minimumLen": "2"
-        },
-        "placeholder": "Multip",
-        "name": "multip",
-        "config": {
-          "options": [
-            {
-              "label": "one",
-              "value": "one"
-            },
-            {
-              "label": "two",
-              "value": "two"
-            },
-            {
-              "label": "three",
-              "value": "three"
-            }
-          ]
+          "pattern": "/^(([^<>()[]\\\\.,;:s@\\\"]+(.[^<>()[]\\\\.,;:s@\\\"]+)*)|(\\\".+\\\"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/"
         }
-      }
-    ],
-    "refrigeratorQuestions": [
+      },
       {
         "name": "age",
         "type": "select",
-        "label": "How old are you?",
+        "label": "Age",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -207,172 +62,128 @@
               "value": "*"
             },
             {
-              "label": "Under 18",
-              "value": "under_18"
+              "label": "18-25",
+              "value": "18_25"
             },
             {
-              "label": "18-24",
-              "value": "18-24"
+              "label": "26-30",
+              "value": "26_30"
             },
             {
-              "label": "25-29",
-              "value": "25-29"
+              "label": "31-35",
+              "value": "31_35"
             },
             {
-              "label": "30-34",
-              "value": "30-34"
+              "label": "36-40",
+              "value": "36_40"
             },
             {
-              "label": "35-44",
-              "value": "35-44"
+              "label": "41-45",
+              "value": "41_45"
             },
             {
-              "label": "45-54",
-              "value": "45-54"
+              "label": "46-55",
+              "value": "46_55"
             },
             {
-              "label": "55-64",
-              "value": "55-64"
+              "label": "56-60",
+              "value": "56_60"
             },
             {
-              "label": "65+",
-              "value": "above_65"
+              "label": "61+",
+              "value": "61plus"
             }
           ]
         }
       },
       {
-        "name": "gender",
-        "type": "select",
-        "label": "What is your gender?",
+        "name": "postal_code",
+        "type": "input",
+        "label": "Postal code",
+        "placeholder": "Postal Code",
         "errorMessages": {
           "required": "This field is required"
         },
         "registerConfig": {
           "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "Female",
-              "value": "female"
-            },
-            {
-              "label": "Male",
-              "value": "male"
-            },
-            {
-              "label": "Prefer not to say",
-              "value": "prefer_not_to_say"
-            }
-          ]
         }
       },
       {
         "name": "country_of_residence",
         "type": "country",
-        "label": "Country",
-        "placeholder": "Please select an option ^^",
+        "label": "Country of residence",
         "errorMessages": {
           "required": "This field is required"
         },
         "registerConfig": {
           "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "January to March 2021",
-              "value": "january_to_march_2021"
-            },
-            {
-              "label": "January to December 2020",
-              "value": "january_to_december_2020"
-            },
-            {
-              "label": "July to December 2019",
-              "value": "july_to_december_2019"
-            },
-            {
-              "label": "Before July 2019",
-              "value": "before_jul_2019"
-            },
-            {
-              "label": "I don´t have a refrigerator",
-              "value": "no_refrigerator"
-            }
-          ]
         }
       },
       {
         "name": "select_the_2021_sevens_tournament_of_your_choice",
+        "isFullWidth": true,
         "type": "select",
         "label": "Select the 2021 Sevens tournament of your choice",
         "errorMessages": {
           "required": "This field is required"
         },
         "registerConfig": {
-          "required": true,
-          "minimumLen": 1,
-          "maximumLen": 10
+          "required": true
         },
         "config": {
           "options": [
             {
-              "label": "LG",
-              "value": "lg"
+              "label": "Please make a selection",
+              "value": "*"
             },
             {
-              "label": "Samsung",
-              "value": "samsung"
+              "label": "Dubai",
+              "value": "Dubai"
             },
             {
-              "label": "Electrolux",
-              "value": "electrolux"
+              "label": "Cape Town",
+              "value": "Cape_Town"
             },
             {
-              "label": "Whirlpool",
-              "value": "whirlpool"
+              "label": "Hamilton",
+              "value": "Hamilton"
             },
             {
-              "label": "Panasonic",
-              "value": "panasonic"
+              "label": "Sydney",
+              "value": "Sydney"
             },
             {
-              "label": "Beko",
-              "value": "beko"
+              "label": "Los Angeles",
+              "value": "Los_Angeles"
             },
             {
-              "label": "Hisense",
-              "value": "hisense"
+              "label": "Vancouver",
+              "value": "Vancouver"
             },
             {
-              "label": "Fisher & Paykel",
-              "value": "fisherPaykel"
+              "label": "Hong Kong",
+              "value": "Hong_Kong"
             },
             {
-              "label": "Haier",
-              "value": "haier"
+              "label": "Singapore",
+              "value": "Singapore"
             },
             {
-              "label": "Other, please specify",
-              "value": "other"
+              "label": "London",
+              "value": "London"
+            },
+            {
+              "label": "Paris",
+              "value": "Paris"
             }
           ]
         }
       },
       {
-        "name": "refrigerator_type",
+        "name": "are_you_an_hsbc_current_account_customer",
         "type": "select",
-        "label": "What type is your refrigerator?",
+        "isFullWidth": true,
+        "label": "Are you an HSBC current account customer?",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -386,8 +197,8 @@
               "value": "*"
             },
             {
-              "label": "French door",
-              "value": "french_door"
+              "label": "Yes",
+              "value": "yes"
             },
             {
               "label": "No",
@@ -406,6 +217,1347 @@
         },
         "registerConfig": {
           "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "name": "terms_and_conditions",
+              "label": "I confirm I am the age wof majority or older in my province/territory of residence and have read and agree to the contest [terms & conditions](/terms 'terms & conditions') and HSBC's Privacy Policy*",
+              "registerConfig": {
+                "required": true
+              }
+            },
+            {
+              "name": "hsbc_offers",
+              "label": "I consent to receive exclusive rugby content and promotional offers from HSBC and CSM Sport & Entertainment on behalf of HSBC via email. I understand that I can unsubscribe at any time.",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "world_rugby_offers",
+              "label": "Separately to this contest, I would like to receive information and special offers from World Rugby relating to rugby and rugby tournaments by email.",
+              "registerConfig": {
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "smartTV_own",
+        "type": "select",
+        "label": "Do you own a smart TV? [Single choice]",
+        "dependentQuestions": [
+          {
+            "condition": "yes",
+            "question": {
+              "name": "tv_smart_brand",
+              "type": "select",
+              "label": "What brand is your smart TV? [Single choice]",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "SAMSUNG",
+                    "value": "samsung"
+                  },
+                  {
+                    "label": "LG",
+                    "value": "lg"
+                  },
+                  {
+                    "label": "SONY",
+                    "value": "sony"
+                  },
+                  {
+                    "label": "Hisense",
+                    "value": "hisense"
+                  },
+                  {
+                    "label": "PHILIPS",
+                    "value": "philips"
+                  },
+                  {
+                    "label": "TCL/THOMSON",
+                    "value": "tcl_thomson"
+                  },
+                  {
+                    "label": "BHG",
+                    "value": "bhg"
+                  },
+                  {
+                    "label": "PANASONIC",
+                    "value": "panasonic"
+                  },
+                  {
+                    "label": "None of above",
+                    "value": "none_of_above"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "condition": "yes",
+            "question": {
+              "name": "tv_smart_price",
+              "type": "select",
+              "label": "What is the price of your TV? [Single choice]",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "<$300",
+                    "value": "less_300"
+                  },
+                  {
+                    "label": "$300-$400",
+                    "value": "300-400"
+                  },
+                  {
+                    "label": "$401-$500",
+                    "value": "401-500"
+                  },
+                  {
+                    "label": "$501-$600",
+                    "value": "501-600"
+                  },
+                  {
+                    "label": "$601-$800",
+                    "value": "601-800"
+                  },
+                  {
+                    "label": "$801-$1000",
+                    "value": "801-1000"
+                  },
+                  {
+                    "label": "$1001-$1200",
+                    "value": "1001-1200"
+                  },
+                  {
+                    "label": "$1200+",
+                    "value": "above_1200"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "condition": "yes",
+            "question": {
+              "name": "tv_smart_buy",
+              "type": "select",
+              "label": "When did you buy your smart TV? [Single choice]",
+              "dependentQuestions": [
+                {
+                  "condition": "2020",
+                  "question": {
+                    "name": "what_care_buying_tv",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What features did you look for when buying your TV? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "minimumLen": 1,
+                      "maximumLen": 5,
+                      "required": true
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Ease of use (operation system, remote control, etc.)",
+                          "value": "ease_of_use"
+                        },
+                        {
+                          "label": "Voice assistant function",
+                          "value": "voice_assistant"
+                        },
+                        {
+                          "label": "Size",
+                          "value": "size"
+                        },
+                        {
+                          "label": "Exterior",
+                          "value": "exterior"
+                        },
+                        {
+                          "label": "Content (video, apps, etc.)",
+                          "value": "content"
+                        },
+                        {
+                          "label": "Hardware configuration (CPU, memory, etc.)",
+                          "value": "hardware_configuration"
+                        },
+                        {
+                          "label": "Picture quality",
+                          "value": "picture_quality"
+                        },
+                        {
+                          "label": "Casting/Mirror Screen function",
+                          "value": "cast"
+                        },
+                        {
+                          "label": "Sound quality",
+                          "value": "sound_quality"
+                        },
+                        {
+                          "label": "Smart home function(TV links with IoT devices and sensors so you can turn on the lights, check fridge, run the robot etc. )",
+                          "value": "smart_home"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2020", "2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "tv_smart_use",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "How do you use your TV usually? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Casting/mirroring your mobile device screen to TV",
+                          "value": "mobile_pad"
+                        },
+                        {
+                          "label": "Watch live TV from satellite /cable/Antenna built-in tuner ",
+                          "value": "live_tv"
+                        },
+                        {
+                          "label": "Watch live TV from Set-top box",
+                          "value": "live_tv_box"
+                        },
+                        {
+                          "label": "Watch apps (Netflix etc.) built in TV",
+                          "value": "watch_app"
+                        },
+                        {
+                          "label": "Watch apps from streaming box ( Apple TV, Google Chrome etc) ",
+                          "value": "what_apps_streaming"
+                        },
+                        {
+                          "label": "Play game console",
+                          "value": "console"
+                        },
+                        {
+                          "label": "PVR (Program Recording)",
+                          "value": "pvr"
+                        },
+                        {
+                          "label": "Play video/photo from Storage device (USB/Hard disc)",
+                          "value": "storage_device"
+                        },
+                        {
+                          "label": "Play DVD",
+                          "value": "dvd"
+                        },
+                        {
+                          "label": "Play video/photo from Nas server",
+                          "value": "nas_server"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2020", "2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "tv_smart_sport",
+                    "type": "multiple_checkboxes",
+                    "label": "How do you watch sports programs on TV? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Watch live TV from satellite",
+                          "value": "watch_live_tv_satellite"
+                        },
+                        {
+                          "label": "Watch live TV from cable",
+                          "value": "watch_live_tv_cable"
+                        },
+                        {
+                          "label": "Watch live TV from Antenna",
+                          "value": "watch_live_tv_antenna"
+                        },
+                        {
+                          "label": "Watch live TV from a Set-top box",
+                          "value": "watch_live_tv_set-top_box"
+                        },
+                        {
+                          "label": "Watch apps",
+                          "value": "watch_apps"
+                        },
+                        {
+                          "label": "Cast or Mirror mobile device screen to TV",
+                          "value": "cast_or_mirror_mobile_to_tv"
+                        },
+                        {
+                          "label": "Other, pelase specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2020", "2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "tv_smart_picture_quality",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What are the most important factors about the Picture quality? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 5
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Natural and true colors",
+                          "value": "natural_colors"
+                        },
+                        {
+                          "label": "Reduce / avoid eye fatigue while watching",
+                          "value": "reduce_eye_fatigue"
+                        },
+                        {
+                          "label": "Motion picture is smooth / anti-shake",
+                          "value": "motion_picture"
+                        },
+                        {
+                          "label": "Display resolution (FHD, 4K, 8K)",
+                          "value": "display_resolution"
+                        },
+                        {
+                          "label": "Display technology (OLED, QLED, ULED,LED)",
+                          "value": "display_technology"
+                        },
+                        {
+                          "label": "Support of HDR formats",
+                          "value": "hdr"
+                        },
+                        {
+                          "label": "The black scene has clear details",
+                          "value": "black_scene"
+                        },
+                        {
+                          "label": "Picture algorithms to improve the picture",
+                          "value": "picture_algorithms"
+                        },
+                        {
+                          "label": "Wide viewing angle of display",
+                          "value": "viewing_angle"
+                        },
+                        {
+                          "label": "AI picture modes (adjusts color, brightness and contrast scene by scene)",
+                          "value": "picture_modes"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2020", "2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "tv_smart_sound_quality",
+                    "type": "multiple_checkboxes",
+                    "label": "What are the most important factors about the Sound quality? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 5
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Dolby Atmos support",
+                          "value": "dolby_atmos"
+                        },
+                        {
+                          "label": "High-power speaker/large volume speaker",
+                          "value": "high_power"
+                        },
+                        {
+                          "label": "Good treble effect",
+                          "value": "good_treble"
+                        },
+                        {
+                          "label": "Integrated subwoofer",
+                          "value": "integrated_subwoofer"
+                        },
+                        {
+                          "label": "Surround sound",
+                          "value": "surround_sound"
+                        },
+                        {
+                          "label": "Different sound modes to adapt to different content (like sports, music, theatre)",
+                          "value": "sound_modes"
+                        },
+                        {
+                          "label": "Clarity of voices (speech intelligibility)",
+                          "value": "clarity_voices"
+                        },
+                        {
+                          "label": "TV speaker output way (speaker output direction, forward, backward, up, down)",
+                          "value": "speaker_output"
+                        },
+                        {
+                          "label": "Cooperate with professional acoustic brands such as Harman Kardon",
+                          "value": "professional_acoustic_brands"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2020", "2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "tv_smart_apps",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What apps do you use often? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 5
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Claro Video",
+                          "value": "claro_video"
+                        },
+                        {
+                          "label": "Youtube",
+                          "value": "youtube"
+                        },
+                        {
+                          "label": "Prime Video",
+                          "value": "amazon_prime_video"
+                        },
+                        {
+                          "label": "Pluto",
+                          "value": "pluto"
+                        },
+                        {
+                          "label": "Netflix",
+                          "value": "netflix"
+                        },
+                        {
+                          "label": "HBO GO",
+                          "value": "hbo_go"
+                        },
+                        {
+                          "label": "Flow",
+                          "value": "flow"
+                        },
+                        {
+                          "label": "Disney+",
+                          "value": "disney+"
+                        },
+                        {
+                          "label": "Movie Star Play",
+                          "value": "movie_star_play"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "2018",
+                  "conditions": ["2019", "2018", "before_2018"],
+                  "question": {
+                    "name": "smartTV_buy",
+                    "type": "select",
+                    "placeholder": "Please specify",
+                    "label": "Do you plan to buy a  new Smart TV in the next 3 months? [Single choice]",
+                    "dependentQuestions": [
+                      {
+                        "condition": "yes",
+                        "question": {
+                          "name": "tv_aspect",
+                          "type": "multiple_checkboxes",
+                          "label": "What kind of TV appearance do you prefer to? [Multiple choice - please select no more than 3]",
+                          "errorMessages": {
+                            "required": "This field is required",
+                            "maximumLen": "Maximum selection is 3"
+                          },
+                          "registerConfig": {
+                            "required": true,
+                            "minimumLen": 1,
+                            "maximumLen": 3
+                          },
+                          "config": {
+                            "options": [
+                              {
+                                "label": "Single stand in the middle of TV(Can place any size TV cabinet)",
+                                "value": "one_center_support"
+                              },
+                              {
+                                "label": "Ultra-thin appearance",
+                                "value": "ultra_thin"
+                              },
+                              {
+                                "label": "Dual feet stand",
+                                "value": "double_support"
+                              },
+                              {
+                                "label": "Integrated back shell",
+                                "value": "back_cover"
+                              },
+                              {
+                                "label": "Swivel stand(The screen can be rotated)",
+                                "value": "rotative_support"
+                              },
+                              {
+                                "label": "Bezel less (With minimized black edges)",
+                                "value": "no_bezel"
+                              },
+                              {
+                                "label": "Metal body(More durable and more textured)",
+                                "value": "steel_structure"
+                              },
+                              {
+                                "label": "Other, please specify",
+                                "value": "other"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "errorMessages": {
+                      "required": "This field is required"
+                    },
+                    "registerConfig": {
+                      "required": true
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Please make a selection",
+                          "value": "*"
+                        },
+                        {
+                          "label": "Yes",
+                          "value": "yes"
+                        },
+                        {
+                          "label": "No",
+                          "value": "no"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "2020",
+                    "value": "2020"
+                  },
+                  {
+                    "label": "2019",
+                    "value": "2019"
+                  },
+                  {
+                    "label": "2018",
+                    "value": "2018"
+                  },
+                  {
+                    "label": "Before 2018",
+                    "value": "before_2018"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "condition": "no",
+            "question": {
+              "name": "smartTV_when_buy",
+              "type": "select",
+              "placeholder": "Please specify",
+              "label": "Do you plan to buy a Smart TV in the next 3 months? [Single choice]",
+              "dependentQuestions": [
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "learn_about_tv",
+                    "type": "multiple_checkboxes",
+                    "label": "How will you research a smart TV before purchasing? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Online consumer review",
+                          "value": "online_consumer_review"
+                        },
+                        {
+                          "label": "Professional review & rating (online)",
+                          "value": "professional_review"
+                        },
+                        {
+                          "label": "Social media",
+                          "value": "social_media"
+                        },
+                        {
+                          "label": "Google search",
+                          "value": "google_search"
+                        },
+                        {
+                          "label": "View official website",
+                          "value": "official_website"
+                        },
+                        {
+                          "label": "Recommendations from relatives and friends",
+                          "value": "recommendations"
+                        },
+                        {
+                          "label": "In store assistance and advice ",
+                          "value": "store_assistance"
+                        },
+                        {
+                          "label": "Advertisement on TV ",
+                          "value": "advertisement"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "factors_tv",
+                    "type": "multiple_checkboxes",
+                    "label": "The main factors that affect your purchase decision are? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Brand",
+                          "value": "brand"
+                        },
+                        {
+                          "label": "Product features(size, sound,resolution,etc.)",
+                          "value": "product_features"
+                        },
+                        {
+                          "label": "Price",
+                          "value": "price"
+                        },
+                        {
+                          "label": "Word of mouth/reviews",
+                          "value": "word_of_mouth"
+                        },
+                        {
+                          "label": "Service",
+                          "value": "service"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "what_care_buying_tv",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What will you care about when buying a new TV? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "minimumLen": 1,
+                      "maximumLen": 5,
+                      "required": true
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Ease of use (operation system, remote control, etc.)",
+                          "value": "ease_of_use"
+                        },
+                        {
+                          "label": "Voice assistant function",
+                          "value": "voice_assistant"
+                        },
+                        {
+                          "label": "Size",
+                          "value": "size"
+                        },
+                        {
+                          "label": "Exterior",
+                          "value": "exterior"
+                        },
+                        {
+                          "label": "Content (video, apps, etc.)",
+                          "value": "content"
+                        },
+                        {
+                          "label": "Hardware configuration (CPU, memory, etc.)",
+                          "value": "hardware_configuration"
+                        },
+                        {
+                          "label": "Picture quality",
+                          "value": "picture_quality"
+                        },
+                        {
+                          "label": "Casting/Mirror Screen function ",
+                          "value": "cast"
+                        },
+                        {
+                          "label": "Sound quality",
+                          "value": "sound_quality"
+                        },
+                        {
+                          "label": "Smart home function(TV links with IoT devices and sensors so you can turn on the lights, check fridge, run the robot etc.)",
+                          "value": "smart_home"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "tv_aspect",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What kind of TV appearance do you prefer to buy? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Single stand in the middle of TV(Can place any size TV cabinet)",
+                          "value": "one_center_support"
+                        },
+                        {
+                          "label": "Ultra-thin appearance",
+                          "value": "ultra_thin"
+                        },
+                        {
+                          "label": "Dual feet stand",
+                          "value": "double_support"
+                        },
+                        {
+                          "label": "Integrated back shell",
+                          "value": "back_cover"
+                        },
+                        {
+                          "label": "Swivel stand(The screen can be rotated)",
+                          "value": "rotative_support"
+                        },
+                        {
+                          "label": "Bezel less (With minimized black edges)",
+                          "value": "no_bezel"
+                        },
+                        {
+                          "label": "Metal body (More durable and more textured)",
+                          "value": "steel_structure"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "tv_smart_picture_quality",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "What are the most important factors about the Picture quality? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 5
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Natural and true colors",
+                          "value": "natural_colors"
+                        },
+                        {
+                          "label": "Reduce / avoid eye fatigue while watching",
+                          "value": "reduce_eye_fatigue"
+                        },
+                        {
+                          "label": "Motion picture is smooth / anti-shake",
+                          "value": "motion_picture"
+                        },
+                        {
+                          "label": "Display resolution (FHD, 4K, 8K)",
+                          "value": "display_resolution"
+                        },
+                        {
+                          "label": "Display technology (OLED, QLED, ULED,LED)",
+                          "value": "display_technology"
+                        },
+                        {
+                          "label": "Support of HDR formats",
+                          "value": "hdr"
+                        },
+                        {
+                          "label": "The black scene has clear details",
+                          "value": "black_scene"
+                        },
+                        {
+                          "label": "Picture algorithms to improve the picture",
+                          "value": "picture_algorithms"
+                        },
+                        {
+                          "label": "Wide viewing angle of display",
+                          "value": "viewing_angle"
+                        },
+                        {
+                          "label": "AI picture modes (adjusts color, brightness and contrast scene by scene)",
+                          "value": "picture_modes"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "tv_smart_sound_quality",
+                    "type": "multiple_checkboxes",
+                    "label": "What are the most important factors about the Sound quality? [Multiple choice - please select no more than 5]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 5"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 5
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Dolby Atmos support",
+                          "value": "dolby_atmos"
+                        },
+                        {
+                          "label": "High-power speaker/large volume speaker",
+                          "value": "high_power"
+                        },
+                        {
+                          "label": "Good treble effect",
+                          "value": "good_treble"
+                        },
+                        {
+                          "label": "Integrated subwoofer",
+                          "value": "integrated_subwoofer"
+                        },
+                        {
+                          "label": "Surround sound",
+                          "value": "surround_sound"
+                        },
+                        {
+                          "label": "Different sound modes to adapt to different content (like sports, music, theatre)",
+                          "value": "sound_modes"
+                        },
+                        {
+                          "label": "Clarity of voices (speech intelligibility)",
+                          "value": "clarity_voices"
+                        },
+                        {
+                          "label": "TV speaker output way (speaker output direction, forward, backward, up, down)",
+                          "value": "speaker_output"
+                        },
+                        {
+                          "label": "Cooperate with professional acoustic brands such as Harman Kardon",
+                          "value": "professional_acoustic_brands"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "yes",
+                  "question": {
+                    "name": "smart_tv_functions_to_add",
+                    "type": "multiple_checkboxes",
+                    "label": "What features do you expect from a  new smart TV? [Multiple choice - please select no more than 4]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 4"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 4
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Video calling(Connect with your family and friends through video calls on the big screen.)",
+                          "value": "video_call"
+                        },
+                        {
+                          "label": "Karaoke(Singing with friends through a mic on the big screen  )",
+                          "value": "karaoke"
+                        },
+                        {
+                          "label": "Exercising function(Use your TV like a personal trainer to master your workouts)",
+                          "value": "sports"
+                        },
+                        {
+                          "label": "Gaming(Play TV game app on the big screen through ",
+                          "value": "games"
+                        },
+                        {
+                          "label": "Working function (Simplify multitasking with access to your office PC remotely from the TV)",
+                          "value": "work_function"
+                        },
+                        {
+                          "label": "One Remote for total control",
+                          "value": "one_controller"
+                        },
+                        {
+                          "label": "Smart home function(TV links with IoT devices and sensors so you can turn on the lights, check fridge, run the robot etc. )",
+                          "value": "smart_home"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "no",
+                  "question": {
+                    "name": "tv_smart_sport",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "How do you watch sports programs on TV? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Watch website/app on PC",
+                          "value": "watch_website"
+                        },
+                        {
+                          "label": "Watch app on iPad/Tablet",
+                          "value": "watch_tablet"
+                        },
+                        {
+                          "label": "Watch app on phone",
+                          "value": "watch_phone"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "condition": "no",
+                  "question": {
+                    "name": "what_apps_do_you_use_often",
+                    "type": "multiple_checkboxes",
+                    "placeholder": "Please specify",
+                    "label": "Which apps do you use when watching sports programmes? [Multiple choice - please select no more than 3]",
+                    "errorMessages": {
+                      "required": "This field is required",
+                      "maximumLen": "Maximum selection is 3"
+                    },
+                    "registerConfig": {
+                      "required": true,
+                      "minimumLen": 1,
+                      "maximumLen": 3
+                    },
+                    "config": {
+                      "options": [
+                        {
+                          "label": "Mobdro",
+                          "value": "mobdro"
+                        },
+                        {
+                          "label": "365 Scores",
+                          "value": "365_scores"
+                        },
+                        {
+                          "label": "Yip TV",
+                          "value": "vip_tv"
+                        },
+                        {
+                          "label": "ESPN",
+                          "value": "espn"
+                        },
+                        {
+                          "label": "La Liga TV",
+                          "value": "la_liga_tv"
+                        },
+                        {
+                          "label": "UKTVNOW",
+                          "value": "uktvnow"
+                        },
+                        {
+                          "label": "Live Score",
+                          "value": "live_score"
+                        },
+                        {
+                          "label": "SuperSport",
+                          "value": "suporsport"
+                        },
+                        {
+                          "label": "CBS Sport",
+                          "value": "cbs_sport"
+                        },
+                        {
+                          "label": "Flash Score",
+                          "value": "flash_score"
+                        },
+                        {
+                          "label": "Other, please specify",
+                          "value": "other"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "Yes",
+                    "value": "yes"
+                  },
+                  {
+                    "label": "No",
+                    "value": "no"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
+            },
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        }
+      }
+    ],
+    "callForAction": [
+      {
+        "caption": "Enter",
+        "type": "submit"
+      }
+    ],
+    "id": "1z0vX5R7HdHNrd5FMmeLjb"
+  },
+  "survey": {
+    "name": "Survey Form",
+    "title": "Survey Form",
+    "layout": "survey",
+    "caption": "But wait, there's more...\n\nComplete our survey below and you'll receive TEN extra entries into the promotion!",
+    "enabled": true,
+    "questions": [
+      {
+        "name": "were_you_aware_of_the_hsbc_sevens_partnership_before_entering_the_competition",
+        "type": "select",
+        "label": "Were you aware of the HSBC Sevens partnership before entering the competition?",
+        "dependentQuestions": [
+          {
+            "condition": "yes",
+            "question": {
+              "name": "age",
+              "type": "select",
+              "label": "Age",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Please make a selection",
+                    "value": "*"
+                  },
+                  {
+                    "label": "18-25",
+                    "value": "18_25"
+                  },
+                  {
+                    "label": "26-30",
+                    "value": "26_30"
+                  },
+                  {
+                    "label": "31-35",
+                    "value": "31_35"
+                  },
+                  {
+                    "label": "36-40",
+                    "value": "36_40"
+                  },
+                  {
+                    "label": "41-45",
+                    "value": "41_45"
+                  },
+                  {
+                    "label": "46-55",
+                    "value": "46_55"
+                  },
+                  {
+                    "label": "56-60",
+                    "value": "56_60"
+                  },
+                  {
+                    "label": "61+",
+                    "value": "61plus"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
+            },
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        }
+      },
+      {
+        "name": "how_do_you_feel_about_HSBC_as_a_result_of_this_partnership",
+        "type": "select",
+        "label": "How do you feel about HSBC as a result of this partnership?",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Please make a selection",
+              "value": "*"
+            },
+            {
+              "label": "Much more appealing",
+              "value": "much_more_appealing"
+            },
+            {
+              "label": "Appealing",
+              "value": "appealing"
+            },
+            {
+              "label": "Doesn't change",
+              "value": "doesnt_change"
+            },
+            {
+              "label": "Less appealing",
+              "value": "less_applealing"
+            }
+          ]
         }
       },
       {
@@ -460,214 +1612,10 @@
           ]
         }
       },
-
       {
-        "name": "what_other_sports_are_you_interested_in",
-        "type": "multiple_images_checkboxes",
-        "label": "What other sports are you interested in? (You can select multiple)",
-        "errorMessages": {
-          "required": "This field is required",
-          "minimumLen": "You must choose at least two options"
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 2
-        },
-        "config": {
-          "options": [
-            {
-              "name": "tennis",
-              "src": "https://via.placeholder.com/150x75",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "golf",
-              "src": "https://via.placeholder.com/150x75",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "cycling",
-              "src": "https://via.placeholder.com/150x75",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "badminton",
-              "src": "https://via.placeholder.com/150x75",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "other",
-              "src": "https://via.placeholder.com/150x75",
-              "registerConfig": {
-                "required": false
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_capacity",
-        "type": "select",
-        "label": "What´s the capacity of your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "0-100L",
-              "value": "0-100l"
-            },
-            {
-              "label": "101-200L",
-              "value": "101-200l"
-            },
-            {
-              "label": "201-300L",
-              "value": "201-300l"
-            },
-            {
-              "label": "301-400L",
-              "value": "301-400l"
-            },
-            {
-              "label": "401-500L",
-              "value": "401-500l"
-            },
-            {
-              "label": "501-600L",
-              "value": "501-600l"
-            },
-            {
-              "label": "601-700L",
-              "value": "601-700l"
-            },
-            {
-              "label": ">701L",
-              "value": "above_701l"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_cost",
-        "type": "select",
-        "label": "How much is your refrigerator?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "<$499",
-              "value": "under_499"
-            },
-            {
-              "label": "$500-$799",
-              "value": "500-799"
-            },
-            {
-              "label": "$800-$1099",
-              "value": "800-1099"
-            },
-            {
-              "label": "$1100-$1499",
-              "value": "1100-1499"
-            },
-            {
-              "label": ">$1500",
-              "value": "above_1500"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_features",
+        "name": "outside_of_sport_what_other_hsbc_events_would_you_most_be_interested_in",
         "type": "multiple_checkboxes",
-        "label": "What features did you look for when buying your refrigerator? [MC, up to 10]",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 1,
-          "maximumLen": 10
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Product appearance",
-              "value": "product_appearance"
-            },
-            {
-              "label": "Product net/gross capacity",
-              "value": "product_net_capacity"
-            },
-            {
-              "label": "Ice & water dispenser",
-              "value": "ice_water_dispenser"
-            },
-            {
-              "label": "Water dispenser",
-              "value": "water_dispenser"
-            },
-            {
-              "label": "Ice maker",
-              "value": "ice_maker"
-            },
-            {
-              "label": "Convertible temperature zone",
-              "value": "convertible_temperature_zone"
-            },
-            {
-              "label": "Super cool/Super freeze",
-              "value": "super_cool"
-            },
-            {
-              "label": "Easy-to-use design",
-              "value": "easy_to_use_design"
-            },
-            {
-              "label": "Inverter compressor",
-              "value": "inverter_compressor"
-            },
-            {
-              "label": "Energy level",
-              "value": "energy_level"
-            },
-            {
-              "label": "Others",
-              "value": "others"
-            }
-          ]
-        }
-      },
-      {
-        "name": "refrigerator_recommendation",
-        "type": "select",
-        "label": "How likely do you recommend your refrigerator to family\u00a0&friends?",
+        "label": "Outside of sport, what other HSBC events would you most be interested in? (You can select multiple)",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -677,36 +1625,58 @@
         "config": {
           "options": [
             {
-              "label": "Please make a selection",
-              "value": "*"
+              "name": "leadership_and_training_events",
+              "label": "Leadership and training events"
             },
             {
-              "label": "Not at all likely",
-              "value": "not_at_all_likely"
+              "name": "sustainability_and_philanthropic_events",
+              "label": "Sustainability and philanthropic events",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Not so likely",
-              "value": "not_so_likely"
+              "name": "immersive_food_experiences",
+              "label": "Immersive food experiences",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Somewhat likely",
-              "value": "somewhat_likely"
+              "name": "not_interested",
+              "label": "Not interested",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Very likely",
-              "value": "very_likely"
+              "name": "innovation_and_tech_seminars",
+              "label": "Innovation and tech seminars",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Extremely likely",
-              "value": "extremely_likely"
+              "name": "arts_music_and_cultural_events",
+              "label": "Arts, music and cultural events",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "health_and_wellbeing_events",
+              "label": "Health and wellbeing events",
+              "registerConfig": {
+                "required": false
+              }
             }
           ]
         }
       },
       {
-        "name": "hisense_knowing",
-        "type": "select",
-        "label": "Before today were you aware that Hisense sells refrigerators and Hisense\u00a0is\u00a0a\u00a0major\u00a0sponsor\u00a0of\u00a0the\u00a0PSG?",
+        "name": "what_hsbc_products_would_you_be_interested_in_knowing_more_about",
+        "type": "multiple_checkboxes",
+        "label": "What HSBC products would you be interested in knowing more about?",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -716,28 +1686,47 @@
         "config": {
           "options": [
             {
-              "label": "Please make a selection",
-              "value": "*"
+              "name": "credit_cards",
+              "label": "Credit Cards",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "Yes",
-              "value": "yes"
+              "name": "personal_banking",
+              "label": "Personal Banking",
+              "registerConfig": {
+                "required": false
+              }
             },
             {
-              "label": "No",
-              "value": "no"
+              "name": "not_interested",
+              "label": "Not interested",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "savings_and_current_accounts",
+              "label": "Savings and Current Accounts",
+              "registerConfig": {
+                "required": false
+              }
+            },
+            {
+              "name": "business_banking",
+              "label": "Business Banking",
+              "registerConfig": {
+                "required": false
+              }
             }
           ]
         }
       }
     ],
-    "textToShow": {
-      "privacy": "Texto sobre la privacidad",
-      "T&C": "Los términos y condiciones"
-    },
     "callForAction": [
       {
-        "caption": "Submit",
+        "caption": "Enter",
         "type": "submit"
       }
     ],

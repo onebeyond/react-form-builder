@@ -2,6 +2,7 @@
 
 export { default as Button } from './Fields/Button'
 export { default as Input } from './Fields/Input'
+export { default as Textarea } from './Fields/Textarea'
 export { default as Label } from './Fields/Label'
 export { default as Checkbox } from './Fields/Checkbox'
 export { default as Select } from './Fields/Select'

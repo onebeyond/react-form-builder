@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import questionsSchema from './questionSchema'
 
 const Joi = require('joi')

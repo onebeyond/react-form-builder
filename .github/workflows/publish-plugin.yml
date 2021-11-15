@@ -1,0 +1,25 @@
+name: Publish plugin
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v2
+      # setup node env
+      - name: Use Node.js 10.17.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.17.0
+          registry-url: 'https://registry.npmjs.org'
+      # install node_modules
+      - name: Install dependencies
+        run: npm install
+      # publish to npm
+      - name: Publish package
+        run: npm publish --ignore-scripts --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GUIDESMITHS }}

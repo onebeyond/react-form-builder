@@ -28,7 +28,8 @@ const theme = {
     container: {
       contact: {
         display: 'grid',
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        gridTemplateColumns: '1fr 1fr'
       }
     },
     multipleImageCheckboxes: {
@@ -50,6 +51,18 @@ const theme = {
           }
         }
       }
+    },
+    selectContainer: {
+      gridColumnStart: '1',
+      gridColumnEnd: '3'
+    },
+    countryContainer: {
+      gridColumnStart: '1',
+      gridColumnEnd: '3'
+    },
+    inputContainer: {
+      gridColumnStart: '1',
+      gridColumnEnd: '3',
     }
   },
   label: {

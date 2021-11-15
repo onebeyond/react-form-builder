@@ -7,6 +7,7 @@ import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
 import QuestionInput from './Questions/Input'
+import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
 import QuestionStatic from './Questions/Static'
@@ -64,6 +65,7 @@ const FormBuilder = ({
         </div>
       ),
       input: <QuestionInput useForm={useFormObj} question={question} />,
+      textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
       select: (
         <>
           <QuestionSelect useForm={useFormObj} question={question} />
@@ -155,17 +157,11 @@ const FormBuilder = ({
 
       return getConditions().includes(getFormattedValue()) ? (
         <React.Fragment key={i}>
-          <div
-            sx={{
-              ...(dependentQuestion.question.isFullWidth && styles.fullWidth)
-            }}
-          >
-            {
-              QuestionsMap(dependentQuestion.question)[
-                dependentQuestion.question.type
-              ]
-            }
-          </div>
+          {
+            QuestionsMap(dependentQuestion.question)[
+              dependentQuestion.question.type
+            ]
+          }
 
           {nestedQuestion.dependentQuestions
             ? nestedQuestion.dependentQuestions.map(
@@ -203,6 +199,7 @@ const FormBuilder = ({
             : 'forms.container'
       }}
       onSubmit={useFormObj.handleSubmit(onSubmit)}
+      {...props}
     >
       {form &&
         Array.isArray(form.questions) &&

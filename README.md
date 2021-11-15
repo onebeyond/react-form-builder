@@ -6,17 +6,46 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-## Install
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Live Playground](#live-playground)
+- [FormBuilder parameters](#formbuilder-parameters)
+- [Questions](#questions)
+  - [Checkbox](#checkbox)
+    - [Checkbox example](#checkbox-example)
+  - [Country](#country)
+    - [Country Example](#country-example)
+  - [Date](#date)
+    - [Date Examples](#date-examples)
+  - [Input](#input)
+    - [Examples](#examples)
+  - [Markdown](#markdown)
+    - [Markdown Examples](#markdown-examples)
+  - [MultipleCheckbox](#multiplecheckbox)
+    - [MultipleCheckbox Examples](#multiplecheckbox-examples)
+  - [Phone](#phone)
+  - [RadioButton](#radiobutton)
+    - [RadioButton example](#radiobutton-example)
+  - [Select](#select)
+    - [Select Example](#select-example)
+  - [TextArea](#textarea)
+    - [TextArea Example](#textarea-example)
+- [Contribution guide](#contribution-guide)
+- [Contributors ✨](#contributors-)
+- [License](#license)
+
+# Installation
 
 ```bash
 npm install --save @guidesmiths/react-form-builder
 ```
 
-## Usage
+# Usage
 
 ```jsx
 import React, { Component } from 'react'
-import { FormBuilder } from '@guidesmiths/react-form-builder
+import { FormBuilder } from '@guidesmiths/react-form-builder'
 import form from '../../forms/question/get.json'
 
 const onSubmitForm = (data) => {
@@ -48,15 +77,17 @@ For examples of react-form-builder in action go to:
 http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 
-# Formbuilder options
+# FormBuilder parameters
+
+FormBuilder component accepts the following parameters:
 
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
-|   idForm*	|  Id for the form  	|  string 	|  '' 	|
-|   form*	|  The json with the questions to create 	|  json  	|   -	|
+|   idForm*	|  form's id  	|  string 	|  '' 	|
+|   form*	|  Json with the questions to create. Questions parameter can be found in the next section 	|  Array  	|   -	|
 |   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
-|  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
+|  isoCode      |   IsoCode of the country to show as default in phone input |  string     | GB
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
 
@@ -89,7 +120,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 Reminder: A custom link it will be indicated by the start of a '#' in the markdown label. This link will execute the action that you had sent in the onLinkOpen param in the ReactFormBuilder component.
 
-#### Checkbox example
+### Checkbox example
 
 ```yaml
     {
@@ -110,8 +141,8 @@ Reminder: A custom link it will be indicated by the start of a '#' in the markdo
 https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-95c3-bcdce20cd858.mp4
 
 
-
 ## Country
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Country component name  	|  string 	|  - 	|
@@ -127,7 +158,8 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 
 Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
 
-### Country example:
+### Country Example
+
 ```yaml
 {
   "name": "country_of_residence",
@@ -144,12 +176,12 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 }
 ```
 
-
 https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-b813-06596d9b7096.mov
 
 
 
 ## Date
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Date name component  	|  string 	|  - 	|
@@ -165,7 +197,8 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 |  **registerConfig**       |    |  json     |
 | required  | Define if the checkbox is required  |  boolean  | false
 
-### Date examples
+### Date Examples
+
 Basic date example
 ```yaml
 {
@@ -182,7 +215,7 @@ Basic date example
   }
 }
 ```
-Minage date example
+MinAge date example
 ```yaml
 {
   "name": "dob",
@@ -204,8 +237,8 @@ Minage date example
 https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-a64f-6ab0c99d72fd.mp4
 
 
-
 ## Input
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Input name  	|  string 	|  - 	|
@@ -225,8 +258,10 @@ https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-
 | required  | Define if the checkbox is required  |  boolean  | false
 | pattern  | Define the pattern to check the input  |  string  | ""
 
-### Input examples
+### Input Examples
+
 Basic input example
+
 ```yaml
 {
   "name": "email",
@@ -243,6 +278,7 @@ Basic input example
 
 ```
 Input with pattern control example
+
 ```yaml
 {
   "name": "email",
@@ -261,6 +297,7 @@ Input with pattern control example
 
 ```
 Input with styled icon
+
 ```yaml
 {
   name: 'inputName',
@@ -289,16 +326,15 @@ Input with styled icon
 
 https://user-images.githubusercontent.com/79102959/134945983-c0c38274-05c7-42b7-8ad3-c80b33db6611.mov
 
+## Markdown
 
-### Markdown
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  markdown component name  	|  string 	|  - 	|
 |   type*   | must be **markdown**| string | - |
 |   label	|  Text to be displayed, it will be formatted with markdown style	|  string  	|   ''	|
 
-#### Markdown examples
-Markdown example
+### Markdown Examples
 
 ```yaml
 {
@@ -311,7 +347,8 @@ Markdown example
 ![Markdown](https://user-images.githubusercontent.com/79102959/134945571-e04941d1-7972-4271-8139-4be1815ed644.png)
 
 
-### MultipleCheckbox
+## MultipleCheckbox
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	| MultipleCheckBox name  |  string 	|  - 	|
@@ -331,8 +368,10 @@ Markdown example
 | maximumLen | Maximum number of options that user can select  | int  | -
 | required  | Define if the multiplecheckbox is required  |  boolean  | false
 
-#### Multiplecheckbox examples
-Basic multiplecheckbox
+### MultipleCheckbox Examples
+
+Basic example
+
 ```yaml
 {
   "name": "multiplecheckbox_name",
@@ -364,7 +403,7 @@ Basic multiplecheckbox
   }
 }
 ```
-Multiplecheckbox with images and labels
+Multiple checkbox with images and labels
 
 ```yaml
 {
@@ -399,7 +438,8 @@ Multiplecheckbox with images and labels
 
 ```
 
-Multiplecheckbox with minimumLen
+Multiple checkbox with minimumLen
+
 ```yaml
 {
   "name": "multiplecheckbox_name",
@@ -436,10 +476,8 @@ Multiplecheckbox with minimumLen
 
 https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-8978-b269be0ffce9.mov
 
+## Phone
 
-
-
-### Phone
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Phone component name  	|  string 	|  - 	|
@@ -450,7 +488,7 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 |  **registerConfig**       |    |  json     |
 | required  | Define if the phone input is required  |  boolean  | false
 
-Reminder: The isoCode prop that can be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
+Reminder: The `isoCode` prop that can be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
 
 Basic phone
 
@@ -469,12 +507,10 @@ Basic phone
 }
 ```
 
-
 https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-adc0-e2bef5f9d16f.mov
 
 
-
-### RadioButton
+## RadioButton
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  RadioButton name  	|  string 	|  - 	|
@@ -485,8 +521,8 @@ https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-
 |  **registerConfig**       |    |  json     |
 | required  | Define if the radioButton is required  |  boolean  | false
 
-#### RadioButton example
-Basic radiobutton
+### RadioButton example
+
 ```yaml
 {
   "name": "radio_name",
@@ -512,13 +548,9 @@ Basic radiobutton
 
 ```
 
-
-
 https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-b95b-c3737ade9130.mov
 
-
-
-### Select
+## Select
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Checkbox name  	|  string 	|  - 	|
@@ -535,7 +567,7 @@ https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-
 |  **registerConfig**       |    |  json     |
 | required  | Define if the select is required  |  boolean  | false
 
-#### Select examples
+### Select Example
 
 Select basic example
 
@@ -571,11 +603,44 @@ Select basic example
 
 ```
 
-
 https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
 
 
-# To contribute
+## TextArea
+
+| Option       | Description                                                 | Type   | Default |
+|--------------|-------------------------------------------------------------|--------|---------|
+| name*        | textarea name                                               | string |   NA    |
+| type*        | must be `textarea`                                          | string |   NA    |
+| label        | textarea label                                              | string |   NA    |
+| placeholder  | textarea placeholder                                        | string |   NA    |
+| defaultValue | textarea default value                                      | string |   NA    |
+| pattern      | Text area value can be validated using a regular expression | regexp |   NA    |
+| maxLength    | max number of characters allowed                            | number |   NA    |
+| rows         | max numbers of lines                                        | number |   NA    |
+
+### TextArea example
+
+
+```json
+
+{
+  "name": "Textarea name",
+  "type": "textarea",
+  "label": "Textarea label",
+  "placeholder": "Placeholder",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+
+```
+
+
+# Contribution guide
 
 1. `npm install`
 2. `npm start`
@@ -588,7 +653,7 @@ See `localhost:3000`
 Any change on the root src library will be reflected on the usage in the example folder.
 
 
-## Contributors ✨
+# Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -613,8 +678,6 @@ title="Test">⚠️</a> </td>
 title="Test">⚠️</a> </td>
 
 <td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td>
-
-
   </tr>
 </table>
 
@@ -625,6 +688,6 @@ title="Test">⚠️</a> </td>
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-## License
+# License
 
 MIT © [Guidesmiths](https://github.com/Guidesmiths)

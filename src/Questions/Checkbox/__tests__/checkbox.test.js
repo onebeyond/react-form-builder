@@ -7,7 +7,6 @@ afterEach(cleanup)
 const question = {
   name: 'terms_and_conditions',
   type: 'checkbox',
-  isFullWidth: true,
   defaultChecked: true,
   label:
     'I am over the age of 18, a United Kingdom resident and I have read and understood the [Terms and Conditions](https://www.google.es) of this promotion.',

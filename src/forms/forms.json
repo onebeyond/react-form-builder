@@ -10,7 +10,6 @@
       "type": "input",
       "label": "",
       "placeholder": "First name",
-      "isFullWidth": true,
       "errorMessages": {
         "required": "This field is required"
       },
@@ -20,7 +19,6 @@
     },
     {
       "name": "last_name",
-      "isFullWidth": true,
       "type": "input",
       "label": "",
       "placeholder": "Last name",
@@ -36,7 +34,6 @@
       "type": "input",
       "label": "",
       "placeholder": "Email address",
-      "isFullWidth": true,
       "errorMessages": {
         "required": "This field is required",
         "pattern": "The pattern does not match"
@@ -58,7 +55,6 @@
       }
     },
     {
-      "isFullWidth": true,
       "name": "phone",
       "type": "phone",
       "label": null,
@@ -73,7 +69,6 @@
     },
     {
       "name": "country",
-      "isFullWidth": true,
       "type": "select",
       "label": "Selecciona una opción",
       "placeholder": "Country",
@@ -150,7 +145,6 @@
     },
     {
       "name": "favourite_team",
-      "isFullWidth": true,
       "type": "select",
       "label": "",
       "placeholder": "Favourite team",
@@ -360,7 +354,6 @@
     {
       "name": "terms_and_conditions",
       "type": "checkbox",
-      "isFullWidth": true,
       "label": "",
       "errorMessages": {
         "required": "This is mandatory"

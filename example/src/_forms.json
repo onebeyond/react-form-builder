@@ -121,7 +121,7 @@
       },
       {
         "name": "select_the_2021_sevens_tournament_of_your_choice",
-        "isFullWidth": true,
+        
         "type": "select",
         "label": "Select the 2021 Sevens tournament of your choice",
         "errorMessages": {
@@ -182,7 +182,6 @@
       {
         "name": "are_you_an_hsbc_current_account_customer",
         "type": "select",
-        "isFullWidth": true,
         "label": "Are you an HSBC current account customer?",
         "errorMessages": {
           "required": "This field is required"
@@ -210,7 +209,6 @@
       {
         "name": "terms_and_conditions",
         "type": "checkbox",
-        "isFullWidth": true,
         "label": "Terms and Conditions",
         "errorMessages": {
           "required": "This is mandatory"

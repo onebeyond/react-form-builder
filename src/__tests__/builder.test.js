@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react'
 import { cleanup, render, fireEvent, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
@@ -40,9 +41,23 @@ test('check if questions are rendered', () => {
   expect(allInputs.length).toBe(1)
 })
 
-// test('check if wrong JSON returns an error are rendered', () => {
-//   getByText(container, 'JSON validation returned an error')
-// })
+test('check if wrong JSON returns an error are rendered', () => {
+  console.log = jest.fn()
+  component = render(
+    <FormBuilder
+      idForm={forms.contact.id}
+      form={forms.custom}
+      isoCode='ES'
+      isLoading={false}
+      onSubmit={mockHandler}
+      validateJSON
+    />
+  )
+  expect(console.log).toHaveBeenCalledWith(
+    'JSON validation returned an error: ',
+    expect.anything()
+  )
+})
 
 test("check if it won't call submit eventhandler if required fields are not filled in", async () => {
   const button = component.getByText('Submit Form')

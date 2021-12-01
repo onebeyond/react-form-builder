@@ -15,9 +15,9 @@ npm install --save @guidesmiths/react-form-builder
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-import { FormBuilder } from '@guidesmiths/react-form-builder
-import form from '../../forms/question/get.json'
+import React, { useEffect, useState } from 'react'
+import forms from './forms.json'
+import FormBuilder from 'react-form-builder'
 
 const onSubmitForm = (data) => {
     !isLoading &&
@@ -34,9 +34,16 @@ const onSubmitForm = (data) => {
     }, 1000)
   }
 
-class Example extends Component {
+const Example = () => {
   render() {
-   return <FormBuilder form={form} onSubmit={onSubmitForm} />
+   <FormBuilder
+        idForm={forms.contact.id}
+        form={forms.contact}
+        onSubmit={onSubmitForm}
+        isoCode='ES'
+        onLinkOpen={onLinkOpen}
+        isLoading={isLoading}
+      />
   }
 }
 ```
@@ -57,6 +64,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
+|  isMobile      |   Checked component by default | boolean    | false
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
 
@@ -81,6 +89,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |   name*	|  Checkbox name  	|  string 	|  - 	|
 |   type*   | Must be `checkbox`| string | - |
 |   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|
+|   isFullWidth   |   Define if the field takes all the available width in the grid or not   |    boolean       |   false   |
 |   defaultChecked    |   Checked component by default    |    boolean       |   false   |
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
@@ -117,9 +126,13 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |   name*	|  Country component name  	|  string 	|  - 	|
 |   type*   | Must be `country` | string | - |
 |   label	|  Text shown over the coutnry list|  string  	|   ''	|
+|   language	| An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
 |   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
 |   returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
+|   **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
+|  countryName     |   The name of the country |  string     | ''
+|  countryShortCode     |   The name of the country |  string     | ''
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -129,6 +142,42 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 
 ### Country example:
 ```yaml
+{
+  "name": "country_of_residence",
+  "type": "country",
+  "label": "This is the label of the country select",
+  "placeholder": "Please select an option ^^",
+  "priorityOptions": ["GB", "ES"],
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+```
+
+### Custom list country example:
+```yaml
+{
+  {
+      countryName: 'MyOwnCountry1',
+      countryShortCode: 'MC1'
+    },
+    {
+      countryName: 'MyOwnCountry2',
+      countryShortCode: 'MC2'
+    },
+    {
+      countryName: 'MyOwnCountry3',
+      countryShortCode: 'MC3'
+    },
+    {
+      countryName: 'MyOwnCountry4',
+      countryShortCode: 'MC4'
+    }
+}
+
 {
   "name": "country_of_residence",
   "type": "country",
@@ -163,7 +212,7 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 |  required      |   Error message to display on submit if the date hasn't be selected and  is required |  string     | ''
 |  underAge      |   Error message to display on submit if it is chosen a date  that represents a user younger than the minAge attribute |  string     | ''
 |  **registerConfig**       |    |  json     |
-| required  | Define if the checkbox is required  |  boolean  | false
+| required  | Define if the date is required or not |  boolean  | false
 
 ### Date examples
 Basic date example
@@ -182,7 +231,7 @@ Basic date example
   }
 }
 ```
-Minage date example
+Under age date example
 ```yaml
 {
   "name": "dob",
@@ -445,6 +494,8 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 |   name*	|  Phone component name  	|  string 	|  - 	|
 |   type*   | must be `phone` | string | - |
 |   label	|  Text to show over the input 	|  string  	|   ''	|
+|   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|
+|   defaultCountry	| Country to show by default  	|  string  	|   GB	|
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the phone input is not filled and is required |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -480,6 +531,9 @@ https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-
 |   name*	|  RadioButton name  	|  string 	|  - 	|
 |   type*   | must be `radio`| string | - |
 |   label	|  Text to show like the question text. This text can be written in markdown 	|  string  	|   ''	|
+|   **options**	|  Object array that will contain all the options that you want in the radio buttons component  	| array 	|   	|
+| value  | the value of the option  |  string  | -
+| label  | the label displayed with the option  |  string  | -
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     |

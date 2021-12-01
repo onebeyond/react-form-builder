@@ -64,7 +64,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  isMobile      |   Checked component by default | boolean    | false
+|  isMobile      |   A boolean toggle is assigned to check if we are from a mobile port view | boolean    | false
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
 
@@ -132,7 +132,7 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |   returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
 |   **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
 |  countryName     |   The name of the country |  string     | ''
-|  countryShortCode     |   The name of the country |  string     | ''
+|  countryShortCode     |   To display the short code(s) for the countries Ex: ['GB', 'ES']  |  string     | ''
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     |

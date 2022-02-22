@@ -636,11 +636,13 @@ Next, we can see different attributes and tags to adjust the accessibility of th
 
 | Attribute/Tag  	| Description  	
 |---	   |---	|
-|   Aria-describedby	  |  To configure that, only it is necessary to pass “name form” as a prop |
+|   Aria-describedby	  |  To configure that, it's necessary to pass “name form” as a prop |
 |   Fieldset / Legend	|  Tags that are being used to group and associate related form controls (you can see in the multiple checkbox example given below) |
 |   Required    |   To indicate if the field is necessary to fill or not while completing the form |
 |   Placeholder	| Used to guide and help the user to describe the format and expected value for the field |
-|   Type      |  To specify the type of elements to display | 
+|   Type      |  To specify the type of elements to display |
+|  Accessibility  |  In radio button needs to pass as a props `"accessibility": true` | 
+|  AccessibilityError |  the main form also needs to have `"accessibilityError"`: true as a props | 
 
 * To define the style for the fields, as we use theme-ui, we can either do inline-styling using style=”” or instead sx=”” where you pass the style accordingly. Also, we can include an “id” attribute for input that needs a unique style.
 
@@ -648,6 +650,21 @@ Next, we can see different attributes and tags to adjust the accessibility of th
 
 ### Following are the few code examples to see how we use each component:
 
+
+### Main form
+
+```yaml
+{
+  "en": {
+    "contact": {
+      "name": "Contact Form",
+      "enabled": true,
+      "accessibilityError": true,
+      "questions": [...]
+    }
+  }
+}
+```
 ### Input tag
 
 ```jsx

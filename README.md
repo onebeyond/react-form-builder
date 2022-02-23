@@ -15,9 +15,9 @@ npm install --save @guidesmiths/react-form-builder
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-import { FormBuilder } from '@guidesmiths/react-form-builder
-import form from '../../forms/question/get.json'
+import React, { useEffect, useState } from 'react'
+import forms from './forms.json'
+import FormBuilder from 'react-form-builder'
 
 const onSubmitForm = (data) => {
     !isLoading &&
@@ -34,9 +34,16 @@ const onSubmitForm = (data) => {
     }, 1000)
   }
 
-class Example extends Component {
+const Example = () => {
   render() {
-   return <FormBuilder form={form} onSubmit={onSubmitForm} />
+   <FormBuilder
+        idForm={forms.contact.id}
+        form={forms.contact}
+        onSubmit={onSubmitForm}
+        isoCode='ES'
+        onLinkOpen={onLinkOpen}
+        isLoading={isLoading}
+      />
   }
 }
 ```
@@ -57,6 +64,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
 |   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
+|  isMobile      |   A boolean toggle is assigned to check if we are from a mobile port view | boolean    | false
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
 |  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
 
@@ -81,6 +89,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |   name*	|  Checkbox name  	|  string 	|  - 	|
 |   type*   | Must be `checkbox`| string | - |
 |   label	|  Text shown next to the checkbox. This text can be written in markdown style 	|  string  	|   ''	|
+|   isFullWidth   |   Define if the field takes all the available width in the grid or not   |    boolean       |   false   |
 |   defaultChecked    |   Checked component by default    |    boolean       |   false   |
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
@@ -117,9 +126,13 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 |   name*	|  Country component name  	|  string 	|  - 	|
 |   type*   | Must be `country` | string | - |
 |   label	|  Text shown over the coutnry list|  string  	|   ''	|
+|   language	| An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
 |   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
 |   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
 |   returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
+|   **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
+|  countryName     |   The name of the country |  string     | ''
+|  countryShortCode     |   To display the short code(s) for the countries Ex: ['GB', 'ES']  |  string     | ''
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no country selected |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -129,6 +142,42 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 
 ### Country example:
 ```yaml
+{
+  "name": "country_of_residence",
+  "type": "country",
+  "label": "This is the label of the country select",
+  "placeholder": "Please select an option ^^",
+  "priorityOptions": ["GB", "ES"],
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  }
+}
+```
+
+### Custom list country example:
+```yaml
+{
+  {
+      countryName: 'MyOwnCountry1',
+      countryShortCode: 'MC1'
+    },
+    {
+      countryName: 'MyOwnCountry2',
+      countryShortCode: 'MC2'
+    },
+    {
+      countryName: 'MyOwnCountry3',
+      countryShortCode: 'MC3'
+    },
+    {
+      countryName: 'MyOwnCountry4',
+      countryShortCode: 'MC4'
+    }
+}
+
 {
   "name": "country_of_residence",
   "type": "country",
@@ -163,7 +212,7 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 |  required      |   Error message to display on submit if the date hasn't be selected and  is required |  string     | ''
 |  underAge      |   Error message to display on submit if it is chosen a date  that represents a user younger than the minAge attribute |  string     | ''
 |  **registerConfig**       |    |  json     |
-| required  | Define if the checkbox is required  |  boolean  | false
+| required  | Define if the date is required or not |  boolean  | false
 
 ### Date examples
 Basic date example
@@ -182,7 +231,7 @@ Basic date example
   }
 }
 ```
-Minage date example
+Under age date example
 ```yaml
 {
   "name": "dob",
@@ -445,6 +494,8 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 |   name*	|  Phone component name  	|  string 	|  - 	|
 |   type*   | must be `phone` | string | - |
 |   label	|  Text to show over the input 	|  string  	|   ''	|
+|   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|
+|   defaultCountry	| Country to show by default  	|  string  	|   GB	|
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the phone input is not filled and is required |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -480,6 +531,9 @@ https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-
 |   name*	|  RadioButton name  	|  string 	|  - 	|
 |   type*   | must be `radio`| string | - |
 |   label	|  Text to show like the question text. This text can be written in markdown 	|  string  	|   ''	|
+|   **options**	|  Object array that will contain all the options that you want in the radio buttons component  	| array 	|   	|
+| value  | the value of the option  |  string  | -
+| label  | the label displayed with the option  |  string  | -
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -573,6 +627,141 @@ Select basic example
 
 
 https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
+
+# Accessibility
+
+The accessibility requirements for all the form tags are already configured in the library. For components (input, checkbox, select, radio…) different attributes have been introduced that can be configured through props. 
+
+Next, we can see different attributes and tags to adjust the accessibility of the form and how to configure them: 
+
+| Attribute/Tag  	| Description  	
+|---	   |---	|
+|   Aria-describedby	  |  To configure that, it's necessary to pass “name form” as a prop |
+|   Fieldset / Legend	|  Tags that are being used to group and associate related form controls (you can see in the multiple checkbox example given below) |
+|   Required    |   To indicate if the field is necessary to fill or not while completing the form |
+|   Placeholder	| Used to guide and help the user to describe the format and expected value for the field |
+|   Type      |  To specify the type of elements to display |
+|  Accessibility  |  In radio button needs to pass as a props `"accessibility": true` | 
+|  AccessibilityError |  the main form also needs to have `"accessibilityError"`: true as a props | 
+
+* To define the style for the fields, as we use theme-ui, we can either do inline-styling using style=”” or instead sx=”” where you pass the style accordingly. Also, we can include an “id” attribute for input that needs a unique style.
+
+* For the markdown component, we can add the corresponding tag to the text or title. To illustrate that, if the title is an h2, it will include “##” before text, or, if the title is an h3, it will include “###”, and so on. 
+
+### Following are the few code examples to see how we use each component:
+
+
+### Main form
+
+```yaml
+{
+  "en": {
+    "contact": {
+      "name": "Contact Form",
+      "enabled": true,
+      "accessibilityError": true,
+      "questions": [...]
+    }
+  }
+}
+```
+### Input tag
+
+```jsx
+<div class="form-group">
+    <label for="first_name">First name*</label>
+    <input
+        type="text"
+        class="form-control"
+        placeholder=""
+        id="first_name"
+        name="first_name"
+        aria-describedby="error_message_first_name"
+        required>
+    <span class="invalid-feedback"
+          style="display:block;"
+          id="error_message_first_name">This field is required</span>
+</div>
+```
+
+### Dropdown fields
+
+```jsx
+<div class="form-group">
+    <label for="age">Age Range</label>
+    <select class="form-control"
+            autocomplete="off"
+            id="age"
+            name="age"
+            aria-describedby="error_message_age"
+            required
+    >
+        <option value="" disabled>Please make a selection</option>
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+    </select>
+    <span class="invalid-feedback"
+          style="display:block;"
+          id="error_message_age">Please make a selection</span>
+</div>
+```
+
+### Multiple checkbox
+
+```jsx
+<div class="form-group" ref="what_sport_interested_in">
+    <fieldset>
+        <legend for="what_sport_interested_in">Are you interested in any of the sports below?</legend>
+        <span class="invalid-feedback"
+          style="display:block;"
+          id="error_message_what_sport_interested_in">Please make a selection</span>
+        <div class="form-group container">
+            <div class="row">
+                <div class="form-check col-12 col-md-6">
+                    <input type="checkbox" 
+                      class="form-check-input"
+                      value="Tennis"
+                      id="what_sport_interested_in_tennis"
+                      name="what_sport_interested_in_tennis"
+                      aria-describedby="error_message_what_sport_interested_in">
+                    <label class="form-check-label" for="what_sport_interested_in_tennis">Tennis</label>
+                </div>
+                <div class="form-check col-12 col-md-6">
+                    <input type="checkbox" 
+                      class="form-check-input"
+                      value="Football"
+                      id="what_sport_interested_in_football"
+                      name="what_sport_interested_in_football"
+                      aria-describedby="error_message_what_sport_interested_in">
+                    <label class="form-check-label" for="what_sport_interested_in_football">Football</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+```
+
+### Checkbox fields
+
+```jsx
+<div class="form-group">
+    <label for=”privacy_policy">Privacy policy*</label>
+    <input
+        type="checkbox"
+        class="form-control"
+        id="privacy_policy"
+        name="privacy_policy"
+        aria-describedby="error_message_privacy_policy"
+        required>
+    <span class="invalid-feedback"
+          style="display:block;"
+          id="error_message_first_name">This field is required</span>
+    <div>
+         <p> I confirm I am aged 18 years or older, a resident of the United Kingdom and have read and agree to the competition terms and condition and privacy policy</p>
+   </div>
+
+```
 
 
 # To contribute

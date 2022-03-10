@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { Flex, jsx } from 'theme-ui'
 import React from 'react'
 import { RHFInput } from 'react-hook-form-input'
 import { registerLocale } from 'react-datepicker'
 
-import { differenceInYears } from 'date-fns'
+import { differenceInYears, subYears } from 'date-fns'
 import de from 'date-fns/locale/de'
 import fr from 'date-fns/locale/fr'
 import es from 'date-fns/locale/es'
@@ -25,7 +25,12 @@ const DatePicker = ({
   openToDate = '',
   ...props
 }) => {
-  const [selectedDate, setSelectedDate] = React.useState(selected)
+  const getInitialDate = () => subYears(new Date(), minAge)
+
+  const [selectedDate, setSelectedDate] = React.useState(
+    getInitialDate() || selected
+  )
+
   const pickerRef = React.useRef(null)
   const mapLanguagues = { de, fr, es }
   let datepickerLanguage = 'en'
@@ -44,13 +49,7 @@ const DatePicker = ({
     setValue(name, convertLocalToUTCDate(selectedDate))
   }, [selectedDate])
 
-  const isOver18 = (date) => {
-    return differenceInYears(new Date(), date) >= minAge
-  }
-
-  // const getInitialDate = () => {
-  //   return subYears(new Date(), minAge)
-  // }
+  const isOver18 = (date) => differenceInYears(new Date(), date) >= minAge
 
   const convertLocalToUTCDate = (date) => {
     if (!date) {
@@ -66,38 +65,39 @@ const DatePicker = ({
   return (
     <RHFInput
       as={
-        <DropdownDate
-          selectedDate={selectedDate}
-          order={[
-            DropdownComponent.day,
-            DropdownComponent.month,
-            DropdownComponent.year
-          ]}
-          onDateChange={(date) => {
-            setSelectedDate(date)
-          }}
-          ids={{
-            year: 'select-year',
-            month: 'select-month',
-            day: 'select-day'
-          }}
-          names={{
-            year: 'year',
-            month: 'month',
-            day: 'day'
-          }}
-          classes={{
-            dateContainer: styles.dateContainer
-          }}
-          defaultValues={{
-            year: 'select year',
-            month: 'select month',
-            day: 'select day'
-          }}
-          options={{
-            yearReverse: true
-          }}
-        />
+        <Flex sx={styles.dateContainer}>
+          <DropdownDate
+            selectedDate={selectedDate}
+            endDate={minAge ? getInitialDate() : new Date()}
+            order={[
+              DropdownComponent.day,
+              DropdownComponent.month,
+              DropdownComponent.year
+            ]}
+            onDateChange={(date) => setSelectedDate(date)}
+            ids={{
+              year: 'select-year',
+              month: 'select-month',
+              day: 'select-day'
+            }}
+            names={{
+              year: 'year',
+              month: 'month',
+              day: 'day'
+            }}
+            classes={{
+              dateContainer: styles.dateContainer
+            }}
+            defaultValues={{
+              year: 'select year',
+              month: 'select month',
+              day: 'select day'
+            }}
+            options={{
+              yearReverse: true
+            }}
+          />
+        </Flex>
       }
       rules={{
         ...registerConfig,

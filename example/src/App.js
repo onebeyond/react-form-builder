@@ -117,7 +117,6 @@ const App = () => {
   }
 
   const onSubmitForm = (data) => {
-    console.log('data', data)
     !isLoading &&
       alert(
         `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(

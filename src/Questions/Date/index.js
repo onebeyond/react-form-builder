@@ -3,7 +3,7 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import React from 'react'
-import Date from '../../Fields/Date'
+import DatePicker from '../../Fields/Date'
 import { jsx } from 'theme-ui'
 
 const QuestionDate = ({
@@ -28,7 +28,7 @@ const QuestionDate = ({
         {question.label && (
           <Label htmlFor={question.name}>{question.label}</Label>
         )}
-        <Date
+        <DatePicker
           id={question.name}
           aria-describedby={'error_message_' + question.name}
           sx={{ width: '100%', variant: 'forms.input' }}
@@ -43,7 +43,7 @@ const QuestionDate = ({
           dateFormat={question.dateFormat}
           minAge={question.minAge}
           openToDate={question.openToDate}
-          selected='2022-03-10'
+          selected={new Date()}
           {...props}
         />
         {errors[question.name] && errors[question.name].type === 'required' && (

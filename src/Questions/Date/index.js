@@ -15,7 +15,7 @@ const QuestionDate = ({
   ...props
 }) => {
   const { errors, register, setValue } = useForm
-  
+
   return (
     <React.Fragment>
       <div

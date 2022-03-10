@@ -15,7 +15,7 @@ const QuestionDate = ({
   ...props
 }) => {
   const { errors, register, setValue } = useForm
-
+  
   return (
     <React.Fragment>
       <div
@@ -43,7 +43,7 @@ const QuestionDate = ({
           dateFormat={question.dateFormat}
           minAge={question.minAge}
           openToDate={question.openToDate}
-          selected={question.openToDate}
+          selected='2022-03-10'
           {...props}
         />
         {errors[question.name] && errors[question.name].type === 'required' && (

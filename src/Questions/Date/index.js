@@ -42,7 +42,6 @@ const QuestionDate = ({
           isMobile={isMobile}
           dateFormat={question.dateFormat}
           minAge={question.minAge}
-          openToDate={question.openToDate}
           selected={new Date()}
           {...props}
         />

@@ -22,7 +22,6 @@ const DatePicker = ({
   dateFormat,
   minAge = 0,
   selected,
-  openToDate = '',
   ...props
 }) => {
   const getInitialDate = () => subYears(new Date(), minAge)
@@ -105,6 +104,7 @@ const DatePicker = ({
           underAge: minAge ? isOver18 : () => true
         }
       }}
+      setValue={() => setValue(name, convertLocalToUTCDate(selectedDate))}
       name={name}
       register={register}
       selected={new Date(selectedDate)}

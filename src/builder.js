@@ -38,6 +38,7 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+
   const { errors } = useFormObj
 
   const QuestionsMap = (question) => {

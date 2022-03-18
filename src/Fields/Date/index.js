@@ -1,13 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-
+import { Flex, jsx } from 'theme-ui'
 import React from 'react'
 import { RHFInput } from 'react-hook-form-input'
-import ReactDatePicker, { registerLocale } from 'react-datepicker'
+import { registerLocale } from 'react-datepicker'
+
 import { differenceInYears, subYears } from 'date-fns'
 import de from 'date-fns/locale/de'
 import fr from 'date-fns/locale/fr'
 import es from 'date-fns/locale/es'
+import { DropdownDate, DropdownComponent } from 'react-dropdown-date'
+import styles from './styles'
 
 const DatePicker = ({
   register,
@@ -19,10 +21,15 @@ const DatePicker = ({
   language,
   dateFormat,
   minAge = 0,
-  openToDate = '',
+  selected,
   ...props
 }) => {
-  const [date, setDate] = React.useState(new Date())
+  const getInitialDate = () => subYears(new Date(), minAge)
+
+  const [selectedDate, setSelectedDate] = React.useState(
+    getInitialDate() || selected
+  )
+
   const pickerRef = React.useRef(null)
   const mapLanguagues = { de, fr, es }
   let datepickerLanguage = 'en'
@@ -37,13 +44,11 @@ const DatePicker = ({
     }
   }, [isMobile, pickerRef])
 
-  const isOver18 = (date) => {
-    return differenceInYears(new Date(), date) >= minAge
-  }
+  React.useEffect(() => {
+    setValue(name, convertLocalToUTCDate(selectedDate))
+  }, [selectedDate])
 
-  const getInitialDate = () => {
-    return subYears(new Date(), minAge)
-  }
+  const isOver18 = (date) => differenceInYears(new Date(), date) >= minAge
 
   const convertLocalToUTCDate = (date) => {
     if (!date) {
@@ -59,19 +64,39 @@ const DatePicker = ({
   return (
     <RHFInput
       as={
-        <ReactDatePicker
-          ref={pickerRef}
-          portalId='root-portal'
-          locale={datepickerLanguage.code}
-          withPortal={isMobile}
-          placeholderText={placeholder}
-          dateFormat={dateFormat || 'dd/MM/yyyy'}
-          showYearDropdown
-          dropdownMode={isMobile ? 'select' : 'scroll'}
-          openToDate={openToDate ? new Date(openToDate) : getInitialDate()}
-          disabledKeyboardNavigation
-          {...props}
-        />
+        <Flex sx={styles.dateContainer}>
+          <DropdownDate
+            selectedDate={selectedDate}
+            endDate={minAge ? getInitialDate() : new Date()}
+            order={[
+              DropdownComponent.day,
+              DropdownComponent.month,
+              DropdownComponent.year
+            ]}
+            onDateChange={(date) => setSelectedDate(date)}
+            ids={{
+              year: 'select-year',
+              month: 'select-month',
+              day: 'select-day'
+            }}
+            names={{
+              year: 'year',
+              month: 'month',
+              day: 'day'
+            }}
+            classes={{
+              dateContainer: styles.dateContainer
+            }}
+            defaultValues={{
+              year: 'select year',
+              month: 'select month',
+              day: 'select day'
+            }}
+            options={{
+              yearReverse: true
+            }}
+          />
+        </Flex>
       }
       rules={{
         ...registerConfig,
@@ -79,13 +104,10 @@ const DatePicker = ({
           underAge: minAge ? isOver18 : () => true
         }
       }}
+      setValue={() => setValue(name, convertLocalToUTCDate(selectedDate))}
       name={name}
       register={register}
-      setValue={(name, value) => {
-        setValue(name, convertLocalToUTCDate(value))
-      }}
-      selected={new Date(date)}
-      onChange={setDate}
+      selected={new Date(selectedDate)}
     />
   )
 }

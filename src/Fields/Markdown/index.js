@@ -11,7 +11,7 @@ const Markdown = React.forwardRef(({ modalLabel, ...props }, ref) => {
       <Link
         href={`${href}`}
         target={modalName ? '_self' : '_blank'}
-        aria-label={modalLabel ? `${modalName} ${modalLabel}` : `${modalName}`}
+        {...(modalLabel ? `aria-label=${modalName} ${modalLabel}` : '')}
         {...(modalName ? { onClick: () => props.onLinkOpen(modalName) } : {})}
       >
         {children}

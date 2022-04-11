@@ -1,12 +1,13 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Radio from '../../Fields/Radio'
-// import ReactMarkdown from '../../Fields/Markdown'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const QuestionRadio = ({ question, useForm }) => {
+import ReactMarkdown from '../../Fields/Markdown'
+
+const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
   const { register, errors } = useForm
 
   const radioButtonGenerator = (question) => {
@@ -45,11 +46,27 @@ const QuestionRadio = ({ question, useForm }) => {
       <fieldset sx={{ border: '0', m: '0', p: '0' }}>
         {question.accessibility ? (
           <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
-            {question.label}
+            <ReactMarkdown
+              sx={{
+                alignSelf: 'center',
+                p: { m: '0px' }
+              }}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
           </legend>
         ) : (
           <Label htmlFor={question.label} key={question.label}>
-            {question.label}
+            <ReactMarkdown
+              sx={{
+                alignSelf: 'center',
+                p: { m: '0px' }
+              }}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
           </Label>
         )}
 

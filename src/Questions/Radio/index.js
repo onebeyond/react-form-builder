@@ -8,6 +8,18 @@ import { jsx } from 'theme-ui'
 import ReactMarkdown from '../../Fields/Markdown'
 
 const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
+  const styles = {
+    fieldset: {
+      border: '0',
+      m: '0',
+      p: '0'
+    },
+    markDown: {
+      alignSelf: 'center',
+      p: { m: '0px' }
+    }
+  }
+
   const { register, errors } = useForm
 
   const radioButtonGenerator = (question) => {
@@ -43,14 +55,11 @@ const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
           : 'forms.radioContainer'
       }}
     >
-      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
+      <fieldset sx={styles.fieldset}>
         {question.accessibility ? (
           <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
             <ReactMarkdown
-              sx={{
-                alignSelf: 'center',
-                p: { m: '0px' }
-              }}
+              sx={styles.markDown}
               source={question.label}
               onLinkOpen={onLinkOpen}
               modalLabel={question.modalLabel}
@@ -59,10 +68,7 @@ const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
         ) : (
           <Label htmlFor={question.label} key={question.label}>
             <ReactMarkdown
-              sx={{
-                alignSelf: 'center',
-                p: { m: '0px' }
-              }}
+              sx={styles.markDown}
               source={question.label}
               onLinkOpen={onLinkOpen}
               modalLabel={question.modalLabel}

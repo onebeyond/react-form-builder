@@ -1,12 +1,25 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Radio from '../../Fields/Radio'
-// import ReactMarkdown from '../../Fields/Markdown'
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
 
-const QuestionRadio = ({ question, useForm }) => {
+import ReactMarkdown from '../../Fields/Markdown'
+
+const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
+  const styles = {
+    fieldset: {
+      border: '0',
+      m: '0',
+      p: '0'
+    },
+    markDown: {
+      alignSelf: 'center',
+      p: { m: '0px' }
+    }
+  }
+
   const { register, errors } = useForm
 
   const radioButtonGenerator = (question) => {
@@ -42,14 +55,24 @@ const QuestionRadio = ({ question, useForm }) => {
           : 'forms.radioContainer'
       }}
     >
-      <fieldset sx={{ border: '0', m: '0', p: '0' }}>
+      <fieldset sx={styles.fieldset}>
         {question.accessibility ? (
           <legend sx={{ variant: 'forms.label' }} htmlFor={question.name}>
-            {question.label}
+            <ReactMarkdown
+              sx={styles.markDown}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
           </legend>
         ) : (
           <Label htmlFor={question.label} key={question.label}>
-            {question.label}
+            <ReactMarkdown
+              sx={styles.markDown}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
           </Label>
         )}
 

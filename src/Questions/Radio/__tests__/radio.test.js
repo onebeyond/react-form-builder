@@ -36,6 +36,24 @@ test('markdown is displayed', () => {
   expect(getByText('question text to display'))
 })
 
+test('handles default markdown link', () => {
+  const questionWithLink = {
+    ...question,
+    label: 'question text to display[radio link](https://www.google.es)'
+  }
+
+  const { getByRole } = render(
+    <QuestionRadio
+      question={questionWithLink}
+      useForm={{ errors: {}, register: () => {} }}
+    />
+  )
+
+  const markDownLink = getByRole('link')
+  expect(markDownLink.href).toBe('https://www.google.es/')
+  expect(markDownLink.target).toBe('_blank')
+})
+
 test('radio labels are displayed', () => {
   const { getByLabelText } = render(
     <QuestionRadio

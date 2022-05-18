@@ -427,6 +427,11 @@
                           "value": "smart_home"
                         },
                         {
+                          "label": "None",
+                          "value": "none",
+                          "disableOthers": true
+                        },
+                        {
                           "label": "Other, please specify",
                           "value": "other"
                         }

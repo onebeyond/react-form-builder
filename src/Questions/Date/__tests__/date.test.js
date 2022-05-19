@@ -1,5 +1,10 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import {
+  fireEvent,
+  render,
+  screen,
+  queryByAttribute
+} from '@testing-library/react'
 import QuestionDate from '../'
 
 const question = {
@@ -35,31 +40,7 @@ if (global.document) {
   })
 }
 
-const monthNames = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
-
-test('placeholder is displayed', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      useForm={{ errors: {}, register: () => {} }}
-    />
-  )
-
-  expect(getByPlaceholderText('dd/mm/yyyy'))
-})
+const getById = queryByAttribute.bind(null, 'id')
 
 test('required error is displayed', () => {
   const { getByText } = render(
@@ -71,7 +52,8 @@ test('required error is displayed', () => {
             type: 'required'
           }
         },
-        register: () => {}
+        register: () => {},
+        setValue: jest.fn()
       }}
     />
   )
@@ -89,7 +71,8 @@ test('under-age error error is displayed', () => {
             type: 'underAge'
           }
         },
-        register: () => {}
+        register: () => {},
+        setValue: jest.fn()
       }}
     />
   )
@@ -97,21 +80,58 @@ test('under-age error error is displayed', () => {
   expect(getByText('You must be 18 years old or above'))
 })
 
-test('calendar is opened in the right date', () => {
-  const { getByPlaceholderText } = render(
+test('Select day dropdown is opened in the right date', () => {
+  const { container } = render(
     <QuestionDate
       question={question}
       useForm={{
         errors: {},
-        register: () => {}
+        register: () => {},
+        setValue: jest.fn()
       }}
     />
   )
-  const calendar = getByPlaceholderText('dd/mm/yyyy')
+  const calendar = getById(container, 'select-day')
 
   fireEvent.click(calendar)
 
-  expect(screen.getByText('January 2000'))
+  expect(screen.getByText('1'))
+})
+
+test('Select month dropdown is opened in the right date', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-month')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('10'))
+})
+
+test('Select year dropdown is opened in the right date', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-year')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('January'))
 })
 
 test('calendar is opened minAge years ago', () => {
@@ -119,7 +139,6 @@ test('calendar is opened minAge years ago', () => {
     name: 'dob',
     type: 'date',
     label: 'Date of birth',
-    placeholder: 'dd/mm/yyyy',
     minAge: 23,
     errorMessages: {
       required: 'This field is required'
@@ -128,25 +147,23 @@ test('calendar is opened minAge years ago', () => {
       required: true
     }
   }
-  const { getByPlaceholderText } = render(
+  const { container } = render(
     <QuestionDate
       question={question}
       useForm={{
         errors: {},
-        register: () => {}
+        register: () => {},
+        setValue: jest.fn()
       }}
     />
   )
 
-  const datepicker = getByPlaceholderText('dd/mm/yyyy')
+  const yearpicker = getById(container, 'select-year')
 
-  fireEvent.click(datepicker)
+  fireEvent.click(yearpicker)
   const date = new Date()
 
-  const dayYear =
-    monthNames[date.getMonth().toString()] +
-    ' ' +
-    (date.getFullYear() - question.minAge)
+  const dayYear = date.getFullYear() - question.minAge
 
   expect(screen.getByText(dayYear, { exact: false })).toBeTruthy()
 })
@@ -156,7 +173,6 @@ test('calendar is opened in new Date', () => {
     name: 'dob',
     type: 'date',
     label: 'Date of birth',
-    placeholder: 'dd/mm/yyyy',
     errorMessages: {
       required: 'This field is required'
     },
@@ -164,23 +180,23 @@ test('calendar is opened in new Date', () => {
       required: true
     }
   }
-  const { getByPlaceholderText } = render(
+  const { container } = render(
     <QuestionDate
       question={question}
       useForm={{
         errors: {},
-        register: () => {}
+        register: () => {},
+        setValue: jest.fn()
       }}
     />
   )
 
-  const datepicker = getByPlaceholderText('dd/mm/yyyy')
+  const yearpicker = getById(container, 'select-year')
 
-  fireEvent.click(datepicker)
+  fireEvent.click(yearpicker)
   const date = new Date()
 
-  const dayYear =
-    monthNames[date.getMonth().toString()] + ' ' + date.getFullYear()
+  const dayYear = date.getFullYear()
 
   expect(screen.getByText(dayYear, { exact: false })).toBeTruthy()
 })
@@ -190,7 +206,6 @@ test('dateformat is applied', () => {
     name: 'dob',
     type: 'date',
     label: 'Date of birth',
-    placeholder: 'dd/mm/yyyy',
     dateFormat: 'dd-MM-yyyy',
     errorMessages: {
       required: 'This field is required'
@@ -200,7 +215,7 @@ test('dateformat is applied', () => {
     }
   }
 
-  const { getByPlaceholderText } = render(
+  const { container } = render(
     <QuestionDate
       question={question}
       useForm={{
@@ -210,99 +225,22 @@ test('dateformat is applied', () => {
       }}
     />
   )
-  const datepicker = getByPlaceholderText('dd/mm/yyyy')
-  fireEvent.change(datepicker, { target: { value: '11/11/2011' } })
-  fireEvent.click(datepicker)
-  fireEvent.keyDown(datepicker, { key: 'Enter', code: 13 })
-  expect(datepicker.value).toBe('11-11-2011')
-})
+  const yearpicker = getById(container, 'select-year')
+  const monthpicker = getById(container, 'select-month')
+  const daypicker = getById(container, 'select-day')
 
-test('default dateformat is applied', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
-  )
-  const datepicker = getByPlaceholderText('dd/mm/yyyy')
-  fireEvent.change(datepicker, { target: { value: '11-11-2011' } })
-  fireEvent.click(datepicker)
-  fireEvent.keyDown(datepicker, { key: 'Enter', code: 13 })
-  expect(datepicker.value).toBe('11/11/2011')
-})
+  fireEvent.change(yearpicker, { target: { value: '2011' } })
+  fireEvent.click(yearpicker)
+  fireEvent.keyDown(yearpicker, { key: 'Enter', code: 13 })
+  expect(yearpicker.value).toBe('2011')
 
-test('calendar is in spanish', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      language='es'
-      useForm={{
-        errors: {},
-        register: () => {}
-      }}
-    />
-  )
-  const calendar = getByPlaceholderText('dd/mm/yyyy')
+  fireEvent.change(monthpicker, { target: { value: '11' } })
+  fireEvent.click(monthpicker)
+  fireEvent.keyDown(monthpicker, { key: 'Enter', code: 13 })
+  expect(monthpicker.value).toBe('11')
 
-  fireEvent.click(calendar)
-
-  expect(screen.getByText('Enero 2000', { exact: false })).toBeTruthy()
-})
-
-test('calendar is in french', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      language='fr'
-      useForm={{
-        errors: {},
-        register: () => {}
-      }}
-    />
-  )
-  const calendar = getByPlaceholderText('dd/mm/yyyy')
-
-  fireEvent.click(calendar)
-
-  expect(screen.getByText('janvier 2000', { exact: false })).toBeTruthy()
-})
-
-test('calendar is in french', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      language='de'
-      useForm={{
-        errors: {},
-        register: () => {}
-      }}
-    />
-  )
-  const calendar = getByPlaceholderText('dd/mm/yyyy')
-
-  fireEvent.click(calendar)
-
-  expect(screen.getByText('januar 2000', { exact: false })).toBeTruthy()
-})
-
-test('calendar sending no-valid language', () => {
-  const { getByPlaceholderText } = render(
-    <QuestionDate
-      question={question}
-      language='qwerty'
-      useForm={{
-        errors: {},
-        register: () => {}
-      }}
-    />
-  )
-  const calendar = getByPlaceholderText('dd/mm/yyyy')
-
-  fireEvent.click(calendar)
-
-  expect(screen.getByText('january 2000', { exact: false })).toBeTruthy()
+  fireEvent.change(daypicker, { target: { value: '11' } })
+  fireEvent.click(daypicker)
+  fireEvent.keyDown(daypicker, { key: 'Enter', code: 13 })
+  expect(daypicker.value).toBe('11')
 })

@@ -8,6 +8,24 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from 'react-markdown'
 
+const disableOthers = (e) => {
+  Object.entries(e.target.form).forEach(([, v]) => {
+    if (e.target.checked === true) {
+      if (v.type === 'checkbox' && v.name === e.target.name) {
+        v.checked = false
+        v.disabled = true
+      }
+      e.target.disabled = false
+      e.target.checked = true
+    }
+    if (e.target.checked === false) {
+      if (v.type === 'checkbox' && v.name === e.target.name) {
+        v.disabled = false
+      }
+    }
+  })
+}
+
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
   const { getValues, errors, register } = useForm
   return (
@@ -70,6 +88,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                             : () => true
                         }
                       })}
+                      onChange={option.disableOthers && disableOthers}
                     />
                     {option.src ? (
                       <img src={option.src} />

@@ -180,6 +180,59 @@
         }
       },
       {
+        "name": "select_images_example",
+        "isFullWidth": true,
+        "type": "select_images",
+        "label": "WHO IS YOUR FAVOURITE TEAM PLAYER?",
+        "errorMessages": {
+          "required": "This field is required",
+          "maximumLen": "Select up to one choice"
+        },
+        "registerConfig": {
+          "required": true,
+          "maximumLen": 1
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Rory McIlroy",
+              "value": "rory_mcilroy",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Tiger Woods",
+              "value": "tiger_woods",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Dustin Johnson",
+              "value": "dustin_johnson",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Collin Morikawa",
+              "value": "collin_morikawa",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Tommy Fleetwood",
+              "value": "tommy_fleetwood",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Sergio Garcia",
+              "value": "sergio_garcia",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Matthew Wolff",
+              "value": "matthew_wolff",
+              "src": "https://placehold.jp/120x120.png"
+            }
+          ]
+        }
+      }
+      {
         "name": "are_you_an_hsbc_current_account_customer",
         "type": "select",
         "isFullWidth": true,

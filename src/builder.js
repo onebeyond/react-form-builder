@@ -16,6 +16,7 @@ import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
 import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
 import QuestionMarkdown from './Questions/Markdown'
+import QuestionSelectImage from './Questions/SelectImage'
 
 const styles = {
   fitContent: {
@@ -66,6 +67,19 @@ const FormBuilder = ({
       select: (
         <>
           <QuestionSelect useForm={useFormObj} question={question} />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
+      ),
+      select_images: (
+        <>
+          <QuestionSelectImage
+            useForm={useFormObj}
+            question={question}
+            form={form}
+          />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
               ConditionalQuestion(question.dependentQuestions, question.name)

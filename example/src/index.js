@@ -62,7 +62,32 @@ const theme = {
     },
     inputContainer: {
       gridColumnStart: '1',
-      gridColumnEnd: '3',
+      gridColumnEnd: '3'
+    },
+    selectImagesContainer: {
+      '>div': {
+        display: 'flex',
+        maxWidth: '100%',
+        flexWrap: 'wrap',
+        gap: ['2px', '10px'],
+        justifyContent: 'center',
+        alignItems: 'center'
+      }
+    },
+    selectImagesInput: {
+      svg: {
+        width: '10px',
+        ':nth-of-type(2)': {
+          color: 'transparent'
+        },
+        ':nth-of-type(1)': {
+          color: 'transparent'
+        }
+      },
+      'input:focus ~ svg': {
+        color: 'transparent',
+        backgroundColor: 'transparent'
+      }
     }
   },
   label: {

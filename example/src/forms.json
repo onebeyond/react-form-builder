@@ -231,7 +231,7 @@
             }
           ]
         }
-      }
+      },
       {
         "name": "are_you_an_hsbc_current_account_customer",
         "type": "select",

@@ -42,7 +42,6 @@ const QuestionDate = ({
           isMobile={isMobile}
           dateFormat={question.dateFormat}
           minAge={question.minAge}
-          selected={new Date()}
           {...props}
         />
         {errors[question.name] && errors[question.name].type === 'required' && (

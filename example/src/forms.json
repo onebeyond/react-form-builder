@@ -180,6 +180,28 @@
         }
       },
       {
+        "type": "date",
+        "label": "Date of purchase",
+        "name": "date_of_purchase",
+        "minAge": "10",
+        "dateFormat": {
+          "year": "yyyy",
+          "month": "MMMM",
+          "day": "dd"
+        },
+        "placeholder": {},
+        "errorMessages": {
+          "required": "This field is required",
+          "pattern": "",
+          "underAge": "Non age"
+        },
+        "registerConfig": {
+          "required": true,
+          "pattern": ""
+        },
+        "dependentQuestions": []
+      },
+      {
         "name": "select_images_example",
         "isFullWidth": true,
         "type": "select_images",

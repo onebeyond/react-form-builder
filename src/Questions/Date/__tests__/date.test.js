@@ -12,7 +12,7 @@ const question = {
   type: 'date',
   label: 'Date of birth',
   placeholder: 'dd/mm/yyyy',
-  openToDate: '1-1-2000',
+  minAge: 18,
   errorMessages: {
     required: 'This field is required',
     underAge: 'You must be 18 years old or above'
@@ -95,7 +95,7 @@ test('Select day dropdown is opened in the right date', () => {
 
   fireEvent.click(calendar)
 
-  expect(screen.getByText('1'))
+  expect(screen.getByText('01'))
 })
 
 test('Select month dropdown is opened in the right date', () => {
@@ -243,4 +243,80 @@ test('dateformat is applied', () => {
   fireEvent.click(daypicker)
   fireEvent.keyDown(daypicker, { key: 'Enter', code: 13 })
   expect(daypicker.value).toBe('11')
+})
+
+test('calendar is in spanish', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      language='es'
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-month')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('Enero', { exact: false })).toBeTruthy()
+})
+
+test('calendar is in french', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      language='fr'
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-month')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('janvier', { exact: false })).toBeTruthy()
+})
+
+test('calendar is in german', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      language='de'
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-month')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('januar', { exact: false })).toBeTruthy()
+})
+
+test('calendar sending no-valid language', () => {
+  const { container } = render(
+    <QuestionDate
+      question={question}
+      language='qwerty'
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const calendar = getById(container, 'select-month')
+
+  fireEvent.click(calendar)
+
+  expect(screen.getByText('january', { exact: false })).toBeTruthy()
 })

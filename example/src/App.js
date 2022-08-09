@@ -179,6 +179,7 @@ const App = () => {
         form={forms.contact}
         onSubmit={onSubmitForm}
         isoCode='ES'
+        language='en'
         onLinkOpen={onLinkOpen}
         isLoading={isLoading}
       />

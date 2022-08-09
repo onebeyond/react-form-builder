@@ -48,7 +48,8 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
   const isInputChecked = (option) => {
     const values = getValues()[question.name]
 
-    const findOption = values?.some((value) => value === option.value)
+    if (typeof values === 'undefined') return false
+    const findOption = values.some((value) => value === option.value)
     return findOption
   }
 

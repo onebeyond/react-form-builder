@@ -42,8 +42,8 @@ function CustomDateSelect({
     }
     return arr
   }
-  const selectedYear = new Date(dateSelect.dateValue)?.getFullYear()
-  const selectedMonth = new Date(dateSelect.dateValue)?.getMonth()
+  const selectedYear = new Date(dateSelect.dateValue).getFullYear()
+  const selectedMonth = new Date(dateSelect.dateValue).getMonth()
 
   const dayOptions = React.useMemo(() => {
     const maxRange = getDaysInMonth(new Date(selectedYear, selectedMonth))
@@ -147,9 +147,9 @@ const DatePicker = ({
             value={selectedDate}
             onChange={setSelectedDate}
             locale={mapLanguagues[language]}
-            yearFormat={dateFormat?.year}
-            monthFormat={dateFormat?.month}
-            dayFormat={dateFormat?.day}
+            yearFormat={dateFormat.year}
+            monthFormat={dateFormat.month}
+            dayFormat={dateFormat.day}
             firstYear={1900}
             lastYear={getInitialDate().getFullYear()}
           />

@@ -109,15 +109,96 @@
         }
       },
       {
-        "name": "country_of_residence",
         "type": "country",
         "label": "Country of residence",
+        "id": "",
+        "name": "country",
+        "placeholder": "Please make a selection",
         "errorMessages": {
-          "required": "This field is required"
+          "required": "This field is required",
+          "pattern": ""
         },
         "registerConfig": {
-          "required": true
-        }
+          "required": true,
+          "pattern": ""
+        },
+        "priorityOptions": ["DE", "GB", "IE", "FR"],
+        "dependentQuestions": [
+          {
+            "condition": "DE",
+            "label": "Germany",
+            "question": {
+              "type": "select",
+              "label": "Bundesland",
+              "name": "county",
+              "id": "",
+              "placeholder": "Please make a selection",
+              "errorMessages": {
+                "required": "",
+                "pattern": ""
+              },
+              "registerConfig": {
+                "required": false
+              },
+              "config": {
+                "options": [
+                  {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "value": "auvergne_rhone_alpes"
+                  },
+                  {
+                    "label": "Bourgogne-Franche-Comté",
+                    "value": "bourgogne_franche_comte"
+                  },
+                  {
+                    "label": "Brittany",
+                    "value": "brittany"
+                  },
+                  {
+                    "label": "Centre-Val de Loire",
+                    "value": "centre_val_de_loire"
+                  },
+                  {
+                    "label": "Corsica",
+                    "value": "corsica"
+                  },
+                  {
+                    "label": "Grand Est",
+                    "value": "grand_est"
+                  },
+                  {
+                    "label": "Hauts-de-France",
+                    "value": "hauts_de_france"
+                  },
+                  {
+                    "label": "Paris Region",
+                    "value": "paris_region"
+                  },
+                  {
+                    "label": "Normandie",
+                    "value": "normandie"
+                  },
+                  {
+                    "label": "Nouvelle-Aquitaine",
+                    "value": "nouvelle_aquitaine"
+                  },
+                  {
+                    "label": "Occitanie",
+                    "value": "occitanie"
+                  },
+                  {
+                    "label": "Pays de la Loire",
+                    "value": "pays_de_la_loire"
+                  },
+                  {
+                    "label": "Provence Alpes Côte d’Azur",
+                    "value": "provence_alpes_cote_dazur"
+                  }
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         "name": "select_the_2021_sevens_tournament_of_your_choice",

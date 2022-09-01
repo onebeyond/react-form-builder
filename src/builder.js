@@ -135,11 +135,21 @@ const FormBuilder = ({
         />
       ),
       multiple_checkboxes: (
-        <QuestionMultipleCheckboxes
-          useForm={useFormObj}
-          question={question}
-          form={form}
-        />
+        <>
+          <QuestionMultipleCheckboxes
+            useForm={useFormObj}
+            question={question}
+            form={form}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(
+                question.dependentQuestions,
+                question.name,
+                question.type
+              )
+            )}
+        </>
       ),
       markdown: (
         <QuestionMarkdown
@@ -153,7 +163,7 @@ const FormBuilder = ({
     }
   }
 
-  function ConditionalQuestion(question, name) {
+  function ConditionalQuestion(question, name, preQuestionType) {
     return (dependentQuestion, i) => {
       const nestedQuestion = dependentQuestion && dependentQuestion.question
 
@@ -166,7 +176,7 @@ const FormBuilder = ({
           ? conditionValue.value
           : conditionValue
 
-      return getConditions().includes(getFormattedValue()) ? (
+      const renderComponent = () => (
         <React.Fragment key={i}>
           {
             QuestionsMap(dependentQuestion.question)[
@@ -183,7 +193,23 @@ const FormBuilder = ({
               )
             : null}
         </React.Fragment>
-      ) : null
+      )
+
+      if (preQuestionType === 'multiple_checkboxes') {
+        const getMultiFormattedValue = () =>
+          conditionValue && conditionValue.value
+            ? conditionValue.value
+            : conditionValue || []
+
+        return getMultiFormattedValue() &&
+          getMultiFormattedValue().some((e) => e === getConditions())
+          ? renderComponent()
+          : null
+      }
+
+      return getConditions().includes(getFormattedValue())
+        ? renderComponent()
+        : null
     }
   }
 

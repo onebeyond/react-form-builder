@@ -58,13 +58,13 @@ function CustomDateSelect({
   return (
     <>
       <select
-        id='select-year'
-        value={dateSelect.yearValue}
-        onChange={dateSelect.onYearChange}
+        id='select-day'
+        value={dateSelect.dayValue}
+        onChange={dateSelect.onDayChange}
       >
-        {dateSelect.yearOptions.map((yearOption) => (
-          <option key={yearOption.value} value={yearOption.value}>
-            {yearOption.label}
+        {dayOptions.map((dayOption) => (
+          <option key={dayOption.value} value={dayOption.value}>
+            {dayOption.label}
           </option>
         ))}
       </select>
@@ -80,13 +80,13 @@ function CustomDateSelect({
         ))}
       </select>
       <select
-        id='select-day'
-        value={dateSelect.dayValue}
-        onChange={dateSelect.onDayChange}
+        id='select-year'
+        value={dateSelect.yearValue}
+        onChange={dateSelect.onYearChange}
       >
-        {dayOptions.map((dayOption) => (
-          <option key={dayOption.value} value={dayOption.value}>
-            {dayOption.label}
+        {dateSelect.yearOptions.map((yearOption) => (
+          <option key={yearOption.value} value={yearOption.value}>
+            {yearOption.label}
           </option>
         ))}
       </select>

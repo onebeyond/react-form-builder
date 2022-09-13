@@ -1,11 +1,12 @@
 import React from 'react'
 import {
-  selectEvent,
-  fireEvent,
   cleanup,
   getByText,
-  render
+  render,
+  fireEvent,
+  screen
 } from '@testing-library/react'
+import selectEvent from 'react-select-event'
 import QuestionCountry from '../../Country'
 import QuestionCounty from '../'
 
@@ -78,19 +79,24 @@ test('County label', () => {
   getByText(countyComponent, 'Bundesland')
 })
 
-test.only('County select appears when country question is clicked and GE value', async () => {
+test('County select appears when country question is clicked and GE value', async () => {
   const { countryPlaceholderComponent } = setup()
 
   await selectEvent.openMenu(countryPlaceholderComponent)
   fireEvent.keyDown(countryPlaceholderComponent, { key: 'Enter', code: 13 })
-  expect(screen.getByText('Germany'))
+  await expect(screen.getByText('Germany'))
   expect(screen.getByText(countyPlaceholder))
 })
 
 test('County select is opened on the right country region', async () => {
-  const { placeholderComponent } = setup()
+  const { countryPlaceholderComponent, placeholderComponent } = setup()
+
+  await selectEvent.openMenu(countryPlaceholderComponent)
+  fireEvent.keyDown(countryPlaceholderComponent, { key: 'Enter', code: 13 })
+  await expect(screen.getByText('Germany'))
+  expect(screen.getByText(countyPlaceholder))
 
   await selectEvent.openMenu(placeholderComponent)
   fireEvent.keyDown(placeholderComponent, { key: 'Enter', code: 13 })
-  expect(screen.getByText('Baden-Württemberg'))
+  await expect(screen.getByText('Baden-Württemberg'))
 })

@@ -28,7 +28,7 @@ const QuestionCounty = ({ question, useForm, ...props }) => {
         {item.label}
       </option>
     ))
-  const countrySelected = question?.country || 'GB'
+  const countrySelected = question.country || 'GB'
   const options = getRegionOptions(countrySelected)
 
   return (

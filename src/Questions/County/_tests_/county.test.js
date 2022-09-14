@@ -48,7 +48,7 @@ const setup = () => {
     <>
       <QuestionCountry question={countryQuestion} useForm={useForm} />
       {countryQuestion.dependentQuestions &&
-        countryQuestion.dependentQuestions?.map((_, index) => (
+        countryQuestion.dependentQuestions.map((_, index) => (
           <QuestionCounty question={question} useForm={useForm} key={index} />
         ))}
     </>

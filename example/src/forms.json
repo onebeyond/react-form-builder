@@ -165,6 +165,18 @@
         ]
       },
       {
+        "name": "gender_name",
+        "type": "gender",
+        "label": "Gender",
+        "placeholder": "Gender",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
         "name": "select_the_2021_sevens_tournament_of_your_choice",
         "isFullWidth": true,
         "type": "select",

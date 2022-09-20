@@ -18,6 +18,7 @@ import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
 import QuestionMarkdown from './Questions/Markdown'
 import QuestionSelectImage from './Questions/SelectImage'
 import QuestionCounty from './Questions/County'
+import QuestionGender from './Questions/Genre'
 
 const styles = {
   fitContent: {
@@ -102,6 +103,19 @@ const FormBuilder = ({
         </>
       ),
       county: <QuestionCounty useForm={useFormObj} question={question} />,
+      gender: (
+        <>
+          <QuestionGender
+            useForm={useFormObj}
+            question={question}
+            language={props.language}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
+      ),
       checkbox: (
         <QuestionCheckbox
           useForm={useFormObj}

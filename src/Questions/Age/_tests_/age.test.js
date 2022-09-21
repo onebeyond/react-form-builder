@@ -65,7 +65,7 @@ test('Change value of age select', async () => {
   await expect(screen.getByText('18-25'))
 })
 
-test('Check custum options are rendered', async () => {
+test('Check custom options are rendered', async () => {
   const question = {
     type: 'age',
     label: 'Age',

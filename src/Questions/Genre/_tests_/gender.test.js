@@ -64,7 +64,7 @@ test('Change value of gender select', async () => {
   fireEvent.keyDown(genderPlaceholder, { key: 'Enter', code: 13 })
   await expect(screen.getByText('Male'))
 })
-test('Check custum options are rendered', async () => {
+test('Check custom options are rendered', async () => {
   const question = {
     type: 'gender',
     label: 'What is your gender?',

@@ -8,11 +8,11 @@ export default [
     value: 'female'
   },
   {
-    label: 'Autre',
-    value: 'other'
-  },
-  {
     label: 'Préfère ne pas préciser',
     value: 'prefer_not_to_say'
+  },
+  {
+    label: 'Autre',
+    value: 'other'
   }
 ]

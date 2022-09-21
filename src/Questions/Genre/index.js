@@ -20,8 +20,18 @@ const gendersMapData = {
 const QuestionGender = ({ question, useForm, language, ...props }) => {
   const { errors, register, setValue, unregister, trigger } = useForm
 
+  const getOptions = (question) =>
+    question.config.options.map((option) => ({
+      value: option.value,
+      label: option.label
+    }))
+
   const genderData =
-    language && gendersMapData[language] ? gendersMapData[language] : GenderData
+    question.config && question.config.options
+      ? getOptions(question)
+      : language && gendersMapData[language]
+      ? gendersMapData[language]
+      : GenderData
 
   const renderGenderOptions = (items) =>
     items.map((item) => (

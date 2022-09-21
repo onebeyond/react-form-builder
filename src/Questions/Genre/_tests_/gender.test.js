@@ -64,6 +64,37 @@ test('Change value of gender select', async () => {
   fireEvent.keyDown(genderPlaceholder, { key: 'Enter', code: 13 })
   await expect(screen.getByText('Male'))
 })
+test('Check custum options are rendered', async () => {
+  const question = {
+    type: 'gender',
+    label: 'What is your gender?',
+    name: 'gender',
+    id: '',
+    placeholder: 'Please select a gender',
+    errorMessages: { required: 'This field is required', pattern: '' },
+    registerConfig: { required: true },
+    config: {
+      options: [
+        {
+          label: 'Female',
+          value: 'female'
+        },
+        {
+          label: 'Prefer not to say',
+          value: 'prefer_not_to_say'
+        }
+      ]
+    }
+  }
+  const { getByText } = render(
+    <QuestionGender question={question} useForm={useForm} />
+  )
+  const genderPlaceholder = getByText('Please select a gender')
+
+  await selectEvent.openMenu(genderPlaceholder)
+  fireEvent.keyDown(genderPlaceholder, { key: 'Enter', code: 13 })
+  await expect(screen.getByText('Female'))
+})
 
 test('renders a country list in spanish', async () => {
   const data = { language: 'es', select: 'Masculino' }

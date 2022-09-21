@@ -47,7 +47,7 @@
       },
       {
         "name": "age",
-        "type": "select",
+        "type": "age",
         "label": "Age",
         "errorMessages": {
           "required": "This field is required"

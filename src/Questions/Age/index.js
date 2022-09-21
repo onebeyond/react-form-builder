@@ -1,39 +1,24 @@
 /** @jsx jsx */
 /** @jsxRuntime classic */
 import { jsx } from 'theme-ui'
-import GenderData from './data/gender'
-import DeuschGenderData from './data/de'
-import SpanishGenderData from './data/es'
-import FrenchGenderData from './data/fr'
-import SwedishGenderData from './data/se'
+import AgeData from './data/age'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
 import ErrorMessage from '../../Fields/Error'
 
-const gendersMapData = {
-  es: SpanishGenderData,
-  fr: FrenchGenderData,
-  de: DeuschGenderData,
-  se: SwedishGenderData
-}
-
-const QuestionGender = ({ question, useForm, language, ...props }) => {
+const QuestionAge = ({ question, useForm, language, ...props }) => {
   const { errors, register, setValue, unregister, trigger } = useForm
 
   const getOptions = (question) =>
+    question.config &&
     question.config.options.map((option) => ({
       value: option.value,
       label: option.label
     }))
 
-  const genderData =
-    question.config && question.config.options
-      ? getOptions(question)
-      : language && gendersMapData[language]
-      ? gendersMapData[language]
-      : GenderData
+  const ageData = getOptions(question) || AgeData
 
-  const renderGenderOptions = (items) =>
+  const renderAgeOptions = (items) =>
     items.map((item) => (
       <option key={item.value} value={item.value}>
         {item.label}
@@ -42,15 +27,15 @@ const QuestionGender = ({ question, useForm, language, ...props }) => {
 
   return (
     <div
-      data-testid='question-gender'
+      data-testid='question-age'
       sx={{
         variant: question.id
-          ? 'forms.genderContainer.' + question.id
-          : 'forms.genderContainer'
+          ? 'forms.ageContainer.' + question.id
+          : 'forms.ageContainer'
       }}
     >
       {question.label && (
-        <Label htmlFor={question.name} data-testid='gender-label'>
+        <Label htmlFor={question.name} data-testid='age-label'>
           {question.label}
         </Label>
       )}
@@ -59,7 +44,7 @@ const QuestionGender = ({ question, useForm, language, ...props }) => {
         id={question.name}
         key={question.name}
         name={question.name}
-        options={genderData}
+        options={ageData}
         isSearchable={false}
         register={register}
         registerConfig={question.registerConfig}
@@ -69,7 +54,7 @@ const QuestionGender = ({ question, useForm, language, ...props }) => {
         label={question.label}
         {...props}
       >
-        {renderGenderOptions(genderData)}
+        {renderAgeOptions(ageData)}
       </Select>
       {errors[question.name] &&
         (errors[question.name].type === 'required' ||
@@ -83,4 +68,4 @@ const QuestionGender = ({ question, useForm, language, ...props }) => {
   )
 }
 
-export default QuestionGender
+export default QuestionAge

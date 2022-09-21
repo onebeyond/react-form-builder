@@ -8,11 +8,11 @@ export default [
     value: 'female'
   },
   {
-    label: 'Annat',
-    value: 'other'
-  },
-  {
     label: 'Föredrar att inte svara',
     value: 'prefer_not_to_say'
+  },
+  {
+    label: 'Annat',
+    value: 'other'
   }
 ]

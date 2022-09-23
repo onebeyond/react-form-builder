@@ -912,7 +912,7 @@ export default [
         cs: 'BFC'
       },
       {
-        cn: 'Bretagne',
+        cn: 'Brittany',
         cs: 'BRE'
       },
       {
@@ -920,7 +920,7 @@ export default [
         cs: 'CVL'
       },
       {
-        cn: 'Corse',
+        cn: 'Corsica',
         cs: 'COR'
       },
       {
@@ -932,7 +932,7 @@ export default [
         cs: 'HDF'
       },
       {
-        cn: 'Île-de-France',
+        cn: 'Paris Region',
         cs: 'IDF'
       },
       {
@@ -952,7 +952,7 @@ export default [
         cs: 'PDL'
       },
       {
-        cn: 'Provence-Alpes-Cote dAzur',
+        cn: "Provence Alpes Côte d'Azur",
         cs: 'PAC'
       },
       {
@@ -1604,6 +1604,116 @@ export default [
       {
         cn: 'Veneto',
         cs: '34'
+      }
+    ]
+  },
+  {
+    cn: 'Republic of Ireland',
+    cs: 'IE',
+    regions: [
+      {
+        cn: 'Carlow',
+        cs: 'CAR'
+      },
+      {
+        cn: 'Cavan',
+        cs: 'CAV'
+      },
+      {
+        cn: 'Clare',
+        cs: 'CLA'
+      },
+      {
+        cn: 'Cork',
+        cs: 'COR'
+      },
+      {
+        cn: 'County Meath',
+        cs: 'CMT'
+      },
+      {
+        cn: 'Donegal',
+        cs: 'DON'
+      },
+      {
+        cn: 'Dublin',
+        cs: 'DBN'
+      },
+      {
+        cn: 'Galway',
+        cs: 'GWY'
+      },
+      {
+        cn: 'Kerry',
+        cs: 'KRY'
+      },
+      {
+        cn: 'Kildare',
+        cs: 'KDR'
+      },
+      {
+        cn: 'Kilkenny',
+        cs: 'KNY'
+      },
+      {
+        cn: 'Laois',
+        cs: 'LAS'
+      },
+      {
+        cn: 'Leitrim',
+        cs: 'LTM'
+      },
+      {
+        cn: 'Limerick',
+        cs: 'LMK'
+      },
+      {
+        cn: 'Longford',
+        cs: 'LGD'
+      },
+      {
+        cn: 'Louth',
+        cs: 'LTH'
+      },
+      {
+        cn: 'Mayo',
+        cs: 'MAY'
+      },
+      {
+        cn: 'Monaghan',
+        cs: 'MGN'
+      },
+      {
+        cn: 'Offaly',
+        cs: 'OFF'
+      },
+      {
+        cn: 'Roscommon',
+        cs: 'RCM'
+      },
+      {
+        cn: 'Sligo',
+        cs: 'SLG'
+      },
+      {
+        cn: 'Tipperary',
+        cs: 'TPP'
+      },
+      {
+        cn: 'Waterford',
+        cs: 'WTF'
+      },
+      {
+        cn: 'Westmeath',
+        cs: 'WMT'
+      },
+      {
+        cn: 'Wexford',
+        cs: 'WEX'
+      },
+      {
+        cn: 'Wicklow',
+        cs: 'WKW'
       }
     ]
   },
@@ -3071,6 +3181,96 @@ export default [
     ]
   },
   {
+    cn: 'Sweden',
+    cs: 'SE',
+    regions: [
+      {
+        cn: 'Blekinge län',
+        cs: 'BLK'
+      },
+      {
+        cn: 'Dalarnes län',
+        cs: 'DLR'
+      },
+      {
+        cn: 'Gävleborgs län',
+        cs: 'GAV'
+      },
+      {
+        cn: 'Gotlands län',
+        cs: 'GOT'
+      },
+      {
+        cn: 'Hallands län',
+        cs: 'HLL'
+      },
+      {
+        cn: 'Jämtlands län',
+        cs: 'JMT'
+      },
+      {
+        cn: 'Jönköpings län',
+        cs: 'JNK'
+      },
+      {
+        cn: 'Kalmar län',
+        cs: 'KLM'
+      },
+      {
+        cn: 'Kronobergs län',
+        cs: 'KRB'
+      },
+      {
+        cn: 'Norrbottens län',
+        cs: 'NRR'
+      },
+      {
+        cn: 'Örebro län',
+        cs: 'ORB'
+      },
+      {
+        cn: 'Östergötlands län',
+        cs: 'OTG'
+      },
+      {
+        cn: 'Skåne län',
+        cs: 'SKN'
+      },
+      {
+        cn: 'Södermanlands län',
+        cs: 'SDM'
+      },
+      {
+        cn: 'Stockholms län',
+        cs: 'STK'
+      },
+      {
+        cn: 'Uppsala län',
+        cs: 'UPP'
+      },
+      {
+        cn: 'Värmlands län',
+        cs: 'VRM'
+      },
+      {
+        cn: 'Västerbottens län',
+        cs: 'VTB'
+      },
+      {
+        cn: 'Västernorrlands län',
+        cs: 'VTN'
+      },
+      {
+        cn: 'Västmanlands län',
+        cs: 'VTM'
+      },
+      {
+        cn: 'Västra Götalands län',
+        cs: 'VGL'
+      }
+    ]
+  },
+  {
     cn: 'Taiwan',
     cs: 'TW',
     regions: [
@@ -3509,10 +3709,6 @@ export default [
     cs: 'GB',
     regions: [
       {
-        cn: 'Aberdeen City',
-        cs: 'ABE'
-      },
-      {
         cn: 'Aberdeenshire',
         cs: 'ABD'
       },
@@ -3521,124 +3717,68 @@ export default [
         cs: 'ANS'
       },
       {
-        cn: 'Antrim and Newtownabbey',
+        cn: 'Antrim',
         cs: 'ANN'
-      },
-      {
-        cn: 'Ards and North Down',
-        cs: 'AND'
       },
       {
         cn: 'Argyll and Bute',
         cs: 'AGB'
       },
       {
-        cn: 'Armagh, Banbridge and Craigavon',
+        cn: 'Armagh',
         cs: 'ABC'
       },
       {
-        cn: 'Barking and Dagenham',
-        cs: 'BDG'
+        cn: 'Ayrshire',
+        cs: 'AYR'
       },
       {
-        cn: 'Barnet',
-        cs: 'BNE'
+        cn: 'Banffshire',
+        cs: 'BAN'
       },
       {
-        cn: 'Barnsley',
-        cs: 'BNS'
-      },
-      {
-        cn: 'Bath and North East Somerset',
-        cs: 'BAS'
-      },
-      {
-        cn: 'Bedford',
+        cn: 'Bedfordshire',
         cs: 'BDF'
       },
       {
-        cn: 'Belfast',
-        cs: 'BFS'
+        cn: 'Berkshire',
+        cs: 'BKS'
       },
       {
-        cn: 'Bexley',
-        cs: 'BEX'
-      },
-      {
-        cn: 'Birmingham',
-        cs: 'BIR'
-      },
-      {
-        cn: 'Blackburn with Darwen',
-        cs: 'BBD'
-      },
-      {
-        cn: 'Blackpool',
-        cs: 'BPL'
+        cn: 'Berwickshire',
+        cs: 'BEW'
       },
       {
         cn: 'Blaenau Gwent',
         cs: 'BGW'
       },
       {
-        cn: 'Bolton',
-        cs: 'BOL'
-      },
-      {
-        cn: 'Bournemouth',
-        cs: 'BMH'
-      },
-      {
-        cn: 'Bracknell Forest',
-        cs: 'BRC'
-      },
-      {
-        cn: 'Bradford',
-        cs: 'BRD'
-      },
-      {
-        cn: 'Brent',
-        cs: 'BEN'
-      },
-      {
         cn: 'Bridgend',
         cs: 'BGE'
       },
       {
-        cn: 'Brighton and Hove',
-        cs: 'BNH'
-      },
-      {
-        cn: 'Bristol, City of',
+        cn: 'Bristol',
         cs: 'BST'
-      },
-      {
-        cn: 'Bromley',
-        cs: 'BRY'
       },
       {
         cn: 'Buckinghamshire',
         cs: 'BKM'
       },
       {
-        cn: 'Bury',
-        cs: 'BUR'
+        cn: 'Bute',
+        cs: 'BUT'
       },
       {
         cn: 'Caerphilly',
         cs: 'CAY'
       },
       {
-        cn: 'Calderdale',
-        cs: 'CLD'
+        cn: 'Caithness',
+        cs: 'CAI'
       },
       {
         cn: 'Cambridgeshire',
         cs: 'CAM'
-      },
-      {
-        cn: 'Camden',
-        cs: 'CMD'
       },
       {
         cn: 'Cardiff',
@@ -3649,24 +3789,12 @@ export default [
         cs: 'CMN'
       },
       {
-        cn: 'Causeway Coast and Glens',
-        cs: 'CCG'
-      },
-      {
-        cn: 'Central Bedfordshire',
-        cs: 'CBF'
-      },
-      {
         cn: 'Ceredigion',
         cs: 'CGN'
       },
       {
-        cn: 'Cheshire East',
+        cn: 'Cheshire',
         cs: 'CHE'
-      },
-      {
-        cn: 'Cheshire West and Chester',
-        cs: 'CHW'
       },
       {
         cn: 'Clackmannanshire',
@@ -3681,84 +3809,44 @@ export default [
         cs: 'CON'
       },
       {
-        cn: 'Coventry',
-        cs: 'COV'
-      },
-      {
-        cn: 'Croydon',
-        cs: 'CRY'
+        cn: 'County Durham',
+        cs: 'COD'
       },
       {
         cn: 'Cumbria',
         cs: 'CMA'
       },
       {
-        cn: 'Darlington',
-        cs: 'DAL'
-      },
-      {
         cn: 'Denbighshire',
         cs: 'DEN'
-      },
-      {
-        cn: 'Derby',
-        cs: 'DER'
       },
       {
         cn: 'Derbyshire',
         cs: 'DBY'
       },
       {
-        cn: 'Derry and Strabane',
-        cs: 'DRS'
-      },
-      {
         cn: 'Devon',
         cs: 'DEV'
-      },
-      {
-        cn: 'Doncaster',
-        cs: 'DNC'
       },
       {
         cn: 'Dorset',
         cs: 'DOR'
       },
       {
-        cn: 'Dudley',
-        cs: 'DUD'
+        cn: 'Down',
+        cs: 'DOW'
       },
       {
         cn: 'Dumfries and Galloway',
         cs: 'DGY'
       },
       {
-        cn: 'Dundee City',
+        cn: 'Dunbartonshire',
         cs: 'DND'
-      },
-      {
-        cn: 'Durham County',
-        cs: 'DUR'
-      },
-      {
-        cn: 'Ealing',
-        cs: 'EAL'
-      },
-      {
-        cn: 'East Ayrshire',
-        cs: 'EAY'
-      },
-      {
-        cn: 'East Dunbartonshire',
-        cs: 'EDU'
       },
       {
         cn: 'East Lothian',
         cs: 'ELN'
-      },
-      {
-        cn: 'East Renfrewshire',
-        cs: 'ERW'
       },
       {
         cn: 'East Riding of Yorkshire',
@@ -3769,27 +3857,11 @@ export default [
         cs: 'ESX'
       },
       {
-        cn: 'Edinburgh, City of',
-        cs: 'EDH'
-      },
-      {
-        cn: 'Eilean Siar',
-        cs: 'ELS'
-      },
-      {
-        cn: 'Enfield',
-        cs: 'ENF'
-      },
-      {
         cn: 'Essex',
         cs: 'ESS'
       },
       {
-        cn: 'Falkirk',
-        cs: 'FAL'
-      },
-      {
-        cn: 'Fermanagh and Omagh',
+        cn: 'Fermanagh',
         cs: 'FMO'
       },
       {
@@ -3801,56 +3873,24 @@ export default [
         cs: 'FLN'
       },
       {
-        cn: 'Gateshead',
-        cs: 'GAT'
-      },
-      {
-        cn: 'Glasgow City',
-        cs: 'GLG'
-      },
-      {
         cn: 'Gloucestershire',
         cs: 'GLS'
       },
       {
-        cn: 'Greenwich',
-        cs: 'GRE'
+        cn: 'Greater London',
+        cs: 'GRL'
+      },
+      {
+        cn: 'Greater Manchester',
+        cs: 'GRM'
       },
       {
         cn: 'Gwynedd',
         cs: 'GWN'
       },
       {
-        cn: 'Hackney',
-        cs: 'HCK'
-      },
-      {
-        cn: 'Halton',
-        cs: 'HAL'
-      },
-      {
-        cn: 'Hammersmith and Fulham',
-        cs: 'HMF'
-      },
-      {
         cn: 'Hampshire',
         cs: 'HAM'
-      },
-      {
-        cn: 'Haringey',
-        cs: 'HRY'
-      },
-      {
-        cn: 'Harrow',
-        cs: 'HRW'
-      },
-      {
-        cn: 'Hartlepool',
-        cs: 'HPL'
-      },
-      {
-        cn: 'Havering',
-        cs: 'HAV'
       },
       {
         cn: 'Herefordshire',
@@ -3861,20 +3901,8 @@ export default [
         cs: 'HRT'
       },
       {
-        cn: 'Highland',
-        cs: 'HLD'
-      },
-      {
-        cn: 'Hillingdon',
-        cs: 'HIL'
-      },
-      {
-        cn: 'Hounslow',
-        cs: 'HNS'
-      },
-      {
-        cn: 'Inverclyde',
-        cs: 'IVC'
+        cn: 'Inverness-shire',
+        cs: 'IVS'
       },
       {
         cn: 'Isle of Anglesey',
@@ -3885,116 +3913,48 @@ export default [
         cs: 'IOW'
       },
       {
-        cn: 'Isles of Scilly',
-        cs: 'IOS'
-      },
-      {
-        cn: 'Islington',
-        cs: 'ISL'
-      },
-      {
-        cn: 'Kensington and Chelsea',
-        cs: 'KEC'
-      },
-      {
         cn: 'Kent',
         cs: 'KEN'
       },
       {
-        cn: 'Kingston upon Hull',
-        cs: 'KHL'
+        cn: 'Kincardineshire',
+        cs: 'KIN'
       },
       {
-        cn: 'Kingston upon Thames',
-        cs: 'KTT'
-      },
-      {
-        cn: 'Kirklees',
+        cn: 'Kinross-shire',
         cs: 'KIR'
       },
       {
-        cn: 'Knowsley',
-        cs: 'KWL'
-      },
-      {
-        cn: 'Lambeth',
-        cs: 'LBH'
+        cn: 'Lanarkshire',
+        cs: 'LaK'
       },
       {
         cn: 'Lancashire',
         cs: 'LAN'
       },
       {
-        cn: 'Leeds',
-        cs: 'LDS'
-      },
-      {
-        cn: 'Leicester',
-        cs: 'LCE'
-      },
-      {
         cn: 'Leicestershire',
         cs: 'LEC'
-      },
-      {
-        cn: 'Lewisham',
-        cs: 'LEW'
       },
       {
         cn: 'Lincolnshire',
         cs: 'LIN'
       },
       {
-        cn: 'Lisburn and Castlereagh',
-        cs: 'LBC'
-      },
-      {
-        cn: 'Liverpool',
-        cs: 'LIV'
-      },
-      {
-        cn: 'London, City of',
+        cn: 'Londonderry',
         cs: 'LND'
       },
       {
-        cn: 'Luton',
-        cs: 'LUT'
-      },
-      {
-        cn: 'Manchester',
-        cs: 'MAN'
-      },
-      {
-        cn: 'Medway',
-        cs: 'MDW'
+        cn: 'Merseyside',
+        cs: 'MED'
       },
       {
         cn: 'Merthyr Tydfil',
         cs: 'MTY'
       },
       {
-        cn: 'Merton',
-        cs: 'MRT'
-      },
-      {
-        cn: 'Mid and East Antrim',
-        cs: 'MEA'
-      },
-      {
-        cn: 'Mid Ulster',
-        cs: 'MUL'
-      },
-      {
-        cn: 'Middlesbrough',
-        cs: 'MDB'
-      },
-      {
         cn: 'Midlothian',
         cs: 'MLN'
-      },
-      {
-        cn: 'Milton Keynes',
-        cs: 'MIK'
       },
       {
         cn: 'Monmouthshire',
@@ -4009,48 +3969,12 @@ export default [
         cs: 'NTL'
       },
       {
-        cn: 'Newcastle upon Tyne',
-        cs: 'NET'
-      },
-      {
-        cn: 'Newham',
-        cs: 'NWM'
-      },
-      {
         cn: 'Newport',
         cs: 'NWP'
       },
       {
-        cn: 'Newry, Mourne and Down',
-        cs: 'NMD'
-      },
-      {
         cn: 'Norfolk',
         cs: 'NFK'
-      },
-      {
-        cn: 'North Ayrshire',
-        cs: 'NAY'
-      },
-      {
-        cn: 'North East Lincolnshire',
-        cs: 'NEL'
-      },
-      {
-        cn: 'North Lanarkshire',
-        cs: 'NLK'
-      },
-      {
-        cn: 'North Lincolnshire',
-        cs: 'NLN'
-      },
-      {
-        cn: 'North Somerset',
-        cs: 'NSM'
-      },
-      {
-        cn: 'North Tyneside',
-        cs: 'NTY'
       },
       {
         cn: 'North Yorkshire',
@@ -4065,24 +3989,20 @@ export default [
         cs: 'NBL'
       },
       {
-        cn: 'Nottingham',
-        cs: 'NGM'
-      },
-      {
         cn: 'Nottinghamshire',
         cs: 'NTT'
       },
       {
-        cn: 'Oldham',
-        cs: 'OLD'
-      },
-      {
-        cn: 'Orkney Islands',
+        cn: 'Orkney',
         cs: 'ORK'
       },
       {
         cn: 'Oxfordshire',
         cs: 'OXF'
+      },
+      {
+        cn: 'Peeblesshire',
+        cs: 'PEE'
       },
       {
         cn: 'Pembrokeshire',
@@ -4093,87 +4013,35 @@ export default [
         cs: 'PKN'
       },
       {
-        cn: 'Peterborough',
-        cs: 'PTE'
-      },
-      {
-        cn: 'Plymouth',
-        cs: 'PLY'
-      },
-      {
-        cn: 'Poole',
-        cs: 'POL'
-      },
-      {
-        cn: 'Portsmouth',
-        cs: 'POR'
-      },
-      {
         cn: 'Powys',
         cs: 'POW'
-      },
-      {
-        cn: 'Reading',
-        cs: 'RDG'
-      },
-      {
-        cn: 'Redbridge',
-        cs: 'RDB'
-      },
-      {
-        cn: 'Redcar and Cleveland',
-        cs: 'RCC'
       },
       {
         cn: 'Renfrewshire',
         cs: 'RFW'
       },
       {
-        cn: 'Rhondda, Cynon, Taff',
+        cn: 'Rhondda Cynon Taff',
         cs: 'RCT'
       },
       {
-        cn: 'Richmond upon Thames',
-        cs: 'RIC'
+        cn: 'Ross-shire',
+        cs: 'RSS'
       },
       {
-        cn: 'Rochdale',
-        cs: 'RCH'
-      },
-      {
-        cn: 'Rotherham',
-        cs: 'ROT'
+        cn: 'Roxburghshire',
+        cs: 'ROX'
       },
       {
         cn: 'Rutland',
         cs: 'RUT'
       },
       {
-        cn: 'St. Helens',
-        cs: 'SHN'
+        cn: 'Selkirkshire',
+        cs: 'SLK'
       },
       {
-        cn: 'Salford',
-        cs: 'SLF'
-      },
-      {
-        cn: 'Sandwell',
-        cs: 'SAW'
-      },
-      {
-        cn: 'Scottish Borders, The',
-        cs: 'SCB'
-      },
-      {
-        cn: 'Sefton',
-        cs: 'SFT'
-      },
-      {
-        cn: 'Sheffield',
-        cs: 'SHF'
-      },
-      {
-        cn: 'Shetland Islands',
+        cn: 'Shetland',
         cs: 'ZET'
       },
       {
@@ -4181,152 +4049,52 @@ export default [
         cs: 'SHR'
       },
       {
-        cn: 'Slough',
-        cs: 'SLG'
-      },
-      {
-        cn: 'Solihull',
-        cs: 'SOL'
-      },
-      {
         cn: 'Somerset',
         cs: 'SOM'
       },
       {
-        cn: 'South Ayrshire',
-        cs: 'SAY'
-      },
-      {
-        cn: 'South Gloucestershire',
-        cs: 'SGC'
-      },
-      {
-        cn: 'South Lanarkshire',
-        cs: 'SLK'
-      },
-      {
-        cn: 'South Tyneside',
-        cs: 'STY'
-      },
-      {
-        cn: 'Southampton',
-        cs: 'STH'
-      },
-      {
-        cn: 'Southend-on-Sea',
-        cs: 'SOS'
-      },
-      {
-        cn: 'Southwark',
-        cs: 'SWK'
+        cn: 'South Yorkshire',
+        cs: 'SYK'
       },
       {
         cn: 'Staffordshire',
         cs: 'STS'
       },
       {
-        cn: 'Stirling',
+        cn: 'Stirlingshire',
         cs: 'STG'
-      },
-      {
-        cn: 'Stockport',
-        cs: 'SKP'
-      },
-      {
-        cn: 'Stockton-on-Tees',
-        cs: 'STT'
-      },
-      {
-        cn: 'Stoke-on-Trent',
-        cs: 'STE'
       },
       {
         cn: 'Suffolk',
         cs: 'SFK'
       },
       {
-        cn: 'Sunderland',
-        cs: 'SND'
-      },
-      {
         cn: 'Surrey',
         cs: 'SRY'
-      },
-      {
-        cn: 'Sutton',
-        cs: 'STN'
       },
       {
         cn: 'Swansea',
         cs: 'SWA'
       },
       {
-        cn: 'Swindon',
-        cs: 'SWD'
-      },
-      {
-        cn: 'Tameside',
-        cs: 'TAM'
-      },
-      {
-        cn: 'Telford and Wrekin',
-        cs: 'TFW'
-      },
-      {
-        cn: 'Thurrock',
-        cs: 'THR'
-      },
-      {
-        cn: 'Torbay',
-        cs: 'TOB'
-      },
-      {
         cn: 'Torfaen',
         cs: 'TOF'
       },
       {
-        cn: 'Tower Hamlets',
-        cs: 'TWH'
+        cn: 'Tyne & Wear',
+        cs: 'TYW'
       },
       {
-        cn: 'Trafford',
-        cs: 'TRF'
+        cn: 'TYRONE',
+        cs: 'TYR'
       },
       {
-        cn: 'Vale of Glamorgan, The',
+        cn: 'Vale of Glamorgan',
         cs: 'VGL'
-      },
-      {
-        cn: 'Wakefield',
-        cs: 'WKF'
-      },
-      {
-        cn: 'Walsall',
-        cs: 'WLL'
-      },
-      {
-        cn: 'Waltham Forest',
-        cs: 'WFT'
-      },
-      {
-        cn: 'Wandsworth',
-        cs: 'WND'
-      },
-      {
-        cn: 'Warrington',
-        cs: 'WRT'
       },
       {
         cn: 'Warwickshire',
         cs: 'WAR'
-      },
-      {
-        cn: 'West Berkshire',
-        cs: 'WBK'
-      },
-      {
-        cn: 'West Dunbartonshire',
-        cs: 'WDU'
       },
       {
         cn: 'West Lothian',
@@ -4337,32 +4105,20 @@ export default [
         cs: 'WSX'
       },
       {
-        cn: 'Westminster',
-        cs: 'WSM'
+        cn: 'West Yorkshire',
+        cs: 'WYS'
       },
       {
-        cn: 'Wigan',
-        cs: 'WGN'
+        cn: 'Western Isles',
+        cs: 'WST'
+      },
+      {
+        cn: 'Wigtownshire',
+        cs: 'WIG'
       },
       {
         cn: 'Wiltshire',
         cs: 'WIL'
-      },
-      {
-        cn: 'Windsor and Maidenhead',
-        cs: 'WNM'
-      },
-      {
-        cn: 'Wirral',
-        cs: 'WRL'
-      },
-      {
-        cn: 'Wokingham',
-        cs: 'WOK'
-      },
-      {
-        cn: 'Wolverhampton',
-        cs: 'WLV'
       },
       {
         cn: 'Worcestershire',
@@ -4371,10 +4127,6 @@ export default [
       {
         cn: 'Wrexham',
         cs: 'WRX'
-      },
-      {
-        cn: 'York',
-        cs: 'YOR'
       }
     ]
   },

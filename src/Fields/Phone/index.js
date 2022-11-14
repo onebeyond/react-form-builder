@@ -43,6 +43,7 @@ const Phone = ({
       name={name}
       defaultValue=''
       setValue={setValue}
+      dir='ltr'
       as={
         <PhoneInput
           placeholder={placeholder}

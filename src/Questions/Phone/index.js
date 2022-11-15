@@ -45,7 +45,11 @@ const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
           errors[question.name].type === 'isValidPhoneNumber' && (
             <ErrorMessage
               name={question.name}
-              message='Not a valid phone number'
+              message={
+                (question.errorMessages &&
+                  question.errorMessages.isValidPhoneNumber) ||
+                'Not a valid phone number'
+              }
             />
           )}
         {errors[question.name] && errors[question.name].type === 'pattern' && (

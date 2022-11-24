@@ -9,6 +9,14 @@ import { jsx } from 'theme-ui'
 const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
   const { clearErrors, errors, register, setError, setValue } = useForm
 
+  const getDefaultCountry = () => {
+    if (question?.defaultCountry && question?.defaultCountry !== '')
+      return question?.defaultCountry.toUpperCase()
+
+    if (isoCode) return isoCode.toUpperCase()
+
+    return ''
+  }
   return (
     <React.Fragment>
       <div
@@ -24,7 +32,7 @@ const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
           id={question.name}
           data-testid='question-phone'
           aria-describedby={'error_message_' + question.name}
-          defaultCountry={isoCode ? isoCode.toUpperCase() : ''}
+          defaultCountry={getDefaultCountry()}
           register={register}
           setValue={setValue}
           setError={setError}

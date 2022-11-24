@@ -501,7 +501,7 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 |  **registerConfig**       |    |  json     |
 | required  | Define if the phone input is required  |  boolean  | false
 
-Reminder: The isoCode prop that can be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
+Reminder: The isoCode prop that can also be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
 
 Basic phone
 
@@ -513,6 +513,7 @@ Basic phone
   "registerConfig": {
     "required": true
   },
+  "defaultCountry":"GB",
   "placeholder": "Phone",
   "errorMessages": {
     "required": "This field is required"

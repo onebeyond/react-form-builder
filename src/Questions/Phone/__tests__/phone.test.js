@@ -93,6 +93,24 @@ test('phone ES country is displayed', () => {
   expect(countryComponent.value).toBe('FR')
 })
 
+test('default country code is displayed', () => {
+  const newQuestion = { ...question, defaultCountry: 'fr' }
+  const { getByLabelText } = render(
+    <QuestionPhone
+      question={newQuestion}
+      useForm={{
+        errors: {},
+        register: () => {},
+        setValue: jest.fn()
+      }}
+    />
+  )
+  const countryComponent = getByLabelText('Phone number country')
+  expect(countryComponent.value).toBe('FR')
+  fireEvent.change(countryComponent, { target: { value: 'GB' } })
+  expect(countryComponent.value).toBe('GB')
+})
+
 test('pattern error is displayed', () => {
   render(
     <QuestionPhone

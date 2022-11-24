@@ -11,7 +11,7 @@ const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
 
   const getDefaultCountry = () => {
     if (question.defaultCountry && question.defaultCountry !== '')
-      return question?.defaultCountry.toUpperCase()
+      return question.defaultCountry.toUpperCase()
 
     if (isoCode) return isoCode.toUpperCase()
 

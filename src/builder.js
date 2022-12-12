@@ -228,7 +228,7 @@ const FormBuilder = ({
             : conditionValue || []
 
         return getMultiFormattedValue() &&
-          getMultiFormattedValue().some((e) => e === getConditions())
+          getMultiFormattedValue().some((e) => getConditions().includes(e))
           ? renderComponent()
           : null
       }

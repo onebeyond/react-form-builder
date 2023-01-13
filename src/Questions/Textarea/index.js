@@ -42,8 +42,6 @@ const QuestionTextarea = ({ question, useForm }) => {
       </div>
       <Textarea
         rows={question.rows || defaultRows}
-        maxLength={question.registerConfig.maxLength}
-        minLength={question.registerConfig.minLength}
         id={question.name}
         aria-describedby={'error_message_' + question.name}
         data-testid='question-input'
@@ -54,8 +52,8 @@ const QuestionTextarea = ({ question, useForm }) => {
         ref={register({
           ...question.registerConfig,
           pattern: new RegExp(question.registerConfig.pattern),
-          minimumLen: question.registerConfig.minimumLen,
-          maximumLen: question.registerConfig.maximumLen
+          minLength: question.registerConfig.minimumLen,
+          maxLength: question.registerConfig.maximumLen
         })}
       />
       {errors[question.name] && errors[question.name].type && (
@@ -66,6 +64,18 @@ const QuestionTextarea = ({ question, useForm }) => {
             question.errorMessages &&
             question.errorMessages[errors[question.name].type]
           }
+        />
+      )}
+      {errors[question.name] && errors[question.name].type === 'minLength' && (
+        <ErrorMessage
+          name={question.name}
+          message={question.errorMessages && question.errorMessages.minimumLen}
+        />
+      )}
+      {errors[question.name] && errors[question.name].type === 'maxLength' && (
+        <ErrorMessage
+          name={question.name}
+          message={question.errorMessages && question.errorMessages.maximumLen}
         />
       )}
     </div>

@@ -42,7 +42,8 @@ const QuestionTextarea = ({ question, useForm }) => {
       </div>
       <Textarea
         rows={question.rows || defaultRows}
-        maxLength={question.maxLength}
+        maxLength={question.registerConfig.maxLength}
+        minLength={question.registerConfig.minLength}
         id={question.name}
         aria-describedby={'error_message_' + question.name}
         data-testid='question-input'
@@ -52,19 +53,19 @@ const QuestionTextarea = ({ question, useForm }) => {
         defaultValue={question.defaultValue}
         ref={register({
           ...question.registerConfig,
-          pattern: new RegExp(question.registerConfig.pattern)
+          pattern: new RegExp(question.registerConfig.pattern),
+          minimumLen: question.registerConfig.minimumLen,
+          maximumLen: question.registerConfig.maximumLen
         })}
       />
-      {errors[question.name] && errors[question.name].type === 'required' && (
+      {errors[question.name] && errors[question.name].type && (
         <ErrorMessage
           name={question.name}
-          message={question.errorMessages && question.errorMessages.required}
-        />
-      )}
-      {errors[question.name] && errors[question.name].type === 'pattern' && (
-        <ErrorMessage
-          name={question.name}
-          message={question.errorMessages && question.errorMessages.pattern}
+          sx={{ gridColumn: 1 }}
+          message={
+            question.errorMessages &&
+            question.errorMessages[errors[question.name].type]
+          }
         />
       )}
     </div>

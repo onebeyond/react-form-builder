@@ -56,16 +56,19 @@ const QuestionTextarea = ({ question, useForm }) => {
           maxLength: question.registerConfig.maximumLen
         })}
       />
-      {errors[question.name] && errors[question.name].type && (
-        <ErrorMessage
-          name={question.name}
-          sx={{ gridColumn: 1 }}
-          message={
-            question.errorMessages &&
-            question.errorMessages[errors[question.name].type]
-          }
-        />
-      )}
+      {errors[question.name] &&
+        errors[question.name].type &&
+        question.errorMessages &&
+        question.errorMessages[errors[question.name].type] && (
+          <ErrorMessage
+            name={question.name}
+            sx={{ gridColumn: 1 }}
+            message={
+              question.errorMessages &&
+              question.errorMessages[errors[question.name].type]
+            }
+          />
+        )}
       {errors[question.name] && errors[question.name].type === 'minLength' && (
         <ErrorMessage
           name={question.name}

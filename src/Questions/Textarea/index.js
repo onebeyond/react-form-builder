@@ -75,7 +75,7 @@ const QuestionTextarea = ({ question, useForm }) => {
         name={question.name}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        maximumLen={question?.registerConfig?.maximumLen}
+        maximumLen={question.registerConfig.maximumLen}
         ref={register(reg)}
       />
       {errors[question.name] &&

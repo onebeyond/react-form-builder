@@ -18,9 +18,9 @@ const Textarea = React.forwardRef(({ ...props }, ref) => {
           else setCount(e.target.value.length)
         }}
       />
-      {props?.maximumLen && (
+      {props.maximumLen && (
         <span>
-          {count}/{props?.maximumLen}
+          {count}/{props.maximumLen}
         </span>
       )}
     </>

@@ -30,14 +30,14 @@ const QuestionTextarea = ({ question, useForm }) => {
       minWordCount: (v) => {
         if (question.registerConfig.countType === 'word')
           return (
-            v.trim().split(' ').length > question.registerConfig.minimumLen ||
+            v.trim().split(' ').length >= question.registerConfig.minimumLen ||
             question.errorMessages.minimumLen
           )
       },
       maxWordCount: (v) => {
         if (question.registerConfig.countType === 'word')
           return (
-            v.trim().split(' ').length < question.registerConfig.maximumLen ||
+            v.trim().split(' ').length <= question.registerConfig.maximumLen ||
             question.errorMessages.maximumLen
           )
       }
@@ -76,6 +76,7 @@ const QuestionTextarea = ({ question, useForm }) => {
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
         maximumLen={question.registerConfig.maximumLen}
+        countType={question.registerConfig.countType}
         ref={register(reg)}
       />
       {errors[question.name] &&

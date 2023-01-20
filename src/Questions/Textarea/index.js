@@ -16,7 +16,33 @@ const styles = {
 const QuestionTextarea = ({ question, useForm }) => {
   const { register, errors } = useForm
   const defaultRows = 5
-
+  const reg = {
+    ...question.registerConfig,
+    pattern: new RegExp(question.registerConfig.pattern),
+    // By default is char count
+    minLength:
+      question.registerConfig.countType !== 'word' &&
+      question.registerConfig.minimumLen,
+    maxLength:
+      question.registerConfig.countType !== 'word' &&
+      question.registerConfig.maximumLen,
+    validate: {
+      minWordCount: (v) => {
+        if (question.registerConfig.countType === 'word')
+          return (
+            v.trim().split(' ').length > question.registerConfig.minimumLen ||
+            question.errorMessages.minimumLen
+          )
+      },
+      maxWordCount: (v) => {
+        if (question.registerConfig.countType === 'word')
+          return (
+            v.trim().split(' ').length < question.registerConfig.maximumLen ||
+            question.errorMessages.maximumLen
+          )
+      }
+    }
+  }
   return (
     <div
       sx={{
@@ -49,12 +75,8 @@ const QuestionTextarea = ({ question, useForm }) => {
         name={question.name}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        ref={register({
-          ...question.registerConfig,
-          pattern: new RegExp(question.registerConfig.pattern),
-          minLength: question.registerConfig.minimumLen,
-          maxLength: question.registerConfig.maximumLen
-        })}
+        maximumLen={question?.registerConfig?.maximumLen}
+        ref={register(reg)}
       />
       {errors[question.name] &&
         errors[question.name].type &&
@@ -69,18 +91,24 @@ const QuestionTextarea = ({ question, useForm }) => {
             }
           />
         )}
-      {errors[question.name] && errors[question.name].type === 'minLength' && (
-        <ErrorMessage
-          name={question.name}
-          message={question.errorMessages && question.errorMessages.minimumLen}
-        />
-      )}
-      {errors[question.name] && errors[question.name].type === 'maxLength' && (
-        <ErrorMessage
-          name={question.name}
-          message={question.errorMessages && question.errorMessages.maximumLen}
-        />
-      )}
+      {errors[question.name] &&
+        ['minWordCount', 'minLength'].includes(errors[question.name].type) && (
+          <ErrorMessage
+            name={question.name}
+            message={
+              question.errorMessages && question.errorMessages.minimumLen
+            }
+          />
+        )}
+      {errors[question.name] &&
+        ['maxWordCount', 'maxLength'].includes(errors[question.name].type) && (
+          <ErrorMessage
+            name={question.name}
+            message={
+              question.errorMessages && question.errorMessages.maximumLen
+            }
+          />
+        )}
     </div>
   )
 }

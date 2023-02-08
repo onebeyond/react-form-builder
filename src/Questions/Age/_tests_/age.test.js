@@ -62,7 +62,7 @@ test('Change value of age select', async () => {
 
   await selectEvent.openMenu(agePlaceholder)
   fireEvent.keyDown(agePlaceholder, { key: 'Enter', code: 13 })
-  await expect(screen.getByText('18-25'))
+  await expect(screen.getByText('18-24'))
 })
 
 test('Check custom options are rendered', async () => {

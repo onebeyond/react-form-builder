@@ -1,30 +1,26 @@
 export default [
   {
-    label: '18-25',
-    value: '18-25'
+    label: '18-24',
+    value: '18-24'
   },
   {
-    label: '26-33',
-    value: '26-33'
+    label: '25-34',
+    value: '25-34'
   },
   {
-    label: '34-41',
-    value: '34-41'
+    label: '35-44',
+    value: '35-44'
   },
   {
-    label: '42-49',
-    value: '42-49'
+    label: '45-54',
+    value: '45-54'
   },
   {
-    label: '50-57',
-    value: '50-57'
+    label: '55-64',
+    value: '55-64'
   },
   {
-    label: '58-65',
-    value: '58-65'
-  },
-  {
-    label: '66+',
-    value: '66+'
+    label: '65+',
+    value: '65+'
   }
 ]

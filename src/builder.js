@@ -20,6 +20,7 @@ import QuestionSelectImage from './Questions/SelectImage'
 import QuestionCounty from './Questions/County'
 import QuestionGender from './Questions/Genre'
 import QuestionAge from './Questions/Age'
+import QuestionAutocomplete from './Questions/Autocomplete'
 
 const styles = {
   fitContent: {
@@ -120,6 +121,15 @@ const FormBuilder = ({
       age: (
         <>
           <QuestionAge useForm={useFormObj} question={question} />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
+      ),
+      autocomplete: (
+        <>
+          <QuestionAutocomplete useForm={useFormObj} question={question} />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
               ConditionalQuestion(question.dependentQuestions, question.name)

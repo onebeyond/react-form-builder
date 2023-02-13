@@ -629,6 +629,61 @@ Select basic example
 
 https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
 
+### Autocomplete
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  Checkbox name  	|  string 	|  - 	|
+|   type*   | must be `select`| string | - |
+|   label	|  Text shown over the select question 	|  string  	|   ''	|
+|   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|
+| **config**  |   | json  |   |
+|  **options** |  |  json |     |
+| options | It contains all the options to be rendered in the select component |  Object Array | -
+|  label |  The label displayed in select option |  string  |  ''  |
+|  value |  The value of the select option |  string  |  ''  |
+|   **errorMessages**	|    	| json   	|   	|
+|  required      |   Error message to display on submit if there is no selection and it is required |  string     | ''
+|  **registerConfig**       |    |  json     |
+| required  | Define if the select is required  |  boolean  | false
+
+It works the same as select field, but searchable option is available.
+
+#### Autocomplete examples 
+
+Autocomplete basic example
+
+```yaml
+{
+  "name": "color",
+  "type": "autocomplete",
+  "placeholder": "Please choose an option",
+  "label": "What is your favorite color?",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+  "config": {
+    "options": [
+      {
+        "value": "red",
+        "label": "Red"
+      },
+      {
+        "value": "black",
+        "label": "Black"
+      },
+      {
+        "value": "prefer_not_say",
+        "label": "prefer not to say"
+      }
+    ]
+  }
+}
+
+```
+
 # Accessibility
 
 The accessibility requirements for all the form tags are already configured in the library. For components (input, checkbox, select, radio…) different attributes have been introduced that can be configured through props. 

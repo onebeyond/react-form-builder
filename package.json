@@ -88,6 +88,7 @@
   ],
   "dependencies": {
     "install": "^0.13.0",
+    "lodash": "^4.17.21",
     "npm": "^8.16.0",
     "react-datepicker": "^3.4.1",
     "react-hook-form": "^6.14.2",

@@ -13,7 +13,7 @@ const Textarea = React.forwardRef(({ ...props }, ref) => {
         {...props}
         onChange={(e) => {
           if (props.countType === 'word')
-            setCount(e.target.value.trim().split(' ').length)
+            setCount(e.target.value.trim().split(/[\s,.\n]+/).length)
           // By default is char count
           else setCount(e.target.value.length)
         }}

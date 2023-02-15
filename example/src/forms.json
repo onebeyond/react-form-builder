@@ -10,36 +10,42 @@
     "questions": [
       {
         "name": "first_name",
-        "type": "input",
-        "label": "First name",
+        "type": "autocomplete",
+        "label": "CSM",
         "placeholder": "First Name",
         "errorMessages": {
           "required": "This field is required"
         },
         "registerConfig": {
           "required": true
+        },
+        "config": {
+          "headers": {
+            "authorization": "Basic MzgyNjdmNmUtOTIzYy00MmUyLTlmNDEtYzBkNGNjOWJmM2I0Og=="
+          },
+          "url": "http://localhost:7002/api/autocomplete/",
+          "params": [
+            {
+              "key" : "companyType",
+              "type" : "fixed",
+              "value" : "ltd"           
+            },
+            {
+              "key" : "companyStatus",
+              "type" : "fixed",
+              "value" : "active"           
+            },
+            {
+              "key" : "pageSize",
+              "type" : "fixed",
+              "value" : 10           
+            },
+            {
+              "key" : "input",
+              "type" : "input"           
+            }
+          ]
         }
-      },
-      {
-        "type": "textarea",
-        "label": "In 250 words or less, explain why your business deserves to receive the £10,000 grant*",
-        "name": "funding_circle_grant_giveaway_customers_2023_100_word_answer ",
-        "placeholder": "hola",
-        "errorMessages": {
-          "required": "This field is required",
-          "pattern": "",
-          "maximumLen": "Write less than 10 words.",
-          "minimumLen": "Write more than 5 words."
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 5,
-          "maximumLen": 10,
-          "pattern": "",
-          "countType": "word"
-        },
-        "dependentQuestions": [],
-        "qId": "b0c38e4b-8caf-44e5-ab64-0bac87b9ab0d"
       }
     ],
     "callForAction": [

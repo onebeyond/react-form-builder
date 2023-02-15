@@ -1,29 +1,30 @@
 import React from 'react'
+import debounce from 'debounce-promise'
 import ErrorMessage from '../../Fields/Error'
-import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
-
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
-  selectOption: {
-    background: 'bg',
-    color: 'black'
-  }
-}
+import Select from '../../Fields/AsyncReactSelect'
 
 const QuestionAutocomplete = ({ question, useForm }) => {
   const { register, errors, trigger, setValue, unregister } = useForm
-  const getOptions = (question) =>
-    question.config &&
-    question.config.options.map((option) => {
-      return {
-        value: option.value,
-        label: option.label
-      }
+  const minCharactersToSearch = 3
+
+  const promiseOptions = debounce(async (inputValue) => {
+    if (inputValue.length < minCharactersToSearch) return []
+
+    const url =
+      question.config.url +
+      '?' +
+      new URLSearchParams(
+        question.config.params.map((param) => {
+          if (param.type === 'fixed') return [param.key, param.value]
+          else if (param.type === 'input') return [param.key, inputValue]
+        })
+      )
+    const response = await fetch(url, {
+      headers: question.config.headers
     })
+    return await response.json()
+  }, 350)
 
   return (
     <div
@@ -43,7 +44,6 @@ const QuestionAutocomplete = ({ question, useForm }) => {
         onChange={() => trigger(question.name)}
         id={question.name}
         aria-describedby={'error_message_' + question.name}
-        options={getOptions(question)}
         isSearchable
         placeholder={question.placeholder}
         key={question.name}
@@ -53,18 +53,10 @@ const QuestionAutocomplete = ({ question, useForm }) => {
         setValue={setValue}
         unregister={unregister}
         label={question.label}
-      >
-        {question.config &&
-          question.config.options.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-              sx={styles.selectOption}
-            >
-              {option.label}
-            </option>
-          ))}
-      </Select>
+        cacheOptions
+        defaultOptions
+        loadOptions={promiseOptions}
+      />
       {errors[question.name] &&
         (errors[question.name].type === 'required' ||
           errors[question.name].type === 'noEmpty') && (

@@ -4,8 +4,7 @@ import React from 'react'
 
 import { useThemeUI } from 'theme-ui'
 import { RHFInput } from 'react-hook-form-input'
-import ReactSelect from 'react-select'
-import AsyncSelect from 'react-select/async';
+import AsyncSelect from 'react-select/async'
 
 const Select = ({
   register,

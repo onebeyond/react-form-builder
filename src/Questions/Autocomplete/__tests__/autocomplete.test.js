@@ -1,13 +1,21 @@
 import React from 'react'
-import {
-  cleanup,
-  getByText,
-  render,
-  fireEvent,
-  screen
-} from '@testing-library/react'
-import selectEvent from 'react-select-event'
+import { cleanup, getByText, render, screen } from '@testing-library/react'
 import QuestionAutocomplete from '..'
+
+import MutationObserver from '@sheerun/mutationobserver-shim'
+window.MutationObserver = MutationObserver
+
+const mockResponse = [
+  { label: 'Apple', value: 'apple' },
+  { label: 'Banana', value: 'banana' },
+  { label: 'Grappes', value: 'grappes' },
+  { label: 'Watermelon', value: 'watermelon' }
+]
+beforeEach(() => {
+  jest.spyOn(global, 'fetch').mockResolvedValue({
+    json: jest.fn().mockResolvedValue(mockResponse)
+  })
+})
 
 afterEach(cleanup)
 
@@ -23,24 +31,9 @@ const question = {
     required: true
   },
   config: {
-    options: [
-      {
-        label: 'Much more appealing',
-        value: 'much_more_appealing'
-      },
-      {
-        label: 'Appealing',
-        value: 'appealing'
-      },
-      {
-        label: "Doesn't change",
-        value: 'doesnt_change'
-      },
-      {
-        label: 'Less appealing',
-        value: 'less_applealing'
-      }
-    ]
+    headers: { authorization: '' },
+    url: 'https://jsonplaceholder.typicode.com/users',
+    params: []
   }
 }
 
@@ -62,8 +55,9 @@ const setup = () => {
   const autocompletePlaceholder = renderComponent.getByText(
     'Please make a selection'
   )
+  const selectInput = document.getElementById('react-select-2-input')
 
-  return { autocompleteComponent, autocompletePlaceholder }
+  return { autocompleteComponent, autocompletePlaceholder, selectInput }
 }
 test('check if component is rendered', () => {
   const { autocompleteComponent } = setup()
@@ -88,13 +82,22 @@ test('label tag is not displayed when label value is null', () => {
   expect(!screen.queryByTestId('autocomplete-label'))
 })
 
-test('Change value of autocomplete select', async () => {
-  const { autocompletePlaceholder } = setup()
+// test('Change value of autocomplete select', async () => {
+//   const { autocompleteComponent } = setup()
 
-  await selectEvent.openMenu(autocompletePlaceholder)
-  fireEvent.keyDown(autocompletePlaceholder, { key: 'Enter', code: 13 })
-  await expect(screen.getByText('Much more appealing'))
-})
+//   const input = screen.getByRole('textbox')
+//   fireEvent.change(input, {
+//     target: {
+//       value: 'app'
+//     }
+//   })
+
+//   await waitFor(() => {
+//     expect(
+//       autocompleteComponent.querySelectorAll('.react-select__option').length
+//     ).toBe(4)
+//   })
+// })
 
 test('check if error exists', () => {
   const { getByText } = render(

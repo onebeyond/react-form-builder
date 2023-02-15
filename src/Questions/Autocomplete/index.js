@@ -1,32 +1,16 @@
 import React from 'react'
+import debounce from 'debounce-promise'
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Select from '../../Fields/AsyncReactSelect'
-import { debounce } from 'lodash'
-
-const styles = {
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  },
-  selectOption: {
-    background: 'bg',
-    color: 'black'
-  }
-}
 
 const QuestionAutocomplete = ({ question, useForm }) => {
   const { register, errors, trigger, setValue, unregister } = useForm
+  const minCharactersToSearch = 3
 
-  const debouncedSearch = debounce(async (jsonResponse) => {
-    const json = await jsonResponse.json()
-    return json.map((x) => ({
-      label: x,
-      value: x.toLowerCase().replace(' ', '_')
-    }))
-  }, 300)
+  const promiseOptions = debounce(async (inputValue) => {
+    if (inputValue.length < minCharactersToSearch) return []
 
-  const promiseOptions = async (inputValue) => {
     const url =
       question.config.url +
       '?' +
@@ -39,8 +23,8 @@ const QuestionAutocomplete = ({ question, useForm }) => {
     const response = await fetch(url, {
       headers: question.config.headers
     })
-    return debouncedSearch(response)
-  }
+    return await response.json()
+  }, 350)
 
   return (
     <div

@@ -70,7 +70,7 @@ const QuestionAutocomplete = ({ question, useForm }) => {
         unregister={unregister}
         label={question.label}
         cacheOptions
-        defeaultOptions
+        defaultOptions
         loadOptions={promiseOptions}
       />
       {errors[question.name] &&

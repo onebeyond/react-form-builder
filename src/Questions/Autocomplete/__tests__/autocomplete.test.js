@@ -95,13 +95,18 @@ test('label tag is not displayed when label value is null', () => {
 })
 
 test('Change value of autocomplete select', async () => {
-  const { input } = setup()
+  const { input, autocompletePlaceholder } = setup()
 
   fireEvent.change(input, { target: { value: 'app' } })
 
-  await waitFor(() => {
-    expect(input.value).toBe('app')
-  })
+  await waitFor(() => expect(input.value).toBe('app'))
+  await selectEvent.select(
+    screen.getByLabelText('How do you feel about this partnership?'),
+    'Apple'
+  )
+  await selectEvent.openMenu(autocompletePlaceholder)
+  fireEvent.keyDown(autocompletePlaceholder, { key: 'Enter', code: 13 })
+  await expect(screen.getByText('Apple'))
 })
 
 test('check if error exists', () => {

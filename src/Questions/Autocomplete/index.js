@@ -1,3 +1,7 @@
+/** @jsx jsx */
+/** @jsxRuntime classic */
+import { jsx } from 'theme-ui'
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import debounce from 'debounce-promise'
 import ErrorMessage from '../../Fields/Error'

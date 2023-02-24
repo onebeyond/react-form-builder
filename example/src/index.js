@@ -64,6 +64,10 @@ const theme = {
       gridColumnStart: '1',
       gridColumnEnd: '3'
     },
+    autoCompleteContainer: {
+      gridColumnStart: '1',
+      gridColumnEnd: '3'
+    },
     selectImagesContainer: {
       '>div': {
         display: 'flex',

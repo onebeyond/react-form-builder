@@ -1,5 +1,14 @@
 import React from 'react'
-import { cleanup, getByText, render, screen } from '@testing-library/react'
+import {
+  cleanup,
+  getByText,
+  render,
+  screen,
+  waitFor,
+  fireEvent
+} from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import selectEvent from 'react-select-event'
 import QuestionAutocomplete from '..'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
@@ -56,8 +65,11 @@ const setup = () => {
     'Please make a selection'
   )
   const selectInput = document.getElementById('react-select-2-input')
+  const input = screen
+    .getByTestId('question-autocomplete')
+    .querySelector('input')
 
-  return { autocompleteComponent, autocompletePlaceholder, selectInput }
+  return { autocompleteComponent, autocompletePlaceholder, selectInput, input }
 }
 test('check if component is rendered', () => {
   const { autocompleteComponent } = setup()
@@ -82,22 +94,20 @@ test('label tag is not displayed when label value is null', () => {
   expect(!screen.queryByTestId('autocomplete-label'))
 })
 
-// test('Change value of autocomplete select', async () => {
-//   const { autocompleteComponent } = setup()
+test('Change value of autocomplete select', async () => {
+  const { input, autocompletePlaceholder } = setup()
 
-//   const input = screen.getByRole('textbox')
-//   fireEvent.change(input, {
-//     target: {
-//       value: 'app'
-//     }
-//   })
+  fireEvent.change(input, { target: { value: 'app' } })
 
-//   await waitFor(() => {
-//     expect(
-//       autocompleteComponent.querySelectorAll('.react-select__option').length
-//     ).toBe(4)
-//   })
-// })
+  await waitFor(() => expect(input.value).toBe('app'))
+  await selectEvent.select(
+    screen.getByLabelText('How do you feel about this partnership?'),
+    'Apple'
+  )
+  await selectEvent.openMenu(autocompletePlaceholder)
+  fireEvent.keyDown(autocompletePlaceholder, { key: 'Enter', code: 13 })
+  await expect(screen.getByText('Apple'))
+})
 
 test('check if error exists', () => {
   const { getByText } = render(

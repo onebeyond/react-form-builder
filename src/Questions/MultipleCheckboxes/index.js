@@ -115,13 +115,13 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
           {errors[question.name] && errors[question.name].type && (
             <ErrorMessage
               name={question.name}
-              sx={{
-                gridColumn: 1
-              }}
               message={
                 question.errorMessages &&
                 question.errorMessages[errors[question.name].type]
               }
+              errorStyles={{
+                gridColumn: 1
+              }}
             />
           )}
         </div>

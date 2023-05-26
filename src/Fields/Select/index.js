@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 
-import React from 'react'
+import React, { useId } from 'react'
 
 import { useThemeUI } from 'theme-ui'
 import { RHFInput } from 'react-hook-form-input'
@@ -90,7 +90,14 @@ const Select = ({
   return (
     <RHFInput
       onChange={onChange}
-      as={<ReactSelect aria-label={label} styles={customStyles} {...props} />}
+      as={
+        <ReactSelect
+          aria-label={label}
+          styles={customStyles}
+          id={useId()}
+          {...props}
+        />
+      }
       rules={{
         ...registerConfig,
         validate: {

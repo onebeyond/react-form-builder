@@ -40,6 +40,9 @@ const FormBuilder = ({
   idForm = '',
   isMobile,
   isoCode,
+  onLinkOpen,
+  countryAndRegionsData,
+  language,
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
@@ -95,8 +98,8 @@ const FormBuilder = ({
           <QuestionCountry
             useForm={useFormObj}
             question={question}
-            countryAndRegionsData={props.countryAndRegionsData}
-            language={props.language}
+            countryAndRegionsData={countryAndRegionsData}
+            language={language}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
@@ -110,7 +113,7 @@ const FormBuilder = ({
           <QuestionGender
             useForm={useFormObj}
             question={question}
-            language={props.language}
+            language={language}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
@@ -141,7 +144,7 @@ const FormBuilder = ({
           useForm={useFormObj}
           question={question}
           form={form}
-          onLinkOpen={props.onLinkOpen}
+          onLinkOpen={onLinkOpen}
         />
       ),
       static: (
@@ -151,14 +154,14 @@ const FormBuilder = ({
         <QuestionRadio
           useForm={useFormObj}
           question={question}
-          onLinkOpen={props.onLinkOpen}
+          onLinkOpen={onLinkOpen}
         />
       ),
       date: (
         <QuestionDate
           useForm={useFormObj}
           question={question}
-          language={props.language}
+          language={language}
           isMobile={isMobile}
         />
       ),
@@ -193,7 +196,7 @@ const FormBuilder = ({
           question={question}
           form={form}
           currentPath={currentPath}
-          onLinkOpen={props.onLinkOpen}
+          onLinkOpen={onLinkOpen}
         />
       )
     }

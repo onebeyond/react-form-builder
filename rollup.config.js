@@ -25,7 +25,8 @@ export default {
       'react-datepicker': 'react-datepicker',
       'react-select': 'react-select',
       'react-scripts': 'react-scripts',
-      'react-dom': 'ReactDOM'
+      'react-dom': 'ReactDOM',
+      'react-ymd-date-select': 'react-ymd-date-select'
     }
   },
 
@@ -52,6 +53,7 @@ export default {
     'react-datepicker',
     'react-scripts',
     'react-select',
-    'react-dom'
+    'react-dom',
+    'react-ymd-date-select'
   ]
 }

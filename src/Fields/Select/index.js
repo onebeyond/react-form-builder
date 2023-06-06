@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 
-import React, { useId } from 'react'
-
+import React from 'react'
+import { v4 as uuid } from 'uuid'
 import { useThemeUI } from 'theme-ui'
 import { RHFInput } from 'react-hook-form-input'
 import ReactSelect from 'react-select'
@@ -94,7 +94,7 @@ const Select = ({
         <ReactSelect
           aria-label={label}
           styles={customStyles}
-          id={useId()}
+          id={uuid()}
           {...props}
         />
       }

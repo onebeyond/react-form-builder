@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 import Input from '../../Fields/Input'
@@ -15,7 +15,7 @@ const QuestionStatic = ({ question, useForm }) => {
           id={question.name}
           name={question.name}
           defaultValue={question.defaultValue || true}
-          ref={register({
+          {...register(question.name, {
             ...question.registerConfig
           })}
         />

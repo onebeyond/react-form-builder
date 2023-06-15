@@ -1,5 +1,8 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import App from './App'
 import { ThemeProvider, merge } from 'theme-ui'
 import { ExampleTheme } from 'react-form-builder'
@@ -98,10 +101,9 @@ const theme = {
     color: 'brown'
   }
 }
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
   <ThemeProvider theme={merge(ExampleTheme, theme)}>
     <App />
-  </ThemeProvider>,
-  document.getElementById('root')
+  </ThemeProvider>
 )

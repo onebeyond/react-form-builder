@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Link } from 'theme-ui'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import {
@@ -67,7 +68,7 @@ const App = () => {
                 sx={styles.checkboxMinWidth}
                 name={question.name}
                 test='test'
-                ref={useForm.register(question.name, question.registerConfig)}
+                {...useForm.register(question.name, question.registerConfig)}
               />
               <ReactMarkdown
                 sx={styles.markDown}
@@ -110,7 +111,11 @@ const App = () => {
       <React.Fragment>
         <Checkbox
           question={forms.question}
-          useForm={{ errors: {}, register: () => {} }}
+          useForm={{
+            control: () => ({}),
+            formState: { errors: {} },
+            register: () => {}
+          }}
         />
       </React.Fragment>
     )
@@ -175,8 +180,8 @@ const App = () => {
         modalText={modalText}
       />
       <FormBuilder
-        idForm={forms.contact.id}
-        form={forms.contact}
+        idForm={forms.survey.id}
+        form={forms.survey}
         onSubmit={onSubmitForm}
         isoCode='ES'
         language='en'

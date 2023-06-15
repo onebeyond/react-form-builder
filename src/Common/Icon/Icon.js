@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import QuestionIcon from './Icons/QuestionIcon'
 import { jsx } from 'theme-ui'
 import style from './icon.module.css'

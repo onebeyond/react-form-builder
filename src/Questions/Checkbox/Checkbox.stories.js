@@ -114,7 +114,11 @@ const customElement = () => {
         <Checkbox
           question={customQuestion}
           name={customQuestion.name}
-          useForm={{ errors: {}, register: () => {} }}
+          useForm={{
+            control: () => ({}),
+            formState: { errors: {} },
+            register: () => {}
+          }}
         />
         <p>Customized checkbox with an image:</p>
         <img
@@ -128,13 +132,21 @@ const customElement = () => {
 }
 
 const Template = (args) => (
-  <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
+  <Checkbox
+    question={args}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {}
+    }}
+  />
 )
 
 const Error = (args) => (
   <Checkbox
     question={args}
     useForm={{
+      control: () => ({}),
       errors: {
         [question.name]: {
           type: 'required'
@@ -146,7 +158,14 @@ const Error = (args) => (
 )
 
 const Linked = (args) => (
-  <Checkbox question={args} useForm={{ errors: {}, register: () => {} }} />
+  <Checkbox
+    question={args}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {}
+    }}
+  />
 )
 
 const ModalCheckbox = (args) => {
@@ -165,7 +184,11 @@ const ModalCheckbox = (args) => {
       <Checkbox
         question={args}
         onLinkOpen={onLinkOpen}
-        useForm={{ errors: {}, register: () => {} }}
+        useForm={{
+          control: () => ({}),
+          formState: { errors: {} },
+          register: () => {}
+        }}
       />
     </React.Fragment>
   )
@@ -174,7 +197,11 @@ const ModalCheckbox = (args) => {
 const Customized = (args) => (
   <Checkbox
     question={args}
-    useForm={{ errors: {}, register: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {}
+    }}
     component={customElement}
   />
 )

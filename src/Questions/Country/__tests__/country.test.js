@@ -38,7 +38,8 @@ const setup = (customListCountries) => {
       question={question}
       countryAndRegionsData={customListCountries}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -80,7 +81,8 @@ test('change value of select', async () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -110,7 +112,8 @@ test('sort country list by default', async () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -142,7 +145,8 @@ test('handle country priority order', async () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -174,7 +178,8 @@ test('label tag is not displayed when label value is null', () => {
     <QuestionCountry
       question={questionNoLabel}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -207,7 +212,8 @@ test('renders a country list in spanish', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -245,7 +251,8 @@ test('renders a country list in french', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -282,7 +289,8 @@ test('renders a country list in deusche', async () => {
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -319,7 +327,8 @@ test('renders a fallback country list when the language is not supported', async
       language={data.language}
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),
@@ -340,9 +349,12 @@ test('show an error message', () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},
@@ -371,7 +383,8 @@ test('Option values are country names (instead of country codes) if "returnCount
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn(),
         unregister: jest.fn(),

@@ -1,25 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-
 import { jsx } from 'theme-ui'
 import Input from '../Input'
-import { RHFInput } from 'react-hook-form-input'
+import { Controller } from 'react-hook-form'
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 
 const Phone = ({
-  register,
-  setValue,
+  control,
   setError,
   clearErrors,
   defaultCountry,
   placeholder,
   registerConfig,
+  setValue,
   name,
   ...props
 }) => {
   return (
-    <RHFInput
+    <Controller
+      control={control}
       rules={{
         ...registerConfig,
         validate: {
@@ -39,19 +39,18 @@ const Phone = ({
           }
         }
       }}
-      register={register}
       name={name}
-      defaultValue=''
-      setValue={setValue}
-      dir='ltr'
-      as={
+      render={({ field: { onChange } }) => (
         <PhoneInput
+          defaultValue=''
+          onChange={onChange}
+          dir='ltr'
           placeholder={placeholder}
           defaultCountry={defaultCountry}
           inputComponent={Input}
           {...props}
         />
-      }
+      )}
     />
   )
 }

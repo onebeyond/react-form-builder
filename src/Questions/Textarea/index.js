@@ -3,8 +3,8 @@ import Textarea from '../../Fields/Textarea'
 import Label from '../../Fields/Label'
 import Icon from '../../Common/Icon/Icon'
 
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 const styles = {
@@ -14,7 +14,10 @@ const styles = {
 }
 
 const QuestionTextarea = ({ question, useForm }) => {
-  const { register, errors } = useForm
+  const {
+    register,
+    formState: { errors }
+  } = useForm
   const defaultRows = 5
   const reg = {
     ...question.registerConfig,
@@ -79,7 +82,7 @@ const QuestionTextarea = ({ question, useForm }) => {
         defaultValue={question.defaultValue}
         maximumLen={question.registerConfig.maximumLen}
         countType={question.registerConfig.countType}
-        ref={register(reg)}
+        {...register(question.name, reg)}
       />
       {errors[question.name] &&
         errors[question.name].type &&

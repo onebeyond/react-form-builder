@@ -42,7 +42,12 @@ const customRender = () =>
   render(
     <QuestionMultipleCheckboxes
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -77,9 +82,12 @@ test('shows an error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {}
@@ -94,9 +102,12 @@ test('shows a max option error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'maximumLen'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'maximumLen'
+            }
           }
         },
         register: () => {}
@@ -111,9 +122,12 @@ test('shows a minimun option error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'minimumLen'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'minimumLen'
+            }
           }
         },
         register: () => {}

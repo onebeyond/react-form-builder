@@ -21,7 +21,12 @@ test('label is displayed', () => {
   const { getByText } = render(
     <QuestionPhone
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -32,7 +37,12 @@ test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
     <QuestionPhone
       question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {},
+        setValue: jest.fn()
+      }}
     />
   )
 
@@ -44,9 +54,12 @@ test('error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},
@@ -63,7 +76,8 @@ test('phone can be filled', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -81,7 +95,8 @@ test('phone ES country is displayed', () => {
       question={question}
       isoCode='ES'
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -99,7 +114,8 @@ test('default country code is displayed', () => {
     <QuestionPhone
       question={newQuestion}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -116,9 +132,12 @@ test('pattern error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'pattern'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'pattern'
+            }
           }
         },
         register: () => {},

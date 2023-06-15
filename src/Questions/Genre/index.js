@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 import GenderData from './data/gender'
 import DeuschGenderData from './data/de'
@@ -18,7 +18,13 @@ const gendersMapData = {
 }
 
 const QuestionGender = ({ question, useForm, language, ...props }) => {
-  const { errors, register, setValue, unregister, trigger } = useForm
+  const {
+    formState: { errors },
+    control,
+    trigger,
+    defaultValue,
+    unregister
+  } = useForm
 
   const getOptions = (question) =>
     question.config.options.map((option) => ({
@@ -55,17 +61,17 @@ const QuestionGender = ({ question, useForm, language, ...props }) => {
         </Label>
       )}
       <Select
+        control={control}
+        defaultValue={defaultValue}
+        unregister={unregister}
         onChange={() => trigger(question.name)}
         id={question.name}
         key={question.name}
         name={question.name}
         options={genderData}
         isSearchable={false}
-        register={register}
         registerConfig={question.registerConfig}
-        setValue={setValue}
         placeholder={question.placeholder}
-        unregister={unregister}
         label={question.label}
         {...props}
       >

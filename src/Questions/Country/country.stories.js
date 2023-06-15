@@ -147,7 +147,12 @@ customListCountryQst.priorityOptions = ['GB', 'ES']
 const Template = (args) => (
   <Country
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
@@ -155,9 +160,12 @@ const errorTemplate = (args) => (
   <Country
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'required'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'required'
+          }
         }
       },
       register: () => {},
@@ -169,7 +177,12 @@ const errorTemplate = (args) => (
 const customOrderTemplate = (args) => (
   <Country
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
@@ -177,7 +190,12 @@ const customListCountriesTemplate = (args) => (
   <Country
     question={args}
     countryAndRegionsData={customListCountries}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
@@ -185,7 +203,12 @@ const idiomChangedTemplate = (args) => (
   <Country
     question={args}
     language='es'
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 export const defaultCountry = Template.bind({})

@@ -47,9 +47,12 @@ test('required error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},
@@ -66,9 +69,12 @@ test('under-age error error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'underAge'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'underAge'
+            }
           }
         },
         register: () => {},
@@ -85,7 +91,8 @@ test('Select day dropdown is opened in the right date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -103,7 +110,8 @@ test('Select month dropdown is opened in the right date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -121,7 +129,8 @@ test('Select year dropdown is opened in the right date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -151,7 +160,8 @@ test('calendar is opened minAge years ago', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -184,7 +194,8 @@ test('calendar is opened in new Date', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -219,7 +230,8 @@ test('dateformat is applied', () => {
     <QuestionDate
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -251,7 +263,8 @@ test('calendar is in spanish', () => {
       question={question}
       language='es'
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -270,7 +283,8 @@ test('calendar is in french', () => {
       question={question}
       language='fr'
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -289,7 +303,8 @@ test('calendar is in german', () => {
       question={question}
       language='de'
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}
@@ -308,7 +323,8 @@ test('calendar sending no-valid language', () => {
       question={question}
       language='qwerty'
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: () => {},
         setValue: jest.fn()
       }}

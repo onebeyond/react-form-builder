@@ -6,8 +6,8 @@ import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
 
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 const prioritySort = (countries, order) => {
@@ -42,7 +42,14 @@ const QuestionCountry = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue, unregister, trigger, watch } = useForm
+  const {
+    formState: { errors },
+    trigger,
+    control,
+    defaultValue,
+    watch,
+    unregister
+  } = useForm
 
   const countryAndRegions =
     language && countriesMapData[language]
@@ -104,6 +111,9 @@ const QuestionCountry = ({
         </Label>
       )}
       <Select
+        control={control}
+        defaultValue={defaultValue}
+        unregister={unregister}
         onChange={() => {
           trigger(question.name)
         }}
@@ -112,11 +122,8 @@ const QuestionCountry = ({
         name={question.name}
         options={options}
         isSearchable={false}
-        register={register}
         registerConfig={question.registerConfig}
-        setValue={setValue}
         placeholder={question.placeholder}
-        unregister={unregister}
         label={question.label}
         {...props}
       >

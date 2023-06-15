@@ -22,7 +22,8 @@ const question = {
 }
 
 const useForm = {
-  errors: {},
+  formState: { errors: {} },
+  control: () => ({}),
   register: () => {},
   setValue: jest.fn(),
   unregister: jest.fn(),
@@ -201,9 +202,12 @@ test('show an error message', () => {
     <QuestionGender
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},

@@ -1,10 +1,11 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import React from 'react'
 import DatePicker from '../../Fields/Date'
 import { jsx } from 'theme-ui'
+import { set } from 'date-fns'
 
 const QuestionDate = ({
   component,
@@ -14,7 +15,11 @@ const QuestionDate = ({
   language,
   ...props
 }) => {
-  const { errors, register, setValue } = useForm
+  const {
+    formState: { errors },
+    control,
+    setValue
+  } = useForm
 
   return (
     <React.Fragment>
@@ -29,6 +34,7 @@ const QuestionDate = ({
           <Label htmlFor={question.name}>{question.label}</Label>
         )}
         <DatePicker
+          control={control}
           id={question.name}
           aria-describedby={'error_message_' + question.name}
           sx={{ width: '100%', variant: 'forms.input' }}
@@ -36,7 +42,6 @@ const QuestionDate = ({
           key={question.name}
           language={language}
           name={question.name}
-          register={register}
           registerConfig={question.registerConfig}
           setValue={setValue}
           isMobile={isMobile}

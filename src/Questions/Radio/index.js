@@ -1,8 +1,8 @@
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import Radio from '../../Fields/Radio'
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 import ReactMarkdown from '../../Fields/Markdown'
@@ -20,7 +20,10 @@ const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
     }
   }
 
-  const { register, errors } = useForm
+  const {
+    register,
+    formState: { errors }
+  } = useForm
 
   const radioButtonGenerator = (question) => {
     const radio = question.options.map((option) => {
@@ -35,7 +38,7 @@ const QuestionRadio = ({ question, useForm, onLinkOpen }) => {
             aria-describedby={'error_message_' + question.name}
             name={question.name}
             value={option.value}
-            ref={register({
+            {...register(question.name, {
               ...question.registerConfig
             })}
           />

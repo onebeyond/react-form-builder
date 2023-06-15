@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { Link, jsx } from 'theme-ui'
 
 import Checkbox from '../../Fields/Checkbox'
@@ -42,7 +42,14 @@ const styles = {
 }
 
 const QuestionSelectImage = ({ component, form, question, useForm }) => {
-  const { getValues, errors, register, watch, setValue } = useForm
+  const {
+    getValues,
+    formState: { errors },
+    register,
+    watch,
+    setValue
+  } = useForm
+
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const isInputChecked = (option) => {
@@ -78,6 +85,7 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
     >
       {question.label && <Label>{question.label}</Label>}
       <div
+        key={question.checkboxId}
         sx={{
           variant: question.checkboxId
             ? 'forms.selectImages' + question.checkboxId

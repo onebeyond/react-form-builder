@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { Link, jsx } from 'theme-ui'
 
 import Checkbox from '../../Fields/Checkbox'
@@ -27,7 +27,11 @@ const disableOthers = (e) => {
 }
 
 const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
-  const { getValues, errors, register } = useForm
+  const {
+    formState: { errors },
+    getValues,
+    register
+  } = useForm
   return (
     <div
       sx={{

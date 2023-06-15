@@ -10,7 +10,7 @@
     "questions": [
       {
         "name": "first_name",
-        "type": "autocomplete",
+        "type": "checkbox",
         "label": "CSM",
         "placeholder": "First Name",
         "errorMessages": {
@@ -18,33 +18,6 @@
         },
         "registerConfig": {
           "required": true
-        },
-        "config": {
-          "headers": {
-            "authorization": "Basic MzgyNjdmNmUtOTIzYy00MmUyLTlmNDEtYzBkNGNjOWJmM2I0Og=="
-          },
-          "url": "http://localhost:7002/api/autocomplete/",
-          "params": [
-            {
-              "key" : "companyType",
-              "type" : "fixed",
-              "value" : "ltd"           
-            },
-            {
-              "key" : "companyStatus",
-              "type" : "fixed",
-              "value" : "active"           
-            },
-            {
-              "key" : "pageSize",
-              "type" : "fixed",
-              "value" : 10           
-            },
-            {
-              "key" : "input",
-              "type" : "input"           
-            }
-          ]
         }
       }
     ],
@@ -64,65 +37,22 @@
     "enabled": true,
     "questions": [
       {
-        "name": "were_you_aware_of_the_hsbc_sevens_partnership_before_entering_the_competition",
+        "name": "first_name",
+        "type": "age",
+        "label": "CSM",
+        "placeholder": "First Name",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "gender",
         "type": "select",
-        "label": "Were you aware of the HSBC Sevens partnership before entering the competition?",
-        "dependentQuestions": [
-          {
-            "condition": "yes",
-            "question": {
-              "name": "age",
-              "type": "select",
-              "label": "Age",
-              "errorMessages": {
-                "required": "This field is required"
-              },
-              "registerConfig": {
-                "required": true
-              },
-              "config": {
-                "options": [
-                  {
-                    "label": "Please make a selection",
-                    "value": "*"
-                  },
-                  {
-                    "label": "18-25",
-                    "value": "18_25"
-                  },
-                  {
-                    "label": "26-30",
-                    "value": "26_30"
-                  },
-                  {
-                    "label": "31-35",
-                    "value": "31_35"
-                  },
-                  {
-                    "label": "36-40",
-                    "value": "36_40"
-                  },
-                  {
-                    "label": "41-45",
-                    "value": "41_45"
-                  },
-                  {
-                    "label": "46-55",
-                    "value": "46_55"
-                  },
-                  {
-                    "label": "56-60",
-                    "value": "56_60"
-                  },
-                  {
-                    "label": "61+",
-                    "value": "61plus"
-                  }
-                ]
-              }
-            }
-          }
-        ],
+        "label": "What is your gender?",
+        "placeholder": "Please make a selection",
         "errorMessages": {
           "required": "This field is required"
         },
@@ -132,214 +62,16 @@
         "config": {
           "options": [
             {
-              "label": "Please make a selection",
-              "value": "*"
+              "label": "Female",
+              "value": "female"
             },
             {
-              "label": "Yes",
-              "value": "yes"
+              "label": "Male",
+              "value": "male"
             },
             {
-              "label": "No",
-              "value": "no"
-            }
-          ]
-        }
-      },
-      {
-        "name": "how_do_you_feel_about_HSBC_as_a_result_of_this_partnership",
-        "type": "select",
-        "label": "How do you feel about HSBC as a result of this partnership?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "label": "Please make a selection",
-              "value": "*"
-            },
-            {
-              "label": "Much more appealing",
-              "value": "much_more_appealing"
-            },
-            {
-              "label": "Appealing",
-              "value": "appealing"
-            },
-            {
-              "label": "Doesn't change",
-              "value": "doesnt_change"
-            },
-            {
-              "label": "Less appealing",
-              "value": "less_applealing"
-            }
-          ]
-        }
-      },
-      {
-        "name": "what_other_sports_are_you_interested_in",
-        "type": "multiple_checkboxes",
-        "label": "What other sports are you interested in? (You can select multiple)",
-        "errorMessages": {
-          "required": "This field is required",
-          "minimumLen": "You must choose at least two options"
-        },
-        "registerConfig": {
-          "required": true,
-          "minimumLen": 2
-        },
-        "config": {
-          "options": [
-            {
-              "name": "tennis",
-              "label": "Tennis",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "golf",
-              "label": "Golf",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "cycling",
-              "label": "Cycling",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "badminton",
-              "label": "Badminton",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "other",
-              "label": "Other",
-              "registerConfig": {
-                "required": false
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "outside_of_sport_what_other_hsbc_events_would_you_most_be_interested_in",
-        "type": "multiple_checkboxes",
-        "label": "Outside of sport, what other HSBC events would you most be interested in? (You can select multiple)",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "name": "leadership_and_training_events",
-              "label": "Leadership and training events"
-            },
-            {
-              "name": "sustainability_and_philanthropic_events",
-              "label": "Sustainability and philanthropic events",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "immersive_food_experiences",
-              "label": "Immersive food experiences",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "not_interested",
-              "label": "Not interested",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "innovation_and_tech_seminars",
-              "label": "Innovation and tech seminars",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "arts_music_and_cultural_events",
-              "label": "Arts, music and cultural events",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "health_and_wellbeing_events",
-              "label": "Health and wellbeing events",
-              "registerConfig": {
-                "required": false
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "what_hsbc_products_would_you_be_interested_in_knowing_more_about",
-        "type": "multiple_checkboxes",
-        "label": "What HSBC products would you be interested in knowing more about?",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        },
-        "config": {
-          "options": [
-            {
-              "name": "credit_cards",
-              "label": "Credit Cards",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "personal_banking",
-              "label": "Personal Banking",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "not_interested",
-              "label": "Not interested",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "savings_and_current_accounts",
-              "label": "Savings and Current Accounts",
-              "registerConfig": {
-                "required": false
-              }
-            },
-            {
-              "name": "business_banking",
-              "label": "Business Banking",
-              "registerConfig": {
-                "required": false
-              }
+              "label": "Prefer not to say",
+              "value": "prefer_not_to_say"
             }
           ]
         }

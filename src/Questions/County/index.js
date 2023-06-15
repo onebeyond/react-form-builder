@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 import countryAndRegions from './data/countryAndCounties'
 import Select from '../../Fields/Select'
@@ -7,7 +7,13 @@ import Label from '../../Fields/Label'
 import ErrorMessage from '../../Fields/Error'
 
 const QuestionCounty = ({ question, useForm, ...props }) => {
-  const { errors, register, setValue, unregister, trigger } = useForm
+  const {
+    formState: { errors },
+    trigger,
+    control,
+    defaultValue,
+    unregister
+  } = useForm
 
   const getRegionOptions = (country) => {
     const list =
@@ -46,17 +52,17 @@ const QuestionCounty = ({ question, useForm, ...props }) => {
         </Label>
       )}
       <Select
+        control={control}
+        defaultValue={defaultValue}
+        unregister={unregister}
         onChange={() => trigger(question.name)}
         id={question.name}
         key={question.name}
         name={question.name}
         options={options}
         isSearchable={false}
-        register={register}
         registerConfig={question.registerConfig}
-        setValue={setValue}
         placeholder={question.placeholder}
-        unregister={unregister}
         label={question.label}
         {...props}
       >

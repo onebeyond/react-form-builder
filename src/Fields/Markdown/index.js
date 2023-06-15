@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'

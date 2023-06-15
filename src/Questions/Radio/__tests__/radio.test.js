@@ -29,7 +29,11 @@ test('markdown is displayed', () => {
   const { getByText } = render(
     <QuestionRadio
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
 
@@ -45,7 +49,11 @@ test('handles default markdown link', () => {
   const { getByRole } = render(
     <QuestionRadio
       question={questionWithLink}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
 
@@ -58,7 +66,11 @@ test('radio labels are displayed', () => {
   const { getByLabelText } = render(
     <QuestionRadio
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
   expect(getByLabelText('YES'))
@@ -69,7 +81,11 @@ test('radio values are assigned', () => {
   const { getByLabelText } = render(
     <QuestionRadio
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
   expect(getByLabelText('YES').value).toBe('true')
@@ -81,9 +97,12 @@ test('error is displayed', () => {
     <QuestionRadio
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {}
@@ -97,7 +116,11 @@ test('radio can be selected', () => {
   const { getByLabelText } = render(
     <QuestionRadio
       question={question}
-      useForm={{ errors: {}, register: () => {} }}
+      useForm={{
+        control: () => ({}),
+        formState: { errors: {} },
+        register: () => {}
+      }}
     />
   )
   fireEvent.click(getByLabelText('YES'))

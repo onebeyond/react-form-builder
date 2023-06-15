@@ -36,7 +36,8 @@ const countryQuestion = {
 }
 
 const useForm = {
-  errors: {},
+  formState: { errors: {} },
+  control: () => ({}),
   register: () => {},
   setValue: jest.fn(),
   unregister: jest.fn(),
@@ -146,9 +147,12 @@ test('show an error message', () => {
     <QuestionCounty
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},

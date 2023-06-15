@@ -47,7 +47,8 @@ const question = {
 }
 
 const useForm = {
-  errors: {},
+  formState: { errors: {} },
+  control: () => {},
   register: () => {},
   setValue: jest.fn(),
   unregister: jest.fn(),
@@ -114,9 +115,12 @@ test('check if error exists', () => {
     <QuestionAutocomplete
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: {},
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         register: () => {},

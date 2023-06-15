@@ -40,7 +40,8 @@ const customRender = (options) =>
     <QuestionSelect
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         register: jest.fn(),
         setValue: jest.fn(),
         unregister: jest.fn(),

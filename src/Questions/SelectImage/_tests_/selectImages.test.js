@@ -52,7 +52,8 @@ const customRender = () =>
     <QuestionSelectImage
       question={question}
       useForm={{
-        errors: {},
+        control: () => ({}),
+        formState: { errors: {} },
         getValues: () => {
           return { select_images_example: ['option_1'] }
         },
@@ -94,9 +95,12 @@ test('shows an error message', () => {
     <QuestionSelectImage
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        control: () => ({}),
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         getValues: () => {

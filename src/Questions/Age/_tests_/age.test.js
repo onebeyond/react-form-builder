@@ -4,12 +4,13 @@ import {
   getByText,
   render,
   fireEvent,
-  screen
+  screen,
+  getByTestId
 } from '@testing-library/react'
 import selectEvent from 'react-select-event'
 import QuestionAge from '../'
-import { useForm as useHookForm } from 'react-hook-form'
-jest.mock('react-hook-form')
+import { renderHook } from '@testing-library/react-hooks'
+import { useForm } from 'react-hook-form'
 
 afterEach(cleanup)
 
@@ -23,24 +24,33 @@ const question = {
   registerConfig: { required: true }
 }
 
-const useForm = useHookForm
-beforeEach(() => {
-  useForm.mockImplementation(() => ({
-    handleSubmit: jest.fn(),
-    formState: {
-      errors: {},
-      isDirty: true,
-      isSubmitting: false,
-      isValid: true
-    },
-    register: jest.fn(),
-    watch: jest.fn()
-  }))
+jest.mock('react-hook-form', () => ({
+  useForm: jest.fn(),
+  Controller: jest.fn(
+    ({ control, name, render, formState, fieldState, field }) =>
+      render({ control, name, field, formState, fieldState })
+  )
+}))
+
+useForm.mockReturnValue({
+  handleSubmit: jest.fn(),
+  control: jest.fn(),
+  formState: {
+    errors: {},
+    isDirty: true,
+    isSubmitting: false,
+    isValid: true
+  },
+  register: jest.fn(),
+  watch: jest.fn()
 })
+
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const setup = () => {
   const renderComponent = render(
-    <QuestionAge question={question} useForm={useForm} />
+    <QuestionAge question={question} useForm={formMethods} />
   )
   const ageComponent = renderComponent.getByTestId('question-age')
   const agePlaceholder = renderComponent.getByText('Please select an age')
@@ -61,7 +71,7 @@ test('Age label', () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(<QuestionAge question={questionNoLabel} useForm={useForm} />)
+  render(<QuestionAge question={questionNoLabel} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('age-label'))
 })
@@ -97,7 +107,7 @@ test('Check custom options are rendered', async () => {
     }
   }
   const { getByText } = render(
-    <QuestionAge question={question} useForm={useForm} />
+    <QuestionAge question={question} useForm={formMethods} />
   )
   const agePlaceholder = getByText('Please select an age')
 

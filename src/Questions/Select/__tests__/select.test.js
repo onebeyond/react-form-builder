@@ -1,7 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, renderHook } from '@testing-library/react'
 import selectEvent from 'react-select-event'
 import QuestionSelect from '../'
+import { useForm } from 'react-hook-form'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
@@ -34,20 +35,14 @@ const question = {
     ]
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const customRender = (options) =>
   render(
     <QuestionSelect
       question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: jest.fn(),
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn(),
-        ...options
-      }}
+      useForm={{ ...formMethods, ...options }}
     />
   )
 
@@ -65,9 +60,11 @@ test('check if label exists', () => {
 
 test('check if error exists', () => {
   customRender({
-    errors: {
-      [question.name]: {
-        type: 'required'
+    formState: {
+      errors: {
+        [question.name]: {
+          type: 'required'
+        }
       }
     }
   }).getByText(question.errorMessages.required)

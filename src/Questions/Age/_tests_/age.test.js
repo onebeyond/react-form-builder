@@ -5,11 +5,10 @@ import {
   render,
   fireEvent,
   screen,
-  getByTestId
+  renderHook
 } from '@testing-library/react'
 import selectEvent from 'react-select-event'
 import QuestionAge from '../'
-import { renderHook } from '@testing-library/react-hooks'
 import { useForm } from 'react-hook-form'
 
 afterEach(cleanup)
@@ -23,27 +22,6 @@ const question = {
   errorMessages: { required: 'This field is required', pattern: '' },
   registerConfig: { required: true }
 }
-
-jest.mock('react-hook-form', () => ({
-  useForm: jest.fn(),
-  Controller: jest.fn(
-    ({ control, name, render, formState, fieldState, field }) =>
-      render({ control, name, field, formState, fieldState })
-  )
-}))
-
-useForm.mockReturnValue({
-  handleSubmit: jest.fn(),
-  control: jest.fn(),
-  formState: {
-    errors: {},
-    isDirty: true,
-    isSubmitting: false,
-    isValid: true
-  },
-  register: jest.fn(),
-  watch: jest.fn()
-})
 
 const { result } = renderHook(() => useForm())
 const formMethods = result.current
@@ -116,25 +94,21 @@ test('Check custom options are rendered', async () => {
   await expect(screen.getByText('34-41'))
 })
 
-// test('show an error message', () => {
-//   const { getByText } = render(
-//     <QuestionAge
-//       question={question}
-//       useForm={{
-//         control: () => ({}),
-//         formState: {
-//           errors: {
-//             [question.name]: {
-//               type: 'required'
-//             }
-//           }
-//         },
-//         register: () => {},
-//         setValue: jest.fn(),
-//         unregister: jest.fn(),
-//         trigger: jest.fn()
-//       }}
-//     />
-//   )
-//   expect(getByText(question.errorMessages.required)).toBeTruthy()
-// })
+test('show an error message', () => {
+  const { getByText } = render(
+    <QuestionAge
+      question={question}
+      useForm={{
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
+          }
+        }
+      }}
+    />
+  )
+  expect(getByText(question.errorMessages.required)).toBeTruthy()
+})

@@ -40,7 +40,7 @@
         "name": "first_name",
         "type": "age",
         "label": "CSM",
-        "placeholder": "First Name",
+        "placeholder": "Select an age",
         "errorMessages": {
           "required": "This field is required"
         },

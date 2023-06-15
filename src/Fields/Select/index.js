@@ -14,6 +14,7 @@ const Select = ({
   onChange = undefined,
   unregister,
   defaultValue,
+  placeholder,
   registerConfig,
   label,
   options,
@@ -100,6 +101,7 @@ const Select = ({
             styles={customStyles}
             onChange={onChange}
             options={options}
+            placeholder={placeholder}
             {...props}
           />
         )

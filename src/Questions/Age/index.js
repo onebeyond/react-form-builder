@@ -15,7 +15,6 @@ const QuestionAge = ({ question, useForm, language, ...props }) => {
     defaultValue,
     control
   } = useForm
-  console.log(useForm)
   const getOptions = (question) =>
     question.config &&
     question.config.options.map((option) => ({

@@ -34,8 +34,7 @@ beforeEach(() => {
       isValid: true
     },
     register: jest.fn(),
-    watch: jest.fn(),
-    ...rest
+    watch: jest.fn()
   }))
 })
 

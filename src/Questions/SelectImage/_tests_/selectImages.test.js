@@ -1,5 +1,6 @@
 import React from 'react'
 import { cleanup, fireEvent, render, renderHook } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { useForm } from 'react-hook-form'
 import QuestionSelectImage from '../'
 
@@ -14,7 +15,7 @@ const question = {
   },
   registerConfig: {
     required: true,
-    maximumLen: '1'
+    maximumLen: 1
   },
   name: 'select_images_example',
   config: {

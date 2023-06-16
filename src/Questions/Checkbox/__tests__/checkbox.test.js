@@ -36,6 +36,16 @@ test('can checked/unchecked', () => {
 
   expect(checkbox.checked).toEqual(false)
 })
+test('default checked false', () => {
+  const newQuestion = { ...question, defaultChecked: false }
+  question.registerConfig = {}
+  const { getByTestId } = render(
+    <QuestionCheckbox question={newQuestion} useForm={formMethods} />
+  )
+  const checkbox = getByTestId('question-checkbox')
+
+  expect(checkbox.checked).toEqual(false)
+})
 
 test('default checked true', () => {
   const { getByTestId } = render(
@@ -44,17 +54,6 @@ test('default checked true', () => {
   const checkbox = getByTestId('question-checkbox')
 
   expect(checkbox.checked).toEqual(true)
-})
-
-test('default checked false', () => {
-  question.defaultChecked = false
-
-  const { getByTestId } = render(
-    <QuestionCheckbox question={question} useForm={formMethods} />
-  )
-  const checkbox = getByTestId('question-checkbox')
-
-  expect(checkbox.checked).toEqual(false)
 })
 
 test('renders markdown', () => {

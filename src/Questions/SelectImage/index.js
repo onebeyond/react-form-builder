@@ -53,23 +53,26 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
   const CustomComponent = ({ component }) => component(question, useForm)
 
   const isInputChecked = (option) => {
-    const values = getValues()[question.name]
-
+    const values = getValues(question.name)
+    const valuesArray = Array.isArray(values) ? values : [values]
     if (typeof values === 'undefined') return false
-    const findOption = values.some((value) => value === option.value)
-    return findOption
+    return valuesArray.some((value) => value === option.value)
   }
 
   const onClickOption = (value) => {
-    if (question.registerConfig.maximumLen === 1)
-      return setValue([question.name], value)
-
-    setValue((oldValues) => {
-      if (oldValues.contains(value)) {
-        return oldValues.filter((oldValue) => oldValue !== value)
-      }
-      return [...oldValues, value]
-    })
+    if (Number(question.registerConfig.maximumLen) === 1) {
+      return setValue(question.name, value)
+    }
+    const getCurrentValues = (oldValues) => {
+      if (oldValues) {
+        if (oldValues.includes(value)) {
+          return oldValues.filter((oldValue) => oldValue !== value)
+        }
+        return [...oldValues, value]
+      } else return value
+    }
+    const values = getCurrentValues(getValues(question.name))
+    setValue(question.name, values)
   }
 
   return component ? (
@@ -85,7 +88,6 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
     >
       {question.label && <Label>{question.label}</Label>}
       <div
-        key={question.id}
         sx={{
           variant: question.checkboxId
             ? 'forms.selectImages' + question.checkboxId
@@ -98,7 +100,7 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
             return (
               <div
                 sx={{ variant: 'forms.selectImages.checksContainer' }}
-                key={option.name}
+                key={option.value}
               >
                 <Label sx={{ variant: 'forms.selectImagesInput' }}>
                   <Checkbox
@@ -113,8 +115,8 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
                       validate: {
                         maximumLen: question.registerConfig.maximumLen
                           ? () =>
-                              getValues()[question.name] &&
-                              getValues()[question.name].length <=
+                              getValues(question.name) &&
+                              getValues(question.name).length <=
                                 question.registerConfig.maximumLen
                           : () => true
                       }

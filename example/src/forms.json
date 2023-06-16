@@ -9,6 +9,48 @@
     "enabled": true,
     "questions": [
       {
+        "label": "Select your image",
+        "type": "select_images",
+        "errorMessages": {
+          "required": "This field is required",
+          "maximumLen": "Maximum choises exceded"
+        },
+        "registerConfig": {
+          "required": true,
+          "maximumLen": 2
+        },
+        "name": "select_images_example",
+        "config": {
+          "options": [
+            {
+              "label": "Option 1",
+              "value": "option_1",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Option 2",
+              "value": "option_2",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Option 3",
+              "value": "option_3",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Option 4",
+              "value": "option_4",
+              "src": "https://placehold.jp/120x120.png"
+            },
+            {
+              "label": "Option 5",
+              "value": "option_5",
+              "src": "https://placehold.jp/120x120.png"
+            }
+          ]
+        }
+      },
+      {
         "name": "first_name",
         "type": "checkbox",
         "label": "CSM",
@@ -36,6 +78,80 @@
     "caption": "But wait, there's more...\n\nComplete our survey below and you'll receive TEN extra entries into the promotion!",
     "enabled": true,
     "questions": [
+      {
+        "name": "first_name",
+        "type": "checkbox",
+        "label": "CSM",
+        "defaultChecked": false,
+        "placeholder": "First Name",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "refrigerator_features",
+        "type": "multiple_checkboxes",
+        "label": "What features did you look for when buying your refrigerator? [MC, up to 10]",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true,
+          "minimumLen": 1,
+          "maximumLen": 10
+        },
+        "config": {
+          "options": [
+            {
+              "label": "Product appearance",
+              "value": "product_appearance"
+            },
+            {
+              "label": "Product net/gross capacity",
+              "value": "product_net_capacity"
+            },
+            {
+              "label": "Ice & water dispenser",
+              "value": "ice_water_dispenser"
+            },
+            {
+              "label": "Water dispenser",
+              "value": "water_dispenser"
+            },
+            {
+              "label": "Ice maker",
+              "value": "ice_maker"
+            },
+            {
+              "label": "Convertible temperature zone",
+              "value": "convertible_temperature_zone"
+            },
+            {
+              "label": "Super cool/Super freeze",
+              "value": "super_cool"
+            },
+            {
+              "label": "Easy-to-use design",
+              "value": "easy_to_use_design"
+            },
+            {
+              "label": "Inverter compressor",
+              "value": "inverter_compressor"
+            },
+            {
+              "label": "Energy level",
+              "value": "energy_level"
+            },
+            {
+              "label": "Others",
+              "value": "others"
+            }
+          ]
+        }
+      },
       {
         "name": "first_name",
         "type": "age",

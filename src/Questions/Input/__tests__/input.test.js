@@ -166,16 +166,6 @@ test('input can be filled', () => {
   expect(inputComponent.value).toBe('input testing')
 })
 
-test('default value is displayed', () => {
-  const { getByTestId } = render(
-    <QuestionInput question={question} useForm={formMethods} />
-  )
-  const inputComponent = getByTestId('question-input')
-  expect(inputComponent.value).toBe('')
-  fireEvent.change(inputComponent, { target: { value: 'input testing' } })
-  expect(inputComponent.value).toBe('input testing')
-})
-
 test('patern error is displayed', () => {
   render(
     <QuestionInput

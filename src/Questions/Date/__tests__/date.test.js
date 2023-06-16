@@ -3,8 +3,10 @@ import {
   fireEvent,
   render,
   screen,
-  queryByAttribute
+  queryByAttribute,
+  renderHook
 } from '@testing-library/react'
+import { useForm } from 'react-hook-form'
 import QuestionDate from '../'
 
 const question = {
@@ -21,6 +23,8 @@ const question = {
     required: true
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 Object.defineProperty(window, 'getComputedStyle', {
   value: () => ({
@@ -47,16 +51,14 @@ test('required error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'required'
             }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )
@@ -69,16 +71,14 @@ test('under-age error error is displayed', () => {
     <QuestionDate
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'underAge'
             }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )
@@ -88,15 +88,7 @@ test('under-age error error is displayed', () => {
 
 test('Select day dropdown is opened in the right date', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
   const calendar = getById(container, 'select-day')
 
@@ -107,15 +99,7 @@ test('Select day dropdown is opened in the right date', () => {
 
 test('Select month dropdown is opened in the right date', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
   const calendar = getById(container, 'select-month')
 
@@ -126,15 +110,7 @@ test('Select month dropdown is opened in the right date', () => {
 
 test('Select year dropdown is opened in the right date', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
   const calendar = getById(container, 'select-year')
 
@@ -157,15 +133,7 @@ test('calendar is opened minAge years ago', () => {
     }
   }
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
 
   const yearpicker = getById(container, 'select-year')
@@ -191,15 +159,7 @@ test('calendar is opened in new Date', () => {
     }
   }
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
 
   const yearpicker = getById(container, 'select-year')
@@ -227,15 +187,7 @@ test('dateformat is applied', () => {
   }
 
   const { container } = render(
-    <QuestionDate
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} useForm={formMethods} />
   )
   const yearpicker = getById(container, 'select-year')
   const monthpicker = getById(container, 'select-month')
@@ -259,16 +211,7 @@ test('dateformat is applied', () => {
 
 test('calendar is in spanish', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      language='es'
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} language='es' useForm={formMethods} />
   )
   const calendar = getById(container, 'select-month')
 
@@ -279,16 +222,7 @@ test('calendar is in spanish', () => {
 
 test('calendar is in french', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      language='fr'
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} language='fr' useForm={formMethods} />
   )
   const calendar = getById(container, 'select-month')
 
@@ -299,16 +233,7 @@ test('calendar is in french', () => {
 
 test('calendar is in german', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      language='de'
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} language='de' useForm={formMethods} />
   )
   const calendar = getById(container, 'select-month')
 
@@ -319,16 +244,7 @@ test('calendar is in german', () => {
 
 test('calendar sending no-valid language', () => {
   const { container } = render(
-    <QuestionDate
-      question={question}
-      language='qwerty'
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionDate question={question} language='qwerty' useForm={formMethods} />
   )
   const calendar = getById(container, 'select-month')
 

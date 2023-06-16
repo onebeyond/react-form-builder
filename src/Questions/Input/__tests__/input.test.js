@@ -1,6 +1,8 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, renderHook } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { useForm } from 'react-hook-form'
+
 import QuestionInput from '../'
 
 const question = {
@@ -26,18 +28,12 @@ const question = {
     required: true
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 test('label is displayed', () => {
   const { getByText } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   expect(getByText('input label'))
@@ -45,15 +41,7 @@ test('label is displayed', () => {
 
 test('icon is displayed', () => {
   const { getByTestId } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   expect(getByTestId('iconId'))
@@ -80,15 +68,7 @@ test('icon default is displayed', () => {
     }
   }
   const { getByText } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   expect(getByText('Icon Not found'))
@@ -96,15 +76,7 @@ test('icon default is displayed', () => {
 
 test('icon tooltip is displayed', async () => {
   const { getByTestId } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   fireEvent.click(getByTestId('iconId'))
@@ -131,15 +103,7 @@ test('icon tooltip is not displayed when there is no text', async () => {
     }
   }
   const { getByTestId } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   fireEvent.click(getByTestId('iconId'))
@@ -159,32 +123,14 @@ test('icon is not displayed', () => {
       required: true
     }
   }
-  render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
-  )
+  render(<QuestionInput question={question} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('defaultIconId'))
 })
 
 test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
 
   expect(getByPlaceholderText('input placeholder'))
@@ -195,16 +141,14 @@ test('error is displayed', () => {
     <QuestionInput
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'required'
             }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )
@@ -214,15 +158,7 @@ test('error is displayed', () => {
 
 test('input can be filled', () => {
   const { getByTestId } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
   const inputComponent = getByTestId('question-input')
   expect(inputComponent.value).toBe('')
@@ -232,15 +168,7 @@ test('input can be filled', () => {
 
 test('default value is displayed', () => {
   const { getByTestId } = render(
-    <QuestionInput
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionInput question={question} useForm={formMethods} />
   )
   const inputComponent = getByTestId('question-input')
   expect(inputComponent.value).toBe('')
@@ -253,16 +181,14 @@ test('patern error is displayed', () => {
     <QuestionInput
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'pattern'
             }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )

@@ -85,7 +85,7 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
     >
       {question.label && <Label>{question.label}</Label>}
       <div
-        key={question.checkboxId}
+        key={question.id}
         sx={{
           variant: question.checkboxId
             ? 'forms.selectImages' + question.checkboxId
@@ -108,7 +108,7 @@ const QuestionSelectImage = ({ component, form, question, useForm }) => {
                     name={question.name}
                     value={option.value}
                     onClick={(ev) => onClickOption(ev.target.value)}
-                    ref={register({
+                    {...register(question.name, {
                       ...question.registerConfig,
                       validate: {
                         maximumLen: question.registerConfig.maximumLen

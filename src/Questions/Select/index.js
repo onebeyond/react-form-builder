@@ -34,8 +34,6 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
   const {
     formState: { errors },
     control,
-    setValue,
-    trigger,
     defaultValue,
     unregister
   } = useForm
@@ -54,12 +52,8 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
         )}
         <Select
           control={control}
-          setValue={setValue}
           defaultValue={defaultValue}
           unregister={unregister}
-          onChange={() => {
-            trigger(question.name)
-          }}
           id={question.name}
           aria-describedby={'error_message_' + question.name}
           options={getOptions(question)}

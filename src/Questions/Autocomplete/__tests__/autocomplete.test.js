@@ -5,10 +5,12 @@ import {
   render,
   screen,
   waitFor,
-  fireEvent
+  fireEvent,
+  renderHook
 } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import selectEvent from 'react-select-event'
+import { useForm } from 'react-hook-form'
 import QuestionAutocomplete from '..'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
@@ -20,6 +22,7 @@ const mockResponse = [
   { label: 'Grappes', value: 'grappes' },
   { label: 'Watermelon', value: 'watermelon' }
 ]
+
 beforeEach(() => {
   jest.spyOn(global, 'fetch').mockResolvedValue({
     json: jest.fn().mockResolvedValue(mockResponse)
@@ -46,18 +49,12 @@ const question = {
   }
 }
 
-const useForm = {
-  formState: { errors: {} },
-  control: () => {},
-  register: () => {},
-  setValue: jest.fn(),
-  unregister: jest.fn(),
-  trigger: jest.fn()
-}
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const setup = () => {
   const renderComponent = render(
-    <QuestionAutocomplete question={question} useForm={useForm} />
+    <QuestionAutocomplete question={question} useForm={formMethods} />
   )
   const autocompleteComponent = renderComponent.getByTestId(
     'question-autocomplete'
@@ -90,7 +87,9 @@ test('check if label exists', () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(<QuestionAutocomplete question={questionNoLabel} useForm={useForm} />)
+  render(
+    <QuestionAutocomplete question={questionNoLabel} useForm={formMethods} />
+  )
 
   expect(!screen.queryByTestId('autocomplete-label'))
 })
@@ -115,18 +114,14 @@ test('check if error exists', () => {
     <QuestionAutocomplete
       question={question}
       useForm={{
-        control: {},
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'required'
             }
           }
-        },
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
+        }
       }}
     />
   )

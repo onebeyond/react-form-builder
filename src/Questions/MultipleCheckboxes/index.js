@@ -75,7 +75,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}
                       value={option.value}
-                      ref={register({
+                      {...register(question.name, {
                         ...question.registerConfig,
                         validate: {
                           minimumLen: question.registerConfig.minimumLen

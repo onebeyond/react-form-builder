@@ -8,8 +8,6 @@ import ReactSelect from 'react-select'
 
 const Select = ({
   control,
-  register,
-  setValue,
   name,
   onChange = undefined,
   unregister,

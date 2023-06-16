@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, renderHook } from '@testing-library/react'
 import selectEvent from 'react-select-event'
-import QuestionSelect from '../'
 import { useForm } from 'react-hook-form'
+import QuestionSelect from '../'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver

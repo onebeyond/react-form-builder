@@ -11,7 +11,6 @@ import Select from '../../Fields/AsyncReactSelect'
 const QuestionAutocomplete = ({ question, useForm }) => {
   const {
     formState: { errors },
-    trigger,
     defaultValue,
     control,
     unregister
@@ -53,11 +52,10 @@ const QuestionAutocomplete = ({ question, useForm }) => {
       <Select
         control={control}
         defaultValue={defaultValue}
-        unregister={unregister}
-        onChange={() => trigger(question.name)}
         id={question.name}
         aria-describedby={'error_message_' + question.name}
         isSearchable
+        unregister={unregister}
         placeholder={question.placeholder}
         key={question.name}
         name={question.name}

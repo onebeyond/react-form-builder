@@ -11,7 +11,6 @@ const Select = ({
   register,
   setValue,
   name,
-  onChange = undefined,
   unregister,
   defaultValue,
   registerConfig,
@@ -108,7 +107,6 @@ const Select = ({
             registerConfig && registerConfig.required ? item.value !== '' : true
         }
       }}
-      register={register}
       defaultValue={defaultValue}
     />
   )

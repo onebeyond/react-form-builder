@@ -1,6 +1,7 @@
 import React from 'react'
-import { cleanup, fireEvent, render } from '@testing-library/react'
+import { cleanup, fireEvent, render, renderHook } from '@testing-library/react'
 import QuestionMultipleCheckboxes from '../'
+import { useForm } from 'react-hook-form'
 
 afterEach(cleanup)
 
@@ -37,18 +38,12 @@ const question = {
     ]
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const customRender = () =>
   render(
-    <QuestionMultipleCheckboxes
-      question={question}
-      useForm={{
-        control: () => ({}),
-        formState: { errors: {} },
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionMultipleCheckboxes question={question} useForm={formMethods} />
   )
 
 test('check if component is rendered', () => {
@@ -82,15 +77,14 @@ test('shows an error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'required'
             }
           }
-        },
-        register: () => {}
+        }
       }}
     />
   )
@@ -102,15 +96,14 @@ test('shows a max option error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'maximumLen'
             }
           }
-        },
-        register: () => {}
+        }
       }}
     />
   )
@@ -122,15 +115,14 @@ test('shows a minimun option error message', () => {
     <QuestionMultipleCheckboxes
       question={question}
       useForm={{
-        control: () => ({}),
+        ...formMethods,
         formState: {
           errors: {
             [question.name]: {
               type: 'minimumLen'
             }
           }
-        },
-        register: () => {}
+        }
       }}
     />
   )

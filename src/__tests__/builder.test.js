@@ -49,7 +49,9 @@ test('check if it calls submit eventhandler once only when required fields are f
   expect(screen.getAllByText('Spain')).toBeTruthy()
 
   const checkboxes = component.getAllByTestId('question-checkbox')
-  fireEvent.click(checkboxes[0])
+  await act(async () => {
+    fireEvent.click(checkboxes[0])
+  })
   expect(checkboxes[0].checked).toEqual(true)
 
   await act(async () => {

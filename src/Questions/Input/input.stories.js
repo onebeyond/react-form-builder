@@ -198,7 +198,8 @@ const Template = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {},
+      control: () => ({}),
+      formState: { errors: {} },
       register: () => {},
       setValue: () => {}
     }}
@@ -209,9 +210,12 @@ const errorTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'required'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'required'
+          }
         }
       },
       register: () => {},
@@ -224,7 +228,8 @@ const errorNoIconTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {},
+      control: () => ({}),
+      formState: { errors: {} },
       register: () => {},
       setValue: () => {}
     }}
@@ -235,9 +240,12 @@ const patternTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'pattern'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'pattern'
+          }
         }
       },
       register: () => {},
@@ -250,7 +258,8 @@ const iconTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {},
+      control: () => ({}),
+      formState: { errors: {} },
       register: () => {},
       setValue: () => {}
     }}
@@ -261,7 +270,8 @@ const tooltipTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {},
+      control: () => ({}),
+      formState: { errors: {} },
       register: () => {},
       setValue: () => {}
     }}
@@ -272,7 +282,8 @@ const customTooltipTemplate = (args) => (
   <Input
     question={args}
     useForm={{
-      errors: {},
+      control: () => ({}),
+      formState: { errors: {} },
       register: () => {},
       setValue: () => {}
     }}

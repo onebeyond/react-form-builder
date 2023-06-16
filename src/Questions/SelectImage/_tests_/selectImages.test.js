@@ -1,5 +1,7 @@
 import React from 'react'
-import { cleanup, fireEvent, render } from '@testing-library/react'
+import { cleanup, fireEvent, render, renderHook } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import { useForm } from 'react-hook-form'
 import QuestionSelectImage from '../'
 
 afterEach(cleanup)
@@ -13,7 +15,7 @@ const question = {
   },
   registerConfig: {
     required: true,
-    maximumLen: '1'
+    maximumLen: 1
   },
   name: 'select_images_example',
   config: {
@@ -46,19 +48,18 @@ const question = {
     ]
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const customRender = () =>
   render(
     <QuestionSelectImage
       question={question}
       useForm={{
-        errors: {},
+        ...formMethods,
         getValues: () => {
           return { select_images_example: ['option_1'] }
-        },
-        register: jest.fn(),
-        setValue: jest.fn(),
-        watch: jest.fn()
+        }
       }}
     />
   )
@@ -94,17 +95,17 @@ test('shows an error message', () => {
     <QuestionSelectImage
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
         },
         getValues: () => {
           return { select_images_example: ['option_1'] }
-        },
-        register: jest.fn(),
-        setValue: jest.fn(),
-        watch: jest.fn()
+        }
       }}
     />
   )

@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Select as SelectUI, jsx } from 'theme-ui'
 

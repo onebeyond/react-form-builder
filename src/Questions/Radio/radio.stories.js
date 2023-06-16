@@ -119,20 +119,37 @@ const questionMarkdown = { ...question }
 questionMarkdown.label = '**Esto es un texto con markdown**'
 
 const Template = (args) => (
-  <RadioButton question={args} useForm={{ errors: {}, register: () => {} }} />
+  <RadioButton
+    question={args}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {}
+    }}
+  />
 )
 
 const markdownTemplate = (args) => (
-  <RadioButton question={args} useForm={{ errors: {}, register: () => {} }} />
+  <RadioButton
+    question={args}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {}
+    }}
+  />
 )
 
 const errorTemplate = (args) => (
   <RadioButton
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'required'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'required'
+          }
         }
       },
       register: () => {}

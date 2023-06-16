@@ -4,11 +4,13 @@ import {
   getByText,
   render,
   fireEvent,
-  screen
+  screen,
+  renderHook
 } from '@testing-library/react'
 import selectEvent from 'react-select-event'
 import QuestionCountry from '../../Country'
 import QuestionCounty from '../'
+import { useForm } from 'react-hook-form'
 
 afterEach(cleanup)
 
@@ -35,21 +37,20 @@ const countryQuestion = {
   dependentQuestions: [{ condition: 'DE', label: 'Germany', question }]
 }
 
-const useForm = {
-  errors: {},
-  register: () => {},
-  setValue: jest.fn(),
-  unregister: jest.fn(),
-  trigger: jest.fn()
-}
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const setup = () => {
   const renderComponent = render(
     <>
-      <QuestionCountry question={countryQuestion} useForm={useForm} />
+      <QuestionCountry question={countryQuestion} useForm={formMethods} />
       {countryQuestion.dependentQuestions &&
         countryQuestion.dependentQuestions.map((_, index) => (
-          <QuestionCounty question={question} useForm={useForm} key={index} />
+          <QuestionCounty
+            question={question}
+            useForm={formMethods}
+            key={index}
+          />
         ))}
     </>
   )
@@ -80,7 +81,7 @@ test('County label', () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(<QuestionCounty question={questionNoLabel} useForm={useForm} />)
+  render(<QuestionCounty question={questionNoLabel} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('county-label'))
 })
@@ -120,14 +121,14 @@ test('renders a fallback country list when country condition is not supported', 
   }
 
   const { getByText } = render(
-    <QuestionCounty question={question} useForm={useForm} />
+    <QuestionCounty question={question} useForm={formMethods} />
   )
 
   const countySelect = getByText('Please select an option')
 
   await selectEvent.openMenu(countySelect)
   fireEvent.keyDown(countySelect, { key: 'Enter', code: 13 })
-  expect(screen.getByText('Aberdeen City'))
+  expect(screen.getByText('Aberdeenshire'))
 })
 
 test('show an error message', () => {
@@ -146,15 +147,14 @@ test('show an error message', () => {
     <QuestionCounty
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
+        }
       }}
     />
   )

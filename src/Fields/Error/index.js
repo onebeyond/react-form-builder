@@ -1,6 +1,6 @@
 import React from 'react'
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 const defaultStyles = {

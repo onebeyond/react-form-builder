@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import ErrorMessage from '../../Fields/Error'
 import Label from '../../Fields/Label'
 import React from 'react'
@@ -7,7 +7,12 @@ import Phone from '../../Fields/Phone'
 import { jsx } from 'theme-ui'
 
 const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
-  const { clearErrors, errors, register, setError, setValue } = useForm
+  const {
+    formState: { errors },
+    clearErrors,
+    setError,
+    control
+  } = useForm
 
   const getDefaultCountry = () => {
     if (question.defaultCountry && question.defaultCountry !== '')
@@ -29,12 +34,11 @@ const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
         {question.label && <Label>{question.label}</Label>}
 
         <Phone
+          control={control}
           id={question.name}
           data-testid='question-phone'
           aria-describedby={'error_message_' + question.name}
           defaultCountry={getDefaultCountry()}
-          register={register}
-          setValue={setValue}
           setError={setError}
           clearErrors={clearErrors}
           placeholder={question.placeholder}

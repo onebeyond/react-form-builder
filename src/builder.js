@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import Button from './Fields/Button'
 import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
@@ -47,7 +47,9 @@ const FormBuilder = ({
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
 
-  const { errors } = useFormObj
+  const {
+    formState: { errors }
+  } = useFormObj
 
   const QuestionsMap = (question) => {
     return {

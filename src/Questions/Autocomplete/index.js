@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
@@ -9,7 +9,12 @@ import Label from '../../Fields/Label'
 import Select from '../../Fields/AsyncReactSelect'
 
 const QuestionAutocomplete = ({ question, useForm }) => {
-  const { register, errors, trigger, setValue, unregister } = useForm
+  const {
+    formState: { errors },
+    defaultValue,
+    control,
+    unregister
+  } = useForm
   const minCharactersToSearch = 3
 
   const promiseOptions = debounce(async (inputValue) => {
@@ -45,17 +50,16 @@ const QuestionAutocomplete = ({ question, useForm }) => {
         </Label>
       )}
       <Select
-        onChange={() => trigger(question.name)}
+        control={control}
+        defaultValue={defaultValue}
         id={question.name}
         aria-describedby={'error_message_' + question.name}
         isSearchable
+        unregister={unregister}
         placeholder={question.placeholder}
         key={question.name}
         name={question.name}
-        register={register}
         registerConfig={question.registerConfig}
-        setValue={setValue}
-        unregister={unregister}
         label={question.label}
         cacheOptions
         defaultOptions

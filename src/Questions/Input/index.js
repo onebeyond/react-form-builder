@@ -3,8 +3,8 @@ import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
 import Icon from '../../Common/Icon/Icon'
 
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 const styles = {
@@ -14,7 +14,10 @@ const styles = {
 }
 
 const QuestionInput = ({ question, useForm, component }) => {
-  const { register, errors } = useForm
+  const {
+    formState: { errors },
+    register
+  } = useForm
 
   return (
     <div
@@ -48,7 +51,7 @@ const QuestionInput = ({ question, useForm, component }) => {
         type={question.type}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        ref={register({
+        {...register(question.name, {
           ...question.registerConfig,
           pattern: new RegExp(question.registerConfig.pattern)
         })}

@@ -1,6 +1,8 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, renderHook } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { useForm } from 'react-hook-form'
+
 import QuestionPhone from '..'
 
 const question = {
@@ -16,13 +18,12 @@ const question = {
     required: true
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 test('label is displayed', () => {
   const { getByText } = render(
-    <QuestionPhone
-      question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-    />
+    <QuestionPhone question={question} useForm={formMethods} />
   )
 
   expect(getByText('phone label'))
@@ -30,10 +31,7 @@ test('label is displayed', () => {
 
 test('placeholder is displayed', () => {
   const { getByPlaceholderText } = render(
-    <QuestionPhone
-      question={question}
-      useForm={{ errors: {}, register: () => {}, setValue: jest.fn() }}
-    />
+    <QuestionPhone question={question} useForm={formMethods} />
   )
 
   expect(getByPlaceholderText('phone placeholder'))
@@ -44,13 +42,14 @@ test('error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )
@@ -60,14 +59,7 @@ test('error is displayed', () => {
 
 test('phone can be filled', () => {
   const { getByTestId } = render(
-    <QuestionPhone
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionPhone question={question} useForm={formMethods} />
   )
   const phoneComponent = getByTestId('question-phone')
   expect(phoneComponent.value).toBe('')
@@ -77,15 +69,7 @@ test('phone can be filled', () => {
 
 test('phone ES country is displayed', () => {
   const { getByLabelText } = render(
-    <QuestionPhone
-      question={question}
-      isoCode='ES'
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionPhone question={question} isoCode='ES' useForm={formMethods} />
   )
   const countryComponent = getByLabelText('Phone number country')
   expect(countryComponent.value).toBe('ES')
@@ -96,14 +80,7 @@ test('phone ES country is displayed', () => {
 test('default country code is displayed', () => {
   const newQuestion = { ...question, defaultCountry: 'fr' }
   const { getByLabelText } = render(
-    <QuestionPhone
-      question={newQuestion}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn()
-      }}
-    />
+    <QuestionPhone question={newQuestion} useForm={formMethods} />
   )
   const countryComponent = getByLabelText('Phone number country')
   expect(countryComponent.value).toBe('FR')
@@ -116,13 +93,14 @@ test('pattern error is displayed', () => {
     <QuestionPhone
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'pattern'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'pattern'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn()
+        }
       }}
     />
   )

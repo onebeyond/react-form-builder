@@ -1,7 +1,6 @@
-import { Label as LabelUI, jsx } from 'theme-ui'
-
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
+import { Label as LabelUI, jsx } from 'theme-ui'
 import React from 'react'
 
 const Label = React.forwardRef(({ children, ...props }, ref) => {

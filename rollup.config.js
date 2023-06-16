@@ -2,7 +2,6 @@ import babel from '@rollup/plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import uglify from 'rollup-plugin-uglify'
 import json from '@rollup/plugin-json'
 import replace from 'rollup-plugin-replace'
 import postcss from 'rollup-plugin-postcss'
@@ -19,7 +18,6 @@ export default {
       react: 'React',
       'theme-ui': 'theme-ui',
       'react-markdown': 'react-markdown',
-      'react-hook-form-input': 'react-hook-form-input',
       'react-phone-number-input': 'react-phone-number-input',
       'react-hook-form': 'react-hook-form',
       'react-datepicker': 'react-datepicker',
@@ -40,7 +38,6 @@ export default {
       extensions: ['.css']
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
-    uglify.uglify()
   ],
 
   external: [
@@ -48,7 +45,6 @@ export default {
     'theme-ui',
     'react-markdown',
     'react-hook-form',
-    'react-hook-form-input',
     'react-phone-number-input',
     'react-datepicker',
     'react-scripts',

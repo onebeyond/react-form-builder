@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { Checkbox as CheckboxUI, jsx } from 'theme-ui'
 
 import React from 'react'

@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 import AgeData from './data/age'
 import Select from '../../Fields/Select'
@@ -7,8 +7,14 @@ import Label from '../../Fields/Label'
 import ErrorMessage from '../../Fields/Error'
 
 const QuestionAge = ({ question, useForm, language, ...props }) => {
-  const { errors, register, setValue, unregister, trigger } = useForm
-
+  const {
+    formState: { errors },
+    setValue,
+    trigger,
+    unregister,
+    defaultValue,
+    control
+  } = useForm
   const getOptions = (question) =>
     question.config &&
     question.config.options.map((option) => ({
@@ -40,17 +46,18 @@ const QuestionAge = ({ question, useForm, language, ...props }) => {
         </Label>
       )}
       <Select
+        control={control}
+        setValue={setValue}
+        defaultValue={defaultValue}
+        unregister={unregister}
         onChange={() => trigger(question.name)}
         id={question.name}
         key={question.name}
         name={question.name}
         options={ageData}
         isSearchable={false}
-        register={register}
         registerConfig={question.registerConfig}
-        setValue={setValue}
         placeholder={question.placeholder}
-        unregister={unregister}
         label={question.label}
         {...props}
       >

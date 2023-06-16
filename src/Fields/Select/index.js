@@ -1,20 +1,20 @@
 /** @jsxRuntime classic */
 
-import React from 'react'
-import { v4 as uuid } from 'uuid'
+import React, { useId } from 'react'
 import { useThemeUI } from 'theme-ui'
-import { RHFInput } from 'react-hook-form-input'
+import { Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
 
 const Select = ({
-  register,
-  setValue,
+  control,
   name,
   onChange = undefined,
   unregister,
   defaultValue,
+  placeholder,
   registerConfig,
   label,
+  options,
   ...props
 }) => {
   const { theme } = useThemeUI()
@@ -22,7 +22,7 @@ const Select = ({
     option: {},
     clearIndicator: {},
     container: {},
-    control: {},
+    control: () => ({}),
     dropdownIndicator: {},
     group: {},
     groupHeading: {},
@@ -88,16 +88,21 @@ const Select = ({
   }, [])
 
   return (
-    <RHFInput
-      onChange={onChange}
-      as={
-        <ReactSelect
-          aria-label={label}
-          styles={customStyles}
-          id={uuid()}
-          {...props}
-        />
-      }
+    <Controller
+      control={control}
+      render={({ field: { onChange } }) => {
+        return (
+          <ReactSelect
+            id={useId()}
+            aria-label={label}
+            styles={customStyles}
+            onChange={onChange}
+            options={options}
+            placeholder={placeholder}
+            {...props}
+          />
+        )
+      }}
       rules={{
         ...registerConfig,
         validate: {
@@ -107,8 +112,6 @@ const Select = ({
       }}
       name={name}
       defaultValue={defaultValue}
-      register={register}
-      setValue={setValue}
     />
   )
 }

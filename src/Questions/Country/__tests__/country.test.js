@@ -4,10 +4,12 @@ import {
   getByText,
   screen,
   render,
-  fireEvent
+  fireEvent,
+  renderHook
 } from '@testing-library/react'
 import QuestionCountry from '../'
 import selectEvent from 'react-select-event'
+import { useForm } from 'react-hook-form'
 
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
@@ -32,18 +34,15 @@ const customListCountries = [
   { cn: 'MyOwnCountry4', cs: 'MC4' }
 ]
 
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
+
 const setup = (customListCountries) => {
   const renderComponent = render(
     <QuestionCountry
       question={question}
       countryAndRegionsData={customListCountries}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
+      useForm={formMethods}
     />
   )
 
@@ -77,16 +76,7 @@ test('change value of select', async () => {
     }
   }
   const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
-    />
+    <QuestionCountry question={question} useForm={formMethods} />
   )
   const select = getByText('Please select an option ^^')
 
@@ -107,16 +97,7 @@ test('sort country list by default', async () => {
   }
 
   const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
-    />
+    <QuestionCountry question={question} useForm={formMethods} />
   )
 
   const select = getByText('Please select an option ^^')
@@ -139,16 +120,7 @@ test('handle country priority order', async () => {
   }
 
   const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
-    />
+    <QuestionCountry question={question} useForm={formMethods} />
   )
 
   const select = getByText('Please select an option ^^')
@@ -170,18 +142,7 @@ test('check all the countries are rendered', async () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(
-    <QuestionCountry
-      question={questionNoLabel}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
-    />
-  )
+  render(<QuestionCountry question={questionNoLabel} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('country-label'))
 })
@@ -206,13 +167,7 @@ test('renders a country list in spanish', async () => {
     <QuestionCountry
       language={data.language}
       question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
+      useForm={formMethods}
     />
   )
 
@@ -244,13 +199,7 @@ test('renders a country list in french', async () => {
     <QuestionCountry
       language={data.language}
       question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
+      useForm={formMethods}
     />
   )
 
@@ -281,13 +230,7 @@ test('renders a country list in deusche', async () => {
     <QuestionCountry
       language={data.language}
       question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
+      useForm={formMethods}
     />
   )
 
@@ -318,13 +261,7 @@ test('renders a fallback country list when the language is not supported', async
     <QuestionCountry
       language={data.language}
       question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
+      useForm={formMethods}
     />
   )
 
@@ -340,15 +277,14 @@ test('show an error message', () => {
     <QuestionCountry
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
+        }
       }}
     />
   )
@@ -368,16 +304,7 @@ test('Option values are country names (instead of country codes) if "returnCount
     returnCountryCode: true
   }
   const { getByText } = render(
-    <QuestionCountry
-      question={question}
-      useForm={{
-        errors: {},
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
-      }}
-    />
+    <QuestionCountry question={question} useForm={formMethods} />
   )
   const select = getByText('Please select an option ^^')
   await selectEvent.select(select, 'Spain')

@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import ErrorMessage from '../../Fields/Error'
 
 import React from 'react'
@@ -31,7 +31,12 @@ const getOptions = (question) => {
 }
 
 const QuestionSelect = ({ question, useForm, component, ...props }) => {
-  const { register, errors, setValue, unregister, trigger } = useForm
+  const {
+    formState: { errors },
+    control,
+    defaultValue,
+    unregister
+  } = useForm
 
   return (
     <React.Fragment>
@@ -46,22 +51,19 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           <Label htmlFor={question.name}>{question.label}</Label>
         )}
         <Select
-          onChange={() => {
-            trigger(question.name)
-          }}
+          control={control}
+          defaultValue={defaultValue}
+          unregister={unregister}
           id={question.name}
           aria-describedby={'error_message_' + question.name}
-          {...props}
           options={getOptions(question)}
           isSearchable={false}
           placeholder={question.placeholder}
           key={question.name}
           name={question.name}
-          register={register}
           registerConfig={question.registerConfig}
-          setValue={setValue}
-          unregister={unregister}
           label={question.label}
+          {...props}
         >
           {question.config &&
             question.config.options.map((option) => {

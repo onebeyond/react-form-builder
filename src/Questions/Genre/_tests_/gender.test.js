@@ -4,9 +4,11 @@ import {
   getByText,
   render,
   fireEvent,
-  screen
+  screen,
+  renderHook
 } from '@testing-library/react'
 import selectEvent from 'react-select-event'
+import { useForm } from 'react-hook-form'
 import QuestionGender from '../'
 
 afterEach(cleanup)
@@ -21,17 +23,12 @@ const question = {
   registerConfig: { required: true }
 }
 
-const useForm = {
-  errors: {},
-  register: () => {},
-  setValue: jest.fn(),
-  unregister: jest.fn(),
-  trigger: jest.fn()
-}
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const setup = () => {
   const renderComponent = render(
-    <QuestionGender question={question} useForm={useForm} />
+    <QuestionGender question={question} useForm={formMethods} />
   )
   const genderComponent = renderComponent.getByTestId('question-gender')
   const genderPlaceholder = renderComponent.getByText('Please select a gender')
@@ -52,7 +49,7 @@ test('Gender label', () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(<QuestionGender question={questionNoLabel} useForm={useForm} />)
+  render(<QuestionGender question={questionNoLabel} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('gender-label'))
 })
@@ -87,7 +84,7 @@ test('Check custom options are rendered', async () => {
     }
   }
   const { getByText } = render(
-    <QuestionGender question={question} useForm={useForm} />
+    <QuestionGender question={question} useForm={formMethods} />
   )
   const genderPlaceholder = getByText('Please select a gender')
 
@@ -110,7 +107,7 @@ test('renders a country list in spanish', async () => {
     <QuestionGender
       language={data.language}
       question={question}
-      useForm={useForm}
+      useForm={formMethods}
     />
   )
 
@@ -135,7 +132,7 @@ test('renders a country list in french', async () => {
     <QuestionGender
       language={data.language}
       question={question}
-      useForm={useForm}
+      useForm={formMethods}
     />
   )
 
@@ -160,7 +157,7 @@ test('renders a country list in deusch', async () => {
     <QuestionGender
       language={data.language}
       question={question}
-      useForm={useForm}
+      useForm={formMethods}
     />
   )
 
@@ -185,7 +182,7 @@ test('renders a country list in swedish', async () => {
     <QuestionGender
       language={data.language}
       question={question}
-      useForm={useForm}
+      useForm={formMethods}
     />
   )
 
@@ -201,15 +198,14 @@ test('show an error message', () => {
     <QuestionGender
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
+        }
       }}
     />
   )

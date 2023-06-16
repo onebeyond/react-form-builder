@@ -1,5 +1,5 @@
-/** @jsx jsx */
 /** @jsxRuntime classic */
+/** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 import Checkbox from '../../Fields/Checkbox'
@@ -9,7 +9,10 @@ import Label from '../../Fields/Label'
 import ReactMarkdown from '../../Fields/Markdown'
 
 const QuestionCheckbox = ({ question, useForm, onLinkOpen }) => {
-  const { errors, register } = useForm
+  const {
+    formState: { errors },
+    register
+  } = useForm
 
   return (
     <div
@@ -31,7 +34,7 @@ const QuestionCheckbox = ({ question, useForm, onLinkOpen }) => {
             aria-describedby={'error_message_' + question.name}
             name={question.name}
             defaultChecked={question.defaultChecked}
-            ref={register({
+            {...register(question.name, {
               ...question.registerConfig
             })}
             data-testid='question-checkbox'

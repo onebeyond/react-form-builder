@@ -123,21 +123,36 @@ formatQuestion.placeholder = 'dd-mm-yyyy'
 const Template = (args) => (
   <Date
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
 const openToDateTemplate = (args) => (
   <Date
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
 const openOnBirthdateTemplate = (args) => (
   <Date
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
@@ -145,9 +160,12 @@ const requiredErrorTemplate = (args) => (
   <Date
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'required'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'required'
+          }
         }
       },
       register: () => {},
@@ -160,9 +178,12 @@ const underAgeErrorTemplate = (args) => (
   <Date
     question={args}
     useForm={{
-      errors: {
-        [question.name]: {
-          type: 'underAge'
+      control: () => ({}),
+      formState: {
+        errors: {
+          [question.name]: {
+            type: 'underAge'
+          }
         }
       },
       register: () => {},
@@ -174,14 +195,24 @@ const underAgeErrorTemplate = (args) => (
 const placerholderTemplate = (args) => (
   <Date
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 
 const dateFormatTemplate = (args) => (
   <Date
     question={args}
-    useForm={{ errors: {}, register: () => {}, setValue: () => {} }}
+    useForm={{
+      control: () => ({}),
+      formState: { errors: {} },
+      register: () => {},
+      setValue: () => {}
+    }}
   />
 )
 

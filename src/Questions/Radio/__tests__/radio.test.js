@@ -1,6 +1,8 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, renderHook } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { useForm } from 'react-hook-form'
+
 import QuestionRadio from '../'
 
 const question = {
@@ -24,13 +26,12 @@ const question = {
     required: true
   }
 }
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 test('markdown is displayed', () => {
   const { getByText } = render(
-    <QuestionRadio
-      question={question}
-      useForm={{ errors: {}, register: () => {} }}
-    />
+    <QuestionRadio question={question} useForm={formMethods} />
   )
 
   expect(getByText('question text to display'))
@@ -43,10 +44,7 @@ test('handles default markdown link', () => {
   }
 
   const { getByRole } = render(
-    <QuestionRadio
-      question={questionWithLink}
-      useForm={{ errors: {}, register: () => {} }}
-    />
+    <QuestionRadio question={questionWithLink} useForm={formMethods} />
   )
 
   const markDownLink = getByRole('link')
@@ -56,10 +54,7 @@ test('handles default markdown link', () => {
 
 test('radio labels are displayed', () => {
   const { getByLabelText } = render(
-    <QuestionRadio
-      question={question}
-      useForm={{ errors: {}, register: () => {} }}
-    />
+    <QuestionRadio question={question} useForm={formMethods} />
   )
   expect(getByLabelText('YES'))
   expect(getByLabelText('NOP'))
@@ -67,10 +62,7 @@ test('radio labels are displayed', () => {
 
 test('radio values are assigned', () => {
   const { getByLabelText } = render(
-    <QuestionRadio
-      question={question}
-      useForm={{ errors: {}, register: () => {} }}
-    />
+    <QuestionRadio question={question} useForm={formMethods} />
   )
   expect(getByLabelText('YES').value).toBe('true')
   expect(getByLabelText('NOP').value).toBe('false')
@@ -81,12 +73,14 @@ test('error is displayed', () => {
     <QuestionRadio
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {}
+        }
       }}
     />
   )
@@ -95,10 +89,7 @@ test('error is displayed', () => {
 
 test('radio can be selected', () => {
   const { getByLabelText } = render(
-    <QuestionRadio
-      question={question}
-      useForm={{ errors: {}, register: () => {} }}
-    />
+    <QuestionRadio question={question} useForm={formMethods} />
   )
   fireEvent.click(getByLabelText('YES'))
   fireEvent.click(getByLabelText('NOP'))

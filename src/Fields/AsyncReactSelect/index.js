@@ -1,16 +1,15 @@
 /** @jsxRuntime classic */
 
-import React from 'react'
-import { v4 as uuid } from 'uuid'
+import React, { useId } from 'react'
 import { useThemeUI } from 'theme-ui'
-import { RHFInput } from 'react-hook-form-input'
+import { Controller } from 'react-hook-form'
 import AsyncSelect from 'react-select/async'
 
 const Select = ({
+  control,
   register,
   setValue,
   name,
-  onChange = undefined,
   unregister,
   defaultValue,
   registerConfig,
@@ -22,7 +21,7 @@ const Select = ({
     option: {},
     clearIndicator: {},
     container: {},
-    control: {},
+    control: () => ({}),
     dropdownIndicator: {},
     group: {},
     groupHeading: {},
@@ -88,16 +87,18 @@ const Select = ({
   }, [])
 
   return (
-    <RHFInput
-      onChange={onChange}
-      as={
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { onChange } }) => (
         <AsyncSelect
           aria-label={label}
           styles={customStyles}
-          id={uuid()}
+          id={useId()}
+          onChange={onChange}
           {...props}
         />
-      }
+      )}
       rules={{
         ...registerConfig,
         validate: {
@@ -105,10 +106,7 @@ const Select = ({
             registerConfig && registerConfig.required ? item.value !== '' : true
         }
       }}
-      name={name}
       defaultValue={defaultValue}
-      register={register}
-      setValue={setValue}
     />
   )
 }

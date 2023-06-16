@@ -4,10 +4,12 @@ import {
   getByText,
   render,
   fireEvent,
-  screen
+  screen,
+  renderHook
 } from '@testing-library/react'
 import selectEvent from 'react-select-event'
 import QuestionAge from '../'
+import { useForm } from 'react-hook-form'
 
 afterEach(cleanup)
 
@@ -21,17 +23,12 @@ const question = {
   registerConfig: { required: true }
 }
 
-const useForm = {
-  errors: {},
-  register: () => {},
-  setValue: jest.fn(),
-  unregister: jest.fn(),
-  trigger: jest.fn()
-}
+const { result } = renderHook(() => useForm())
+const formMethods = result.current
 
 const setup = () => {
   const renderComponent = render(
-    <QuestionAge question={question} useForm={useForm} />
+    <QuestionAge question={question} useForm={formMethods} />
   )
   const ageComponent = renderComponent.getByTestId('question-age')
   const agePlaceholder = renderComponent.getByText('Please select an age')
@@ -52,7 +49,7 @@ test('Age label', () => {
 test('label tag is not displayed when label value is null', () => {
   const questionNoLabel = { ...question }
   delete questionNoLabel.label
-  render(<QuestionAge question={questionNoLabel} useForm={useForm} />)
+  render(<QuestionAge question={questionNoLabel} useForm={formMethods} />)
 
   expect(!screen.queryByTestId('age-label'))
 })
@@ -88,7 +85,7 @@ test('Check custom options are rendered', async () => {
     }
   }
   const { getByText } = render(
-    <QuestionAge question={question} useForm={useForm} />
+    <QuestionAge question={question} useForm={formMethods} />
   )
   const agePlaceholder = getByText('Please select an age')
 
@@ -102,15 +99,14 @@ test('show an error message', () => {
     <QuestionAge
       question={question}
       useForm={{
-        errors: {
-          [question.name]: {
-            type: 'required'
+        ...formMethods,
+        formState: {
+          errors: {
+            [question.name]: {
+              type: 'required'
+            }
           }
-        },
-        register: () => {},
-        setValue: jest.fn(),
-        unregister: jest.fn(),
-        trigger: jest.fn()
+        }
       }}
     />
   )

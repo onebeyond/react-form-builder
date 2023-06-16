@@ -1,7 +1,8 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Flex, jsx } from 'theme-ui'
 import React from 'react'
-import { RHFInput } from 'react-hook-form-input'
+import { Controller } from 'react-hook-form'
 
 import { differenceInYears, subYears, getDaysInMonth } from 'date-fns'
 import formatDate from 'date-fns/format'
@@ -95,9 +96,9 @@ function CustomDateSelect({
 }
 
 const DatePicker = ({
-  register,
-  setValue,
+  control,
   name,
+  setValue,
   registerConfig,
   placeholder,
   language = 'en',
@@ -140,8 +141,9 @@ const DatePicker = ({
   }
 
   return (
-    <RHFInput
-      as={
+    <Controller
+      control={control}
+      render={() => (
         <Flex sx={styles.dateContainer}>
           <CustomDateSelect
             value={selectedDate}
@@ -152,19 +154,18 @@ const DatePicker = ({
             dayFormat={dateFormat.day}
             firstYear={1900}
             lastYear={getInitialDate().getFullYear()}
+            setValue={() => setValue(name, convertLocalToUTCDate(selectedDate))}
+            selected={new Date(selectedDate)}
           />
         </Flex>
-      }
+      )}
       rules={{
         ...registerConfig,
         validate: {
           underAge: minAge ? isOver18 : () => true
         }
       }}
-      setValue={() => setValue(name, convertLocalToUTCDate(selectedDate))}
       name={name}
-      register={register}
-      selected={new Date(selectedDate)}
     />
   )
 }

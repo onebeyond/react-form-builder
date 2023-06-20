@@ -1,9 +1,29 @@
 /** @jsxRuntime classic */
 
 import React, { useId } from 'react'
-import { useThemeUI } from 'theme-ui'
+import { Image, useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
-import ReactSelect from 'react-select'
+import ReactSelect, { components } from 'react-select'
+
+const DropdownIndicator = (props) => {
+  const { menuIsOpen, arrows } = props.selectProps
+
+  if (arrows && (arrows.up || arrows.down)) {
+    const { up, down, width, height } = arrows
+
+    return (
+      <components.DropdownIndicator {...props}>
+        {menuIsOpen ? (
+          <Image src={up || down} width={width || 16} height={height || 16} />
+        ) : (
+          <Image src={down || up} width={width || 16} height={height || 16} />
+        )}
+      </components.DropdownIndicator>
+    )
+  }
+
+  return <components.DropdownIndicator {...props} />
+}
 
 const Select = ({
   control,
@@ -15,6 +35,7 @@ const Select = ({
   registerConfig,
   label,
   options,
+  arrows,
   ...props
 }) => {
   const { theme } = useThemeUI()
@@ -99,6 +120,8 @@ const Select = ({
             onChange={onChange}
             options={options}
             placeholder={placeholder}
+            arrows={arrows}
+            components={{ DropdownIndicator }}
             {...props}
           />
         )

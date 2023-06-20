@@ -585,6 +585,11 @@ https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-
 | options | It contains all the options to be rendered in the select component |  Object Array | -
 |  label |  The label displayed in select option |  string  |  ''  |
 |  value |  The value of the select option |  string  |  ''  |
+|  **arrows** |  |  json |     |
+| up | Path of the arrow up icon. If none is provided, it'll pick the `down` value.|  string | -
+| down | Path of the arrow down icon. If none is provided, it'll pick the `up` value. |  string | -
+| width | Path of the arrow down icon |  number | 16
+| height | Path of the arrow down icon |  number | 16
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if there is no selection and it is required |  string     | ''
 |  **registerConfig**       |    |  json     |
@@ -592,7 +597,7 @@ https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-
 
 #### Select examples
 
-Select basic example
+Select basic example:
 
 ```yaml
 {
@@ -626,6 +631,45 @@ Select basic example
 
 ```
 
+Select example with custom arrows in the `public/icons` folder:
+
+```yaml
+{
+  "name": "color",
+  "type": "select",
+  "placeholder": "Please choose an option",
+  "label": "What is your favorite color?",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+  "config": {
+    "arrows": {
+      "up": "icons/ArrowUp.svg",
+      "down": "icons/ArrowDown.svg",
+      "width": 18,
+      "height": 18
+    },
+    "options": [
+      {
+        "value": "red",
+        "label": "Red"
+      },
+      {
+        "value": "black",
+        "label": "Black"
+      },
+      {
+        "value": "prefer_not_say",
+        "label": "prefer not to say"
+      }
+    ]
+  }
+}
+
+```
 
 https://user-images.githubusercontent.com/79102959/134949537-3647437e-0330-4692-bd30-ef6aa319bd7b.mov
 

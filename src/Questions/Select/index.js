@@ -63,6 +63,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           name={question.name}
           registerConfig={question.registerConfig}
           label={question.label}
+          arrows={question.config?.arrows}
           {...props}
         >
           {question.config &&

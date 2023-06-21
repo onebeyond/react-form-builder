@@ -5,7 +5,7 @@ import Icon from '../../Common/Icon/Icon'
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { Image, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 const styles = {
   boxIconStyle: {

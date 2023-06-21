@@ -36,6 +36,7 @@ const Select = ({
   label,
   options,
   arrows,
+  hasErrors,
   ...props
 }) => {
   const { theme } = useThemeUI()
@@ -116,6 +117,7 @@ const Select = ({
           <ReactSelect
             id={useId()}
             aria-label={label}
+            className={hasErrors && 'error-select'}
             styles={customStyles}
             onChange={onChange}
             options={options}

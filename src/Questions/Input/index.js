@@ -41,16 +41,6 @@ const QuestionInput = ({ question, useForm, component }) => {
             />
           </div>
         )}
-
-        {question.hasErrors && question.errorIcon?.icon && (
-          <div>
-            <Image
-              src={question.errorIcon?.icon}
-              width={question.errorIcon?.width || 16}
-              height={question.errorIcon?.height || 16}
-            />
-          </div>
-        )}
       </div>
       <Input
         id={question.name}
@@ -61,7 +51,6 @@ const QuestionInput = ({ question, useForm, component }) => {
         type={question.type}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        errorIcon={question.errorIcon}
         hasErrors={!!errors[question.name]}
         {...register(question.name, {
           ...question.registerConfig,

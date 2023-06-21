@@ -80,9 +80,8 @@
     "questions": [
       {
         "name": "first_name",
-        "type": "checkbox",
-        "label": "CSM",
-        "defaultChecked": false,
+        "type": "input",
+        "label": "First Name",
         "placeholder": "First Name",
         "errorMessages": {
           "required": "This field is required"

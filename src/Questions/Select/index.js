@@ -64,7 +64,7 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
           registerConfig={question.registerConfig}
           label={question.label}
           arrows={question.config?.arrows}
-          haserrors={errors[question.name] ? 'true' : 'false'}
+          haserrors={!!errors[question.name]}
           {...props}
         >
           {question.config &&

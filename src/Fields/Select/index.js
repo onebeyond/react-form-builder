@@ -14,9 +14,19 @@ const DropdownIndicator = (props) => {
     return (
       <components.DropdownIndicator {...props}>
         {menuIsOpen ? (
-          <Image src={up || down} width={width || 16} height={height || 16} />
+          <Image
+            alt='Select arrow up'
+            src={up || down}
+            width={width || 16}
+            height={height || 16}
+          />
         ) : (
-          <Image src={down || up} width={width || 16} height={height || 16} />
+          <Image
+            alt='Select arrow up'
+            src={down || up}
+            width={width || 16}
+            height={height || 16}
+          />
         )}
       </components.DropdownIndicator>
     )
@@ -36,7 +46,7 @@ const Select = ({
   label,
   options,
   arrows,
-  hasErrors,
+  haserrors,
   ...props
 }) => {
   const { theme } = useThemeUI()
@@ -117,7 +127,7 @@ const Select = ({
           <ReactSelect
             id={useId()}
             aria-label={label}
-            className={hasErrors && 'error-select'}
+            className={haserrors && 'error-select'}
             styles={customStyles}
             onChange={onChange}
             options={options}

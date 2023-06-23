@@ -9,7 +9,7 @@ const Input = React.forwardRef(({ ...props }, ref) => {
     <InputUI
       ref={ref}
       {...props}
-      className={props.hasErrors && 'error-input'}
+      className={props.haserrors && 'error-input'}
     />
   )
 })

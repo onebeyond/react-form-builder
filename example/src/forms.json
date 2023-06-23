@@ -91,6 +91,18 @@
         }
       },
       {
+        "name": "password",
+        "type": "password",
+        "label": "Password",
+        "placeholder": "Password",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
         "name": "refrigerator_features",
         "type": "multiple_checkboxes",
         "label": "What features did you look for when buying your refrigerator? [MC, up to 10]",

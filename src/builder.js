@@ -72,6 +72,7 @@ const FormBuilder = ({
         </div>
       ),
       input: <QuestionInput useForm={useFormObj} question={question} />,
+      password: <QuestionInput useForm={useFormObj} question={question} />,
       textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
       select: (
         <>

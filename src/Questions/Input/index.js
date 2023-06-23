@@ -51,7 +51,7 @@ const QuestionInput = ({ question, useForm, component }) => {
         type={question.type}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        haserrors={!!errors[question.name]}
+        haserrors={errors[question.name] ? 1 : 0}
         {...register(question.name, {
           ...question.registerConfig,
           pattern: new RegExp(question.registerConfig.pattern)

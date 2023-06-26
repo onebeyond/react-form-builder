@@ -5,6 +5,7 @@ import ErrorMessage from '../../Fields/Error'
 import React from 'react'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
+import ReactMarkdown from '../../Fields/Markdown'
 import { jsx } from 'theme-ui'
 
 const styles = {
@@ -30,7 +31,13 @@ const getOptions = (question) => {
   )
 }
 
-const QuestionSelect = ({ question, useForm, component, ...props }) => {
+const QuestionSelect = ({
+  question,
+  useForm,
+  component,
+  onLinkOpen,
+  ...props
+}) => {
   const {
     formState: { errors },
     control,
@@ -48,7 +55,22 @@ const QuestionSelect = ({ question, useForm, component, ...props }) => {
         }}
       >
         {question.label && (
-          <Label htmlFor={question.name}>{question.label}</Label>
+          <Label
+            htmlFor={question.name}
+            sx={{
+              variant: 'forms.select.label'
+            }}
+          >
+            <ReactMarkdown
+              sx={{
+                alignSelf: 'center',
+                p: { m: '0px' }
+              }}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
+          </Label>
         )}
         <Select
           control={control}

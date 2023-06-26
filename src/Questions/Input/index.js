@@ -1,6 +1,7 @@
 import ErrorMessage from '../../Fields/Error'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
+import ReactMarkdown from '../../Fields/Markdown'
 import Icon from '../../Common/Icon/Icon'
 
 /** @jsxRuntime classic */
@@ -13,7 +14,7 @@ const styles = {
   }
 }
 
-const QuestionInput = ({ question, useForm, component }) => {
+const QuestionInput = ({ question, useForm, component, onLinkOpen }) => {
   const {
     formState: { errors },
     register
@@ -29,7 +30,22 @@ const QuestionInput = ({ question, useForm, component }) => {
     >
       <div sx={styles.boxIconStyle}>
         {question.label && (
-          <Label htmlFor={question.name}>{question.label}</Label>
+          <Label
+            htmlFor={question.name}
+            sx={{
+              variant: 'forms.input.label'
+            }}
+          >
+            <ReactMarkdown
+              sx={{
+                alignSelf: 'center',
+                p: { m: '0px' }
+              }}
+              source={question.label}
+              onLinkOpen={onLinkOpen}
+              modalLabel={question.modalLabel}
+            />
+          </Label>
         )}
 
         {question.icon && (

@@ -8,12 +8,16 @@ import QuestionInput from '../'
 const question = {
   name: 'inputName',
   type: 'input',
-  label: 'input label',
+  label: 'input label with [link](https://www.google.com)',
   placeholder: 'input placeholder',
   icon: {
     name: 'question-circle',
     fill: 'red'
   },
+  descriptions: [
+    'Password must be 8-20 characters long',
+    'Contain at least 1 number, 1 letter and 1 special character'
+  ],
   tooltip: {
     text: 'tooltip text example',
     config: {
@@ -31,12 +35,40 @@ const question = {
 const { result } = renderHook(() => useForm())
 const formMethods = result.current
 
-test('label is displayed', () => {
+test('renders label with markdown', () => {
   const { getByText } = render(
     <QuestionInput question={question} useForm={formMethods} />
   )
 
-  expect(getByText('input label'))
+  expect(getByText('input label with', { exact: false })).toBeTruthy()
+})
+
+test('handles default markdown link', () => {
+  const { getByRole } = render(
+    <QuestionInput question={question} useForm={formMethods} />
+  )
+
+  const markDownLink = getByRole('link')
+  expect(markDownLink.href).toBe('https://www.google.com/')
+  expect(markDownLink.target).toBe('_blank')
+})
+
+test('handles custom markdown link callback', () => {
+  const onLinkOpen = jest.fn()
+  const { getByRole } = render(
+    <QuestionInput
+      question={{
+        ...question,
+        label: 'input label with [link](#somewhere)'
+      }}
+      onLinkOpen={onLinkOpen}
+      useForm={formMethods}
+    />
+  )
+  const markDownLink = getByRole('link')
+  expect(markDownLink.href).toContain('#')
+  fireEvent.click(markDownLink)
+  expect(onLinkOpen).toBeCalledWith('somewhere')
 })
 
 test('icon is displayed', () => {
@@ -134,6 +166,17 @@ test('placeholder is displayed', () => {
   )
 
   expect(getByPlaceholderText('input placeholder'))
+})
+
+test('descriptions are displayed', () => {
+  render(<QuestionInput question={question} useForm={formMethods} />)
+
+  expect(screen.getByText('Password must be 8-20 characters long'))
+  expect(
+    screen.getByText(
+      'Contain at least 1 number, 1 letter and 1 special character'
+    )
+  )
 })
 
 test('error is displayed', () => {

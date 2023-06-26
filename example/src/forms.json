@@ -153,7 +153,7 @@
               "value": "inverter_compressor"
             },
             {
-              "label": "Energy level",
+              "label": "Energy level ([what's this](https://www.google.com))",
               "value": "energy_level"
             },
             {
@@ -207,6 +207,47 @@
               "value": "prefer_not_to_say"
             }
           ]
+        }
+      },
+      {
+        "name": "tax_code",
+        "type": "input",
+        "label": "[Tax code](https://www.google.com)",
+        "placeholder": "Tax code",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "select_with_link",
+        "type": "select",
+        "label": "Have you ever visited [Google](https://www.google.com)?",
+        "placeholder": "Have you?",
+        "config": {
+          "options": [
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        }
+      },
+      {
+        "name": "checkbox_with_link",
+        "type": "checkbox",
+        "label": "External [link](https://www.google.com)",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
         }
       }
     ],

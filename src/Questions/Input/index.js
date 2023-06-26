@@ -1,4 +1,5 @@
 import ErrorMessage from '../../Fields/Error'
+import FieldDescription from '../../Fields/FieldDescription'
 import Input from '../../Fields/Input'
 import Label from '../../Fields/Label'
 import ReactMarkdown from '../../Fields/Markdown'
@@ -73,6 +74,12 @@ const QuestionInput = ({ question, useForm, component, onLinkOpen }) => {
           pattern: new RegExp(question.registerConfig.pattern)
         })}
       />
+      {question.descriptions && question.descriptions.length > 0 && (
+        <FieldDescription
+          name={question.name}
+          descriptions={question.descriptions}
+        />
+      )}
       {errors[question.name] && errors[question.name].type === 'required' && (
         <ErrorMessage
           name={question.name}

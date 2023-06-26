@@ -98,6 +98,10 @@
         "errorMessages": {
           "required": "This field is required"
         },
+        "descriptions": [
+          "Password must be 8-20 characters long",
+          "Contain at least 1 number, 1 letter and 1 special character"
+        ],
         "registerConfig": {
           "required": true
         }

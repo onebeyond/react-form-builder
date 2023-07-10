@@ -31,6 +31,35 @@
         }
       },
       {
+        "name": "password",
+        "type": "password",
+        "label": "Password",
+        "placeholder": "Password",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "descriptions": [
+          "Password must be 8-20 characters long",
+          "Contain at least 1 number, 1 letter and 1 special character"
+        ],
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "confirmpassword",
+        "type": "password",
+        "label": "Confirm password",
+        "placeholder": "Confirm password",
+        "errorMessages": {
+          "required": "This field is required",
+          "doesNotMatch": "The passwords do not match"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
         "name": "$Country",
         "placeholder": "Country",
         "priorityOptions": [

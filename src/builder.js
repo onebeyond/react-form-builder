@@ -43,7 +43,7 @@ const FormBuilder = ({
   onLinkOpen,
   countryAndRegionsData,
   language,
-  formErrors = {},
+  formErrors = [],
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })

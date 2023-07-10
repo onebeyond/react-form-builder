@@ -19,19 +19,25 @@ import React, { useEffect, useState } from 'react'
 import forms from './forms.json'
 import FormBuilder from 'react-form-builder'
 
+const [formErrors, setFormErrors] = useState()
+
 const onSubmitForm = (data) => {
-    !isLoading &&
-      alert(
-        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
-          data,
-          null,
-          2
-        )}`
-      )
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    if (data.password !== data.confirmpassword) {
+      setFormErrors([{ field: 'confirmpassword', type: 'doesNotMatch' }])
+    } else {
+      !isLoading &&
+        alert(
+          `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+            data,
+            null,
+            2
+          )}`
+        )
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
+    }
   }
 
 const Example = () => {
@@ -43,6 +49,7 @@ const Example = () => {
         isoCode='ES'
         onLinkOpen={onLinkOpen}
         isLoading={isLoading}
+        formErrors={formErrors}
       />
   }
 }
@@ -66,7 +73,8 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 |  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
 |  isMobile      |   A boolean toggle is assigned to check if we are from a mobile port view | boolean    | false
 |  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
-|  onLinkOpen       |  function to be executed when there is a custom link  |  function     | -
+|  onLinkOpen       |  Function to be executed when there is a custom link  |  function     | -
+|  formErrors       |  Array of custom errors associated with specific fields |  Array of objects     | []
 
 
 
@@ -258,9 +266,10 @@ https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Input name  	|  string 	|  - 	|
-|   type*   | Must be `input`| string | - |
+|   type*   | Must be `input` or `password` (which will be masked) | string | - |
 |   label	|  Text shown with the input |  string  	|   ''	|
 |   placeholder    |   Placeholder text to be displayed   |    string       |   ''   |
+|   descriptions    |   Extra information that will show below the field   |    string[]       |   []   |
 | **icon**  |   |  json  |   |
 | name  | Name of the icon that we want to be displayed Opt: ['question-circle'] | string  |    -
 |  fill  | Icon color  | string  | black
@@ -270,6 +279,7 @@ https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the checkbox is not checked and is required |  string     | ''
 | pattern  | Error message to display if there is an error pattern in the input text  |  boolean  | false
+| `customError`  | Error message to display for any other custom errors that will be shown with the `formErrors` property passed to the builder  |  string  | ''
 |  **registerConfig**       |    |  json     |
 | required  | Define if the checkbox is required  |  boolean  | false
 | pattern  | Define the pattern to check the input  |  string  | ""
@@ -309,6 +319,40 @@ Input with pattern control example
 }
 
 ```
+Input with custom error (for example, if the user tries to sign up with an email that has already beeen used)
+```yaml
+{
+  "name": "email",
+  "type": "input",
+  "label": "",
+  "placeholder": "Email Address*",
+  "errorMessages": {
+    "required": "This field is required",
+    "pattern": "Invalid email",
+    "repeatedEmail": "This email has already been registered"
+  },
+  "registerConfig": {
+    "required": true,
+    "pattern": "/^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/"
+  }
+}
+
+```
+
+Input with field descriptions
+```yaml
+{
+  "name": "password",
+  "type": "password",
+  "label": "Password",
+  "placeholder": "Password",
+  "descriptions": [
+    "Password must be 8-20 characters long",
+    "Contain at least 1 number, 1 letter and 1 special character"
+  ]
+}
+```
+
 Input with styled icon
 ```yaml
 {

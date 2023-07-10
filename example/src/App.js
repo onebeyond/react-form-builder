@@ -1,3 +1,4 @@
+/* eslint-disable */
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Link } from 'theme-ui'
@@ -46,6 +47,7 @@ const App = () => {
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
   const [isLoading, setLoading] = useState(false)
+  const [formErrors, setFormErrors] = useState()
 
   function onLinkOpen(name) {
     setModalText(forms.contact.textToShow[name])
@@ -122,18 +124,22 @@ const App = () => {
   }
 
   const onSubmitForm = (data) => {
-    !isLoading &&
-      alert(
-        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
-          data,
-          null,
-          2
-        )}`
-      )
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    if (data.password !== data.confirmpassword) {
+      setFormErrors([{ field: 'confirmpassword', type: 'doesNotMatch' }])
+    } else {
+      !isLoading &&
+        alert(
+          `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+            data,
+            null,
+            2
+          )}`
+        )
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
+    }
   }
 
   return (
@@ -187,6 +193,7 @@ const App = () => {
         language='en'
         onLinkOpen={onLinkOpen}
         isLoading={isLoading}
+        formErrors={formErrors}
       />
     </>
   )

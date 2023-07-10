@@ -107,6 +107,19 @@
         }
       },
       {
+        "name": "confirmpassword",
+        "type": "password",
+        "label": "Confirm password",
+        "placeholder": "Confirm password",
+        "errorMessages": {
+          "required": "This field is required",
+          "doesNotMatch": "The passwords do not match"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
         "name": "refrigerator_features",
         "type": "multiple_checkboxes",
         "label": "What features did you look for when buying your refrigerator? [MC, up to 10]",

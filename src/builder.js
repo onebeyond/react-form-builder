@@ -11,7 +11,7 @@ import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
 import QuestionStatic from './Questions/Static'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
 import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
@@ -43,9 +43,18 @@ const FormBuilder = ({
   onLinkOpen,
   countryAndRegionsData,
   language,
+  formErrors = [],
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+
+  useEffect(() => {
+    if (formErrors && formErrors.length > 0) {
+      formErrors.forEach((error) => {
+        useFormObj.setError(error.field, { type: error.type })
+      })
+    }
+  }, [formErrors])
 
   const {
     formState: { errors }

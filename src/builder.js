@@ -268,24 +268,37 @@ const FormBuilder = ({
     }
   }
 
-  const formatData = (data) => {
-    Object.keys(data).map((key) => {
-      if (data[key] instanceof Date) {
-        data[key] = data[key].toISOString()
-      }
-      if (data[key] instanceof FileList) {
-        const reader = new FileReader()
-        reader.onload = function (e) {
-          data[key] = e.target.result
+  const formatData = async (data) => {
+    await Promise.all(
+      Object.keys(data).map(async (key) => {
+        if (data[key] instanceof Date) {
+          data[key] = data[key].toISOString()
         }
-        reader.readAsDataURL(data[key][0])
-      }
-    })
+        if (data[key] instanceof FileList) {
+          const reader = new FileReader()
+          try {
+            const encodedFile = await new Promise((resolve, reject) => {
+              reader.onload = (event) => {
+                return resolve(event.target.result)
+              }
+              reader.onerror = (event) => {
+                return reject(event)
+              }
+
+              reader.readAsDataURL(data[key][0])
+            })
+            data[key] = encodedFile
+          } catch {
+            useFormObj.setError(key, { type: 'encodingError' })
+          }
+        }
+      })
+    )
     return data
   }
 
-  const onSubmit = (data) => {
-    onSubmitForm(formatData(data))
+  const onSubmit = async (data) => {
+    onSubmitForm(await formatData(data))
   }
 
   return (

@@ -21,6 +21,7 @@ import QuestionCounty from './Questions/County'
 import QuestionGender from './Questions/Genre'
 import QuestionAge from './Questions/Age'
 import QuestionAutocomplete from './Questions/Autocomplete'
+import QuestionImageInput from './Questions/ImageInput'
 
 const styles = {
   fitContent: {
@@ -81,6 +82,9 @@ const FormBuilder = ({
         </div>
       ),
       input: <QuestionInput useForm={useFormObj} question={question} />,
+      image_input: (
+        <QuestionImageInput useForm={useFormObj} question={question} />
+      ),
       password: <QuestionInput useForm={useFormObj} question={question} />,
       textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
       select: (
@@ -264,17 +268,37 @@ const FormBuilder = ({
     }
   }
 
-  const formatData = (data) => {
-    Object.keys(data).map((key) => {
-      if (data[key] instanceof Date) {
-        data[key] = data[key].toISOString()
-      }
-    })
+  const formatData = async (data) => {
+    await Promise.all(
+      Object.keys(data).map(async (key) => {
+        if (data[key] instanceof Date) {
+          data[key] = data[key].toISOString()
+        }
+        if (data[key] instanceof FileList) {
+          const reader = new FileReader()
+          try {
+            const encodedFile = await new Promise((resolve, reject) => {
+              reader.onload = (event) => {
+                return resolve(event.target.result)
+              }
+              reader.onerror = (event) => {
+                return reject(event)
+              }
+
+              reader.readAsDataURL(data[key][0])
+            })
+            data[key] = encodedFile
+          } catch {
+            useFormObj.setError(key, { type: 'encodingError' })
+          }
+        }
+      })
+    )
     return data
   }
 
-  const onSubmit = (data) => {
-    onSubmitForm(formatData(data))
+  const onSubmit = async (data) => {
+    onSubmitForm(await formatData(data))
   }
 
   return (

@@ -21,6 +21,7 @@ import QuestionCounty from './Questions/County'
 import QuestionGender from './Questions/Genre'
 import QuestionAge from './Questions/Age'
 import QuestionAutocomplete from './Questions/Autocomplete'
+import QuestionImageInput from './Questions/ImageInput'
 
 const styles = {
   fitContent: {
@@ -81,6 +82,9 @@ const FormBuilder = ({
         </div>
       ),
       input: <QuestionInput useForm={useFormObj} question={question} />,
+      image_input: (
+        <QuestionImageInput useForm={useFormObj} question={question} />
+      ),
       password: <QuestionInput useForm={useFormObj} question={question} />,
       textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
       select: (
@@ -268,6 +272,13 @@ const FormBuilder = ({
     Object.keys(data).map((key) => {
       if (data[key] instanceof Date) {
         data[key] = data[key].toISOString()
+      }
+      if (data[key] instanceof FileList) {
+        const reader = new FileReader()
+        reader.onload = function (e) {
+          data[key] = e.target.result
+        }
+        reader.readAsDataURL(data[key][0])
       }
     })
     return data

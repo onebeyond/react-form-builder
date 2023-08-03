@@ -131,7 +131,7 @@
           "minimumLen": 1,
           "maximumLen": 10
         },
-        "defaultChecked": ["product_net_capacity", "ice_maker"],
+        "defaultCheckedValues": ["product_net_capacity", "ice_maker"],
         "config": {
           "options": [
             {

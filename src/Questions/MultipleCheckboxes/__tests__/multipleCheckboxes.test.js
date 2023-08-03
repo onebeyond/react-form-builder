@@ -14,7 +14,7 @@ const question = {
     maximumLen: 'Maximum choises exceded',
     minimumLen: 'Minimum choises required'
   },
-  defaultChecked: ['three'],
+  defaultCheckedValues: ['three'],
   registerConfig: {
     required: true,
     maximumLen: '2',

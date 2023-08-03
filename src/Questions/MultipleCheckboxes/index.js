@@ -75,6 +75,9 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}
                       value={option.value}
+                      defaultChecked={question.defaultChecked.find(
+                        (defaultValue) => defaultValue === option.value
+                      )}
                       {...register(question.name, {
                         ...question.registerConfig,
                         validate: {

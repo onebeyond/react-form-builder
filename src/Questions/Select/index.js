@@ -41,7 +41,6 @@ const QuestionSelect = ({
   const {
     formState: { errors },
     control,
-    defaultValue,
     unregister
   } = useForm
 
@@ -74,7 +73,7 @@ const QuestionSelect = ({
         )}
         <Select
           control={control}
-          defaultValue={defaultValue}
+          defaultValue={question.defaultValue}
           unregister={unregister}
           id={question.name}
           aria-describedby={'error_message_' + question.name}

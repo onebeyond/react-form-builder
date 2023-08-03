@@ -131,6 +131,7 @@
           "minimumLen": 1,
           "maximumLen": 10
         },
+        "defaultChecked": ["product_net_capacity", "ice_maker"],
         "config": {
           "options": [
             {
@@ -197,6 +198,10 @@
         "type": "select",
         "label": "What is your gender?",
         "placeholder": "Please make a selection",
+        "defaultValue": {
+          "label": "Male",
+          "value": "male"
+        },
         "errorMessages": {
           "required": "This field is required"
         },

@@ -116,3 +116,19 @@ test('check if option labels exist', () => {
     getByText(option.label)
   })
 })
+
+test('check if it preselects an option from the config', () => {
+  const questionWithDefaultValue = {
+    ...question,
+    defaultValue: {
+      label: 'Male',
+      value: 'male'
+    }
+  }
+
+  const { getByText } = render(
+    <QuestionSelect question={questionWithDefaultValue} useForm={formMethods} />
+  )
+
+  expect(getByText('Male', { exact: false })).toBeTruthy()
+})

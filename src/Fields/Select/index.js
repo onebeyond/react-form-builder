@@ -134,7 +134,7 @@ const Select = ({
             placeholder={placeholder}
             arrows={arrows}
             components={{ DropdownIndicator }}
-            value={defaultValue}
+            defaultValue={defaultValue}
             {...props}
           />
         )

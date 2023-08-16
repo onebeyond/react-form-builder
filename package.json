@@ -1,6 +1,6 @@
 {
   "name": "@guidesmiths/react-form-builder",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "React from builder using json schema",
   "author": "Guidesmiths",
   "license": "MIT",

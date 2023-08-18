@@ -177,6 +177,11 @@
             {
               "label": "Others",
               "value": "others"
+            },
+            {
+              "label": "None of the above",
+              "value": "none_of_the_above",
+              "disableOthers": true
             }
           ]
         }

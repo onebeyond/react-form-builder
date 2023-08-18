@@ -11,7 +11,7 @@ import ReactMarkdown from 'react-markdown'
 const disableOthers = (e) => {
   Object.entries(e.target.form).forEach(([, v]) => {
     if (e.target.checked === true) {
-      if (v.type === 'checkbox' && v.name === e.target.name) {
+      if (v.type === 'checkbox' && v.name === e.target.name && v !== e.target) {
         v.checked = false
         v.disabled = true
       }

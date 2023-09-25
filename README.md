@@ -2,10 +2,12 @@
 
 > React form builder using json schema
 
-[![NPM](https://img.shields.io/npm/v/react-form-builder.svg)](https://www.npmjs.com/package/@guidesmiths/react-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-form-builder.svg)](https://www.npmjs.com/package/@guidesmiths/react-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Maintainability](https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability)](https://codeclimate.com/github/onebeyond/react-form-builder/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage)](https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 ## Install
 
 ```bash

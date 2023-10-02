@@ -32,7 +32,7 @@ const QuestionAutocomplete = ({ question, useForm }) => {
     const response = await fetch(url, {
       headers: question.config.headers
     })
-    return await response.json()
+    return response.json()
   }, 350)
 
   return (

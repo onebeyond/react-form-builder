@@ -125,6 +125,7 @@ const QuestionCountry = ({
         registerConfig={question.registerConfig}
         placeholder={question.placeholder}
         label={question.label}
+        data-haserrors={!!errors[question.name]}
         {...props}
       >
         {renderCountryOptions(

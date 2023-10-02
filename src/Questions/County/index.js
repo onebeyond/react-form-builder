@@ -64,6 +64,7 @@ const QuestionCounty = ({ question, useForm, ...props }) => {
         registerConfig={question.registerConfig}
         placeholder={question.placeholder}
         label={question.label}
+        data-haserrors={!!errors[question.name]}
         {...props}
       >
         {renderCountyOptions(options)}

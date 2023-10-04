@@ -21,6 +21,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/21059277?v=4",
       "profile": "https://ismaelocaramelo.github.io/workwithme/",
       "contributions": ["code", "review"]
+    },
+    {
+      "login": "FranciscoValdesoiro",
+      "name": "Francisco Valdesoiro Gil",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45309269?v=4",
+      "profile": "https://github.com/FranciscoValdesoiro",
+      "contributions": ["code"]
     }
   ],
   "contributorsPerLine": 7,

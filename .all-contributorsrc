@@ -1,0 +1,85 @@
+{
+  "projectName": "react-form-builder",
+  "projectOwner": "onebeyond",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "pablo-albaladejo",
+      "name": "Pablo Albaladejo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7994467?v=4",
+      "profile": "https://www.linkedin.com/in/pabloalbaladejomestre",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ismaelocaramelo",
+      "name": "Ismael Bakkali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21059277?v=4",
+      "profile": "https://ismaelocaramelo.github.io/workwithme/",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "FranciscoValdesoiro",
+      "name": "Francisco Valdesoiro Gil",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45309269?v=4",
+      "profile": "https://github.com/FranciscoValdesoiro",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ars1096",
+      "name": "ars1096",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22389289?v=4",
+      "profile": "https://github.com/ars1096",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "sofisdev",
+      "name": "Sofia Sanchez Urbano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63403532?v=4",
+      "profile": "https://ssurbano.com/",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "Donivanes",
+      "name": "Ivan Esteban",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22077321?v=4",
+      "profile": "https://github.com/Donivanes",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "inigomarquinez",
+      "name": "Íñigo Marquínez Prado",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25435858?v=4",
+      "profile": "https://github.com/inigomarquinez",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true,
+  "commitType": "docs"
+}

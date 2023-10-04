@@ -28,6 +28,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/45309269?v=4",
       "profile": "https://github.com/FranciscoValdesoiro",
       "contributions": ["code"]
+    },
+    {
+      "login": "ars1096",
+      "name": "ars1096",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22389289?v=4",
+      "profile": "https://github.com/ars1096",
+      "contributions": ["code", "doc", "test"]
     }
   ],
   "contributorsPerLine": 7,

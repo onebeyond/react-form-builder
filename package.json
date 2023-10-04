@@ -96,6 +96,7 @@
     "react-phone-number-input": "^3.1.10",
     "react-select": "^5.7.3",
     "react-ymd-date-select": "^0.3.0",
-    "theme-ui": "^0.15.7"
+    "theme-ui": "^0.15.7",
+    "uuid": "^9.0.1"
   }
 }

@@ -35,6 +35,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/22389289?v=4",
       "profile": "https://github.com/ars1096",
       "contributions": ["code", "doc", "test"]
+    },
+    {
+      "login": "sofisdev",
+      "name": "Sofia Sanchez Urbano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63403532?v=4",
+      "profile": "https://ssurbano.com/",
+      "contributions": ["code", "test"]
     }
   ],
   "contributorsPerLine": 7,

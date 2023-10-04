@@ -1,6 +1,6 @@
 # react-form-builder
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > React form builder using json schema
@@ -943,6 +943,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://ismaelocaramelo.github.io/workwithme/"><img src="https://avatars.githubusercontent.com/u/21059277?v=4?s=100" width="100px;" alt="Ismael Bakkali"/><br /><sub><b>Ismael Bakkali</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=ismaelocaramelo" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/pulls?q=is%3Apr+reviewed-by%3Aismaelocaramelo" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FranciscoValdesoiro"><img src="https://avatars.githubusercontent.com/u/45309269?v=4?s=100" width="100px;" alt="Francisco Valdesoiro Gil"/><br /><sub><b>Francisco Valdesoiro Gil</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=FranciscoValdesoiro" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/22389289?v=4?s=100" width="100px;" alt="ars1096"/><br /><sub><b>ars1096</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Documentation">📖</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ssurbano.com/"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt="Sofia Sanchez Urbano"/><br /><sub><b>Sofia Sanchez Urbano</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=sofisdev" title="Tests">⚠️</a></td>
     </tr>
   </tbody>
   <tfoot>

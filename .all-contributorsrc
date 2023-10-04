@@ -14,6 +14,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/7994467?v=4",
       "profile": "https://www.linkedin.com/in/pabloalbaladejomestre",
       "contributions": ["code"]
+    },
+    {
+      "login": "ismaelocaramelo",
+      "name": "Ismael Bakkali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21059277?v=4",
+      "profile": "https://ismaelocaramelo.github.io/workwithme/",
+      "contributions": ["code", "review"]
     }
   ],
   "contributorsPerLine": 7,

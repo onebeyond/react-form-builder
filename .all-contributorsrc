@@ -1,0 +1,22 @@
+{
+  "projectName": "react-form-builder",
+  "projectOwner": "onebeyond",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": ["README.md"],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "pablo-albaladejo",
+      "name": "Pablo Albaladejo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7994467?v=4",
+      "profile": "https://www.linkedin.com/in/pabloalbaladejomestre",
+      "contributions": ["code"]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}
+

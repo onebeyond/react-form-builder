@@ -1,7 +1,4 @@
 # react-form-builder
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > React form builder using json schema
 
@@ -12,7 +9,7 @@
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/maintainability"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability" /></a>
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage" /></a>
   <a href="https://socket.dev/npm/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://socket.dev/api/badge/npm/package/@guidesmiths/react-form-builder" alt="socket.dev" /></a>
-    <a href="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" target="_blank"><img src="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" alt="all-contributors" /></a>
+  <a href="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" target="_blank"><img src="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" alt="all-contributors" /></a>
 </p>
 
 ## Install

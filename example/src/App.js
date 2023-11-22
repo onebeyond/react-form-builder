@@ -26,6 +26,9 @@ import 'react-phone-number-input/style.css'
 
 const App = () => {
   const styles = {
+    container: {
+      padding: '30px 30px',
+    },
     fullWidth: {
       gridColumnStart: '1',
       gridColumnEnd: '3'
@@ -143,7 +146,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div sx={styles.container}>
       {/* <Button caption='Button example' />
       <Input />
       <Phone
@@ -195,7 +198,7 @@ const App = () => {
         isLoading={isLoading}
         formErrors={formErrors}
       />
-    </>
+    </div>
   )
 }
 

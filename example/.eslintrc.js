@@ -171,7 +171,7 @@ module.exports = exports = {
     'func-names': WARN,
     'func-style': [WARN, 'declaration'],
     'id-length': [WARN, { min: 2, max: 32 }],
-    indent: [WARN, 4],
+    indent: [WARN, 2],
     'jsx-quotes': [WARN, 'prefer-double'],
     'linebreak-style': [WARN, 'unix'],
     'lines-around-comment': [WARN, { beforeBlockComment: true }],

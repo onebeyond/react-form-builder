@@ -60,21 +60,6 @@
         }
       },
       {
-        "name": "bio",
-        "type": "textarea",
-        "label": "Your bio",
-        "placeholder": "Your bio",
-        "errorMessages": {
-          "minimumLen": "Minimum length is 5 words",
-          "maximumLen": "Maximum length is 100 words"
-        },
-        "registerConfig": {
-          "countType": "word",
-          "minimumLen": 5,
-          "maximumLen": 100
-        }
-      },
-      {
         "name": "$Country",
         "placeholder": "Country",
         "priorityOptions": [

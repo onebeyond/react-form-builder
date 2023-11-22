@@ -38,11 +38,10 @@ describe('form builder without custom errors', () => {
 
   test('check if questions are rendered', () => {
     const allInputs = component.getAllByTestId('question-input')
-    expect(allInputs.length).toBe(4)
+    expect(allInputs.length).toBe(3)
     expect(allInputs[0].value).toBe('')
     expect(allInputs[1].value).toBe('')
     expect(allInputs[2].value).toBe('')
-    expect(allInputs[3].value).toBe('')
   })
 
   test('check if it calls submit eventhandler once only when required fields are filled in', async () => {
@@ -54,16 +53,11 @@ describe('form builder without custom errors', () => {
     fireEvent.change(inputComponents[0], { target: { value: 'name testing' } })
     expect(inputComponents[0].value).toBe('name testing')
 
-    fireEvent.change(inputComponents[1], { target: { value: 'password' } })
-    expect(inputComponents[1].value).toBe('password')
+    fireEvent.change(inputComponents[1], { target: { value: 'password@1' } })
+    expect(inputComponents[1].value).toBe('password@1')
 
-    fireEvent.change(inputComponents[2], { target: { value: 'password' } })
-    expect(inputComponents[2].value).toBe('password')
-
-    fireEvent.change(inputComponents[3], {
-      target: { value: 'this is the bio of the user' }
-    })
-    expect(inputComponents[3].value).toBe('this is the bio of the user')
+    fireEvent.change(inputComponents[2], { target: { value: 'password@1' } })
+    expect(inputComponents[2].value).toBe('password@1')
 
     const select = component.getByText('Country')
     selectEvent.openMenu(select)

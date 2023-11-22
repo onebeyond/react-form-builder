@@ -1,0 +1,7 @@
+{
+  "format": "group",
+  "interactive": true,
+  "concurrency": 10,
+  "cache": true,
+  "cacheExpiration": 60
+}

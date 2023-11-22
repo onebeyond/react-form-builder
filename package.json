@@ -32,7 +32,8 @@
     "release:minor": "git tag -l | xargs git tag -d && changelog -m && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook  -o ./public"
+    "build-storybook": "build-storybook -o ./public",
+    "ncu": "npx ncu"
   },
   "peerDependencies": {
     "react": "^18.0.6"
@@ -71,6 +72,7 @@
     "gh-pages": "^2.2.0",
     "husky": "^8.0.3",
     "joi": "^17.4.1",
+    "npm-check-updates": "^16.14.11",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.5",
     "prettier": "^2.0.4",

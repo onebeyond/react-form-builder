@@ -53,11 +53,11 @@ describe('form builder without custom errors', () => {
     fireEvent.change(inputComponents[0], { target: { value: 'name testing' } })
     expect(inputComponents[0].value).toBe('name testing')
 
-    fireEvent.change(inputComponents[1], { target: { value: 'password' } })
-    expect(inputComponents[1].value).toBe('password')
+    fireEvent.change(inputComponents[1], { target: { value: 'password@1' } })
+    expect(inputComponents[1].value).toBe('password@1')
 
-    fireEvent.change(inputComponents[2], { target: { value: 'password' } })
-    expect(inputComponents[2].value).toBe('password')
+    fireEvent.change(inputComponents[2], { target: { value: 'password@1' } })
+    expect(inputComponents[2].value).toBe('password@1')
 
     const select = component.getByText('Country')
     selectEvent.openMenu(select)

@@ -292,6 +292,7 @@ const FormBuilder = ({
   }
 
   const onSubmit = async (data) => {
+    if (isLoading) return
     onSubmitForm(await formatData(data))
   }
 
@@ -303,7 +304,8 @@ const FormBuilder = ({
           variant:
             form && form.layout
               ? 'forms.container.' + (form && form.layout)
-              : 'forms.container'
+              : 'forms.container',
+          pointerEvents: isLoading ? 'none' : 'auto'
         }}
         onSubmit={useFormObj.handleSubmit(onSubmit)}
         {...props}
@@ -339,6 +341,7 @@ const FormBuilder = ({
                 <Button
                   sx={styles.fitContent}
                   key={cfa.caption}
+                  disabled={isLoading}
                   isLoading={isLoading}
                   id={cfa.id}
                   caption={cfa.caption}

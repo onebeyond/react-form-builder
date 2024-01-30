@@ -15,6 +15,8 @@ import styles from './styles.js'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-number-input/style.css'
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 const App = () => {
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
@@ -26,22 +28,23 @@ const App = () => {
     setShow(true)
   }
 
-  const onSubmitForm = (data) => {
+  const onSubmitForm = async (data) => {
     if (data.password !== data.confirmpassword) {
       setFormErrors([{ field: 'confirmpassword', type: 'doesNotMatch' }])
     } else {
-      !isLoading &&
-        alert(
-          `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
-            data,
-            null,
-            2
-          )}`
-        )
+      console.log('Submitting the form')
+      // Simulate loading
       setLoading(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
+      await sleep(5000);
+      setLoading(false)
+
+      alert(
+        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+          data,
+          null,
+          2
+        )}`
+      )
     }
   }
 

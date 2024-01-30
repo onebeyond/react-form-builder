@@ -1,5 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React, { useEffect } from 'react'
+import { jsx } from 'theme-ui'
+import { useForm } from 'react-hook-form'
+import { DevTool } from '@hookform/devtools'
+
 import Button from './Fields/Button'
 import Label from './Fields/Label'
 import QuestionCheckbox from './Questions/Checkbox'
@@ -11,9 +16,6 @@ import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
 import QuestionPhone from './Questions/Phone'
 import QuestionStatic from './Questions/Static'
-import React, { useEffect } from 'react'
-import { jsx } from 'theme-ui'
-import { useForm } from 'react-hook-form'
 import QuestionMultipleCheckboxes from './Questions/MultipleCheckboxes'
 import QuestionMarkdown from './Questions/Markdown'
 import QuestionSelectImage from './Questions/SelectImage'
@@ -302,57 +304,61 @@ const FormBuilder = ({
   }
 
   return (
-    <form
-      id={idForm}
-      sx={{
-        variant:
-          form && form.layout
-            ? 'forms.container.' + (form && form.layout)
-            : 'forms.container'
-      }}
-      onSubmit={useFormObj.handleSubmit(onSubmit)}
-      {...props}
-    >
-      {form &&
-        Array.isArray(form.questions) &&
-        form.questions.map((question, i) => {
-          return (
-            <React.Fragment key={i}>
-              {QuestionsMap(question)[question.type] ||
-                QuestionsMap(question).default}
-            </React.Fragment>
-          )
-        })}
-      {form &&
-        form.callForAction &&
-        form.callForAction.map((cfa, key) => {
-          return (
-            <div sx={{ variant: 'forms.submitContainer' }} key={key}>
-              {form.accessibilityError && (
-                <div
-                  className='visuallyhidden'
-                  sx={{
-                    variant: 'text.accessibilityError',
-                    display: Object.keys(errors).length !== 0 ? 'flex' : 'none'
-                  }}
-                  aria-live='assertive'
-                >
-                  {form.accessibilityError}
-                </div>
-              )}
-              <Button
-                sx={styles.fitContent}
-                key={cfa.caption}
-                isLoading={isLoading}
-                id={cfa.id}
-                caption={cfa.caption}
-                type={cfa.type}
-                {...cfa}
-              />
-            </div>
-          )
-        })}
-    </form>
+    <>
+      <form
+        id={idForm}
+        sx={{
+          variant:
+            form && form.layout
+              ? 'forms.container.' + (form && form.layout)
+              : 'forms.container'
+        }}
+        onSubmit={useFormObj.handleSubmit(onSubmit)}
+        {...props}
+      >
+        {form &&
+          Array.isArray(form.questions) &&
+          form.questions.map((question, i) => {
+            return (
+              <React.Fragment key={i}>
+                {QuestionsMap(question)[question.type] ||
+                  QuestionsMap(question).default}
+              </React.Fragment>
+            )
+          })}
+        {form &&
+          form.callForAction &&
+          form.callForAction.map((cfa, key) => {
+            return (
+              <div sx={{ variant: 'forms.submitContainer' }} key={key}>
+                {form.accessibilityError && (
+                  <div
+                    className='visuallyhidden'
+                    sx={{
+                      variant: 'text.accessibilityError',
+                      display:
+                        Object.keys(errors).length !== 0 ? 'flex' : 'none'
+                    }}
+                    aria-live='assertive'
+                  >
+                    {form.accessibilityError}
+                  </div>
+                )}
+                <Button
+                  sx={styles.fitContent}
+                  key={cfa.caption}
+                  isLoading={isLoading}
+                  id={cfa.id}
+                  caption={cfa.caption}
+                  type={cfa.type}
+                  {...cfa}
+                />
+              </div>
+            )
+          })}
+      </form>
+      <DevTool control={useFormObj.control} />
+    </>
   )
 }
 

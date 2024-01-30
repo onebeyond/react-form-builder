@@ -15,7 +15,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "rollup -c -w",
+    "start": "NODE_ENV=development rollup --config rollup.dev-config.js -w",
     "build": "rollup -c",
     "prepare": "run-s build && husky install",
     "test": "npx @guidesmiths/license-checker --failOn AGPL --outputFileName License-report --errorReportFileName License-error | run-s test:unit test:lint test:build",
@@ -43,6 +43,7 @@
     "@babel/preset-react": "^7.23.3",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@hookform/devtools": "^4.3.1",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",

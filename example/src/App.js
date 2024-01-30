@@ -3,7 +3,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React, { useState } from 'react'
-
 import {
   Label,
   Modal,
@@ -11,32 +10,12 @@ import {
 } from 'react-form-builder'
 
 import forms from './forms.json'
+import styles from './styles.js'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-number-input/style.css'
 
 const App = () => {
-  const styles = {
-    container: {
-      padding: '30px 30px',
-    },
-    fullWidth: {
-      gridColumnStart: '1',
-      gridColumnEnd: '3'
-    },
-    selectOption: {
-      background: 'bg',
-      color: 'black'
-    },
-    markDown: {
-      fontFamily: 'regular',
-      width: ['90%', '95%', '95%'],
-      p: {
-        margin: 0
-      }
-    }
-  }
-
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
   const [isLoading, setLoading] = useState(false)

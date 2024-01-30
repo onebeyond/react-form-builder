@@ -3,9 +3,11 @@
 import { Link, jsx } from 'theme-ui'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
-let MarkDownLink = ''
+
+// let MarkDownLink = ''
+
 const Markdown = React.forwardRef(({ modalLabel, ...props }, ref) => {
-  MarkDownLink = ({ href, children }) => {
+  const MarkDownLink = ({ href, children }) => {
     const modalName = href.startsWith('#') && href.toString().substr(1)
     return (
       <Link

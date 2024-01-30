@@ -78,7 +78,7 @@ const Select = ({
 
   const customStyles = {}
 
-  Object.keys(selectStyles).map((property) => {
+  Object.keys(selectStyles).forEach((property) => {
     if (
       theme &&
       theme.forms &&
@@ -118,7 +118,7 @@ const Select = ({
     return () => {
       unregister(name)
     }
-  }, [])
+  }, [unregister, name])
 
   return (
     <Controller

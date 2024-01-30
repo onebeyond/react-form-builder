@@ -49,7 +49,7 @@ const FormBuilder = ({
         useFormObj.setError(error.field, { type: error.type })
       })
     }
-  }, [formErrors])
+  }, [formErrors, useFormObj])
 
   const {
     formState: { errors }

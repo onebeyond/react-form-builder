@@ -1,12 +1,12 @@
 {
-  "name": "@guidesmiths/react-form-builder",
+  "name": "@onebeyond/react-form-builder",
   "version": "3.6.1",
   "description": "React from builder using json schema",
   "author": "Guidesmiths",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guidesmiths/react-form-builder.git"
+    "url": "git+https://github.com/onebeyond/react-form-builder.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",

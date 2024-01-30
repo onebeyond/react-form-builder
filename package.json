@@ -19,6 +19,7 @@
     "build": "rollup -c",
     "prepare": "run-s build && husky install",
     "test": "npx @guidesmiths/license-checker --failOn AGPL --outputFileName License-report --errorReportFileName License-error | run-s test:unit test:lint test:build",
+    "test:ci": "run-s test:unit test:lint test:build",
     "coverage": "npm run test:unit -- --coverage",
     "test:build": "run-s build",
     "test:lint": "eslint src --ext .js,.jsx --config .eslintrc --ignore-path .eslintignore --cache",
@@ -93,7 +94,6 @@
   "dependencies": {
     "debounce-promise": "^3.1.2",
     "install": "^0.13.0",
-    "npm": "^8.16.0",
     "react-datepicker": "^4.23.0",
     "react-hook-form": "^7.48.2",
     "react-markdown": "^5.0.3",

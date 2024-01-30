@@ -9,6 +9,7 @@ const Button = React.forwardRef(
   ({ disabled, caption, isLoading, id, ...props }, ref) => (
     <ButtonUI
       ref={ref}
+      disabled={disabled || isLoading}
       {...props}
       sx={{
         ...styles.default,

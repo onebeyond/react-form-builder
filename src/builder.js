@@ -25,15 +25,7 @@ import QuestionAge from './Questions/Age'
 import QuestionAutocomplete from './Questions/Autocomplete'
 import QuestionImageInput from './Questions/ImageInput'
 
-const styles = {
-  fitContent: {
-    width: 'fit-content'
-  },
-  fullWidth: {
-    gridColumnStart: '1',
-    gridColumnEnd: '3'
-  }
-}
+import styles from './styles.js'
 
 const FormBuilder = ({
   onSubmit: onSubmitForm,

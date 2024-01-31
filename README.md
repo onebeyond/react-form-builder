@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/v/@guidesmiths/react-form-builder.svg?style=flat-square" alt="NPM version" /></a>
   <a href="https://www.npmjs.com/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/dm/@guidesmiths/react-form-builder.svg?style=flat-square" alt="NPM downloads" /></a>
-  <a href="https://github.com/onebeyond/react-form-builder/actions/workflows/publish-plugin.yml" target="_blank"><img src="https://github.com/onebeyond/react-form-builder/actions/workflows/publish-plugin.yml/badge.svg" alt="Publish" /></a>
+  <a href="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml" target="_blank"><img src="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml/badge.svg" alt="Publish" /></a>
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/maintainability"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability" /></a>
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage" /></a>
   <a href="https://socket.dev/npm/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://socket.dev/api/badge/npm/package/@guidesmiths/react-form-builder" alt="socket.dev" /></a>

@@ -31,15 +31,16 @@ jobs:
       - name: 🔐 Harden Runner
         uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
         with:
-          disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            github.com:443
-            registry.npmjs.org:443
-            api.github.com:443
-            nodejs.org:443
-            www.bestpractices.dev:443
-            oss-fuzz-build-logs.storage.googleapis.com:443
+          egress-policy: audit
+          # disable-sudo: true
+          # egress-policy: block
+          # allowed-endpoints: >
+          #   github.com:443
+          #   registry.npmjs.org:443
+          #   api.github.com:443
+          #   nodejs.org:443
+          #   www.bestpractices.dev:443
+          #   oss-fuzz-build-logs.storage.googleapis.com:443
 
       - name: ⚙️ Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1

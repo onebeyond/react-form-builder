@@ -39,6 +39,7 @@ jobs:
             api.github.com:443
             nodejs.org:443
             www.bestpractices.dev:443
+            oss-fuzz-build-logs.storage.googleapis.com:443
 
       - name: ⚙️ Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1

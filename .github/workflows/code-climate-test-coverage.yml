@@ -22,6 +22,7 @@ jobs:
             api.github.com:443
             nodejs.org:443
             codeclimate.com:443
+            d3iz1jjs17r6kg.cloudfront.net:443
 
       - name: ⚙️ Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1

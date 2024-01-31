@@ -1,6 +1,6 @@
 {
   "name": "@onebeyond/react-form-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React from builder using json schema",
   "author": "One Beyond",
   "license": "MIT",
@@ -12,8 +12,8 @@
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "scripts": {
     "start": "NODE_ENV=development rollup --config rollup.dev-config.js -w",

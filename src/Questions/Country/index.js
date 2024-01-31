@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
 import CountryAndRegionsData from './data/countryAndRegion'
 import DeuschCountryData from './data/de'
 import SpanishCountryData from './data/es'
@@ -6,21 +10,12 @@ import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
 const prioritySort = (countries, order) => {
   const countryOrder = []
 
-  order.filter((isoCountryCode) => {
-    return countries.find((country) => {
-      if (
-        isoCountryCode.toString().toLowerCase() === country.cs.toLowerCase()
-      ) {
-        countryOrder.push(country)
-      }
-    })
+  order.forEach((isoCountryCode) => {
+    const found = countries.find((country) => isoCountryCode.toString().toLowerCase() === country.cs.toLowerCase())
+    if (found) countryOrder.push(found)
   })
 
   const origin = countries.filter((item) => !order.includes(item.cs))

@@ -1,52 +1,23 @@
 /* eslint-disable */
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Link } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import React, { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-
 import {
-  Button,
-  Input,
   Label,
-  Checkbox,
-  Radio,
-  Phone,
-  Date,
   Modal,
-  ErrorMessage,
   FormBuilder
 } from 'react-form-builder'
 
 import forms from './forms.json'
-import { useForm } from 'react-hook-form'
+import styles from './styles.js'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-number-input/style.css'
 
-const App = () => {
-  const styles = {
-    container: {
-      padding: '30px 30px',
-    },
-    fullWidth: {
-      gridColumnStart: '1',
-      gridColumnEnd: '3'
-    },
-    selectOption: {
-      background: 'bg',
-      color: 'black'
-    },
-    markDown: {
-      fontFamily: 'regular',
-      width: ['90%', '95%', '95%'],
-      p: {
-        margin: 0
-      }
-    }
-  }
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  const [privacyAllow, setPrivacyAllow] = useState(false)
+const App = () => {
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
   const [isLoading, setLoading] = useState(false)
@@ -56,131 +27,29 @@ const App = () => {
     setModalText(forms.contact.textToShow[name])
     setShow(true)
   }
-  const CustomCheckbox = (question, useForm) => {
-    return (
-      <div sx={{ ...(question.isFullWidth && styles.fullWidth) }}>
-        <Modal
-          title={question.name}
-          onClose={() => setShow(false)}
-          show={show}
-          modalText='this a  modal example *markdown* **text** '
-        />
 
-        <div sx={{}}>
-          <div sx={styles.centerStyle} key={question.name}>
-            <Label sx={styles.centerStyle}>
-              <Checkbox
-                sx={styles.checkboxMinWidth}
-                name={question.name}
-                test='test'
-                {...useForm.register(question.name, question.registerConfig)}
-              />
-              <ReactMarkdown
-                sx={styles.markDown}
-                source={question.label}
-                renderers={{
-                  link: ({ href, children }) => {
-                    return (
-                      <Link
-                        href={
-                          children[0].props.children.includes('privacy')
-                            ? '#'
-                            : '#'
-                        }
-                      >
-                        {children} esto es el children: {children[0]}
-                      </Link>
-                    )
-                  }
-                }}
-              />
-            </Label>
-            {useForm?.errors[question.name] &&
-              useForm?.errors[question.name]?.type === 'required' && (
-                <ErrorMessage
-                  message={
-                    question?.errorMessages && question?.errorMessages?.required
-                  }
-                />
-              )}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  const ModalCheckbox = () => {
-    const [show, setShow] = useState(false)
-
-    return (
-      <React.Fragment>
-        <Checkbox
-          question={forms.question}
-          useForm={{
-            control: () => ({}),
-            formState: { errors: {} },
-            register: () => {}
-          }}
-        />
-      </React.Fragment>
-    )
-  }
-
-  const onSubmitForm = (data) => {
+  const onSubmitForm = async (data) => {
     if (data.password !== data.confirmpassword) {
       setFormErrors([{ field: 'confirmpassword', type: 'doesNotMatch' }])
     } else {
-      !isLoading &&
-        alert(
-          `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
-            data,
-            null,
-            2
-          )}`
-        )
+      console.log('Submitting the form')
+      // Simulate loading
       setLoading(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
+      await sleep(5000);
+      setLoading(false)
+
+      alert(
+        `You have submitted your form correctly Data: ${'\n'} ${JSON.stringify(
+          data,
+          null,
+          2
+        )}`
+      )
     }
   }
 
   return (
     <div sx={styles.container}>
-      {/* <Button caption='Button example' />
-      <Input />
-      <Phone
-        defaultCountry='GB'
-        style={{}}
-        register={register}
-        setValue={setValue}
-        setError={setError}
-        clearErrors={clearErrors}
-        placeholder='Phone'
-      />
-      <Date
-        register={register}
-        setValue={setValue}
-        name='Date'
-        registerConfig={{}}
-        placeholder=''
-        dateFormat='dd-MM-yyyy'
-        isMobile={false}
-        isBirthDate={false}
-      />
-      <Label>An important title field here *</Label>
-      <Label>
-        <Checkbox />
-        Select an option
-      </Label>
-      <Label>
-        <Radio name='dark-mode' value='true' defaultChecked />
-        Dark Mode
-      </Label>
-      <Label>
-        <Radio name='dark-mode' value='false' />
-        Light Mode
-      </Label> */}
       <Label>Example of form builder</Label>
       <Modal
         title='test'

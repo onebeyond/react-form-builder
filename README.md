@@ -944,6 +944,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt="Ivan Esteban"/><br /><sub><b>Ivan Esteban</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/issues?q=author%3ADonivanes" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/inigomarquinez"><img src="https://avatars.githubusercontent.com/u/25435858?v=4?s=100" width="100px;" alt="Íñigo Marquínez Prado"/><br /><sub><b>Íñigo Marquínez Prado</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=inigomarquinez" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/habondavid"><img src="https://avatars.githubusercontent.com/u/54550191?v=4?s=100" width="100px;" alt="David Habon"/><br /><sub><b>David Habon</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/issues?q=author%3Ahabondavid" title="Bug reports">🐛</a> <a href="https://github.com/onebeyond/react-form-builder/pulls?q=is%3Apr+reviewed-by%3Ahabondavid" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
   </tbody>
   <tfoot>
     <tr>

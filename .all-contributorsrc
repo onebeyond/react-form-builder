@@ -77,6 +77,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "habondavid",
+      "name": "David Habon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54550191?v=4",
+      "profile": "https://github.com/habondavid",
+      "contributions": [
+        "bug",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,

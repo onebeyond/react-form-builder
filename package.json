@@ -1,6 +1,6 @@
 {
   "name": "@onebeyond/react-form-builder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React from builder using json schema",
   "author": "One Beyond",
   "license": "MIT",
@@ -12,14 +12,14 @@
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "scripts": {
     "start": "NODE_ENV=development rollup --config rollup.dev-config.js -w",
     "build": "rollup -c",
     "prepare": "run-s build && husky install",
-    "test": "npx @guidesmiths/license-checker --failOn AGPL --outputFileName License-report --errorReportFileName License-error | run-s test:unit test:lint test:build",
+    "test": "npx @onebeyond/license-checker --failOn AGPL-1.0-or-later --disableReport --errorReportFileName license-error | run-s test:unit test:lint test:build",
     "test:ci": "run-s test:unit test:lint test:build",
     "coverage": "npm run test:unit -- --coverage",
     "test:build": "run-s build",

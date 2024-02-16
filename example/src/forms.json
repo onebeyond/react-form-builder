@@ -264,12 +264,65 @@
               "value": "no"
             }
           ]
-        }
+        },
+        "dependentQuestions": [
+          {
+            "condition": "yes",
+            "question": {
+              "name": "checkbox_with_link",
+              "type": "checkbox",
+              "label": "External [link](https://www.google.com)",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              }
+            }
+          }
+        ]
       },
       {
         "name": "checkbox_with_link",
         "type": "checkbox",
         "label": "External [link](https://www.google.com)",
+        "errorMessages": {
+          "required": "This field is required"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "radio_with_dependent_question",
+        "type": "radio",
+        "label": "Radio with dependent question",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "yes"
+          },
+          {
+            "label": "No",
+            "value": "no"
+          }
+        ],
+        "dependentQuestions": [
+          {
+            "condition": "yes",
+            "question": {
+              "name": "checkbox_with_link",
+              "type": "checkbox",
+              "label": "External [link](https://www.google.com)",
+              "errorMessages": {
+                "required": "This field is required"
+              },
+              "registerConfig": {
+                "required": true
+              }
+            }
+          }
+        ],
         "errorMessages": {
           "required": "This field is required"
         },

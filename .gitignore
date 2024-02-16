@@ -29,3 +29,6 @@ license-report.md
 
 .idea
 .eslintcache
+
+# tests coverage
+coverage

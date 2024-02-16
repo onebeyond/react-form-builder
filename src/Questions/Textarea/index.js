@@ -31,23 +31,30 @@ const QuestionTextarea = ({ question, useForm }) => {
       question.registerConfig.maximumLen,
     validate: {
       minWordCount: (v) => {
-        if (question.registerConfig.countType === 'word')
+        if (
+          question.registerConfig.countType === 'word' &&
+          question.registerConfig.minimumLen
+        ) {
           return (
             v.trim().split(/[\s,.\n]+/).length >=
-              question.registerConfig.minimumLen ||
-            question.errorMessages.minimumLen
+            question.registerConfig.minimumLen
           )
+        } else return true
       },
       maxWordCount: (v) => {
-        if (question.registerConfig.countType === 'word')
+        if (
+          question.registerConfig.countType === 'word' &&
+          question.registerConfig.maximumLen
+        ) {
           return (
             v.trim().split(/[\s,.\n]+/).length <=
-              question.registerConfig.maximumLen ||
-            question.errorMessages.maximumLen
+            question.registerConfig.maximumLen
           )
+        } else return true
       }
     }
   }
+
   return (
     <div
       sx={{

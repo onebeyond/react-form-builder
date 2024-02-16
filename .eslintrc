@@ -1,11 +1,10 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": [
     "standard",
     "standard-react",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "env": {
     "node": true,
@@ -21,7 +20,7 @@
   },
   "settings": {
     "react": {
-      "version": "16"
+      "version": "18"
     }
   },
   "rules": {

@@ -27,12 +27,13 @@ const QuestionAutocomplete = ({ question, useForm }) => {
         question.config.params.map((param) => {
           if (param.type === 'fixed') return [param.key, param.value]
           else if (param.type === 'input') return [param.key, inputValue]
+          return []
         })
       )
     const response = await fetch(url, {
       headers: question.config.headers
     })
-    return await response.json()
+    return response.json()
   }, 350)
 
   return (

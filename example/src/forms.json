@@ -131,7 +131,10 @@
           "minimumLen": 1,
           "maximumLen": 10
         },
-        "defaultCheckedValues": ["product_net_capacity", "ice_maker"],
+        "defaultCheckedValues": [
+          "product_net_capacity",
+          "ice_maker"
+        ],
         "config": {
           "options": [
             {
@@ -187,7 +190,7 @@
         }
       },
       {
-        "name": "first_name",
+        "name": "age",
         "type": "age",
         "label": "CSM",
         "placeholder": "Select an age",
@@ -234,6 +237,23 @@
               "value": "prefer_not_to_say"
             }
           ]
+        }
+      },
+      {
+        "name": "bio",
+        "type": "textarea",
+        "label": "Your bio",
+        "placeholder": "Your bio",
+        "errorMessages": {
+          "required": "This field is required",
+          "minimumLen": "Minimum length is 5 words",
+          "maximumLen": "Maximum length is 100 words"
+        },
+        "registerConfig": {
+          "required": true,
+          "countType": "word",
+          "minimumLen": 5,
+          "maximumLen": 100
         }
       },
       {

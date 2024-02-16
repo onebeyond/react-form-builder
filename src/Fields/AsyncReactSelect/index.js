@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 
-import React, { useId } from 'react'
+import React from 'react'
+import { v4 as uuid } from 'uuid'
 import { useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
 import AsyncSelect from 'react-select/async'
@@ -44,7 +45,7 @@ const Select = ({
 
   const customStyles = {}
 
-  Object.keys(selectStyles).map((property) => {
+  Object.keys(selectStyles).forEach((property) => {
     if (
       theme &&
       theme.forms &&
@@ -84,7 +85,7 @@ const Select = ({
     return () => {
       unregister(name)
     }
-  }, [])
+  }, [name, unregister])
 
   return (
     <Controller
@@ -94,7 +95,7 @@ const Select = ({
         <AsyncSelect
           aria-label={label}
           styles={customStyles}
-          id={useId()}
+          id={uuid()}
           onChange={onChange}
           {...props}
         />

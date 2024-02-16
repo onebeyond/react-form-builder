@@ -2,11 +2,15 @@
 
 > React form builder using json schema
 
-[![NPM](https://img.shields.io/npm/v/react-form-builder.svg)](https://www.npmjs.com/package/@guidesmiths/react-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Maintainability](https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability)](https://codeclimate.com/github/onebeyond/react-form-builder/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage)](https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage)
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<p align="center">
+  <a href="https://www.npmjs.com/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/v/@guidesmiths/react-form-builder.svg?style=flat-square" alt="NPM version" /></a>
+  <a href="https://www.npmjs.com/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/dm/@guidesmiths/react-form-builder.svg?style=flat-square" alt="NPM downloads" /></a>
+  <a href="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml" target="_blank"><img src="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml/badge.svg" alt="Publish" /></a>
+  <a href="https://codeclimate.com/github/onebeyond/react-form-builder/maintainability"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability" /></a>
+  <a href="https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage" /></a>
+  <a href="https://socket.dev/npm/package/@guidesmiths/react-form-builder" target="_blank"><img src="https://socket.dev/api/badge/npm/package/@guidesmiths/react-form-builder" alt="socket.dev" /></a>
+  <a href="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" target="_blank"><img src="https://img.shields.io/github/all-contributors/onebeyond/react-form-builder?color=ee8449&style=flat-square" alt="all-contributors" /></a>
+</p>
 
 ## Install
 
@@ -922,7 +926,6 @@ See `localhost:3000`
 
 Any change on the root src library will be reflected on the usage in the example folder.
 
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -931,26 +934,29 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
- <td align="center"><a href="https://github.com/pablo-albaladejo"><img src="https://avatars.githubusercontent.com/u/7994467?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pablo Albaladejo</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=pablo-albaladejo" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=pablo-albaladejo"title="Mentoring">🧑‍🏫</a>
-
-<td align="center"><a href="https://github.com/ismaelocaramelo"><img src="https://avatars.githubusercontent.com/u/21059277?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismael Bakkali</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ismaelocaramelo" title="Code">💻</a>
-<a href="https://github.com/guidesmiths/react-form-builder/issues?q=-reviewed-by%3Aismaelocaramelo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/ismaelocaramelo" title="Bug">🐛 </a></td>
-</td>
-
-<td align="center"><a href="https://github.com/FranciscoValdesoiro"><img src="https://avatars.githubusercontent.com/u/45309269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francisco Valdesoiro</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=FranciscoValdesoiro" title="storyBooks">📓</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/FranciscoValdesoiro" title="Bug">🐛 </a></td>
-
-<td align="center"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/79102959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adrián Rodríguez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc"
-title="Documentation">📖</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=ardguezsoc"
-title="Test">⚠️</a> </td>
-
-<td align="center"><a href="https://github.com/sofisdev"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sofía Sánchez</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/commits?author=sofisdev"
-title="Test">⚠️</a> </td>
-
-<td align="center"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iván Esteban</b></sub></a><br /><a href="https://github.com/guidesmiths/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/guidesmiths/react-form-builder/issues/created_by/Donivanes" title="Bug">🐛 </a></td>
-
-
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/pabloalbaladejomestre"><img src="https://avatars.githubusercontent.com/u/7994467?v=4?s=100" width="100px;" alt="Pablo Albaladejo"/><br /><sub><b>Pablo Albaladejo</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=pablo-albaladejo" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ismaelocaramelo.github.io/workwithme/"><img src="https://avatars.githubusercontent.com/u/21059277?v=4?s=100" width="100px;" alt="Ismael Bakkali"/><br /><sub><b>Ismael Bakkali</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=ismaelocaramelo" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/pulls?q=is%3Apr+reviewed-by%3Aismaelocaramelo" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FranciscoValdesoiro"><img src="https://avatars.githubusercontent.com/u/45309269?v=4?s=100" width="100px;" alt="Francisco Valdesoiro Gil"/><br /><sub><b>Francisco Valdesoiro Gil</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=FranciscoValdesoiro" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ars1096"><img src="https://avatars.githubusercontent.com/u/22389289?v=4?s=100" width="100px;" alt="ars1096"/><br /><sub><b>ars1096</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Documentation">📖</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=ars1096" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ssurbano.com/"><img src="https://avatars.githubusercontent.com/u/63403532?v=4?s=100" width="100px;" alt="Sofia Sanchez Urbano"/><br /><sub><b>Sofia Sanchez Urbano</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=sofisdev" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=sofisdev" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Donivanes"><img src="https://avatars.githubusercontent.com/u/22077321?v=4?s=100" width="100px;" alt="Ivan Esteban"/><br /><sub><b>Ivan Esteban</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=Donivanes" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/issues?q=author%3ADonivanes" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/inigomarquinez"><img src="https://avatars.githubusercontent.com/u/25435858?v=4?s=100" width="100px;" alt="Íñigo Marquínez Prado"/><br /><sub><b>Íñigo Marquínez Prado</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=inigomarquinez" title="Documentation">📖</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/habondavid"><img src="https://avatars.githubusercontent.com/u/54550191?v=4?s=100" width="100px;" alt="David Habon"/><br /><sub><b>David Habon</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/issues?q=author%3Ahabondavid" title="Bug reports">🐛</a> <a href="https://github.com/onebeyond/react-form-builder/pulls?q=is%3Apr+reviewed-by%3Ahabondavid" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" size="13px" colspan="7">
+        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
+          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
+        </img>
+      </td>
+    </tr>
+  </tfoot>
 </table>
 
 <!-- markdownlint-restore -->
@@ -959,7 +965,3 @@ title="Test">⚠️</a> </td>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## License
-
-MIT © [Guidesmiths](https://github.com/Guidesmiths)

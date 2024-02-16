@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 
-import React, { useId } from 'react'
+import React from 'react'
+import { v4 as uuid } from 'uuid'
 import { Image, useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
 import ReactSelect, { components } from 'react-select'
@@ -77,7 +78,7 @@ const Select = ({
 
   const customStyles = {}
 
-  Object.keys(selectStyles).map((property) => {
+  Object.keys(selectStyles).forEach((property) => {
     if (
       theme &&
       theme.forms &&
@@ -117,7 +118,7 @@ const Select = ({
     return () => {
       unregister(name)
     }
-  }, [])
+  }, [unregister, name])
 
   return (
     <Controller
@@ -125,7 +126,7 @@ const Select = ({
       render={({ field: { onChange } }) => {
         return (
           <ReactSelect
-            id={useId()}
+            id={uuid()}
             aria-label={label}
             className={haserrors ? 'error-select' : ''}
             styles={customStyles}

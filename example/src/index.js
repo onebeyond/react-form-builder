@@ -1,10 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { ThemeProvider, merge } from 'theme-ui'
+import { jsx, ThemeProvider, merge } from 'theme-ui'
 import { ExampleTheme } from 'react-form-builder'
 
 const theme = {

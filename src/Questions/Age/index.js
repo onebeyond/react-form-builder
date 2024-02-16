@@ -59,6 +59,7 @@ const QuestionAge = ({ question, useForm, language, ...props }) => {
         registerConfig={question.registerConfig}
         placeholder={question.placeholder}
         label={question.label}
+        data-haserrors={!!errors[question.name]}
         {...props}
       >
         {renderAgeOptions(ageData)}

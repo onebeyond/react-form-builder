@@ -34,7 +34,7 @@ function CustomDateSelect({
     dayFormat
   })
 
-  const range = (first, last) => {
+  const range = React.useCallback((first, last) => {
     if (first > last) return range(last, first).reverse()
 
     const arr = []
@@ -42,7 +42,8 @@ function CustomDateSelect({
       arr.push(i)
     }
     return arr
-  }
+  }, [])
+
   const selectedYear = new Date(dateSelect.dateValue).getFullYear()
   const selectedMonth = new Date(dateSelect.dateValue).getMonth()
 
@@ -54,7 +55,7 @@ function CustomDateSelect({
         : day.toString()
       return { label, value: day.toString() }
     })
-  }, [locale, dayFormat, selectedMonth])
+  }, [locale, dayFormat, selectedMonth, range, selectedYear])
 
   return (
     <>
@@ -126,7 +127,7 @@ const DatePicker = ({
 
   React.useEffect(() => {
     setValue(name, convertLocalToUTCDate(selectedDate))
-  }, [selectedDate])
+  }, [selectedDate, name, setValue])
 
   const isOver18 = (date) => differenceInYears(new Date(), date) >= minAge
 

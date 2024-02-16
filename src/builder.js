@@ -161,11 +161,17 @@ const FormBuilder = ({
         <QuestionStatic useForm={useFormObj} question={question} form={form} />
       ),
       radio: (
-        <QuestionRadio
-          useForm={useFormObj}
-          question={question}
-          onLinkOpen={onLinkOpen}
-        />
+        <>
+          <QuestionRadio
+            useForm={useFormObj}
+            question={question}
+            onLinkOpen={onLinkOpen}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
       ),
       date: (
         <QuestionDate

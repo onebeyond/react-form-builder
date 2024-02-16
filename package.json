@@ -1,6 +1,6 @@
 {
   "name": "@onebeyond/react-form-builder",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React from builder using json schema",
   "author": "One Beyond",
   "license": "MIT",

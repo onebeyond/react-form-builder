@@ -87,6 +87,7 @@ const QuestionCountry = ({
       </option>
     ))
   }
+
   const options = question.region
     ? getRegionOptions(watch('Country').label)
     : getCountriesOptions(question.placeholder, countryAndRegions)

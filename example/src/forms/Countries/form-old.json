@@ -1,0 +1,27 @@
+{
+  "name": "Form with old Country question format",
+  "title": "Form with old Country question format",
+  "questions": [
+    {
+      "name": "Country",
+      "placeholder": "Select your country",
+      "priorityOptions": [
+        "GB"
+      ],
+      "type": "country",
+      "label": "Current country question",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    }
+  ],
+  "callForAction": [
+    {
+      "caption": "Enter",
+      "type": "submit"
+    }
+  ]
+}

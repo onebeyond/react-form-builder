@@ -96,7 +96,9 @@
     "dist"
   ],
   "dependencies": {
+    "countries-list": "^3.0.6",
     "debounce-promise": "^3.1.2",
+    "i18n-iso-countries": "^7.10.0",
     "install": "^0.13.0",
     "react-datepicker": "^4.23.0",
     "react-hook-form": "^7.50.1",

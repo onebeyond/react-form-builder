@@ -3,7 +3,7 @@
   "title": "Form with old Country question format",
   "questions": [
     {
-      "name": "Country",
+      "name": "country",
       "placeholder": "Select your country",
       "priorityOptions": [
         "GB"

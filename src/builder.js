@@ -11,6 +11,7 @@ import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
+import QuestionCountryNew from './Questions/CountryNew'
 import QuestionInput from './Questions/Input'
 import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
@@ -117,7 +118,23 @@ const FormBuilder = ({
             )}
         </>
       ),
-      county: <QuestionCounty useForm={useFormObj} question={question} />,
+      country_new: (
+        <>
+          <QuestionCountryNew
+            useForm={useFormObj}
+            question={question}
+            countryAndRegionsData={countryAndRegionsData}
+            language={language}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
+      ),
+      county: (
+        <QuestionCounty useForm={useFormObj} question={question} />
+      ),
       gender: (
         <>
           <QuestionGender

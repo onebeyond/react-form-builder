@@ -3,12 +3,12 @@
   "title": "Form with new Country question format",
   "questions": [
     {
-      "name": "Country",
+      "name": "country",
       "placeholder": "Select your country",
       "priorityOptions": [
         "GB"
       ],
-      "type": "country",
+      "type": "country_new",
       "label": "Current country question",
       "errorMessages": {
         "required": "This field is required"

@@ -24,6 +24,7 @@ import QuestionGender from './Questions/Genre'
 import QuestionAge from './Questions/Age'
 import QuestionAutocomplete from './Questions/Autocomplete'
 import QuestionImageInput from './Questions/ImageInput'
+import QuestionRecaptcha from './Questions/Recaptcha'
 
 import styles from './styles.js'
 
@@ -44,22 +45,7 @@ const FormBuilder = ({
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
   const [formDataValues, setFormDataValues] = React.useState({})
   const hasRecaptcha = form.questions.some(question => question.type === 'recaptcha')
-
-  const RECAPTCHA = {
-    KEY: 'random',
-    SECRET: 'random',
-  }
-
   const recaptchaRef = React.createRef(null)
-
-  const onReCAPTCHAChange = async (captchaCode) => {
-    if (!captchaCode) {
-      return
-    }
-
-    recaptchaRef.current.reset()
-    onSubmitForm(formDataValues)
-  }
 
   useEffect(() => {
     if (formErrors && formErrors.length > 0) {
@@ -231,6 +217,13 @@ const FormBuilder = ({
           form={form}
           currentPath={currentPath}
           onLinkOpen={onLinkOpen}
+        />
+      ),
+      recaptcha: (
+        <QuestionRecaptcha
+          recaptchaRef={recaptchaRef}
+          formDataValues={formDataValues}
+          onSubmitForm={onSubmitForm}
         />
       )
     }

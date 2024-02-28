@@ -1,6 +1,6 @@
 {
-  "name": "Form with new Country question format",
-  "title": "Form with new Country question format",
+  "name": "Form with Country v2 question format",
+  "title": "Form with Country v2 question format",
   "questions": [
     {
       "name": "country_all",
@@ -18,7 +18,7 @@
       "name": "country_all",
       "placeholder": "Select your country",
       "type": "country_v2",
-      "label": "List of original countries with search option",
+      "label": "List of original countries with flags",
       "errorMessages": {
         "required": "This field is required"
       },
@@ -26,6 +26,22 @@
         "required": true
       },
       "config": {
+        "flag": true
+      }
+    },
+    {
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with flags and search option",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "flag": true,
         "search": true
       }
     },

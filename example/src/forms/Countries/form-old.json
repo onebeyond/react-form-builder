@@ -1,6 +1,6 @@
 {
-  "name": "Form with old Country question format",
-  "title": "Form with old Country question format",
+  "name": "Form with Country question format",
+  "title": "Form with Country question format",
   "questions": [
     {
       "name": "country_all",

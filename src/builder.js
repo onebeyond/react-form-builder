@@ -42,7 +42,7 @@ const FormBuilder = ({
   formErrors = [],
   ...props
 }) => {
-  const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+  const useFormObj = useForm()
 
   useEffect(() => {
     if (formErrors && formErrors.length > 0) {

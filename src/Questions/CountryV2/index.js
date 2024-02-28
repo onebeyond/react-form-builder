@@ -1,17 +1,61 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { getCountryDataList } from 'countries-list'
+import { getCountryDataList, getEmojiFlag } from 'countries-list'
 import countriesTools from 'i18n-iso-countries'
 
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
+import { useState } from 'react'
 
-// TODO: import all languages
 countriesTools.registerLocale(require('i18n-iso-countries/langs/en.json'))
-countriesTools.registerLocale(require('i18n-iso-countries/langs/es.json'))
-countriesTools.registerLocale(require('i18n-iso-countries/langs/fr.json'))
+
+const buildCountryOptions = (config, language) => {
+  const priorityOptions = config?.priorityOptions || []
+  const whitelist = config?.whitelist || []
+  const blacklist = config?.blacklist || []
+  const flag = config?.flag || false
+
+  let finalListOfCountries = getCountryDataList()
+
+  // whitelist and blacklist are mutually exclusive
+  if (whitelist.length > 0) {
+    finalListOfCountries = finalListOfCountries.filter((country) => whitelist.includes(country.iso2))
+  } else if (blacklist.length > 0) {
+    finalListOfCountries = finalListOfCountries.filter((country) => !blacklist.includes(country.iso2))
+  }
+
+  // translate the country names and sort them by translated name
+  finalListOfCountries = finalListOfCountries.map((country) => ({
+    value: country.iso2,
+    label: countriesTools.getName(country.iso2, language) || country.name
+  })).sort((a, b) => a.label.localeCompare(b.label))
+
+  // sort the countries by priority
+  if (priorityOptions.length > 0) {
+    priorityOptions.toReversed().forEach((isoCountryCode) => {
+      const foundIndex = finalListOfCountries.findIndex((country) => country.value.toLowerCase() === isoCountryCode.toLowerCase())
+      if (foundIndex !== -1) {
+        const foundCountry = finalListOfCountries[foundIndex]
+        finalListOfCountries.splice(foundIndex, 1);
+        finalListOfCountries.unshift(foundCountry)
+      }
+    })
+  }
+
+  if (flag) {
+    finalListOfCountries = finalListOfCountries.map((country) => {
+      const emoji = getEmojiFlag(country.value)
+      return {
+        ...country,
+        label: emoji + ' ' + country.label
+      }
+    })
+  }
+
+  return finalListOfCountries
+}
 
 const QuestionCountryV2 = ({
   component,
@@ -21,6 +65,15 @@ const QuestionCountryV2 = ({
   language,
   ...props
 }) => {
+  useState(() => {
+    try {
+      countriesTools.registerLocale(require(`i18n-iso-countries/langs/${language}.json`))
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error('@onebeyond/react-form-builder: language not supported for country names. Using English.')
+    }
+  }, [language])
+
   const {
     formState: { errors },
     trigger,
@@ -28,41 +81,6 @@ const QuestionCountryV2 = ({
     defaultValue,
     unregister
   } = useForm
-
-  const buildCountryOptions = (config) => {
-    const priorityOptions = config?.priorityOptions || []
-    const whitelist = config?.whitelist || []
-    const blacklist = config?.blacklist || []
-
-    let finalListOfCountries = getCountryDataList()
-
-    // whitelist and blacklist are mutually exclusive
-    if (whitelist.length > 0) {
-      finalListOfCountries = finalListOfCountries.filter((country) => whitelist.includes(country.iso2))
-    } else if (blacklist.length > 0) {
-      finalListOfCountries = finalListOfCountries.filter((country) => !blacklist.includes(country.iso2))
-    }
-
-    // translate the country names and sort them by translated name
-    finalListOfCountries = finalListOfCountries.map((country) => ({
-      value: country.iso2,
-      label: countriesTools.getName(country.iso2, language) || country.name
-    })).sort((a, b) => a.label.localeCompare(b.label))
-
-    // sort the countries by priority
-    if (priorityOptions.length > 0) {
-      priorityOptions.toReversed().forEach((isoCountryCode) => {
-        const foundIndex = finalListOfCountries.findIndex((country) => country.value.toLowerCase() === isoCountryCode.toLowerCase())
-        if (foundIndex !== -1) {
-          const foundCountry = finalListOfCountries[foundIndex]
-          finalListOfCountries.splice(foundIndex, 1);
-          finalListOfCountries.unshift(foundCountry)
-        }
-      })
-    }
-
-    return finalListOfCountries
-  }
 
   return (
     <div
@@ -86,7 +104,7 @@ const QuestionCountryV2 = ({
         id={question.name}
         key={question.name}
         name={question.name}
-        options={buildCountryOptions(question.config || {})}
+        options={buildCountryOptions(question.config || {}, language || 'en')}
         isSearchable={question.config?.search === true}
         registerConfig={question.registerConfig}
         placeholder={question.placeholder}

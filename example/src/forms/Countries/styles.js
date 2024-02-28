@@ -1,9 +1,9 @@
 export default {
   container: {
-    padding: '30px 30px',
+    padding: '10px 10px',
     display: 'flex',
   },
   formContainer: {
-    padding: '30px 30px',
+    padding: '10px 10px',
   }
 }

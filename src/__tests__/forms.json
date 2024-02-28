@@ -192,7 +192,8 @@
       },
       {
         "name": "recaptcha",
-        "type": "recaptcha"
+        "type": "recaptcha",
+        "recaptchaKey": "random"
       }
     ],
     "textToShow": {

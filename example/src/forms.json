@@ -349,10 +349,6 @@
         "registerConfig": {
           "required": true
         }
-      },
-      {
-        "name": "recaptcha",
-        "type": "recaptcha"
       }
     ],
     "callForAction": [

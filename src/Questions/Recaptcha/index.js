@@ -4,12 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-const QuestionRecaptcha = ({ recaptchaRef, formDataValues, onSubmitForm }) => {
-  const RECAPTCHA = {
-    KEY: 'random',
-    SECRET: 'random',
-  }
-
+const QuestionRecaptcha = ({ recaptchaRef, formDataValues, onSubmitForm, question }) => {
   const onReCAPTCHAChange = async (captchaCode) => {
     if (!captchaCode) {
       return
@@ -23,7 +18,7 @@ const QuestionRecaptcha = ({ recaptchaRef, formDataValues, onSubmitForm }) => {
     <ReCAPTCHA
       ref={recaptchaRef}
       size="invisible"
-      sitekey={RECAPTCHA.KEY}
+      sitekey={question.recaptchaKey}
       onChange={onReCAPTCHAChange}
       data-testid="recaptcha-test"
     />

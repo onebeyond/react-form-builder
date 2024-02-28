@@ -7,6 +7,11 @@ import QuestionRecaptcha from '..'
 const formDataValues = {}
 const recaptchaRef = React.createRef(null)
 const onSubmitForm = () => {}
+const question = {
+  name: 'recaptcha',
+  type: 'recaptcha',
+  recaptchaKey: 'random'
+}
 
 test('renders a reCAPTCHA', () => {
   const { getByTestId } = render(
@@ -14,6 +19,7 @@ test('renders a reCAPTCHA', () => {
       recaptchaRef={recaptchaRef}
       formDataValues={formDataValues}
       onSubmitForm={onSubmitForm}
+      question={question}
     />
   )
 

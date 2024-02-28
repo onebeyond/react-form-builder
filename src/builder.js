@@ -224,6 +224,7 @@ const FormBuilder = ({
           recaptchaRef={recaptchaRef}
           formDataValues={formDataValues}
           onSubmitForm={onSubmitForm}
+          question={question}
         />
       )
     }

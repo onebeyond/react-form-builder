@@ -351,16 +351,8 @@
         }
       },
       {
-        "name": "recaptcha_question",
-        "type": "recaptcha",
-        "label": "Recaptcha",
-        "placeholder": "Recaptcha",
-        "errorMessages": {
-          "required": "This field is required"
-        },
-        "registerConfig": {
-          "required": true
-        }
+        "name": "recaptcha",
+        "type": "recaptcha"
       }
     ],
     "callForAction": [

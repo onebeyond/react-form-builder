@@ -158,5 +158,53 @@
       }
     ],
     "id": "4HHq4GwrEE2bDL9YJUbUyi"
+  },
+  "recaptcha": {
+    "name": "Survey Form",
+    "title": "Survey Form",
+    "layout": "survey",
+    "caption": "Survey",
+    "subCaption": "Want 5 more chances to win? While you are here we would love to know more about you. Answer these quick questions and get 5 more chances to win!",
+    "enabled": true,
+    "questions": [
+      {
+        "name": "inputName",
+        "type": "input",
+        "label": "input label",
+        "placeholder": "input placeholder",
+        "icon": {
+          "name": "question",
+          "fill": "red"
+        },
+        "tooltip": {
+          "text": "tooltip text example",
+          "config": {
+            "backgroundColor": "green"
+          }
+        },
+        "errorMessages": {
+          "required": "This field is required",
+          "pattern": "This is not the right pattern"
+        },
+        "registerConfig": {
+          "required": true
+        }
+      },
+      {
+        "name": "recaptcha",
+        "type": "recaptcha"
+      }
+    ],
+    "textToShow": {
+      "privacy": "Texto sobre la privacidad",
+      "T&C": "Los términos y condiciones"
+    },
+    "callForAction": [
+      {
+        "caption": "Submit",
+        "type": "submit"
+      }
+    ],
+    "id": "4HHq4GwrEE2bDL9YJUbUyi"
   }
 }

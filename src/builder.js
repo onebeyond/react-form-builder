@@ -43,6 +43,8 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+  const [formDataValues, setFormDataValues] = React.useState({})
+  const hasRecaptcha = form.questions.some(question => question.type === 'recaptcha')
 
   const RECAPTCHA = {
     KEY: 'random',
@@ -57,7 +59,7 @@ const FormBuilder = ({
     }
 
     recaptchaRef.current.reset()
-    // onSubmitForm() // TODO: fix this call to pass the formatted data
+    onSubmitForm(formDataValues)
   }
 
   useEffect(() => {
@@ -324,10 +326,13 @@ const FormBuilder = ({
 
   const onSubmit = async (data) => {
     if (isLoading) return
-    // Execute the reCAPTCHA when the form is submitted
-    recaptchaRef.current.execute()
-    // TODO: put a conditional here
-    onSubmitForm(await formatData(data))
+    if (hasRecaptcha) {
+      recaptchaRef.current.execute()
+      setFormDataValues(await formatData(data))
+
+    } else {
+      onSubmitForm(await formatData(data))
+    }
   }
 
   return (

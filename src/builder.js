@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import React, { useEffect } from 'react'
 import { jsx } from 'theme-ui'
+import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
 
@@ -42,6 +43,22 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+
+  const RECAPTCHA = {
+    KEY: '6LfwSlQlAAAAAGUXT1z5MAjtFF97z4JRBej6W5fl',
+    SECRET: '6LfwSlQlAAAAAFQtRssJ0WucNxH4VmZdi49Dd-eq',
+  }
+
+  const recaptchaRef = React.createRef(null)
+
+  const onReCAPTCHAChange = async (captchaCode) => {
+    if (!captchaCode) {
+      return
+    }
+
+    recaptchaRef.current.reset()
+    // onSubmitForm() // TODO: fix this call to pass the formatted data
+  }
 
   useEffect(() => {
     if (formErrors && formErrors.length > 0) {
@@ -214,6 +231,14 @@ const FormBuilder = ({
           currentPath={currentPath}
           onLinkOpen={onLinkOpen}
         />
+      ),
+      recaptcha: (
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size="invisible"
+          sitekey={RECAPTCHA.KEY}
+          onChange={onReCAPTCHAChange}
+        />
       )
     }
   }
@@ -299,6 +324,8 @@ const FormBuilder = ({
 
   const onSubmit = async (data) => {
     if (isLoading) return
+    // Execute the reCAPTCHA when the form is submitted
+    recaptchaRef.current.execute()
     onSubmitForm(await formatData(data))
   }
 

@@ -3,13 +3,25 @@
   "title": "Form with old Country question format",
   "questions": [
     {
-      "name": "country",
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country",
+      "label": "List of original countries",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "name": "country_all_priority",
       "placeholder": "Select your country",
       "priorityOptions": [
         "GB"
       ],
       "type": "country",
-      "label": "Current country question",
+      "label": "List of original countries with priority",
       "errorMessages": {
         "required": "This field is required"
       },

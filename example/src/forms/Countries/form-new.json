@@ -3,18 +3,94 @@
   "title": "Form with new Country question format",
   "questions": [
     {
-      "name": "country",
+      "name": "country_all",
       "placeholder": "Select your country",
-      "priorityOptions": [
-        "GB"
-      ],
-      "type": "country_new",
-      "label": "Current country question",
+      "type": "country_v2",
+      "label": "List of original countries",
       "errorMessages": {
         "required": "This field is required"
       },
       "registerConfig": {
         "required": true
+      }
+    },
+    {
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with search option",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "search": true
+      }
+    },
+    {
+      "name": "country_all_priority",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with priority",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "priorityOptions": [
+          "ES",
+          "PT"
+        ]
+      }
+    },
+    {
+      "name": "country_whitelist",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of whitelisted countries only",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "whitelist": [
+          "DE",
+          "ES",
+          "FR",
+          "IT",
+          "PT"
+        ]
+      }
+    },
+    {
+      "name": "country_whitelist_priority",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of whitelisted countries with priority",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "whitelist": [
+          "DE",
+          "ES",
+          "FR",
+          "IT",
+          "PT"
+        ],
+        "priorityOptions": [
+          "ES",
+          "PT"
+        ]
       }
     }
   ],

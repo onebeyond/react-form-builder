@@ -11,7 +11,7 @@ import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
-import QuestionCountryNew from './Questions/CountryNew'
+import QuestionCountryV2 from './Questions/CountryV2/index.js'
 import QuestionInput from './Questions/Input'
 import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
@@ -118,9 +118,9 @@ const FormBuilder = ({
             )}
         </>
       ),
-      country_new: (
+      country_v2: (
         <>
-          <QuestionCountryNew
+          <QuestionCountryV2
             useForm={useFormObj}
             question={question}
             countryAndRegionsData={countryAndRegionsData}

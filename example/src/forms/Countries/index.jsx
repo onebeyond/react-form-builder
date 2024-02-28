@@ -59,7 +59,7 @@ const CountriesForm = () => {
           form={oldForm}
           onSubmit={onSubmitForm}
           isoCode='ES'
-          language='en'
+          language='es'
           onLinkOpen={onLinkOpen}
           isLoading={isLoading}
           formErrors={formErrors}
@@ -79,7 +79,7 @@ const CountriesForm = () => {
           form={newForm}
           onSubmit={onSubmitForm}
           isoCode='ES'
-          language='en'
+          language='es'
           onLinkOpen={onLinkOpen}
           isLoading={isLoading}
           formErrors={formErrors}

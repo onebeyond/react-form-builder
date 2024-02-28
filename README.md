@@ -133,7 +133,6 @@ Reminder: A custom link it will be indicated by the start of a '#' in the markdo
 https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-95c3-bcdce20cd858.mp4
 
 
-
 ## Country
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
@@ -172,7 +171,7 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 ```
 
 ### Custom list country example:
-```yaml
+```json
 {
   {
       countryName: 'MyOwnCountry1',
@@ -209,6 +208,67 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 
 
 https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-b813-06596d9b7096.mov
+
+
+
+
+
+
+
+## Country v2
+
+| Option | Description | Type  | Default |
+| ------ | ----------- | :---: | :---: |
+| name* | Country component name | string | |
+| type* | Must be `country_v2` | string | |
+| label | Text shown over the country question | string | '' |
+| placeholder | Placeholder displayed in the select | string | '' |
+| **config** | See table below | json | {} |
+| **errorMessages**	| Validation errors | json | {} |
+| **registerConfig** | Validation rules | json | {} |
+
+### **config** options
+
+| Option | Description | Type  | Default |
+| ------ | ----------- | :---: | :---: |
+| whitelist | List of ISO 3166-1 alpha-2 codes of the countries allowed in the list. This is mutually exclusive with `blacklist` and `whitelist`takes precedence. | string[] | [] |
+| blacklist | List of ISO 3166-1 alpha-2 codes of the countries not allowed in the list. This is mutually exclusive with `whitelist` and `whitelist`takes precedence. | string[] | [] |
+| priorityOptions | List of ISO 3166-1 alpha-2 codes of the countries to be displayed first in the list. Ex: ['GB', 'ES'] | string[] | [] |
+| language | ISO 639-1 code of the language to display countries names. [Available laguages](https://github.com/michaelwittig/node-i18n-iso-countries?tab=readme-ov-file#supported-languages-iso-639-1) | string | en |
+
+### Country v2 example:
+
+```json
+{
+  "name": "country_of_residence",
+  "placeholder": "Select your country of residence",
+  "type": "country_v2",
+  "label": "Country of residence",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+  "config": {
+    "whitelist": [
+      "DE",
+      "ES",
+      "FR",
+      "IT",
+      "PT"
+    ],
+    "priorityOptions": [
+      "ES",
+      "PT"
+    ]
+  }
+}
+```
+
+
+
+
 
 
 

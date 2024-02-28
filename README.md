@@ -778,6 +778,26 @@ Autocomplete basic example
 
 ```
 
+## ReCAPTCHA
+
+| Option  	| Description  	| Type |   Default	|
+|---	|---	|:---:	|:---:	|
+|   name*	|  ReCAPTCHA name  	|  string 	|  - 	|
+|   type*   | Must be `recaptcha`| string | - |
+|   recaptchaKey*	|  Key to make ReCAPTCHA work. Failing to provide this will lead to the ReCAPTCHA element showing with an error text inside. 	|  string  	|   -	|
+
+This feature is implemented using `react-google-recaptcha`. By default it shows at the bottom-right of your app and will only show the ReCAPTCHA modal when bot-like behavior is detected filling the form.
+
+#### ReCAPTCHA example
+
+```yaml
+    {
+      "name": "my-recaptcha",
+      "type": "recaptcha",
+      "recaptchaKey": "your-recaptcha-key"
+    }
+```
+
 # Accessibility
 
 The accessibility requirements for all the form tags are already configured in the library. For components (input, checkbox, select, radio…) different attributes have been introduced that can be configured through props. 

@@ -45,8 +45,8 @@ const FormBuilder = ({
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
 
   const RECAPTCHA = {
-    KEY: '6LfwSlQlAAAAAGUXT1z5MAjtFF97z4JRBej6W5fl',
-    SECRET: '6LfwSlQlAAAAAFQtRssJ0WucNxH4VmZdi49Dd-eq',
+    KEY: 'random',
+    SECRET: 'random',
   }
 
   const recaptchaRef = React.createRef(null)
@@ -326,6 +326,7 @@ const FormBuilder = ({
     if (isLoading) return
     // Execute the reCAPTCHA when the form is submitted
     recaptchaRef.current.execute()
+    // TODO: put a conditional here
     onSubmitForm(await formatData(data))
   }
 

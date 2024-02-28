@@ -43,6 +43,22 @@ const FormBuilder = ({
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
 
+  const RECAPTCHA = {
+    KEY: 'random',
+    SECRET: 'random',
+  }
+
+  const recaptchaRef = React.createRef(null)
+
+  const onReCAPTCHAChange = async (captchaCode) => {
+    if (!captchaCode) {
+      return
+    }
+
+    recaptchaRef.current.reset()
+    // onSubmitForm() // TODO: fix this call to pass the formatted data
+  }
+
   useEffect(() => {
     if (formErrors && formErrors.length > 0) {
       formErrors.forEach((error) => {
@@ -299,6 +315,8 @@ const FormBuilder = ({
 
   const onSubmit = async (data) => {
     if (isLoading) return
+    // Execute the reCAPTCHA when the form is submitted
+    recaptchaRef.current.execute()
     onSubmitForm(await formatData(data))
   }
 

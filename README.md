@@ -206,14 +206,7 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 }
 ```
 
-
 https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-b813-06596d9b7096.mov
-
-
-
-
-
-
 
 ## Country v2
 
@@ -264,16 +257,11 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
     "priorityOptions": [
       "ES",
       "PT"
-    ]
+    ],
+    "flag": true
   }
 }
 ```
-
-
-
-
-
-
 
 ## Date
 | Option  	| Description  	| Type |   Default	|

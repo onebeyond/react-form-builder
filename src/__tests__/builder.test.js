@@ -99,3 +99,34 @@ describe('form builder with custom errors', () => {
     expect(doesNotMatchError).not.toBe(null)
   })
 })
+
+describe('form builder with reCAPTCHA', () => {
+  beforeEach(() => {
+    mockHandler = jest.fn()
+    component = render(
+      <FormBuilder
+        idForm={forms.recaptcha.id}
+        form={forms.recaptcha}
+        isoCode='ES'
+        onSubmit={mockHandler}
+      />
+    )
+  })
+
+  afterEach(cleanup)
+
+  test('check it does not submit forms when they have a reCAPTCHA', async () => {
+    const button = component.getByText('Submit')
+    fireEvent.click(button)
+    expect(mockHandler).toHaveBeenCalledTimes(0)
+
+    const inputComponents = component.getAllByTestId('question-input')
+    fireEvent.change(inputComponents[0], { target: { value: 'name testing' } })
+    expect(inputComponents[0].value).toBe('name testing')
+
+    await act(async () => {
+      fireEvent.click(button)
+    })
+    expect(mockHandler).toHaveBeenCalledTimes(0)
+  })
+})

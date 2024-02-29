@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { jsx } from 'theme-ui'
 import { useForm } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
@@ -24,6 +24,7 @@ import QuestionGender from './Questions/Genre'
 import QuestionAge from './Questions/Age'
 import QuestionAutocomplete from './Questions/Autocomplete'
 import QuestionImageInput from './Questions/ImageInput'
+import QuestionRecaptcha from './Questions/Recaptcha'
 
 import styles from './styles.js'
 
@@ -42,6 +43,9 @@ const FormBuilder = ({
   ...props
 }) => {
   const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+  const [formDataValues, setFormDataValues] = useState({})
+  const hasRecaptcha = form.questions.some(question => question.type === 'recaptcha')
+  const recaptchaRef = useRef(null)
 
   useEffect(() => {
     if (formErrors && formErrors.length > 0) {
@@ -214,6 +218,14 @@ const FormBuilder = ({
           currentPath={currentPath}
           onLinkOpen={onLinkOpen}
         />
+      ),
+      recaptcha: (
+        <QuestionRecaptcha
+          formDataValues={formDataValues}
+          onSubmitForm={onSubmitForm}
+          question={question}
+          ref={recaptchaRef}
+        />
       )
     }
   }
@@ -299,7 +311,13 @@ const FormBuilder = ({
 
   const onSubmit = async (data) => {
     if (isLoading) return
-    onSubmitForm(await formatData(data))
+    if (hasRecaptcha) {
+      recaptchaRef.current?.execute()
+      setFormDataValues(await formatData(data))
+
+    } else {
+      onSubmitForm(await formatData(data))
+    }
   }
 
   return (

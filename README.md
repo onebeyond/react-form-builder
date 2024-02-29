@@ -966,6 +966,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/habondavid"><img src="https://avatars.githubusercontent.com/u/54550191?v=4?s=100" width="100px;" alt="David Habon"/><br /><sub><b>David Habon</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/issues?q=author%3Ahabondavid" title="Bug reports">🐛</a> <a href="https://github.com/onebeyond/react-form-builder/pulls?q=is%3Apr+reviewed-by%3Ahabondavid" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/NuriaExtremadouro"><img src="https://avatars.githubusercontent.com/u/23655224?v=4?s=100" width="100px;" alt="NuriaExtremadouro"/><br /><sub><b>NuriaExtremadouro</b></sub></a><br /><a href="https://github.com/onebeyond/react-form-builder/commits?author=NuriaExtremadouro" title="Code">💻</a> <a href="https://github.com/onebeyond/react-form-builder/commits?author=NuriaExtremadouro" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>

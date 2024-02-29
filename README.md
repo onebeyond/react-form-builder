@@ -227,10 +227,10 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 | whitelist | List of ISO 3166-1 alpha-2 codes of the countries allowed in the list. This is mutually exclusive with `blacklist` and `whitelist`takes precedence. | string[] | [] |
 | blacklist | List of ISO 3166-1 alpha-2 codes of the countries not allowed in the list. This is mutually exclusive with `whitelist` and `whitelist`takes precedence. | string[] | [] |
 | priorityOptions | List of ISO 3166-1 alpha-2 codes of the countries to be displayed first in the list. Ex: ['GB', 'ES'] | string[] | [] |
-| language | ISO 639-1 code of the language to display countries names. [Available laguages](https://github.com/michaelwittig/node-i18n-iso-countries?tab=readme-ov-file#supported-languages-iso-639-1) | string | en |
 | search | Allows the user to search typing in the select control | boolean | false |
 | flag | Shows the flag of the country before the name | boolean | false |
 
+The countires will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. [Available laguages](https://github.com/michaelwittig/node-i18n-iso-countries?tab=readme-ov-file#supported-languages-iso-639-1).
 
 ### Country v2 example:
 

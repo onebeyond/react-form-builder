@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { useFormContext } from 'react-hook-form'
 import { getCountryDataList, getEmojiFlag } from 'countries-list'
 import countriesTools from 'i18n-iso-countries'
 
@@ -57,14 +58,25 @@ const buildCountryOptions = (config, language) => {
   return finalListOfCountries
 }
 
+/**
+ * Question of type CountryV2
+ * @param {props} question Question metadata
+ * @param {props} language Language to display the country names
+ * @returns React component of a country select
+ */
 const QuestionCountryV2 = ({
-  component,
   question,
-  useForm,
-  countryAndRegionsData,
   language,
   ...props
 }) => {
+  const {
+    formState: { errors },
+    trigger,
+    control,
+    defaultValue,
+    unregister
+  } = useFormContext()
+
   useState(() => {
     try {
       countriesTools.registerLocale(require(`i18n-iso-countries/langs/${language}.json`))
@@ -73,14 +85,6 @@ const QuestionCountryV2 = ({
       console.error('@onebeyond/react-form-builder: language not supported for country names. Using English.')
     }
   }, [language])
-
-  const {
-    formState: { errors },
-    trigger,
-    control,
-    defaultValue,
-    unregister
-  } = useForm
 
   return (
     <div

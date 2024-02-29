@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React, { useEffect } from 'react'
 import { jsx } from 'theme-ui'
-import { useForm } from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
 
 import Button from './Fields/Button'
@@ -121,9 +121,7 @@ const FormBuilder = ({
       country_v2: (
         <>
           <QuestionCountryV2
-            useForm={useFormObj}
             question={question}
-            countryAndRegionsData={countryAndRegionsData}
             language={language}
           />
           {question.dependentQuestions &&
@@ -320,7 +318,7 @@ const FormBuilder = ({
   }
 
   return (
-    <>
+    <FormProvider {...useFormObj}>
       <form
         id={idForm}
         sx={{
@@ -376,7 +374,7 @@ const FormBuilder = ({
           })}
       </form>
       <DevTool control={useFormObj.control} />
-    </>
+    </FormProvider>
   )
 }
 

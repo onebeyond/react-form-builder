@@ -171,23 +171,24 @@ Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder 
 ```
 
 ### Custom list country example:
+
 ```json
 {
   {
-      countryName: 'MyOwnCountry1',
-      countryShortCode: 'MC1'
+      "countryName": "MyOwnCountry1",
+      "countryShortCode": "MC1"
     },
     {
-      countryName: 'MyOwnCountry2',
-      countryShortCode: 'MC2'
+      "countryName": "MyOwnCountry2",
+      "countryShortCode": "MC2"
     },
     {
-      countryName: 'MyOwnCountry3',
-      countryShortCode: 'MC3'
+      "countryName": "MyOwnCountry3",
+      "countryShortCode": "MC3"
     },
     {
-      countryName: 'MyOwnCountry4',
-      countryShortCode: 'MC4'
+      "countryName": "MyOwnCountry4",
+      "countryShortCode": "MC4"
     }
 }
 

@@ -224,7 +224,6 @@ module.exports = exports = {
     'import/no-duplicates': WARN,
     'react/jsx-no-bind': WARN,
     'wrap-regex': WARN,
-
     'no-console': WARN,
   }
 }

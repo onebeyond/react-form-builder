@@ -24,7 +24,7 @@
     "coverage": "npm run test:unit -- --coverage",
     "test:build": "run-s build",
     "test:lint": "eslint src --ext .js,.jsx --config .eslintrc --ignore-path .eslintignore --cache",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom  --passWithNoTests",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom --passWithNoTests",
     "test:watch": "react-scripts test --env=jsdom",
     "eslint:fix": "eslint . --ext .js,.jsx --fix",
     "lint": "npm run test:lint",

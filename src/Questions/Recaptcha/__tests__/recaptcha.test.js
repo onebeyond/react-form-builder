@@ -16,7 +16,7 @@ const question = {
 test('renders a reCAPTCHA', () => {
   const { getByTestId } = render(
     <QuestionRecaptcha
-      recaptchaRef={recaptchaRef}
+      ref={recaptchaRef}
       formDataValues={formDataValues}
       onSubmitForm={onSubmitForm}
       question={question}

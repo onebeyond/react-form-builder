@@ -85,7 +85,7 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 
 ##### CountryAndRegionsData example:
-```yaml
+```json
 [
   { "cn": "MyOwnCountry1", "cs": "MC1" },
   { "cn": "MyOwnCountry2", "cs": "MC2" },
@@ -114,7 +114,7 @@ Reminder: A custom link it will be indicated by the start of a '#' in the markdo
 
 #### Checkbox example
 
-```yaml
+```json
     {
           "name": "terms_and_conditions",
           "label": "This is the label of the checkbox with a [customLink](#customLink) and [normalLink](https://www.dcsl.com/careers/)",
@@ -155,7 +155,7 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
 
 ### Country example:
-```yaml
+```json
 {
   "name": "country_of_residence",
   "type": "country",
@@ -230,7 +230,7 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 
 ### Date examples
 Basic date example
-```yaml
+```json
 {
   "name": "dob",
   "type": "date",
@@ -246,7 +246,7 @@ Basic date example
 }
 ```
 Under age date example
-```yaml
+```json
 {
   "name": "dob",
   "type": "date",
@@ -292,7 +292,7 @@ https://user-images.githubusercontent.com/79102959/134897303-817957ba-12d1-4c0c-
 
 ### Input examples
 Basic input example
-```yaml
+```json
 {
   "name": "email",
   "type": "input",
@@ -308,7 +308,7 @@ Basic input example
 
 ```
 Input with pattern control example
-```yaml
+```json
 {
   "name": "email",
   "type": "input",
@@ -326,7 +326,7 @@ Input with pattern control example
 
 ```
 Input with custom error (for example, if the user tries to sign up with an email that has already beeen used)
-```yaml
+```json
 {
   "name": "email",
   "type": "input",
@@ -346,7 +346,7 @@ Input with custom error (for example, if the user tries to sign up with an email
 ```
 
 Input with field descriptions
-```yaml
+```json
 {
   "name": "password",
   "type": "password",
@@ -432,7 +432,7 @@ Markdown example
 
 #### Multiplecheckbox examples
 Basic multiplecheckbox
-```yaml
+```json
 {
   "name": "multiplecheckbox_name",
   "type": "multiple_checkboxes",
@@ -465,7 +465,7 @@ Basic multiplecheckbox
 ```
 Multiplecheckbox with images and labels
 
-```yaml
+```json
 {
   "name": "multiplecheckbox_name",
   "type": "multiple_checkboxes",
@@ -499,7 +499,7 @@ Multiplecheckbox with images and labels
 ```
 
 Multiplecheckbox with minimumLen
-```yaml
+```json
 {
   "name": "multiplecheckbox_name",
   "type": "multiple_checkboxes",
@@ -555,7 +555,7 @@ Reminder: The isoCode prop that can also be sent in the ReactFormBuilder compone
 
 Basic phone
 
-```yaml
+```json
 {
   "name": "phone",
   "type": "phone",
@@ -592,7 +592,7 @@ https://user-images.githubusercontent.com/79102959/134948115-4f461d76-8d06-4cb8-
 
 #### RadioButton example
 Basic radiobutton
-```yaml
+```json
 {
   "name": "radio_name",
   "label": "este es el texto de la pregunta",
@@ -649,7 +649,7 @@ https://user-images.githubusercontent.com/79102959/134948337-03618f4c-6cc7-409a-
 
 Select basic example:
 
-```yaml
+```json
 {
   "name": "color",
   "type": "select",
@@ -683,7 +683,7 @@ Select basic example:
 
 Select example with custom arrows in the `public/icons` folder:
 
-```yaml
+```json
 {
   "name": "color",
   "type": "select",
@@ -746,7 +746,7 @@ It works the same as select field, but searchable option is available.
 
 Autocomplete basic example
 
-```yaml
+```json
 {
   "name": "color",
   "type": "autocomplete",
@@ -790,7 +790,7 @@ This feature is implemented using `react-google-recaptcha`. By default it shows 
 
 #### ReCAPTCHA example
 
-```yaml
+```json
     {
       "name": "my-recaptcha",
       "type": "recaptcha",
@@ -823,7 +823,7 @@ Next, we can see different attributes and tags to adjust the accessibility of th
 
 ### Main form
 
-```yaml
+```json
 {
   "en": {
     "contact": {

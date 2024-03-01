@@ -1,4 +1,4 @@
-var OFF = 0,
+const OFF = 0,
   WARN = 1,
   ERROR = 2
 
@@ -223,6 +223,7 @@ module.exports = exports = {
     'spaced-comment': [WARN, 'always'],
     'import/no-duplicates': WARN,
     'react/jsx-no-bind': WARN,
-    'wrap-regex': WARN
+    'wrap-regex': WARN,
+    'no-console': WARN,
   }
 }

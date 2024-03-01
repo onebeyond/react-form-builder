@@ -107,3 +107,15 @@ test('pattern error is displayed', () => {
 
   expect(screen.getByText('This is not the right pattern'))
 })
+
+test('country code is visible', () => {
+  const result = render(
+    <QuestionPhone
+      question={{ ...question, defaultCountry: 'GB', international: true }}
+      useForm={formMethods}
+    />
+  )
+  expect(
+    result.container.querySelector('input[type="tel"]').getAttribute('value')
+  ).toBe('+44')
+})

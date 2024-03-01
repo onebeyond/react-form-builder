@@ -3,6 +3,9 @@
 ##### Chores
 
 *  updated CHANGELOG.md ([ba33b7a8](https://github.com/onebeyond/react-form-builder/commit/ba33b7a8da86256da14ef58b2c91666addbb81d0))
+*  upate package-lock ([7fbf2e25](https://github.com/onebeyond/react-form-builder/commit/7fbf2e257f73c46d437b41f82255c82e14d5ddff))
+*  updated CHANGELOG.md ([ba33b7a8](https://github.com/onebeyond/react-form-builder/commit/ba33b7a8da86256da14ef58b2c91666addbb81d0))
+*  update dependencies ([d3a86248](https://github.com/onebeyond/react-form-builder/commit/d3a86248ba87b265ca4e7a2dfc08f44a3f6c86d3))
 *  updated CHANGELOG.md ([cd86bd3c](https://github.com/onebeyond/react-form-builder/commit/cd86bd3ce465eccbe904dafd69adc768fba11e9c))
 *  merge main branch ([055ecabe](https://github.com/onebeyond/react-form-builder/commit/055ecabeedfd403d1de09ec8a4dbb605aa9753e0))
 *  updated CHANGELOG.md ([0c67f7b1](https://github.com/onebeyond/react-form-builder/commit/0c67f7b14c43077a4ada0d1237f6c1994dd702f9))
@@ -126,10 +129,13 @@
 ##### Documentation Changes
 
 *  add international flag docs to phone ([544c60bb](https://github.com/onebeyond/react-form-builder/commit/544c60bbc0f50bb4b3561de8309b5dad5d6b376b))
+*  minor fix in readme file ([1ef1a959](https://github.com/onebeyond/react-form-builder/commit/1ef1a959e77e5fbb0cd3154b5fbc571d655c51ac))
 *  update .all-contributorsrc ([7c877d09](https://github.com/onebeyond/react-form-builder/commit/7c877d09b5ef0b83b570ef1616d60b433de745f7))
 *  update README.md ([dc19fe9c](https://github.com/onebeyond/react-form-builder/commit/dc19fe9c6c17ce76b357b9f8e40772feb896d11f))
 *  update .all-contributorsrc ([296ffdfb](https://github.com/onebeyond/react-form-builder/commit/296ffdfbe1534b11719b4d0b4ba870387d5ac99e))
 *  update README.md ([750455a6](https://github.com/onebeyond/react-form-builder/commit/750455a6b6a4dabcc70308552eb6b468af2c35b8))
+*  minor fix ([4dae7f8b](https://github.com/onebeyond/react-form-builder/commit/4dae7f8b04fd7345f48ba2f66eda1a529f8e7465))
+*  improve readme file ([47e8e615](https://github.com/onebeyond/react-form-builder/commit/47e8e615ccd8d676ba04efcbfaf0ec7da56cdcdc))
 *  improve readme file to get rid of obsolete guidesmiths refs ([83acb0a5](https://github.com/onebeyond/react-form-builder/commit/83acb0a5c2782e2dae12bc27dbf54e3f961a6124))
 *  readme badge link ([4b72fbaa](https://github.com/onebeyond/react-form-builder/commit/4b72fbaaab334b56070a527f3b1fbb82d93ed8a5))
 *  update .all-contributorsrc ([f24492fe](https://github.com/onebeyond/react-form-builder/commit/f24492fea23def730d021c2cb13b090bfd8d3a30))
@@ -151,6 +157,8 @@
 ##### New Features
 
 *  add international option to Phone ([84aef3e2](https://github.com/onebeyond/react-form-builder/commit/84aef3e22114aefd9f934b2192c64ec753118ca2))
+*  add option to prepend the flag to the country name ([72b4413d](https://github.com/onebeyond/react-form-builder/commit/72b4413d844d923f1cb003008d9bfb14a26cf9d8))
+*  new country question ([246aa4ab](https://github.com/onebeyond/react-form-builder/commit/246aa4ab61704d7699edd6df1ba0298331593625))
 *  add dependant questions logic to radio buttons ([e81e81b2](https://github.com/onebeyond/react-form-builder/commit/e81e81b2dee69e884ae9344af9f0092e0792263f))
 *  remove support for node < 16 ([bb40b3af](https://github.com/onebeyond/react-form-builder/commit/bb40b3afae81b887a7d190ddd6ec39c20fe4bdf8))
 *  upgrade to node v20 ([7b79369c](https://github.com/onebeyond/react-form-builder/commit/7b79369c51f3a716b846c576dc7bbf372e01c01c))
@@ -194,7 +202,8 @@
 *  add minAge to date component ([4848362b](https://github.com/onebeyond/react-form-builder/commit/4848362b3751510700c5b34945a6d9948e22186e))
 *  change value of the country from countryName to countryShortCode ([96caaf7f](https://github.com/onebeyond/react-form-builder/commit/96caaf7f34d263a22bfbd5751eb291e9a0a58d4e))
 *  add target option into Checkbox ReactMarckdown links ([37e9bb5f](https://github.com/onebeyond/react-form-builder/commit/37e9bb5f9987816fac7290e26eb1f5a82ff756cf))
-*  add select status (isSelected,isDisabled, isFocused) styles ([e067bd10](https://github.com/onebeyond/react-form-builder/commit/e067bd10edb860736b97f248eb3350b08a0277d3))
+*  add select status (isSelected,isDisabled, isFocused) styles ([e067bd10](https://github.com/onebeyond/react-form-builder/commit/e067bd10edb860736b97f248eb3350b08a0277d3)
+* **wip:**  new country question with countries enriched data ([77293f88](https://github.com/onebeyond/react-form-builder/commit/77293f88f6244d6fb50c63fced4a9cd24665253c))
 * **questions:**  add image input question type ([#161](https://github.com/onebeyond/react-form-builder/pull/161)) ([343c57ab](https://github.com/onebeyond/react-form-builder/commit/343c57abc41782a8f32bdfd649c366b187ab0a7c))
 * **text-area:**  add word count type ([#130](https://github.com/onebeyond/react-form-builder/pull/130)) ([5306f5b2](https://github.com/onebeyond/react-form-builder/commit/5306f5b2ccb4025e3e07c0f5536b50f9ff23917f))
 * **mobile:**  add default country value ([#124](https://github.com/onebeyond/react-form-builder/pull/124)) ([37843c67](https://github.com/onebeyond/react-form-builder/commit/37843c67aa22acf4bebde75b012ae6f5c03a867c))
@@ -206,6 +215,7 @@
 
 ##### Bug Fixes
 
+*  minor changes according to pr review ([bddcea46](https://github.com/onebeyond/react-form-builder/commit/bddcea462988cfa28833df9e2df7f7599be6e8d0))
 *  updgrade to node 18 as some dependencies need it ([2fa29fdf](https://github.com/onebeyond/react-form-builder/commit/2fa29fdf759142c34ec223977669d2ed4cb3aef6))
 *  set recommended policy for cd gh action ([18565ddd](https://github.com/onebeyond/react-form-builder/commit/18565ddd5e1f5ec175b1bf1efa98c16a497bbe71))
 *  get back egress-policy block for harden runner ([e6230436](https://github.com/onebeyond/react-form-builder/commit/e62304361b7108930f710ce555a1e377b42375cd))
@@ -264,6 +274,7 @@
 
 ##### Other Changes
 
+* onebeyond/react-form-builder into improve-country-question ([cf93df1a](https://github.com/onebeyond/react-form-builder/commit/cf93df1aecd642362a83a924944e1c16e5718193))
 *  audit for cd gh action ([c01c736b](https://github.com/onebeyond/react-form-builder/commit/c01c736b3ad9a2b1d62d800002f05d8a97ec813c))
 * onebeyond/react-form-builder into use-uuid ([b6adcf32](https://github.com/onebeyond/react-form-builder/commit/b6adcf3251e0356c6e21538f16d611527867216f))
 * guidesmiths/react-form-builder into main ([222931d4](https://github.com/onebeyond/react-form-builder/commit/222931d439148f2d16745cb1e56eab39c2170db1))
@@ -295,6 +306,9 @@
 
 ##### Refactors
 
+*  use form context to avoid passing it to children ([340ee7cb](https://github.com/onebeyond/react-form-builder/commit/340ee7cb6bfeb029e5e813e9d66410f940efb2fe))
+*  one single rollup config file ([84f6dc43](https://github.com/onebeyond/react-form-builder/commit/84f6dc435ca1c258dbe0fbf74ef70bb3483bfdcb))
+*  improve example app to support multiple forms ([2ad93487](https://github.com/onebeyond/react-form-builder/commit/2ad934871c657d4182868755aa3206e4f9b2d496))
 *  move builder styles to separate file ([1231bcdc](https://github.com/onebeyond/react-form-builder/commit/1231bcdcf1f38dba44bdad025f63ef1d38845384))
 *  move button styles to separate file ([e9050b59](https://github.com/onebeyond/react-form-builder/commit/e9050b5970d3f9283ad287ae4ab88bf29d96f9d5))
 *  move example styles to separate file ([18b3d5fc](https://github.com/onebeyond/react-form-builder/commit/18b3d5fc25811173b9fd688d2813b477b41e650c))

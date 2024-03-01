@@ -12,12 +12,9 @@ import {
 import forms from './forms.json'
 import styles from './styles.js'
 
-import 'react-datepicker/dist/react-datepicker.css'
-import 'react-phone-number-input/style.css'
-
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const App = () => {
+const Contact = () => {
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
   const [isLoading, setLoading] = useState(false)
@@ -71,4 +68,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Contact

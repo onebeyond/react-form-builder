@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React, { useEffect, useRef, useState } from 'react'
 import { jsx } from 'theme-ui'
-import { useForm } from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
 
 import Button from './Fields/Button'
@@ -11,6 +11,7 @@ import QuestionCheckbox from './Questions/Checkbox'
 import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
+import QuestionCountryV2 from './Questions/CountryV2/index.js'
 import QuestionInput from './Questions/Input'
 import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
@@ -42,7 +43,7 @@ const FormBuilder = ({
   formErrors = [],
   ...props
 }) => {
-  const useFormObj = useForm({ defaultValues: { formatDate: '' } })
+  const useFormObj = useForm()
   const [formDataValues, setFormDataValues] = useState({})
   const hasRecaptcha = form.questions.some(question => question.type === 'recaptcha')
   const recaptchaRef = useRef(null)
@@ -121,7 +122,21 @@ const FormBuilder = ({
             )}
         </>
       ),
-      county: <QuestionCounty useForm={useFormObj} question={question} />,
+      country_v2: (
+        <>
+          <QuestionCountryV2
+            question={question}
+            language={language}
+          />
+          {question.dependentQuestions &&
+            question.dependentQuestions.map(
+              ConditionalQuestion(question.dependentQuestions, question.name)
+            )}
+        </>
+      ),
+      county: (
+        <QuestionCounty useForm={useFormObj} question={question} />
+      ),
       gender: (
         <>
           <QuestionGender
@@ -321,7 +336,7 @@ const FormBuilder = ({
   }
 
   return (
-    <>
+    <FormProvider {...useFormObj}>
       <form
         id={idForm}
         sx={{
@@ -377,7 +392,7 @@ const FormBuilder = ({
           })}
       </form>
       <DevTool control={useFormObj.control} />
-    </>
+    </FormProvider>
   )
 }
 

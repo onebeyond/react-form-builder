@@ -1,0 +1,119 @@
+{
+  "name": "Form with Country v2 question format",
+  "title": "Form with Country v2 question format",
+  "questions": [
+    {
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    },
+    {
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with flags",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "flag": true
+      }
+    },
+    {
+      "name": "country_all",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with flags and search option",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "flag": true,
+        "search": true
+      }
+    },
+    {
+      "name": "country_all_priority",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of original countries with priority",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "priorityOptions": [
+          "ES",
+          "PT"
+        ]
+      }
+    },
+    {
+      "name": "country_whitelist",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of whitelisted countries only",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "whitelist": [
+          "DE",
+          "ES",
+          "FR",
+          "IT",
+          "PT"
+        ]
+      }
+    },
+    {
+      "name": "country_whitelist_priority",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "List of whitelisted countries with priority",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "whitelist": [
+          "DE",
+          "ES",
+          "FR",
+          "IT",
+          "PT"
+        ],
+        "priorityOptions": [
+          "ES",
+          "PT"
+        ]
+      }
+    }
+  ],
+  "callForAction": [
+    {
+      "caption": "Enter",
+      "type": "submit"
+    }
+  ]
+}

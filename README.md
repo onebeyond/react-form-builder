@@ -598,6 +598,7 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 |   label	|  Text to show over the input 	|  string  	|   ''	|
 |   placeholder	| Placeholder text to be displayed in the select 	|  string  	|   ''	|
 |   defaultCountry	| Country to show by default  	|  string  	|   GB	|
+|   international	| Force display country prefix in input  	|  boolean  	|  -	|
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the phone input is not filled and is required |  string     | ''
 |  **registerConfig**       |    |  json     |

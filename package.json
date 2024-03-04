@@ -9,14 +9,15 @@
     "url": "git+https://github.com/onebeyond/react-form-builder.git"
   },
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=18",
     "npm": ">=9"
   },
   "scripts": {
-    "start": "NODE_ENV=development rollup --config --configDebug -w",
+    "dev": "NODE_ENV=development rollup --config --configDebug -w",
+    "prebuild": "rimraf dist",
     "build": "rollup --config",
     "prepare": "run-s build && husky install",
     "test": "npx @onebeyond/license-checker --failOn AGPL-1.0-or-later --disableReport --errorReportFileName license-error | run-s test:unit test:lint test:build",
@@ -107,6 +108,7 @@
     "react-phone-number-input": "^3.3.9",
     "react-select": "^5.8.0",
     "react-ymd-date-select": "^0.3.0",
+    "rimraf": "^5.0.5",
     "theme-ui": "^0.15.7",
     "uuid": "^9.0.1"
   }

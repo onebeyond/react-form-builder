@@ -992,7 +992,7 @@ TODO: npx storybook@next automigrate
 # To contribute
 
 1. `npm install`
-2. `npm start`
+2. `npm run dev`
 3. Open another tab and do `cd example`
 4. `npm install`
 5. `npm start`

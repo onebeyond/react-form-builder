@@ -8,8 +8,8 @@
     "type": "git",
     "url": "git+https://github.com/onebeyond/react-form-builder.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=18",

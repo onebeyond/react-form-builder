@@ -7,7 +7,11 @@ import {
   Label,
   Modal,
   FormBuilder
-} from 'react-form-builder'
+} from '@onebeyond/react-form-builder'
+
+// import countriesTools from 'i18n-iso-countries'
+// import afLocale from 'i18n-iso-countries/langs/af.json'
+// countriesTools.registerLocale(afLocale)
 
 import oldForm from './form-old.json'
 import newForm from './form-new.json'

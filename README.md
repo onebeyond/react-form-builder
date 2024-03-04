@@ -134,21 +134,21 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 
 
 ## Country
-| Option  	| Description  	| Type |   Default	|
-|---	|---	|:---:	|:---:	|
-|   name*	|  Country component name  	|  string 	|  - 	|
-|   type*   | Must be `country` | string | - |
-|   label	|  Text shown over the coutnry list|  string  	|   ''	|
-|   language	| An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
-|   placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
-|   priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
-|   returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
-|   **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
-|  countryName     |   The name of the country |  string     | ''
-|  countryShortCode     |   To display the short code(s) for the countries Ex: ['GB', 'ES']  |  string     | ''
-|   **errorMessages**	|    	| json   	|   	|
-|  required      |   Error message to display on submit if there is no country selected |  string     | ''
-|  **registerConfig**       |    |  json     |
+| Option | Description | Type  | Default |
+| ------ | ----------- | :---: | :----: |
+| name*	|  Country component name  	|  string 	|  - 	|
+| type*   | Must be `country` | string | - |
+| label	|  Text shown over the coutnry list|  string  	|   ''	|
+| language	| An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
+| placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
+| priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
+| returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
+| **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
+| countryName     |   The name of the country |  string     | ''
+| countryShortCode     |   To display the short code(s) for the countries Ex: ['GB', 'ES']  |  string     | ''
+| **errorMessages**	|    	| json   	|   	|
+| required      |   Error message to display on submit if there is no country selected |  string     | ''
+| **registerConfig**       |    |  json     |
 | required  | Define if the country select is required  |  boolean  | false
 
 Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
@@ -231,7 +231,15 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 | search | Allows the user to search typing in the select control | boolean | false |
 | flag | Shows the flag of the country before the name | boolean | false |
 
-The countires will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. [Available laguages](https://github.com/michaelwittig/node-i18n-iso-countries?tab=readme-ov-file#supported-languages-iso-639-1).
+The countires will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. Available laguages: `en`, `es`, `de`, `fr`.
+
+This library depends on the [`i18n-iso-countries`](https://www.npmjs.com/package/i18n-iso-countries) library to translate the country names and flags. If you want to translate the countries to a different language, you can use the `registerLocale` method of the `i18n-iso-countries` library to register a new locale. For example, to translate the countries to Afrikaans, install the library and do the following:
+
+```javascript
+import countriesTools from 'i18n-iso-countries'
+import afLocale from 'i18n-iso-countries/langs/af.json'
+countriesTools.registerLocale(afLocale)
+```
 
 ### Country v2 example:
 

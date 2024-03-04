@@ -3,11 +3,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { jsx, ThemeProvider, merge } from 'theme-ui'
-import { ExampleTheme } from 'react-form-builder'
+import { FormTheme } from '@onebeyond/react-form-builder'
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom"
+} from 'react-router-dom'
 
 import App from './App'
 import Contact from './forms/Contact'
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <ThemeProvider theme={merge(ExampleTheme, theme)}>
+  <ThemeProvider theme={merge(FormTheme, theme)}>
     <RouterProvider router={router} />
   </ThemeProvider>
 )

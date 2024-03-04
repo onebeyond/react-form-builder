@@ -21,32 +21,20 @@ const makeExternalPredicate = (externalArr) => {
   return (id) => pattern.test(id);
 };
 
-const makeGlobalsPredicate = (externalArr) => {
-  if (externalArr.length === 0) {
-    return {};
-  }
-
-  return externalArr.reduce((acc, name) => {
-    acc[name] = name;
-    return acc;
-  }, {});
-}
-
 export default commandLineArgs => ({
   input: pkg.source,
-  output: {
-    name: 'ReactFormBuilder',
-    file: pkg.main,
-    format: 'umd',
-    sourcemap: true,
-    globals: makeGlobalsPredicate([
-      // Handles both dependencies and peer dependencies so we don't have to manually maintain a list
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.peerDependencies || {}),
-      'react-select/async'
-    ]),
-  },
-
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
+    {
+      file: pkg.module,
+      format: 'esm',
+      sourcemap: true,
+    },
+  ],
   plugins: [
     nodeResolve(),
     peerDepsExternal(),

@@ -8,9 +8,16 @@ import countriesTools from 'i18n-iso-countries'
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
-import { useState } from 'react'
 
-countriesTools.registerLocale(require('i18n-iso-countries/langs/en.json'))
+// FIXME: be able to dynamicaly import the language file
+import enLocale from 'i18n-iso-countries/langs/en.json'
+import frLocale from 'i18n-iso-countries/langs/fr.json'
+import esLocale from 'i18n-iso-countries/langs/es.json'
+import deLocale from 'i18n-iso-countries/langs/de.json'
+countriesTools.registerLocale(enLocale)
+countriesTools.registerLocale(frLocale)
+countriesTools.registerLocale(esLocale)
+countriesTools.registerLocale(deLocale)
 
 const buildCountryOptions = (config, language) => {
   const priorityOptions = config?.priorityOptions || []
@@ -77,14 +84,21 @@ const QuestionCountryV2 = ({
     unregister
   } = useFormContext()
 
-  useState(() => {
-    try {
-      countriesTools.registerLocale(require(`i18n-iso-countries/langs/${language}.json`))
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error('@onebeyond/react-form-builder: language not supported for country names. Using English.')
-    }
-  }, [language])
+  // This dynamic import is not working when using the library in a project
+  // useState(() => {
+  //   try {
+  //     // countriesTools.registerLocale(require(`i18n-iso-countries/langs/${language}.json`))
+
+  //   //   import(`./node_modules/i18n-iso-countries/langs/${language}.json`).then((module) => {
+  //   //     console.log(module)
+  //   //     countriesTools.registerLocale(module.default)
+  //   //     // do something with the translations
+  //   //   });
+  //   } catch (e) {
+  //     // eslint-disable-next-line no-console
+  //     console.error(`@onebeyond/react-form-builder: language '${language}' not supported for country names. Using English.`)
+  //   }
+  // }, [language])
 
   return (
     <div

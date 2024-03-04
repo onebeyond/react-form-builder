@@ -7,7 +7,7 @@ import {
   Label,
   Modal,
   FormBuilder
-} from 'react-form-builder'
+} from '@onebeyond/react-form-builder'
 
 import forms from './forms.json'
 import styles from './styles.js'

@@ -105,7 +105,7 @@ customQuestion.label = ''
 modalQuestion.label = 'click the [link](#privacy) to see a modal '
 errorQuestion.registerConfig.required = true
 linkQuestion.label =
-  'Text with a [link](https://www.npmjs.com/package/@guidesmiths/react-form-builder)'
+  'Text with a [link](https://www.npmjs.com/package/@onebeyond/react-form-builder)'
 
 const customElement = () => {
   return (

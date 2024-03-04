@@ -11,9 +11,10 @@
     "ncu": "npx ncu"
   },
   "dependencies": {
+    "@onebeyond/react-form-builder": "file:..",
+    "i18n-iso-countries": "^7.10.1",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
-    "react-form-builder": "file:..",
     "react-router-dom": "^6.22.1",
     "react-scripts": "file:../node_modules/react-scripts"
   },

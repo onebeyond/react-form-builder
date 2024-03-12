@@ -213,7 +213,6 @@ const FormBuilder = ({
           <QuestionMultipleCheckboxes
             useForm={useFormObj}
             question={question}
-            form={form}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(

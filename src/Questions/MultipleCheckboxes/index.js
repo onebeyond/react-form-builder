@@ -56,34 +56,6 @@ const QuestionMultipleCheckboxes = ({ question, useForm }) => {
         >
           {question.config &&
             question.config.options.map((option) => {
-              const checkBoxConfig = {
-                'data-testid': 'question-singleCheckbox',
-                id: option.name,
-                'aria-describedby': 'error_message_' + question.name,
-                name: question.name,
-                value: option.value,
-                defaultChecked: question.defaultCheckedValues?.find(
-                  (defaultValue) => defaultValue === option.value
-                ),
-                ...register(question.name, {
-                  ...question.registerConfig,
-                  validate: {
-                    minimumLen: question.registerConfig.minimumLen
-                      ? () =>
-                          getValues()[question.name] &&
-                          getValues()[question.name].length >=
-                            question.registerConfig.minimumLen
-                      : () => true,
-                    maximumLen: question.registerConfig.maximumLen
-                      ? () =>
-                          getValues()[question.name] &&
-                          getValues()[question.name].length <=
-                            question.registerConfig.maximumLen
-                      : () => true
-                  }
-                })
-              }
-
               return (
                 <div
                   sx={{
@@ -98,10 +70,34 @@ const QuestionMultipleCheckboxes = ({ question, useForm }) => {
                       alignItems: 'center'
                     }}
                   >
-                    {option.disableOthers ?
-                      <Checkbox {...checkBoxConfig} onChange={disableOthers} /> : 
-                      <Checkbox {...checkBoxConfig} />
-                    }
+                    <Checkbox
+                      data-testid="question-singleCheckbox"
+                      id={option.name}
+                      aria-describedby={'error_message_' + question.name}
+                      name={question.name}
+                      value={option.value}
+                      defaultChecked={question.defaultCheckedValues?.find(
+                        (defaultValue) => defaultValue === option.value
+                      )}
+                      {...register(question.name, {
+                        ...question.registerConfig,
+                        onChange: option.disableOthers && disableOthers,
+                        validate: {
+                          minimumLen: question.registerConfig.minimumLen
+                            ? () =>
+                                getValues()[question.name] &&
+                                getValues()[question.name].length >=
+                                  question.registerConfig.minimumLen
+                            : () => true,
+                          maximumLen: question.registerConfig.maximumLen
+                            ? () =>
+                                getValues()[question.name] &&
+                                getValues()[question.name].length <=
+                                  question.registerConfig.maximumLen
+                            : () => true
+                        }
+                      })}
+                    />
                     {option.src ? (
                       <img src={option.src} />
                     ) : (

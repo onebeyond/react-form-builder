@@ -614,6 +614,10 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 
 Reminder: The isoCode prop that can also be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
 
+**Important:** due to a known [issue](https://github.com/vercel/next.js/issues/19936) in older versions of NextJS, it's necessary to add the following import in any files where the form builder contains a Phone question:
+
+`import 'react-phone-number-input/style.css'`
+
 Basic phone
 
 ```json

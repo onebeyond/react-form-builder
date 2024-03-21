@@ -1,0 +1,24 @@
+{
+  "name": "Form to test Country Subdivision question",
+  "title": "Form to test Country Subdivision question",
+  "questions": [
+    {
+      "name": "country_all",
+      "placeholder": "Select your country region",
+      "type": "country_subdivision",
+      "label": "List of subdivisions",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      }
+    }
+  ],
+  "callForAction": [
+    {
+      "caption": "Enter",
+      "type": "submit"
+    }
+  ]
+}

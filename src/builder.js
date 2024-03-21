@@ -12,6 +12,7 @@ import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
 import QuestionCountryV2 from './Questions/CountryV2/index.js'
+import QuestionCountrySubdivision from './Questions/CountrySubdivision/index.jsx'
 import QuestionInput from './Questions/Input'
 import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
@@ -132,6 +133,15 @@ const FormBuilder = ({
             question.dependentQuestions.map(
               ConditionalQuestion(question.dependentQuestions, question.name)
             )}
+        </>
+      ),
+      country_subdivision: (
+        <>
+          <QuestionCountrySubdivision
+            question={question}
+            countryIsoCode="ES"
+            // countryIsoCode={useFormObj.watch(question.country)}
+          />
         </>
       ),
       county: (

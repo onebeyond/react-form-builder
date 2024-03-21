@@ -106,7 +106,6 @@
     "react-select": "^5.8.0",
     "react-ymd-date-select": "^0.3.0",
     "rimraf": "^5.0.5",
-    "theme-ui": "^0.15.7",
-    "uuid": "^9.0.1"
+    "theme-ui": "^0.15.7"
   }
 }

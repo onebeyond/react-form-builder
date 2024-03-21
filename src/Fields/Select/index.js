@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 
 import React from 'react'
-import { v4 as uuid } from 'uuid'
 import { Image, useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
 import ReactSelect, { components } from 'react-select'
@@ -126,7 +125,6 @@ const Select = ({
       render={({ field: { onChange } }) => {
         return (
           <ReactSelect
-            id={uuid()}
             aria-label={label}
             className={haserrors ? 'error-select' : ''}
             styles={customStyles}

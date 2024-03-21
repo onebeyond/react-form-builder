@@ -1,0 +1,68 @@
+name: Release and publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to create release commit
+      pull-requests: write # to create release PR
+
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+
+    steps:
+      - name: 🔐 Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
+      - name: 🆕 Create or update release
+        uses: google-github-actions/release-please-action@a37ac6e4f6449ce8b3f7607e4d97d0146028dc0b # 4.1.0
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  npm-publish:
+    needs: [release-please]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # to allow npm publish provenance generation
+
+    # this if statements ensure that a publication only occurs when a new release is created:
+    if: ${{ needs.release-please.outputs.release_created }}
+
+    steps:
+      - name: 🔐 Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            fulcio.sigstore.dev:443
+            github.com:443
+            registry.npmjs.org:443
+            rekor.sigstore.dev:443
+
+      - name: 🔔 Checkout
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # 4.1.2
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # 4.0.2
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🚀 Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GUIDESMITHS }}

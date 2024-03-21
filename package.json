@@ -31,9 +31,6 @@
     "lint": "npm run test:lint",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "release:patch": "git tag -l | xargs git tag -d && changelog -p && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-    "release:minor": "git tag -l | xargs git tag -d && changelog -m && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:major": "git tag -l | xargs git tag -d && changelog -M && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./public",
     "ncu": "npx ncu"
@@ -75,7 +72,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-standard": "^4.1.0",
-    "generate-changelog": "^1.8.0",
     "gh-pages": "^2.2.0",
     "husky": "^9.0.11",
     "joi": "^17.12.2",

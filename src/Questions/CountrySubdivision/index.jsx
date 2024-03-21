@@ -36,6 +36,12 @@ const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
     })
   }
 
+  // map to { value, label } and sort alphabetically
+  finalListOfSubdivisions = finalListOfSubdivisions.map((subdivision) => ({
+    value: subdivision.shortCode,
+    label: subdivision.name
+  })).sort((a, b) => a.label.localeCompare(b.label))
+
   return finalListOfSubdivisions
 }
 

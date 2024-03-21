@@ -3,10 +3,10 @@
   "title": "Form to test Country Subdivision question",
   "questions": [
     {
-      "name": "country_all",
-      "placeholder": "Select your country region",
+      "name": "country_subdivisions",
+      "placeholder": "Select your region",
       "type": "country_subdivision",
-      "label": "List of subdivisions",
+      "label": "Region",
       "errorMessages": {
         "required": "This field is required"
       },

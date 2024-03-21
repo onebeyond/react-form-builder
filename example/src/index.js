@@ -12,6 +12,7 @@ import {
 import App from './App'
 import Contact from './forms/Contact'
 import Countries from './forms/Countries'
+import CountrySubdivisions from './forms/CountrySubdivisions'
 import ErrorPage from './error-page'
 import theme from './theme'
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'countries',
         element: <Countries />,
+      },
+      {
+        path: 'country_subdivisions',
+        element: <CountrySubdivisions />,
       },
     ],
   },

@@ -13,7 +13,7 @@ import styles from './styles.js'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const CountriesForm = () => {
+const CountrySubdivisionsForm = () => {
   const [modalText, setModalText] = useState('')
   const [show, setShow] = useState(false)
   const [isLoading, setLoading] = useState(false)
@@ -65,4 +65,4 @@ const CountriesForm = () => {
   )
 }
 
-export default CountriesForm
+export default CountrySubdivisionsForm

@@ -47,21 +47,46 @@ const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
 
 /**
  * Question of type Country Subdivision
- * @param {props} question Question metadata
- * @returns React component of a country subdivision select
+ * @param {Object} question - Question metadata.
+ * @param {string} question.id - Question id.
+ * @param {string} question.name - Question name.
+ * @param {string} question.label - Question label.
+ * @param {string} question.placeholder - Question placeholder.
+ * @param {Object} question.registerConfig - Question register configuration.
+ * @param {Object} question.errorMessages - Question error messages.
+ * @param {Object} question.config - Question configuration.
+ * @param {boolean} [question.config.search=false] - Whether to enable search in the select.
+ * @param {Object} [question.config.priorityOptions={}] - Priority options object with the subdivisions to show first in the list for each country.
+ * @param {Object} [question.config.whitelist={}] - Whitelist options object with the subdivisions to show for each country.
+ * @param {Object} [question.config.blacklist={}] - Blacklist options object with the subdivisions to hide for each country.
+ * @param {string} [question.config.countryIsoCode] - ISO code of the country to get the subdivisions from.
+ *    If provided, it will take precedence over the `config.countryQuestionName` to get the selected country.
+ * @param {string} [question.config.countryQuestionName] - Name of the country question in the same form to get the selected country ISO code from.
+ *    If not provided, a hardcoded country ISO code must be provided in `config.countryIsoCode`.
+ * @param {Object} props - Extra properties to pass to the component.
+ * @returns React component of a country subdivision select.
  */
 const QuestionCountrySubdivision = ({
   question,
-  countryIsoCode,
   ...props
 }) => {
   const {
-    formState: { errors },
-    trigger,
     control,
     defaultValue,
-    unregister
+    formState: { errors },
+    trigger,
+    unregister,
+    watch
   } = useFormContext()
+
+  const config = {
+    search: question.config?.search || false,
+    priorityOptions: question.config?.priorityOptions || {},
+    whitelist: question.config?.whitelist || {},
+    blacklist: question.config?.blacklist || {},
+  }
+
+  const countryIsoCode = question.config?.countryIsoCode || watch(question.config?.countryQuestionName)?.value || null
 
   return (
     <div
@@ -79,18 +104,19 @@ const QuestionCountrySubdivision = ({
       )}
       <Select
         control={control}
-        defaultValue={defaultValue}
-        unregister={unregister}
-        onChange={() => trigger(question.name)}
-        id={question.name}
-        key={question.name}
-        name={question.name}
-        options={buildCountrySubdivisonOptions(question.config || {}, countryIsoCode)}
-        isSearchable={question.config?.search === true}
-        registerConfig={question.registerConfig}
-        placeholder={question.placeholder}
-        label={question.label}
         data-haserrors={!!errors[question.name]}
+        defaultValue={defaultValue}
+        id={question.name}
+        isDisabled={!countryIsoCode}
+        isSearchable={config.search}
+        key={question.name}
+        label={question.label}
+        name={question.name}
+        onChange={() => trigger(question.name)}
+        options={buildCountrySubdivisonOptions(config, countryIsoCode)}
+        placeholder={question.placeholder}
+        registerConfig={question.registerConfig}
+        unregister={unregister}
         {...props}
       />
 

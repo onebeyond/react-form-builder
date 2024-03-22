@@ -3,6 +3,21 @@
   "title": "Form to test Country Subdivision question",
   "questions": [
     {
+      "name": "country",
+      "placeholder": "Select your country",
+      "type": "country_v2",
+      "label": "Country",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "priorityOptions": ["ES"]
+      }
+    },
+    {
       "name": "country_subdivisions",
       "placeholder": "Select your region",
       "type": "country_subdivision",
@@ -12,6 +27,9 @@
       },
       "registerConfig": {
         "required": true
+      },
+      "config": {
+        "countryQuestionName": "country"
       }
     }
   ],

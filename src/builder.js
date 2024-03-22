@@ -139,8 +139,6 @@ const FormBuilder = ({
         <>
           <QuestionCountrySubdivision
             question={question}
-            countryIsoCode="ES"
-            // countryIsoCode={useFormObj.watch(question.country)}
           />
         </>
       ),

@@ -9,9 +9,9 @@ import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
 
 const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
-  const priorityOptions = config?.priorityOptions?.selectedCountryCode || []
-  const whitelist = config?.whitelist?.selectedCountryCode || []
-  const blacklist = config?.blacklist?.selectedCountryCode || []
+  const priorityOptions = config?.priorityOptions?.[selectedCountryCode] || []
+  const whitelist = config?.whitelist?.[selectedCountryCode] || []
+  const blacklist = config?.blacklist?.[selectedCountryCode] || []
 
   let finalListOfSubdivisions =
     countryRegionData.find(country => country.countryShortCode === selectedCountryCode)?.regions || []
@@ -23,11 +23,18 @@ const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
     finalListOfSubdivisions = finalListOfSubdivisions.filter((subdivision) => !blacklist.includes(subdivision.shortCode))
   }
 
+  // map to { value, label } and sort alphabetically
+  finalListOfSubdivisions = finalListOfSubdivisions.map((subdivision) => ({
+    value: subdivision.shortCode,
+    label: subdivision.name
+  })).sort((a, b) => a.label.localeCompare(b.label))
+
+
   // sort the subdivisions by priority
   if (priorityOptions.length > 0) {
     priorityOptions.toReversed().forEach((isoCode) => {
       const foundIndex =
-        finalListOfSubdivisions.findIndex((subdivision) => subdivision.shortCode === isoCode)
+        finalListOfSubdivisions.findIndex((subdivision) => subdivision.value.toLowerCase() === isoCode.toLowerCase())
       if (foundIndex !== -1) {
         const foundSubdivision = finalListOfSubdivisions[foundIndex]
         finalListOfSubdivisions.splice(foundIndex, 1);
@@ -35,12 +42,6 @@ const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
       }
     })
   }
-
-  // map to { value, label } and sort alphabetically
-  finalListOfSubdivisions = finalListOfSubdivisions.map((subdivision) => ({
-    value: subdivision.shortCode,
-    label: subdivision.name
-  })).sort((a, b) => a.label.localeCompare(b.label))
 
   return finalListOfSubdivisions
 }

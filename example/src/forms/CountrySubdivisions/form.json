@@ -21,7 +21,7 @@
       "name": "country_subdivisions",
       "placeholder": "Select your region",
       "type": "country_subdivision",
-      "label": "Region",
+      "label": "Region (attached to Country selection)",
       "errorMessages": {
         "required": "This field is required"
       },
@@ -30,6 +30,24 @@
       },
       "config": {
         "countryQuestionName": "country"
+      }
+    },
+    {
+      "name": "country_subdivisions",
+      "placeholder": "Select your region",
+      "type": "country_subdivision",
+      "label": "Region with priorityOptions for ES (attached to Country selection)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryQuestionName": "country",
+        "priorityOptions": {
+          "ES": ["VI", "AB"]
+        }
       }
     }
   ],

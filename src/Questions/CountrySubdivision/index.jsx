@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
 import countryRegionData from 'country-region-data/dist/data-umd';
 
@@ -122,6 +123,14 @@ const QuestionCountrySubdivision = ({
 
   const countryIsoCode = question.config?.countryIsoCode || watch(question.config?.countryQuestionName)?.value || null
 
+  const selectInputRef = useRef(null)
+
+  useEffect(() => {
+    if (selectInputRef.current) {
+      selectInputRef.current.clearValue()
+    }
+  }, [countryIsoCode])
+
   return (
     <div
       data-testid='question-country-subdivision'
@@ -137,6 +146,7 @@ const QuestionCountrySubdivision = ({
         </Label>
       )}
       <Select
+        ref={selectInputRef}
         control={control}
         data-haserrors={!!errors[question.name]}
         defaultValue={defaultValue}

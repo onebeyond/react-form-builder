@@ -32,13 +32,9 @@ const CountrySubdivisionsForm = () => {
     await sleep(5000);
     setLoading(false)
 
-    alert(
-      `You have submitted your form correctly: ${'\n'} ${JSON.stringify(
-        data,
-        null,
-        2
-      )}`
-    )
+    const msg = 'You have submitted your form correctly: ' + JSON.stringify(data, null, 2)
+    console.log(msg)
+    alert(msg)
   }
 
   return (

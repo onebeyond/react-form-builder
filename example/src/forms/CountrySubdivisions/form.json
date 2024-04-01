@@ -92,6 +92,38 @@
           ]
         }
       }
+    },
+    {
+      "name": "country_subdivisions_full_iso_code",
+      "placeholder": "Select your region",
+      "type": "country_subdivision",
+      "label": "Region returning full ISO code (attached to Country selection)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryQuestionName": "country",
+        "valueType": "full_iso_code"
+      }
+    },
+    {
+      "name": "country_subdivisions_name",
+      "placeholder": "Select your region",
+      "type": "country_subdivision",
+      "label": "Region returning name (attached to Country selection)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryQuestionName": "country",
+        "valueType": "name"
+      }
     }
   ],
   "callForAction": [

@@ -21,7 +21,7 @@
       "name": "country_subdivisions",
       "placeholder": "Select your region",
       "type": "country_subdivision",
-      "label": "Region (attached to Country selection)",
+      "label": "Region with search option (attached to Country selection)",
       "errorMessages": {
         "required": "This field is required"
       },
@@ -29,11 +29,12 @@
         "required": true
       },
       "config": {
-        "countryQuestionName": "country"
+        "countryQuestionName": "country",
+        "search": true
       }
     },
     {
-      "name": "country_subdivisions",
+      "name": "country_subdivisions_priority",
       "placeholder": "Select your region",
       "type": "country_subdivision",
       "label": "Region with priorityOptions for ES (attached to Country selection)",
@@ -47,6 +48,48 @@
         "countryQuestionName": "country",
         "priorityOptions": {
           "ES": ["VI", "AB"]
+        }
+      }
+    },
+    {
+      "name": "country_subdivisions_whitelist",
+      "placeholder": "Select your region",
+      "type": "country_subdivision",
+      "label": "Region with whitelist for ES (attached to Country selection)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryQuestionName": "country",
+        "whitelist": {
+          "ES": [
+            "VI",
+            "AB"
+          ]
+        }
+      }
+    },
+    {
+      "name": "country_subdivisions_blacklist",
+      "placeholder": "Select your region",
+      "type": "country_subdivision",
+      "label": "Region with blacklist for ES (attached to Country selection)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryQuestionName": "country",
+        "blacklist": {
+          "ES": [
+            "VI",
+            "AB"
+          ]
         }
       }
     }

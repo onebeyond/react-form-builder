@@ -3,80 +3,12 @@
 import { jsx } from 'theme-ui'
 import { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
-import countryRegionData from 'country-region-data/dist/data-umd';
 
+import buildCountrySubdivisonOptions from './buildCountrySubdivisonOptions'
+import { CountrySubdivisionValueType } from './constants.js';
 import ErrorMessage from '../../Fields/Error'
 import Select from '../../Fields/Select'
 import Label from '../../Fields/Label'
-
-const buildOptionValue = (valueType, subdivision, selectedCountryCode) => {
-  switch (valueType) {
-    case SubdivisionValueType.FULL_ISO_CODE:
-      return selectedCountryCode + '-' + subdivision.shortCode
-    case SubdivisionValueType.NAME:
-      return subdivision.name
-    case SubdivisionValueType.ISO_CODE:
-    default:
-      return subdivision.shortCode
-  }
-}
-
-const buildCountrySubdivisonOptions = (config, selectedCountryCode) => {
-  const priorityOptions = config.priorityOptions?.[selectedCountryCode] || []
-  const whitelist = config.whitelist?.[selectedCountryCode] || []
-  const blacklist = config.blacklist?.[selectedCountryCode] || []
-  const valueType = config.valueType
-
-  let finalListOfSubdivisions =
-    countryRegionData.find(country => country.countryShortCode === selectedCountryCode)?.regions || []
-
-  // whitelist and blacklist are mutually exclusive
-  if (whitelist.length > 0) {
-    finalListOfSubdivisions = finalListOfSubdivisions.filter((subdivision) => whitelist.includes(subdivision.shortCode))
-  } else if (blacklist.length > 0) {
-    finalListOfSubdivisions = finalListOfSubdivisions.filter((subdivision) => !blacklist.includes(subdivision.shortCode))
-  }
-
-  // map to { value, label } and sort alphabetically
-  finalListOfSubdivisions = finalListOfSubdivisions.map((subdivision) => ({
-    value: buildOptionValue(valueType, subdivision, selectedCountryCode),
-    label: subdivision.name
-  })).sort((a, b) => a.label.localeCompare(b.label))
-
-
-  // sort the subdivisions by priority
-  if (priorityOptions.length > 0) {
-    priorityOptions.toReversed().forEach((isoCode) => {
-      const foundIndex =
-        finalListOfSubdivisions.findIndex((subdivision) => subdivision.value.toLowerCase() === isoCode.toLowerCase())
-      if (foundIndex !== -1) {
-        const foundSubdivision = finalListOfSubdivisions[foundIndex]
-        finalListOfSubdivisions.splice(foundIndex, 1);
-        finalListOfSubdivisions.unshift(foundSubdivision)
-      }
-    })
-  }
-
-  return finalListOfSubdivisions
-}
-
-/**
- * @typedef {string} SubdivisionValueType
- **/
-
-/**
- * Return value type for the country subdivision question.
- * @enum {SubdivisionValueType}
- * @readonly
- * @property {string} ISO_CODE - ISO 3166-2 code of the country subdivision without the country code.
- * @property {string} FULL_ISO_CODE - Full ISO 3166-2 code of the country subdivision (code of the country as prefix).
- * @property {string} NAME - Name of the country subdivision.
- */
-const SubdivisionValueType = {
-  ISO_CODE: "iso_code",
-  FULL_ISO_CODE: "full_iso_code",
-  NAME: "name"
-}
 
 /**
  * Question of type Country Subdivision
@@ -96,7 +28,7 @@ const SubdivisionValueType = {
  *    If provided, it will take precedence over the `config.countryQuestionName` to get the selected country.
  * @param {string} [question.config.countryQuestionName] - Name of the country question in the same form to get the selected country ISO code from.
  *    If not provided, a hardcoded country ISO code must be provided in `config.countryIsoCode`.
- * @param {SubdivisionValueType} [question.config.valueType=iso_code] - Value type to return for the country subdivision.
+ * @param {CountrySubdivisionValueType} [question.config.valueType=iso_code] - Value type to return for the country subdivision.
  * @param {Object} props - Extra properties to pass to the component.
  * @returns React component of a country subdivision select.
  */
@@ -118,7 +50,7 @@ const QuestionCountrySubdivision = ({
     priorityOptions: question.config?.priorityOptions || {},
     whitelist: question.config?.whitelist || {},
     blacklist: question.config?.blacklist || {},
-    valueType: question.config?.valueType || SubdivisionValueType.ISO_CODE
+    valueType: question.config?.valueType || CountrySubdivisionValueType.ISO_CODE
   }
 
   const countryIsoCode = question.config?.countryIsoCode || watch(question.config?.countryQuestionName)?.value || null

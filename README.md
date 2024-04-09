@@ -272,10 +272,6 @@ countriesTools.registerLocale(afLocale)
 }
 ```
 
-
-
-
-
 ## Country subdivision
 
 | Option             | Description                              |  Type  | Default |
@@ -300,6 +296,9 @@ countriesTools.registerLocale(afLocale)
 | countryIsoCode      | ISO code of the country to get the subdivisions from.<br>If provided, it will take precedence over the `countryQuestionName` to get the selected country.          | string  |            |
 | countryQuestionName | Name of the country question to get the selected country ISO code from.<br>If not provided, a hardcoded country ISO code must be provided in `countryIsoCode`.     | string  |            |
 | valueType           | The type of the value to be returned. Possible values: `iso_code`, `full_iso_code`, `name`.                                                                        | string  | `iso_code` |
+
+> [!IMPORTANT]
+> Take into account that the [ISO 3166-2 codes](https://en.wikipedia.org/wiki/ISO_3166-2) of some countries include relevant administrative divisions and dependent territories. For example, for [US](https://en.wikipedia.org/wiki/ISO_3166-2:US) the outlying areas are also officially assigned their own country codes. So you would need to manualy blacklist them if you want to exclude them from the list.
 
 ### Country v2 example:
 

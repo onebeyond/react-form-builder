@@ -124,6 +124,21 @@
         "countryQuestionName": "country",
         "valueType": "name"
       }
+    },
+    {
+      "name": "us_country_subdivisions",
+      "placeholder": "Select your region in the US",
+      "type": "country_subdivision",
+      "label": "Region (attached to fixed US Country)",
+      "errorMessages": {
+        "required": "This field is required"
+      },
+      "registerConfig": {
+        "required": true
+      },
+      "config": {
+        "countryIsoCode": "US"
+      }
     }
   ],
   "callForAction": [

@@ -42,7 +42,8 @@ const buildCountryOptions = (config, language) => {
 
   // sort the countries by priority
   if (priorityOptions.length > 0) {
-    priorityOptions.toReversed().forEach((isoCountryCode) => {
+    const priorityOptionsReversed = [...priorityOptions].reverse()
+    priorityOptionsReversed.forEach((isoCountryCode) => {
       const foundIndex = finalListOfCountries.findIndex((country) => country.value.toLowerCase() === isoCountryCode.toLowerCase())
       if (foundIndex !== -1) {
         const foundCountry = finalListOfCountries[foundIndex]

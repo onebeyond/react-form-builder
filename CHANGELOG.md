@@ -699,6 +699,18 @@
 *  countryQuestion testing ([73237ecd](https://github.com/onebeyond/react-form-builder/commit/73237ecd9739680a15fc0ea860d3f88606b0570e))
 * **wip:**  fixing tests ([b4305806](https://github.com/onebeyond/react-form-builder/commit/b4305806da274a97ac1dc291048862cbd83d6cf7))
 
+## [2.3.1](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.0...@onebeyond/react-form-builder-v2.3.1) (2024-04-10)
+
+
+### 🔧 Others
+
+* **deps:** bump github/codeql-action from 3.24.8 to 3.24.10 ([#229](https://github.com/onebeyond/react-form-builder/issues/229)) ([c5db271](https://github.com/onebeyond/react-form-builder/commit/c5db271684437f2b16dc3b8dd619afe88e1f3c74))
+
+
+### 🎨 Styling
+
+* add classname to textarea when it has errors ([#237](https://github.com/onebeyond/react-form-builder/issues/237)) ([269ddef](https://github.com/onebeyond/react-form-builder/commit/269ddef1b6432d36f837c34b7b86243e5ee30683))
+
 ## [2.3.0](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.2.0...@onebeyond/react-form-builder-v2.3.0) (2024-04-10)
 
 

@@ -4,6 +4,8 @@ import { Link, Outlet } from 'react-router-dom'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-number-input/style.css'
 
+import './styles.css'
+
 const App = () => {
   return (
     <div style={{ display: 'flex' }}>

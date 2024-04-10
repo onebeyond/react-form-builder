@@ -86,7 +86,7 @@ const FormBuilder = ({
         <QuestionImageInput useForm={useFormObj} question={question} />
       ),
       password: <QuestionInput useForm={useFormObj} question={question} />,
-      textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
+      textarea: <QuestionTextarea question={question} />,
       select: (
         <>
           <QuestionSelect useForm={useFormObj} question={question} />

@@ -1,3 +1,5 @@
+import { useFormContext } from 'react-hook-form'
+
 import ErrorMessage from '../../Fields/Error'
 import Textarea from '../../Fields/Textarea'
 import Label from '../../Fields/Label'
@@ -13,11 +15,14 @@ const styles = {
   }
 }
 
-const QuestionTextarea = ({ question, useForm }) => {
+const QuestionTextarea = ({ question }) => {
   const {
     register,
     formState: { errors }
-  } = useForm
+  } = useFormContext()
+
+
+
   const defaultRows = 5
   const reg = {
     ...question.registerConfig,
@@ -89,6 +94,7 @@ const QuestionTextarea = ({ question, useForm }) => {
         defaultValue={question.defaultValue}
         maximumLen={question.registerConfig.maximumLen}
         countType={question.registerConfig.countType}
+        data-haserrors={!!errors[question.name]}
         {...register(question.name, reg)}
       />
       {errors[question.name] &&

@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 
 import React from 'react'
-import { v4 as uuid } from 'uuid'
 import { useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
 import AsyncSelect from 'react-select/async'
@@ -95,7 +94,6 @@ const Select = ({
         <AsyncSelect
           aria-label={label}
           styles={customStyles}
-          id={uuid()}
           onChange={onChange}
           {...props}
         />

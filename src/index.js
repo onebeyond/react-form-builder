@@ -14,6 +14,9 @@ export { default as ErrorMessage } from './Fields/Error'
 export { default as Modal } from './Fields/MyModal'
 export { Controller } from 'react-hook-form'
 
+// Questions
+export { CountrySubdivisionValueType } from './Questions/CountrySubdivision/constants'
+
 // Theme
 export { default as FormTheme } from './theme'
 

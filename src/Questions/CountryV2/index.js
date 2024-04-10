@@ -42,7 +42,8 @@ const buildCountryOptions = (config, language) => {
 
   // sort the countries by priority
   if (priorityOptions.length > 0) {
-    priorityOptions.toReversed().forEach((isoCountryCode) => {
+    const priorityOptionsReversed = [...priorityOptions].reverse()
+    priorityOptionsReversed.forEach((isoCountryCode) => {
       const foundIndex = finalListOfCountries.findIndex((country) => country.value.toLowerCase() === isoCountryCode.toLowerCase())
       if (foundIndex !== -1) {
         const foundCountry = finalListOfCountries[foundIndex]
@@ -77,10 +78,10 @@ const QuestionCountryV2 = ({
   ...props
 }) => {
   const {
-    formState: { errors },
-    trigger,
     control,
     defaultValue,
+    formState: { errors },
+    trigger,
     unregister
   } = useFormContext()
 
@@ -116,18 +117,18 @@ const QuestionCountryV2 = ({
       )}
       <Select
         control={control}
-        defaultValue={defaultValue}
-        unregister={unregister}
-        onChange={() => trigger(question.name)}
-        id={question.name}
-        key={question.name}
-        name={question.name}
-        options={buildCountryOptions(question.config || {}, language || 'en')}
-        isSearchable={question.config?.search === true}
-        registerConfig={question.registerConfig}
-        placeholder={question.placeholder}
-        label={question.label}
         data-haserrors={!!errors[question.name]}
+        defaultValue={defaultValue}
+        id={question.name}
+        isSearchable={question.config?.search === true}
+        key={question.name}
+        label={question.label}
+        name={question.name}
+        onChange={() => trigger(question.name)}
+        options={buildCountryOptions(question.config || {}, language || 'en')}
+        placeholder={question.placeholder}
+        registerConfig={question.registerConfig}
+        unregister={unregister}
         {...props}
       />
 

@@ -51,8 +51,6 @@
   ],
   "packages": {
     ".": {
-      "package-name": "",
-      "include-component-in-tag": true
     }
   }
 }

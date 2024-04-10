@@ -48,7 +48,6 @@ export default commandLineArgs => ({
       ? []
       : [replace({ 'process.env.NODE_ENV': JSON.stringify('production') })]),
   ],
-
   external: makeExternalPredicate([
     // Handles both dependencies and peer dependencies so we don't have to manually maintain a list
     ...Object.keys(pkg.dependencies || {}),

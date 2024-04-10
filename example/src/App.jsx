@@ -15,6 +15,9 @@ const App = () => {
           <li>
             <Link to={'countries'}>Countries form</Link>
           </li>
+          <li>
+            <Link to={'country_subdivisions'}>Country subdivision form</Link>
+          </li>
         </ul>
       </nav>
       <div>

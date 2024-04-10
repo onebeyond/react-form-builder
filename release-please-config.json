@@ -51,8 +51,8 @@
   ],
   "packages": {
     ".": {
-      "package-name": "",
-      "include-component-in-tag": true
+      "component": "@onebeyond/react-form-builder",
+      "releaseType": "node"
     }
   }
 }

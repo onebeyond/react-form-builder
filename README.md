@@ -231,7 +231,7 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 | search          | Allows the user to search typing in the select control                                                                                                     | boolean  |  false  |
 | flag            | Shows the flag of the country before the name                                                                                                              | boolean  |  false  |
 
-The countires will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. Available laguages: `en`, `es`, `de`, `fr`.
+The countries will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. Available laguages: `en`, `es`, `de`, `fr`.
 
 This library depends on the [`i18n-iso-countries`](https://www.npmjs.com/package/i18n-iso-countries) library to translate the country names and flags. If you want to translate the countries to a different language, you can use the `registerLocale` method of the `i18n-iso-countries` library to register a new locale. For example, to translate the countries to Afrikaans, install the library and do the following:
 
@@ -300,7 +300,7 @@ countriesTools.registerLocale(afLocale)
 > [!IMPORTANT]
 > Take into account that the [ISO 3166-2 codes](https://en.wikipedia.org/wiki/ISO_3166-2) of some countries include relevant administrative divisions and dependent territories. For example, for [US](https://en.wikipedia.org/wiki/ISO_3166-2:US) the outlying areas are also officially assigned their own country codes. So you would need to manualy blacklist them if you want to exclude them from the list.
 
-### Country v2 example:
+### County subdivision example:
 
 ```json
 {

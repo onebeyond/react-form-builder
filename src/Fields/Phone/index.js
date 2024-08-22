@@ -40,19 +40,17 @@ const Phone = ({
         }
       }}
       name={name}
-      render={({ field: { onChange } }) => {
-        return (
-          <PhoneInput
-            onChange={onChange}
-            dir='ltr'
-            placeholder={placeholder}
-            defaultCountry={defaultCountry}
-            inputComponent={Input}
-            value={props.value || defaultValue || ''}
-            {...props}
-          />
-        )
-      }}
+      render={({ field: { onChange } }) => (
+        <PhoneInput
+          onChange={onChange}
+          dir='ltr'
+          placeholder={placeholder}
+          defaultCountry={defaultCountry}
+          inputComponent={Input}
+          value={props.value || defaultValue || ''}
+          {...props}
+        />
+      )}
     />
   )
 }

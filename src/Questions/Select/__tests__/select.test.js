@@ -16,7 +16,7 @@ const question = {
     required: 'This field is required'
   },
   registerConfig: {
-    required: {}
+    required: true
   },
   config: {
     options: [

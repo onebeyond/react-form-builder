@@ -14,6 +14,7 @@ const Phone = ({
   registerConfig,
   setValue,
   name,
+  defaultValue,
   ...props
 }) => {
   return (
@@ -39,16 +40,19 @@ const Phone = ({
         }
       }}
       name={name}
-      render={({ field: { onChange } }) => (
-        <PhoneInput
-          onChange={onChange}
-          dir='ltr'
-          placeholder={placeholder}
-          defaultCountry={defaultCountry}
-          inputComponent={Input}
-          {...props}
-        />
-      )}
+      render={({ field: { onChange } }) => {
+        return (
+          <PhoneInput
+            onChange={onChange}
+            dir='ltr'
+            placeholder={placeholder}
+            defaultCountry={defaultCountry}
+            inputComponent={Input}
+            value={props.value || defaultValue || ''}
+            {...props}
+          />
+        )
+      }}
     />
   )
 }

@@ -45,6 +45,7 @@ const QuestionPhone = ({ isMobile, isoCode, question, useForm, ...props }) => {
           registerConfig={question.registerConfig}
           name={question.name}
           international={question.international}
+          defaultValue={question.defaultValue}
           {...props}
         />
 

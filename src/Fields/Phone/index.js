@@ -14,6 +14,7 @@ const Phone = ({
   registerConfig,
   setValue,
   name,
+  defaultValue,
   ...props
 }) => {
   return (
@@ -28,8 +29,8 @@ const Phone = ({
                 registerConfig.required &&
                 !isValidPhoneNumber(phone)
                 ? setError(name, {
-                    type: 'isValidPhoneNumber'
-                  })
+                  type: 'isValidPhoneNumber'
+                })
                 : clearErrors(name)
             }
             shouldSetError()
@@ -41,12 +42,12 @@ const Phone = ({
       name={name}
       render={({ field: { onChange } }) => (
         <PhoneInput
-          defaultValue=''
           onChange={onChange}
           dir='ltr'
           placeholder={placeholder}
           defaultCountry={defaultCountry}
           inputComponent={Input}
+          value={props.value || defaultValue || ''}
           {...props}
         />
       )}

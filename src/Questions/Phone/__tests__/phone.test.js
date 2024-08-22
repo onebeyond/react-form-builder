@@ -119,3 +119,31 @@ test('country code is visible', () => {
     result.container.querySelector('input[type="tel"]').getAttribute('value')
   ).toBe('+44')
 })
+
+test('default value is displayed', () => {
+  const defaultValue = '555666777'
+  const { getByTestId } = render(
+    <QuestionPhone
+      question={{ ...question, defaultValue }}
+      useForm={formMethods}
+    />
+  )
+  const phoneComponent = getByTestId('question-phone')
+  expect(phoneComponent.getAttribute('value')).toBe(defaultValue)
+})
+
+test('default value can be changed', () => {
+  const defaultValue = '555666777'
+  const changedValue = '777666555'
+  const formatedChangedValue = '+7 776 665 55'
+  const { getByTestId } = render(
+    <QuestionPhone
+      question={{ ...question, defaultValue }}
+      useForm={formMethods}
+    />
+  )
+  const phoneComponent = getByTestId('question-phone')
+  expect(phoneComponent.value).toBe(defaultValue)
+  fireEvent.change(phoneComponent, { target: { value: changedValue } })
+  expect(phoneComponent.value).toBe(formatedChangedValue)
+})

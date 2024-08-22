@@ -144,7 +144,9 @@ const Select = forwardRef(function InnerSelect({
         ...registerConfig,
         validate: {
           noEmpty: (item) =>
-            registerConfig && registerConfig.required ? item.value !== '' : true
+            registerConfig && registerConfig.required
+              ? 'value' in Object(item || null) && item.value !== ''
+              : true
         }
       }}
       name={name}

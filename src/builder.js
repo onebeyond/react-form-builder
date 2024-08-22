@@ -46,7 +46,9 @@ const FormBuilder = ({
 }) => {
   const useFormObj = useForm()
   const [formDataValues, setFormDataValues] = useState({})
-  const hasRecaptcha = form.questions.some(question => question.type === 'recaptcha')
+  const hasRecaptcha = form.questions.some(
+    (question) => question.type === 'recaptcha'
+  )
   const recaptchaRef = useRef(null)
 
   useEffect(() => {
@@ -125,10 +127,7 @@ const FormBuilder = ({
       ),
       country_v2: (
         <>
-          <QuestionCountryV2
-            question={question}
-            language={language}
-          />
+          <QuestionCountryV2 question={question} language={language} />
           {question.dependentQuestions &&
             question.dependentQuestions.map(
               ConditionalQuestion(question.dependentQuestions, question.name)
@@ -269,17 +268,17 @@ const FormBuilder = ({
         <React.Fragment key={i}>
           {
             QuestionsMap(dependentQuestion.question)[
-              dependentQuestion.question.type
+            dependentQuestion.question.type
             ]
           }
 
           {nestedQuestion.dependentQuestions
             ? nestedQuestion.dependentQuestions.map(
-                ConditionalQuestion(
-                  nestedQuestion.question,
-                  dependentQuestion.name
-                )
+              ConditionalQuestion(
+                nestedQuestion.question,
+                dependentQuestion.name
               )
+            )
             : null}
         </React.Fragment>
       )
@@ -336,11 +335,13 @@ const FormBuilder = ({
     if (hasRecaptcha) {
       recaptchaRef.current?.execute()
       setFormDataValues(await formatData(data))
-
     } else {
       onSubmitForm(await formatData(data))
     }
   }
+
+  const hasErrors =
+    Object.values(errors).some((error) => error.type === 'required').length > 0
 
   return (
     <FormProvider {...useFormObj}>
@@ -387,7 +388,7 @@ const FormBuilder = ({
                 <Button
                   sx={styles.fitContent}
                   key={cfa.caption}
-                  disabled={isLoading}
+                  disabled={isLoading || hasErrors || formErrors.length > 0}
                   isLoading={isLoading}
                   id={cfa.id}
                   caption={cfa.caption}

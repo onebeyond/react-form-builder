@@ -699,6 +699,18 @@
 *  countryQuestion testing ([73237ecd](https://github.com/onebeyond/react-form-builder/commit/73237ecd9739680a15fc0ea860d3f88606b0570e))
 * **wip:**  fixing tests ([b4305806](https://github.com/onebeyond/react-form-builder/commit/b4305806da274a97ac1dc291048862cbd83d6cf7))
 
+## [2.3.2](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.1...@onebeyond/react-form-builder-v2.3.2) (2024-08-22)
+
+
+### 🐛 Bug Fixes
+
+* handle undefined item in select noEmpty validation and remove phone input default value ([#275](https://github.com/onebeyond/react-form-builder/issues/275)) ([39fa184](https://github.com/onebeyond/react-form-builder/commit/39fa1844252baa7fe8c4db99aad413f1d560d67e))
+
+
+### 📝 Docs
+
+* fix typos in README ([#256](https://github.com/onebeyond/react-form-builder/issues/256)) ([23c1720](https://github.com/onebeyond/react-form-builder/commit/23c1720fd672995513734fedccbbc3298531a8a5))
+
 ## [2.3.1](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.0...@onebeyond/react-form-builder-v2.3.1) (2024-04-10)
 
 

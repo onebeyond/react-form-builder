@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 
-import React from 'react'
-import { v4 as uuid } from 'uuid'
+import React, { useEffect, forwardRef } from 'react'
 import { Image, useThemeUI } from 'theme-ui'
 import { Controller } from 'react-hook-form'
 import ReactSelect, { components } from 'react-select'
@@ -36,7 +35,7 @@ const DropdownIndicator = (props) => {
   return <components.DropdownIndicator {...props} />
 }
 
-const Select = ({
+const Select = forwardRef(function InnerSelect({
   control,
   name,
   onChange = undefined,
@@ -49,8 +48,9 @@ const Select = ({
   arrows,
   'data-haserrors': haserrors,
   ...props
-}) => {
+}, ref) {
   const { theme } = useThemeUI()
+
   const selectStyles = {
     option: {},
     clearIndicator: {},
@@ -114,7 +114,7 @@ const Select = ({
     }
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       unregister(name)
     }
@@ -126,7 +126,7 @@ const Select = ({
       render={({ field: { onChange } }) => {
         return (
           <ReactSelect
-            id={uuid()}
+            ref={ref}
             aria-label={label}
             className={haserrors ? 'error-select' : ''}
             styles={customStyles}
@@ -153,6 +153,6 @@ const Select = ({
       defaultValue={defaultValue}
     />
   )
-}
+})
 
 export default Select

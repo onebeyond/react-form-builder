@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/@onebeyond/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/v/@onebeyond/react-form-builder.svg?style=flat-square" alt="NPM version" /></a>
   <a href="https://www.npmjs.com/package/@onebeyond/react-form-builder" target="_blank"><img src="https://img.shields.io/npm/dm/@onebeyond/react-form-builder.svg?style=flat-square" alt="NPM downloads" /></a>
-  <a href="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml" target="_blank"><img src="https://github.com/onebeyond/react-form-builder/actions/workflows/cd.yml/badge.svg" alt="Publish" /></a>
+  <a href="https://github.com/onebeyond/react-form-builder/actions/workflows/release-and-publish.yml" target="_blank"><img src="https://github.com/onebeyond/react-form-builder/actions/workflows/release-and-publish.yml/badge.svg" alt="Publish" /></a>
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/maintainability"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/maintainability" /></a>
   <a href="https://codeclimate.com/github/onebeyond/react-form-builder/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7be0c6651a4fd019f777/test_coverage" /></a>
   <a href="https://socket.dev/npm/package/@onebeyond/react-form-builder" target="_blank"><img src="https://socket.dev/api/badge/npm/package/@onebeyond/react-form-builder" alt="socket.dev" /></a>
@@ -70,18 +70,17 @@ http://guidesmiths-react-form-builder.s3-website.eu-central-1.amazonaws.com/
 
 # Formbuilder options
 
-| Option  	| Description  	| Type |   Default	|
-|---	|---	|:---:	|:---:	|
-|   idForm*	|  Id for the form  	|  string 	|  '' 	|
-|   form*	|  The json with the questions to create 	|  json  	|   -	|
-|   onSubmit*    |   Action to be realised "onSubmit" form    |    function       |   -    |
-|   language	| Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
-|  isoCode      |   Isocode of the country to show as default in phone input |  string     | GB
-|  isMobile      |   A boolean toggle is assigned to check if we are from a mobile port view | boolean    | false
-|  countryAndRegionsData    |  Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)   |   Array of objects    | -
-|  onLinkOpen       |  Function to be executed when there is a custom link  |  function     | -
-|  formErrors       |  Array of custom errors associated with specific fields |  Array of objects     | []
-
+| Option                | Description                                                                                                                                     |       Type       | Default |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|:----------------:|:-------:|
+| idForm*               | Id for the form                                                                                                                                 |      string      |   ''    |
+| form*                 | The json with the questions to create                                                                                                           |       json       |    -    |
+| onSubmit*             | Action to be realised "onSubmit" form                                                                                                           |     function     |    -    |
+| language              | Shortcut with the language  to render components in multiple languages (`country`,`date`) <br /> <br /> Available laguages: `es`,`de`,`fr`,`en` |      string      |   en    |
+| isoCode               | Isocode of the country to show as default in phone input                                                                                        |      string      |   GB    |
+| isMobile              | A boolean toggle is assigned to check if we are from a mobile port view                                                                         |     boolean      |  false  |
+| countryAndRegionsData | Array of objects with the acronym(s) and the names of the countries that you want to display in the `countrySelect` (see example)               | Array of objects |    -    |
+| onLinkOpen            | Function to be executed when there is a custom link                                                                                             |     function     |    -    |
+| formErrors            | Array of custom errors associated with specific fields                                                                                          | Array of objects |   []    |
 
 
 ##### CountryAndRegionsData example:
@@ -134,24 +133,25 @@ https://user-images.githubusercontent.com/79102959/134894112-e4f38ced-0992-428c-
 
 
 ## Country
-| Option | Description | Type  | Default |
-| ------ | ----------- | :---: | :----: |
-| name*	|  Country component name  	|  string 	|  - 	|
-| type*   | Must be `country` | string | - |
-| label	|  Text shown over the coutnry list|  string  	|   ''	|
-| language	| An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en`  	| string   	|   en	|
-| placeholder    |   Placeholder displayed in the select    |    string       |   ''   |
-| priorityOptions    |   Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']    |    string       |   '' |
-| returnCountryName	|  Returns the country name (in English) as each option value, instead of the country code  	|  boolean 	|  false	|
-| **countryAndRegionsData**	| An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.  	| json   	|  [] 	|
-| countryName     |   The name of the country |  string     | ''
-| countryShortCode     |   To display the short code(s) for the countries Ex: ['GB', 'ES']  |  string     | ''
-| **errorMessages**	|    	| json   	|   	|
-| required      |   Error message to display on submit if there is no country selected |  string     | ''
-| **registerConfig**       |    |  json     |
-| required  | Define if the country select is required  |  boolean  | false
 
-Reminder: the 'countryAndRegions' prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
+| Option                    | Description                                                                                                                               | Type    | Default |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:-------:|
+| name*                     | Country component name                                                                                                                    | string  |    -    |
+| type*                     | Must be `country`                                                                                                                         | string  |    -    |
+| label                     | Text shown over the coutnry list                                                                                                          | string  |   ''    |
+| language                  | An string with the language shortcode in which you want to display the country names opt:  <br /> Available laguages: `es`,`de`,`fr`,`en` | string  |   en    |
+| placeholder               | Placeholder displayed in the select                                                                                                       | string  |   ''    |
+| priorityOptions           | Array of strings with shortcode(s) of the countries that want to be displayed first in the countries list. Ex: ['GB', 'ES']               | string  |   ''    |
+| returnCountryName         | Returns the country name (in English) as each option value, instead of the country code                                                   | boolean |  false  |
+| **countryAndRegionsData** | An object or array of objects with the acronym(s) and the names of the countries that you want to be shown in the select.                 |  json   |   []    |
+| countryName               | The name of the country                                                                                                                   | string  |   ''    |
+| countryShortCode          | To display the short code(s) for the countries Ex: ['GB', 'ES']                                                                           | string  |   ''    |
+| **errorMessages**         |                                                                                                                                           |  json   |         |
+| required                  | Error message to display on submit if there is no country selected                                                                        | string  |   ''    |
+| **registerConfig**        |                                                                                                                                           |  json   |         |
+| required                  | Define if the country select is required                                                                                                  | boolean |  false  |
+
+Reminder: the `countryAndRegions` prop that can be sent in the ReactFormBuilder will be rendered in this component and will replace the default list.
 
 ### Country example:
 ```json
@@ -211,27 +211,27 @@ https://user-images.githubusercontent.com/79102959/134897712-95e4391c-cfbb-42cd-
 
 ## Country v2
 
-| Option | Description | Type  | Default |
-| ------ | ----------- | :---: | :---: |
-| name* | Country component name | string | |
-| type* | Must be `country_v2` | string | |
-| label | Text shown over the country question | string | '' |
-| placeholder | Placeholder displayed in the select | string | '' |
-| **config** | See table below | json | {} |
-| **errorMessages**	| Validation errors | json | {} |
-| **registerConfig** | Validation rules | json | {} |
+| Option             | Description                          |  Type  | Default |
+|--------------------|--------------------------------------|:------:|:-------:|
+| name*              | Country component name               | string |         |
+| type*              | Must be `country_v2`                 | string |         |
+| label              | Text shown over the country question | string |   ''    |
+| placeholder        | Placeholder displayed in the select  | string |   ''    |
+| **config**         | See table below                      |  json  |   {}    |
+| **errorMessages**  | Validation errors                    |  json  |   {}    |
+| **registerConfig** | Validation rules                     |  json  |   {}    |
 
 ### **config** options
 
-| Option | Description | Type  | Default |
-| ------ | ----------- | :---: | :---: |
-| whitelist | List of ISO 3166-1 alpha-2 codes of the countries allowed in the list. This is mutually exclusive with `blacklist` and `whitelist`takes precedence. | string[] | [] |
-| blacklist | List of ISO 3166-1 alpha-2 codes of the countries not allowed in the list. This is mutually exclusive with `whitelist` and `whitelist`takes precedence. | string[] | [] |
-| priorityOptions | List of ISO 3166-1 alpha-2 codes of the countries to be displayed first in the list. Ex: ['GB', 'ES'] | string[] | [] |
-| search | Allows the user to search typing in the select control | boolean | false |
-| flag | Shows the flag of the country before the name | boolean | false |
+| Option          | Description                                                                                                                                                |   Type   | Default |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:-------:|
+| whitelist       | List of ISO 3166-1 alpha-2 codes of the countries allowed in the list.<br>This is mutually exclusive with `blacklist` and `whitelist`takes precedence.     | string[] |   []    |
+| blacklist       | List of ISO 3166-1 alpha-2 codes of the countries not allowed in the list.<br>This is mutually exclusive with `whitelist` and `whitelist`takes precedence. | string[] |   []    |
+| priorityOptions | List of ISO 3166-1 alpha-2 codes of the countries to be displayed first in the list.<br>Ex: ['GB', 'ES']                                                   | string[] |   []    |
+| search          | Allows the user to search typing in the select control                                                                                                     | boolean  |  false  |
+| flag            | Shows the flag of the country before the name                                                                                                              | boolean  |  false  |
 
-The countires will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. Available laguages: `en`, `es`, `de`, `fr`.
+The countries will be displayed in the language according to the `language` attribute of the FormBuilder. It should use the ISO 639-1 code of the language to display countries names. Available laguages: `en`, `es`, `de`, `fr`.
 
 This library depends on the [`i18n-iso-countries`](https://www.npmjs.com/package/i18n-iso-countries) library to translate the country names and flags. If you want to translate the countries to a different language, you can use the `registerLocale` method of the `i18n-iso-countries` library to register a new locale. For example, to translate the countries to Afrikaans, install the library and do the following:
 
@@ -272,7 +272,60 @@ countriesTools.registerLocale(afLocale)
 }
 ```
 
+## Country subdivision
+
+| Option             | Description                              |  Type  | Default |
+|--------------------|------------------------------------------|:------:|:-------:|
+| type*              | Must be `country_subdivision`            | string |         |
+| name*              | Question name                            | string |         |
+| id                 | Question id to customize styles          | string |         |
+| label              | Text shown over the question             | string |         |
+| placeholder        | Placeholder displayed in the select      | string |         |
+| **config**         | Question configuration (see table below) |  json  |   {}    |
+| **errorMessages**  | Validation errors                        |  json  |   {}    |
+| **registerConfig** | Validation rules                         |  json  |   {}    |
+
+### **config** options
+
+| Option              | Description                                                                                                                                                        |  Type   |  Default   |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:----------:|
+| search              | Allows the user to search typing in the select control                                                                                                             | boolean |   false    |
+| priorityOptions     | List of ISO 3166-1 alpha-2 codes of the subdivisions to be displayed first in the list for each country.<br>Ex: { "ES": ["VI", "AB"] }                             |  json   |     {}     |
+| whitelist           | List of ISO 3166-1 alpha-2 codes of the subdivisions allowed for each country.<br>This is mutually exclusive with `blacklist` and `whitelist`takes precedence.     |  json   |     {}     |
+| blacklist           | List of ISO 3166-1 alpha-2 codes of the subdivisions not allowed for each country.<br>This is mutually exclusive with `whitelist` and `whitelist`takes precedence. |  json   |     {}     |
+| countryIsoCode      | ISO code of the country to get the subdivisions from.<br>If provided, it will take precedence over the `countryQuestionName` to get the selected country.          | string  |            |
+| countryQuestionName | Name of the country question to get the selected country ISO code from.<br>If not provided, a hardcoded country ISO code must be provided in `countryIsoCode`.     | string  |            |
+| valueType           | The type of the value to be returned. Possible values: `iso_code`, `full_iso_code`, `name`.                                                                        | string  | `iso_code` |
+
+> [!IMPORTANT]
+> Take into account that the [ISO 3166-2 codes](https://en.wikipedia.org/wiki/ISO_3166-2) of some countries include relevant administrative divisions and dependent territories. For example, for [US](https://en.wikipedia.org/wiki/ISO_3166-2:US) the outlying areas are also officially assigned their own country codes. So you would need to manualy blacklist them if you want to exclude them from the list.
+
+### County subdivision example:
+
+```json
+{
+  "name": "country_subdivision",
+  "placeholder": "Choose a region",
+  "type": "country_subdivision",
+  "label": "Select your region",
+  "errorMessages": {
+    "required": "This field is required"
+  },
+  "registerConfig": {
+    "required": true
+  },
+  "config": {
+    "search": true,
+    "countryIsoCode": "ES",
+    "priorityOptions": {
+      "ES": ["VI", "AB"]
+    }
+  }
+}
+```
+
 ## Date
+
 | Option  	| Description  	| Type |   Default	|
 |---	|---	|:---:	|:---:	|
 |   name*	|  Date name component  	|  string 	|  - 	|
@@ -613,6 +666,10 @@ https://user-images.githubusercontent.com/79102959/134945855-52577cab-9b16-4df5-
 | required  | Define if the phone input is required  |  boolean  | false
 
 Reminder: The isoCode prop that can also be sent in the ReactFormBuilder component will define the default country displayed in the phone field.
+
+**Important:** due to a known [issue](https://github.com/vercel/next.js/issues/19936) in older versions of NextJS, it's necessary to add the following import in any files where the form builder contains a Phone question:
+
+`import 'react-phone-number-input/style.css'`
 
 Basic phone
 

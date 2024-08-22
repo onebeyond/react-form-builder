@@ -26,12 +26,13 @@ const disableOthers = (e) => {
   })
 }
 
-const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
+const QuestionMultipleCheckboxes = ({ question, useForm }) => {
   const {
     formState: { errors },
     getValues,
     register
   } = useForm
+
   return (
     <div
       sx={{
@@ -70,7 +71,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                     }}
                   >
                     <Checkbox
-                      data-testid='question-singleCheckbox'
+                      data-testid="question-singleCheckbox"
                       id={option.name}
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}
@@ -80,6 +81,7 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                       )}
                       {...register(question.name, {
                         ...question.registerConfig,
+                        onChange: option.disableOthers && disableOthers,
                         validate: {
                           minimumLen: question.registerConfig.minimumLen
                             ? () =>
@@ -95,7 +97,6 @@ const QuestionMultipleCheckboxes = ({ component, form, question, useForm }) => {
                             : () => true
                         }
                       })}
-                      onChange={option.disableOthers && disableOthers}
                     />
                     {option.src ? (
                       <img src={option.src} />

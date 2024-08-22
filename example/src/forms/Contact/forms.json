@@ -187,7 +187,25 @@
               "disableOthers": true
             }
           ]
-        }
+        },
+        "dependentQuestions": [
+          {
+            "condition": "others",
+            "question": {
+              "name": "test",
+              "type": "input",
+              "label": "Confirm password",
+              "placeholder": "Confirm password",
+              "errorMessages": {
+                "required": "This field is required",
+                "doesNotMatch": "The passwords do not match"
+              },
+              "registerConfig": {
+                "required": true
+              }
+            }
+          }
+        ]
       },
       {
         "name": "age",

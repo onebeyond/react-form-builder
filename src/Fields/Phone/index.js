@@ -4,7 +4,6 @@ import { jsx } from 'theme-ui'
 import Input from '../Input'
 import { Controller } from 'react-hook-form'
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
 
 const Phone = ({
   control,

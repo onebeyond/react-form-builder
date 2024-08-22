@@ -6,10 +6,13 @@ import React, { useState } from 'react'
 
 const Textarea = React.forwardRef(({ ...props }, ref) => {
   const [count, setCount] = useState(0)
+  const { 'data-haserrors': haserrors } = props
+
   return (
     <>
       <TextareaUI
         ref={ref}
+        className={haserrors ? 'error-input' : ''}
         {...props}
         onChange={(e) => {
           if (props.countType === 'word')

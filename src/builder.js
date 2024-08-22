@@ -12,6 +12,7 @@ import QuestionRadio from './Questions/Radio'
 import QuestionSelect from './Questions/Select'
 import QuestionCountry from './Questions/Country'
 import QuestionCountryV2 from './Questions/CountryV2/index.js'
+import QuestionCountrySubdivision from './Questions/CountrySubdivision/index.jsx'
 import QuestionInput from './Questions/Input'
 import QuestionTextarea from './Questions/Textarea'
 import QuestionDate from './Questions/Date'
@@ -87,7 +88,7 @@ const FormBuilder = ({
         <QuestionImageInput useForm={useFormObj} question={question} />
       ),
       password: <QuestionInput useForm={useFormObj} question={question} />,
-      textarea: <QuestionTextarea useForm={useFormObj} question={question} />,
+      textarea: <QuestionTextarea question={question} />,
       select: (
         <>
           <QuestionSelect useForm={useFormObj} question={question} />
@@ -133,7 +134,16 @@ const FormBuilder = ({
             )}
         </>
       ),
-      county: <QuestionCounty useForm={useFormObj} question={question} />,
+      country_subdivision: (
+        <>
+          <QuestionCountrySubdivision
+            question={question}
+          />
+        </>
+      ),
+      county: (
+        <QuestionCounty useForm={useFormObj} question={question} />
+      ),
       gender: (
         <>
           <QuestionGender
@@ -210,7 +220,6 @@ const FormBuilder = ({
           <QuestionMultipleCheckboxes
             useForm={useFormObj}
             question={question}
-            form={form}
           />
           {question.dependentQuestions &&
             question.dependentQuestions.map(

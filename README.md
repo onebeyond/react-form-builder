@@ -534,6 +534,7 @@ Markdown example
 | options | It contains all the options to be rendered in the multicheckbox component |  Object Array | -
 |  label or src |  The label displayed with the option (can use markdown format) or the src of the image to be rendered |  string  |  ''  |
 |  value |  The value of the option |  string  |  ''  |
+|  disableOthers | Deselect other options when selected |  boolean  |  ''  |
 |   **errorMessages**	|    	| json   	|   	|
 |  required      |   Error message to display on submit if the multiplecheckbox is not checked and is required |  string     | ''
 | minimumLen  | Text to be displayed in case not minimunLen items has been selected  |  string  | ''  |

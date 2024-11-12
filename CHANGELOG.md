@@ -699,6 +699,13 @@
 *  countryQuestion testing ([73237ecd](https://github.com/onebeyond/react-form-builder/commit/73237ecd9739680a15fc0ea860d3f88606b0570e))
 * **wip:**  fixing tests ([b4305806](https://github.com/onebeyond/react-form-builder/commit/b4305806da274a97ac1dc291048862cbd83d6cf7))
 
+## [2.3.3](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.2...@onebeyond/react-form-builder-v2.3.3) (2024-11-12)
+
+
+### 📝 Docs
+
+* **multiple-checkboxes:** add `disableOthers` to option config docs ([#276](https://github.com/onebeyond/react-form-builder/issues/276)) ([a46d8e4](https://github.com/onebeyond/react-form-builder/commit/a46d8e420aec9348b264dfd41170b8cdb59e75ec))
+
 ## [2.3.2](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.1...@onebeyond/react-form-builder-v2.3.2) (2024-08-22)
 
 

@@ -8,9 +8,9 @@ import Label from '../../Fields/Label'
 
 import ReactMarkdown from 'react-markdown'
 
-const disableOthers = (e) => {
-  Object.entries(e.target.form).forEach(([, v]) => {
-    if (e.target.checked === true) {
+const disableOthers = (option) => (e) => {
+  Object.entries(e?.target?.form || []).forEach(([, v]) => {
+    if (e.target.checked === true && option.value === e.target.value) {
       if (v.type === 'checkbox' && v.name === e.target.name && v !== e.target) {
         v.checked = false
         v.disabled = true
@@ -18,7 +18,7 @@ const disableOthers = (e) => {
       e.target.disabled = false
       e.target.checked = true
     }
-    if (e.target.checked === false) {
+    if (e?.target?.checked === false) {
       if (v.type === 'checkbox' && v.name === e.target.name) {
         v.disabled = false
       }
@@ -71,7 +71,7 @@ const QuestionMultipleCheckboxes = ({ question, useForm }) => {
                     }}
                   >
                     <Checkbox
-                      data-testid="question-singleCheckbox"
+                      data-testid='question-singleCheckbox'
                       id={option.name}
                       aria-describedby={'error_message_' + question.name}
                       name={question.name}
@@ -81,7 +81,9 @@ const QuestionMultipleCheckboxes = ({ question, useForm }) => {
                       )}
                       {...register(question.name, {
                         ...question.registerConfig,
-                        onChange: option.disableOthers && disableOthers,
+                        onChange: option.disableOthers
+                          ? disableOthers(option)
+                          : undefined,
                         validate: {
                           minimumLen: question.registerConfig.minimumLen
                             ? () =>

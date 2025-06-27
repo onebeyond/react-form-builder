@@ -80,22 +80,22 @@ const QuestionMultipleCheckboxes = ({ question, useForm }) => {
                         (defaultValue) => defaultValue === option.value
                       )}
                       {...register(question.name, {
-                        ...question.registerConfig,
+                        ...(question.registerConfig ?? {}),
                         onChange: option.disableOthers
                           ? disableOthers(option)
                           : undefined,
                         validate: {
-                          minimumLen: question.registerConfig.minimumLen
+                          minimumLen: question.registerConfig?.minimumLen
                             ? () =>
                                 getValues()[question.name] &&
                                 getValues()[question.name].length >=
-                                  question.registerConfig.minimumLen
+                                  question.registerConfig?.minimumLen
                             : () => true,
-                          maximumLen: question.registerConfig.maximumLen
+                          maximumLen: question.registerConfig?.maximumLen
                             ? () =>
                                 getValues()[question.name] &&
                                 getValues()[question.name].length <=
-                                  question.registerConfig.maximumLen
+                                  question.registerConfig?.maximumLen
                             : () => true
                         }
                       })}

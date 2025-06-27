@@ -4,7 +4,7 @@ import { Textarea as TextareaUI, jsx } from 'theme-ui'
 
 import React, { useState } from 'react'
 
-const Textarea = React.forwardRef(({ ...props }, ref) => {
+const Textarea = React.forwardRef(({ countType, maximumLen, ...props }, ref) => {
   const [count, setCount] = useState(0)
   const { 'data-haserrors': haserrors } = props
 
@@ -15,15 +15,15 @@ const Textarea = React.forwardRef(({ ...props }, ref) => {
         className={haserrors ? 'error-input' : ''}
         {...props}
         onChange={(e) => {
-          if (props.countType === 'word')
+          if (countType === 'word')
             setCount(e.target.value.trim().split(/[\s,.\n]+/).length)
           // By default is char count
           else setCount(e.target.value.length)
         }}
       />
-      {props.maximumLen && (
+      {maximumLen && (
         <span>
-          {count}/{props.maximumLen}
+          {count}/{maximumLen}
         </span>
       )}
     </>

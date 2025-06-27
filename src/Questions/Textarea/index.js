@@ -21,44 +21,44 @@ const QuestionTextarea = ({ question }) => {
     formState: { errors }
   } = useFormContext()
 
-
-
   const defaultRows = 5
-  const reg = {
-    ...question.registerConfig,
-    pattern: new RegExp(question.registerConfig.pattern),
-    // By default is char count
-    minLength:
-      question.registerConfig.countType !== 'word' &&
-      question.registerConfig.minimumLen,
-    maxLength:
-      question.registerConfig.countType !== 'word' &&
-      question.registerConfig.maximumLen,
-    validate: {
-      minWordCount: (v) => {
-        if (
-          question.registerConfig.countType === 'word' &&
-          question.registerConfig.minimumLen
-        ) {
-          return (
-            v.trim().split(/[\s,.\n]+/).length >=
-            question.registerConfig.minimumLen
-          )
-        } else return true
-      },
-      maxWordCount: (v) => {
-        if (
-          question.registerConfig.countType === 'word' &&
-          question.registerConfig.maximumLen
-        ) {
-          return (
-            v.trim().split(/[\s,.\n]+/).length <=
-            question.registerConfig.maximumLen
-          )
-        } else return true
+  const reg = question.registerConfig
+    ? {
+        ...question.registerConfig,
+        pattern: new RegExp(question.registerConfig.pattern),
+        // By default is char count
+        minLength:
+          question.registerConfig.countType !== 'word' &&
+          question.registerConfig.minimumLen,
+        maxLength:
+          question.registerConfig.countType !== 'word' &&
+          question.registerConfig.maximumLen,
+        validate: {
+          minWordCount: (v) => {
+            if (
+              question.registerConfig.countType === 'word' &&
+              question.registerConfig.minimumLen
+            ) {
+              return (
+                v.trim().split(/[\s,.\n]+/).length >=
+                question.registerConfig.minimumLen
+              )
+            } else return true
+          },
+          maxWordCount: (v) => {
+            if (
+              question.registerConfig.countType === 'word' &&
+              question.registerConfig.maximumLen
+            ) {
+              return (
+                v.trim().split(/[\s,.\n]+/).length <=
+                question.registerConfig.maximumLen
+              )
+            } else return true
+          }
+        }
       }
-    }
-  }
+    : {}
 
   return (
     <div
@@ -92,9 +92,11 @@ const QuestionTextarea = ({ question }) => {
         name={question.name}
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
-        maximumLen={question.registerConfig.maximumLen}
-        countType={question.registerConfig.countType}
         data-haserrors={!!errors[question.name]}
+        maximumLen={
+          question.registerConfig && question.registerConfig.maximumLen
+        }
+        countType={question.registerConfig && question.registerConfig.countType}
         {...register(question.name, reg)}
       />
       {errors[question.name] &&

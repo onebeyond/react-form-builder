@@ -69,10 +69,15 @@ const QuestionInput = ({ question, useForm, component, onLinkOpen }) => {
         placeholder={question.placeholder}
         defaultValue={question.defaultValue}
         data-haserrors={!!errors[question.name]}
-        {...register(question.name, {
-          ...question.registerConfig,
-          pattern: new RegExp(question.registerConfig.pattern)
-        })}
+        {...register(
+          question.name,
+          question.registerConfig
+            ? {
+                ...question.registerConfig,
+                pattern: new RegExp(question.registerConfig.pattern)
+              }
+            : {}
+        )}
       />
       {errors[question.name] && errors[question.name].type && (
         <ErrorMessage

@@ -7,7 +7,12 @@ import React from 'react'
 const Input = React.forwardRef(({ ...props }, ref) => {
   const { 'data-haserrors': haserrors } = props
   return (
-    <InputUI ref={ref} {...props} className={haserrors ? 'error-input' : ''} />
+    <InputUI
+      ref={ref}
+      sx={{ fontFamily: 'inherit' }}
+      {...props}
+      className={haserrors ? 'error-input' : ''}
+    />
   )
 })
 

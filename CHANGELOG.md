@@ -699,6 +699,13 @@
 *  countryQuestion testing ([73237ecd](https://github.com/onebeyond/react-form-builder/commit/73237ecd9739680a15fc0ea860d3f88606b0570e))
 * **wip:**  fixing tests ([b4305806](https://github.com/onebeyond/react-form-builder/commit/b4305806da274a97ac1dc291048862cbd83d6cf7))
 
+## [2.3.5](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.4...@onebeyond/react-form-builder-v2.3.5) (2025-10-17)
+
+
+### 🐛 Bug Fixes
+
+* form crashing when no default country given ([#282](https://github.com/onebeyond/react-form-builder/issues/282)) ([436caae](https://github.com/onebeyond/react-form-builder/commit/436caae845eaae7749ccb2d5552c66656917a337))
+
 ## [2.3.4](https://github.com/onebeyond/react-form-builder/compare/@onebeyond/react-form-builder-v2.3.3...@onebeyond/react-form-builder-v2.3.4) (2025-01-24)
 
 
